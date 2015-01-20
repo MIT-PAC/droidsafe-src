@@ -25,6 +25,7 @@ import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.Trap;
 import soot.Type;
 import soot.Unit;
@@ -215,6 +216,8 @@ public class ErrorHandlingAnalysis {
 
         JimpleRelationships.reset();
         CHACallGraph.v(false);
+        
+                
 
         for (SootClass clz : Scene.v().getClasses()) {
 
@@ -225,7 +228,7 @@ public class ErrorHandlingAnalysis {
                 if (method.isPhantom() || method.isAbstract() || !method.isConcrete())
                     continue;
 
-                boolean debug = "createConnection".equals(method.getName());
+                boolean debug = "onServiceConnected".equals(method.getName());
 
 
                 logger.debug("ErrorHandlingAnalysis inspecting: {}", method);
@@ -302,7 +305,7 @@ public class ErrorHandlingAnalysis {
         for (Stmt stmt : connectionCallsErrorsIgnored) {
             InvokeExpr invoke = stmt.getInvokeExpr();
 
-            out.printf("%s from %s\n", formatMethod(invoke.getMethod()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
         out.println("\nConnect calls with handling unknown (either recursion depth reached or unknown thrown exception type): " +
@@ -311,7 +314,7 @@ public class ErrorHandlingAnalysis {
         for (Stmt stmt : connectionCallsErrorsUnknown) {
             InvokeExpr invoke = stmt.getInvokeExpr();
 
-            out.printf("%s from %s\n", formatMethod(invoke.getMethod()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
 
@@ -321,7 +324,7 @@ public class ErrorHandlingAnalysis {
         for (Stmt stmt : connectionCallsErrorsNotIgnored) {
             InvokeExpr invoke = stmt.getInvokeExpr();
 
-            out.printf("%s from %s\n", formatMethod(invoke.getMethod()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
 
@@ -330,15 +333,22 @@ public class ErrorHandlingAnalysis {
         out.close();
     }
 
+    private String formatMethod(SootMethodRef ref) {
+        return formatByteCodeSignature(SootUtils.getBytecodeSignature(ref));
+    }
+    
+    
     private String formatMethod(SootMethod method) {
-        String bcs = method.getBytecodeSignature();
-        bcs =  bcs.substring(1, bcs.length() - 1);
-        String classSig = bcs.substring(0, bcs.indexOf(": "));
+        return formatByteCodeSignature(method.getBytecodeSignature());
+    }
+
+    private String formatByteCodeSignature(String byteCodeSignature) {
+       
+        byteCodeSignature =  byteCodeSignature.substring(1, byteCodeSignature.length() - 1);
+        String classSig = byteCodeSignature.substring(0, byteCodeSignature.indexOf(": "));
         classSig = classSig.replace('.', '/');
 
-        String methodSig = bcs.substring(bcs.indexOf(": ") + 2);
-
-
+        String methodSig = byteCodeSignature.substring(byteCodeSignature.indexOf(": ") + 2);
 
         return classSig + "." + methodSig;
     }
@@ -391,9 +401,9 @@ public class ErrorHandlingAnalysis {
             //need to search up the stack...
             //find all calling statements
             
-            Set<StmtEdge> srcEdges = CHACallGraph.v(false).getSourcesForMethod(body.getMethod());
+            Set<StmtEdge> srcEdges = CHACallGraph.v(false).getSourcesForMethod(body.getMethod());           
             
-            if (srcEdges.isEmpty()) {
+            if (srcEdges.isEmpty()) {                
                 //no preds, so this exception is not handled and can cause a crash, 
                 //so we label that as handled...
                 visited.put(probe, -1);
@@ -618,6 +628,8 @@ public class ErrorHandlingAnalysis {
 
                 if (visited.contains(current))
                     continue;
+                
+                logger.debug("Visiting reachable method from catch block: {}", current);
 
                 visited.add(current);          
 
@@ -627,8 +639,8 @@ public class ErrorHandlingAnalysis {
                 }
 
                 for (SootMethod apiCall : CHACallGraph.v(false).getAPICallTargets(current)) {
-                    if (debug)
-                        logger.debug("EHADEBUG Reachable API method: {}", apiCall);
+              
+                    logger.debug("EHADEBUG Reachable API method: {}", apiCall);
 
                     if (uiMethods.containsPoly(apiCall)) {
                         logger.debug("Found call to ui method in reachable app method {}: {}\n",  current, apiCall);
@@ -655,7 +667,7 @@ public class ErrorHandlingAnalysis {
                 for (int i = 0; i < target.getParameterCount(); i++) {
                     if (ie.getArg(i).getType() instanceof RefType) {
                         SootClass actualClass = ((RefType)ie.getArg(i).getType()).getSootClass();
-                        logger.debug("Found api call {} with param: {}", target, actualClass);
+                        //logger.debug("Found api call {} with param: {}", target, actualClass);
                         if (SootUtils.getParents(actualClass).contains(runnableClass)) {                            
                             try {
                                 throughAPITargets.add(actualClass.getMethod("void run()"));

@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.android.app.Project;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.CannotFindMethodException;
+import soot.AbstractJasminClass;
 import soot.AnySubType;
 import soot.Body;
 import soot.Local;
@@ -63,6 +64,7 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.internal.JIdentityStmt;
+import soot.options.Options;
 import soot.LongType;
 import soot.NullType;
 import soot.PrimType;
@@ -859,9 +861,9 @@ public class SootUtils {
             Iterator<Unit> stmtIt = stmts.snapshotIterator();
 
             while (stmtIt.hasNext()) {
-              SourceLocationTag loc = getSourceLocation((Stmt)stmtIt.next(), method.getDeclaringClass());
-              if (loc != null)
-                return loc;
+                SourceLocationTag loc = getSourceLocation((Stmt)stmtIt.next(), method.getDeclaringClass());
+                if (loc != null)
+                    return loc;
             }
         }
 
@@ -924,7 +926,7 @@ public class SootUtils {
         if (stmt != null) {
             LineNumberTag lineNumberTag = (LineNumberTag) stmt.getTag("LineNumberTag");
             if (lineNumberTag != null) {
-                        return lineNumberTag.getLineNumber();
+                return lineNumberTag.getLineNumber();
             } 
             logger.debug("Cannot find line number tag for {}", stmt);
         }
@@ -1018,8 +1020,8 @@ public class SootUtils {
             throw new CannotFindMethodException(invoke, container);
         }
     }
-    
-    
+
+
 
     /**
      * Wrapped resolve concrete dispatch method that will throw a more useful exception when
@@ -1137,17 +1139,17 @@ public class SootUtils {
 
         return methods;
     }
-    
-    
-     /**
+
+
+    /**
      * Return all methods that override the given method (in the given class). Search all children
      * all methods including abstract classes are collected
      */
     public static Set<SootMethod> getAllOverridingMethodsIncluding(SootMethod method) {
-        
+
         SootClass clz = method.getDeclaringClass();
         String subSig = method.getSubSignature();
-        
+
         Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
 
         List<SootClass> childrenIncluding = getChildrenIncluding(clz);
@@ -1330,51 +1332,6 @@ public class SootUtils {
         return (getApiOverridenMethod(method) != null);
     }
 
-    /*
-     *  * Given a method, get a set of methods that are called by this method
-     * @param sootMethod
-     * @return
-     */
-    public static Set<SootMethod> getCalleeSet(SootMethod sootMethod) {
-
-        Set<SootMethod> calleeSet = new HashSet<SootMethod>();
-        Body body;
-
-        if (!sootMethod.isConcrete()) {
-            return calleeSet;
-        }
-
-        try {
-            body = sootMethod.retrieveActiveBody();
-        }
-        catch (Exception ex) {
-            logger.warn("execption trying to get ActiveBody: {} ", ex);
-            return calleeSet;
-        }
-
-        Chain<Unit> units = body.getUnits();
-
-
-        /* Note that locals are named as follows:
-         *  r => reference, i=> immediate
-         *  $r, $i => true local
-         *  r, i => parameter passing, and r0 is for this when it is non-static
-         */
-
-        for (Unit unit: units){
-            Stmt statement = (Stmt)unit;
-
-            if (statement.containsInvokeExpr())
-            {
-                InvokeExpr expr = statement.getInvokeExpr();
-                SootMethod invokedMethod = expr.getMethod();
-                calleeSet.add(invokedMethod);
-            }
-
-        }
-        return calleeSet;
-    }
-
 
 
     /**
@@ -1521,13 +1478,17 @@ public class SootUtils {
         for (Unit unit: method.getActiveBody().getUnits()){
             Stmt stmt = (Stmt)unit;
             if (stmt.containsInvokeExpr()) {
-                InvokeExpr invokeExpr = stmt.getInvokeExpr();
-                SootMethod invokeMethod = invokeExpr.getMethod();
-                if (invokeMethod == stubExceptionMethod) {
-                    Value arg = invokeExpr.getArg(0);
-                    if (arg.toString().equalsIgnoreCase("stub")) {
-                        return true;
+                try {
+                    InvokeExpr invokeExpr = stmt.getInvokeExpr();                
+                    SootMethod invokeMethod = resolve(invokeExpr.getMethodRef());
+                    if (invokeMethod == stubExceptionMethod) {
+                        Value arg = invokeExpr.getArg(0);
+                        if (arg.toString().equalsIgnoreCase("stub")) {
+                            return true;
+                        }
                     }
+                } catch (CannotFindMethodException e) {
+                    continue;
                 }
             }
         }
@@ -1579,8 +1540,12 @@ public class SootUtils {
 
     public static SootMethod getMethodFromStmt(Stmt stmt) {
         if (stmt.containsInvokeExpr()) {
-            InvokeExpr invokeExpr = stmt.getInvokeExpr();
-            return invokeExpr.getMethod(); 
+            InvokeExpr invokeExpr = stmt.getInvokeExpr();            
+            try {
+                return SootUtils.resolve(invokeExpr.getMethodRef());
+            } catch (CannotFindMethodException e) {
+                e.printStackTrace();
+            } 
         }
         return null;
 
@@ -1592,7 +1557,7 @@ public class SootUtils {
 
         try {
             int startingLine = getMethodLocation(method).getLine();
-            
+
             Body body = method.retrieveActiveBody();
 
             Chain<Unit> units = body.getUnits();
@@ -1612,20 +1577,20 @@ public class SootUtils {
         } catch (Exception e) {
             return 0;
         }
-        
+
         return 0;
     }
 
 
-//    /** 
-//     * Returns a string describing the specified stmt.  
-//     * Used for error messages 
-//     **/
-//    public static String app_location (Stmt stmt, Object msg) {
-//        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
-//        SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
-//        return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
-//    }
+    //    /** 
+    //     * Returns a string describing the specified stmt.  
+    //     * Used for error messages 
+    //     **/
+    //    public static String app_location (Stmt stmt, Object msg) {
+    //        SootMethod method = InterproceduralControlFlowGraph.v().unitToBlock.get(stmt).getBody().getMethod();
+    //        SourceLocationTag loc = getSourceLocation(stmt, method.getDeclaringClass());
+    //        return String.format ("At method: %s, line %d, jimple stmt: %s: %s", method, loc.getLine(), stmt, msg);
+    //    }
 
 
     /**
@@ -1722,16 +1687,67 @@ public class SootUtils {
             if (statement.containsInvokeExpr())
             {
                 InvokeExpr expr = statement.getInvokeExpr();
-                SootMethod invokedMethod = expr.getMethod();
-                if (invokedMethod == callee)
-                    invokeStmtList.add(statement);
+                SootMethod invokedMethod;
+                try {
+                    invokedMethod = SootUtils.resolve(expr.getMethodRef());
+                    if (invokedMethod == callee)
+                        invokeStmtList.add(statement);
+                    
+                } catch (CannotFindMethodException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+               
             }
 
         }
         return invokeStmtList;
     }
 
-    
+    /**
+     * Resolve a method ref to the first defined method of its ancestors.
+     * 
+     * Search superclasses first, then search interfaces of superclasses.  So this search
+     * tries to find concrete methods first.
+     * 
+     * Copied from SootMethodRefImpl, but crap about phantom refs and ignore resolution errors 
+     * excised.
+     */
+    public static SootMethod resolve(SootMethodRef ref) throws CannotFindMethodException {
+        SootClass cl = ref.declaringClass();
+        while(true) {
+
+            if (cl.declaresMethod( ref.getSubSignature())) {
+                SootMethod possibleTarget = cl.getMethod(ref.getSubSignature());
+                if (ref.isStatic() == possibleTarget.isStatic())
+                    return possibleTarget;
+            }
+
+            if( cl.hasSuperclass() ) cl = cl.getSuperclass();
+            else break;
+        }
+        cl = ref.declaringClass();
+        while(true) {
+            LinkedList<SootClass> queue = new LinkedList<SootClass>();
+            queue.addAll( cl.getInterfaces() );
+            while( !queue.isEmpty() ) {
+                SootClass iface = queue.removeFirst();
+
+                if( iface.declaresMethod( ref.getSubSignature() ) ) {
+                    SootMethod possibleTarget = iface.getMethod( ref.getSubSignature());
+                    if (ref.isStatic() == possibleTarget.isStatic())
+                        return possibleTarget;
+                }
+                queue.addAll( iface.getInterfaces() );
+            }
+            if( cl.hasSuperclass() ) cl = cl.getSuperclass();
+            else break;
+        }
+
+        //if we get here, then we could not find a method
+        throw new CannotFindMethodException(cl, ref);
+    }
+
     /**
      * Use hierarchy analysis to resolve possible targets of method invoke.
      * This is not precise, and should only be used if pta information is not available
@@ -1739,7 +1755,7 @@ public class SootUtils {
      * @param invoke
      * @return
      */
-    public static Set<SootMethod> getTargetsCHA(InvokeExpr invoke) {
+    public static Set<SootMethod> getTargetsCHA(InvokeExpr invoke) throws CannotFindMethodException {
         Set<SootMethod> targets = new LinkedHashSet<SootMethod>();
         SootMethod container = JimpleRelationships.v().getEnclosingMethod(invoke);
         try {
@@ -1764,17 +1780,38 @@ public class SootUtils {
                     clz = ((StaticInvokeExpr)invoke).getMethodRef().declaringClass();
                 }
 
-                SootMethod method = invoke.getMethod();
-                List<SootMethod> resolvedTargets = Scene.v().getActiveHierarchy().resolveAbstractDispatch(clz, method);
+
+                SootMethod concrete = resolve(invoke.getMethodRef());
+                List<SootMethod> resolvedTargets = Scene.v().getActiveHierarchy().resolveAbstractDispatch(clz, concrete);
                 targets.addAll(resolvedTargets);
             } else {
                 logger.error("Unknown invoke type for CHA target resolution: {}, ignoring...", invoke);
             }
-        } catch (Exception e) {
+        } catch (CannotFindMethodException e) {
             logger.debug("Unable to find target for invoke {}", invoke);
+            throw e;
+        } catch (Exception e) {
+            logger.debug("Unable to find target for invoke {}", invoke, e);
         }
 
         return targets;
+    }
+
+    /**
+    Returns the signature of this method in the format in which it appears
+    in bytecode (eg. [Ljava/lang/Object instead of java.lang.Object[]).
+     */
+    public static String getBytecodeSignature(SootMethodRef ref) {
+        String name = ref.name();
+
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(
+            "<" + Scene.v().quotedNameOf(ref.declaringClass().getName()) + ": ");
+        buffer.append(name);
+        buffer.append(AbstractJasminClass.jasminDescriptorOf(ref));
+        buffer.append(">");
+
+        return buffer.toString().intern();
     }
 
     /** 
@@ -1786,7 +1823,7 @@ public class SootUtils {
      */
     public static Stmt getPrevDef(Body body, Stmt stmt, Value v) {
         ExceptionalUnitGraph cfg = new ExceptionalUnitGraph(body);
-        
+
         Stmt current = stmt;
 
         while (true) {

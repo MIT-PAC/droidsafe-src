@@ -2,6 +2,7 @@ package droidsafe.utils;
 
 import soot.SootClass;
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.Type;
 import soot.jimple.SpecialInvokeExpr;
 
@@ -23,7 +24,13 @@ public class CannotFindMethodException extends Exception {
         super(String.format("Cannot find or resolve %s in %s.", method, clz));
     }
     
-
+    /**
+     * Create new exception with clz and method that cannot be found.
+     */
+    public CannotFindMethodException(SootClass clz, SootMethodRef method) {
+        super(String.format("Cannot find or resolve %s in %s.", method, clz));
+    }
+    
     /**
      * Create new exception for a special invoke.
      */

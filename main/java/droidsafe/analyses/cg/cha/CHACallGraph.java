@@ -26,6 +26,7 @@ import soot.jimple.Stmt;
 import droidsafe.analyses.cg.StmtEdge;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph.CallToTarget;
 import droidsafe.android.system.API;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -49,7 +50,7 @@ public class CHACallGraph {
     /** if true, then account for reflection in the call graph conservatively but use some
      * heuristics to reduce number of spurious edges */
     private final static boolean INCLUDE_REFLECTION = true;
-    
+
     private final static Logger logger = LoggerFactory.getLogger(CHACallGraph.class);
 
     private static CHACallGraph v;
@@ -57,11 +58,11 @@ public class CHACallGraph {
     private DirectedMultigraph<SootMethod, StmtEdge> callgraph;
 
     private Map<Stmt, Set<StmtEdge<SootMethod>>> stmtToEdges;
-    
+
     private Set<StmtEdge<SootMethod>> reflectedEdges;
 
     private boolean includeAPI;
-    
+
     private SootMethod methodInvoke;
 
     private CHACallGraph(boolean includeAPI) {
@@ -95,11 +96,15 @@ public class CHACallGraph {
             if (!includeAPI && API.v().isSystemClass(clz))
                 continue;
 
+
             for (SootMethod method : clz.getMethods()) {
+
+
                 if ((!includeAPI && API.v().isSystemMethod(method)) ||
                         !method.isConcrete() || method.isAbstract() || method.isPhantom())
                     continue;
-                try {
+
+                try {                   
                     callgraph.addVertex(method);
 
                     Body body = method.retrieveActiveBody();                
@@ -116,19 +121,30 @@ public class CHACallGraph {
 
                         if (stmt.containsInvokeExpr()) {
                             InvokeExpr invoke = stmt.getInvokeExpr();
-                            Set<SootMethod> targets = SootUtils.getTargetsCHA(invoke);
-                                                     
-                            for (SootMethod target : targets) {
-                               addEdge(method, target, stmt);
+                            boolean debug = "sendOnError".equals(invoke.getMethodRef().name());
+
+                            if (debug) System.out.println(method + " " + invoke);
+                            try {
+                                Set<SootMethod> targets = SootUtils.getTargetsCHA(invoke);
+
+                                for (SootMethod target : targets) {
+                                    if (debug) System.out.println(target);
+                                    addEdge(method, target, stmt);
+                                    
+                                    if (INCLUDE_REFLECTION && methodInvoke.equals(target)) {
+                                        logger.debug("Found reflected invoke: {} {}", method, stmt);
+                                        Set<SootMethod> refTargets = getReflectedInvokeTargets(method, body, stmt);
+                                        for (SootMethod refTarget : refTargets) {
+                                            StmtEdge<SootMethod> newEdge = addEdge(method, refTarget, stmt);
+                                            reflectedEdges.add(newEdge);
+                                        }
+                                    }
+                                }
+                            } catch (CannotFindMethodException e) {
+                                
                             }
                             
-                            if (INCLUDE_REFLECTION) {
-                                targets = getReflectedInvokeTargets(method, body, stmt);
-                                for (SootMethod target : targets) {
-                                    StmtEdge<SootMethod> newEdge = addEdge(method, target, stmt);
-                                    reflectedEdges.add(newEdge);
-                                 }
-                            }
+                           
                         }
                     }                   
                 } catch (Exception e) {
@@ -137,7 +153,7 @@ public class CHACallGraph {
             }
         }
     }
-    
+
     private StmtEdge<SootMethod> addEdge(SootMethod source, SootMethod target, Stmt stmt) {
         callgraph.addVertex(target);
         StmtEdge<SootMethod> newEdge = new StmtEdge<SootMethod>(source, target, stmt, false);
@@ -149,41 +165,37 @@ public class CHACallGraph {
         }
 
         stmtToEdges.get(stmt).add(newEdge);
-        
+
         return newEdge;
     }
 
     private Set<SootMethod> getReflectedInvokeTargets(SootMethod containingM, Body body, Stmt stmt) {
         InvokeExpr ie = stmt.getInvokeExpr();
-        
-        if (!methodInvoke.equals(ie.getMethod())) {
-            return Collections.EMPTY_SET;
-        }
-        
+
         Set<SootMethod> targets = new LinkedHashSet<SootMethod>();
-        
+
         //find number of arguments 
         int numArgs = -1;
         Stmt defOfArgsArray = SootUtils.getPrevDef(body, stmt, ie.getArg(1));
-        
+
         if (defOfArgsArray instanceof AssignStmt && 
                 ((AssignStmt)defOfArgsArray).getRightOp() instanceof NewArrayExpr &&
                 ((NewArrayExpr)((AssignStmt)defOfArgsArray).getRightOp()).getSize() instanceof IntConstant) {
             numArgs = ((IntConstant)((NewArrayExpr)((AssignStmt)defOfArgsArray).getRightOp()).getSize()).value;
         }
-       
-        
+
+
         //only include method in same top level package, with same number of args
         String packageName = containingM.getDeclaringClass().getPackageName();
         int secondDot = packageName.indexOf('.', packageName.indexOf('.') + 1);
         String topLevelPackage = "";
-        
+
         if (secondDot >= 0) {
-             topLevelPackage =  packageName.substring(0, secondDot);
+            topLevelPackage =  packageName.substring(0, secondDot);
         }
-        
+
         logger.info("Found reflected invoke in {} with {} args and top level package {}", containingM, numArgs, topLevelPackage);
-        
+
         for (SootClass clz : Scene.v().getClasses()) {
             if (clz.getPackageName().startsWith(topLevelPackage)) {
                 for (SootMethod m : clz.getMethods()) {
@@ -193,10 +205,10 @@ public class CHACallGraph {
                 }
             }
         }
-        
+
         return targets;
     }
-    
+
     public Set<StmtEdge> getSourcesForMethod(SootMethod method) {
         if (callgraph.containsVertex(method)) {
             return callgraph.incomingEdgesOf(method);
@@ -218,7 +230,7 @@ public class CHACallGraph {
         } else
             return Collections.emptySet();
     }
-    
+
     public Set<SootMethod> getTargetsForStmt(Stmt stmt) {
         if (stmtToEdges.containsKey(stmt)) {
             Set<StmtEdge<SootMethod>> edges =
@@ -227,19 +239,19 @@ public class CHACallGraph {
             for (StmtEdge<SootMethod> edge : edges) {
                 targets.add(edge.getV2());
             }
-            
+
             return targets;
         } else
             return Collections.emptySet();
     }
-    
+
     public BreadthFirstIterator<SootMethod,StmtEdge> getBreadthFirstTraversalFrom(SootMethod startVertex) {
         BreadthFirstIterator<SootMethod,StmtEdge> bfi = 
                 new BreadthFirstIterator<SootMethod,StmtEdge>(callgraph, startVertex);
-        
+
         return bfi;
     }
-    
+
     /**
      * Returns all system methods called from method, does not prune the list based
      * on API.v().isInterestingMethod().
@@ -251,17 +263,17 @@ public class CHACallGraph {
             if (API.v().isSystemMethod(edge.getV2()))
                 apiTargets.add(edge.getV2());
         }
-        
+
         return apiTargets;
     }
-    
+
     /**
      * Return true if the edge was added as a result of a reflected call.
      */
     public boolean isReflectedEdge(StmtEdge<SootMethod> e) {
         return reflectedEdges.contains(e);
     }
-    
+
     /**
      * Return true if all incoming (pred) edges to this method are reflected 
      * edges.   Good indicator that this is an entry method?
@@ -271,7 +283,7 @@ public class CHACallGraph {
             if (!isReflectedEdge(e)) 
                 return false;
         }
-        
+
         //didn't find any non-reflected edges
         return true;
     }

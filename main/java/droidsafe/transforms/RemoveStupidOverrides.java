@@ -113,7 +113,7 @@ public class RemoveStupidOverrides {
         if ((units[units.length - 2] instanceof Stmt) && ((Stmt)units[units.length -2]).containsInvokeExpr()) {
             InvokeExpr invoke = ((Stmt)units[units.length -2]).getInvokeExpr();
             if (invoke instanceof SpecialInvokeExpr &&
-                    method.getSubSignature().equals(invoke.getMethod().getSubSignature()) &&
+                    method.getSubSignature().equals(invoke.getMethodRef().getSubSignature()) &&
                     ((SpecialInvokeExpr) invoke).getBase().equals(stmtBody.getThisLocal())) {
                 //check that each arg for the super call is the argument from this method, in the right order
                 for (int i = 0; i < invoke.getArgCount(); i++) {

@@ -346,22 +346,23 @@ public class ObjectSensitivityCloner {
             while (stmtIt.hasNext()) {
                 Stmt stmt = (Stmt)stmtIt.next();
                 if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
-                    SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
-                    if (!PTABridge.v().isReachableMethod(target))
-                        continue;
-                    
-                    //if it is a call in a user method
-                    //or if it is a call to a java.util or java.lang method anywhere
-                    //then clone
-                    if (!API.v().isSystemMethod(method) ||
-                            target.getDeclaringClass().getName().startsWith("java.util") ||
-                            target.getDeclaringClass().getName().startsWith("java.lang") ||
-                            target.getDeclaringClass().getName().startsWith("java.net")) {
-                        if (!map.containsKey(target)) {
-                            map.put(target, new LinkedList<StaticInvokeExpr>());
-                        }  
-                        map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
-                    }                                        
+                    //SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
+                    Set<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
+
+                    for (SootMethod target : targets) {
+                        //if it is a call in a user method
+                        //or if it is a call to a java.util or java.lang method anywhere
+                        //then clone
+                        if (!API.v().isSystemMethod(method) ||
+                                target.getDeclaringClass().getName().startsWith("java.util") ||
+                                target.getDeclaringClass().getName().startsWith("java.lang") ||
+                                target.getDeclaringClass().getName().startsWith("java.net")) {
+                            if (!map.containsKey(target)) {
+                                map.put(target, new LinkedList<StaticInvokeExpr>());
+                            }  
+                            map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
+                        }                                  
+                    }
                 }
             }
         }
@@ -379,11 +380,11 @@ public class ObjectSensitivityCloner {
                 //skip first
                 if (i == 1)
                     continue;
-                
+
                 //clone and install method
                 //create new method
                 String cloneName = method.getName() + CloneInheritedMethods.CLONED_METHOD_SUFFIX + i;
-                
+
                 SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
                     method.getReturnType(), method.getModifiers(), method.getExceptions());
 
@@ -391,7 +392,7 @@ public class ObjectSensitivityCloner {
                 //register method
                 method.getDeclaringClass().addMethod(newMeth);
                 newMeth.setDeclaringClass(method.getDeclaringClass());
-                
+
                 //copy over any api classifications
                 API.v().cloneMethodClassifications(method, newMeth);
 
@@ -400,18 +401,18 @@ public class ObjectSensitivityCloner {
                 newMeth.setActiveBody(newBody);
 
                 JSAStrings.v().updateJSAResults(method.retrieveActiveBody(), newBody);
-                
+
                 //update static invoke
                 si.setMethodRef(newMeth.makeRef());
-                
+
                 logger.info("Cloning static method {} in {}", newMeth, si);
                 clonesAdded++;
             }
         }
-        
+
         System.out.println("Cloned static methods added: " + clonesAdded);
     }
-    
+
     /**
      * Add the effects of cloning to the remember clone context for each original method
      * @param cloneToOrg

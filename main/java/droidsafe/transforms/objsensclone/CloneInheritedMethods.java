@@ -36,6 +36,7 @@ import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
 
@@ -229,7 +230,15 @@ public class CloneInheritedMethods {
      * Resolve the concrete target of a special invoke using our modified semantics for special invoke expression.
      */
     private SootMethod resolveSpecialInvokeTarget(SpecialInvokeExpr si) {
-        SootMethod target = si.getMethod();
+        SootMethod target = null;
+      
+        try {
+            target = SootUtils.resolve(si.getMethodRef());
+        } catch (CannotFindMethodException e) {    
+            logger.error("Cannot find concrete method target for special invoke: {}", si);
+            return null;
+        }
+        
         String targetSubSig = target.getSubSignature();
 
         SootClass current = target.getDeclaringClass();

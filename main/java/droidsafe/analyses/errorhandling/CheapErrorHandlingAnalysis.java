@@ -40,6 +40,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
 import droidsafe.main.Main;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootMethodList;
@@ -267,14 +268,21 @@ public class CheapErrorHandlingAnalysis {
 
             //no ui calls
             if (stmt.containsInvokeExpr()) {
-                Set<SootMethod> targets = SootUtils.getTargetsCHA(stmt.getInvokeExpr());
-
-                for (SootMethod target : targets) {
-                    if (uiMethods.containsPoly(target)) {
-                        out.printf("Found ui method call in handler %s: %s\n",  method, stmt);
-                        return true;                    
+                Set<SootMethod> targets;
+                try {
+                    targets = SootUtils.getTargetsCHA(stmt.getInvokeExpr());
+                    for (SootMethod target : targets) {
+                        if (uiMethods.containsPoly(target)) {
+                            out.printf("Found ui method call in handler %s: %s\n",  method, stmt);
+                            return true;                    
+                        }
                     }
+                } catch (CannotFindMethodException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
+
+              
             }
 
         }
