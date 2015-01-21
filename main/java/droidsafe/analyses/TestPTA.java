@@ -73,7 +73,13 @@ public class TestPTA  {
             if (!method.isConcrete())
                 continue;
             if (!method.hasActiveBody()) {
-                method.retrieveActiveBody();
+            	try {
+            		method.retrieveActiveBody();
+            	}
+            	catch (Exception ex) {
+            		logger.info("Exception retrieving method body {}", ex);
+            		continue;
+            	}
             }
             
             // We first gather all the memory access expressions

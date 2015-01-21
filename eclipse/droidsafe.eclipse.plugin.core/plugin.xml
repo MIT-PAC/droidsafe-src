@@ -130,11 +130,6 @@
             name="Show Droidsafe View">
       </command>
       <command
-            defaultHandler="droidsafe.eclipse.plugin.core.commands.OpenPointsToView"
-            id="droidsafe.eclipse.plugin.core.commands.OpenPointsToView"
-            name="Show Points-to View">
-      </command>
-      <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.NewFilter"
             id="droidsafe.eclipse.plugin.core.commands.NewFilter"
             name="Create Filter">
@@ -164,8 +159,8 @@
             name="FIlter Droidsafe Taint Sources">
       </command>
       <command
-            defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowCallGraph"
-            id="droidsafe.eclipse.plugin.core.commands.ShowCallGraph"
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
+            id="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
             name="Show Droidsafe Call Graph">
       </command>
    </extension>
@@ -558,21 +553,21 @@
          <menu
                label="Label">
             <dynamic
-                  class="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu"
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicLabelDisplayMenu"
                   id="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu">
             </dynamic>
          </menu>
          <menu
                label="Sort by">
             <dynamic
-                  class="droidsafe.eclipse.plugin.core.view.indicator.SortOutlineMenu"
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicSortOutlineMenu"
                   id="droidsafe.eclipse.plugin.core.view.indicator.SortOutlineMenu">
             </dynamic>
          </menu>
          <menu
                label="Visibility">
             <dynamic
-                  class="droidsafe.eclipse.plugin.core.view.indicator.TypeVisibilityMenu"
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicTypeVisibilityMenu"
                   id="droidsafe.eclipse.plugin.core.view.indicator.TypeVisibilityMenu">
             </dynamic>
          </menu>
@@ -588,7 +583,7 @@
          <menu
                label="Switch Indicator">
             <dynamic
-                  class="droidsafe.eclipse.plugin.core.view.indicator.IndicatorMenu"
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicIndicatorMenu"
                   id="droidsafe.eclipse.plugin.core.view.indicator.IndicatorMenu">
             </dynamic>
          </menu>
@@ -620,22 +615,22 @@
                style="push">
          </command>
          <command
-               commandId="droidsafe.eclipse.plugin.core.commands.ShowCallGraph"
+               commandId="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
                label="Show Droidsafe Call Graph"
                style="push">
          </command>
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="popup:droidsafe.eclipse.plugin.core.view.CallGraphView">
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.CallHierarchyView">
          <dynamic
-               class="droidsafe.eclipse.plugin.core.view.callgraph.ContextMethodMenu"
-               id="droidsafe.eclipse.plugin.core.view.callgraph.ContextMethodMenu">
+               class="droidsafe.eclipse.plugin.core.view.callhierarchy.DynamicContextMethodMenu"
+               id="droidsafe.eclipse.plugin.core.view.callhierarchy.DynamicContextMethodMenu">
          </dynamic>
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.CallGraphView">
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.CallHierarchyView">
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
                icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
@@ -748,9 +743,9 @@
       </view>
       <view
             category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
-            class="droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart"
+            class="droidsafe.eclipse.plugin.core.view.callhierarchy.CallHierarchyViewPart"
             icon="icons/android.png"
-            id="droidsafe.eclipse.plugin.core.view.CallGraphView"
+            id="droidsafe.eclipse.plugin.core.view.CallHierarchyView"
             name="Call Graph"
             restorable="false">
       </view>
@@ -881,7 +876,7 @@
   </extension>
   <extension
         id="droidsafe.deadcode.marker"
-        name="Taint Marker"
+        name="Dead Code Marker"
         point="org.eclipse.core.resources.markers">
      <super
            type="org.eclipse.core.resources.textmarker">

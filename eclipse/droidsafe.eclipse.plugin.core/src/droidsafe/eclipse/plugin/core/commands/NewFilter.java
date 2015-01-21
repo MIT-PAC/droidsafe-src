@@ -14,8 +14,18 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.wizards.NewFilterWizard;
 
+/**
+ * Command to create a new filter for the current indicator display.
+ * 
+ * @author gilham
+ *
+ */
 public class NewFilter extends AbstractHandler {
 
+	/**
+	 * Command implementation. Presents a wizard dialog for the user to specify a
+	 * new filter for the current indicator display.
+	 */
     @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IWorkbenchPart view = HandlerUtil.getActivePart(event);

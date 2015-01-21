@@ -71,10 +71,13 @@ public class VAUtils {
         for (IAllocNode node : nodes) {
             VAModel vaModel = ValueAnalysis.v().getResult(node);
             
+            if (vaModel == null)
+            	return false;
+            
             if (vaModel.invalidated())
                 return false;
             
-            if(vaModel != null && vaModel instanceof RefVAModel) {
+            if(vaModel instanceof RefVAModel) {
                 RefVAModel refVAModel = (RefVAModel)vaModel;
                 SootClass clonedSootClass = ((RefType)(refVAModel.getAllocNode().getType())).getSootClass();
                 SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedSootClass);

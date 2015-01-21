@@ -54,6 +54,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     /** The label for the empty page. */
     protected Label fEmptyPageLabel;
     
+    /** IDs for All the droidsafe views in the droidsafe perspective. */
     static final String[] ALL_VIEW_IDS = {SecuritySpecOutlineViewPart.VIEW_ID,
                                           InfoFlowSummaryViewPart.VIEW_ID,
                                           IndicatorViewPart.VIEW_ID,
@@ -68,6 +69,10 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     protected ISelectionListener fSelectionListener;
 
     /**
+     * Initializes this droidsafe view with the given parent as a page book of
+     * two pages, a content viewer and an empty page label. Display the current
+     * page depending on the current project. Sets up a selection listener to
+     * listen to project selections. 
      */
     @Override
     public void createPartControl(Composite parent) {
@@ -89,6 +94,10 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
         setSelectionListener();
     }
 
+    /**
+     * Shows all the droidsafe views in the droidsafe perspective other than
+     * the one with the given view id.
+     */
     public static void showOtherDroidsafeViews(String currentViewId) {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
         for (String viewId: ALL_VIEW_IDS) {
@@ -107,7 +116,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     }
 
     /**
-     * Show the given page in the page book.
+     * Shows the given page in the page book.
      */
     protected void showPage(int page) {
         boolean isEmpty= page == PAGE_EMPTY;
@@ -120,7 +129,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     }
 
     /**
-     * Cause this view to receive the keyboard focus.
+     * Causes this view to receive the keyboard focus.
      */ 
     @Override
     public void setFocus() {
@@ -128,7 +137,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     }
 
     /** 
-     * Dispose this viewer.
+     * Disposes this viewer.
      */
     @Override
     public void dispose() {
@@ -137,7 +146,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     }
 
     /**
-     * Set the value of the selectedProject field if it is null and return the value of the
+     * Sets the value of the selectedProject field if it is null and return the value of the
      * selectedProject field.
      */
     public IProject getProject() {
@@ -148,7 +157,7 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
     }
 
     /**
-     * Auxiliary function to setup a selection listener that would reset the contents of the outline
+     * Auxiliary function to setup a selection listener that would reset the contents of the 
      * view once a different project is selected.
      */
     protected void setSelectionListener() {
@@ -176,21 +185,39 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
         getSite().getPage().addSelectionListener(this.fSelectionListener);
     }
 
+    /**
+     * Resets the content of the view when a different project is selected.
+     */
     abstract protected void projectSelected();
 
+    /**
+     * Clears the content of this view. 
+     */
     abstract protected void clearViewer();
 
+    /**
+     * Returns the control for this view.
+     */
     abstract protected Control getControl();
 
+    /**
+     * Returns the text for the empty page label.
+     */
     abstract protected String emptyPageText();
 
+    /**
+     * Creates a viewer for this view.
+     */
     abstract protected void createViewer(Composite parent);
 
     /**
-     * Update the content of this view.
+     * Updates the content of this view.
      */
     abstract protected void updateView();
 
+    /**
+     * Resets the content of this view. 
+     */
     abstract protected void resetViewer();
 
 }

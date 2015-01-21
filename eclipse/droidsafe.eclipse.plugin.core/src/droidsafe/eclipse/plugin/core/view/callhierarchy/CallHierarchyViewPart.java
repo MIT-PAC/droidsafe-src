@@ -1,4 +1,4 @@
-package droidsafe.eclipse.plugin.core.view.callgraph;
+package droidsafe.eclipse.plugin.core.view.callhierarchy;
 
 import java.util.Collections;
 import java.util.Map;
@@ -29,50 +29,62 @@ import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
 
 /**
- * View for displaying the info flow on the receiver/arguments of a given method. 
+ * View for displaying a source callee hierarchy or a source caller hierarchy. 
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
+public class CallHierarchyViewPart extends DroidsafeInfoOutlineViewPart {
 
     /** The ID of the view as specified by the extension. */
-    public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.CallGraphView";
+    public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.CallHierarchyView";
     
-    /** The method on which the call graph is to be displayed. */
-    private ICallGraph fCallGraph;
+    /** The call hierarchy to be displayed. */
+    private CallHierarchy fCallHierarchy;
     
+    /** True if the view is showing a callee hierarchy; false if the view is showing a
+     * caller hierarchy */
     private boolean fShowCallees;
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
-        return new CallGraphTreeElementLabelProvider(this);
+        return new CallHierarchyTreeElementLabelProvider(this);
     }
 
     @Override
     protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
-        return new CallGraphTreeElementContentProvider();
+        return new CallHierarchyTreeElementContentProvider();
     }
 
+    /**
+     * Updates the content of the call hierarchy outline view.
+     */
     @Override
     protected void updateView() {
         updateView(false);
     }
 
+    /**
+     * Updates the content of the call hierarchy outline view. Resets the content first if the 
+     * parameter 'resetViewer' is true, 
+     */
     public void updateView(boolean resetViewer) {
         if (fParentComposite != null) {
-            if (fCallGraph == null) {
+            if (fCallHierarchy == null) {
                 showPage(PAGE_EMPTY);
             } else {
                 if (resetViewer)
                     resetViewer();
                 showPage(PAGE_VIEWER);
-                setContentDescription(fCallGraph.getDescription());
-                fTreeViewer.setInput(fCallGraph);
+                setContentDescription(fCallHierarchy.getDescription());
+                fTreeViewer.setInput(fCallHierarchy);
             }
         }
     }
 
+    /**
+     * Resets the content of the view when a different project is selected.
+     */
     @Override
     protected void projectSelected() {
         resetViewer();
@@ -85,16 +97,21 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     }
 
     /**
-     * Set the input element for the viewer and update the contents of the view.
+     * Set the input call hierarchy for the viewer and update the contents of the view.
      */
-    protected void setInput(ICallGraph callGraph) {
-        if ((callGraph == null && fCallGraph != null) || 
-                (callGraph != null && !callGraph.equals(fCallGraph))) {
-        	fCallGraph = callGraph;
+    protected void setInput(CallHierarchy callHierarchy) {
+        if ((callHierarchy == null && fCallHierarchy != null) || 
+                (callHierarchy != null && !callHierarchy.equals(fCallHierarchy))) {
+        	fCallHierarchy = callHierarchy;
             updateView();
         }
     }
     
+    /**
+     * When a new item is selected from the call hierarchy outline, reveals and highlights the source code for the
+     * new selection in an editor and updates info flow details, value info, and points-to info in the 
+     * corresponding views.
+     */
     @Override
     public void selectionChanged(SelectionChangedEvent e) {
         if (e.getSelectionProvider() == fTreeViewer) {
@@ -103,8 +120,8 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
                 Object selectedNode = ((IStructuredSelection) selection).getFirstElement();
                 if (selectedNode instanceof TreeElement<?, ?>) {
                     TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
-                    IProject project = fCallGraph.getProject();
-                    if (fCallGraph instanceof CallGraph && treeElement.getParent() == null) {
+                    IProject project = fCallHierarchy.getProject();
+                    if (fCallHierarchy instanceof CalleeHierarchy && treeElement.getParent() == null) {
                     	JsonElement root = (JsonElement) treeElement.getData();
                     	String sig = Utils.getSignature(root);
                     	SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(project, false, false);
@@ -135,13 +152,13 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
      * 
      */
     protected void revealInEditor(TreeElement<?, ?> treeElement, boolean activate) {
-        IProject project = fCallGraph.getProject();
+        IProject project = fCallHierarchy.getProject();
     	Object data = treeElement.getData();
     	if (data instanceof SourceMethodNode) {
     		Set<MethodModel> methods = getMethodModels(treeElement);
     		if (methods == null || methods.isEmpty()) {
-        		CallerGraph callerGraph = (CallerGraph) fCallGraph;
-    			Set<JsonElement> calls = getCalls(callerGraph, treeElement);
+        		CallerHierarchy callerHierarchy = (CallerHierarchy) fCallHierarchy;
+    			Set<JsonElement> calls = getCalls(callerHierarchy, treeElement);
     			if (!calls.isEmpty())
     				DroidsafePluginUtilities.revealInEditor(project, calls.iterator().next(), activate);
     			else {
@@ -162,16 +179,20 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     	}
     } 
     
+    /**
+     * Returns the method models corresponding to the given call hierarchy element.
+     */
     public Set<MethodModel> getMethodModels(TreeElement<?, ?> treeElement) {
-        IProject project = fCallGraph.getProject();
+        IProject project = fCallHierarchy.getProject();
         SecuritySpecModel spec = DroidsafePluginUtilities.getSecuritySpec(project, false, false);
     	Object data = treeElement.getData();
     	if (data instanceof JsonElement) {
+        	// case: callee hierarchy
     		return Utils.getMethodModels(spec, (JsonElement) data);
-
     	} else if (data instanceof SourceMethodNode) {
-    		CallerGraph callerGraph = (CallerGraph) fCallGraph;
-    		Set<JsonElement> calls = getCalls(callerGraph, treeElement);
+        	// case: caller hierarchy
+    		CallerHierarchy callerHierarchy = (CallerHierarchy) fCallHierarchy;
+    		Set<JsonElement> calls = getCalls(callerHierarchy, treeElement);
     		if (!calls.isEmpty()) {
     			Set<MethodModel> result = new TreeSet<MethodModel>();
     			for (JsonElement call: calls) {
@@ -185,10 +206,14 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     	return Collections.EMPTY_SET;
     }
 
-    public static Set<JsonElement> getCalls(CallerGraph callerGraph, TreeElement<?, ?> treeElement) {
+    /**
+     * Returns the set of JsonElements representing method calls in the caller hierarchy 
+     * from the method (caller) for the given tree element to its parent (callee).
+     */
+    public static Set<JsonElement> getCalls(CallerHierarchy callerHierarchy, TreeElement<?, ?> treeElement) {
     	Object data = treeElement.getData();
     	if (data instanceof SourceMethodNode) {
-    		Map<String, Map<String, Set<JsonElement>>> callerMap = callerGraph.getCallerMap();
+    		Map<String, Map<String, Set<JsonElement>>> callerMap = callerHierarchy.getCallerMap();
     		TreeElement<?, ?> parent = treeElement.getParent();
     		if (parent != null) {
     			Object parentData = parent.getData();
@@ -206,36 +231,46 @@ public class CallGraphViewPart extends DroidsafeInfoOutlineViewPart {
     	return Collections.EMPTY_SET;
     }
 	/**
-     * Open the outline view for the given input element.
-     * @param line 
+     * Open the call hierarchy outline view for the given input element.
+     * 
+     * @param callHierarchy - a call hierarchy 
      */
-	public static void openView(ICallGraph cg) {
+	public static void openView(CallHierarchy callHierarchy) {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
-        CallGraphViewPart view = (CallGraphViewPart) activePage.findView(VIEW_ID);
+        CallHierarchyViewPart view = (CallHierarchyViewPart) activePage.findView(VIEW_ID);
         if (view == null) {
             // open the view
             try {
-                view = (CallGraphViewPart) activePage.showView(VIEW_ID);
+                view = (CallHierarchyViewPart) activePage.showView(VIEW_ID);
             } catch (PartInitException e) {
                 e.printStackTrace();
             }
         }
-        view.setInput(cg);
+        view.setInput(callHierarchy);
         activePage.activate(view);
     }
 
-    public static CallGraphViewPart findView() {
+    /**
+     * Returns the CallHierarchyViewPart instance in the workbench.
+     */
+    public static CallHierarchyViewPart findView() {
         IWorkbenchPage activePage = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getActivePage();
-        CallGraphViewPart view = (CallGraphViewPart) activePage.findView(VIEW_ID);
+        CallHierarchyViewPart view = (CallHierarchyViewPart) activePage.findView(VIEW_ID);
         return view;
     }
 
-    public ICallGraph getCallGraph() {
-        return fCallGraph;
+    /**
+     * Returns the input call hierarchy for this outline view.
+     */
+    public CallHierarchy getCallHiearchy() {
+        return fCallHierarchy;
     }
 
+    /**
+     * Resets this call hierarchy outline view.
+     */
     public void reset() {
-    	fCallGraph = null;
+    	fCallHierarchy = null;
         updateView();
     }
 

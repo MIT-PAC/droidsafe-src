@@ -2,6 +2,12 @@ package droidsafe.eclipse.plugin.core.filters;
 
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 
+/**
+ * An enum type for the comparison operators used to construct a filter.
+ * 
+ * @author gilham
+ *
+ */
 public enum CompareOp {
     EQ(0),
     NEQ(1),
@@ -13,18 +19,37 @@ public enum CompareOp {
     STARTS_WITH(7),
     ENDS_WITH(8);
 
+    /**
+     * The string representations of the CompareOp constants.
+     */
     public static final String[] strings = DroidsafePluginUtilities.enumStrings(CompareOp.class);
 
+    /**
+     * The int value for this comparison operator.
+     */
     private int value;
 
+    /**
+     * Constructs a CompareOp with the given int value.
+     * @param value - the int value
+     */
     private CompareOp(int value) {
             this.value = value;
     }
     
+    /**
+     * Returns the int value of this comparison operator.
+     * 
+     * @return the int value
+     */
     public int getValue() {
         return value;
     }
 
+    /**
+     * Returns the string representation of this CompareOp.
+     */
+    @Override
     public String toString() {
         switch (this) {
             case EQ: return "=";
@@ -39,14 +64,29 @@ public enum CompareOp {
         }
     }
     
-    public static CompareOp parse(String str) throws FilterException {
+    /**
+     * Parses the string representation of a CompareOp and returns the CompareOp.
+     * 
+     * @param str - the string
+     * @return the CompareOp corresponds to the string
+     * @throws FilterParseException
+     */
+    public static CompareOp parse(String str) throws FilterParseException {
         for (int i = 0; i < strings.length; i++) {
             if (str.equals(strings[i]))
                 return values()[i];
         }
-        throw new FilterException("Unrecognized compare op: " + str);
+        throw new FilterParseException("Unrecognized compare op: " + str);
     }
     
+    /**
+     * Applies the comparison operator to the given two boolean values and returns
+     * the comparison result.
+     * 
+     * @param value1 - a boolean value
+     * @param value2 - a boolean value
+     * @return the comparison result
+     */
     public boolean apply(boolean value1, boolean value2) {
         switch (this) {
             case EQ: return value1 == value2;
@@ -55,6 +95,14 @@ public enum CompareOp {
         }
     }
 
+    /**
+     * Applies the comparison operator to the given two int values and returns
+     * the comparison result.
+     * 
+     * @param value1 - an int value
+     * @param value2 - an int value
+     * @return the comparison result
+     */
     public boolean apply(int value1, int value2) {
         switch (this) {
             case EQ: return value1 == value2;
@@ -67,6 +115,14 @@ public enum CompareOp {
         }
     }
 
+    /**
+     * Applies the comparison operator to the given two string values and returns
+     * the comparison result.
+     * 
+     * @param value1 - an string value
+     * @param value2 - an string value
+     * @return the comparison result
+     */
     public boolean apply(String value1, String value2) {
         switch (this) {
             case EQ: return value1.equals(value2);

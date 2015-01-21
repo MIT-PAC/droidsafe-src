@@ -157,7 +157,14 @@ public class PaddlePTA extends PTABridge {
             if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                 continue;
 
-            List<ValueBox> origVBs = method.retrieveActiveBody().getUseAndDefBoxes();
+            List<ValueBox> origVBs = null;
+            try {
+            	origVBs = method.retrieveActiveBody().getUseAndDefBoxes();
+            }
+            catch (Exception ex) {
+            	logger.info("Exception retrieving method body {}", ex);
+            	continue;
+            }
 
             for (ValueBox vb : origVBs) {
                 Value value = vb.getValue();

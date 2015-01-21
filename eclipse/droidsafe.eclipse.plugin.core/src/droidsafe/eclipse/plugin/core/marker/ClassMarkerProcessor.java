@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -50,22 +48,72 @@ import droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.utils.IntRange;
 
+/**
+ * A marker processor that stores information on tainted data and dead code in
+ * a Java class and displays the annotations for the corresponding taint markers and 
+ * dead code markers.
+ * 
+ * @author gilham
+ *
+ */
 public class ClassMarkerProcessor {
 
+    /**
+     * The ProjectMarkerProcessor instance for the project that contains the underlying Java class.
+     */
     private ProjectMarkerProcessor fProjectProcessor;
 
+    /**
+     * The Java source file for the underlying Java class
+     */
     private IFile fFile;
 
+    /**
+     * A map from method ids to the corresponding sets of source line ranges of
+     * unreachable methods in the underlying Java class.
+     */
     private Map<String, Set<IntRange>> fUnreachableSourceMethodMap;
+    
+    /**
+     * The set of positions where the unreachable methods are located in the Java source file.
+     */
     private Set<Position> fDeadCodePositions = new HashSet<Position>();
 
+    /**
+     * A map from method ids, method line ranges, and tainted variables/fields to the 
+     * corresponding sets of info sources that flow through the tainted variables/fields.
+     */
     private Map<String, Map<IntRange, Map<String, Set<CallLocationModel>>>> fTaintedDataMap;
+    
+    /**
+     * A map from positions of the tainted data in Java source file
+     * to the corresponding sets of info sources.
+     */
     private Map<Position, Set<CallLocationModel>> fTaintSourcesMap = new HashMap<Position, Set<CallLocationModel>>();
+    
+    /**
+     * A map from positions of the tainted data in Java source file
+     * to the corresponding taint marker annotations.
+     */
     private Map<Position, SimpleMarkerAnnotation> fTaintAnnotationMap = new HashMap<Position, SimpleMarkerAnnotation>();
+    
+    /**
+     * A set of marker annotations for the dead code markers associated with the underlying Java class.
+     */
     private Set<SimpleMarkerAnnotation> fDeadCodeAnnotations = new HashSet<SimpleMarkerAnnotation>();
 
+	/**
+	 * The Java editor in which the java source for the underlying class is being viewed.
+	 */
 	private ITextEditor fEditor;
 
+    /**
+     * Constructs a ClassMarkerProcessor given a ProjectMarkerProcessor for the current project
+     * and the name for the underlying Java class.
+     * 
+     * @param projectProcessor - the project marker processor for the current project
+     * @param className - the name for the underlying Java class
+     */
     public ClassMarkerProcessor(ProjectMarkerProcessor projectProcessor, String className) {
         fProjectProcessor = projectProcessor;
         fFile = DroidsafePluginUtilities.getFile(projectProcessor.getProject(), className);
@@ -73,10 +121,20 @@ public class ClassMarkerProcessor {
         fUnreachableSourceMethodMap = projectProcessor.getUnreachableSourceMethodMap(className);
     }
     
-    public Map<String, Set<CallLocationModel>> getTaintKinds() {
-        return fProjectProcessor.getTaintKinds();
+    /**
+     * Returns the map from info source kinds in the security spec model
+     * to the corresponding sets of info sources.
+     */
+    public Map<String, Set<CallLocationModel>> getTaintSourcesMap() {
+        return fProjectProcessor.getTaintSourcesMap();
     }
     
+    /**
+     * Creates taint markers, dead code markers, and the corresponding marker annotations.
+     * Show the annotations in the given Java editor.
+     * 
+     * @param openedEditor the opened Java editor
+     */
     public void showDroidsafeTextMarkers(final IEditorPart openedEditor) {
         if (openedEditor instanceof ITextEditor) {
         	fEditor = (ITextEditor)openedEditor;
@@ -101,6 +159,15 @@ public class ClassMarkerProcessor {
         }
     }
 
+    /**
+     * Given a Java editor, visits the AST representation of the associated Java source file
+     * to compute info on the taint markers and dead code markers for the file. The results
+     * are stored in the fields fTaintSourcesMap (map from tainted data positions to sets of 
+     * taint sources) and fDeadCodePositions (set of dead code positions)
+     * 
+     * @param editor - the Java editor in which the Java source for the underlying class is 
+     * being viewed
+     */
     private void computeDroidsafeTextMarkerInfo(ITextEditor editor) {
         IDocumentProvider documentProvider = editor.getDocumentProvider();
         IEditorInput input = editor.getEditorInput();
@@ -116,6 +183,14 @@ public class ClassMarkerProcessor {
         cu.accept(visitor);
     }
 
+    /**
+     * Creates taint markers, dead code markers, and their annotations from the field values
+     * of fTaintSourcesMap (map from tainted data positions to sets of taint sources) and 
+     * fDeadCodePositions (set of dead code positions).  Returns a map from the created 
+     * annotations to their positions in the Java source.
+     * 
+     * @return a map from the droidsafe text marker annotations to their positions
+     */
     private Map<Annotation, Position> createDroidsafeTextMarkers() {
         final Map<Annotation, Position> annotationsToAdd = new HashMap<Annotation, Position>();
         for (Position pos: fTaintSourcesMap.keySet()) {
@@ -146,6 +221,12 @@ public class ClassMarkerProcessor {
         return annotationsToAdd;
     }
 
+    /**
+     * Returns the annotation model associated with the given Java editor.
+     * 
+     * @param editor - a Java editor
+     * @return the annotation model associated with the editor
+     */
     private AnnotationModel getAnnotationModel(ITextEditor editor) {
         IDocumentProvider documentProvider = editor.getDocumentProvider();
         IEditorInput input = editor.getEditorInput();
@@ -153,10 +234,24 @@ public class ClassMarkerProcessor {
         return annotationModel;
     }
     
+    /**
+     * Returns the map from filtered info source kinds in the project
+     * to the corresponding sets of filtered info sources.
+     * 
+     * @return the filtered taint sources map
+     */
     public Map<String, Set<CallLocationModel>> getFilteredTaintSourcesMap() {
         return fProjectProcessor.getFilteredTaintSourcesMap();
     }
     
+    /**
+     * Returns the taint marker at the given offset and with the given length. Returns null if no
+     * such taint marker is found.
+     * 
+     * @param offset - character offset for the taint marker
+     * @param length - character length for the taint marker
+     * @return the taint marker at the offset with the length
+     */
     public IMarker findTaintMarker(int offset, int length) {
             SimpleMarkerAnnotation annotation = fTaintAnnotationMap.get(new Position(offset, length));
             if (annotation != null)
@@ -164,24 +259,55 @@ public class ClassMarkerProcessor {
         return null;
     }
     
+    /**
+     * An AST visitor that visits the AST representation of the Java source, uses the values of 
+     * fTaintedDataMap and fUnreachableSourceMethodMap to locate tainted data and dead code, and
+     * updates the value of fTaintSourcesMap (map from tainted data positions to sets of taint 
+     * sources) and fDeadCodePositions (set of dead code positions) accordingly.
+     * 
+     * @author gilham
+     *
+     */
     class DroidsafeTextMarkerVisitor extends ASTVisitor {
         
+        /**
+         * The document representing the text of the Java source.
+         */
         IDocument document;
         
-        //int depth = 0;
-        
-        Stack<Map<String, Set<CallLocationModel>>> dataMapStack = new Stack<Map<String, Set<CallLocationModel>>>();
+        /**
+         * A stack of maps from tainted variable/field names to the corresponding sets of info sources.
+         * Each map represents the tainted data info for a method. The top tainted data map of the stack 
+         * represents the tainted data info for the method currently being visited.
+         */
+        Stack<Map<String, Set<CallLocationModel>>> taintedDataMapStack = new Stack<Map<String, Set<CallLocationModel>>>();
 
+        /**
+         * Constructs a DroidsafeTextMarkerVisitor for the given document.
+         * 
+         * @param document - an IDocument representing the text for a Java source file
+         */
         DroidsafeTextMarkerVisitor(IDocument document) {
             this.document = document;
         }
 
+        /**
+         * Visits a method declaration node. Computes the method id and the line range of this method. Using these
+         * to
+         * 
+         *   1) check against the unreachable source method map, and add the method position to fDeadCodePositions
+         *      if this method is unreachable
+         * 
+         *   2) check against the tainted data map for an entry for this method, and push the corresponding data map
+         *      to the tainted data map stack if found, otherwise push the empty map to the data map stack
+         *      
+         * @param node - a method declaration node 
+         */
         public boolean visit(MethodDeclaration node) {
-            //depth++;
         	boolean isConstr = node.isConstructor();
-        	String methodName = node.getName().getIdentifier();
+        	String methodId = node.getName().getIdentifier();
         	if (isConstr) {
-        		methodName = methodName + getParamsSig(node);
+        		methodId = methodId + getParamsSig(node);
         	}
         	int offset = node.getStartPosition();
         	int length = node.getLength();
@@ -190,7 +316,7 @@ public class ClassMarkerProcessor {
         		startLine = document.getLineOfOffset(offset);
         		int endLine = document.getLineOfOffset(offset + length - 1) + 1;
         		if (fUnreachableSourceMethodMap != null) {
-        			Set<IntRange> ranges = fUnreachableSourceMethodMap.get(methodName);
+        			Set<IntRange> ranges = fUnreachableSourceMethodMap.get(methodId);
         			if (ranges != null) {
         				for (IntRange range: ranges) {
         					if (methodRangeMatches(startLine, endLine, isConstr, range)) {
@@ -202,17 +328,17 @@ public class ClassMarkerProcessor {
         			}
         		}
         		if (fTaintedDataMap != null) {
-        			Map<IntRange, Map<String, Set<CallLocationModel>>> rangeMap = fTaintedDataMap.get(methodName);
+        			Map<IntRange, Map<String, Set<CallLocationModel>>> rangeMap = fTaintedDataMap.get(methodId);
         			if (rangeMap != null) {
         				for (IntRange range: rangeMap.keySet()) {
         					if (methodRangeMatches(startLine, endLine, isConstr, range)) {
         						Map<String, Set<CallLocationModel>> dataMap = rangeMap.get(range);
-        						dataMapStack.push(dataMap);
+        						taintedDataMapStack.push(dataMap);
         						return true;
         					}
         				}
         			} 
-        			dataMapStack.push(Collections.EMPTY_MAP);
+        			taintedDataMapStack.push(Collections.EMPTY_MAP);
         		}
         	} catch (BadLocationException e) {
         		DroidsafePluginUtilities.showError("Error", "Error in visiting method declaration", e);
@@ -223,6 +349,17 @@ public class ClassMarkerProcessor {
         	return true;
         }
         
+        /**
+         * Given the start line number and end line number of a method node, and a boolean flag 
+         * indicating whether the method is a constructor, checks to see whether this method contains 
+         * the given source line range.
+         * 
+         * @param startLine - the start line number of the method node
+         * @param endLine - the end line number of the method node
+         * @param isConstr - true if and only if the method node represents a constructor
+         * @param range - a line range
+         * @return true if a match is found
+         */
         private boolean methodRangeMatches(int startLine, int endLine, boolean isConstr, IntRange range) {
 			int min = range.min;
 			int max = range.max;
@@ -230,11 +367,23 @@ public class ClassMarkerProcessor {
 					(isConstr && !(min > endLine || max < startLine)));
         }
 
+        /**
+         * Pops the top tainted data map for the method from the tainted data map stack after visiting
+         * the given method node.
+         *      
+         * @param node - a method declaration node 
+         */
         public void endVisit(MethodDeclaration node) {
-        	if (!dataMapStack.isEmpty())
-        		dataMapStack.pop();
+        	if (!taintedDataMapStack.isEmpty())
+        		taintedDataMapStack.pop();
         }
 
+        /**
+         * Computes and returns the parameter signature for the given method declaration node.
+         * 
+         * @param node - a method declaration node
+         * @return the parameter signature for the method declaration node
+         */
         private String getParamsSig(MethodDeclaration node) {
             List params = node.parameters();
             int size = params.size();
@@ -254,35 +403,73 @@ public class ClassMarkerProcessor {
             return buffer.toString().intern();
         }
 
+        /**
+         * Visits a simple name node. Collect taint info if the node is a tainted variable or
+         * field reference.
+         * 
+         * @param node - a simple name node
+         * @return false
+         */
         public boolean visit(SimpleName node) {
             collectTaint(node, true);
             return false;
         }
         
+        /**
+         * Visits a qualified name node. Collect taint info if the node is a tainted 
+         * field reference.
+         * 
+         * @param node - a qualified name node
+         * @return false
+         */
         public boolean visit(QualifiedName node) {
             collectTaint(node, false);
             return false;
         }
         
-        public boolean visit(FieldAccess node) {
+        /**
+         * Visits a field access node. Collect taint info if the node is a tainted 
+         * field access.
+         * 
+         * @param node - a field access node
+         * @return false
+         */
+           public boolean visit(FieldAccess node) {
             collectTaint(node, false);
             return false;
         }
         
-        private boolean collectTaint(ASTNode node, boolean isSimpleNode) {
+        /**
+         * If the given AST node is tainted, adds an entry to fTaintSourcesMap
+         * and returns true.
+         * 
+         * @param node - an AST node
+         * @param isSimpleName - whether the node is a simple name node
+         * @return true if the given node is tainted
+         */
+        private boolean collectTaint(ASTNode node, boolean isSimpleName) {
             boolean foundTaint = false;
-            if (!dataMapStack.empty()) {
-                Map<String, Set<CallLocationModel>> dataMap = dataMapStack.peek();
+            if (!taintedDataMapStack.empty()) {
+                Map<String, Set<CallLocationModel>> dataMap = taintedDataMapStack.peek();
                 if (!dataMap.isEmpty()) {
                     String nodeString = node.toString();
                     foundTaint = collectTaint(node, nodeString, dataMap);
-                    if (!foundTaint && isSimpleNode)
+                    if (!foundTaint && isSimpleName)
                         foundTaint = collectTaint(node, "this."+nodeString, dataMap);
                 }
             }
             return foundTaint;
         }
 
+        /**
+         * If the given AST node is tainted (the given dataMap contains the given key nodeString), updates
+         * fTaintSourcesMap and returns true.
+         * 
+         * @param node - an AST node
+         * @param nodeString - string representation of the node
+         * @param dataMap - tainted data map for the current method
+         * @return true if the AST node is tainted
+         */
         private boolean collectTaint(ASTNode node, String nodeString, Map<String, Set<CallLocationModel>> dataMap) {
             Set<CallLocationModel> sources = dataMap.get(nodeString);
             if (sources != null && !sources.isEmpty()) {
@@ -296,13 +483,19 @@ public class ClassMarkerProcessor {
         }
     }
 
+    /**
+     * Given an editor, updates the taint markers and their annotations for the associated Java source 
+     * according to the new filtered sources map.
+     * 
+     * @param editor - a Java editor
+     */
     void updateTaintMarkers(final ITextEditor editor) {
         WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
             @Override
             protected void execute(IProgressMonitor monitor) throws CoreException {
                 AnnotationModel annotationModel = getAnnotationModel(editor);
                 TaintSourcesViewPart sourceView = TaintSourcesViewPart.findView();
-                        IMarker sourceViewMarker = (sourceView == null) ? null : sourceView.getMarker();
+                        IMarker sourceViewMarker = (sourceView == null) ? null : sourceView.getTaintMarker();
                 boolean sourceViewMarkerUpdated = false;
                 boolean sourceViewMarkerRemoved = false;
                 //iamf.connect(document);
@@ -360,12 +553,23 @@ public class ClassMarkerProcessor {
         }
     }
     
+    /**
+     * Updates the given annotation model by removing the annotations in annotationsToRemove
+     * and adding the annotations in annotationsToAdd.
+     * 
+     * @param annotationModel - the annotation model to update
+     * @param annotationsToRemove - the annotations to remove
+     * @param annotationsToAdd - a map from annotations to add to their positions in the Java source file
+     */
     private void updateAnnotationModel(AnnotationModel annotationModel, final Annotation[] annotationsToRemove, final Map<Annotation, Position> annotationsToAdd) {
         synchronized (annotationModel.getLockObject()) {
             annotationModel.replaceAnnotations(annotationsToRemove, annotationsToAdd);
         }
     }
     
+	/**
+	 * Removes all taint markers and dead code markers associated with the Java source file.
+	 */
 	public void removeAllDroidsafeTextMarkers() {
         WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
             @Override

@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
+import soot.Body;
 import soot.G;
 import soot.Scene;
 import soot.SootClass;

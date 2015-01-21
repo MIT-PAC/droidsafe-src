@@ -8,21 +8,63 @@ import com.google.gson.JsonPrimitive;
 
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 
+/**
+ * Represents a simple boolean clause that is used to filter the viewable contents of an indicator.
+ * Currently only clauses of form
+ * 
+ *   <field> <comparison op> <value>
+ * 
+ * are supported.
+ * 
+ * @author gilham
+ *
+ */
 public class FilterPredClause {
+    /**
+     * The field of a JsonElement to compare against the value
+     */
     public String field;
+    
+    /**
+     * The comparison operator for comparing the field against the value
+     */
     public CompareOp compOp;
+    
+    /**
+     * The value to compare the field against.
+     */
     public String value;
     
+    /**
+     * Constructs a FilterPredClause with the given field, comparison operator, and the value.
+     * 
+     * @param field - a Json field
+     * @param compOp - a comparison operator
+     * @param value - a value to compare the field against
+     */
     public FilterPredClause(String field, CompareOp compOp, String value) {
         this.field = field;
         this.compOp = compOp;
         this.value = value;
     }
     
+    /**
+     * Constructs a FilterPredClause using the field, comparison, and the value from the
+     * given FilterPredClause.
+     * 
+     * @param pred - a filter predicate clause
+     */
     public FilterPredClause(FilterPredClause pred) {
         this(pred.field, pred.compOp, pred.value);
     }
     
+    /**
+     * Apply this FilterPredClause to the given JsonElement and return the
+     * resulting boolean value.
+     * 
+     * @param jsonElt - the JsonElement to apply the FilterPredClause
+     * @return the resulting boolean value
+     */
     public boolean apply(JsonElement jsonElt) {
         if (jsonElt.isJsonObject()) {
             JsonObject jsonObj = jsonElt.getAsJsonObject();
@@ -61,23 +103,36 @@ public class FilterPredClause {
         return false;
     }
 
+    /**
+     * Returns the string representation of this FilterPredClause.
+     */
+    @Override
     public String toString() {
         return "(" + field + " " + compOp + " " + value + ")";
     }
 
-    public static FilterPredClause parse(JsonElement predElt, Set<String> filterFields) throws FilterException {
+    /**
+     * Given a JsonElement that represents a filter predicate clause and a set of filter field names, 
+     * parses this JsonElement into a FilterPredClause and returns the result.
+     * 
+     * @param predElt - a JsonElement that represents a filter predicate clause
+     * @param filterFields - a set of filter fields used to check the validity of the field in the predElt
+     * @return the resulting FilterPredClause
+     * @throws FilterParseException
+     */
+    public static FilterPredClause parse(JsonElement predElt, Set<String> filterFields) throws FilterParseException {
         String field = Utils.getFieldValueAsString(predElt, "field");
         if (field == null)
-            throw new FilterException("Missing \"field\" property in\n" + predElt);
+            throw new FilterParseException("Missing \"field\" property in\n" + predElt);
         if (!filterFields.contains(field))
-            throw new FilterException("Unknown filter field \"" + field + "\" in\n" + predElt);
+            throw new FilterParseException("Unknown filter field \"" + field + "\" in\n" + predElt);
         String opStr = Utils.getFieldValueAsString(predElt, "comp-op");
         if (opStr == null)
-            throw new FilterException("Missing \"comp-op\" property in\n" + predElt);
+            throw new FilterParseException("Missing \"comp-op\" property in\n" + predElt);
         CompareOp op = CompareOp.parse(opStr);
         String value = Utils.getFieldValueAsString(predElt, "value");
         if (value == null)
-            throw new FilterException("Missing \"value\" property in\n" + predElt);
+            throw new FilterParseException("Missing \"value\" property in\n" + predElt);
         return new FilterPredClause(field, op, value);
     }
 }

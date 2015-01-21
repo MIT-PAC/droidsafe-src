@@ -1,7 +1,5 @@
 package droidsafe.eclipse.plugin.core.view.indicator;
 
-import java.util.Map;
-
 import org.eclipse.swt.graphics.Image;
 
 import com.google.gson.JsonElement;
@@ -16,21 +14,22 @@ import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
 
 /**
- * Label provider for the nodes of the points-to outline view.
+ * Label provider for the nodes of an indicator outline view.
  * 
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
 public class IndicatorTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
 
+    /** The underlying indicator outline view.*/
     private IndicatorViewPart viewPart;
     
+    /**
+     * Constructs a IndicatorTreeElementLabelProvider with a given indicator
+     * outline view.
+     */
     public IndicatorTreeElementLabelProvider(IndicatorViewPart viewPart) {
         this.viewPart = viewPart;
-    }
-
-    public Map<String, Boolean> getDisplayMap() {
-        return viewPart.getDisplayMap();
     }
 
     /**

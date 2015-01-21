@@ -345,7 +345,7 @@ public class ObjectSensitivityCloner {
 
             while (stmtIt.hasNext()) {
                 Stmt stmt = (Stmt)stmtIt.next();
-                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
+                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {           
                     //SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
                     Set<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
 
@@ -368,45 +368,51 @@ public class ObjectSensitivityCloner {
         }
 
         int clonesAdded = 0;
-        for (SootMethod method : map.keySet()) {
+        for (SootMethod method : map.keySet()) {            
             if (map.get(method).size() <= 1) 
                 continue;
 
-            //otherwise clone all instances but one of the method, changing static invokes
-            int i = 0;
-            for (StaticInvokeExpr si : map.get(method)) {
-                i++;
+            try {
+                //otherwise clone all instances but one of the method, changing static invokes
+                int i = 0;
+                for (StaticInvokeExpr si : map.get(method)) {
+                    i++;
 
-                //skip first
-                if (i == 1)
-                    continue;
+                    //skip first
+                    if (i == 1)
+                        continue;
 
-                //clone and install method
-                //create new method
-                String cloneName = method.getName() + CloneInheritedMethods.CLONED_METHOD_SUFFIX + i;
+                    //clone and install method
+                    //create new method
+                    String cloneName = method.getName() + CloneInheritedMethods.CLONED_METHOD_SUFFIX + i;
 
-                SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
-                    method.getReturnType(), method.getModifiers(), method.getExceptions());
+                    SootMethod newMeth = new SootMethod(cloneName, method.getParameterTypes(),
+                        method.getReturnType(), method.getModifiers(), method.getExceptions());
 
-                //System.out.printf("\tAdding method %s.\n", method);
-                //register method
-                method.getDeclaringClass().addMethod(newMeth);
-                newMeth.setDeclaringClass(method.getDeclaringClass());
+                    //System.out.printf("\tAdding method %s.\n", method);
+                    //register method
+                    method.getDeclaringClass().addMethod(newMeth);
+                    newMeth.setDeclaringClass(method.getDeclaringClass());
 
-                //copy over any api classifications
-                API.v().cloneMethodClassifications(method, newMeth);
+                    //copy over any api classifications
+                    API.v().cloneMethodClassifications(method, newMeth);
 
-                //clone body
-                Body newBody = (Body)method.retrieveActiveBody().clone();
-                newMeth.setActiveBody(newBody);
+                    //clone body
+                    Body newBody = (Body)method.retrieveActiveBody().clone();
+                    newMeth.setActiveBody(newBody);
 
-                JSAStrings.v().updateJSAResults(method.retrieveActiveBody(), newBody);
+                    JSAStrings.v().updateJSAResults(method.retrieveActiveBody(), newBody);
 
-                //update static invoke
-                si.setMethodRef(newMeth.makeRef());
+                    //update static invoke
+                    si.setMethodRef(newMeth.makeRef());
 
-                logger.info("Cloning static method {} in {}", newMeth, si);
-                clonesAdded++;
+                    logger.info("Cloning static method {} in {}", newMeth, si);
+                    clonesAdded++;
+
+                }
+            } catch (Exception e) {
+                logger.debug("Error during cloning static method: {}", method, e);
+
             }
         }
 

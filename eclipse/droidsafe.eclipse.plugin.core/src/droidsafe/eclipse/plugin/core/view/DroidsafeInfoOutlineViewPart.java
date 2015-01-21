@@ -31,9 +31,9 @@ import com.google.gson.JsonObject;
 import droidsafe.eclipse.plugin.core.dialogs.SearchDialog;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallerGraph;
-import droidsafe.eclipse.plugin.core.view.callgraph.SourceMethodNode;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CallHierarchyViewPart;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CallerHierarchy;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.SourceMethodNode;
 import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
 import droidsafe.speclang.model.MethodArgumentModel;
@@ -57,17 +57,31 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
     /** Standard Eclipse label provider to provide images and labels to the different tree nodes. */
     protected DroidsafeInfoTreeElementLabelProvider fLabelProvider;
 
+    /**
+     * Makes a label provider for this outline view.
+     * 
+     * @return the label provider
+     */
     abstract protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider();
 
+    /**
+     * Makes a content provider for this outline view.
+     * 
+     * @return the content provider
+     */
     abstract protected DroidsafeInfoTreeElementContentProvider makeContentProvider();
 
     /**
-     * Clear the content of the outline view. 
+     * Clears the content of the outline view. 
      */
+    @Override
     protected void clearViewer() {
         getViewer().setInput(null);
     }
     
+    /**
+     * Resets the content of the outline view. 
+     */
     protected void resetViewer() {
         if (fTreeViewer != null)
             fTreeViewer.setInput(null);
@@ -75,7 +89,7 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
     }
 
     /**
-     * Create a tree viewer for the outline view.
+     * Creates a tree viewer for the outline view.
      */
     protected void createViewer(Composite parent) {
         fContentProvider = makeContentProvider();
@@ -100,12 +114,16 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         addDoubleClickListener();
     }
 
+    /**
+     * Returns the auto-expand level to be used when the input of the viewer is set using 
+     * setInput(Object).
+     */
     protected int autoExpandLevel() {
       return 2;
     }
 
     /**
-     * Update the content of the outline view.
+     * Updates the content of the outline view.
      */
     abstract protected void updateView();
 
@@ -128,6 +146,10 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         }
     }
 
+    /**
+     * When a new item is selected from the outline, reveals and highlights the source code for the
+     * new selection in an editor. 
+     */
     @Override
     public void selectionChanged(SelectionChangedEvent e) {
         if (e.getSelectionProvider() == fTreeViewer) {
@@ -169,10 +191,16 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
     	}
     } 
     
-    public DroidsafeInfoTreeElementContentProvider getContentProvider() {
+    /**
+     * Returns the content provider for this outline view.
+     */
+     public DroidsafeInfoTreeElementContentProvider getContentProvider() {
         return fContentProvider;
     }
 
+     /**
+      * Returns the label provider for this outline view.
+      */
     public DroidsafeInfoTreeElementLabelProvider getLabelProvider() {
         return fLabelProvider;
     }
@@ -184,10 +212,16 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         return fTreeViewer;
     }
 
+    /**
+     * Returns the control for this outline view.
+     */
     protected Control getControl() {
         return fTreeViewer.getControl();
     }
 
+    /**
+     * Returns the absolute screen position for the outline view.
+     */
     public Point getScreenLocation() {
         Control control = getControl();
         Point loc = control.getLocation();
@@ -195,6 +229,11 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         return absLoc;
     }
 
+    /**
+     * Recomputes the content of this outline view if the parameter
+     * 'recomputeTree' is true. Then refreshes the view; updates
+     * the item labels if the parameter 'updateLabel' is true.
+     */
     public void refresh(boolean recomputeTree, boolean updateLabel) {
         if (recomputeTree)
             fContentProvider.setRootElements(null);
@@ -203,10 +242,16 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         fTreeViewer.expandAll();    
       }
 
+    /**
+     * Uses long labels if 'longLabel' is true.
+     * No-op by default.  Subclasses should override it if long labels are supported.
+     */
     public void setLongLabel(boolean longLabel) {
-        // No-op by default.  Subclasses should override it if long labels are supported.
     }
 
+    /**
+     * Updates labels for all elements in the outline.
+     */
     public void updateLabels() {
         Object[] roots = fContentProvider.getRootElements();
         if (roots != null) {
@@ -216,6 +261,9 @@ abstract public class DroidsafeInfoOutlineViewPart extends DroidsafeInfoViewPart
         }
     }
 
+    /**
+     * Updates labels for all the tree elements rooted at the given element.
+     */
     private void updateLabels(Object element) {
         fTreeViewer.update(element, null);
         for (Object child: fContentProvider.getChildren(element)) {

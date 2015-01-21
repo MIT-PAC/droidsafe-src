@@ -376,7 +376,8 @@ public class Harness {
             if (!compType.equals(Hierarchy.getComponentParent(compClass).getName())) {
                 logger.error("Malformed manifest: component {} defined in manifest as {} have defined parent {}", 
                              compClass, compType, Hierarchy.getComponentParent(compClass).getName());
-                droidsafe.main.Main.exit(1);
+                return;
+                //droidsafe.main.Main.exit(1);
             }
 
             //SootMethod compInit = Scene.v().getMethod(initSig);

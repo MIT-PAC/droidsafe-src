@@ -28,15 +28,27 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import com.google.gson.JsonElement;
 
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallGraph;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallGraphViewPart;
-import droidsafe.eclipse.plugin.core.view.callgraph.CallerGraph;
-import droidsafe.eclipse.plugin.core.view.callgraph.SourceMethodNode;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CallHierarchy;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CallHierarchyViewPart;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CalleeHierarchy;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.CallerHierarchy;
+import droidsafe.eclipse.plugin.core.view.callhierarchy.SourceMethodNode;
 
-public class ShowCallGraph extends AbstractHandler {
+/**
+ * Command to show the source callee/caller hierarchy for the current selection in the Java editor window.
+ * Recursion is not supported in the call hierarchy display.
+ * 
+ * @author gilham
+ *
+ */
+public class ShowCallHierarchy extends AbstractHandler {
 
-    public static final String COMMAND_ID = "droidsafe.eclipse.plugin.core.commands.ShowCallGraph";
-
+	/**
+	 * Command implementation. When the current selection in the Java editor is a method call, displays
+	 * in an outline window the callee hierarchy rooted at the targets of the method call.  When the
+	 * current selection is a method declaration, displays the caller hierarchy rooted at the callers
+	 * of the method.
+	 */
     @Override
     public Object execute(ExecutionEvent event) throws ExecutionException {
         IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindow(event);
@@ -47,12 +59,13 @@ public class ShowCallGraph extends AbstractHandler {
         	IEditorPart editor = activePage.getActiveEditor();
         	IProject project = DroidsafePluginUtilities.getProcessedDroidsafeProjectForEditor(editor);
         	if (project != null) {
-        		JsonElement projectCallGraph = CallGraph.getProjectCallGraph(project);
-        		if (projectCallGraph != null) {
+        		JsonElement projectCallHierarchy = CallHierarchy.getProjectCalleeHierarchy(project);
+        		if (projectCallHierarchy != null) {
         			ITypeRoot typeRoot = JavaUI.getEditorInputTypeRoot(editor.getEditorInput());
         			try {
         				IJavaElement[] elements = typeRoot.codeSelect(textSelection.getOffset(), textSelection.getLength());
         				if (elements != null && elements.length == 1 && elements[0] instanceof IMethod) {
+        					// current selection is a method call
         					IMethod method = (IMethod) elements[0];
         					int line = textSelection.getStartLine() + 1;
         					String className = getEnclosingClassName(method);
@@ -61,22 +74,23 @@ public class ShowCallGraph extends AbstractHandler {
         					IJavaElement parent = method.getParent();
         					boolean showCallees = method.isResolved() && !(parent instanceof SourceType);
         					if (showCallees) {
-        						Collection<JsonElement> targets = CallGraph.findCallTargets(projectCallGraph, method, className, srcClassName, line);
+        						Collection<JsonElement> targets = CalleeHierarchy.findCallTargets(projectCallHierarchy, method, className, srcClassName, line);
         						if (targets.isEmpty())
-        							CallGraphViewPart.openView(null);
+        							CallHierarchyViewPart.openView(null);
         						else {
-        							CallGraph cg = new CallGraph(project, targets, method);
-        							CallGraphViewPart.openView(cg);
+        							CalleeHierarchy cg = new CalleeHierarchy(project, targets, method);
+        							CallHierarchyViewPart.openView(cg);
         						}
         					} else {
-        						Map<String, Map<String, Set<JsonElement>>> callerMap = CallerGraph.getCallerMap(project);
+        						// current selection is a method declaration
+        						Map<String, Map<String, Set<JsonElement>>> callerMap = CallerHierarchy.getCallerMap(project);
         						if (callerMap != null && !callerMap.isEmpty()) {
-        							SourceMethodNode methodNode = CallerGraph.findSourceMethodNodeWithCallers(callerMap, method, className, srcClassName, line);
+        							SourceMethodNode methodNode = CallerHierarchy.findSourceMethodNodeWithCallers(callerMap, method, className, srcClassName, line);
         							if (methodNode == null)
-        								CallGraphViewPart.openView(null);
+        								CallHierarchyViewPart.openView(null);
         							else {
-        								CallerGraph cg = new CallerGraph(project, methodNode, method);
-        								CallGraphViewPart.openView(cg);
+        								CallerHierarchy cg = new CallerHierarchy(project, methodNode, method);
+        								CallHierarchyViewPart.openView(cg);
         							}
         						}
         					}
@@ -91,6 +105,12 @@ public class ShowCallGraph extends AbstractHandler {
         return null;
     }
     
+    /**
+     * Returns the enclosing class name for the given Java element in the Java editor.
+     * 
+     * @param e - a Java element in the Jave editor
+     * @return the enclosing class name
+     */
     private String getEnclosingClassName(IJavaElement e) {
     	String name = null;
     	String parentName = null;

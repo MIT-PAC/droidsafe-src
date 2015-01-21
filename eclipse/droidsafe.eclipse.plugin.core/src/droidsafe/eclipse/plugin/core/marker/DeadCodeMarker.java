@@ -5,16 +5,34 @@ import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.text.Position;
 
+/**
+ * A text marker that indicates unreachable methods (dead code) in a Java source file.
+ * 
+ * @author gilham
+ *
+ */
 public class DeadCodeMarker {
 
-    //Marker ID
+    /**
+     * The type ID of DeadCodeMarker.
+     */
     public static final String TYPE = "droidsafe.deadcode.marker";
     
-    //Annotation ID
+    /**
+     * The annotation ID of DeadCodeMarker.
+     */
     public static final String ANNOTATION = "droidsafe.deadcode";
     
     /*
      * Creates a dead code marker
+     */
+    /**
+     * Creates a dead code marker for the given file at the given position.
+     * 
+     * @param file - the Java source file in which the dead code resides
+     * @param deadcodePosition - the position where the dead code is located
+     * @return the dead code marker created
+     * @throws CoreException
      */
     public static IMarker createMarker(IFile file, Position deadcodePosition) throws CoreException {
         IMarker marker = file.createMarker(TYPE);

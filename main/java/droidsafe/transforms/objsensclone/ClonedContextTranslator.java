@@ -9,6 +9,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Body;
 import soot.SootMethod;
 import soot.Value;
 import soot.ValueBox;
@@ -39,13 +40,28 @@ public class ClonedContextTranslator {
 
         Map<Value, Set<Value>> valueMap = new HashMap<Value, Set<Value>>();
         Set<SootMethod> clones = ObjectSensitivityCloner.v().getClonedContextMethods(orig);
-        List<ValueBox> origVBs = orig.retrieveActiveBody().getUseAndDefBoxes();
+
+        List<ValueBox> origVBs = null;
+
+        try {
+        	origVBs = orig.retrieveActiveBody().getUseAndDefBoxes();
+        }
+        catch (Exception ex) {
+        	return valueMap;
+        }
 
         List<ValueBox>[] cloneVBs = new List[clones.size()];
 
         int i = 0;
         for (SootMethod clone : clones) {
-            cloneVBs[i] = clone.retrieveActiveBody().getUseAndDefBoxes();
+        	try {
+        		cloneVBs[i] = clone.retrieveActiveBody().getUseAndDefBoxes();
+        	}
+        	catch (Exception ex) {
+        		logger.info("Exception retrieving method body {}", ex);
+        		continue;
+        	}
+
             if (cloneVBs[i].size() != origVBs.size()) {
                 logger.error("Clone and orig have def / use boxes that do not correspond! {} {}", clone, orig);
                 droidsafe.main.Main.exit(1);
@@ -71,7 +87,16 @@ public class ClonedContextTranslator {
         for (SootMethod orig : ObjectSensitivityCloner.v().getMethodsThatWereCloned()) {
 
             Set<SootMethod> clones = ObjectSensitivityCloner.v().getClonedContextMethods(orig);
-            List<ValueBox> origVBs = orig.retrieveActiveBody().getUseAndDefBoxes();
+            Body activeBody = null;
+            try {
+            	activeBody = orig.retrieveActiveBody();
+            }
+            catch (Exception ex) {
+            	logger.info("Exception retrieving method body {}", ex);
+            	continue;
+            }
+
+            List<ValueBox> origVBs = activeBody.getUseAndDefBoxes();
 
             List<ValueBox>[] cloneVBs = new List[clones.size()];
 

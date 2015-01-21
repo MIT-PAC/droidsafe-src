@@ -351,11 +351,20 @@ public class UnmodeledGeneratedClasses {
 
                 API.v().cloneMethodClassifications(ancestorM, newMeth);
 
+                Body ancestorBody = null;
+                try {
+                	ancestorBody = ancestorM.retrieveActiveBody();
+                }
+                catch (Exception ex) {
+                	logger.info("Exception retrieving method body {}", ex);
+                	return;
+                }
+
                 //clone body
-                Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
+                Body newBody = (Body)ancestorBody.clone();
                 newMeth.setActiveBody(newBody);
 
-                JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
+                JSAStrings.v().updateJSAResults(ancestorBody, newBody);
                 cloned = true;
             }
         }

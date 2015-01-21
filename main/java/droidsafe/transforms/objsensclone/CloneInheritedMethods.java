@@ -191,7 +191,16 @@ public class CloneInheritedMethods {
 
                 if (debug) System.out.println(method);
                 
-                Body body = method.retrieveActiveBody();
+                Body body = null;
+                try {
+                	body = method.retrieveActiveBody();
+                }
+                catch (Exception ex) {
+                	logger.info("Exception retrieving method body {}", ex);
+                	continue;
+                }
+
+
                 StmtBody stmtBody = (StmtBody)body;
 
                 Chain units = stmtBody.getUnits();

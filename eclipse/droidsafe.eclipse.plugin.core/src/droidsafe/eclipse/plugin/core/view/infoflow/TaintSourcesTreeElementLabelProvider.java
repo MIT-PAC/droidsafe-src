@@ -12,6 +12,12 @@ import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.MethodArgumentModel;
 import droidsafe.speclang.model.MethodModel;
 
+/**
+ * Label provider for the tree elements of a taint sources outline view.
+ * 
+ * @author gilham
+ *
+ */
 public class TaintSourcesTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
     /**
      * Returns the label for the tree node to display in the tree outline view.
@@ -32,6 +38,7 @@ public class TaintSourcesTreeElementLabelProvider extends DroidsafeInfoTreeEleme
         return super.getText(element);
     }
 
+    @Override
     public String getToolTipText(Object obj) {
         if (obj instanceof TreeElement<?, ?>) {
           TreeElement<?, ?> element = (TreeElement<?, ?>) obj;

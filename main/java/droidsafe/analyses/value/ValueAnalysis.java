@@ -365,8 +365,15 @@ public class ValueAnalysis  {
             if(!sootMethod.isConcrete())
                 continue;
 
-            if(!sootMethod.hasActiveBody())
-                sootMethod.retrieveActiveBody();
+            if(!sootMethod.hasActiveBody()) {
+            	try {
+            		sootMethod.retrieveActiveBody();
+            	}
+            	catch (Exception ex) {
+            		logger.info("Exception retrieving method body {}", ex);
+            		continue;
+            	}
+            }
 
             for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
                 Stmt stmt = (Stmt) stmts.next();
