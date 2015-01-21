@@ -14,6 +14,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 import org.jgrapht.traverse.BreadthFirstIterator;
 import org.slf4j.Logger;
@@ -71,13 +72,11 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsErrorsNotIgnored = new LinkedHashSet<Stmt>();
     private Set<Stmt> connectionCallsErrorsUnknown = new LinkedHashSet<Stmt>();
     private PrintStream out;
-    private SootClass throwableClass;
-    private SootClass runnableClass;
+    private SootClass throwableClass;   
     private int DEPTH_LIMIT = 70;
 
     private ErrorHandlingAnalysis() {
         throwableClass = Scene.v().getSootClass("java.lang.Throwable");
-        runnableClass = Scene.v().getSootClass("java.lang.Runnable");
     }
 
     public static ErrorHandlingAnalysis v() {
@@ -264,7 +263,7 @@ public class ErrorHandlingAnalysis {
                                         int retValue = 
                                                 findAndTestAllHandlers(body, ex, stmt, new HashSet<StmtAndException>(),
                                                     new HashMap<StmtAndException, Integer>(), 
-                                                    0, debug);
+                                                    0, new Stack<StmtEdge<SootMethod>>(), debug);
 
                                         switch (retValue) {
                                             case -1:
@@ -359,7 +358,9 @@ public class ErrorHandlingAnalysis {
      * return -1 if we found a ui handler
      */
     private int findAndTestAllHandlers(Body body, SootClass exception, Stmt stmt, Set<StmtAndException> visiting,
-                                       Map<StmtAndException, Integer> visited, int depth, boolean debug) {        
+                                       Map<StmtAndException, Integer> visited, int depth, 
+                                       Stack<StmtEdge<SootMethod>> stack,
+                                       boolean debug) {        
 
         logger.debug("findAndTestAllHandlers: depth {} method {} stmt {} exception {}", depth, body.getMethod(), stmt, exception);          
 
@@ -412,6 +413,11 @@ public class ErrorHandlingAnalysis {
             }
                     
             for (StmtEdge<SootMethod> se : srcEdges) {
+                //if the stack is not empty then we are going down a called path from a catch
+                //so make sure we are going back up it
+                if (!stack.isEmpty() && !stack.peek().equals(se))
+                    continue;
+                    
                 if (CHACallGraph.v(false).isReflectedEdge(se)) {
                     //pred is the result of a reflected call
                     //TODO: HACK!
@@ -420,8 +426,12 @@ public class ErrorHandlingAnalysis {
                     //not a reflected edge
                     if (se.getV1().isConcrete()) {
                         logger.debug("recursing through edge: {}", se);
+                        
+                        //pop the stack since we are going back up in the stack
+                        if (!stack.isEmpty()) stack.pop();
+                        
                         int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
-                            visiting, visited, depth + 1, debug);
+                            visiting, visited, depth + 1, stack, debug);
 
                         if (recurseReturn < 1) {
                             visited.put(probe, recurseReturn);
@@ -434,8 +444,8 @@ public class ErrorHandlingAnalysis {
         } else {  
             List<Unit> trapUnits = getAllUnitsForCatch(body, firstTrap.getHandlerUnit());                        
 
-            //check to see if there are any possible thrown exceptions, track each throw the stack
-            int retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, debug);
+            //check to see if there are any possible thrown exceptions, track each throw the stack            
+            int retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, stack, debug);
             visited.put(probe, retValue);
             visiting.remove(probe);
             return retValue;
@@ -459,7 +469,8 @@ public class ErrorHandlingAnalysis {
     private int processThrownExceptions(Body body, SootClass exceptionClass, Collection<Unit> trapUnits, 
                                         Set<StmtAndException> findTestVisiting,
                                         Map<StmtAndException, Integer> findTestvisited, 
-                                        Set<Body> processThrownVisiting, int depth, boolean debug) {
+                                        Set<Body> processThrownVisiting, int depth, 
+                                        Stack<StmtEdge<SootMethod>> stack, boolean debug) {
 
         logger.debug("processThrownExceptions: depth {} method {}", depth, body.getMethod()); 
 
@@ -485,12 +496,12 @@ public class ErrorHandlingAnalysis {
             if (current.containsInvokeExpr()) {
                 try {
                     //get targets of invoke expr
-                    Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(current);
-                    //account for runnables passed in the api
-                    targets.addAll(accountForUserRunnables(current));
+                    Set<StmtEdge<SootMethod>> targetEdges = CHACallGraph.v(false).getTargetEdgesForStmt(current);
                     
                     //check called method for thrown exceptions
-                    for (SootMethod target : targets) {
+                    for (StmtEdge<SootMethod> stmtEdge : targetEdges) {
+                        SootMethod target = stmtEdge.getV2();
+                        
                         //check for called api call
                         //is this a uiMethod?
                         if (uiMethods.containsPoly(target)) {
@@ -498,8 +509,10 @@ public class ErrorHandlingAnalysis {
                             return -1;
                         } else if (target.isConcrete()) {                                                       
                             Body targetBody = target.retrieveActiveBody();
+                            stack.push(stmtEdge);
+                            
                             int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
-                                findTestVisiting, findTestvisited, processThrownVisiting, depth+1, debug);
+                                findTestVisiting, findTestvisited, processThrownVisiting, depth+1, stack, debug);
 
                             if (recurseVal < 1)
                                 return recurseVal;
@@ -509,7 +522,9 @@ public class ErrorHandlingAnalysis {
                                 //for each exception declared throws by the native method
                                 //see if it is handled
                                 logger.debug("Found call to native method {} that throws exception: {}", current.getInvokeExpr(), throwsEx);
-                                int recurseVal = findAndTestAllHandlers(body, throwsEx, current, findTestVisiting, findTestvisited, depth + 1, debug);
+                                //stack does not change, staying in method
+                                int recurseVal = findAndTestAllHandlers(body, throwsEx, current, findTestVisiting,                                     
+                                    findTestvisited, depth + 1, stack, debug);
 
                                 if (recurseVal < 1)
                                     return recurseVal;
@@ -559,7 +574,10 @@ public class ErrorHandlingAnalysis {
                     logger.debug("Class of rethrown exception is not an exception type: {}", reThrownType);
                 }
 
-                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, findTestVisiting, findTestvisited, depth + 1, debug);
+                //stack does not change because we are not changing the called method, just start looking for 
+                //exceptions                
+                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, findTestVisiting, 
+                    findTestvisited, depth + 1, stack, debug);
 
                 if (recurseVal < 1)
                     return recurseVal;
@@ -568,36 +586,6 @@ public class ErrorHandlingAnalysis {
         }  
 
         return 1;
-    }
-
-   
-    private Collection<SootMethod> accountForUserRunnables(Stmt stmt) {
-        //determine invoke is to api, and if so, see if any runnables are passed
-        //if so, then add then class's run() method to the return list
-        Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(stmt);
-        Set<SootMethod> throughAPITargets = new LinkedHashSet<SootMethod>();
-        
-        InvokeExpr ie = stmt.getInvokeExpr();
-        
-        for (SootMethod target : targets) {
-            if (API.v().isSystemMethod(target)) {
-                for (int i = 0; i < target.getParameterCount(); i++) {
-                    if (ie.getArg(i).getType() instanceof RefType) {
-                        SootClass actualClass = ((RefType)ie.getArg(i).getType()).getSootClass();
-                        //logger.debug("Found api call {} with param: {}", target, actualClass);
-                        if (SootUtils.getParents(actualClass).contains(runnableClass)) {                            
-                            try {
-                                throughAPITargets.add(actualClass.getMethod("void run()"));
-                            } catch (Exception e) {
-                                logger.debug("Cannot retrieve run method for runnable {} passed in API call {}", actualClass, stmt);
-                            }
-                        }                        
-                    }
-                }
-            }
-        }
-    
-        return throughAPITargets;
     }
     
     //assume the list of traps in jimple keeps the static ordering for multiple catch blocks

@@ -1,5 +1,6 @@
 package droidsafe.analyses.cg.cha;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
+import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -65,7 +67,10 @@ public class CHACallGraph {
 
     private SootMethod methodInvoke;
 
+    private SootClass runnableClass;
+
     private CHACallGraph(boolean includeAPI) {
+        runnableClass = Scene.v().getSootClass("java.lang.Runnable");
         callgraph = new DirectedMultigraph<SootMethod, StmtEdge>(StmtEdge.class);
         stmtToEdges = new LinkedHashMap<Stmt, Set<StmtEdge<SootMethod>>>();
         reflectedEdges = new HashSet<StmtEdge<SootMethod>>();
@@ -130,7 +135,7 @@ public class CHACallGraph {
                                 for (SootMethod target : targets) {
                                     if (debug) System.out.println(target);
                                     addEdge(method, target, stmt);
-                                    
+
                                     if (INCLUDE_REFLECTION && methodInvoke.equals(target)) {
                                         logger.debug("Found reflected invoke: {} {}", method, stmt);
                                         Set<SootMethod> refTargets = getReflectedInvokeTargets(method, body, stmt);
@@ -139,12 +144,18 @@ public class CHACallGraph {
                                             reflectedEdges.add(newEdge);
                                         }
                                     }
+
+                                    //account for edges through runnable calls to the api. connect them through api method
+                                    Collection<SootMethod> throughUserRunnableTargets = accountForUserRunnables(stmt);
+                                    for (SootMethod runnableTarget : throughUserRunnableTargets) {                                        
+                                        addEdge(method, runnableTarget, stmt);                                        
+                                    }
                                 }
                             } catch (CannotFindMethodException e) {
-                                
+
                             }
-                            
-                           
+
+
                         }
                     }                   
                 } catch (Exception e) {
@@ -152,6 +163,41 @@ public class CHACallGraph {
                 }
             }
         }
+    }
+
+    private Collection<SootMethod> accountForUserRunnables(Stmt stmt) {
+        //determine invoke is to api, and if so, see if any runnables are passed
+        //if so, then add then class's run() method to the return list       
+        Set<SootMethod> throughAPITargets = new LinkedHashSet<SootMethod>();
+
+        InvokeExpr ie = stmt.getInvokeExpr();
+
+        
+        SootMethod concrete;
+        try {
+            concrete = SootUtils.resolve(stmt.getInvokeExpr().getMethodRef());
+        } catch (CannotFindMethodException e1) {
+            logger.debug("Cannot find concrete method for in accountForUserRunnables: {}", stmt);
+            return throughAPITargets;
+        }
+
+        if (API.v().isSystemMethod(concrete)) {
+            for (int i = 0; i < concrete.getParameterCount(); i++) {
+                if (ie.getArg(i).getType() instanceof RefType) {
+                    SootClass actualClass = ((RefType)ie.getArg(i).getType()).getSootClass();
+                    //logger.debug("Found api call {} with param: {}", target, actualClass);
+                    if (SootUtils.getParents(actualClass).contains(runnableClass)) {                            
+                        try {
+                            throughAPITargets.add(actualClass.getMethod("void run()"));
+                        } catch (Exception e) {
+                            logger.debug("Cannot retrieve run method for runnable {} passed in API call {}", actualClass, stmt);
+                        }
+                    }                        
+                }
+            }
+        }
+
+        return throughAPITargets;
     }
 
     private StmtEdge<SootMethod> addEdge(SootMethod source, SootMethod target, Stmt stmt) {
