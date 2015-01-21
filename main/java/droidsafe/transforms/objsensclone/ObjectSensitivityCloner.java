@@ -350,6 +350,10 @@ public class ObjectSensitivityCloner {
                     Set<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
 
                     for (SootMethod target : targets) {
+                        //never clone static inits
+                        if (SootUtils.isStaticInit(target))
+                            continue;
+                        
                         //if it is a call in a user method
                         //or if it is a call to a java.util or java.lang method anywhere
                         //then clone

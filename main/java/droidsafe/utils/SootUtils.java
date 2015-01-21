@@ -1837,6 +1837,14 @@ public class SootUtils {
 
         return buffer.toString().intern();
     }
+    
+    /**
+     * Return true if the method is a static init
+     */
+    public static boolean isStaticInit(SootMethod method) {
+       return "void <clinit>()".equals(method.getSubSignature());
+    }
+    
 
     /** 
      * Search backwards from statement to find the first definition of v in body.  
