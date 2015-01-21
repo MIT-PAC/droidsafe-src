@@ -434,17 +434,8 @@ public class ErrorHandlingAnalysis {
         } else {  
             List<Unit> trapUnits = getAllUnitsForCatch(body, firstTrap.getHandlerUnit());                        
 
-            //check found trap body for calls to ui methods or other patterns that denote handling
-            int retValue = handlerHasReachableUI(body.getMethod(), trapUnits, debug);
-
-            if (retValue < 1) {               
-                visited.put(probe, retValue);
-                visiting.remove(probe);
-                return retValue;
-            }
-
             //check to see if there are any possible thrown exceptions, track each throw the stack
-            retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, debug);
+            int retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, debug);
             visited.put(probe, retValue);
             visiting.remove(probe);
             return retValue;
@@ -499,8 +490,13 @@ public class ErrorHandlingAnalysis {
                     targets.addAll(accountForUserRunnables(current));
                     
                     //check called method for thrown exceptions
-                    for (SootMethod target : targets) {                                                
-                        if (target.isConcrete()) {
+                    for (SootMethod target : targets) {
+                        //check for called api call
+                        //is this a uiMethod?
+                        if (uiMethods.containsPoly(target)) {
+                            logger.debug("Found ui method call in handler {}: {}\n",  body.getMethod(), current);
+                            return -1;
+                        } else if (target.isConcrete()) {                                                       
                             Body targetBody = target.retrieveActiveBody();
                             int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
                                 findTestVisiting, findTestvisited, processThrownVisiting, depth+1, debug);
@@ -574,86 +570,7 @@ public class ErrorHandlingAnalysis {
         return 1;
     }
 
-    /**
-     * Return true if no ui method is reachable
-     * Return false if ui method is reachable
-     */
-    private int handlerHasReachableUI(SootMethod containingM, List<Unit> handlerUnits, boolean debug) {
-
-        logger.debug("handlerHasReachableUI: method {}", containingM);
-
-        //check handler units directly for calls to ui
-        //build list of directly reachable app methods from handler
-        List<SootMethod> directlyCalledAppMethods = new LinkedList<SootMethod>();
-        for (Unit handlerU : handlerUnits) {
-            if (!(handlerU instanceof Stmt))
-                continue;
-
-            if (debug)
-                logger.debug("EHADEBUG Handler Unit: {}", handlerU);
-
-            Stmt hStmt = (Stmt)handlerU;
-            if (hStmt.containsInvokeExpr()) {
-                Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(hStmt);
-                //account for runnables in api methods
-                targets.addAll(accountForUserRunnables(hStmt));
-                logger.debug("Found invoke in catch block: {}", hStmt);
-                for (SootMethod target : targets) {
-                    logger.debug("\tTarget: {}", target);
-
-                    //is this a uiMethod?
-                    if (uiMethods.containsPoly(target)) {
-                        logger.debug("Found ui method call in handler {}: {}\n",  containingM, hStmt);
-                        return -1;
-                    }
-
-                    //if not a system method, then an app method, and remember that it is reachable from handler
-                    if (!API.v().isSystemMethod(target)) {
-                        directlyCalledAppMethods.add(target);
-                    }
-                }
-            }            
-        }
-
-        //handler does not have any ui calls directly
-
-        Set<SootMethod> visited = new HashSet<SootMethod>();
-
-        for (SootMethod directlyCalled : directlyCalledAppMethods) {
-            BreadthFirstIterator<SootMethod,StmtEdge> bfi = 
-                    CHACallGraph.v(false).getBreadthFirstTraversalFrom(directlyCalled);
-
-            while (bfi.hasNext()) {
-                SootMethod current = bfi.next();
-
-                if (visited.contains(current))
-                    continue;
-                
-                logger.debug("Visiting reachable method from catch block: {}", current);
-
-                visited.add(current);          
-
-                if (uiMethods.containsPoly(current)) {
-                    logger.debug("Found reachable app method that implements ui method: {}\n", current);
-                    return -1;
-                }
-
-                for (SootMethod apiCall : CHACallGraph.v(false).getAPICallTargets(current)) {
-              
-                    logger.debug("EHADEBUG Reachable API method: {}", apiCall);
-
-                    if (uiMethods.containsPoly(apiCall)) {
-                        logger.debug("Found call to ui method in reachable app method {}: {}\n",  current, apiCall);
-                        return -1;
-                    }
-                }
-            }
-        }
-
-        //nothing found
-        return 1;
-    }
-
+   
     private Collection<SootMethod> accountForUserRunnables(Stmt stmt) {
         //determine invoke is to api, and if so, see if any runnables are passed
         //if so, then add then class's run() method to the return list
