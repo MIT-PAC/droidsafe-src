@@ -74,9 +74,11 @@ public class ErrorHandlingAnalysis {
     private PrintStream out;
     private SootClass throwableClass;   
     private int DEPTH_LIMIT = 70;
+    private SootClass runnableClass;
 
     private ErrorHandlingAnalysis() {
         throwableClass = Scene.v().getSootClass("java.lang.Throwable");
+        runnableClass = Scene.v().getSootClass("java.lang.Runnable");
     }
 
     public static ErrorHandlingAnalysis v() {
@@ -366,18 +368,21 @@ public class ErrorHandlingAnalysis {
 
         StmtAndException probe = new StmtAndException(stmt, exception);
 
-        if (visited.containsKey(probe))
+        if (visited.containsKey(probe)) {
+            logger.debug("Already visited: {} {}", stmt, exception);
             return visited.get(probe).intValue();
+        }
 
         //currently visiting this stmt and exception higher in recursion depth, so just 
         //return that we have not found anything on this path
         if (visiting.contains(probe)) {
+            logger.debug("Currently visiting: {} {}", stmt, exception);
             return 1;
         }
 
         visiting.add(probe);
 
-        //check for already visited statements, limit recursion
+        //limit recursion
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached depth limit in findAllHandlers");
             visited.put(probe, 0);
@@ -397,7 +402,8 @@ public class ErrorHandlingAnalysis {
             }
         }        
 
-        if (firstTrap == null) {        
+        if (firstTrap == null) {    
+            logger.debug("Could not find local handler...");
             //could not find a trap in enclosing method for this exception
             //need to search up the stack...
             //find all calling statements
@@ -407,18 +413,26 @@ public class ErrorHandlingAnalysis {
             //if only reflected edges and overrides api method
             SootMethod method = body.getMethod();
             
-            if (CHACallGraph.v(false).hasOnlyReflectedPreds(method) &&
-                    droidsafe.android.app.Hierarchy.isImplementedSystemMethod(method)) {                
+            if (isThreadRun(method)  || (CHACallGraph.v(false).hasOnlyReflectedPreds(method) &&
+                    droidsafe.android.app.Hierarchy.isImplementedSystemMethod(method))) {                
                 //no preds, so this exception is not handled and can cause a crash, 
                 //so we label that as handled...
+                logger.debug("No preds and is an implemented system method, so handles by app exit: {}", method);
                 visited.put(probe, -1);
                 visiting.remove(probe);
+                try {
+                    throw new Exception();
+                } catch (Exception e) {
+                    logger.debug("Should exit", e);
+                }
                 return -1;
             }
                     
             for (StmtEdge<SootMethod> se : srcEdges) {
                 //if the stack is not empty then we are going down a called path from a catch
                 //so make sure we are going back up it
+                logger.debug("SrcEdge: {}", se);
+                if (!stack.isEmpty()) logger.debug("stack peek: {} ", stack.peek());
                 if (!stack.isEmpty() && !stack.peek().equals(se))
                     continue;
                     
@@ -432,10 +446,13 @@ public class ErrorHandlingAnalysis {
                         logger.debug("recursing through edge: {}", se);
                         
                         //pop the stack since we are going back up in the stack
-                        if (!stack.isEmpty()) stack.pop();
+                        Stack<StmtEdge<SootMethod>> newStack = new Stack<StmtEdge<SootMethod>>();
+                        newStack.addAll(stack);
+                        
+                        if (!newStack.isEmpty()) newStack.pop();
                         
                         int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
-                            visiting, visited, depth + 1, stack, debug);
+                            visiting, visited, depth + 1, newStack, debug);
 
                         if (recurseReturn < 1) {
                             visited.put(probe, recurseReturn);
@@ -450,6 +467,7 @@ public class ErrorHandlingAnalysis {
 
             //check to see if there are any possible thrown exceptions, track each throw the stack            
             int retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, stack, debug);
+            logger.debug("back from processThrownExceptions: {}", retValue);
             visited.put(probe, retValue);
             visiting.remove(probe);
             return retValue;
@@ -511,13 +529,21 @@ public class ErrorHandlingAnalysis {
                         if (uiMethods.containsPoly(target)) {
                             logger.debug("Found ui method call in handler {}: {}\n",  body.getMethod(), current);
                             return -1;
-                        } else if (target.isConcrete()) {                                                       
-                            Body targetBody = target.retrieveActiveBody();
-                            stack.push(stmtEdge);
+                        } else if (target.isConcrete()) {
+                            Body targetBody = null;
+                            try {
+                                targetBody = target.retrieveActiveBody();
+                            } catch (Exception e) {
+                                continue;
+                            }
+                            
+                            Stack<StmtEdge<SootMethod>> newStack = new Stack<StmtEdge<SootMethod>>();
+                            newStack.addAll(stack);
+                            newStack.push(stmtEdge);
                             
                             int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
-                                findTestVisiting, findTestvisited, processThrownVisiting, depth+1, stack, debug);
-
+                                findTestVisiting, findTestvisited, processThrownVisiting, depth+1, newStack, debug);                         
+                            
                             if (recurseVal < 1)
                                 return recurseVal;
                         } else if (target.isNative() || NativeMethodBuilder.v().wasNativeAppMethod(target)) {
@@ -537,6 +563,7 @@ public class ErrorHandlingAnalysis {
                     } 
                 } catch (Exception e) {
                     //ignore retrieving active body exception
+                    logger.debug("Exception: ", e);
                 }
             } else if (current instanceof ThrowStmt) {
                 ThrowStmt throwStmt = (ThrowStmt) current;
@@ -697,5 +724,10 @@ public class ErrorHandlingAnalysis {
         }                
     }
 
+    boolean isThreadRun(SootMethod method) {
+        return (SootUtils.getParents(method.getDeclaringClass()).contains(runnableClass)) && 
+            "void run()".equals(method.getSubSignature());    
+    }
+    
 }
 

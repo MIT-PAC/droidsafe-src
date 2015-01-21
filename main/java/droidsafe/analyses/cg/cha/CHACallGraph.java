@@ -126,14 +126,14 @@ public class CHACallGraph {
 
                         if (stmt.containsInvokeExpr()) {
                             InvokeExpr invoke = stmt.getInvokeExpr();
-                            boolean debug = "sendOnError".equals(invoke.getMethodRef().name());
+                            boolean debug = "getPurchases".equals(invoke.getMethodRef().name());
 
-                            if (debug) System.out.println(method + " " + invoke);
+                            if (debug) System.out.println("Found invoke: " + method + " " + invoke);
                             try {
                                 Set<SootMethod> targets = SootUtils.getTargetsCHA(invoke);
 
                                 for (SootMethod target : targets) {
-                                    if (debug) System.out.println(target);
+                                    if (debug) System.out.println("Concrete target: " + target);
                                     addEdge(method, target, stmt);
 
                                     if (INCLUDE_REFLECTION && methodInvoke.equals(target)) {
