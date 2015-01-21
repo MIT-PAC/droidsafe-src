@@ -179,6 +179,14 @@ public class Main {
         ObjectSensitivityCloner.reset();
         RCFG.reset();
         
+        driverMsg("Create tags for the overriden system methods in user code.");
+        monitor.subTask("Create tags for overriden system methods");
+        TagImplementedSystemMethods.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        
         if (Config.v().target.equals("errorhandling")) {
             ErrorHandlingAnalysis.v().run(monitor);
             return DroidsafeExecutionStatus.OK_STATUS;
@@ -220,17 +228,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
-        
-        
-        driverMsg("Create tags for the overriden system methods in user code.");
-        monitor.subTask("Create tags for overriden system methods");
-        TagImplementedSystemMethods.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
+                   
         /* used when we were cloning classes 
         driverMsg("Checking invoke special calls...");
         CheckInvokeSpecials.run();

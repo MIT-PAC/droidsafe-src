@@ -404,7 +404,11 @@ public class ErrorHandlingAnalysis {
             
             Set<StmtEdge> srcEdges = CHACallGraph.v(false).getSourcesForMethod(body.getMethod());           
             
-            if (srcEdges.isEmpty()) {                
+            //if only reflected edges and overrides api method
+            SootMethod method = body.getMethod();
+            
+            if (CHACallGraph.v(false).hasOnlyReflectedPreds(method) &&
+                    droidsafe.android.app.Hierarchy.isImplementedSystemMethod(method)) {                
                 //no preds, so this exception is not handled and can cause a crash, 
                 //so we label that as handled...
                 visited.put(probe, -1);
