@@ -40,11 +40,12 @@ import soot.jimple.IdentityStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
 import soot.jimple.NewExpr;
+import soot.jimple.ReturnStmt;
+import soot.jimple.ReturnVoidStmt;
 import soot.jimple.Stmt;
 import soot.jimple.ThrowStmt;
 import soot.toolkits.graph.ExceptionalUnitGraph;
 import soot.toolkits.graph.UnitGraph;
-import soot.toolkits.graph.pdg.EnhancedUnitGraph;
 import soot.toolkits.scalar.SimpleLocalDefs;
 import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.cg.StmtEdge;
@@ -203,7 +204,7 @@ public class ErrorHandlingAnalysis {
         } 
 
     }
-
+    
     public void run(IDroidsafeProgressMonitor monitor) {
         System.out.println("Error Handling Analysis...");
 
@@ -240,10 +241,11 @@ public class ErrorHandlingAnalysis {
                 try {
                     Body body = method.retrieveActiveBody();                
 
-                    Iterator<Unit> units = body.getUnits().iterator();
-                    while (units.hasNext()) {
-                        Unit current = units.next();
-
+                    Iterator<Unit> unitIt = body.getUnits().snapshotIterator();
+                                      
+                    while (unitIt.hasNext()) {
+                        Unit current = unitIt.next(); 
+                                
                         //check if current is a call to api call we are interested in
                         if (!(current instanceof Stmt)) 
                             continue;
@@ -333,8 +335,10 @@ public class ErrorHandlingAnalysis {
         }
 
 
-        if (Config.v().debug)
+        if (Config.v().debug) {
+            soot.options.Options.v().set_ignore_resolution_errors(false);
             writeAllAppClasses();
+        }
         out.close();
     }
 
@@ -398,7 +402,8 @@ public class ErrorHandlingAnalysis {
         Trap firstTrap = null;
 
         if (unitToTraps.get(stmt) != null) {
-            for (Trap trap : unitToTraps.get(stmt)) {                                                                        
+            for (Trap trap : unitToTraps.get(stmt)) {   
+                logger.debug("Testing trap: trap type {}, exception type {}", trap.getException(), exception);
                 if (Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(exception, trap.getException())) {
                     firstTrap = trap;
                     break;
@@ -423,12 +428,7 @@ public class ErrorHandlingAnalysis {
                 //so we label that as handled...
                 logger.debug("No preds and is an implemented system method, so handles by app exit: {}", method);
                 visited.put(probe, -1);
-                visiting.remove(probe);
-                try {
-                    throw new Exception();
-                } catch (Exception e) {
-                    logger.debug("Should exit", e);
-                }
+                visiting.remove(probe);              
                 return -1;
             }
 
@@ -467,10 +467,15 @@ public class ErrorHandlingAnalysis {
                 }
             }
         } else {  
-            List<Unit> trapUnits = getAllUnitsForCatch(body, firstTrap.getHandlerUnit());                        
-
+            logger.debug("Found trap: {}, first statement {}", firstTrap.getException(), firstTrap.getHandlerUnit());
+            Collection<Unit> trapUnits = getAllUnitsForCatch(body, firstTrap.getHandlerUnit());                        
+            
+            for (Unit u : trapUnits) {
+                logger.debug("\t{}", u);
+            }
+            
             //check to see if there are any possible thrown exceptions, track each throw the stack            
-            int retValue =  processThrownExceptions(body, trapUnits, visiting, visited, new HashSet<Body>(), depth, stack, debug);
+            int retValue =  searchForward(body, trapUnits.iterator(), visiting, visited, new HashSet<Body>(), depth, stack, debug);
             logger.debug("back from processThrownExceptions: {}", retValue);
             visited.put(probe, retValue);
             visiting.remove(probe);
@@ -482,17 +487,12 @@ public class ErrorHandlingAnalysis {
         return 1;
     }
 
+   
+    
     /**
-     * Given a list of units that represents the units of a trap (catch block), scan 
-     * the trap units for "throw" statements.  Use the pta to return the possible classes
-     * thrown by all the throw statements of the trap.
-     * 
-     * For each throw statement, recursively call findAllHandlers, to find the handlers for the 
-     * throw. Add the handler units to the passed around list of units.
-     * 
-     * Return false if we have exceeded the recursion depth limit during our search
+     * Who knows at this point.
      */
-    private int processThrownExceptions(Body body, Collection<Unit> trapUnits, 
+    private int searchForward(Body body, Iterator<Unit> trapUnits, 
                                         Set<StmtAndException> findTestVisiting,
                                         Map<StmtAndException, Integer> findTestvisited, 
                                         Set<Body> processThrownVisiting, int depth, 
@@ -516,9 +516,12 @@ public class ErrorHandlingAnalysis {
 
         processThrownVisiting.add(body);
 
-        for (Unit currentU : trapUnits) {
+        while (trapUnits.hasNext()) {
+            Unit currentU = trapUnits.next(); 
             Stmt current = (Stmt)currentU;
 
+            logger.debug("Reachable statement: {}", current);
+            
             if (current.containsInvokeExpr()) {
                 try {
                     //get targets of invoke expr
@@ -528,8 +531,7 @@ public class ErrorHandlingAnalysis {
                     for (StmtEdge<SootMethod> stmtEdge : targetEdges) {
                         SootMethod target = stmtEdge.getV2();
 
-                        //check for called api call
-                        //is this a uiMethod?
+                        
                         if (uiMethods.containsPoly(target)) {
                             logger.debug("Found ui method call in handler {}: {}\n",  body.getMethod(), current);
                             return -1;
@@ -545,7 +547,7 @@ public class ErrorHandlingAnalysis {
                             newStack.addAll(stack);
                             newStack.push(stmtEdge);
 
-                            int recurseVal = processThrownExceptions(targetBody, targetBody.getUnits(), 
+                            int recurseVal = searchForward(targetBody, targetBody.getUnits().snapshotIterator(), 
                                 findTestVisiting, findTestvisited, processThrownVisiting, depth+1, newStack, debug);                         
 
                             if (recurseVal < 1)
@@ -631,7 +633,7 @@ public class ErrorHandlingAnalysis {
         //so really all we care about is throw statment and method calls (the exceptions declared to be throws)
         Set<SootClass> possibleThrown = new LinkedHashSet<SootClass>();
 
-        UnitGraph unitGraph  = new EnhancedUnitGraph(containingBody);
+        UnitGraph unitGraph  = new ExceptionalUnitGraph(containingBody);
         SimpleLocalDefs simpleLocalDefs = new SimpleLocalDefs(unitGraph);
 
         for (Unit u : units) {
@@ -755,7 +757,7 @@ public class ErrorHandlingAnalysis {
         }
     }
 
-    static List<Unit> getAllUnitsForCatch(Body body, Unit startCatch) {
+    static Collection<Unit> getAllUnitsForCatch(Body body, Unit startCatch) {
         ExceptionalUnitGraph cfg = new ExceptionalUnitGraph(body);
         List<Unit> catchBlock = new LinkedList<Unit>();
         catchBlock.add(startCatch);
@@ -766,7 +768,7 @@ public class ErrorHandlingAnalysis {
 
         for (Unit current : reachableUnits) {
             boolean allColored = true;
-            for (Unit pred : cfg.getPredsOf(current)) {
+            for (Unit pred : cfg.getUnexceptionalPredsOf(current)) {
                 if (!reachableUnits.contains(pred)) {
                     allColored = false;
                     break;
@@ -784,9 +786,10 @@ public class ErrorHandlingAnalysis {
         if (reachable.contains(current)) 
             return;
 
+        //logger.debug("Adding reachable unit: {}", current);
         reachable.add(current);
 
-        for (Unit next : cfg.getSuccsOf(current)) {
+        for (Unit next : cfg.getUnexceptionalSuccsOf(current)) {
             getReachableUnits(cfg, next, reachable);
         }
     }

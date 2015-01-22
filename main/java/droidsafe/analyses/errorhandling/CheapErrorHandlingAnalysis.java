@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintStream;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -190,7 +191,7 @@ public class CheapErrorHandlingAnalysis {
 
                                     //for each trap, check if the exception is one we are interested in
                                     for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {
-                                        List<Unit> handlerUnits = findLocalHandler(body, ex, stmt);
+                                        Collection<Unit> handlerUnits = findLocalHandler(body, ex, stmt);
                                         if (handlerUnits != null) {
                                             //found a local handler
 
@@ -242,7 +243,7 @@ public class CheapErrorHandlingAnalysis {
      * Return true if exception is handled (see definition in method)
      * Return false if no patterns found that indicate a handled exception.
      */
-    private boolean exceptionHandled(SootMethod method, List<Unit> handlerUnits) {
+    private boolean exceptionHandled(SootMethod method, Collection<Unit> handlerUnits) {
         //find:
         //throw statement
         //ui call statements
@@ -293,7 +294,7 @@ public class CheapErrorHandlingAnalysis {
     /**
      * return null if we cannot find the handler locally
      */
-    private List<Unit> findLocalHandler(Body body, SootClass exception, Stmt stmt) {
+    private Collection<Unit> findLocalHandler(Body body, SootClass exception, Stmt stmt) {
 
         Map<Unit, List<Trap>> unitToTraps = ErrorHandlingAnalysis.getUnitToTrapMap(body);
 
@@ -301,7 +302,7 @@ public class CheapErrorHandlingAnalysis {
             for (Trap trap : unitToTraps.get(stmt)) {                                                                        
                 if (Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(exception, trap.getException())) {
                     //found trap
-                    List<Unit >handlerUnits = ErrorHandlingAnalysis.getAllUnitsForCatch(body, trap.getHandlerUnit());                        
+                    Collection<Unit >handlerUnits = ErrorHandlingAnalysis.getAllUnitsForCatch(body, trap.getHandlerUnit());                        
 
                     return handlerUnits;
                 }
