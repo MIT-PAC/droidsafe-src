@@ -22,6 +22,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.Hierarchy;
+import soot.Local;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -42,6 +43,9 @@ import soot.jimple.NewExpr;
 import soot.jimple.Stmt;
 import soot.jimple.ThrowStmt;
 import soot.toolkits.graph.ExceptionalUnitGraph;
+import soot.toolkits.graph.UnitGraph;
+import soot.toolkits.graph.pdg.EnhancedUnitGraph;
+import soot.toolkits.scalar.SimpleLocalDefs;
 import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.cg.StmtEdge;
 import droidsafe.analyses.cg.cha.CHACallGraph;
@@ -217,8 +221,8 @@ public class ErrorHandlingAnalysis {
 
         JimpleRelationships.reset();
         CHACallGraph.v(false);
-        
-                
+
+
 
         for (SootClass clz : Scene.v().getClasses()) {
 
@@ -337,14 +341,14 @@ public class ErrorHandlingAnalysis {
     private String formatMethod(SootMethodRef ref) {
         return formatByteCodeSignature(SootUtils.getBytecodeSignature(ref));
     }
-    
-    
+
+
     private String formatMethod(SootMethod method) {
         return formatByteCodeSignature(method.getBytecodeSignature());
     }
 
     private String formatByteCodeSignature(String byteCodeSignature) {
-       
+
         byteCodeSignature =  byteCodeSignature.substring(1, byteCodeSignature.length() - 1);
         String classSig = byteCodeSignature.substring(0, byteCodeSignature.indexOf(": "));
         classSig = classSig.replace('.', '/');
@@ -407,12 +411,12 @@ public class ErrorHandlingAnalysis {
             //could not find a trap in enclosing method for this exception
             //need to search up the stack...
             //find all calling statements
-            
+
             Set<StmtEdge> srcEdges = CHACallGraph.v(false).getSourcesForMethod(body.getMethod());           
-            
+
             //if only reflected edges and overrides api method
             SootMethod method = body.getMethod();
-            
+
             if (isThreadRun(method)  || (CHACallGraph.v(false).hasOnlyReflectedPreds(method) &&
                     droidsafe.android.app.Hierarchy.isImplementedSystemMethod(method))) {                
                 //no preds, so this exception is not handled and can cause a crash, 
@@ -427,7 +431,7 @@ public class ErrorHandlingAnalysis {
                 }
                 return -1;
             }
-                    
+
             for (StmtEdge<SootMethod> se : srcEdges) {
                 //if the stack is not empty then we are going down a called path from a catch
                 //so make sure we are going back up it
@@ -435,7 +439,7 @@ public class ErrorHandlingAnalysis {
                 if (!stack.isEmpty()) logger.debug("stack peek: {} ", stack.peek());
                 if (!stack.isEmpty() && !stack.peek().equals(se))
                     continue;
-                    
+
                 if (CHACallGraph.v(false).isReflectedEdge(se)) {
                     //pred is the result of a reflected call
                     //TODO: HACK!
@@ -444,13 +448,13 @@ public class ErrorHandlingAnalysis {
                     //not a reflected edge
                     if (se.getV1().isConcrete()) {
                         logger.debug("recursing through edge: {}", se);
-                        
+
                         //pop the stack since we are going back up in the stack
                         Stack<StmtEdge<SootMethod>> newStack = new Stack<StmtEdge<SootMethod>>();
                         newStack.addAll(stack);
-                        
+
                         if (!newStack.isEmpty()) newStack.pop();
-                        
+
                         int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
                             visiting, visited, depth + 1, newStack, debug);
 
@@ -466,7 +470,7 @@ public class ErrorHandlingAnalysis {
             List<Unit> trapUnits = getAllUnitsForCatch(body, firstTrap.getHandlerUnit());                        
 
             //check to see if there are any possible thrown exceptions, track each throw the stack            
-            int retValue =  processThrownExceptions(body, exception, trapUnits, visiting, visited, new HashSet<Body>(), depth, stack, debug);
+            int retValue =  processThrownExceptions(body, trapUnits, visiting, visited, new HashSet<Body>(), depth, stack, debug);
             logger.debug("back from processThrownExceptions: {}", retValue);
             visited.put(probe, retValue);
             visiting.remove(probe);
@@ -488,7 +492,7 @@ public class ErrorHandlingAnalysis {
      * 
      * Return false if we have exceeded the recursion depth limit during our search
      */
-    private int processThrownExceptions(Body body, SootClass exceptionClass, Collection<Unit> trapUnits, 
+    private int processThrownExceptions(Body body, Collection<Unit> trapUnits, 
                                         Set<StmtAndException> findTestVisiting,
                                         Map<StmtAndException, Integer> findTestvisited, 
                                         Set<Body> processThrownVisiting, int depth, 
@@ -509,9 +513,9 @@ public class ErrorHandlingAnalysis {
         //visiting this body in the current process thrown exception search
         if (processThrownVisiting.contains(body))
             return 1;
-        
+
         processThrownVisiting.add(body);
-        
+
         for (Unit currentU : trapUnits) {
             Stmt current = (Stmt)currentU;
 
@@ -519,11 +523,11 @@ public class ErrorHandlingAnalysis {
                 try {
                     //get targets of invoke expr
                     Set<StmtEdge<SootMethod>> targetEdges = CHACallGraph.v(false).getTargetEdgesForStmt(current);
-                    
+
                     //check called method for thrown exceptions
                     for (StmtEdge<SootMethod> stmtEdge : targetEdges) {
                         SootMethod target = stmtEdge.getV2();
-                        
+
                         //check for called api call
                         //is this a uiMethod?
                         if (uiMethods.containsPoly(target)) {
@@ -536,14 +540,14 @@ public class ErrorHandlingAnalysis {
                             } catch (Exception e) {
                                 continue;
                             }
-                            
+
                             Stack<StmtEdge<SootMethod>> newStack = new Stack<StmtEdge<SootMethod>>();
                             newStack.addAll(stack);
                             newStack.push(stmtEdge);
-                            
-                            int recurseVal = processThrownExceptions(targetBody, null, targetBody.getUnits(), 
+
+                            int recurseVal = processThrownExceptions(targetBody, targetBody.getUnits(), 
                                 findTestVisiting, findTestvisited, processThrownVisiting, depth+1, newStack, debug);                         
-                            
+
                             if (recurseVal < 1)
                                 return recurseVal;
                         } else if (target.isNative() || NativeMethodBuilder.v().wasNativeAppMethod(target)) {
@@ -573,7 +577,7 @@ public class ErrorHandlingAnalysis {
                 //search backwards for last def of op of throw
                 Stmt lastDefOfThrownOp = SootUtils.getPrevDef(body, throwStmt, throwStmt.getOp());
                 logger.debug("lastDefOfThrownOp: {}", lastDefOfThrownOp);
-                SootClass reThrownType = null;
+                Collection<SootClass> reThrownTypes = null;
 
                 if (lastDefOfThrownOp == null) {
                     //something we don't handle
@@ -582,43 +586,145 @@ public class ErrorHandlingAnalysis {
                 } else if (lastDefOfThrownOp instanceof IdentityStmt &&
                         ((IdentityStmt)lastDefOfThrownOp).getRightOp() instanceof CaughtExceptionRef) {
                     //rethrowing caught exception, use exception type of the search that got us here.
-                    reThrownType = exceptionClass;
+                    reThrownTypes = getPossibleThrownExceptions(body, getTryBlockForFirstTrapUnit(body, (IdentityStmt)lastDefOfThrownOp));
                 } else if (lastDefOfThrownOp instanceof AssignStmt &&
                         ((AssignStmt)lastDefOfThrownOp).getRightOp() instanceof NewExpr) {
                     //last def is an assignment to a new object
                     //grab class from type of new expression
                     Type type = ((NewExpr)((AssignStmt)lastDefOfThrownOp).getRightOp()).getType();
+                    reThrownTypes = new LinkedHashSet<SootClass>();
                     if (type instanceof RefType) {
-                        reThrownType = ((RefType)type).getSootClass();
+                        reThrownTypes.add(((RefType)type).getSootClass());
                     }                                        
                 } else {
                     logger.debug("Unknown last def of thrown exception: {}", lastDefOfThrownOp);
                 }
 
                 //don't know the type
-                if (reThrownType == null) {
+                if (reThrownTypes == null) {
                     logger.debug("Don't know type of re-thrown exception");
                     return 0;
                 }
 
-                if (!Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(reThrownType, throwableClass)) {
-                    logger.debug("Class of rethrown exception is not an exception type: {}", reThrownType);
+                for (SootClass reThrownType : reThrownTypes) {
+                    if (!Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(reThrownType, throwableClass)) {
+                        logger.debug("Class of rethrown exception is not an exception type: {}", reThrownType);
+                    }
+
+                    //stack does not change because we are not changing the called method, just start looking for 
+                    //exceptions                
+                    int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, findTestVisiting, 
+                        findTestvisited, depth + 1, stack, debug);
+
+                    if (recurseVal < 1)
+                        return recurseVal;
                 }
-
-                //stack does not change because we are not changing the called method, just start looking for 
-                //exceptions                
-                int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, findTestVisiting, 
-                    findTestvisited, depth + 1, stack, debug);
-
-                if (recurseVal < 1)
-                    return recurseVal;
 
             }            
         }  
 
         return 1;
     }
-    
+
+    private Set<SootClass> getPossibleThrownExceptions(Body containingBody, List<Unit> units) {
+        //loop over all units and see what they could possibly throw
+        //so really all we care about is throw statment and method calls (the exceptions declared to be throws)
+        Set<SootClass> possibleThrown = new LinkedHashSet<SootClass>();
+
+        UnitGraph unitGraph  = new EnhancedUnitGraph(containingBody);
+        SimpleLocalDefs simpleLocalDefs = new SimpleLocalDefs(unitGraph);
+
+        for (Unit u : units) {
+            Stmt stmt = (Stmt)u;
+
+            if (stmt instanceof ThrowStmt) {
+                ThrowStmt throwStmt = (ThrowStmt)stmt;
+                if (!(throwStmt.getOp() instanceof Local)) {
+                    logger.debug("Op of throw is not Local: {}", throwStmt.getOp());
+                    return null;
+                }
+
+                List<Unit> defUnits = simpleLocalDefs.getDefsOfAt((Local)throwStmt.getOp(), throwStmt);
+
+                for (Unit def : defUnits) {
+                    if (def instanceof AssignStmt &&
+                            ((AssignStmt)def).getRightOp() instanceof NewExpr &&
+                            ((NewExpr)((AssignStmt)def).getRightOp()).getType() instanceof RefType) {
+                        //last def is an assignment to a new object
+                        //grab class from type of new expression
+                        logger.debug("Found def of throw, assignment to new: {}", def);
+                        Type type = ((NewExpr)((AssignStmt)def).getRightOp()).getType();                      
+                        possibleThrown.add(((RefType)type).getSootClass());
+                    } else if (def instanceof IdentityStmt &&
+                            ((IdentityStmt)def).getRightOp() instanceof CaughtExceptionRef) {
+                        //last def is another @caughtexception
+                        logger.debug("Found def of throw, caught exception: {}", def);
+                        possibleThrown.addAll(getPossibleThrownExceptions(containingBody, getTryBlockForFirstTrapUnit(containingBody, (IdentityStmt)def)));
+                    } else {
+                        logger.debug("Don't support def of thrown exception op: {}", def);
+                        return null;
+                    }
+                }   
+
+            } else if (stmt.containsInvokeExpr()) {
+              //methods
+                InvokeExpr invoke = stmt.getInvokeExpr();
+                
+                for (SootMethod target : CHACallGraph.v(false).getTargetsForStmt(stmt)) {
+                    for (SootClass throwsEx : target.getExceptions()) {
+                        SootClass concrete = throwsEx;
+                        
+                        if (throwsEx.isAbstract() || throwsEx.isInterface())
+                            concrete = SootUtils.getCloseConcrete(throwsEx);
+                            
+                        possibleThrown.add(concrete);
+                        /*
+                        //add all concrete plus the type
+                      //don't really know the type, be conservative and for method calls find all implementors and subclasses
+                        List<SootClass> compatibleClasses;
+                        if (throwsEx.isInterface()) {
+                            compatibleClasses = Scene.v().getActiveHierarchy().getImplementersOf(throwsEx);
+                        } else {
+                            compatibleClasses = Scene.v().getActiveHierarchy().getSubclassesOfIncluding(throwsEx);
+                        }
+                        
+                        for (SootClass cc : compatibleClasses) {
+                            if (cc.isConcrete() && !cc.isInterface()) {
+                                possibleThrown.add(cc);
+                            }
+                        }
+                        */
+                    }
+                }
+            }
+        }
+
+        return possibleThrown;
+    }
+
+
+    private List<Unit> getTryBlockForFirstTrapUnit(Body b, IdentityStmt u) {
+        List<Unit> tryUnits = new LinkedList<Unit>();
+        boolean foundGTOneTrap = false;
+        for (Trap trap : b.getTraps()) {
+            if (trap.getHandlerUnit().equals(u)) {
+                foundGTOneTrap = true;                
+                Iterator<Unit> unitsIt = b.getUnits().iterator(trap.getBeginUnit(), b.getUnits().getPredOf(trap.getEndUnit()));
+                while (unitsIt.hasNext()) {
+                    tryUnits.add(unitsIt.next());
+                }                
+                
+            }
+        }
+        if (!foundGTOneTrap)
+            logger.debug("Could not find try block for trap first unit: {} in {}", u, b.getMethod()); 
+        logger.debug("Found associated try");
+        for (Unit c : tryUnits) {
+            logger.debug("{}", c);
+        }
+        return tryUnits;
+    }
+
     //assume the list of traps in jimple keeps the static ordering for multiple catch blocks
     static Map<Unit, List<Trap>> getUnitToTrapMap(Body body) {
         HashMap<Unit, List<Trap>> map = new HashMap<Unit, List<Trap>>();
@@ -726,8 +832,8 @@ public class ErrorHandlingAnalysis {
 
     boolean isThreadRun(SootMethod method) {
         return (SootUtils.getParents(method.getDeclaringClass()).contains(runnableClass)) && 
-            "void run()".equals(method.getSubSignature());    
+                "void run()".equals(method.getSubSignature());    
     }
-    
+
 }
 
