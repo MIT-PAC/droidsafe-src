@@ -36,7 +36,7 @@ public class JimpleRelationships {
     private HashMap<Stmt, SootMethod> stmtToMethod;
     /** Static singleton */
     private static JimpleRelationships v;
-    
+
     /** 
      * Return static singleton object.
      */
@@ -46,21 +46,21 @@ public class JimpleRelationships {
         }
         return v;
     }
-    
+
     /**
      * Reset underlying maps.  Used if there has been jimple transforms run.
      */
     public static void reset() {
         v = null;
     }
-    
+
     /**
      * Return set of all stmts in the program.
      */
     public Set<Stmt> getAllStmts() {
         return Collections.unmodifiableSet(stmtToMethod.keySet());
     }
-    
+
     /**
      * Regenerate underlying maps.
      */
@@ -71,61 +71,60 @@ public class JimpleRelationships {
         valueBoxToStmt = new HashMap<ValueBox, Stmt>();
         //build maps of relationships by iterating over all user classes:
         for (SootClass clz : Scene.v().getClasses()) {
+            if (clz.isPhantom() || clz.isInterface())
+                continue;
+
             for (SootMethod method : clz.getMethods()) {
-                if (!method.isConcrete()) 
+                if (!method.isConcrete() || method.isAbstract() || method.isPhantom() || method.isNative()) 
                     continue;
-
-                StmtBody stmtBody = null;
                 try {
-                	stmtBody = (StmtBody)method.retrieveActiveBody();
-                }
-                catch (Exception ex) {
-                	logger.info("Exception retrieving method body {}", ex);
-                	continue;
-                }
-                
-             // get body's unit as a chain
-                Chain units = stmtBody.getUnits();
+                    StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
 
-                Iterator stmtIt = units.iterator(); 
-                
-                while (stmtIt.hasNext()) {
-                    Stmt stmt = (Stmt)stmtIt.next();
-                    
-                    stmtToMethod.put(stmt, method);
-                    for (Object box : stmt.getUseAndDefBoxes()) {
-                        if (box instanceof ValueBox) 
-                            valueBoxToStmt.put((ValueBox)box, stmt);
-                            
-                        if (((ValueBox) box).getValue() instanceof Expr)
-                            exprToStmt.put((Expr)((ValueBox) box).getValue(), stmt);
-                    }
+                    // get body's unit as a chain
+                    Chain units = stmtBody.getUnits();
+
+                    Iterator stmtIt = units.iterator(); 
+
+                    while (stmtIt.hasNext()) {
+                        Stmt stmt = (Stmt)stmtIt.next();
+
+                        stmtToMethod.put(stmt, method);
+                        for (Object box : stmt.getUseAndDefBoxes()) {
+                            if (box instanceof ValueBox) 
+                                valueBoxToStmt.put((ValueBox)box, stmt);
+
+                            if (((ValueBox) box).getValue() instanceof Expr)
+                                exprToStmt.put((Expr)((ValueBox) box).getValue(), stmt);
+                        }
+                    }                
+                } catch (Exception e) {
+                    logger.debug("Error in JimpleRelationships. Ignoring: {} {}", method, e);
                 }
             }
         }
     } 
-    
+
     /**
      * Given a value box in the scene, return the enclosing statment
      */
     public Stmt getEnclosingStmt(ValueBox box) {
         return valueBoxToStmt.get(box);
     }
-    
+
     /**
      * Given an expr in the Scene, return the enclosing statement.
      */
     public Stmt getEnclosingStmt(Expr expr) {
         return exprToStmt.get(expr);
     }
-    
+
     /** 
      * Given a statement in the Scene, return the enclosing statement.
      */
     public SootMethod getEnclosingMethod(Stmt stmt) {
         return stmtToMethod.get(stmt);
     }
-    
+
     /**
      * Given an expression in the Scene, return the enclosing method.
      */

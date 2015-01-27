@@ -1,4 +1,4 @@
-package droidsafe.analyses.collapsedcg;
+package droidsafe.analyses.cg;
 
 import org.jgrapht.graph.DefaultEdge;
 

@@ -19,8 +19,8 @@ import soot.jimple.Stmt;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
-import droidsafe.analyses.collapsedcg.CollaspedCallGraph.CallToTarget;
+import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph.CallToTarget;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
 

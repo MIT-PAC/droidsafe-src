@@ -45,7 +45,7 @@ public class Permissions {
 	}
 	
 	private Permissions() {
-		soot.Hierarchy h = new soot.Hierarchy();
+		soot.Hierarchy h = Scene.v().getActiveHierarchy();
 		methodToPerms = new LinkedHashMap<SootMethod, Set<String>>();
 		readMethodPerms(h);
 		//read method and their permissions

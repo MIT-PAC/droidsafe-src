@@ -345,23 +345,28 @@ public class ObjectSensitivityCloner {
 
             while (stmtIt.hasNext()) {
                 Stmt stmt = (Stmt)stmtIt.next();
-                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
-                    SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
-                    if (!PTABridge.v().isReachableMethod(target))
-                        continue;
+                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {           
+                    //SootMethod target = ((StaticInvokeExpr)stmt.getInvokeExpr()).getMethod();
+                    Set<SootMethod> targets = PTABridge.v().getTargetsInsNoContext(stmt);
 
-                    //if it is a call in a user method
-                    //or if it is a call to a java.util or java.lang method anywhere
-                    //then clone
-                    if (!API.v().isSystemMethod(method) ||
-                            target.getDeclaringClass().getName().startsWith("java.util") ||
-                            target.getDeclaringClass().getName().startsWith("java.lang") ||
-                            target.getDeclaringClass().getName().startsWith("java.net")) {
-                        if (!map.containsKey(target)) {
-                            map.put(target, new LinkedList<StaticInvokeExpr>());
-                        }  
-                        map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
-                    }                                        
+                    for (SootMethod target : targets) {
+                        //never clone static inits
+                        if (SootUtils.isStaticInit(target))
+                            continue;
+                        
+                        //if it is a call in a user method
+                        //or if it is a call to a java.util or java.lang method anywhere
+                        //then clone
+                        if (!API.v().isSystemMethod(method) ||
+                                target.getDeclaringClass().getName().startsWith("java.util") ||
+                                target.getDeclaringClass().getName().startsWith("java.lang") ||
+                                target.getDeclaringClass().getName().startsWith("java.net")) {
+                            if (!map.containsKey(target)) {
+                                map.put(target, new LinkedList<StaticInvokeExpr>());
+                            }  
+                            map.get(target).add(((StaticInvokeExpr)stmt.getInvokeExpr()));
+                        }                                  
+                    }
                 }
             }
         }
@@ -407,9 +412,11 @@ public class ObjectSensitivityCloner {
 
                     logger.info("Cloning static method {} in {}", newMeth, si);
                     clonesAdded++;
+
                 }
             } catch (Exception e) {
                 logger.debug("Error during cloning static method: {}", method, e);
+
             }
         }
 

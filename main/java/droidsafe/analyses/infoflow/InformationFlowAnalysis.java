@@ -62,7 +62,6 @@ import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.EdgePredicate;
 import soot.jimple.toolkits.callgraph.Filter;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
-import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
 import droidsafe.analyses.pta.PTABridge;
@@ -1589,12 +1588,12 @@ class AllocNodeFieldsReadAnalysis {
         @Override
         public boolean want(Edge e) {
             if ( e.tgt().isStatic() &&
-                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.tgt())) {
                 return false;
             }
 
             if ( e.src().isStatic() &&
-                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.src())) {
                 return false;
             }
 
@@ -1700,12 +1699,12 @@ class AllocNodesReadAnalysis {
         @Override
         public boolean want(Edge e) {
             if ( e.tgt().isStatic() &&
-                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.tgt())) {                    
                 return false;
             }
 
             if ( e.src().isStatic() &&
-                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.src())) {                                        
                 return false;
             }
 
@@ -1800,12 +1799,12 @@ class FieldsReadAnalysis {
         @Override
         public boolean want(Edge e) {
             if ( e.tgt().isStatic() &&
-                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.tgt())) {                                                        
                 return false;
             }
 
             if ( e.src().isStatic() &&
-                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.src())) {                                        
                 return false;
             }
 
@@ -1923,12 +1922,12 @@ class InjectedValuesAnalysis {
         @Override
         public boolean want(Edge e) {
             if ( e.tgt().isStatic() &&
-                    e.tgt().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.tgt())) {                          
                 return false;
             }
 
             if ( e.src().isStatic() &&
-                    e.src().getSubSignature().equals( VirtualCalls.v().sigClinit )) {
+                    SootUtils.isStaticInit(e.src())) {      
                 return false;
             }
 

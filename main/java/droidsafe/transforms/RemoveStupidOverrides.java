@@ -54,9 +54,13 @@ public class RemoveStupidOverrides {
             // Do not touch lang classes
             if (!clzName.startsWith("java.lang")) {
                 SootMethod[] methods = clz.getMethods().toArray(new SootMethod[0]);
-                for (SootMethod meth : methods) {
+                for (SootMethod meth : methods) {                    
                     if (meth.isConcrete() && !meth.isStatic() && !meth.isConstructor())
-                        transformer.removeMethodIfStupid(clz, meth);
+                        try {
+                            transformer.removeMethodIfStupid(clz, meth);
+                        } catch (Exception e) {
+                            logger.debug("Error in RemoveStupidOverrides. Ignoring...", e);
+                        }
                 }
             }
         }
@@ -117,7 +121,7 @@ public class RemoveStupidOverrides {
         if ((units[units.length - 2] instanceof Stmt) && ((Stmt)units[units.length -2]).containsInvokeExpr()) {
             InvokeExpr invoke = ((Stmt)units[units.length -2]).getInvokeExpr();
             if (invoke instanceof SpecialInvokeExpr &&
-                    method.getSubSignature().equals(invoke.getMethod().getSubSignature()) &&
+                    method.getSubSignature().equals(invoke.getMethodRef().getSubSignature()) &&
                     ((SpecialInvokeExpr) invoke).getBase().equals(stmtBody.getThisLocal())) {
                 //check that each arg for the super call is the argument from this method, in the right order
                 for (int i = 0; i < invoke.getArgCount(); i++) {

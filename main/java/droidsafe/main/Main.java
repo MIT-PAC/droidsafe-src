@@ -2,7 +2,9 @@ package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
-import droidsafe.analyses.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
+import droidsafe.analyses.errorhandling.CheapErrorHandlingAnalysis;
+import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.interapp.GenerateInterAppSourceFlows;
@@ -114,8 +116,6 @@ public class Main {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    private static IDroidsafeProgressMonitor sMonitor;
-
     private static Date startTime;
 
     private static final String COMPLETION_FILE_NAME = "completed.log";
@@ -136,13 +136,27 @@ public class Main {
 
         // grab command line args and set some globals
         Config.v().init(args);
+        
+        IDroidsafeProgressMonitor monitor = new DroidsafeDefaultProgressMonitor();
+        
+        common_init(monitor);
 
-        run(new DroidsafeDefaultProgressMonitor());
+        //run the main target
+        if (Config.v().target.equals("errorhandling")) {
+            run_errorhandling(monitor);
+        } else if (Config.v().target.equals("specdump")) {
+            run_specdump(monitor);
+        } else {
+            logger.error("Unknown DroidSafe run target: {}", Config.v().target);
+        }
+        
     }
 
-    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
-        sMonitor = monitor;
-
+    /**
+     * Perform initialization tasks common to all targets.
+     */
+    private static DroidsafeExecutionStatus common_init(IDroidsafeProgressMonitor monitor) {
+        
         //get current date time with Date()
         startTime = new Date();
 
@@ -176,7 +190,24 @@ public class Main {
         CallLocationModel.reset();
         ObjectSensitivityCloner.reset();
         RCFG.reset();
-
+        
+        driverMsg("Create tags for the overriden system methods in user code.");
+        monitor.subTask("Create tags for overriden system methods");
+        TagImplementedSystemMethods.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        
+        return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    public static DroidsafeExecutionStatus run_errorhandling(IDroidsafeProgressMonitor monitor) {
+        ErrorHandlingAnalysis.v().run(monitor);
+        return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    public static DroidsafeExecutionStatus run_specdump(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         //used to create the eng 4a concrete methods list
         //dumpConcreteMethods();
         
@@ -188,7 +219,7 @@ public class Main {
             }
         }
 
-
+        
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
@@ -203,8 +234,9 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
+        }         
+        
+        
         driverMsg("Implementing native methods.");
         monitor.subTask("Implementing native methods.");
         NativeMethodBuilder.v().run();
@@ -212,17 +244,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
-        
-        
-        driverMsg("Create tags for the overriden system methods in user code.");
-        monitor.subTask("Create tags for overriden system methods");
-        TagImplementedSystemMethods.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
+                   
         /* used when we were cloning classes 
         driverMsg("Checking invoke special calls...");
         CheckInvokeSpecials.run();
@@ -283,7 +305,12 @@ public class Main {
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        
+        if (Config.v().target.equals("errorhandling")) {
+            ErrorHandlingAnalysis.v().run(monitor);
+            return DroidsafeExecutionStatus.OK_STATUS;
+        }
+        
         //run jsa after we inject strings from XML values and layout
         //does not need a pta run before
         driverMsg("Starting String Analysis...");
@@ -907,7 +934,7 @@ public class Main {
     /**
      * Dump jimple files for all application classes.
      */
-    private static void writeAllAppClasses() {
+    public static void writeAllAppClasses() {
         for (SootClass clz : Scene.v().getClasses()) {
             if (clz.isApplicationClass() /* && Project.v().isSrcClass(clz.toString()) */) {
                 SootUtils.writeByteCodeAndJimple(

@@ -89,33 +89,33 @@ public class CallBackModeling {
 
         //call the methods that we have created at each allocation
         callFallBackMethods();
-        
+
         //check for components that are not created anywhere
         findAndCreateUnallocedComponents();
     }
-    
+
     /**
      * Find component classes in user code that was not declared in the manifest, and create fields for
      * them in the harness.
      */
     private void findAndCreateUnallocedComponents() {
         List<SootClass> sortedClasses = new ArrayList<SootClass>(Scene.v().getClasses());
-        
+
         Collections.sort(sortedClasses, new Comparator<SootClass>() {
             @Override
             public int compare(SootClass o1, SootClass o2) {
                 return o1.getName().compareTo(o2.getName());
             }
-            
+
         });
-        
+
         for (SootClass clz : sortedClasses) {
             if (!clz.isInterface() && Hierarchy.inheritsFromAndroidBroadcastReceiver(clz) && !Harness.v().hasCreatedField(clz) &&
                     Project.v().isSrcClass(clz) && Resources.v().getManifest().isEnabled(clz)) {
                 //found component that is not allocated, should we call is??
                 logger.warn("Found BroadcastReceiver not in manifest and not created in code: {}. Adding modeling.", 
                     clz);                               
-                
+
                 Harness.v().createComponentsNotInManifest(clz);
             }
         }
@@ -137,7 +137,7 @@ public class CallBackModeling {
             List<SootMethod> toCheck = new LinkedList<SootMethod>();
             toCheck.addAll(clz.getMethods());
             toCheck.addAll(SootUtils.getInheritedMethods(clz));
-      
+
             for (SootMethod method : toCheck) {
                 //don't worry about constructors or static methods
                 if (method.isConstructor() || method.isStatic())
@@ -149,10 +149,10 @@ public class CallBackModeling {
                         PTABridge.v().isReachableMethod(method)) {              
                     continue;
                 }
-                    
-                
+
+
                 if (!(Hierarchy.isImplementedSystemMethod(method) || API.v().isIPCCallback(method)))
-                        continue;
+                    continue;
 
                 //find system method that is inherited
                 SootMethod closetSystemParent = Hierarchy.closestOverridenSystemMethodNoInterfaces(method);
@@ -167,7 +167,7 @@ public class CallBackModeling {
                     for (SootClass parent : SootUtils.getParents(clz)) {
                         if (!API.v().isSystemClass(parent))
                             continue;
-                        
+
                         if (parent.isInterface() && 
                                 parent.declaresMethod(method.getSubSignature()) /*&&
                                 !API.v().isDSVerifiedMethod(parent.getMethod(method.getSubSignature()))*/) {
@@ -175,15 +175,15 @@ public class CallBackModeling {
                             break;
                         }
                     }
-                    
+
                 } else {
                     //don't add fallback callback modeling the method is verified, but if the class is a 
                     //component, then we cannot rely on the verified tag, so fake anyway
                     //if (!API.v().isDSVerifiedMethod(closetSystemParent) || Hierarchy.isAndroidComponentClass(clz))
-                    
+
                     shouldFake = true;
                 }
-                
+
                 if (API.v().isAIDLCallback(method)) 
                     shouldFake = true; 
 
@@ -228,7 +228,7 @@ public class CallBackModeling {
         JimpleBody body = (JimpleBody)fallBackMethod.getActiveBody();
         Chain<Unit> units = body.getUnits();
         Local thisLocal = callbackMethodToThisLocal.get(fallBackMethod);
-     
+
         for (SootMethod callMe : methods) {
             InvokeExpr invoke = createCallFakingArgs(callMe, body, thisLocal);
 
@@ -256,47 +256,50 @@ public class CallBackModeling {
             for (SootMethod method : clz.getMethods()) {
                 if (method.isPhantom() || method.isAbstract() || !method.isConcrete())
                     continue;
+                try {
+                    Body body = method.getActiveBody();
+                    StmtBody stmtBody = (StmtBody)body;
+                    Chain units = stmtBody.getUnits();
+                    Iterator stmtIt = units.snapshotIterator();
 
-                Body body = method.getActiveBody();
-                StmtBody stmtBody = (StmtBody)body;
-                Chain units = stmtBody.getUnits();
-                Iterator stmtIt = units.snapshotIterator();
+                    while (stmtIt.hasNext()) {
+                        Stmt stmt = (Stmt)stmtIt.next();
+                        if (allocAlreadyConsidered.contains(stmt))
+                            continue;
 
-                while (stmtIt.hasNext()) {
-                    Stmt stmt = (Stmt)stmtIt.next();
-                    if (allocAlreadyConsidered.contains(stmt))
-                        continue;
+                        if (stmt instanceof AssignStmt) {
+                            AssignStmt assign = (AssignStmt) stmt;
+                            if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
+                                NewExpr newExpr = (NewExpr) assign.getRightOp();
+                                SootClass classWithFallBackMethod = newExpr.getBaseType().getSootClass();
+                                if (classToCallbackMethod.containsKey(classWithFallBackMethod)) {
+                                    //find constructor
+                                    Set<Local> local = new HashSet<Local>();
+                                    local.add((Local)assign.getLeftOp());
 
-                    if (stmt instanceof AssignStmt) {
-                        AssignStmt assign = (AssignStmt) stmt;
-                        if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
-                            NewExpr newExpr = (NewExpr) assign.getRightOp();
-                            SootClass classWithFallBackMethod = newExpr.getBaseType().getSootClass();
-                            if (classToCallbackMethod.containsKey(classWithFallBackMethod)) {
-                                //find constructor
-                                Set<Local> local = new HashSet<Local>();
-                                local.add((Local)assign.getLeftOp());
+                                    Stmt consCall = TransformsUtils.findConstructorCall(method, 
+                                        (Stmt)units.getSuccOf(assign), 
+                                        local);
 
-                                Stmt consCall = TransformsUtils.findConstructorCall(method, 
-                                    (Stmt)units.getSuccOf(assign), 
-                                    local);
+                                    if (consCall != null) {
+                                        Local receiver = (Local)((SpecialInvokeExpr)consCall.getInvokeExpr()).getBase();
+                                        //create call on local with no args 
+                                        Stmt fallBackCall = Jimple.v().newInvokeStmt(
+                                            Jimple.v().newVirtualInvokeExpr(receiver, 
+                                                classToCallbackMethod.get(classWithFallBackMethod).makeRef()));
 
-                                if (consCall != null) {
-                                    Local receiver = (Local)((SpecialInvokeExpr)consCall.getInvokeExpr()).getBase();
-                                    //create call on local with no args 
-                                    Stmt fallBackCall = Jimple.v().newInvokeStmt(
-                                        Jimple.v().newVirtualInvokeExpr(receiver, 
-                                            classToCallbackMethod.get(classWithFallBackMethod).makeRef()));
-
-                                    units.insertAfter(fallBackCall, consCall);
-                                    allocAlreadyConsidered.add(assign);
-                                    calledFallback.add(classWithFallBackMethod);
-                                } else {
-                                    logger.warn("Error finding constructor call for class with fall back modeling: {} {}", clz, assign);
+                                        units.insertAfter(fallBackCall, consCall);
+                                        allocAlreadyConsidered.add(assign);
+                                        calledFallback.add(classWithFallBackMethod);
+                                    } else {
+                                        logger.warn("Error finding constructor call for class with fall back modeling: {} {}", clz, assign);
+                                    }
                                 }
                             }
                         }
                     }
+                } catch (Exception e) {
+                    logger.debug("Error in fallback callback modeling: {} {}", e, method);
                 }
             }
         }
@@ -408,7 +411,7 @@ public class CallBackModeling {
         List<Stmt> consCalls = TransformsUtils.getConstructorCall(body, argLocal, RefType.v(clz));
         for (Stmt consCall : consCalls)
             body.getUnits().add(consCall);
-        
+
         return argLocal;
     }
 
