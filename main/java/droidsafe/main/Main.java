@@ -116,8 +116,6 @@ public class Main {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    private static IDroidsafeProgressMonitor sMonitor;
-
     private static Date startTime;
 
     private static final String COMPLETION_FILE_NAME = "completed.log";
@@ -138,13 +136,27 @@ public class Main {
 
         // grab command line args and set some globals
         Config.v().init(args);
+        
+        IDroidsafeProgressMonitor monitor = new DroidsafeDefaultProgressMonitor();
+        
+        common_init(monitor);
 
-        run(new DroidsafeDefaultProgressMonitor());
+        //run the main target
+        if (Config.v().target.equals("errorhandling")) {
+            run_errorhandling(monitor);
+        } else if (Config.v().target.equals("specdump")) {
+            run_specdump(monitor);
+        } else {
+            logger.error("Unknown DroidSafe run target: {}", Config.v().target);
+        }
+        
     }
 
-    public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
-        sMonitor = monitor;
-
+    /**
+     * Perform initialization tasks common to all targets.
+     */
+    private static DroidsafeExecutionStatus common_init(IDroidsafeProgressMonitor monitor) {
+        
         //get current date time with Date()
         startTime = new Date();
 
@@ -187,11 +199,15 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
         
-        if (Config.v().target.equals("errorhandling")) {
-            ErrorHandlingAnalysis.v().run(monitor);
-            return DroidsafeExecutionStatus.OK_STATUS;
-        }
-
+        return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    public static DroidsafeExecutionStatus run_errorhandling(IDroidsafeProgressMonitor monitor) {
+        ErrorHandlingAnalysis.v().run(monitor);
+        return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    public static DroidsafeExecutionStatus run_specdump(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         //used to create the eng 4a concrete methods list
         //dumpConcreteMethods();
         
