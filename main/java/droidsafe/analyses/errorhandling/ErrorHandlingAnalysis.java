@@ -265,7 +265,7 @@ public class ErrorHandlingAnalysis {
 
                                 if (connectionMethods.containsPoly(target)) {
                                     logger.debug("Found invoke in try block of connection method: {} {} {}", method, stmt, target);
-
+                                 
                                     //for each trap, check if the exception is one we are interested in
                                     for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {
                                         int retValue = 
@@ -511,6 +511,7 @@ public class ErrorHandlingAnalysis {
         }
 
         //visiting this body in the current process thrown exception search
+        //TODO, this needs to change
         if (processThrownVisiting.contains(body))
             return 1;
 
