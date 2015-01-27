@@ -409,7 +409,7 @@ public class RequiredModeling {
                 if (resolved == null || resolved.isEmpty()) 
                     fw.write(String.format
                         ("No valid allocations for receiver of %s of type %s in %s (%s).\n\n",
-                            iie.getMethod(), iie.getBase().getType(), m, 
+                            iie.getMethodRef(), iie.getBase().getType(), m, 
                             SootUtils.getSourceLocation(stmt, m.getDeclaringClass())));
             }
         }

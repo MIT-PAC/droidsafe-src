@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.Unit;
 import soot.jimple.Stmt;
 import droidsafe.android.system.API;
@@ -148,7 +149,7 @@ public class SourceCallChainInfo implements Comparable<SourceCallChainInfo> {
         String sig = method.getSignature();
         fp.printf ("%s  %s,\n", indent, json_field ("signature", sig));
         if (stmt != null) {
-        	SootMethod invoke = stmt.getInvokeExpr().getMethod();
+        	SootMethodRef invoke = stmt.getInvokeExpr().getMethodRef();
         	String invokeSig = invoke.getSignature();
         	if (!invokeSig.equals(sig)) {
         		fp.printf ("%s  %s,\n", indent, json_field ("source-signature", invokeSig));

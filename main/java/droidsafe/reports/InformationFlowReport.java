@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.jimple.InvokeStmt;
 import soot.jimple.Stmt;
 import droidsafe.android.app.Project;
@@ -139,7 +140,7 @@ public class InformationFlowReport {
                             if (locationTag != null)
                                 lineNumber = locationTag.toString();
 
-                            SootMethod method = stmt.getInvokeExpr().getMethod();
+                            SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
                             tmpBuilder =  new StringBuilder();
                             tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
                                     method, slash, source.getKey(), slash, lineNumber, "RECEIVER"));
@@ -163,7 +164,7 @@ public class InformationFlowReport {
                                 if (locationTag != null)
                                         lineNumber = locationTag.toString();
 
-                                SootMethod method = stmt.getInvokeExpr().getMethod();
+                                SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
 
                                 tmpBuilder =  new StringBuilder();
                                 tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 

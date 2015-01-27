@@ -20,7 +20,6 @@ import droidsafe.analyses.TestPTA;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.analyses.value.VAStats;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
@@ -412,21 +411,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
-        if (Config.v().dumpVAStats) {
-            driverMsg("Dumping Value Analysis Stats");
-            monitor.subTask("Dumping Value Analysis Stats");
-            StopWatch vaStatsTimer = new StopWatch();
-            vaStatsTimer.start();
-            VAStats.run();
-            vaStatsTimer.stop();
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-            driverMsg("Finished Dumping Value Analysis Stats: " + vaStatsTimer.toString());
-        }
-
+      
         // print out what modeling is required for this application
         monitor.subTask("Required Modeling");
         RequiredModeling.run();

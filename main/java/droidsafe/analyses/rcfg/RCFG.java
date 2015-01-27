@@ -380,50 +380,6 @@ public class RCFG  {
         }
     }
 
-
-    /**
-     * Find and return a string of all invoke statements that could invoke an API call.
-     */
-    private String checkForCompleteness(SootMethod src) {
-
-        if (!src.isConcrete())
-            return "";
-
-        if (Project.v().isLibClass(src.getDeclaringClass().toString()))
-            return "";
-
-        StringBuilder strBuilder = new StringBuilder();
-        StmtBody stmtBody = null;
-        try {
-        	stmtBody = (StmtBody)src.retrieveActiveBody();
-        }
-        catch (Exception ex) {
-        	logger.info("Exception retrieving method body {}", ex);
-        	return "";
-        }
-
-        // get body's unit as a chain
-        Chain<Unit> units = stmtBody.getUnits();
-
-        // get a snapshot iterator of the unit since we are going to
-        // mutate the chain when iterating over it.
-        Iterator<Unit> stmtIt = units.snapshotIterator();
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-            if (!stmt.containsInvokeExpr())
-                continue;
-            InvokeExpr invokeExpr = stmt.getInvokeExpr();
-
-            SootMethod method = invokeExpr.getMethod();
-
-            if (API.v().isSensitiveAction(method))
-                strBuilder.append("\t" + method + "\n");
-        }
-
-        return strBuilder.toString();
-    }
-
     /**
      * Loop over methods in the application we did not hit, because the analysis thinks they
      * are unreachable, and inform the user of any api calls in unreachable methods.
