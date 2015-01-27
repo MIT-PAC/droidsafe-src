@@ -98,7 +98,7 @@ public class ICCMap {
             try {
                 if (genStmt.containsInvokeExpr()) {
                     InvokeExpr ie = genStmt.getInvokeExpr();
-                    this.signature = ie.getMethodRef().resolve().getSignature();
+                    this.signature = ie.getMethodRef().getSignature();
                 } else {
                     this.signature = ""; 
                 }
