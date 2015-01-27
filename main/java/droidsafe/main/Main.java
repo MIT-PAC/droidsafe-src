@@ -3,7 +3,6 @@ package droidsafe.main;
 import au.com.bytecode.opencsv.CSVWriter;
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
-import droidsafe.analyses.errorhandling.CheapErrorHandlingAnalysis;
 import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
