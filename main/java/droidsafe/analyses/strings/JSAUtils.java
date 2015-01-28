@@ -170,7 +170,7 @@ public class JSAUtils {
                         if (stmt.containsInvokeExpr()) {
                             boolean containsHotspot = false;
                             InvokeExpr expr = stmt.getInvokeExpr();
-                            SootMethod tgt = expr.getMethod();
+                            SootMethod tgt = null;
                             //find first system method
                             Iterator<Edge> edges = cg.edgesOutOf(stmt);                            
                             while (edges.hasNext() && !containsHotspot) {
