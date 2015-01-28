@@ -15,6 +15,7 @@ import droidsafe.analyses.value.IntentUtils;
 import droidsafe.analyses.value.ResolvedExplicitIntent;
 import droidsafe.analyses.value.UnresolvedIntent;
 import droidsafe.analyses.value.VAModel;
+import droidsafe.analyses.value.VAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
@@ -79,7 +80,8 @@ public class ServiceBindTransform implements VATransform {
         boolean noInAppTarget = false;
         Set<SootField> inAppTargets = new HashSet<SootField>();
         
-        for (IAllocNode intentNode : intentNodes) {
+        for (IAllocNode intentNode : intentNodes) { 
+            
             IntentResolutionStats.v().intentObjects++;
             
             Set<SootField> targetHarnessFields = IntentUtils.v().getIntentTargetHarnessFields(AndroidComponents.SERVICE, stmt, callee, intentNode);

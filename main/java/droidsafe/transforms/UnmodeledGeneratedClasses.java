@@ -18,6 +18,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.transforms.objsensclone.ClassCloner;
+import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.SootUtils;
 import soot.ArrayType;
 import soot.Body;
@@ -47,6 +48,10 @@ public class UnmodeledGeneratedClasses {
 
     private static UnmodeledGeneratedClasses v = null;
 
+    /** if true, then when adding a dummy class, add implementors up to the number specified by MAX_IMPLEMENTORS_TO_ADD */
+    private static final boolean ADD_SUBS_AND_IMPLEMENTORS = true;
+    private static final int MAX_SUBS_AND_IMPLEMENTORS_TO_ADD = 20;
+
     public static final String DUMMIES_CLASS_NAME = Project.DS_GENERATED_CLASSES_PREFIX + "DroidSafeDummies";
 
     public static final String UNKNOWN_TAINT_METHOD_PREFIX = "getUnmodeledTaint";
@@ -61,6 +66,8 @@ public class UnmodeledGeneratedClasses {
 
     private SootMethod dummyInit;
 
+    private SootField dummyObjectField;
+
     private JimpleBody dummyInitBody;
 
     private Stmt addBefore;
@@ -68,7 +75,7 @@ public class UnmodeledGeneratedClasses {
     public static int localID = 0;
 
     private Set<SootClass> classesAdded;
-    
+
     private SootClass lastClonedClass;
 
     public static void reset() {
@@ -115,6 +122,11 @@ public class UnmodeledGeneratedClasses {
         Scene.v().loadClass(dummyClass.getName(), SootClass.BODIES);
         dummyClass.setApplicationClass();    
 
+
+        dummyObjectField = new SootField(DUMMY_FIELD_PREFIX + "_OBJ_" + localID, 
+            RefType.v("java.lang.Object"), Modifier.PUBLIC | Modifier.STATIC);
+        dummyClass.addField(dummyObjectField);     
+
         //create the dummy init methods called by harness
         List<Type> args = new LinkedList<Type>();
         dummyInit = new SootMethod("dummyInit", 
@@ -139,9 +151,9 @@ public class UnmodeledGeneratedClasses {
     }
 
     private SootField addPrimitive(PrimType type) {
-        
+
         String suffix = Character.toUpperCase(type.toString().charAt(0)) + type.toString().substring(1);
-        
+
         SootField field = new SootField(DUMMY_FIELD_PREFIX + suffix + localID, type, Modifier.PUBLIC | Modifier.STATIC);
 
         dummyClass.addField(field);
@@ -164,7 +176,7 @@ public class UnmodeledGeneratedClasses {
                 ));
 
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
-        
+
         return field;
     }
 
@@ -173,14 +185,14 @@ public class UnmodeledGeneratedClasses {
         JimpleBody body = dummyInitBody;
 
         Value baseValue = getSootFieldForType(baseType);
-
-        if (baseValue == null)
+        
+        if (baseValue == null || baseValue.equals(NullConstant.v()))
             return null;
 
         SootField field = new SootField(DUMMY_FIELD_PREFIX + type.getElementType().toString().replace(".", "_") + "_array" + localID, 
             type, Modifier.PUBLIC | Modifier.STATIC);
         dummyClass.addField(field);
-        
+
         //create a local for the field reference
         Local dummyLocal = Jimple.v().newLocal("_$TU" + localID++, baseValue.getType());
         body.getLocals().add(dummyLocal);
@@ -220,21 +232,21 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newAssignStmt(
             Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
             dummyLocal)); 
-        
+
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), arrayLocal));
-        
+
         return field;
 
     }
 
     private SootField addStringType(RefType type) {
         SootClass clz = type.getSootClass();
-      
+
         //if character sequence then replace with String
         if (Scene.v().getSootClass("java.lang.CharSequence").equals(clz)) {
             clz = Scene.v().getSootClass("java.lang.String");
         }
-        
+
         //field and add creation of object
         if (!clz.declaresMethod(noArgConsSubSig)) {
             logger.error("Error during fallback modeling. Class {} does not have a no arg constructor.", clz);
@@ -256,22 +268,21 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newAssignStmt(local, Jimple.v().newNewExpr(clz.getType())));
         addStmt(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, clz.getMethod(noArgConsSubSig).makeRef())));
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
-        
+
         return field;
     }
-    
+
     public SootClass getLastCloneCreated() {
         return lastClonedClass;
     }
-    
+
     /**
-     * Add a unmodeled object in the DroidSafeDummies generated class.  Create a cloned type of the 
-     * given type and allocate an object of the cloned type.  Tag all methods of the cloned type with 
-     * the given source info kind.  Do not check to see if another object of the type has been created, and
-     * do not cache this object / field.
+     * Create an object and a new field to reference that object.  For the object type, find the first 
+     * concrete sub class or implementor of type (or type itself if concrete).
      */
-    public SootField addRefType(RefType type, InfoKind unmodeledFlowType, boolean deepClone) {
+    public SootField addRefTypeWithNewField(RefType type, InfoKind unmodeledFlowType, boolean deepClone) {
         SootClass clz = type.getSootClass();
+        clz = ClassCloner.getClonedClassFromClone(clz);
         //if an interface, find a direct implementor of and instantiate that...
         if (!clz.isConcrete()) {
             clz = SootUtils.getCloseConcrete(clz);
@@ -285,6 +296,70 @@ public class UnmodeledGeneratedClasses {
             return null;
         }
 
+        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_") + localID, 
+            type, Modifier.PUBLIC | Modifier.STATIC);
+        dummyClass.addField(field);
+        
+        addRefTypeInternal(field, clz, unmodeledFlowType, deepClone);
+        
+        return field;
+    }
+    
+    /**
+     * Create an object for the given class (of type) and all concrete subclasses / implementors of the type.
+     * Use the dummy Object field to reference all objects
+     */
+    public SootField addRefTypeForConcretes(RefType type, InfoKind unmodeledFlowType, boolean deepClone) {
+        SootClass clz = type.getSootClass();
+        clz = ClassCloner.getClonedClassFromClone(clz);
+        //if an interface, find a direct implementor of and instantiate that...
+        List<SootClass> concretes = SootUtils.getAllConcreteSubsImps(clz);
+
+        if (concretes.isEmpty()) {
+            //if clz is null, then we have an interface with no known implementors, 
+            //so just pass null
+            logger.debug("Cannot find any known implementors of {} when adding dummy object", 
+                type.getSootClass());
+            return null;
+        }
+
+        int created = 0;
+        for (SootClass concrete : concretes) {
+            //don't clone cloned classes
+            if (ClassCloner.isClonedClass(concrete))
+                continue;
+            
+            //um, just in case a clone sneaks by ??
+            SootClass realConcrete = ClassCloner.getClonedClassFromClone(concrete);
+            
+            if (!typeToAddedField.containsKey(realConcrete.getType())) {
+                addRefTypeInternal(dummyObjectField, realConcrete, unmodeledFlowType, deepClone);
+                created++;
+            }
+
+            if (created > MAX_SUBS_AND_IMPLEMENTORS_TO_ADD) {
+                logger.debug("reached max created dummy concrete objects created: {}", clz);
+                break;
+            }
+
+        }
+
+        return dummyObjectField;
+    }
+
+    /**
+     * Add a unmodeled object in the DroidSafeDummies generated class.  Create a cloned type of the 
+     * given type and allocate an object of the cloned type.  Tag all methods of the cloned type with 
+     * the given source info kind.  Do not check to see if another object of the type has been created, and
+     * do not cache this object / field.
+     */
+    private void addRefTypeInternal(SootField field, SootClass clz, InfoKind unmodeledFlowType, boolean deepClone) {
+        //don't clone cloned classes
+        if (ClassCloner.isClonedClass(clz))
+            return;
+        
+        clz = ClassCloner.getClonedClassFromClone(clz);
+        
         //clone clz
         ClassCloner cloner;
         if (deepClone || (Config.v().reportUnmodeledFlows && 
@@ -292,7 +367,7 @@ public class UnmodeledGeneratedClasses {
             cloner = ClassCloner.cloneClassAndInheritedMethods(clz, true);
         else 
             cloner = ClassCloner.cloneClass(clz);
-        
+
         SootClass clone = cloner.getClonedClass();
         lastClonedClass = clone;
 
@@ -310,15 +385,10 @@ public class UnmodeledGeneratedClasses {
         //field and add creation of object
         if (!clone.declaresMethod(noArgConsSubSig)) {
             logger.error("Error during fallback modeling. Class {} does not have a no arg constructor.", clone);
-            return null;
-        }
-
-        SootField field = new SootField(DUMMY_FIELD_PREFIX + type.toString().replace(".", "_") + localID, 
-            type, Modifier.PUBLIC | Modifier.STATIC);
-        dummyClass.addField(field);                
+        }                 
 
         //add initialization code to dummy init method
-        Local local = Jimple.v().newLocal("_$UG" + localID++, type);
+        Local local = Jimple.v().newLocal("_$UG" + localID++, clz.getType());
         dummyInitBody.getLocals().add(local);
 
         //local = new Clone()
@@ -327,8 +397,8 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newAssignStmt(local, Jimple.v().newNewExpr(clone.getType())));
         addStmt(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, clone.getMethod(noArgConsSubSig).makeRef())));
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
-        
-        return field;
+
+        typeToAddedField.put(clz.getType(), field);
     }
 
     /**
@@ -336,7 +406,7 @@ public class UnmodeledGeneratedClasses {
      */
     public static void installNoArgConstructor(SootClass clone) {
         boolean cloned = false;
-        
+
         if (clone.declaresMethod("void <init>()"))
             return;
 
@@ -353,11 +423,11 @@ public class UnmodeledGeneratedClasses {
 
                 Body ancestorBody = null;
                 try {
-                	ancestorBody = ancestorM.retrieveActiveBody();
+                    ancestorBody = ancestorM.retrieveActiveBody();
                 }
                 catch (Exception ex) {
-                	logger.info("Exception retrieving method body {}", ex);
-                	return;
+                    logger.info("Exception retrieving method body {}", ex);
+                    return;
                 }
 
                 //clone body
@@ -392,9 +462,14 @@ public class UnmodeledGeneratedClasses {
         }
     }
 
+    /**
+     * Return the field that has been created to fake object of the given type.  
+     * 
+     * This method could return null constant if for some reason, no field is created.
+     */
     public Value getSootFieldForType(Type type) {
         SootField field = null;
-        
+
         if (type instanceof PrimType) {
             field = addPrimitive((PrimType)type);
         } else if (SootUtils.isStringOrSimilarType(type)) {
@@ -402,22 +477,17 @@ public class UnmodeledGeneratedClasses {
             //and spreading taint all around!
             field = addStringType((RefType)type);
         } else {        
-            if (!typeToAddedField.containsKey(type)) {
-                //not a type we have seen before
-
-                //if a reference, create dummy object
-                if (type instanceof RefType) {
-                    //class type
-                    field = addRefType((RefType)type, 
-                        InfoKind.getInfoKind("UNMODELED", Config.v().reportUnmodeledFlows), false);
-                } else if (type instanceof ArrayType) {
-                    //array type
-                    field = addArrayType((ArrayType)type);
-                } 
-                typeToAddedField.put(type, field);
-            }
-            
-            field = typeToAddedField.get(type);
+            //if a reference, create dummy object
+            if (type instanceof RefType) {
+                //class type
+                field = addRefTypeForConcretes((RefType)type, 
+                    InfoKind.getInfoKind("UNMODELED", Config.v().reportUnmodeledFlows), false);
+                field = typeToAddedField.get(type);
+                
+            } else if (type instanceof ArrayType) {
+                //array type
+                field = addArrayType((ArrayType)type);
+            }                         
         }
 
         if (field == null)

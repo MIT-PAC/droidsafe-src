@@ -70,6 +70,8 @@ public class RemoveStupidOverrides {
      * Remove a method if all it does is call the super method with the same args.
      */
     private void removeMethodIfStupid(SootClass clz, SootMethod method) {
+        boolean debug = false; 
+                //"<com.ultracoolmap.UltraCoolMapActivity: void startActivity(android.content.Intent)>".equals(method.getSignature());
         //System.out.printf("Inspecting %s\n", method);
 
         /*
@@ -105,6 +107,7 @@ public class RemoveStupidOverrides {
         	return;
         }
 
+        if (debug) logger.debug("looking at method: {}", method);
 
         // get body's unit as a chain
         Unit[] units = stmtBody.getUnits().toArray(new Unit[0]);
@@ -113,34 +116,46 @@ public class RemoveStupidOverrides {
         for (int i = 0; i < units.length - 2; i++) 
             if (!(units[i] instanceof JIdentityStmt)) {
                 //System.out.printf("Found non identity statement: %s\n", units[i]);
+                if (debug) logger.debug("non identity: {}", units[i]);
                 return;
             }
+        
+        if (debug) logger.debug("Identity test pass");
 
         //2nd to last statement is a special invoke of same method from super on the this reference
         boolean foundSpecialInvoke = false;
+        if (debug) logger.debug("invoke: {}", units[units.length - 2]);
         if ((units[units.length - 2] instanceof Stmt) && ((Stmt)units[units.length -2]).containsInvokeExpr()) {
             InvokeExpr invoke = ((Stmt)units[units.length -2]).getInvokeExpr();
+            if (debug) logger.debug("{} {} {}", invoke instanceof SpecialInvokeExpr, 
+                method.getSubSignature().equals(invoke.getMethodRef().getSubSignature().getString()),
+                ((SpecialInvokeExpr) invoke).getBase().equals(stmtBody.getThisLocal()));
             if (invoke instanceof SpecialInvokeExpr &&
-                    method.getSubSignature().equals(invoke.getMethodRef().getSubSignature()) &&
+                    method.getSubSignature().equals(invoke.getMethodRef().getSubSignature().getString()) &&
                     ((SpecialInvokeExpr) invoke).getBase().equals(stmtBody.getThisLocal())) {
                 //check that each arg for the super call is the argument from this method, in the right order
                 for (int i = 0; i < invoke.getArgCount(); i++) {
-                    if (!invoke.getArg(i).equals(stmtBody.getParameterLocal(i)))
+                    if (!invoke.getArg(i).equals(stmtBody.getParameterLocal(i))) {
+                        if (debug) logger.debug("no a local? {} {}", invoke.getArg(i), stmtBody.getParameterLocal(i));
                         return;
+                    }
                 }
                 foundSpecialInvoke = true;
             }
-        }
+        }        
 
         if (!foundSpecialInvoke) {
             //System.out.printf("Could not find special invoke at n-2: %s\n", units[units.length - 2]);
             return;
         }
+        
+        if (debug) logger.debug("call to super pass");
 
         //one return statement
         boolean correctReturn = false;
         //return statement does not return
         if ((units[units.length -1] instanceof JReturnVoidStmt) && units[units.length - 2] instanceof JInvokeStmt) {
+            if (debug) logger.debug("Correct return void ");
             correctReturn = true;
         }
         
@@ -150,6 +165,7 @@ public class RemoveStupidOverrides {
             if (((AssignStmt)units[units.length - 2] ).getLeftOp().
                     equals(((JReturnStmt)units[units.length -1]).getOp())) {
                 correctReturn = true;
+                logger.debug("correct return");
             } 
         }
 

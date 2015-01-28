@@ -36,6 +36,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
 import soot.jimple.NewExpr;
+import soot.jimple.NullConstant;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -311,10 +312,14 @@ public class CallBackModeling {
         List<Value> args = new LinkedList<Value>();
         for (Type argType : method.getParameterTypes()) {
             Value fieldRef = UnmodeledGeneratedClasses.v().getSootFieldForType(argType); 
-            Local argLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, fieldRef.getType());
-            body.getLocals().add((Local)argLocal);
-            body.getUnits().add(Jimple.v().newAssignStmt(argLocal, fieldRef));
-            args.add(argLocal);
+            if (fieldRef != null && !fieldRef.equals(NullConstant.v())) {
+                Local argLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, fieldRef.getType());
+                body.getLocals().add((Local)argLocal);
+                body.getUnits().add(Jimple.v().newAssignStmt(argLocal, fieldRef));
+                args.add(argLocal);
+            } else {
+                args.add(NullConstant.v());
+            }
         }
 
         //now create call to entry point
@@ -335,84 +340,4 @@ public class CallBackModeling {
 
         return TransformsUtils.makeInvokeExpression(method, trueReceiver, args);
     }
-
-    private static Value createNewArrayAndObject(Body body, SootMethod entryPoint, ArrayType type) {
-        Type baseType = type.getArrayElementType();
-
-        //create new array to local     
-        Local arrayLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, type);
-        body.getLocals().add(arrayLocal);
-
-        if (type.numDimensions > 1) {
-            //multiple dimensions, have to do some crap...
-            List<Value> ones = new LinkedList<Value>();
-            for (int i = 0; i < type.numDimensions; i++)
-                ones.add(IntConstant.v(1));
-
-            body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal,
-                Jimple.v().newNewMultiArrayExpr(type, ones)));
-        } else {
-            //single dimension, add new expression
-            body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal, 
-                Jimple.v().newNewArrayExpr(baseType, IntConstant.v(1))));
-        }
-
-        //get down to an element through the dimensions
-        Local elementPtr = arrayLocal;
-        while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-            Local currentLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, ((ArrayType)elementPtr).getElementType());
-            body.getUnits().add(Jimple.v().newAssignStmt(
-                currentLocal, 
-                Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
-            elementPtr = currentLocal;
-        }
-
-        //if a ref type, then create the new and constructor and assignment to array element
-        if (baseType instanceof RefType) {
-            //create the new expression and constructor call for a new local
-            Value eleLocal = createNewAndConstructorCall(body, entryPoint, (RefType)baseType);
-            //assign the new local to the array access
-            body.getUnits().add(Jimple.v().newAssignStmt(
-                Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
-                eleLocal)); 
-        }   
-
-        return arrayLocal;
-    }
-
-    /**
-     * Add to the body code to create a new object and assign it to a local, and then call the constructor
-     * on the local.  If the type is an interface, then try to find a close implementor
-     * return the local so it can be used in array assignments
-     */
-    public static Value createNewAndConstructorCall(Body body, SootMethod entryPoint, RefType type) {
-        SootClass clz = type.getSootClass();
-        //if an interface, find a direct implementor of and instantiate that...
-        if (!clz.isConcrete()) {
-            clz = SootUtils.getCloseConcrete(clz);
-        }
-
-        if (clz ==  null) {
-            //if clz is null, then we have an interface with no known implementors, 
-            //so just pass null
-            logger.warn("Cannot find any known implementors of {} when building harness for entry {}", 
-                type.getSootClass(), entryPoint);
-            return SootUtils.getNullValue(type);
-        }
-
-        //if we got here, we found a class to instantiate, either the org or an implementor
-        Local argLocal = Jimple.v().newLocal("_$TU" + LOCAL_ID++, type);
-        body.getLocals().add(argLocal);
-
-        //add the call to the new object
-        Stmt assign = Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz)));
-        body.getUnits().add(assign);
-
-        List<Stmt> consCalls = TransformsUtils.getConstructorCall(body, argLocal, RefType.v(clz));
-        for (Stmt consCall : consCalls)
-            body.getUnits().add(consCall);
-
-        return argLocal;
-    }
-
 }
