@@ -9,6 +9,7 @@ import droidsafe.transforms.objsensclone.ClassCloner;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
+import soot.Type;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 
@@ -101,6 +102,16 @@ public class VAUtils {
             }            
         }
         return true;
+    }
+    
+    /** 
+     * Return true if the node is an android.content.Intent or subclass.
+     */
+    public static boolean isIntentType(IAllocNode node) {
+        Type type = node.getType();
+        return type instanceof RefType && 
+                Scene.v().getActiveHierarchy().isClassSuperclassOfIncluding
+                (Scene.v().getSootClass("android.content.Intent"), ((RefType)type).getSootClass());
     }
     
 }

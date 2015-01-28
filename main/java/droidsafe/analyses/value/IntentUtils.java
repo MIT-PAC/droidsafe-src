@@ -16,6 +16,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Type;
 import soot.Value;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
@@ -47,7 +48,7 @@ public class IntentUtils {
     }
 
     private Map<IAllocNode, IntentModel> allocToIntentModel;
-    
+
     private static final Logger logger = LoggerFactory.getLogger(IntentUtils.class);
 
     public IntentUtils() {
@@ -58,16 +59,23 @@ public class IntentUtils {
     public Set<IAllocNode> getAllQueriedIntents() {
         return queriedNodes;
     }
-    
+
     /**
      * Return (and possibly create) the Intent model for the given intent alloc node used in 
      * stmt that targets the IPC method target.
      */
     public IntentModel getIntentModel(IAllocNode node) {
-              if (!(node.getType() instanceof RefType) ||
-                !(ClassCloner.getClonedClassFromClone(((RefType)node.getType()).getSootClass()).
-                        equals(Scene.v().getSootClass("android.content.Intent")))) {
+        if (!(node.getType() instanceof RefType)) {
+            logger.error("Called getIntentModel on non ref type: {}", node.getType());
+            return UnresolvedIntent.v();
+        }                
+
+        SootClass clz = ClassCloner.getClonedClassFromClone(((RefType)node.getType()).getSootClass());
+
+        if  (!Scene.v().getActiveHierarchy().isClassSuperclassOfIncluding(Scene.v().getSootClass("android.content.Intent"), 
+            clz)) {            
             logger.error("Called getIntentModel on non Intent type: {}", node);
+            return UnresolvedIntent.v();
         }
 
         if (!allocToIntentModel.containsKey(node)) {
@@ -97,7 +105,7 @@ public class IntentUtils {
 
         return allocToIntentModel.get(node);
     }
-    
+
     /**
      * Return set of fields of the harness for components that could be targeted with by the 
      * Intent model  Use the value analysis result to resolve field of the Intent and
@@ -105,7 +113,7 @@ public class IntentUtils {
      * then return all components of the given type in the application.
      */
     public Set<SootField> getIntentTargetHarnessFields(AndroidComponents component, IntentModel im) {
-        
+
         Set<SootField> allHarnessActivityFlds = new LinkedHashSet<SootField>();
 
         for (SootClass clz : Harness.v().getCreatedClasses()) {
@@ -117,18 +125,18 @@ public class IntentUtils {
         Set<SootField> targetFields;
         if (im instanceof ResolvedExplicitIntent) {
             targetFields = getExplicitIntentTargetClsStrings((ResolvedExplicitIntent)im, 
-                    allHarnessActivityFlds);
+                allHarnessActivityFlds);
         } else if (im instanceof ImplicitIntentModel) {
             targetFields = getImplicitIntentInAppTargetClsStrings((ImplicitIntentModel)im, 
-                    component, allHarnessActivityFlds);
+                component, allHarnessActivityFlds);
         } else {
             //unresolved, add all fields of component type
             targetFields = allHarnessActivityFlds;            
         }       
-        
+
         return targetFields;
     }
-    
+
     /**
      * Return set of fields of the harness for components that could be targeted with by the 
      * Intent alloc node.  Use the value analysis result to resolve field of the Intent and
@@ -140,7 +148,7 @@ public class IntentUtils {
         IntentModel im = getIntentModel(allocNode);
         if (im instanceof UnresolvedIntent) 
             recordUnresolvedStmt(allocNode, stmt, target, "Unresolved Intent");
-        
+
         return getIntentTargetHarnessFields(component, im);
 
     }
@@ -151,7 +159,7 @@ public class IntentUtils {
     private void recordUnresolvedStmt(IAllocNode node, Stmt stmt, SootMethod target, String comment) {
         UnresolvedICC.v().addInfo(stmt, target, comment);
     }
-    
+
     /**
      * @return IntentType of the passed in Intent RefVAModel
      */
@@ -159,8 +167,17 @@ public class IntentUtils {
         SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
         SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
 
-        Set<VAModel> componentNameFieldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
-        Set<VAModel> clsFieldVAModeles = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mClsComponent"));
+        SootField mComponentField = Scene.v().makeFieldRef(intentSootClass, "mComponent", 
+            Scene.v().getSootClass("android.content.ComponentName").getType(), false).resolve();
+        
+        Set<VAModel> componentNameFieldVAModels = 
+                intentRefVAModel.getFieldVAModels(mComponentField);
+        
+        SootField mClsComponentField = Scene.v().makeFieldRef(intentSootClass, "mClsComponent", 
+            Scene.v().getSootClass("java.lang.Class").getType(), false).resolve();
+        
+        Set<VAModel> clsFieldVAModeles = 
+                intentRefVAModel.getFieldVAModels(mClsComponentField);
 
         // if there are any componentNames, then we assume this is an explicitely tracked intent
         if(componentNameFieldVAModels.size() > 0 || clsFieldVAModeles.size() > 0) {
@@ -208,14 +225,14 @@ public class IntentUtils {
      * @return set of class strings that the passed in explicit intent may target
      */
     public Set<SootField> getExplicitIntentTargetClsStrings(ResolvedExplicitIntent intent, Set<SootField> allPossibleFieldTargets) {
-        
+
         // container for results
         Set<SootField> targetClsStrings = new HashSet<SootField>();
-        
+
         for (String value : intent.getComponentNames()) {
             targetClsStrings.add(getHarnessFldForClsString(value));
         }
-        
+
         return targetClsStrings;       
     }
 
@@ -225,11 +242,11 @@ public class IntentUtils {
      */
     public Set<SootField> getImplicitIntentInAppTargetClsStrings(ImplicitIntentModel intent,
         AndroidComponents component, Set<SootField> allPossibleFieldTargets) {
-        
+
         Set<SootField> calculatedTargets = new HashSet<SootField>();
         calculatedTargets.addAll(allPossibleFieldTargets);
-        
-        
+
+
         // for each component
         for (ComponentBaseElement manifestComp : Resources.v().getManifest().getComponentsByType(component)) {
             SootField harnessField = getHarnessFldForClsString(manifestComp.getSootClass().getName());
@@ -237,7 +254,7 @@ public class IntentUtils {
             if (harnessField == null) {
                 logger.error("No harness field for manifest class: {}", manifestComp.getSootClass());
             }
-                      
+
             //if the intent values cannot be resolved, still should remove all components that don't define
             //an intent filter
             if (!manifestComp.hasIntentFilter()) {
@@ -245,10 +262,10 @@ public class IntentUtils {
                 logger.info("Implicit Intent Test Failed, no intent filter for {}", manifestComp);
                 continue;
             }
-            
+
             boolean matchesSomeIntentFilter = false;
             for (IntentFilter intentfilter : manifestComp.intent_filters) {
-            
+
                 //action test, if actions don't match, then remove component from target list
                 if (!actionsMatch(intent, intentfilter)) {
                     logger.info("Implicit Intent Action Test, failed for Intent {} on Filter of {}", intent, intentfilter);
@@ -278,15 +295,15 @@ public class IntentUtils {
                     logger.info("Implicit Intent Data Test Failed for Intent {} on Filter {}", intent, intentfilter);
                     continue;
                 }
-                
+
                 logger.info("Implicit Intent Data Test passed for Intent {} on Filter {}", intent, intentfilter);
-                
+
                 //everything passed so pass                
                 //no need to find another match
                 matchesSomeIntentFilter = true;
                 break;
             }
-            
+
             //no matches so remove component
             if (!matchesSomeIntentFilter) {
                 calculatedTargets.remove(harnessField);
@@ -295,8 +312,8 @@ public class IntentUtils {
                 logger.info("** Implicit Intent test PASSED for {} and component {}", intent, manifestComp);
             }
         }
-        
-        
+
+
         //UnresolvedICC.v().addInfo(stmt, target, "Unresolved Intent");
         return calculatedTargets;
     }
@@ -309,7 +326,10 @@ public class IntentUtils {
         SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
 
         // iterate over every possible data field value
-        Set<VAModel> dataFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mData"));
+        SootField mDataField = Scene.v().makeFieldRef(intentSootClass, "mData", 
+            Scene.v().getSootClass("android.net.Uri").getType(), false).resolve();
+        
+        Set<VAModel> dataFldVAModels = intentRefVAModel.getFieldVAModels(mDataField);
         for(VAModel dataFldVAModel : dataFldVAModels) {
             if(dataFldVAModel.invalidated() || dataFldVAModel instanceof UnknownVAModel ){
                 return false;
@@ -318,22 +338,25 @@ public class IntentUtils {
             SootClass clonedURISootClass = ((RefType)(uriRefVAModel.getAllocNode().getType())).getSootClass();
             SootClass uriSootClass = ClassCloner.getClonedClassFromClone(clonedURISootClass);
             // iterate over every possible action field value
-            Set<VAModel> uriStringFldVAModels = uriRefVAModel.getFieldVAModels(uriSootClass.getFieldByName("uriString"));
+            SootField uriStringField = Scene.v().makeFieldRef(uriSootClass, "uriString", 
+                Scene.v().getSootClass("java.lang.String").getType(), false).resolve();
+            
+            Set<VAModel> uriStringFldVAModels = uriRefVAModel.getFieldVAModels(uriStringField);
             for(VAModel uriStringFldVAModel : uriStringFldVAModels) {
                 if(uriStringFldVAModel.invalidated() || (!(uriStringFldVAModel instanceof StringVAModel))){
                     return false;
                 }
-                
+
                 //if we get here, it is a resolved string va model value
                 for (String str : ((StringVAModel)uriStringFldVAModel).getValues()) {
                     resolvedValues.add(str);
                 }
             }
         }
-        
+
         return true;
     }
-    
+
     /**
      * Try to get resolved field values for intent.  
      * 
@@ -341,30 +364,33 @@ public class IntentUtils {
      * 
      * If all resolved, then return the list of strings in the resolvedValues set
      */
-    public boolean getFieldFromImplicitIntent(String fieldName, RefVAModel intentRefVAModel, Set<String> resolvedValues) {
+    public boolean getFieldFromImplicitIntent(String fieldName, Type type, RefVAModel intentRefVAModel, Set<String> resolvedValues) {
         SootClass clonedIntentSootClass = ((RefType)(intentRefVAModel.getAllocNode().getType())).getSootClass();
         SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedIntentSootClass);
 
-        // iterate over every possible field value
-        Set<VAModel> fldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName(fieldName));
+        // iterate over every possible field value        
+        SootField field = Scene.v().makeFieldRef(intentSootClass, fieldName, 
+            type, false).resolve();
+        
+        Set<VAModel> fldVAModels = intentRefVAModel.getFieldVAModels(field);
         for(VAModel fldVAModel : fldVAModels) {
-            
+
             logger.info("For {}, VA Type {} {}", fieldName, fldVAModel, fldVAModel.getClass());
-            
+
             if (fldVAModel.invalidated() || (!(fldVAModel instanceof StringVAModel))){
                 return false;
             } 
-            
+
             //if we get here, it is a resolved string va model value
             for (String str : ((StringVAModel)fldVAModel).getValues()) {
                 resolvedValues.add(str);
             }
         }
-        
+
         //no field va models resolved
         return true;
     }
-    
+
     /**
      * Return true if the action field matches for this intent / intent filter combination
      */
@@ -374,19 +400,19 @@ public class IntentUtils {
          * 2. filter with no actions fails all tests
          * 3. intent with no action will pass if filter defines at least one action
          */
-        
+
         //build list of filter actions
         Set<String> filterActions = new HashSet<String>();
         filterActions.addAll(intentFilter.actions); 
-                
+
         for (String action : filterActions) {
             logger.info("Action Test, intent filter actions: {}", action);
         }
-        
+
         // #2
         if (filterActions.size() == 0)
             return false;
-        
+
         //build list of intent actions
         if (!intent.isFieldInvalidated(ImplicitIntentFields.ACTION)) {
             for (String intentAction : intent.getValues(ImplicitIntentFields.ACTION)) {
@@ -395,7 +421,7 @@ public class IntentUtils {
                 if (filterActions.contains(intentAction))
                     return true;  //found action / return true
             }
-            
+
             //could not find intent action in the intent filter actions
             logger.info("Action Test, could not find intent action in intent filter");
             return false;
@@ -405,7 +431,7 @@ public class IntentUtils {
             return true;
         }
     }
-    
+
     /**
      * Return true if the category field matches the intent filter.
      */
@@ -414,30 +440,30 @@ public class IntentUtils {
          *
           1. every category of intent must match a category in filter
              - reverse not necessary 
-          
+
           2. Intent with no categories will pass all tests
-          
+
           3. Android automatically applies CATEGORY_DEFAULT to all start activity / start activity for result
              - So intent filters on activities must delcare this category
              (this is taken care of by the modeling, we add this category to all intents called with startactivity
          */
-        
+
         for (String category : intentFilter.categories) {
             logger.info("Category Test, intent filter categories: {}", category);
         }
-                
+
         if (!intent.isFieldInvalidated(ImplicitIntentFields.CATEGORY)) {
             //# 2
             if (intent.getValues(ImplicitIntentFields.CATEGORY).size() == 0)
                 return true;
-            
+
             for (String filterCategory : intentFilter.categories) {
                 //if one of the filter categories could not possibly be in the intent, then return false 
                 if (!intent.getValues(ImplicitIntentFields.CATEGORY).contains(filterCategory)) {
                     return false;
                 }                
             }
-            
+
             //all categories in filter could be in the intent
             return true;
         } else {
@@ -446,7 +472,7 @@ public class IntentUtils {
             return true;
         }
     }
-    
+
     /**
      * return true if types match from intent to component manifest mimetype data filter
      */
@@ -454,22 +480,22 @@ public class IntentUtils {
         /*
          * due to flow insensitivity, if any of type value in intent matches filter, then pass
          */
-             
+
         for (String type : intentFilter.dataMime) {
             logger.info("Type Test, intent filter types: {}", type);
         }
-        
-        
+
+
         if (!intent.isFieldInvalidated(ImplicitIntentFields.TYPE)) {
             Set<String> intenttypes = intent.getValues(ImplicitIntentFields.TYPE);
             //nothing to check
             if (intenttypes.size() == 0 && intentFilter.dataMime.size() == 0)
                 return true;
-            
+
             //if the intent does not specify a type and the filter does, then it cannot pass 
             if (intenttypes.size() == 0 && intentFilter.dataMime.size() > 0 )
                 return false;
-            
+
             //check if any of the possible intent types match
             for (String intentType : intenttypes) {
                 for (String filterType : intentFilter.dataMime) {
@@ -479,9 +505,9 @@ public class IntentUtils {
                             return true;
                     } else if (filterType.equals(intentType))
                         return true;                        
-                    }
                 }
-                    
+            }
+
             //no type matches
             return false;
         } else {
@@ -489,23 +515,23 @@ public class IntentUtils {
             return true;
         }
     }
-    
-    
+
+
     /**
      * return true if data of intent could match intent filter.
      */
     private boolean dataMatch(ImplicitIntentModel intent, IntentFilter intentFilter) {
-        
+
         for (String data : intentFilter.dataUri) {
             logger.info("Data Test, intent filter has data: {}", data);
         }        
-                        
+
         if (!intent.isFieldInvalidated(ImplicitIntentFields.DATA)) {            
             Set<String> intentDatas = intent.getValues(ImplicitIntentFields.DATA);
             //if no data in intent and no data in filter, then match
             if (intentDatas.size() == 0 && intentFilter.dataUri.size() == 0)
                 return true;
-            
+
             //if any of the intent uri could match a filter uri, then it could be a target
             for (String intentData : intentDatas) {
                 //if we get here, this intent data is valid
@@ -517,7 +543,7 @@ public class IntentUtils {
                     }
                 }
             }
-            
+
             //we resolved all valid uri's and none of them matched a filter, so false;
             return false;
         } else {

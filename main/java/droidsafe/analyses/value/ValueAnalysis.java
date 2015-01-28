@@ -318,9 +318,9 @@ public class ValueAnalysis  {
             
             //System.out.println(an);
             
-            //boolean debug = (an.getType().equals(RefType.v("android.widget.Button")));                    
+            boolean debug = false;//(an.getType().equals(RefType.v("android.widget.Button")));                    
             
-            //if (debug) System.out.printf("Looking at: %s\n", an);
+            if (debug) System.out.printf("Looking at: %s\n", an);
             
             Class<?> baseVAModelClass = baseModel.getClass();
             
@@ -338,13 +338,9 @@ public class ValueAnalysis  {
                     Set<? extends IAllocNode> fieldPTSet = PTABridge.v().getPTSet(an, sootField);
                     
                     if (fieldVAModel instanceof StringVAModel) {
-                        /*if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
-                        /if (debug) {
-                            for (IAllocNode node : fieldPTSet) {
-                                System.out.println("\t" + node);
-                            }
-                        }*/
-                        handleStringFieldValue((StringVAModel)fieldVAModel, fieldPTSet);
+                        if (debug) System.out.printf("Found tracked string field: %s\n", fieldName);
+                        
+                        handleStringFieldValue((StringVAModel)fieldVAModel, fieldPTSet, debug);
                     } else if (fieldVAModel instanceof ClassVAModel) {
                         //if (debug) System.out.printf("Found tracked field: %s\n", fieldName);
                         handleClassFieldValue((ClassVAModel)fieldVAModel, fieldPTSet);
@@ -393,10 +389,18 @@ public class ValueAnalysis  {
                         //this call here is expensive!!
                         Set<? extends IAllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue,context);
                         for(IAllocNode allocNode : baseAllocNodes) {
+                            boolean debug = allocNode.getType().equals(RefType.v("android.widget.Button"));
+                            
+                            if (debug)
+                                logger.debug("Looking at node: {} in stmt {} in {}", allocNode, stmt, sootMethod);
+                            
                             VAModel vaModel = this.allocNodeToVAModelMap.get(allocNode);
                             if(vaModel != null) {
                                 Class<?> c = vaModel.getClass();
                                 String fieldName = instanceFieldRef.getField().getName();
+                                if (debug)
+                                    logger.debug("Looking at field: {}", fieldName);
+                                
                                 try {
                                     Field field = c.getField(fieldName);
                                     try {
@@ -406,7 +410,7 @@ public class ValueAnalysis  {
                                             PrimVAModel fieldPrimVAModel = (PrimVAModel)fieldObjectVAModel;
                                             if (fieldPrimVAModel instanceof StringVAModel || 
                                                     fieldPrimVAModel instanceof ClassVAModel) {
-                                                handleStringOrClass(momc, assignStmt, fieldPrimVAModel, context);
+                                                handleStringOrClass(momc, assignStmt, fieldPrimVAModel, context, debug);
                                             } else  {
                                                 //primitive, but not string primitive
                                                 if(rightOp instanceof Constant) {
@@ -449,7 +453,8 @@ public class ValueAnalysis  {
     /**
      * Handle case where type for assignment is a string
      */
-    private void handleStringOrClass(MethodOrMethodContext momc, AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, Context context) {
+    private void handleStringOrClass(MethodOrMethodContext momc, AssignStmt assignStmt, 
+                                     PrimVAModel fieldPrimVAModel, Context context, boolean debug) {
         //Found string
         Set<? extends IAllocNode> rhsNodes;
 
@@ -468,7 +473,7 @@ public class ValueAnalysis  {
         if (fieldPrimVAModel instanceof ClassVAModel)
             handleClassFieldValue((ClassVAModel)fieldPrimVAModel, rhsNodes);
         else if (fieldPrimVAModel instanceof StringVAModel)
-            handleStringFieldValue((StringVAModel)fieldPrimVAModel, rhsNodes);
+            handleStringFieldValue((StringVAModel)fieldPrimVAModel, rhsNodes, debug);
     }
     
     private void handleClassFieldValue(ClassVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes) {
@@ -493,8 +498,9 @@ public class ValueAnalysis  {
         }   
     }
     
-    private void handleStringFieldValue(StringVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes) {
+    private void handleStringFieldValue(StringVAModel fieldPrimVAModel, Set<? extends IAllocNode> rhsNodes, boolean debug) {
         for(IAllocNode rhsNode : rhsNodes) {
+            if (debug) System.out.println("rhs value: " + rhsNode); 
             boolean knownValue = false;
             
             if (PTABridge.isStringConstant(rhsNode)) {
@@ -510,6 +516,7 @@ public class ValueAnalysis  {
                     value = value.replace("\\uxxxx", "");
                     fieldPrimVAModel.addValue(value);
                     knownValue = true;
+                    if (debug) System.out.println("Known value");
                 }
             } 
                         
