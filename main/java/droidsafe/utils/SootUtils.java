@@ -860,10 +860,10 @@ public class SootUtils {
 
             Chain<Unit> stmts = null;
             try {
-            stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
+                stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
             } catch (Exception ex) {
-            	logger.info("Exception retrieving method body {}", ex);
-            	return null;
+                logger.info("Exception retrieving method body {}", ex);
+                return null;
             }
 
             Iterator<Unit> stmtIt = stmts.snapshotIterator();
@@ -883,11 +883,11 @@ public class SootUtils {
         if (method != null && method.isConcrete()) {
             Chain<Unit> units = null;
             try {
-            	units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+                units = ((StmtBody)method.retrieveActiveBody()).getUnits();
             }
             catch (Exception ex) {
-            	logger.info("Exception retrieving method body {}", ex);
-            	return -1;
+                logger.info("Exception retrieving method body {}", ex);
+                return -1;
             }
 
             for (Unit unit: units) {
@@ -912,11 +912,11 @@ public class SootUtils {
                 int max = 0;
                 Chain<Unit> units = null;
                 try {
-                	units = ((StmtBody)method.retrieveActiveBody()).getUnits();
+                    units = ((StmtBody)method.retrieveActiveBody()).getUnits();
                 }
                 catch (Exception ex) {
-                	logger.info("Exception retrieving method body {}", ex);
-                	return null;
+                    logger.info("Exception retrieving method body {}", ex);
+                    return null;
                 }
 
                 for (Unit unit: units) {
@@ -1716,12 +1716,12 @@ public class SootUtils {
                     invokedMethod = SootUtils.resolve(expr.getMethodRef());
                     if (invokedMethod == callee)
                         invokeStmtList.add(statement);
-                    
+
                 } catch (CannotFindMethodException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-               
+
             }
 
         }
@@ -1837,14 +1837,14 @@ public class SootUtils {
 
         return buffer.toString().intern();
     }
-    
+
     /**
      * Return true if the method is a static init
      */
     public static boolean isStaticInit(SootMethod method) {
-       return "void <clinit>()".equals(method.getSubSignature());
+        return "void <clinit>()".equals(method.getSubSignature());
     }
-    
+
 
     /** 
      * Search backwards from statement to find the first definition of v in body.  
@@ -1877,6 +1877,42 @@ public class SootUtils {
             //got here, did not find a def of the thrown op
             //so another iteration...
         }
+    }
+
+    /**
+     * Return a list of all concrete classes that have this class as an ancestor, including
+     * itself.  For interfaces, return all concrete implementors and their subclasses
+     */
+    public static List<SootClass> getAllConcreteSubsImps(SootClass clz) {
+        List<SootClass> concretes = new LinkedList<SootClass>();
+
+        Queue<SootClass> q = new LinkedList<SootClass>();
+        Set<SootClass> visited = new HashSet<SootClass>();
+        q.add(clz);
+
+        while (!q.isEmpty()) {
+            SootClass curr = q.poll();
+            visited.add(curr);
+
+
+            if (curr.isConcrete() && !curr.isInterface()) 
+                concretes.add(curr);
+
+            if (curr.isInterface()) {
+                for (SootClass imp : Scene.v().getActiveHierarchy().getImplementersOf(curr)) {
+                    if (!visited.contains(imp))
+                        q.add(imp);
+                }
+            } else {
+                //sootclass
+                for (SootClass sub : Scene.v().getActiveHierarchy().getDirectSubclassesOf(curr)) {
+                    if (!visited.contains(sub))
+                        q.add(sub);
+                }
+            }
+        }
+
+        return concretes;
     }
 }
 

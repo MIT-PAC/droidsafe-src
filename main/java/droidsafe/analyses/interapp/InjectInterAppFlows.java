@@ -111,7 +111,7 @@ public class InjectInterAppFlows {
             
             //generate a new Intent object and tag all methods of the cloned intent class 
             if (targetFields.size() > 0) {                
-                generatedIntentField = UnmodeledGeneratedClasses.v().addRefType(RefType.v("android.content.Intent"), 
+                generatedIntentField = UnmodeledGeneratedClasses.v().addRefTypeWithNewField(RefType.v("android.content.Intent"), 
                     flow.getSrcKind(), true);
                 SootClass clonedIntentClz = UnmodeledGeneratedClasses.v().getLastCloneCreated();
                 methodReturnStringSimplify(clonedIntentClz); 

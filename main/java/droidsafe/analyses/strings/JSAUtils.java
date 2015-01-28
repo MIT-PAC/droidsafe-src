@@ -115,32 +115,32 @@ public class JSAUtils {
     }
      */
 
-//    public static void setupSpecHotspots()
-//    {
-//        for (SootMethod m : API.v().getAllSystemMethods()) {
-//            if (m.isDeclared()) {
-//                try {
-//                    String sig = m.getSignature();
-//                    int i = 0;
-//                    for (soot.Type t : m.getParameterTypes()) {
-//                        if (SootUtils.isStringOrSimilarType(t)) {
-//                            List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
-//                        }
-//                        i++;     
-//                    }
-//                } catch (Exception e) {
-//                    logger.error("Exception when adding hotspot for method.", e);
-//                }
-//                // FIXME: Return hotspots are raising an exception.
-//                /*
-//                    if (SootUtils.isStringType(m.getReturnType())) {
-//                        System.out.println(String.format("addReturnHotspots(%s)", sig));
-//                        JSAStrings.v().addReturnHotspot(sig);
-//                    }
-//                 */
-//            }
-//        }
-//    }
+    //    public static void setupSpecHotspots()
+    //    {
+    //        for (SootMethod m : API.v().getAllSystemMethods()) {
+    //            if (m.isDeclared()) {
+    //                try {
+    //                    String sig = m.getSignature();
+    //                    int i = 0;
+    //                    for (soot.Type t : m.getParameterTypes()) {
+    //                        if (SootUtils.isStringOrSimilarType(t)) {
+    //                            List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+    //                        }
+    //                        i++;     
+    //                    }
+    //                } catch (Exception e) {
+    //                    logger.error("Exception when adding hotspot for method.", e);
+    //                }
+    //                // FIXME: Return hotspots are raising an exception.
+    //                /*
+    //                    if (SootUtils.isStringType(m.getReturnType())) {
+    //                        System.out.println(String.format("addReturnHotspots(%s)", sig));
+    //                        JSAStrings.v().addReturnHotspot(sig);
+    //                    }
+    //                 */
+    //            }
+    //        }
+    //    }
 
     /**
      * Set JSA hotspots to be all system methods that have a string as a parameter.
@@ -159,11 +159,11 @@ public class JSAUtils {
                 if (sm.isConcrete()) {
                     Body body = null;
                     try {
-                    	body = sm.retrieveActiveBody();
+                        body = sm.retrieveActiveBody();
                     }
                     catch (Exception ex) {
-                    	logger.info("Exception retrieving method body {}", ex);
-                    	continue;
+                        logger.info("Exception retrieving method body {}", ex);
+                        continue;
                     }
                     for (Unit unit : body.getUnits()) {
                         Stmt stmt = (Stmt) unit;
@@ -171,17 +171,15 @@ public class JSAUtils {
                             boolean containsHotspot = false;
                             InvokeExpr expr = stmt.getInvokeExpr();
                             SootMethod tgt = expr.getMethod();
-                            if (tgt != null && API.v().isSystemMethod(tgt)) {
-                                containsHotspot = true;
-                            } else {
-                                Iterator<Edge> edges = cg.edgesOutOf(stmt);                            
-                                while (edges.hasNext() && !containsHotspot) {
-                                    tgt = edges.next().getTgt().method();
-                                    if (systemMethods.contains(tgt)) {
-                                        containsHotspot = true;
-                                    }
+                            //find first system method
+                            Iterator<Edge> edges = cg.edgesOutOf(stmt);                            
+                            while (edges.hasNext() && !containsHotspot) {
+                                tgt = edges.next().getTgt().method();
+                                if (systemMethods.contains(tgt)) {
+                                    containsHotspot = true;
                                 }
                             }
+
                             if (containsHotspot) {
                                 List<InvokeExpr> exprs = methodToInvokeExprsMap.get(tgt);
                                 if (exprs == null) {

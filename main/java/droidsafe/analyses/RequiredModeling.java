@@ -93,13 +93,7 @@ public class RequiredModeling {
                     method.isAbstract(),
                     method.isConcrete());
 
-                try {
-                    SootMethod resolved  = SootUtils.resolveMethod(method);
-                    if (resolved != method && resolved != null) {
-                        logger.debug("Method {} has an implementation {} ", method, resolved);
-                        if (API.v().isAPIModeledMethod(resolved))
-                            continue;
-                    }
+                try {              
                     toModel.add(method.getSignature());
                 } catch (Exception e) {
                     logger.info("Cannot find method in model: {}", method);
