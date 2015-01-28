@@ -199,7 +199,7 @@ public class IntentUtils {
             }        
         }
 
-        logger.error("could not find harness field for {}", clsString);
+        logger.debug("could not find harness field for {}", clsString);
 
         return null;
     }

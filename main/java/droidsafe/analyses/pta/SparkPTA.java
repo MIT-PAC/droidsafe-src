@@ -60,6 +60,7 @@ import soot.jimple.spark.geom.dataMgr.Obj_full_extractor;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.GeomQueries;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
+import soot.jimple.spark.internal.TypeManager;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.InsensitiveAllocNode;
 import soot.jimple.spark.pag.MethodPAG;
@@ -102,6 +103,8 @@ public class SparkPTA extends PTABridge {
     private HashBiMap<Object, InsensitiveAllocNode> newToAllocNodeMap;
     /** underlying pta */
     private PAG ptsProvider;
+    
+    private TypeManager typeManager;
     
     private Set<AllocNode> allAllocNodes;
     /** how many times have we been run? */
@@ -157,6 +160,8 @@ public class SparkPTA extends PTABridge {
         G.v().out = System.out;
 
         ptsProvider = (PAG)Scene.v().getPointsToAnalysis();
+        
+        typeManager = ptsProvider.getTypeManager();
 
         //cache the call graph
         callGraph = Scene.v().getCallGraph();
@@ -405,7 +410,8 @@ public class SparkPTA extends PTABridge {
     public Set<? extends IAllocNode> getPTSetIns(Value val) {
         final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
         PointsToSetInternal pts = null;
-
+        final Type filteringType = val.getType();
+        
         try {
             if (val instanceof InstanceFieldRef) {
                 final InstanceFieldRef ifr = (InstanceFieldRef)val;
@@ -429,7 +435,8 @@ public class SparkPTA extends PTABridge {
             //visit internal points to set and grab all allocnodes        
             pts.forall(new P2SetVisitor() {
                 public void visit(Node n) {
-                    allocNodes.add((AllocNode)n);
+                    if (typeManager.castNeverFails(n.getType(), filteringType))
+                        allocNodes.add((AllocNode)n);
                 }
             });
 
@@ -444,14 +451,20 @@ public class SparkPTA extends PTABridge {
 
     public Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode allocNode) {
         final Set<AllocNode> ptSet = new LinkedHashSet<AllocNode>();
-
+        if (!(allocNode.getType() instanceof ArrayType)) {
+            logger.error("Calling getPTSetOfArrayElement on non array type: {} with {}", allocNode, allocNode.getType());
+        }
+        
+        final Type filteringType = ((ArrayType)allocNode.getType()).getElementType();
+        
         HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
         pointsToSet.add((AllocNode) allocNode);
 
         ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
             @Override
             public void visit(Node node) {
-                ptSet.add((AllocNode)node);
+                if (typeManager.castNeverFails(node.getType(), filteringType))
+                    ptSet.add((AllocNode)node);
             }
         });
 
@@ -464,7 +477,8 @@ public class SparkPTA extends PTABridge {
             logger.error("Cannot call getPTSet(node, field) with static field: {}", f);
             droidsafe.main.Main.exit(1);
         }
-
+        final Type filteringType = f.getType();
+        
         final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
         HashPointsToSet pointsToSet = new HashPointsToSet(node.getType(), ptsProvider);
@@ -473,7 +487,8 @@ public class SparkPTA extends PTABridge {
         ((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, f)).forall(new P2SetVisitor() {
             @Override
             public void visit(Node node) {
-                allocNodes.add((AllocNode)node);
+                if (typeManager.castNeverFails(node.getType(), filteringType))
+                    allocNodes.add((AllocNode)node);
             }
         }); 
 
@@ -506,6 +521,8 @@ public class SparkPTA extends PTABridge {
             return getPTSetIns(val);
 
         final Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
+        final Type filteringType = val.getType();
+        
         PointsToSetInternal pts = null;
 
         try {
@@ -531,7 +548,8 @@ public class SparkPTA extends PTABridge {
             //visit internal points to set and grab all allocnodes        
             pts.forall(new P2SetVisitor() {
                 public void visit(Node n) {
-                    allocNodes.add((AllocNode)n);
+                    if (typeManager.castNeverFails(n.getType(), filteringType))
+                        allocNodes.add((AllocNode)n);
                 }
             });
 
