@@ -225,7 +225,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        
         driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
@@ -303,12 +303,7 @@ public class Main {
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
-        if (Config.v().target.equals("errorhandling")) {
-            ErrorHandlingAnalysis.v().run(monitor);
-            return DroidsafeExecutionStatus.OK_STATUS;
-        }
-        
+         
         //run jsa after we inject strings from XML values and layout
         //does not need a pta run before
         driverMsg("Starting String Analysis...");

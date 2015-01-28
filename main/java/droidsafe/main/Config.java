@@ -284,7 +284,7 @@ public class Config {
 
         Option jsatimeout =
                 OptionBuilder.withArgName("value").hasArg()
-                .withDescription("Timeout value for the string analysis (default 120)").create("jsatimeout");
+                .withDescription("Timeout value for the string analysis in mins (default 120)").create("jsatimeout");
         options.addOption(jsatimeout);
         
         Option appNameOpt =
@@ -399,8 +399,7 @@ public class Config {
         options.addOption(checkInfoFlow);
 
         options.addOption(allStatsRun);
-
-
+        
         Option noInfoFlow = new Option("noinfoflow", 
                 "Turn off information flow analysis");
         options.addOption(noInfoFlow);
@@ -846,7 +845,7 @@ public class Config {
             droidsafe.main.Main.exit(1);
         }
     }
-
+    
     private void setPrecisionLevel(int level) {
                 
         switch (level) {
