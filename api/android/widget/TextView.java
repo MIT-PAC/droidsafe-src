@@ -785,7 +785,7 @@ public TextView(Context context,
         //addTaint(defStyle);
         //addTaint(attrs.getTaint());
         //addTaint(context.getTaint());
-        mText = new StringBuffer();
+        mText = "";
         final Resources res = getResources();
         final CompatibilityInfo compat = res.getCompatibilityInfo();
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);

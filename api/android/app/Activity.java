@@ -1142,7 +1142,9 @@ public void onAttachFragment(Fragment fragment) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.731 -0500", hash_original_method = "6A267AF8CD8DFD046F9AA4A840E0F1F1", hash_generated_method = "755E2CA99C821360ADFBADF6E41C3E62")
     
 public View findViewById(int id) {
-        return getWindow().findViewById(id);
+        //return null so that fallback modeling can insert what it needs to
+        //this call will be replaced by the xml modeling when it can
+        return null;
     }
     
     /**
@@ -2517,19 +2519,12 @@ public LayoutInflater getLayoutInflater() {
         intent.getScheme();
 
         intent.addCategory(Intent.CATEGORY_DEFAULT);
-
-		/*
-                  
-        The modeling required here will create the call to onActivityResult that 
-        could be called as an effect of this call.  onActivityResult will have
-        a new Intent.  We are modeling this Intent as a copy of the intent 
-        passed to this method.  Of course, we cannot model the response intent
-        perfectly, but grab as many fields as we can.
-		*/
-        //Intent resultIntent;
-        //resultIntent = intent.translateIntent();
+        //intent.setData(Uri.parse(intent.getType()));
+        
         this.onActivityResult(requestCode, /* just make this up */ -1,
 				intent);
+
+
 		// Original method
 		/*
 		{

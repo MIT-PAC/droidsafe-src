@@ -2869,7 +2869,6 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     public Intent setType(String type) {
             mData=null;
             mType = type;
-                //addTaint(type.getTaint());
             return this;
     }
     
