@@ -1,0 +1,18 @@
+#!/bin/bash
+
+APKs=($(ls *.apk))
+
+APK_count=${#APKs[@]}
+
+if test $APK_count -ne 1
+then
+  echo "Expected 1 .apk file in the app root directory, found $APK_count"
+  exit
+fi
+
+if [ ! -f Makefile ]; then
+  APKNAME=$(basename ${APKs[0]} .apk | sed "s/-debug$//")
+  sed "s/APPNAME/$APKNAME/" $APAC_HOME/android-apps/Makefile_template > Makefile
+fi
+
+make specdump-apk

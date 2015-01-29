@@ -1,0 +1,14 @@
+#! /bin/csh -f
+#
+# Usage: jar_methods <jarfile|classfile>
+#
+# Prints out all of the methods in the jar/class in PEG format
+#
+
+# find out where the script is.  All class files are relative to that
+# location (which should be $apac/bin)
+set SCRIPT=`stat -f "%N" $0`
+set bindir=`dirname $SCRIPT`
+setenv CLASSPATH $bindir/../peg-extract/bin/droidsafe-libs.jar:$bindir/../jarmethods/bin
+printenv CLASSPATH
+java jarmethods/JarMethods $*

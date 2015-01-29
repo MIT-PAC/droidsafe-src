@@ -1,0 +1,85 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+import sys
+import os
+import subprocess
+import socket
+
+# if your hostname is one of these, then issue a server run (use BIG GB memory)
+SERVERS = ["hippo", "rhino"]
+
+HOSTNAME = socket.gethostname()
+JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
+MAIN_CLASS = "droidsafe.main.Main"
+APAC_HOME = os.environ['APAC_HOME'] + os.sep
+
+SERVER_MEMORY="64"
+DESKTOP_MEMORY="16"
+
+def run_droidsafe(args):
+    libs = APAC_HOME + "bin" + os.sep
+    java_command = []
+    java_command.append("java")
+    java_command.append("-cp")
+
+    classpath = ""
+    for jar in JARS:
+    	classpath += libs + jar + ":"
+    #needed for logback configuration
+    classpath += APAC_HOME + "config-files"
+    classpath += ":."
+    java_command.append(classpath)
+
+    #uncomment for yourkit profiler
+    #java_command.append("-agentpath:/Users/mgordon/tools/YourKit_Java_Profiler_2013_build_13072.app/bin/mac/libyjpagent.jnilib")
+
+    java_command.append("-Djava.library.path=" + APAC_HOME + "lib")
+
+    if (HOSTNAME in SERVERS):
+        print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
+        java_command.append("-Xms2g")
+        java_command.append("-Xmx" + SERVER_MEMORY+ "g")
+    else:
+        java_command.append("-Xms1g")
+        java_command.append("-Xmx" + DESKTOP_MEMORY+ "g")
+
+#   java_command.append("-Xrunhprof:heap=sites,depth=6")
+    java_command.append("-Dfile.encoding=UTF-8")
+
+    #search args for -strict to enable assertions
+    for arg in args[1:]:
+        if "-strict" in args:
+            java_command.append("-enableassertions")
+
+
+    java_command.append(MAIN_CLASS)
+    
+    #append arguments
+    for arg in args[1:]:
+        java_command.append(arg)
+
+    #print(command)
+    return subprocess.call(java_command)
+
+
+
+def check_env_vars(): 
+    if not "ANDROID_SDK_HOME" in os.environ:
+        print("Need to set ANDROID_SDK_HOME to the root of your android sdk installation.")
+        sys.exit(1)
+        
+    if not "APAC_HOME" in os.environ:
+        print("Need to set APAC_HOME to the root of your apac repository.")
+        sys.exit(1)
+
+# Gather our code in a main() function
+def main():
+    check_env_vars()
+    return run_droidsafe(sys.argv)
+
+
+# Standard boilerplate to call the main() function to begin
+# the program.
+if __name__ == '__main__':
+    sys.exit(main())

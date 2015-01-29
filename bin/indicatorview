@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+: ${APAC_HOME:?"Need to define APAC_HOME"}
+
+CLASSPATH="$APAC_HOME/lib/indicatorview.jar:$APAC_HOME/lib/soot-trunk.jar:$APAC_HOME/lib/gson-2.2.4.jar"
+
+java -cp $CLASSPATH droidsafe.indicator.IndicatorView $1
+
