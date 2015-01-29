@@ -12,7 +12,7 @@ fi
 
 if [ ! -f Makefile ]; then
   APKNAME=$(basename ${APKs[0]} .apk | sed "s/-debug$//")
-  sed "s/APPNAME/$APKNAME/" $APAC_HOME/android-apps/Makefile_template > Makefile
+  sed "s/APPNAME/$APKNAME/" $DROIDSAFE_SRC_HOME/android-apps/Makefile_template > Makefile
 fi
 
 make specdump-apk

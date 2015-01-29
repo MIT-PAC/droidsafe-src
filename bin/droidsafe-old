@@ -26,7 +26,7 @@ ARG_MAP = {
 DEFAULT_PASS = PASSES[0]
 
 def run_droidsafe(args):
-    cwd = os.environ['APAC_HOME'] + os.sep + "peg-extract"
+    cwd = os.environ['DROIDSAFE_SRC_HOME'] + os.sep + "peg-extract"
     command = []
     command.append("ant")
 
@@ -45,8 +45,8 @@ def check_env_vars():
         print("Need to set ANDROID_SDK_HOME to the root of your android sdk installation.")
         sys.exit(1)
         
-    if not "APAC_HOME" in os.environ:
-        print("Need to set APAC_HOME to the root of your apac repository.")
+    if not "DROIDSAFE_SRC_HOME" in os.environ:
+        print("Need to set DROIDSAFE_SRC_HOME to the root of your apac repository.")
         sys.exit(1)
 
 def parse_args(parser):

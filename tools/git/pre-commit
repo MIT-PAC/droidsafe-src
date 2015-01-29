@@ -9,14 +9,14 @@
 # Now, when you commit, you will be disallowed from doing so
 # until you pass your checkstyle checks.
 
-if (! $ENV{'APAC_HOME'}) {
-    die "You must define APAC_HOME to use the pre-commit checkstyle script";
+if (! $ENV{'ANDROID_SRC_HOME'}) {
+    die "You must define ANDROID_SRC_HOME to use the pre-commit checkstyle script";
 }
  
-$APAC_HOME = $ENV{'APAC_HOME'};
+$ANDROID_SRC_HOME = $ENV{'ANDROID_SRC_HOME'};
 
-$checkstyle_jar = "$APAC_HOME/tools/checkstyle/checkstyle-5.6-all.jar";
-$check_file = "$APAC_HOME/tools/checkstyle/droidsafe_checks.xml";
+$checkstyle_jar = "$ANDROID_SRC_HOME/tools/checkstyle/checkstyle-5.6-all.jar";
+$check_file = "$ANDROID_SRC_HOME/tools/checkstyle/droidsafe_checks.xml";
 
 $command = "git-diff-index --name-only --cached HEAD 2>&1 | uniq";
 open (FILES,$command . "|") || die "Cannot run '$command': $!\n";

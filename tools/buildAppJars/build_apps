@@ -8,9 +8,9 @@ import exceptions
 import subprocess
 import time
 
-APAC_HOME = os.environ["APAC_HOME"]
+ANDROID_SRC_HOME = os.environ["ANDROID_SRC_HOME"]
 
-APPS_ROOT_DIR = APAC_HOME + '/android-apps/engagements/'
+APPS_ROOT_DIR = ANDROID_SRC_HOME + '/android-apps/engagements/'
 
 MAKE_FILE_NAME = 'Makefile'
 

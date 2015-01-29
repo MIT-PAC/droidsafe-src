@@ -33,12 +33,12 @@ def main(argv):
             print("Must either specify an existing apk file or ensure that the current directory contains one single .apk file.")
             sys.exit(1)
 
-    apktool_framework = os.environ['APAC_HOME']  + "/bin/apktool-framework"
+    apktool_framework = os.environ['DROIDSAFE_SRC_HOME']  + "/bin/apktool-framework"
 
     if ('APK_FRAME_PATH' in os.environ):
         apktool_framework = os.environ['APK_FRAME_PATH'] 
 
-    call([os.environ['APAC_HOME'] + "/bin/apktool", "d", "--frame-path", apktool_framework, "-f", file, "apktool-gen"])
+    call([os.environ['DROIDSAFE_SRC_HOME'] + "/bin/apktool", "d", "--frame-path", apktool_framework, "-f", file, "apktool-gen"])
     call(["/bin/rm", "-fr", "res"])
     call(["mv", "apktool-gen/res", "."])
     call(["mv", "apktool-gen/AndroidManifest.xml", "."])

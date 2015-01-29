@@ -66,7 +66,7 @@ public class SpecdumpTestCase {
    */
   @Parameters(name = "{0}")
 	public static Collection<Object[]> data() {
-    String pathToSearch = System.getenv("APAC_HOME") + "/" + Config.ANDROID_APP_DIR_REL + "/";
+    String pathToSearch = System.getenv("DROIDSAFE_SRC_HOME") + "/" + Config.ANDROID_APP_DIR_REL + "/";
 
     String dirToSearch = System.getProperty("dir-to-search");
     if(dirToSearch != null)
@@ -182,11 +182,11 @@ public class SpecdumpTestCase {
   // The fact that I have to do this is all ANT's fault
 	private String getCurrentClasspath() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(System.getenv("APAC_HOME")+"/bin/droidsafe-core.jar");
+		sb.append(System.getenv("DROIDSAFE_SRC_HOME")+"/bin/droidsafe-core.jar");
 		sb.append(System.getProperty("path.separator"));
-		sb.append(System.getenv("APAC_HOME")+"/bin/droidsafe-libs.jar");
+		sb.append(System.getenv("DROIDSAFE_SRC_HOME")+"/bin/droidsafe-libs.jar");
 		sb.append(System.getProperty("path.separator"));
-		sb.append(System.getenv("APAC_HOME")+"/config-files");
+		sb.append(System.getenv("DROIDSAFE_SRC_HOME")+"/config-files");
 		return sb.toString();
 	}
 

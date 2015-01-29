@@ -28,7 +28,7 @@ def process_command_line(argv):
     return args
 
 def run(args):
-    path = os.environ['APAC_HOME'] + '/android-apps/engagements'
+    path = os.environ['ANDROID_SRC_HOME'] + '/android-apps/engagements'
     droidsafe_gen_dirs = [os.path.join(dirpath, f) for dirpath, dirnames, files in os.walk(path) for f in
             fnmatch.filter(dirnames, args.dir)]
     

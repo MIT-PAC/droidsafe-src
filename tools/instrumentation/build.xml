@@ -4,7 +4,7 @@
     <property name="build.class.dir" value="build/classes"/>
 	<path id="classpath">
 		<fileset dir="${lib.dir}" includes="**/*.jar" />
-        <pathelement path="${env.APAC_HOME}/android-libs/android.jar"/>
+        <pathelement path="${env.ANDROID_SRC_HOME}/android-libs/android.jar"/>
 	</path>
 
 	<target name="help">

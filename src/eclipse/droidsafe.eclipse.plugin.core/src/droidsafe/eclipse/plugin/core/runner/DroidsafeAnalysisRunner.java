@@ -70,7 +70,7 @@ public class DroidsafeAnalysisRunner extends Main {
     // lc = (LoggerContext) LoggerFactory.getILoggerFactory();
     // StatusPrinter.print(lc);
 
-    logger.info("\nAPAC_HOME = " + Config.v().getApacHome() + "\nAPP_ROOT_DIR for project = "
+    logger.info("\nDROIDSAFE_SRC_HOME = " + Config.v().getApacHome() + "\nAPP_ROOT_DIR for project = "
         + Config.v().APP_ROOT_DIR + "\nANDROID_LIB_DIR = " + Config.v().ANDROID_LIB_DIR);
     logger.info("Starting DroidSafe Run Init");
 

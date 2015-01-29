@@ -166,11 +166,11 @@ public class VAResultContainerClassGenerator {
 
     public VAResultContainerClassGenerator(String sourcePath) {
         sourceDirs = sourcePath.split(":");
-        apacHome = System.getenv("APAC_HOME");
+        apacHome = System.getenv("DROIDSAFE_SRC_HOME");
         classesAlreadyModeled = new HashSet<String>();
-        logger.debug("APAC_HOME = {}", apacHome);
+        logger.debug("DROIDSAFE_SRC_HOME = {}", apacHome);
         if (apacHome == null) {
-            logger.error("Environment variable $APAC_HOME not set!");
+            logger.error("Environment variable $DROIDSAFE_SRC_HOME not set!");
             droidsafe.main.Main.exit(1);
         }
         modelSourceDir = constructPath(apacHome, "src", "gen");
@@ -1355,7 +1355,7 @@ public class VAResultContainerClassGenerator {
                 // Call context.reset() to clear any previous configuration, e.g. default
                 // configuration. For multi-step configuration, omit calling context.reset().
                 context.reset();
-                configurator.doConfigure(System.getenv("APAC_HOME") + File.separator + "config-files/va-result-container-class-generator-logging.xml");
+                configurator.doConfigure(System.getenv("DROIDSAFE_SRC_HOME") + File.separator + "config-files/va-result-container-class-generator-logging.xml");
             } catch (JoranException je) {
                 // StatusPrinter will handle this
             }

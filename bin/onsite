@@ -13,7 +13,7 @@
 num_tests=2
 app_dir=${1?"Need root directory arg"}
 app_name=${2?"Need app name"}
-apac_home=${APAC_HOME?"Need to define APAC_HOME"}
+apac_home=${DROIDSAFE_SRC_HOME?"Need to define DROIDSAFE_SRC_HOME"}
 args_file_name="ds.rt.addtional.args"
 
 function create_config() {

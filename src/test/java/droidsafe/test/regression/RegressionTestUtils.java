@@ -36,7 +36,7 @@ public class RegressionTestUtils {
   public static final String SPECDUMP_REGRESSION_VALUE_PREFIX = "# SPECDUMP SHOULD WORK: ";
 
   public static void showRegressionStats() {
-    File engagementTestFolder = new File(System.getenv("APAC_HOME") + "/test/java/engagement/");
+    File engagementTestFolder = new File(System.getenv("DROIDSAFE_SRC_HOME") + "/test/java/engagement/");
     File[] engagementTestFiles = engagementTestFolder.listFiles();
   }
 
@@ -114,7 +114,7 @@ public class RegressionTestUtils {
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
   public static Map<String, Boolean> getCurrSpecdumpTestResults() {
-    String specProducedTestCaseReportFilePath = StringUtils.join(new String[] {System.getenv("APAC_HOME"), Config.TEST_RESULTS_DIR, Config.TEST_PREFIX + Config.SPECDUMP_TEST_NAME + ".xml"}, "/");
+    String specProducedTestCaseReportFilePath = StringUtils.join(new String[] {System.getenv("DROIDSAFE_SRC_HOME"), Config.TEST_RESULTS_DIR, Config.TEST_PREFIX + Config.SPECDUMP_TEST_NAME + ".xml"}, "/");
     XmlFile xmlFile = new XmlFile(specProducedTestCaseReportFilePath);
     Map<String, Boolean> currSpecdumpTestResults = new HashMap<String, Boolean>();
     Element documentElement = xmlFile.getDocumentElement();

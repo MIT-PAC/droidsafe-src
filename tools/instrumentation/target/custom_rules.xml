@@ -5,7 +5,7 @@
 <property name="classes.mod.jimple"  value="${out.dex.input.absolute.dir}/jimple"/>
 
 <property name="classes.orig" value="bin/classes"/>
-<property name="droidsafe.dir" value="${env.APAC_HOME}"/>
+<property name="droidsafe.dir" value="${env.ANDROID_SRC_HOME}"/>
 <property name="instr.tool.dir" value="${droidsafe.dir}/tools/instrumentation/bin"/>
 <property name="instr.tool.jar" value="${instr.tool.dir}/droidsafe-instr.jar"/>
 <property name="instr.lib.package" value="droidsafe/instrumentation"/>

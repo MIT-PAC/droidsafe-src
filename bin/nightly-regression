@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-: ${APAC_HOME:?"Need to define APAC_HOME"}
+: ${DROIDSAFE_SRC_HOME:?"Need to define DROIDSAFE_SRC_HOME"}
 
-$APAC_HOME/system-tests/regtest.py -threads 6 -timeout 7200 -dir $APAC_HOME/android-apps/engagements
+$DROIDSAFE_SRC_HOME/system-tests/regtest.py -threads 6 -timeout 7200 -dir $DROIDSAFE_SRC_HOME/android-apps/engagements

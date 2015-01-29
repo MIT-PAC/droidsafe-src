@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apac_home=${APAC_HOME?"Need to define APAC_HOME"}
+apac_home=${DROIDSAFE_SRC_HOME?"Need to define DROIDSAFE_SRC_HOME"}
 
 ARGS=1        # Number of arguments expected.
 

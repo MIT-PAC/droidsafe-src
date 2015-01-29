@@ -16,10 +16,10 @@ import org.junit.Test;
 
 public class AttrModelingTestCase extends AppTestCase {
 
-//    super(System.getenv("APAC_HOME") + "/android-apps/tests/attr-modeling/IntentBasic1TestCase");
+//    super(System.getenv("DROIDSAFE_SRC_HOME") + "/android-apps/tests/attr-modeling/IntentBasic1TestCase");
 //    this.wantedStrings.add("<modeled Intent #87> {action: <modeled string> {possible values: [android.intent.action.GET_CONTENT, some action]}} , type: <modeled string> {possible values: [some mimetype]}} , data: null, package: <modeled string> {possible values: [some package]}} }");
 
-//    super(System.getenv("APAC_HOME") + "/android-apps/tests/attr-modeling/IntentInvalidation1TestCase");
+//    super(System.getenv("DROIDSAFE_SRC_HOME") + "/android-apps/tests/attr-modeling/IntentInvalidation1TestCase");
 //    this.wantedStrings.add("<modeled Intent #87> {invalidated}");
 
 

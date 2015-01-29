@@ -38,7 +38,7 @@ options {
     public void initActions() {
         File avFile = null;
         try {
-            avFile =  new File(System.getenv ("APAC_HOME"), "config-files/droidActions.txt");
+            avFile =  new File(System.getenv ("DROIDSAFE_SRC_HOME"), "config-files/droidActions.txt");
             //actionDefs = new DroidActVocab(avFile.toString());  
         } catch (Exception e) {
             logger.error("Error opening or parsing actions definition file");

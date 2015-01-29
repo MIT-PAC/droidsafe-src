@@ -56,7 +56,7 @@
           depends="check-eclipse-build-files" unless="eclipse.build.available">
     <echo>
       Build file missing correct paths to eclipse jar files and scripts needed to build and deploy the plugin. 
-      Edit file APAC_HOME/src/eclipse/build.properties and make sure properties 
+      Edit file DROIDSAFE_SRC_HOME/src/eclipse/build.properties and make sure properties 
       target.eclipse.platform points to the correct folder where eclipse is installed.
 
       target.eclipse.platform should point to the root folder of your eclipse distribution. 

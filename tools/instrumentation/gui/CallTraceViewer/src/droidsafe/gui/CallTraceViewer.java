@@ -133,7 +133,7 @@ public class CallTraceViewer extends JPanel
     private void loadFromFile() {
         
         String dir = "./";
-        String apacDir = System.getenv("APAC_HOME");
+        String apacDir = System.getenv("ANDROID_SRC_HOME");
         if (apacDir != null) {
             dir = apacDir + "/android-apps";
         }

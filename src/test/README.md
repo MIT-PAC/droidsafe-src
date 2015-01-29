@@ -11,7 +11,7 @@ passes before merging your changes into master. It will take ~ 20 minutes. If yo
 focus in on
 a specific subset of the apps in */android-apps* by specifying the *-Ddir.to.search* property.
 
-If the test fails, then look at the generated test report in *$APAC_HOME/test-reports/regression/* and see which app's
+If the test fails, then look at the generated test report in *$DROIDSAFE_SRC_HOME/test-reports/regression/* and see which app's
 SpecdumpTestCase failed that wasn't supposed to. If the failure is not because of a timeout, then try running *make 
 specdump* from the project root and see if your changes cause whatever exception is thrown.
 

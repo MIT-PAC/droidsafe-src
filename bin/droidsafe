@@ -12,13 +12,13 @@ SERVERS = ["hippo", "rhino"]
 HOSTNAME = socket.gethostname()
 JARS = ["droidsafe-core.jar","droidsafe-libs.jar"]
 MAIN_CLASS = "droidsafe.main.Main"
-APAC_HOME = os.environ['APAC_HOME'] + os.sep
+DROIDSAFE_SRC_HOME = os.environ['DROIDSAFE_SRC_HOME'] + os.sep
 
 SERVER_MEMORY="64"
 DESKTOP_MEMORY="16"
 
 def run_droidsafe(args):
-    libs = APAC_HOME + "bin" + os.sep
+    libs = DROIDSAFE_SRC_HOME + "bin" + os.sep
     java_command = []
     java_command.append("java")
     java_command.append("-cp")
@@ -27,14 +27,14 @@ def run_droidsafe(args):
     for jar in JARS:
     	classpath += libs + jar + ":"
     #needed for logback configuration
-    classpath += APAC_HOME + "config-files"
+    classpath += DROIDSAFE_SRC_HOME + "config-files"
     classpath += ":."
     java_command.append(classpath)
 
     #uncomment for yourkit profiler
     #java_command.append("-agentpath:/Users/mgordon/tools/YourKit_Java_Profiler_2013_build_13072.app/bin/mac/libyjpagent.jnilib")
 
-    java_command.append("-Djava.library.path=" + APAC_HOME + "lib")
+    java_command.append("-Djava.library.path=" + DROIDSAFE_SRC_HOME + "lib")
 
     if (HOSTNAME in SERVERS):
         print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
@@ -69,8 +69,8 @@ def check_env_vars():
         print("Need to set ANDROID_SDK_HOME to the root of your android sdk installation.")
         sys.exit(1)
         
-    if not "APAC_HOME" in os.environ:
-        print("Need to set APAC_HOME to the root of your apac repository.")
+    if not "DROIDSAFE_SRC_HOME" in os.environ:
+        print("Need to set DROIDSAFE_SRC_HOME to the root of your apac repository.")
         sys.exit(1)
 
 # Gather our code in a main() function

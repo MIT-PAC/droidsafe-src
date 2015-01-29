@@ -89,9 +89,9 @@ public class Config {
     public String APP_ROOT_DIR;
 
     /** Path for the root folder for droidsafe code */
-    private String apacHome = System.getenv("APAC_HOME");
+    private String apacHome = System.getenv("DROIDSAFE_SRC_HOME");
 
-    public File ANDROID_LIB_DIR = new File(System.getenv("APAC_HOME") + File.separator + ANDROID_LIB_DIR_REL);  
+    public File ANDROID_LIB_DIR = new File(System.getenv("DROIDSAFE_SRC_HOME") + File.separator + ANDROID_LIB_DIR_REL);  
 
     public String target = "specdump";
 
@@ -822,9 +822,9 @@ public class Config {
     }
 
     public void init(String[] args) {
-        logger.info("APAC_HOME = {}", apacHome);
+        logger.info("DROIDSAFE_SRC_HOME = {}", apacHome);
         if (this.apacHome == null) {
-            logger.error("Environment variable $APAC_HOME not set!");
+            logger.error("Environment variable $DROIDSAFE_SRC_HOME not set!");
             droidsafe.main.Main.exit(1);
         }
 
