@@ -875,30 +875,46 @@ public class InformationFlowAnalysis {
     // interface_invoke_expr = "interfaceinvoke" immediate ".[" + method_signature "]" "(" immediate_list ")"
     // special_invoke_expr = "specialinvoke" immediate ".[" method_signature "]" "(" immediate_list ")"
     // static_invoke_expr = "staticinvoke" "[" method_signature "]" "(" immediate_list ")"
-    // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")"
+    // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signature "]" "(" immediate_list ")"
     private void execute(Stmt stmt, InvokeExpr invokeExpr, State state) {
-        SootMethod invokeMethod = invokeExpr.getMethod();
-        if (this.objectUtils.isAddTaint(invokeMethod)) {
-            executeAddTaint(stmt, invokeExpr, state);
-            return;
-        } else if (this.objectUtils.isGetTaint(invokeMethod)) {
-            executeGetTaint(stmt, invokeExpr, state);
-            return;
-        } else if (this.objectUtils.isToTaint(invokeMethod)) {
-            executeToTaint(stmt, invokeExpr, state);
-            return;
-        } else if (this.dsUtilsUtils.isGenerateTaint(invokeMethod)) {
-            executeGenerateTaint(stmt, invokeExpr, state);
-            return;
-        }
-
         Block callerBlock = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body callerBody = callerBlock.getBody();
         SootMethod callerMethod = callerBody.getMethod();
+        Set<MethodOrMethodContext> callerMethodContexts = PTABridge.v().getMethodContexts(callerMethod);
+
+        // Object.addTaint, Object.getTaint*, Object.toTaint*, DSUtils.dsGenerateTaint*
+        for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
+            Context callerContext = callerMethodContext.context();
+            if (ignoreContext(callerContext)) {
+                continue;
+            }
+            List<Edge> callEdges = PTABridge.v().outgoingEdges(callerMethodContext, stmt);
+            for (Edge callEdge : callEdges) {
+                MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
+                Context calleeContext = calleeMethodContext.context();
+                if (ignoreContext(calleeContext)) {
+                    continue;
+                }
+                SootMethod calleeMethod = calleeMethodContext.method();
+                if (this.objectUtils.isAddTaint(calleeMethod)) {
+                    executeAddTaint(stmt, invokeExpr, state);
+                    return;
+                } else if (this.objectUtils.isGetTaint(calleeMethod)) {
+                    executeGetTaint(stmt, invokeExpr, state);
+                    return;
+                } else if (this.objectUtils.isToTaint(calleeMethod)) {
+                    executeToTaint(stmt, invokeExpr, state);
+                    return;
+                } else if (this.dsUtilsUtils.isGenerateTaint(calleeMethod)) {
+                    executeGenerateTaint(stmt, invokeExpr, state);
+                    return;
+                }
+            }
+        }
+
         HashMap<Context, HashSet<InfoValue>[]> contextToArguments = new HashMap<Context, HashSet<InfoValue>[]>();
         int argumentCount = invokeExpr.getArgCount();
         List<Value> argumentImmediates = invokeExpr.getArgs();
-        Set<MethodOrMethodContext> callerMethodContexts = PTABridge.v().getMethodContexts(callerMethod);
         for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
             Context callerContext = callerMethodContext.context();
             if (ignoreContext(callerContext)) {
