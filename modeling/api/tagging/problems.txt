@@ -1,0 +1,52 @@
+
+#ValuAnimator is the parent of ObjectAnimator
+"ValueAnimator android.animation.ObjectAnimator.setDuration (long)", "@DSModeled(DSC.SAFEDSC.SAFE)", "1" 
+
+
+//model returns IActivityMananger
+"Object android.app.ActivityManagerNative$1.create ()", "@DSModeled(DSC.SAFE)", "1" 
+
+#Parcelable.Creator<SearchableInfo> is returned
+"Object android.app.SearchableInfo$1.createFromParcel (Parcel)", "@DSModeled(DSC.BAN)", "1" 
+"Object android.content.ComponentName$1.createFromParcel (Parcel)", "@DSModeled(DSC.BAN)", "1" 
+
+"Object android.os.Bundle$MyCreator.createFromParcel (Parcel)", "@DSModeled(DSC.BAN)", "1" 
+"Object android.os.StrictMode$8.create ()", "@DSModeled(DSC.BAN)", "1" 
+
+#enum
+"void android.renderscript.Allocation$MipmapControl.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.Element$DataKind.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.Element$DataType.<init> (String,int,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+
+"void android.renderscript.FileA3D$EntryType.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.Program$ProgramParam.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.Program$TextureType.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+
+"void android.renderscript.Sampler$Value.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.Type$CubemapFace.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+
+
+"void android.renderscript.ProgramFragmentFixedFunction$Builder$EnvMode.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.ProgramFragmentFixedFunction$Builder$Format.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.ProgramRaster$CullMode.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.ProgramStore$BlendDstFunc.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+"void android.renderscript.ProgramStore$DepthFunc.<init> (String,int,int)", "@DSModeled(DSC.SAFE)", "1" 
+
+
+#generic type
+"Parcelable$Creator android.support.v4.os.ParcelableCompat.newCreator (ParcelableCompatCreatorCallbacks)", "@DSModeled(DSC.SAFE)", "1" 
+
+###########################################
+#Missing files
+"void android.renderscript.RSRuntimeException.<init> (String)", "@DSModeled(DSC.SAFE)", "1" 
+
+
+##########################################
+# already copied
+"Object[] android.text.Layout.getParagraphSpans (Spanned,int,int,Class)", "@DSModeled(DSC.BAN)", "1" 
+"float android.text.MeasuredText.addStyleRun (TextPaint,int,FontMetricsInt)", "@DSModeled(DSC.SAFE)", "1" 
+
+#Fixed
+"void android.text.NoCopySpan$Concrete.<init> ()", "@DSModeled(DSC.BAN)", "1" 
+
+

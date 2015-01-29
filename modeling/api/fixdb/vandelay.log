@@ -1,0 +1,6 @@
+INFO d.d.t.ImportExport [ImportExport.java:70] Starting import
+DEBUG d.d.m.DbUtils [DbUtils.java:59] Opened database successfully
+INFO d.d.t.ImportExport [ImportExport.java:263] Added 67096 rows to database from psychic.
+INFO d.d.t.ImportExport [ImportExport.java:263] Added 50112 rows to database from spectre.
+INFO d.d.t.ImportExport [ImportExport.java:263] Added 8013 rows to database from modeler.
+INFO d.d.t.ImportExport [ImportExport.java:57] Total time = 15.318 seconds.

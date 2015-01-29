@@ -1,0 +1,90 @@
+Unmodeled Methods:
+
+<android.app.ActivityManagerProxy: void handleApplicationStrictModeViolation(android.os.IBinder,int,android.os.StrictMode$ViolationInfo)>
+<android.app.IntentService: void __ds__onHandleIntent(android.content.Intent)>
+<android.app.PendingIntent: void <init>(android.content.IIntentSender)>
+<android.app.Service: void <init>()>
+<android.app.Service: void stopSelf(int)>
+<android.app.backup.BackupDataInputStream: int read()>
+<android.content.ComponentName: void <init>(android.content.Context,java.lang.Class)>
+<android.content.ComponentName: void <init>(android.content.Context,java.lang.String)>
+<android.content.IntentFilter: int countActions()>
+<android.content.IntentFilter: void <init>(java.lang.String)>
+<android.content.res.AssetManager$AssetInputStream: int available()>
+<android.content.res.AssetManager$AssetInputStream: void close()>
+<android.net.LocalSocketImpl$SocketInputStream: void close()>
+<android.net.wifi.SupplicantState: void <init>(java.lang.String,int)>
+<android.os.Bundle$1: android.os.Bundle createFromParcel(android.os.Parcel)>
+<android.os.Handler: android.os.Message obtainMessage()>
+<android.os.HandlerThread: android.os.Looper getLooper()>
+<android.os.Looper: void loop()>
+<android.os.Looper: void prepare()>
+<android.os.Looper: void quit()>
+<android.os.MemoryFile$MemoryInputStream: int read(byte[],int,int)>
+<android.os.MessageQueue: android.os.Message next()>
+<android.util.JsonToken: void <init>(java.lang.String,int)>
+<com.android.internal.telephony.cat.LaunchBrowserMode: void <init>(java.lang.String,int)>
+<com.android.internal.telephony.cat.PresentationType: void <init>(java.lang.String,int)>
+<droidsafe.annotations.DSC: void <init>(java.lang.String,int)>
+<droidsafe.runtime.DroidSafeAndroidRuntime: void modelService(android.app.Service)>
+<gov.nist.javax.sip.parser.Pipeline: void close()>
+<java.io.StringBufferInputStream: int available()>
+<java.io.StringBufferInputStream: int read()>
+<java.io.StringBufferInputStream: int read(byte[],int,int)>
+<java.lang.TwoEnumerationsInOne: void <init>(java.util.Enumeration,java.util.Enumeration)>
+<java.lang.annotation.ElementType: void <init>(java.lang.String,int)>
+<java.lang.annotation.RetentionPolicy: void <init>(java.lang.String,int)>
+<java.math.RoundingMode: void <init>(java.lang.String,int,int)>
+<java.nio.Buffer: void checkIndex(int)>
+<java.nio.SocketChannelImpl$SocketChannelInputStream: void close()>
+<java.nio.channels.Channels$ChannelInputStream: void close()>
+<java.sql.ClientInfoStatus: void <init>(java.lang.String,int)>
+<java.sql.RowIdLifetime: void <init>(java.lang.String,int)>
+<java.util.concurrent.TimeUnit: void <init>(java.lang.String,int)>
+<javax.sip.DialogState: void <init>(java.lang.String,int)>
+<javax.sip.Timeout: void <init>(java.lang.String,int)>
+<javax.sip.TransactionState: void <init>(java.lang.String,int)>
+<libcore.net.http.ResponseSource: void <init>(java.lang.String,int)>
+<org.apache.commons.logging.impl.Jdk14Logger: void <init>(java.lang.String)>
+<org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl$SSLInputStream: int read()>
+<org.apache.http.client.methods.HttpGet: void <init>(java.lang.String)>
+<org.apache.http.conn.BasicManagedEntity: boolean eofDetected(java.io.InputStream)>
+<org.apache.http.conn.BasicManagedEntity: boolean streamAbort(java.io.InputStream)>
+<org.apache.http.conn.BasicManagedEntity: java.io.InputStream getContent()>
+<org.apache.http.conn.BasicManagedEntity: void releaseManagedConnection()>
+<org.apache.http.conn.EofSensorInputStream: boolean isReadAllowed()>
+<org.apache.http.conn.EofSensorInputStream: void <init>(java.io.InputStream,org.apache.http.conn.EofSensorWatcher)>
+<org.apache.http.conn.EofSensorInputStream: void checkClose()>
+<org.apache.http.entity.EntityTemplate: java.io.InputStream getContent()>
+<org.apache.http.entity.EntityTemplate: long getContentLength()>
+<org.apache.http.entity.FileEntity: java.io.InputStream getContent()>
+<org.apache.http.entity.FileEntity: long getContentLength()>
+<org.apache.http.entity.SerializableEntity: java.io.InputStream getContent()>
+<org.apache.http.entity.SerializableEntity: long getContentLength()>
+<org.apache.http.impl.io.ChunkedInputStream: void close()>
+<org.apache.http.message.BasicHttpResponse: void <init>(org.apache.http.StatusLine,org.apache.http.ReasonPhraseCatalog,java.util.Locale)>
+<org.apache.http.util.CharArrayBuffer: void append(org.apache.http.util.CharArrayBuffer,int,int)>
+<org.bouncycastle.asn1.LimitedInputStream: void setParentEofDetect(boolean)>
+
+Errors in PTA:
+
+No valid allocations for receiver of <java.lang.Object: java.lang.Class getClass()> of type android.telephony.TelephonyManager in <com.url.sourceviewer.DownloadService: void onHandleIntent(android.content.Intent)> (Line: com.url.sourceviewer.DownloadService 59).
+
+No valid allocations for receiver of <org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity()> of type org.apache.http.HttpResponse in <com.url.sourceviewer.DownloadService: void onHandleIntent(android.content.Intent)> (Line: com.url.sourceviewer.DownloadService 63).
+
+No valid allocations for receiver of <android.os.Bundle: void putString(java.lang.String,java.lang.String)> of type android.os.Bundle in <com.url.sourceviewer.MainActivity: void onSavedInstanceState(android.os.Bundle)> (Line: com.url.sourceviewer.MainActivity 71).
+
+No valid allocations for receiver of <android.app.Activity: void onSaveInstanceState(android.os.Bundle)> of type com.url.sourceviewer.MainActivity in <com.url.sourceviewer.MainActivity: void onSavedInstanceState(android.os.Bundle)> (Line: com.url.sourceviewer.MainActivity 72).
+
+No valid allocations for receiver of <android.app.AlarmManager: void cancel(android.app.PendingIntent)> of type android.app.AlarmManager in <com.url.sourceviewer.MainActivity: void onDestroy()> (Line: com.url.sourceviewer.MainActivity 96).
+
+No valid allocations for receiver of <android.app.AlarmManager: void setRepeating(int,long,long,android.app.PendingIntent)> of type android.app.AlarmManager in <com.url.sourceviewer.MainActivity: void onClick(android.view.View)> (Line: com.url.sourceviewer.MainActivity 111).
+
+No valid allocations for receiver of <android.widget.TextView: void setText(java.lang.CharSequence)> of type android.widget.TextView in <com.url.sourceviewer.MainActivity: void clearTxt(android.view.View)> (Line: com.url.sourceviewer.MainActivity 117).
+
+
+Fields Missing from API Modeling (versus abstract semantics of Value Analysis):
+
+Methods overriding a system method that are not called from model: 
+
+

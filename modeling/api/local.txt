@@ -1,0 +1,46 @@
+./android/app/Activity.java: @DSVAModeled
+./android/content/ComponentName.java:    @DSVAModeled
+./android/content/ComponentName.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/content/Intent.java:    @DSVAModeled
+./android/net/Uri.java:    @DSVAModeled
+./android/os/Bundle.java:    @DSVAModeled
+./android/widget/Button.java:@DSVAModeled
+./android/widget/TextView.java:    @DSVAModeled
+./droidsafe/annotations/DSVAModeled.java:public @interface DSVAModeled {
+./java/io/FileDescriptor.java:    @DSVAModeled
+./java/io/File.java:    @DSVAModeled
+./java/lang/Class.java:    @DSVAModeled
+./java/lang/ProcessBuilder.java:    @DSVAModeled
+./java/lang/reflect/Constructor.java:    @DSVAModeled
+./java/lang/reflect/Constructor.java:    @DSVAModeled
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/lang/reflect/Method.java:    @DSVAModeled
+./java/net/InetAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/InetSocketAddress.java:    @DSVAModeled
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/SocketImpl.java:    @DSVAModeled
+./java/net/Socket.java:    @DSVAModeled
+./java/net/URI.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./java/net/URL.java:    @DSVAModeled
+./org/apache/http/client/methods/HttpGet.java:    @DSVAModeled
+./org/apache/http/client/methods/HttpGet.java:@DSVAModeled
+./org/apache/http/client/methods/HttpRequestBase.java:    @DSVAModeled

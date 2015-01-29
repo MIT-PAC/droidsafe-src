@@ -1,0 +1,43 @@
+/* Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package java.nio.channels;
+
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import java.io.IOException;
+
+/**
+ * A {@code FileLockInterruptionException} is thrown when a thread is
+ * interrupted while waiting to acquire a file lock.
+ * <p>
+ * Note that the thread will also be in the 'interrupted' state.
+ */
+public class FileLockInterruptionException extends IOException {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.312 -0400", hash_original_field = "C27B5719536468704F976348E1AC4262", hash_generated_field = "9CB8D475A9023F49A731AC168F5D017E")
+
+
+    private static final long serialVersionUID = 7104080643653532383L;
+
+    /**
+     * Constructs a {@code FileLockInterruptionException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-08-13 13:14:14.313 -0400", hash_original_method = "7313CB88B1A9B38B868072316D11A9EC", hash_generated_method = "EB078BB9DD018F88840AC87AFA246394")
+    
+public FileLockInterruptionException() {
+    }
+}
