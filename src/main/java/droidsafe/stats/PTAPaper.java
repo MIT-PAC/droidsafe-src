@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -14,15 +16,25 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import soot.Body;
 import soot.Hierarchy;
+import soot.Local;
+import soot.MethodContext;
+import soot.MethodOrMethodContext;
+import soot.PrimType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
+import soot.Unit;
+import soot.Value;
+import soot.ValueBox;
+import soot.jimple.IfStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.OrExpr;
 import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
 import soot.jimple.spark.SparkEvaluator;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ObjectSensitiveConfig;
@@ -86,6 +98,8 @@ public class PTAPaper {
 
             //write information flow
             fw.write(infoFlowResults());
+            
+            fw.write(finegrainedFlowResults());
 
             fw.close();
         } catch (IOException e) {
@@ -122,7 +136,7 @@ public class PTAPaper {
         Map<InvokeExpr, Set<Stmt>> invokeToSourcesArgs = new HashMap<InvokeExpr, Set<Stmt>>();
         //key is invoke of sink -> sources
         Map<InvokeExpr, Set<Stmt>> invokeToSourcesArgsPrecise = new HashMap<InvokeExpr, Set<Stmt>>();
-        
+
         for (Map.Entry<Method, List<Method>> block : RCFGToSSL.v().getSpec().getEventBlocks().entrySet()) {
             //only count events in src classes, not in libraries
             boolean inSrc = false;
@@ -138,7 +152,7 @@ public class PTAPaper {
 
             if (!inSrc)
                 continue;
-                
+
             for (Method oe : block.getValue()) {
                 if (oe.getSinkInfoKinds().size() > 0 &&
                         oe.getSourcesInfoKinds().size() > 0) {
@@ -147,10 +161,10 @@ public class PTAPaper {
                     Stmt sinkInvoke = JimpleRelationships.v().getEnclosingStmt(oe.getInvokeExpr());
                     if (!InfoKind.callsSensitiveSink(sinkInvoke))
                         continue;
-                    
+
                     //we have a sink with connected sources
                     InvokeExpr ie = oe.getInvokeExpr();
-                    
+
                     //get args
                     for (int i = 0; i < oe.getNumArgs(); i++) {
 
@@ -171,7 +185,7 @@ public class PTAPaper {
                                 }
                             }
                         }
-                        
+
                         for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getArgSourceInfoUnitsPrecise(i).entrySet()) {
                             for (Stmt source : flows.getValue()) {
                                 if (InfoKind.callsSensitiveSource(source)) {
@@ -194,7 +208,7 @@ public class PTAPaper {
                                 invokeToSourcesRec.get(ie).add(source);
                             }
                         }
-                        
+
                     }
                     //get method accesses
                     for (Map.Entry<InfoKind, Set<Stmt>> flows : oe.getMethodInfoUnits().entrySet()) {
@@ -204,7 +218,7 @@ public class PTAPaper {
                                 if (!invokeToSourcesMem.containsKey(ie)) {
                                     invokeToSourcesMem.put(ie, new HashSet<Stmt>());
                                 }
-                                
+
                                 invokeToSourcesMem.get(ie).add(source);
                             }
                         }
@@ -218,38 +232,153 @@ public class PTAPaper {
         int flowsIntoSinksArgsPrecise = 0;
         int flowsIntoSinksMem = 0;
         int flowsIntoSinksRec = 0;
-              
+
         try {           
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesArgs.entrySet()) {
                 flowsIntoSinksArgs += sink.getValue().size();
             }      
-            
+
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesArgsPrecise.entrySet()) {
                 flowsIntoSinksArgsPrecise += sink.getValue().size();
             }                    
-            
+
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesMem.entrySet()) {
                 flowsIntoSinksMem += sink.getValue().size();
             }        
-            
+
             for (Map.Entry<InvokeExpr, Set<Stmt>> sink : invokeToSourcesRec.entrySet()) {
                 flowsIntoSinksRec += sink.getValue().size();
             }        
-            
+
         } catch (Exception e) {
 
         }
 
         buf.append("Info Flow Time Sec: " + infoFlowTimeSec + "\n");
-       
+
         buf.append("Flows into sinks (Args): " + flowsIntoSinksArgs + "\n");
         buf.append("Flows into sinks (Args, Precise): " + flowsIntoSinksArgsPrecise + "\n");
         buf.append("Flows into sinks (Mem): " + flowsIntoSinksMem + "\n");
         buf.append("Flows into sinks (Rec): " + flowsIntoSinksRec + "\n");
-        
+
         buf.append(reachableSinksSources());
 
         return buf.toString();
+    }
+
+    private static String finegrainedFlowResults() {
+        int totalReachableIfs = 0;
+        int taintedReachableIfs = 0;
+        
+        int totalCountOfTaintSets = 0;
+        int totalSizeOfTaintSets = 0;        
+        
+        long totalValues = 0;
+        
+        Set<InfoValue> allSrcs = new HashSet<InfoValue>();
+        Set<Set<InfoValue>> allSrcSets = new HashSet<Set<InfoValue>>();
+        
+        StringBuffer buf = new StringBuffer();
+        
+        for (MethodOrMethodContext momc : PTABridge.v().getReachableMethodContexts()) {
+            //reset counted locals for each method            
+            Set<Value> countedLocals = new HashSet<Value>();
+            
+            SootMethod method = momc.method();
+            
+            if (!method.isConcrete()) 
+                continue;
+            try {
+                Body body = method.retrieveActiveBody(); 
+
+                Iterator<Unit> unitIt = body.getUnits().snapshotIterator();
+                
+                while (unitIt.hasNext()) {
+                    Stmt stmt = (Stmt)unitIt.next();
+                    
+                    for (ValueBox vb : stmt.getUseAndDefBoxes()) {
+                        Value v = vb.getValue();
+                        
+                        if (countedLocals.contains(v))
+                            continue;
+                        
+                        countedLocals.add(v);
+                                                   
+                        Set<InfoValue> taints = getTaintSet(v, momc);
+                        
+                        if (taints != null)
+                            totalValues++;
+                        
+                        if (taints != null && !taints.isEmpty()) {
+                            allSrcs.addAll(taints);
+                            
+                            totalCountOfTaintSets++;
+                            totalSizeOfTaintSets += taints.size();
+                            
+                            if (!allSrcSets.contains(taints))
+                                allSrcSets.add(taints);
+                            
+                            countedLocals.add(v);                           
+                        }
+                    }
+                    
+                    if (stmt instanceof IfStmt) {
+                        totalReachableIfs++;
+                        boolean hasTainted = false;
+                        
+                        for (ValueBox vb : stmt.getUseBoxes()) {
+                            Value v = vb.getValue();
+                            
+                            Set<InfoValue> taints = getTaintSet(v, momc);
+                                                        
+                            if (taints != null && !taints.isEmpty()) {
+                                hasTainted = true;
+                                break;
+                            }
+                        }
+                        
+                        totalReachableIfs++;
+                                                
+                        if (hasTainted) {
+                            taintedReachableIfs++;
+                        }
+                           
+                    }                      
+                }
+                
+            } catch (Exception e){
+                //ignore and continue
+            }
+
+
+        }
+
+        buf.append("Tainted Reachable if statements: " + taintedReachableIfs + "\n");
+        buf.append("Total Reachable if Statements: " + totalReachableIfs + "\n");
+        buf.append("Count of non-zero taint sets for primitives and strings: " + totalCountOfTaintSets + "\n");
+        buf.append("Total distinct reachable primitives or string values in code: " + totalValues + "\n");
+        buf.append("Total size of non-zero taint sets for primitives and strings: " + totalSizeOfTaintSets + "\n");
+        buf.append("Count of distinct sources: " + allSrcs.size() + "\n");
+        buf.append("Total distinct source sets: " + allSrcSets.size() + "\n");
+                
+        return buf.toString();
+        
+    }   
+    
+    /** Count taint on prims or strings */
+    private static Set<InfoValue> getTaintSet(Value v, MethodOrMethodContext momc) {
+        Set<InfoValue> taints = null;
+        
+        if (v instanceof Local && v.getType() instanceof PrimType) {
+            taints = InformationFlowAnalysis.v().getTaints(momc, (Local)v);
+        } else if (PTABridge.v().isPointer(v) && SootUtils.isStringOrSimilarType(v.getType())) {
+            taints = new HashSet<InfoValue>(); 
+            for (IAllocNode node : PTABridge.v().getPTSet(v, momc.context())) {
+                taints.addAll(InformationFlowAnalysis.v().getTaints(node, momc));
+            }
+        }
+               
+        return taints;
     }
 
     private static String reachableSinksSources() {
@@ -263,7 +392,7 @@ public class PTAPaper {
                         InfoKind.callsSensitiveSource(apiCall.getStmt())) {
                     sources.add(apiCall.getStmt());
                 }
-               
+
                 if (API.v().hasSinkInfoKind(apiCall.getTarget()) &&
                         InfoKind.callsSensitiveSink(apiCall.getStmt())) {
                     sinks.add(apiCall.getStmt());
@@ -317,7 +446,7 @@ public class PTAPaper {
             buf.append("refinement ");
         }
 
-     
+
         return buf.toString();
     }
 

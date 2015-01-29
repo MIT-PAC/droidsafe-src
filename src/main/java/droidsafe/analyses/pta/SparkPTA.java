@@ -429,7 +429,7 @@ public class SparkPTA extends PTABridge {
                 return (Set<? extends IAllocNode>) allocNodes;
             } else {
                 logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
-                droidsafe.main.Main.exit(1);
+                //droidsafe.main.Main.exit(1);
             }
 
             //visit internal points to set and grab all allocnodes        
