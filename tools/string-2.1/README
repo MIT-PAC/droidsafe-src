@@ -1,0 +1,15 @@
+BRICS Java String Analyzer
+--------------------------
+
+Copyright (C) 2003-2009 Anders Moeller, Aske Simon Christensen, Asger Feldthaus
+
+This source code in this package may be used under the terms of the
+GNU General Public License.  Please read the file 'COPYING' for
+details.
+
+This package contains a string analyzer for Java programs.
+For more information, go to the package home page at
+http://www.brics.dk/JSA/
+
+The jar file string.jar and the javadoc files can be built 
+using 'ant'. The source package includes pre-built files.

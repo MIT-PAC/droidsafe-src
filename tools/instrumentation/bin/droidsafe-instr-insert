@@ -1,0 +1,21 @@
+#!/bin/bash
+SCRIPTNAME=`basename $0`
+BINDIR=`dirname $0`
+APPDIR=`(cd $BINDIR/..; pwd)`
+LIBDIR=$APPDIR/lib
+CONFIGDIR=$APPDIR/config
+JAVA_RT=$JAVA_HOME/jre/lib/rt.jar
+SOOT_JAR=$LIBDIR/soot-trunk.jar
+APPJAR=$APPDIR/bin/droidsafe-instr.jar
+APPCLASS=droidsafe.experiment.CheckPointInserter
+ANDOIRD_JAR=$APAC_HOME/android-lib/android.jar
+
+for JARFILE in $LIBDIR/*.jar; do
+    APP_CLASSPATH=$APP_CLASSPATH:$JARFILE
+done
+
+APP_CLASSPATH=$APP_CLASSPATH:$CONFIGDIR
+
+echo java -cp $APP_CLASSPATH:$APPJAR $APPCLASS  -cp .:$APPJAR:$ANDROID_JAR:$JAVA_RT $1 $2 $3 $4 $5 $6 $7 $8 $9 -allow-phantom-refs
+java -cp $APP_CLASSPATH:$APPJAR $APPCLASS  -cp $APPJAR $1 $2 $3 $4 $5 $6 $7 $8 $9 -allow-phantom-refs
+

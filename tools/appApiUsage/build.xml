@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="appApiUsage" default="compile">
+
+  <property name="apac-dir" value="../.."/>
+  <property name="lib" value="${apac-dir}/lib"/>
+  <property name="droidsafe" value="${apac-dir}/bin"/>
+  <property name="android-lib" value="${apac-dir}/android-lib"/>
+
+ <condition property="is.windows">
+   <os family="windows" />
+  </condition>
+
+  <path id="lib-jars">
+    <pathelement location="${android-lib}/android-impl.jar"/>
+    <pathelement location="${droidsafe}/droidsafe-core.jar"/>
+    <pathelement location="${droidsafe}/droidsafe-libs.jar"/>
+    <pathelement location="${android-lib}/android-impl.jar"/>
+
+    <pathelement location="${android-lib}/javassist-3.16.1-GA.jar"/>
+    <pathelement location="${android-lib}/reflections-0.9.9-RC1.jar"/>		
+    <pathelement location="${android-lib}/gson-2.2.4.jar"/>		
+    <pathelement location="${android-lib}/commons-cli-1.2.jar"/>		
+    <pathelement location="${android-lib}/logback-classic-1.0.7.jar"/>	
+    <pathelement location="${android-lib}/slf4j-api-1.7.2.jar"/>
+    <pathelement location="${android-lib}/commons-io-2.4.jar"/>		
+    <pathelement location="${android-lib}/logback-core-1.0.7.jar"/>		
+    <pathelement location="${android-lib}/soot-trunk.jar"/>	
+    <pathelement location="${android-lib}/antlr-3.4-complete.jar"/>
+    <pathelement location="${android-lib}/paddle-0.3.jar"/>
+    <pathelement location="${android-lib}/javabdd_0.6.jar"/>
+    <pathelement location="${android-lib}/jedd-runtime.jar"/>
+    <pathelement location="${android-lib}/guava-11.0.2.jar"/>
+    <pathelement location="${android-lib}/commons-lang3-3.1.jar"/>
+    <pathelement location="${android-lib}/jgrapht-jdk1.6.jar"/>
+    <pathelement location="${android-lib}/string.jar"/>
+    <pathelement location="${android-lib}/automaton.jar"/>
+    <pathelement location="${android-lib}/javaparser.jar"/>
+
+  </path>
+
+  <target name="help">
+    <echo>
+      ==================================================================================================
+      Primary Targets:
+      =====================================================================
+      compile     Compile appApiUsage tool
+      clean       Cleanup all generated binary files
+  </echo>
+  </target>
+  
+    <!--
+  ==========================================================================
+        COMPILE 
+  ==========================================================================
+    -->
+	<target name="compile" description="Compile appApiUsage ">
+	    <mkdir dir="classes"/>
+	    <javac debug="true" debuglevel="source,lines,vars" includeAntRuntime="false" includeJavaRuntime="false" destdir="classes" srcdir="src" classpathref="lib-jars">
+	    </javac>
+	    <jar destfile="bin/appApiUsage.jar" basedir="classes" includes="**/*.class">
+	      <manifest>
+	        <attribute name="Main-Class" value="droidsafe.tools.AppApiUsage"/>
+	      </manifest>
+	    </jar>
+	</target>
+	
+	
+    <target name="clean">
+        <delete dir="classes" />
+        <delete file="bin/uwintools.jar" />
+    </target>
+
+</project>

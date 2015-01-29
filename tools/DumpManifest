@@ -1,0 +1,17 @@
+#!/bin/bash
+SCRIPTNAME=`basename $0`
+BINDIR=`dirname $0`
+APPDIR=`(cd $BINDIR/..; pwd)`
+#LIBDIR=$APPDIR/lib
+APPJAR=$APPDIR/bin/droidsafe-core.jar:$APPDIR/bin/droidsafe-libs.jar:$APAC_HOME/android-lib/droidsafe-api-model.jar:$APAC_HOME/config-files
+
+MAINCLASS=droidsafe.android.app.resources.DumpManifest
+
+# for JARFILE in $LIBDIR/*.jar; do
+#     APP_CLASSPATH=$APP_CLASSPATH:$JARFILE
+# done
+
+APP_CLASSPATH=$APPDIR:$APPJAR:$APP_CLASSPATH
+#echo "class path $APP_CLASSPATH"
+
+java -cp $APP_CLASSPATH $MAINCLASS $@

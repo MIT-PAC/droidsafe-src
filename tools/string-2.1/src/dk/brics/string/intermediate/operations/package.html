@@ -1,0 +1,61 @@
+<html>
+<body>
+Operations on intermediate representation, in particular conversion to flow graphs.
+<p>
+    The main obstacle to producing a flow graph from the IR is the presence of
+    <b>mutable</b> string values in the form of <code>StringBuffer</code>s, <code>StringBuilder</code>s,
+    and <code>String</code> arrays. We need
+    to calculate the def-use relationships between the individual string operations in
+    a way that takes the possible aliasing between variables of type <code>StringBuffer</code>,
+    <code>StringBuilder</code>,
+    or <code>String</code> array into account. Furthermore, we must handle escapes of such values
+    properly. An escaped value is corrupted and can from that point
+    onward contain any value, no matter which operations are performed on it.
+
+<p>
+    The first step in the preparation procedure is to perform an <b>alias analysis</b> on
+    these pointer variables to determine which variables may point to the same object.
+    This analysis also determines which variables might have escaped and should be corrupt.
+    The alias analysis we employ is a variable-pair-based may/must alias analysis
+    (as opposed to points-to based approaches).
+    The analysis is semi-interprocedural. From the caller to the callee
+    flows information about the aliasing relationships between the arguments, and from the callee
+    to the caller flows the aliasing information between the arguments and the return
+    value and whether each of the arguments and the return value escape during the
+    method. Methods are analyzed context-insensitively.
+    To boost the efficiency of the analysis and the subsequent transformations, a
+    <b>liveness analysis</b> is performed prior to the alias analysis and only live variables are
+    treated in the analysis.
+
+<p>
+    The second preparation step is a <b>reaching definitions analysis</b> that uses the alias information.
+    Every <code>StringBuffer</code>/<code>StringBuilder</code> operation performed on
+    some variable <i>x</i> is characterized as a
+    strong definition of every variable that is definitely aliased with <i>x</i> at that point and
+    a weak definition of all variables possibly aliased with <i>x</i>. An array store operation
+    is a weak definition of the array variable. Based on these characterizations, a
+    reaching definitions analysis is performed where both strong and weak definitions
+    are regarded as definitions but only a strong definition can kill another definition.
+    The result is, for each string operation and every variable that could potentially
+    point to the affected string, which other string operations could possibly have been
+    the immediately preceding one performed on the string pointed to by that variable.
+
+<p>
+    The information obtained from the reaching definitions analysis is precisely what is needed to
+    construct the flow graph. One node is created for every strong or weak definition
+    (that is, one node per possibly affected live variable in the presence of aliasing).
+    These nodes are connected according to the calculated def-use relationships. If a variable
+    was marked corrupt by the alias analysis, its node will represent the language of all strings,
+    regardless of what operation was performed on it. 
+    The result is a flow graph that conservatively models the original Java program.
+
+<p>
+    This code may be used under the terms of the
+    <a href="http://www.gnu.org/copyleft/gpl.html" target="_top">GNU General Public
+        License</a>.
+
+    @author Anders M&oslash;ller &lt;<a href="mailto:amoeller@cs.au.dk">amoeller@cs.au.dk</a>&gt;
+    @author Aske Simon Christensen &lt;<a href="mailto:aske@cs.au.dk">aske@cs.au.dk</a>&gt;
+    @author Asger Feldthaus &lt;<a href="mailto:asf@cs.au.dk">asf@cs.au.dk</a>&gt;
+</body>
+</html>

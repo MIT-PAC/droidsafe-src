@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+
+import os
+import fnmatch
+import sys
+import re
+import exceptions
+import subprocess
+import time
+
+APAC_HOME = os.environ["APAC_HOME"]
+
+APPS_ROOT_DIR = APAC_HOME + '/android-apps/engagements'
+
+MAKE_FILE_NAME = 'Makefile'
+
+IGNORE_LIST = []
+
+def ignore(app_root):
+    for ignore_app in IGNORE_LIST:
+        if (app_root.find(ignore_app) >= 0):
+            return True
+    return False
+
+# find all status files
+app_roots = []
+for root, dirnames, filenames in os.walk(APPS_ROOT_DIR):
+  for filename in fnmatch.filter(filenames, MAKE_FILE_NAME):
+      app_roots.append(root)
+
+FNULL = open(os.devnull, 'w')  
+
+for app_root in app_roots:
+           
+    if (ignore(app_root)):
+       print "Ignoring: ", app_root
+       continue;
+
+    print "Making jar for ", app_root
+    os.chdir(app_root)
+
+    classdir = app_root + "/bin"
+    os.chdir(classdir)
+
+    command_build = []
+    command_build.append('jar')
+    command_build.append('-cvf')
+    command_build.append('app.jar')
+    command_build.append('classes')
+    subprocess.call(command_build, stdout=FNULL, stderr=subprocess.STDOUT) 
+
+    
+
+
+
+    

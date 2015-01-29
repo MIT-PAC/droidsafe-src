@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+my $file = shift;
+die("rmcomment <infile> [<outfile.>]\n") if (!defined($file));
+
+open (IFILE, "<$file");
+
+$outName = shift;
+
+$outFile = \*STDOUT;
+
+if (defined($outName)) {
+    open($outFile, ">$outName");
+}
+
+@classList = ();
+$commentStarted = 0;
+
+while (<IFILE>) {
+    if (/\*\//) {
+        $commentStarted = 0;
+        next;
+    }
+    if (/\/\*/) {
+        $commentStarted = 1;
+        next;
+    }
+
+    next if ($commentStarted );
+
+
+    if (/class\s+(\w+)\s*\{/) {
+        push @classList, $1;
+        next;
+    }
+
+    if (/\}/) {
+        pop @classList;
+        next;
+    }
+        
+    if (/int (\w+)\=(\w+)\;/) {
+        my $var = join(".", "android", @classList, $1);
+        my $value = $2;
+        my $line = sprintf('idToName.put(new Integer(%s), "%s");', $value, $var);
+        print $outFile $line, "\n";
+    }
+}
+
+
+

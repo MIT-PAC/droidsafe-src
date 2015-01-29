@@ -1,0 +1,46 @@
+<project name="droidsafe-instr" default="help">
+	<property name="lib.dir" value="lib" />
+	<property name="droidsafe-instr.dir" value="${basedir}" />
+    <property name="build.class.dir" value="build/classes"/>
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+        <pathelement path="${env.APAC_HOME}/android-libs/android.jar"/>
+	</path>
+
+	<target name="help">
+		<echo>
+====================================================
+Primary Targets:
+====================================================
+clean               Cleanup all generated binary files
+compile             Compile and create jar
+		</echo>
+	</target>
+
+    <target name="check-for-change">
+        <uptodate property="source-uptodate" targetfile="bin/droidsafe-instr.jar" >
+            <srcfiles dir="src/" includes="**/*.java"/>
+        </uptodate>
+    </target>
+
+
+    <target name="clean">
+        <delete dir="build/classes" />
+        <delete file="bin/droidsafe-instr.jar" />
+    </target>
+
+	<target name="compile" depends="check-for-change, compile_classes">
+		<mkdir dir="build/classes" />
+		<jar destfile="bin/droidsafe-instr.jar" basedir="${build.class.dir}" excludes="droidsafe/testingdata/*">
+		</jar>
+	</target>
+
+	<target name="compile_classes" unless="source-uptodate">
+		<mkdir dir="build/classes" />
+		<javac srcdir="src" destdir="${build.class.dir}" classpathref="classpath" includes="**/*.java"
+            target="1.6"
+            source="1.6"
+            debuglevel="lines,source"
+			debug="true" includeJavaRuntime="Yes" includeAntRuntime="No" />
+	</target>
+</project>

@@ -1,0 +1,45 @@
+<project name="jarmethods" default="build" basedir=".">
+
+    <property name="jar.one" value="../peg-extract/lib/asm-3.3.jar"/>
+    <property name="jar.two" value="../peg-extract/lib/asm-tree-3.3.jar"/>
+
+    <property name="jar.class.path" value="${jar.one} ${jar.two}"/>
+
+    <target name="build">
+        <path id="classpath">
+            <fileset dir="../peg-extract/lib">
+                <include name="asm-3.3.jar"/>
+                <include name="asm-tree-3.3.jar"/>
+            </fileset>
+        </path>
+
+        <javac srcdir="src" destdir="bin">
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <target name="jar" depends="build">
+        <jar destfile="jarmethods.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class"
+                           value="jarmethods.JarMethods"/>
+                <attribute name="Class-Path"
+                           value="${jar.class.path}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- To run:  ant -Darg0=/path/to/file.jar run -->
+    <target name="run">
+        <echo>arg0 is ${arg0}</echo>
+        <java classname="jarmethods.JarMethods" dir="src" fork="true">
+            <arg value="${arg0}"/>
+            <classpath>
+                <pathelement location="bin"/>
+                <pathelement location="${jar.one}"/>
+                <pathelement location="${jar.two}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
