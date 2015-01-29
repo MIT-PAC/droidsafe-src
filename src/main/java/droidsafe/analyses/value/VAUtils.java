@@ -9,6 +9,7 @@ import droidsafe.transforms.objsensclone.ClassCloner;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
+import soot.SootField;
 import soot.Type;
 import soot.jimple.toolkits.pta.IAllocNode;
 
@@ -68,7 +69,7 @@ public class VAUtils {
      * For each node in nodes, find the VA result, and then find all primitive values of type T
      * of the field.  Does not report of any invalidations.
      */
-    public static <T> boolean getAnyVAValuesForField(Set<IAllocNode> nodes, String field, List<T> ret) {
+    public static <T> boolean getAnyVAValuesForField(Set<IAllocNode> nodes, String field, Type fieldType, List<T> ret) {
         for (IAllocNode node : nodes) {
             VAModel vaModel = ValueAnalysis.v().getResult(node);
             
@@ -83,7 +84,11 @@ public class VAUtils {
                 SootClass clonedSootClass = ((RefType)(refVAModel.getAllocNode().getType())).getSootClass();
                 SootClass intentSootClass = ClassCloner.getClonedClassFromClone(clonedSootClass);
 
-                Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(intentSootClass.getFieldByName(field));
+                //first check the cls constant field
+                SootField mField = Scene.v().makeFieldRef(intentSootClass, field, 
+                    fieldType, false).resolve();
+                
+                Set<VAModel> fieldVAModels = refVAModel.getFieldVAModels(mField);
                 if (fieldVAModels.size() > 0) {
                     for (VAModel clz : fieldVAModels) {                        
                         if (clz instanceof PrimVAModel) {

@@ -89,7 +89,9 @@ public class BroadcastReceiverTransform implements VATransform {
 
                         boolean resolved = VAUtils.<String>getAnyVAValuesForField(
                             (Set<IAllocNode>)PTABridge.v().getPTSetIns(invokeExpr.getArg(1)), 
-                            "mActions", actions);
+                            "mActions",
+                            RefType.v("java.lang.String"),
+                            actions);
 
                         //build list of BroadcastReceiver classes that could be referenced in the 0th argument
                         //these are the receivers we are registering
@@ -155,7 +157,9 @@ public class BroadcastReceiverTransform implements VATransform {
         //find actions strings of intents
 
         List<String> intentActions = new LinkedList<String>(); 
-        boolean resolved = VAUtils.<String>getAnyVAValuesForField(intentNodes, "mAction", intentActions);
+        boolean resolved = VAUtils.<String>getAnyVAValuesForField(intentNodes, "mAction", 
+            RefType.v("java.lang.String"), intentActions);
+        
         
         //did we find in app targets for all broadcast calls?
         boolean foundAllTargets = true;

@@ -5,6 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import soot.RefType;
+import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.jimple.toolkits.pta.IAllocNode;
@@ -25,7 +26,11 @@ public class ResolvedExplicitIntent extends IntentModel {
 
 
         //first check the cls constant field
-        Set<VAModel> clsFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mClsComponent"));
+        SootField mClsComponentField = Scene.v().makeFieldRef(intentSootClass, "mClsComponent", 
+            Scene.v().getSootClass("java.lang.Class").getType(), false).resolve();
+        
+        Set<VAModel> clsFldVAModels = intentRefVAModel.getFieldVAModels(mClsComponentField);
+        
         boolean mClsComponentAllConstants = clsFldVAModels.size() > 0;
         if (clsFldVAModels.size() > 0) {          
             for (VAModel clz : clsFldVAModels) {
@@ -51,7 +56,11 @@ public class ResolvedExplicitIntent extends IntentModel {
             //now check the mComponent field
             //if that cannot be resolved, then we cannot resolve this explicit intent
             targetClsStrings.clear();
-            Set<VAModel> componentNameFldVAModels = intentRefVAModel.getFieldVAModels(intentSootClass.getFieldByName("mComponent"));
+            
+            SootField mComponentField = Scene.v().makeFieldRef(intentSootClass, "mComponent", 
+                Scene.v().getSootClass("android.content.ComponentName").getType(), false).resolve();
+            
+            Set<VAModel> componentNameFldVAModels = intentRefVAModel.getFieldVAModels(mComponentField);
 
             for(VAModel componentNameFldVAModel : componentNameFldVAModels) {
                 // if any of the component name VA models are invalidated, we cannot unambiguously determine all target
@@ -62,8 +71,12 @@ public class ResolvedExplicitIntent extends IntentModel {
                 // the next four lines get the VA models for the 'mClass' field
                 RefVAModel componentNameRefVAModel = (RefVAModel)componentNameFldVAModel;
                 SootClass clonedComponentNameSootClass = ((RefType)componentNameRefVAModel.getAllocNode().getType()).getSootClass();
-                SootClass componentNameSootClass = ClassCloner.getClonedClassFromClone(clonedComponentNameSootClass);
-                Set<VAModel> mClassVAModels = componentNameRefVAModel.getFieldVAModels(componentNameSootClass.getFieldByName("mClass"));
+                SootClass componentNameSootClass = ClassCloner.getClonedClassFromClone(clonedComponentNameSootClass);                
+                
+                SootField mClassField = Scene.v().makeFieldRef(componentNameSootClass, "mClass", 
+                    Scene.v().getSootClass("java.lang.String").getType(), false).resolve();
+                
+                Set<VAModel> mClassVAModels = componentNameRefVAModel.getFieldVAModels(mClassField);
 
                 for(VAModel mClassVAModel : mClassVAModels) {
                     // if any of the classVAModels are invalidated, we cannot unambiguously determine all target cls
