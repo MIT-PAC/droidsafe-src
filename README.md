@@ -41,7 +41,7 @@ Refer to [README in /bin](bin/README.md)
 Eclipse Plugin 
 ==============
 
-Refer to [[Wiki Page|wiki/Eclipse-Plugin-Instructions]]
+Refer to [Wiki Page](wiki/Eclipse-Plugin-Instructions)
 
 
 
