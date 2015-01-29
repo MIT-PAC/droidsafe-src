@@ -1,0 +1,42 @@
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+\#*#
+*.tags
+*.vim
+*.pyc
+._*
+~$*
+
+
+#ignores for the build
+classes/
+reg-test-output/
+droidcalls.jar
+bin/droidsafe-core.jar
+bin/droidsafe-libs.jar
+bin/droidsafe-test.jar
+src/main/java/droidsafe/speclang/DroidSafeLexer.java
+src/main/java/droidsafe/speclang/DroidSafeParser.java
+src/main/java/droidsafe/speclang/SpecCreator.java
+*.class
+Makefile.user
+android-lib/droidsafe-api-model.jar
+android-lib/droidsafe-manual-api-model.jar
+test-reports/
+tools/appApiUsage/bin/appApiUsage.jar
+
+# Ignore files for the droidsafe plugin
+src/eclipse/droidsafe.eclipse.plugin.core/android-lib/droidsafe-api-model.jar
+src/eclipse/droidsafe.eclipse.plugin.core/android-lib/res/
+src/eclipse/droidsafe.eclipse.plugin.core/lib/
+
+# generated source files
+src/gen
+
+#tags files
+tags
+

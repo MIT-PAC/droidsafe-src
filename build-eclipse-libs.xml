@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="droidsafe" default="help">
+
+  <property name="ssl-antlr-spec"     value="src/main/java/droidsafe/speclang/DroidSafe.g"/>
+  <property name="ssl-ast-to-java"     value="src/main/java/droidsafe/speclang/SpecCreator.g"/>
+  <property name="ssl-antlr-target-dir"     value="src/main/java/droidsafe/speclang"/>
+  <property name="test-results-dir" value="test-reports"/>
+  <property name="eclipse-plugin-path" value="src/eclipse/droidsafe.eclipse.plugin.core"/>
+
+  <path id="lib-jars">
+    <pathelement location="lib/javassist-3.16.1-GA.jar"/>
+    <pathelement location="lib/reflections-0.9.9-RC1.jar"/>
+    <pathelement location="lib/commons-cli-1.2.jar"/>
+    <pathelement location="lib/logback-classic-1.0.7.jar"/>
+    <pathelement location="lib/slf4j-api-1.7.2.jar"/>
+    <pathelement location="lib/commons-io-2.4.jar"/>
+    <pathelement location="lib/logback-core-1.0.7.jar"/>
+    <pathelement location="lib/soot-trunk.jar"/>
+    <pathelement location="lib/antlr-3.4-complete.jar"/>
+    <pathelement location="lib/paddle-0.3.jar"/>
+    <pathelement location="lib/javabdd_0.6.jar"/>
+    <pathelement location="lib/jedd-runtime.jar"/>
+    <pathelement location="lib/guava-11.0.2.jar"/>
+    <pathelement location="lib/commons-lang3-3.1.jar"/>
+    <pathelement location="lib/jgrapht-jdk1.6.jar"/>
+    <pathelement location="lib/string.jar"/>
+    <pathelement location="lib/automaton.jar"/>
+    <pathelement location="lib/javaparser.jar"/>
+  </path>
+
+  <target name="help">
+    <echo>
+      ==================================================================================================
+      Primary Targets:
+      =====================================================================
+      build-libs  Build and package required libraries
+      compile     Compile Droidsafe core
+      clean       Cleanup all generated binary files
+      =====================================================================
+      Documentation Targets:
+      =====================================================================
+      javadoc       Generate javadoc for DroidBlaze's Java source code
+      htmldoc       Generate HTML user guide (needs hyperlatex)
+      =====================================================================
+      Testing Targets:
+      =====================================================================
+      compile-tests                      compiles Droidsafe tests
+      run-tests                          runs all JUnit tests under 'tests/java/droidsafe/test'
+      >   -Dtest.class                       wildcard class name of tests to run
+      >   -Dtest.timeout                     seconds after which to fail the test (default 70)
+      run-specdump-test                  checks whether 'make specdump' succeeds for each app in '/android-apps/'
+      >   -Ddir.to.search                    directory inside 'android-apps to which to limit the app search to
+      >   -Dtest.timeout                     seconds after which to fail the test (default 70)
+      run-regression-tests               runs all JUnit tests under 'tests/java/droidsafe/test/regression'
+      >   -Ddir.to.search                    directory inside 'android-apps to which to limit the app search to for SpecdumpRegressionTest
+      update-specdump-regression-values  updates the regression values using the results from the latest run of 'run-specdump-tests'
+    </echo>
+  </target>
+
+  <!--
+  ==========================================================================
+    BUILD SPEC LANGUAGE PARSER & AST To Java
+  ==========================================================================
+    -->
+
+    <target name="antlr-runs" description="Build Security Specification Parser" unless="droidsafe.core-uptodate">
+      <java classname="org.antlr.Tool" fork="true" failonerror="true">
+        <classpath>
+          <pathelement location="lib/antlr-3.4-complete.jar"/>
+        </classpath>
+        <arg value="-verbose"/>
+        <arg value="-make"/>
+        <arg value="-o"/>
+        <arg path="${ssl-antlr-target-dir}"/>
+        <arg path="${ssl-antlr-spec}"/>
+      </java>
+      <java classname="org.antlr.Tool" fork="true" failonerror="true">
+        <classpath>
+          <pathelement location="lib/antlr-3.4-complete.jar"/>
+        </classpath>
+        <arg value="-verbose"/>
+        <arg value="-make"/>
+        <arg value="-o"/>
+        <arg path="${ssl-antlr-target-dir}"/>
+        <arg path="${ssl-ast-to-java}"/>
+      </java>
+    </target>
+
+
+
+    <!--
+  ==========================================================================
+        CHECK FOR UP-TO-DATE SOURCE OR LIB FILES
+  ==========================================================================
+    -->
+
+    <target name="check-for-changes">
+      <uptodate property="droidsafe.core-uptodate" targetfile="${eclipse-plugin-path}/bin/droidsafe-core.jar" >
+        <srcfiles dir="src/main/" includes="**"/>
+      </uptodate>
+      <uptodate property="droidsafe.test-uptodate" targetfile="bin/droidsafe-test.jar" >
+        <srcfiles dir="src/test" includes="**"/>
+      </uptodate>
+      <uptodate property="droidsafe.libs-uptodate" targetfile="${eclipse-plugin-path}/bin/droidsafe-libs.jar" >
+        <srcfiles dir="lib" includes="**"/>
+      </uptodate>
+      <uptodate property="droidsafe.calls-uptodate" targetfile="${eclipse-plugin-path}/android-lib/droidcalls.jar" >
+        <srcfiles dir="android-lib/src" includes="**"/>
+      </uptodate>
+      <uptodate property="droidsafe.model-uptodate" targetfile="${eclipse-plugin-path}/android-lib/droidsafe-api-model.jar" >
+        <srcfiles dir="modeling/api" includes="**"/>
+      </uptodate>
+    </target>
+
+
+    <!-- <target name="droidsafe-calls-build" unless="droidsafe.calls-uptodate"> -->
+    <!--   <exec executable="make" dir="android-lib"> -->
+    <!--   </exec> -->
+    <!-- </target> -->
+
+
+    <target name="droidsafe-calls-build" unless="droidsafe.calls-uptodate">
+         <javac debug="true" debuglevel="source,lines,vars" includeAntRuntime="false"
+           source="1.7" target="1.7" srcdir="android-lib/src">
+      <classpath>
+	<pathelement location="android-lib"/>
+	<pathelement location="android-lib/android.jar"/>
+	<pathelement location="android-lib/src"/>
+      </classpath>
+    </javac>
+    <jar destfile="${eclipse-plugin-path}/android-lib/droidcalls.jar" basedir="android-lib/src" includes="**/*.class">
+    </jar>
+    </target>
+
+
+
+    <target name="build-libs" description="Create jar file libraries."
+      depends="check-for-changes, antlr-runs" unless="droidsafe.libs-uptodate">
+      <jar destfile="${eclipse-plugin-path}/lib/droidsafe-libs.jar">
+        <zipfileset includes="**/*.class" src="lib/javassist-3.16.1-GA.jar"/>
+        <zipfileset includes="**/*.class" src="lib/reflections-0.9.9-RC1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/commons-cli-1.2.jar"/>
+        <zipfileset includes="**/*.class" src="lib/commons-io-2.4.jar"/>
+        <zipfileset includes="**/*.class" src="lib/soot-trunk.jar"/>
+        <zipfileset includes="**/*.class" src="lib/antlr-3.4-complete.jar"/>
+        <zipfileset includes="**/*.class" src="lib/paddle-0.3.jar"/>
+        <zipfileset includes="**/*.class" src="lib/javabdd_0.6.jar"/>
+        <zipfileset includes="**/*.class" src="lib/jedd-runtime.jar"/>
+        <zipfileset includes="**/*.class" src="lib/guava-11.0.2.jar"/>
+        <zipfileset includes="**/*.class" src="lib/commons-lang3-3.1.jar"/>
+        <zipfileset includes="**/*.class" src="lib/jgrapht-jdk1.6.jar"/>
+        <zipfileset includes="**/*.class" src="lib/string.jar"/>
+        <zipfileset includes="**/*.class" src="lib/automaton.jar"/>
+        <zipfileset includes="**/*.class" src="lib/javaparser.jar"/>  
+      </jar>
+    </target>
+
+
+    <!--
+  ==========================================================================
+        COMPILE MODELING
+  ==========================================================================
+    -->
+
+    <target name="compile-model" description="Compile DroidSafe API Model."
+      depends="check-for-changes"  unless="droidsafe.model-uptodate">
+      <mkdir dir="${eclipse-plugin-path}/modeling/classes/api"/>
+      <javac debug="true" debuglevel="source,lines,vars" includeAntRuntime="false"
+        destdir="${eclipse-plugin-path}/modeling/classes/api" srcdir="modeling/api">
+        <classpath>
+          <pathelement location="android-lib/android-impl.jar"/>
+        </classpath>
+      </javac>
+      <jar destfile="${eclipse-plugin-path}/android-lib/droidsafe-api-model.jar" basedir="${eclipse-plugin-path}/modeling/classes/api" includes="**/*.class">
+      </jar>
+    </target>
+
+
+
+    <!--
+  ==========================================================================
+        COMPILE DROIDSAFE
+  ==========================================================================
+    -->
+
+  <target name="compile" description="Compile DroidSafe." depends="build-libs,droidsafe-calls-build,compile-model" unless="droidsafe.core-uptodate">
+    <mkdir dir="${eclipse-plugin-path}/classes/main"/>
+    <javac debug="true" debuglevel="source,lines,vars" includeAntRuntime="false" includeJavaRuntime="false" destdir="${eclipse-plugin-path}/classes/main" srcdir="src/main/java" classpathref="lib-jars">
+    </javac>
+    <jar destfile="${eclipse-plugin-path}/lib/droidsafe-core.jar" basedir="${eclipse-plugin-path}/classes/main" includes="**/*.class">
+      <manifest>
+        <attribute name="Main-Class" value="droidsafe.main.Main"/>
+        <attribute name="Boot-Class-Path" value="droidsafe-core.jar"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="clean" description="Clean all generated files.">
+    <delete dir="${eclipse-plugin-path}/classes"/>
+    <delete dir="${eclipse-plugin-path}/modeling/classes"/>
+    <delete file="${eclipse-plugin-path}/lib/droidsafe-core.jar"/>
+    <delete file="${eclipse-plugin-path}/lib/droidsafe-libs.jar"/>
+    <delete file="${eclipse-plugin-path}/android-lib/droidsafe-api-model.jar"/>
+    <delete file="${eclipse-plugin-path}/android-lib/droidcalls.jar"/>
+    <delete dir="test-reports"/>
+  </target>
+
+  <!--
+  ==========================================================================
+        TEST DROIDSAFE
+  ==========================================================================
+    -->
+
+  <target name="compile-tests" depends="compile">
+    <mkdir dir="classes/test"/>
+    <javac debug="true" debuglevel="source,lines,vars" includeAntRuntime="false" includeJavaRuntime="false"
+      destdir="classes/test" srcdir="src/test/java">
+      <classpath id="path.classpath.compile">
+        <pathelement path="classes/main"/>
+        <pathelement path="lib/junit-4.11.jar"/>
+        <pathelement location="lib/commons-cli-1.2.jar"/>
+        <pathelement location="lib/slf4j-api-1.7.2.jar"/>
+        <pathelement location="lib/commons-lang3-3.1.jar"/>
+      </classpath>
+    </javac>
+    <jar destfile="bin/droidsafe-test.jar" basedir="classes/test" includes="**/*.class">
+      <manifest>
+        <attribute name="Main-Class" value="droidsafe.test.Main"/>
+        <attribute name="Boot-Class-Path" value="droidsafe-test.jar"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run-tests"
+    description="Run a JUnit test under tests/java/droidsafe/test. Specify name or pattern with -Dtest.class=ClassName"
+    depends="compile-tests">
+    <property name="timeout" value="-1"/>
+    <fail unless="test.class"
+      message="Please define a test class with -Dtest.class=ClassName (no file extension) to run this target.  This will run any tests under test/java/droidsafe/test matching the given class name to be run.  May include wildcards."/>
+    <mkdir dir="test-reports"/>
+    <junit fork="true" forkmode="perTest" printsummary="on" logfailedtests="on">
+      <formatter type="xml"/>
+      <!-- let user set their desired per-test timeout value -->
+      <sysproperty key="timeout" value="${timeout}"/>
+      <classpath>
+        <pathelement path="classes/main"/>
+        <pathelement path="classes/test"/>
+        <path refid="lib-jars"/>
+      </classpath>
+      <batchtest todir="test-reports">
+        <fileset dir="test/java">
+          <include name="droidsafe/test/**/${test.class}.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+
+  <target name="run-specdump-test" depends="compile-tests">
+
+    <!-- defaults for values users can specify-->
+    <property name="timeout" value="70"/>
+    <property name="dir.to.search" value=""/>
+
+    <mkdir dir="test-reports"/>
+
+    <junit fork="true" forkmode="perTest" printsummary="on" logfailedtests="on">
+
+      <formatter type="xml"/>
+
+      <!-- let user set their desired per-test timeout value -->
+      <sysproperty key="timeout" value="${timeout}"/>
+      <!-- let user limit app search to a particular subdirectory (wildcards allowed) -->
+      <sysproperty key="dir-to-search" value="${dir.to.search}"/>
+
+      <classpath>
+        <pathelement path="classes/main"/>
+        <pathelement path="classes/test"/>
+        <pathelement location="lib/junit-4.11.jar"/>
+        <pathelement location="lib/slf4j-api-1.7.2.jar"/>
+        <pathelement location="lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="lib/logback-classic-1.0.7.jar"/>
+        <pathelement location="lib/logback-core-1.0.7.jar"/>
+      </classpath>
+      <batchtest todir="test-reports">
+        <fileset dir="src/test/java">
+          <include name="droidsafe/test/SpecdumpTestCase.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+
+  <target name="run-regression-tests" description="Run regression tests." depends="compile-tests">
+
+    <antcall target="run-specdump-test"/>
+
+    <mkdir dir="test-reports/regression/"/>
+
+    <junit fork="true" forkmode="perTest" printsummary="on" logfailedtests="on">
+      <formatter type="xml"/>
+
+      <classpath>
+        <pathelement path="classes/main"/>
+        <pathelement path="classes/test"/>
+        <pathelement location="lib/junit-4.11.jar"/>
+        <pathelement location="lib/slf4j-api-1.7.2.jar"/>
+        <pathelement location="lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="lib/logback-classic-1.0.7.jar"/>
+        <pathelement location="lib/logback-core-1.0.7.jar"/>
+        <pathelement location="lib/commons-lang3-3.1.jar"/>
+      </classpath>
+      <batchtest todir="test-reports/regression/">
+        <fileset dir="src/test/java">
+          <include name="droidsafe/test/regression/*TestCase.java"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+
+  <target name="update-specdump-regression-values" depends="compile-tests">
+    <java classname="droidsafe.test.Main">
+      <arg value="-target"/>
+      <arg value="update-specdump-regression-values"/>
+      <classpath>
+        <pathelement location="bin/droidsafe-core.jar"/>
+        <pathelement location="bin/droidsafe-test.jar"/>
+        <pathelement location="lib/commons-cli-1.2.jar"/>
+        <pathelement location="lib/slf4j-api-1.7.2.jar"/>
+        <pathelement location="lib/logback-classic-1.0.7.jar"/>
+        <pathelement location="lib/logback-core-1.0.7.jar"/>
+        <pathelement location="lib/commons-lang3-3.1.jar"/>
+      </classpath>
+    </java>
+  </target>
+</project>
