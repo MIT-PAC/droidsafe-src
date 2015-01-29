@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="droidsafe.eclipse.plugin.feature"
+      label="Droidsafe Plugin"
+      version="2.0.0.qualifier"
+      provider-name="Kestrel Institute">
+
+   <description url="http://www.example.com/description">
+      Plugin to generate droidsafe security spec and assist in malware discovery.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      This is the copyright notice. 
+All rights reserved.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.jdt.core"/>
+   </requires>
+
+   <plugin
+         id="droidsafe.eclipse.plugin.core"
+         download-size="0"
+         install-size="0"
+         version="2.0.0.qualifier"/>
+
+</feature>

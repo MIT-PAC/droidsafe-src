@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>		    
+			<pattern>%d{HH:mm:ss} [%thread] %-5level %-36logger{36} [%-4line] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="droidsafe.eclipse.plugin.core">
+		<level value="WARN" />
+	</logger>
+
+	<logger name="droidsafe.analyses.strings">
+        <level value="WARN" />
+    </logger>
+    
+	<logger name="droidsafe.speclang.model">
+        <level value="WARN" />
+    </logger>
+	
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

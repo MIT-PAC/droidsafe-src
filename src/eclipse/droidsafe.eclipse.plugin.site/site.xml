@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/Droidsafe_1.0.0.201307021559.jar" id="Droidsafe" version="1.0.0.201307021559">
+      <category name="Droidsafe"/>
+   </feature>
+   <category-def name="Droidsafe" label="Droidsafe Plugin"/>
+</site>

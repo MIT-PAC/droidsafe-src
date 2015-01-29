@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.GenerateSecuritySpecHandler"
+            description="Run the droidsafe analysis on selected Android project"
+            id="droidsafe.eclipse.plugin.core.commands.GenerateSecuritySpecCommand"
+            name="Generate Security Spec">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+            description="Expand all nodes in Droidsafe tree view"
+            id="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+            name="Expand All">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+            description="Close all open nodes in droidsafe outline view"
+            id="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+            name="Collapse All">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
+            description="Remove all droidsafe markers from project files"
+            id="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
+            name="Clean Markers">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+            description="Add droidsafe markers to project files"
+            id="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+            name="Add Markers">
+      </command>      
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+            id="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+            name="SortView">
+         <commandParameter
+               id="org.eclipse.ui.commands.radioStateParameter"
+               name="SortSelection"
+               optional="false">
+         </commandParameter>
+          <state id="org.eclipse.ui.commands.radioState">
+               <class class="org.eclipse.ui.handlers.RadioState">
+                <parameter name="default"   value="method">
+                </parameter>
+                <parameter name="persisted" value="true"> 
+                </parameter> 
+               </class>
+         </state>
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ChangeMethodStatus"
+            id="droidsafe.eclipse.plugin.core.commands.ChangeMethodStatus"
+            name="ChangeMethodStatus">
+         <commandParameter
+               id="droidsafe.eclipse.plugin.core.commands.parameter.methodStatus"
+               name="MethodStatus"
+               optional="false">
+         </commandParameter>
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SetTopLevelNodeForView"
+            id="droidsafe.eclipse.plugin.core.commands.SetTopLevelNodeForView"
+            name="Set Top Level Node for Outline View">
+         <commandParameter
+               id="org.eclipse.ui.commands.radioStateParameter"
+               name="SetTopLevelNodeSelection"
+               optional="false">
+         </commandParameter>
+         <state id="org.eclipse.ui.commands.radioState">
+               <class class="org.eclipse.ui.handlers.RadioState">
+                <parameter name="default"   value="input_method">
+                </parameter>
+                <parameter name="persisted" value="true"> 
+                </parameter> 
+               </class>
+         </state>
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ExpandNode"
+            id="droidsafe.eclipse.plugin.core.commands.ExpandNode"
+            name="Expand Node">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.CollapseNode"
+            id="droidsafe.eclipse.plugin.core.commands.CollapseNode"
+            name="Collapse Node">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+            id="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+            name="Search">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
+            id="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
+            name="Rerun Droidsafe">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+            id="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+            name="Refresh View">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+            id="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+            name="Set Label Type for Method Node">
+         <commandParameter
+               id="org.eclipse.ui.commands.radioStateParameter"
+               name="SetLabelTypeForMethodNode"
+               optional="false">
+         </commandParameter>
+         <state
+               id="org.eclipse.ui.commands.radioState">
+            <class class="org.eclipse.ui.handlers.RadioState">
+               <parameter name="default" value="short_label">
+               </parameter>
+               <parameter name="persisted" value="true">
+               </parameter>
+            </class>
+         </state>
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.OpenOutlineView"
+            id="droidsafe.eclipse.plugin.core.commands.OpenOutlineView"
+            name="Show Droidsafe View">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.NewFilter"
+            id="droidsafe.eclipse.plugin.core.commands.NewFilter"
+            name="Create Filter">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SetFilters"
+            id="droidsafe.eclipse.plugin.core.commands.SetFilters"
+            name="Set Filters">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.LongLabel"
+            id="droidsafe.eclipse.plugin.core.commands.LongLabel"
+            name="Long Label">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:false"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
+            id="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
+            name="Show Droidsafe Taint Sources">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
+            id="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
+            name="FIlter Droidsafe Taint Sources">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
+            id="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
+            name="Show Droidsafe Call Graph">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+         <menu
+               label="Droidsafe"
+               tooltip="Droidsafe Security Spec ">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.GenerateSecuritySpecCommand"
+                  label="Generate Security Spec"
+                  style="push"
+                  tooltip="Generate Security Spec">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">             
+                 <iterate ifEmpty="false">
+       					<instanceof value="org.eclipse.core.resources.IProject"/>
+    			</iterate>	               
+            </visibleWhen>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
+                  label="Remove Droidsafe Markers"
+                  style="push">
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+                  label="Add Droidsafe Markers"
+                  style="push">
+            </command>            
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <menu
+               label="Droidsafe"
+               tooltip="Droidsafe Security Spec ">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.GenerateSecuritySpecCommand"
+                  label="Generate Security Spec"
+                  style="push"
+                  tooltip="Generate Security Spec">
+            </command>
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false">
+                  <adapt
+                        type="org.eclipse.jdt.core.IJavaProject">
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.CleanMarkers"
+                  label="Remove Droidsafe Markers"
+                  style="push">
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.AddMarkers"
+                  label="Add Droidsafe Markers"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.DroidsafeSpecView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+               icon="icons/search.png"
+               id="droidsafe.eclipse.plugin.core.view.menu.Search"
+               label="Search"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.DroidsafeSpecView">
+         <menu
+               label="Set status">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.ChangeMethodStatus"
+                  label="Change status to safe"
+                  style="push">
+               <parameter
+                     name="droidsafe.eclipse.plugin.core.commands.parameter.methodStatus"
+                     value="SAFE">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.ChangeMethodStatus"
+                  label="Change status to unsafe"
+                  style="push">
+               <parameter
+                     name="droidsafe.eclipse.plugin.core.commands.parameter.methodStatus"
+                     value="UNSAFE">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.ChangeMethodStatus"
+                  label="Change status to unresolved"
+                  style="push">
+               <parameter
+                     name="droidsafe.eclipse.plugin.core.commands.parameter.methodStatus"
+                     value="UNRESOLVED">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.ChangeMethodStatus"
+                  label="Change status to pending"
+                  style="push">
+               <parameter
+                     name="droidsafe.eclipse.plugin.core.commands.parameter.methodStatus"
+                     value="PENDING">
+               </parameter>
+            </command>
+         </menu>
+         <separator
+               name="droidsafe.eclipse.plugin.core.outlineview.popupmenu.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandNode"
+               label="Expand Node(s)"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseNode"
+               label="Collapse Node(s)"
+               style="push">
+         </command>
+         <!--
+         <separator
+               name="droidsafe.eclipse.plugin.core.outlineview.popupmenu.separator2"
+               visible="true">
+         </separator>
+         <dynamic
+               class="droidsafe.eclipse.plugin.core.view.spec.DynamicHotspotMenu"
+               id="droidsafe.eclipse.plugin.core.view.DynamicHotspotMenu">
+         </dynamic>
+         -->
+   </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:droidsafe.eclipse.plugin.core.view.DroidsafeSpecView">
+         <menu
+               id="droidsafe.eclipse.plugin.core.view.Sort"
+               label="Sort">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+                  label="Sort by Method Name"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="method">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+                  label="Sort by Class Name"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="class">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+                  label="Sort by Status"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="status">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortOutlineView"
+                  label="Sort by Priority"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="priority">
+               </parameter>
+            </command>
+         </menu>
+         <menu
+               id="droidsafe.eclipse.plugin.core.view.SetLabelTypeForMethodNode"
+               label="Method Label">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+                  label="Short Label"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="short_label">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+                  label="Long Label"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="long_label">
+               </parameter>
+            </command>
+         </menu>
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator1"
+               visible="true">
+         </separator>
+         <menu
+               id="droidsafe.eclipse.plugin.core.view.SetTopLevelNode"
+               label="Top Level Node">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetTopLevelNodeForView"
+                  label="Entry Points"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="input_method">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetTopLevelNodeForView"
+                  label="API Methods (Output)"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="output_method">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetTopLevelNodeForView"
+                  label="Code Location"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="code_location">
+               </parameter>
+            </command>
+         </menu>
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator3"
+               visible="true">
+         </separator>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
+               label="Rerun Droidsafe Analysis"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+               label="Reload Spec and Refresh All"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="droidsafe.eclipse.plugin.core.main.toolbar"
+               label="Droidsafe Toolbar">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.OpenOutlineView"
+                  icon="icons/android.png"
+                  label="Open Droidsafe View"
+                  style="push"
+                  tooltip="Open Droidsafe Spec Outline">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.InfoFlowSummaryView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+               icon="icons/search.png"
+               id="droidsafe.eclipse.plugin.core.view.menu.Search"
+               label="Search"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.InfoFlowDetailslView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.PointsToView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.IndicatorView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SearchOutline"
+               icon="icons/search.png"
+               id="droidsafe.eclipse.plugin.core.view.menu.Search"
+               label="Search"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:droidsafe.eclipse.plugin.core.view.IndicatorView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.SetFilters"
+               label="Filters..."
+               style="push">
+         </command>
+         <menu
+               label="Label">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicLabelDisplayMenu"
+                  id="droidsafe.eclipse.plugin.core.view.indicator.LabelDisplayMenu">
+            </dynamic>
+         </menu>
+         <menu
+               label="Sort by">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicSortOutlineMenu"
+                  id="droidsafe.eclipse.plugin.core.view.indicator.SortOutlineMenu">
+            </dynamic>
+         </menu>
+         <menu
+               label="Visibility">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicTypeVisibilityMenu"
+                  id="droidsafe.eclipse.plugin.core.view.indicator.TypeVisibilityMenu">
+            </dynamic>
+         </menu>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+               label="Reload Indicator and Refresh"
+               style="push">
+         </command>
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator1"
+               visible="true">
+         </separator>
+         <menu
+               label="Switch Indicator">
+            <dynamic
+                  class="droidsafe.eclipse.plugin.core.view.indicator.DynamicIndicatorMenu"
+                  id="droidsafe.eclipse.plugin.core.view.indicator.IndicatorMenu">
+            </dynamic>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.IndicatorView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.NewFilter"
+               label="Create Filter"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.CompilationUnitEditor.EditorContext?after=additions">
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
+               label="Filter Droisafe Taint Sources"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
+               label="Show Droidsafe Taint Sources"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
+               label="Show Droidsafe Call Graph"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:droidsafe.eclipse.plugin.core.view.CallHierarchyView">
+         <dynamic
+               class="droidsafe.eclipse.plugin.core.view.callhierarchy.DynamicContextMethodMenu"
+               id="droidsafe.eclipse.plugin.core.view.callhierarchy.DynamicContextMethodMenu">
+         </dynamic>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:droidsafe.eclipse.plugin.core.view.CallHierarchyView">
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.ExpandAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/expandall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.ExpandAll"
+               label="Expand All"
+               style="push"
+               tooltip="Expand all entries in tree">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.CollapseAll"
+               icon="platform:/plugin/org.eclipse.search/icons/full/elcl16/collapseall.gif"
+               id="droidsafe.eclipse.plugin.core.view.menu.CollapseAll"
+               label="Collapse All"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="droidsafe.eclipse.plugin.core.preferences.DroidsafePreferencePage"
+            id="droidsafe.eclipse.plugin.core.preferences.DroidsafePreferencePage"
+            name="Droidsafe">
+      </page>
+   </extension>
+   <extension
+         id="droidsafepreferences"
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="droidsafe.eclipse.plugin.core.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         id="droidsafemarker"
+         name="Droidsafe Security Spec Marker"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.taskmarker">
+      </super>
+      <super
+            type="org.eclipse.core.resources.textmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+      <attribute
+            name="methodName">
+      </attribute>
+      <attribute
+            name="methodReceiver">
+      </attribute>
+   </extension>
+   <extension
+         id="droidsafemarkerresolution"
+         name="Droidsafe Marker Resolution"
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="droidsafe.eclipse.plugin.core.marker.DroidsafeMarkerResolutionGenerator"
+            markerType="droidsafe.eclipse.plugin.core.droidsafemarker">
+      </markerResolutionGenerator>
+      <!-- <markerResolutionGenerator -->
+      <!--       class="droidsafe.eclipse.plugin.core.TaintMarkerResolutionGenerator" -->
+      <!--       markerType="droidsafe.taintmarker"> -->
+      <!-- </markerResolutionGenerator> -->
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            name="Droidsafe">
+      </category>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.spec.SecuritySpecOutlineViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.DroidsafeSpecView"
+            name="Security Spec Outline">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.PointsToView"
+            name="Points To Info"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.InfoFlowSummaryView"
+            name="Info Flow Summary"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.InfoFlowDetailslView"
+            name="Info Flow Details"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.infoflow.TaintSourcesViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.TaintSourcesView"
+            name="Taint Sources"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.callhierarchy.CallHierarchyViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.CallHierarchyView"
+            name="Call Graph"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.value.ValueViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.ValueView"
+            name="Values"
+            restorable="false">
+      </view>
+      <view
+            category="droidsafe.eclipse.plugin.core.view.category.droidsafe"
+            class="droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.view.IndicatorView"
+            name="Indicator"
+            restorable="false">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="droidsafe.eclipse.plugin.core.DroidsafePerspectiveFactory"
+            icon="icons/android.png"
+            id="droidsafe.eclipse.plugin.core.DroidsafePerspective"
+            name="Droidsafe">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="droidsafe.eclipse.plugin.core.DroidsafePerspective">
+         <viewShortcut id="droidsafe.eclipse.plugin.core.view.TaintSourcesView"/>
+      </perspectiveExtension>
+   </extension>
+
+   <extension
+         id="droidsafe.taint.marker"
+         name="Taint Marker"
+         point="org.eclipse.core.resources.markers">
+      <super type="org.eclipse.core.resources.textmarker"/>
+      <super type="org.eclipse.core.resources.marker"/>
+      <!-- <persistent value="true"/> -->
+      <attribute
+            name="sources">
+      </attribute>
+      <attribute
+            name="filteredSources">
+      </attribute>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.annotationTypes">
+      <type
+            markerSeverity="0"
+            super="org.eclipse.ui.workbench.texteditor.info"
+            markerType="droidsafe.taint.marker"
+            name="droidsafe.taint">
+      </type>
+      <type
+            markerSeverity="0"
+            markerType="droidsafe.deadcode.marker"
+            name="droidsafe.deadcode"
+            super="org.eclipse.ui.workbench.texteditor.info">
+      </type>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="droidsafe.taint"
+            colorPreferenceKey="droidsafe.taint.color"
+            colorPreferenceValue="210,180,140"
+            highlightPreferenceKey="droidsafe.taint.highlight"
+            highlightPreferenceValue="true"
+            includeOnPreferencePage="true"
+            label="Droidsafe Taint Annotation"
+            icon="icons/taint.png"
+            overviewRulerPreferenceKey="droidsafe.taint.overview"
+            overviewRulerPreferenceValue="true"
+            presentationLayer="5"
+            textPreferenceKey="droidsafe.taint.text"
+            textPreferenceValue="true"
+            textStylePreferenceKey="droidsafe.taint.textstyle"
+            textStylePreferenceValue="NONE"
+            verticalRulerPreferenceKey="droidsafe.taint.ruler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+      <specification
+            annotationType="droidsafe.deadcode"
+            colorPreferenceKey="droidsafe.deadcode.color"
+            colorPreferenceValue="190,190,190"
+            highlightPreferenceKey="droidsafe.deadcode.highlight"
+            highlightPreferenceValue="true"
+            includeOnPreferencePage="true"
+            label="Droidsafe Dead Code Annotation"
+            overviewRulerPreferenceKey="droidsafe.deadcode.overview"
+            overviewRulerPreferenceValue="false"
+            presentationLayer="5"
+            textPreferenceKey="droidsafe.deadcode.text"
+            textPreferenceValue="true"
+            textStylePreferenceKey="droidsafe.deadcode.textstyle"
+            textStylePreferenceValue="NONE"
+            verticalRulerPreferenceKey="droidsafe.deadcode.ruler"
+            verticalRulerPreferenceValue="false">
+      </specification>
+   </extension>
+
+  <!-- define the marker updater class-->
+  <extension point="org.eclipse.ui.editors.markerUpdaters">
+      <updater
+            id="droidsafe.TaintMarkerUpdater"
+            class="droidsafe.eclipse.plugin.core.marker.TaintMarkerUpdater"
+            markerType="droidsafe.taint.marker">
+      </updater>
+      <updater
+            class="droidsafe.eclipse.plugin.core.marker.DeadCodeMarkerUpdater"
+            id="droidsafe.DeadCodeMarkerUpdater"
+            markerType="droidsafe.deadcode.marker">
+      </updater>
+  </extension>
+
+  <extension point="org.eclipse.jdt.ui.javaEditorTextHovers">
+      <hover
+            id="droidsafe.eclipse.plugin.core.marker.TaintMarkerTextHover"
+            class="droidsafe.eclipse.plugin.core.marker.TaintMarkerTextHover">
+      </hover>
+  </extension>
+  <extension
+        id="droidsafe.deadcode.marker"
+        name="Dead Code Marker"
+        point="org.eclipse.core.resources.markers">
+     <super
+           type="org.eclipse.core.resources.textmarker">
+     </super>
+     <super
+           type="org.eclipse.core.resources.marker">
+     </super>
+  </extension>
+
+</plugin>

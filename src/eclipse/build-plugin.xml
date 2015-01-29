@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="generateBuildFiles" default="build">
+
+
+  <!-- <property name="target.eclipse.platform"  value="/home/becker/eclipse42/eclipse"/>  -->
+  <!-- <property name="eclipse.plugin.location"  value="."/>  -->
+
+  <condition property="properties.file.found">
+    <available file="${eclipse.plugin.location}/build.properties" />
+  </condition>
+
+  <target name="check-eclipse-home" description="Verify if needed eclipse files exist"
+          depends="load-build-properties">
+    <condition property="eclipse.home.available">
+        <available file="${target.eclipse.platform}" property="eclipse.folder.found"/>
+    </condition>
+    <echo> Eclipse Home Available = ${eclipse.home.available} </echo>
+    <echo> Eclipse Home           = ${target.eclipse.platform} </echo>
+  </target>
+
+
+ <target name="set-eclipse-build-path" description="Sets the paths for eclipse build files"
+          depends="check-eclipse-home" if="eclipse.home.available">
+   <fileset id="eclipse.launcher.jar" dir="${target.eclipse.platform}" includes="plugins/org.eclipse.equinox.launcher_*.jar"/>
+   <dirset id="eclipse.pde.build" dir="${target.eclipse.platform}"    includes="plugins/org.eclipse.pde.build*"/>
+   <pathconvert property="target.eclipse.ant.launcher" refid="eclipse.launcher.jar" />
+   <pathconvert property="target.eclipse.pde.plugin" refid="eclipse.pde.build" />
+   <echo> eclipse home      = ${target.eclipse.platform} </echo>
+   <echo> eclipse launcher  = ${target.eclipse.ant.launcher} </echo>
+   <echo> eclipse pde build = ${target.eclipse.pde.plugin} </echo>
+ </target>
+
+
+  <target name="check-eclipse-build-files" description="Verify if needed eclipse files exist"
+          depends="set-eclipse-build-path" if="eclipse.home.available">
+    <condition property="eclipse.build.available">
+      <and>
+        <available file="${target.eclipse.ant.launcher}" property="eclipse.launcher.found"/>
+        <available file="${target.eclipse.pde.plugin}" property="eclipse.builder.found"/>
+      </and>
+    </condition>
+  </target>
+
+  <target name="create-build-properties" description="Copies the template properties file into build.properties"
+          unless="properties.file.found"> 
+    <copy file="${eclipse.plugin.location}/build.properties.template" tofile="${eclipse.plugin.location}/build.properties"/>
+  </target>
+
+  <target name="load-build-properties" description="Loads all properties from build.properties"
+          depends="create-build-properties"> 
+    <loadproperties srcFile="${eclipse.plugin.location}/build.properties"/>
+  </target>
+
+  <target name="print-config-error-message" 
+          description="Prints some instructions on how to setup eclipse path for headless build"
+          depends="check-eclipse-build-files" unless="eclipse.build.available">
+    <echo>
+      Build file missing correct paths to eclipse jar files and scripts needed to build and deploy the plugin. 
+      Edit file APAC_HOME/src/eclipse/build.properties and make sure properties 
+      target.eclipse.platform points to the correct folder where eclipse is installed.
+
+      target.eclipse.platform should point to the root folder of your eclipse distribution. 
+      This folder should have the plugins folder in it. 
+    </echo>
+  </target>
+
+  <target name="copy-feature-and-plugin" 
+          description="Copy the plugin and feature source files to temporary build folder" 
+          if="eclipse.build.available">
+    <copy todir="${builder.dir}/plugins/droidsafe.eclipse.plugin.core" >
+      <fileset dir="${eclipse.plugin.location}/droidsafe.eclipse.plugin.core"/>
+    </copy>
+    <copy todir="${builder.dir}/features/droidsafe.eclipse.plugin.feature" >
+      <fileset dir="${eclipse.plugin.location}/droidsafe.eclipse.plugin.feature"/>
+    </copy>
+    <copy todir="${builder.dir}" file="${eclipse.plugin.location}/build.properties"/>
+    <mkdir dir="${path.to.local.update.site}"/>
+    <delete includeemptydirs="true">
+      <fileset dir="${path.to.local.update.site}" includes="**/*"/>
+    </delete>
+  </target>
+
+  <target name="build" 
+          description="Headless build (no-ui) of the eclipse plugin. Properties defines in file build.properties."
+          depends="load-build-properties, print-config-error-message, copy-feature-and-plugin" 
+          if="eclipse.build.available">
+    <java jar="${target.eclipse.ant.launcher}" fork="true" failonerror="true">
+      <arg value="-application" />
+      <arg value="org.eclipse.ant.core.antRunner" />
+      <arg value="-buildfile" />
+      <arg value="${target.eclipse.pde.plugin}/scripts/build.xml" />
+      <arg value="-DbuildDirectory=${builder.dir}" />
+      <arg value="-Dbuilder=${builder.dir}" />
+      <arg value="-Dworkingdirectory=${builder.dir}"/>
+      <arg value="-DbuildTempFolder=${temp.build.dir}" />
+      <arg value="-DpluginPath=${builder.dir}/plugins${path.separator}${target.eclipse.platform}/plugins" />
+      <arg value="-DelementPath=${elementPath}" />
+      <arg value="-DtopLevelElementType=feature" />
+      <arg value="-DtopLevelElementId=${feature.id}" />
+      <arg value="-Dp2.category.definition=file:${category.xml.location} " />
+      <arg value="-Dp2.category.site=file:${site.xml.location}" />
+      <arg value="-Dp2.build.repo=file:${path.to.local.update.site}" />
+    </java>
+    <delete dir="${builder.dir}"/>
+  </target>
+
+  <target name="deploy"
+          description="Headless build (no-ui) and installation of the eclipse plugin. Properties defines in file build.properties."
+          depends="build"
+          if="eclipse.build.available">
+    <delete>
+      <fileset dir="${target.eclipse.platform}/plugins" includes="droidsafe.eclipse.plugin.core_*.jar"/>
+    </delete>
+    <copy todir="${target.eclipse.platform}/plugins">
+      <fileset dir="${path.to.local.update.site}/plugins" includes="droidsafe.eclipse.plugin.core_*.jar"/>
+    </copy>
+  </target>
+
+</project>

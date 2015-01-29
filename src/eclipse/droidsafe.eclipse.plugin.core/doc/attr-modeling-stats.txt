@@ -1,0 +1,578 @@
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/AndroidGame/AndroidGame/src
+Intents: 0/0 Uri: 0/0 Strings: 0/28
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/Butane/butane/src
+Intents: 4/23 Uri: 0/0 Strings: 45/187
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/CountdownTimer/CountdownTimer/src
+Intents: 1/10 Uri: 0/0 Strings: 9/54
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/com.p.morsecode/com.p.morsecode/src
+Intents: 1/2 Uri: 0/0 Strings: 10/14
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/MyDrawA/MyDraw/src
+Intents: 0/5 Uri: 0/0 Strings: 3/12
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/MyDrawC/MyDraw/src
+Intents: 0/3 Uri: 0/0 Strings: 4/8
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/NewsCollator/Build/src
+Intents: 1/4 Uri: 0/0 Strings: 23/192
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/PasswordSaver/PasswordSaver/src
+Intents: 1/19 Uri: 0/0 Strings: 17/151
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/PersistentAssistant/Build/src
+Intents: 1/6 Uri: 0/0 Strings: 15/139
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SMSReminder/Build/src
+Intents: 3/9 Uri: 0/0 Strings: 44/55
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/com.url.sourceviewer/com.url.sourceviewer/src
+Intents: 1/2 Uri: 0/0 Strings: 9/23
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SplitTimer/SplitTimer/src
+Intents: 0/0 Uri: 0/0 Strings: 10/11
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SuperNote/Build/src
+Intents: 1/14 Uri: 0/0 Strings: 62/111
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SuperSudoku/Build/src
+Intents: 2/2 Uri: 0/0 Strings: 21/25
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SysMon/Build/src
+Intents: 2/6 Uri: 0/0 Strings: 32/109
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/WordHelper/WordHelper/Build/src
+Intents: 1/5 Uri: 0/0 Strings: 32/311
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/BatteryIndicator/src
+Intents: 1/26 Uri: 0/0 Strings: 66/216
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/MediaFun/build/src
+Intents: 1/2 Uri: 0/0 Strings: 9/120
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 4/13
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/SMSBlocker/SMSBlocker/src
+Intents: 1/7 Uri: 0/0 Strings: 27/112
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/YARR/src
+Intents: 1/5 Uri: 0/0 Strings: 22/178
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/shareloc/src
+Intents: 1/3 Uri: 0/0 Strings: 11/18
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/smsbackup/src
+Intents: 1/2 Uri: 0/0 Strings: 13/19
+/home/dpetters/workspace/droidsafe/android-apps/tests/PickContacts/src
+Intents: 2/2 Uri: 0/0 Strings: 11/12
+/home/dpetters/workspace/droidsafe/android-apps/tests/Sensors/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/dpetters/workspace/droidsafe/android-apps/tests/StringTests/src
+Intents: 0/36 Uri: 0/0 Strings: 29/52
+/home/dpetters/workspace/droidsafe/android-apps/tests/array/src
+Intents: 5/5 Uri: 0/0 Strings: 2/2
+/home/dpetters/workspace/droidsafe/android-apps/tests/context/src
+Intents: 4/4 Uri: 0/0 Strings: 6/8
+/home/dpetters/workspace/droidsafe/android-apps/tests/pta-api-return/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/dpetters/workspace/droidsafe/android-apps/src/HelloAndroid/src
+Intents: 0/0 Uri: 0/0 Strings: 5/7
+/home/dpetters/workspace/droidsafe/android-apps/src/HelloAndroid/src
+Intents: 0/0 Uri: 0/0 Strings: 5/7
+/home/dpetters/workspace/droidsafe/android-apps/src/async_task/src
+Intents: 0/0 Uri: 0/0 Strings: 6/8
+/home/dpetters/workspace/droidsafe/android-apps/src/async_task/src
+Intents: 0/0 Uri: 0/0 Strings: 6/8
+/home/dpetters/workspace/droidsafe/android-apps/src/GpsCompass/src
+Intents: 0/3 Uri: 0/0 Strings: 39/55
+/home/dpetters/workspace/droidsafe/android-apps/src/GpsCompass/src
+Intents: 0/3 Uri: 0/0 Strings: 39/55
+/home/dpetters/workspace/droidsafe/android-apps/src/recorder-malware/src
+Intents: 0/1 Uri: 0/0 Strings: 6/9
+/home/dpetters/workspace/droidsafe/android-apps/src/recorder-malware/src
+Intents: 0/1 Uri: 0/0 Strings: 6/9
+/home/dpetters/workspace/droidsafe/android-apps/src/cfg/src
+Intents: 0/0 Uri: 0/0 Strings: 4/6
+/home/dpetters/workspace/droidsafe/android-apps/src/cfg/src
+Intents: 0/0 Uri: 0/0 Strings: 4/6
+/home/dpetters/workspace/droidsafe/android-apps/src/nfc-demo/src
+Intents: 0/1 Uri: 0/0 Strings: 6/22
+/home/dpetters/workspace/droidsafe/android-apps/src/nfc-demo/src
+Intents: 0/1 Uri: 0/0 Strings: 6/22
+/home/dpetters/workspace/droidsafe/android-apps/invincea/Sip2Peer/src
+Intents: 4/7 Uri: 0/0 Strings: 159/270
+/home/dpetters/workspace/droidsafe/android-apps/invincea/Sip2Peer/src
+Intents: 4/7 Uri: 0/0 Strings: 159/270
+/home/dpetters/workspace/droidsafe/android-apps/tests/attr-modeling/IntentBasic1TestCase/src
+Intents: 1/2 Uri: 0/0 Strings: 12/15
+/home/dpetters/workspace/droidsafe/android-apps/tests/attr-modeling/IntentBasic1TestCase/src
+Intents: 1/2 Uri: 0/0 Strings: 12/15
+/home/dpetters/workspace/droidsafe/android-apps/tests/attr-modeling/IntentInvalidation1TestCase/src
+Intents: 0/2 Uri: 0/0 Strings: 12/17
+/home/dpetters/workspace/droidsafe/android-apps/tests/attr-modeling/IntentInvalidation1TestCase/src
+Intents: 0/2 Uri: 0/0 Strings: 12/17
+/home/dpetters/workspace/droidsafe/android-apps/tests/StringTests/src
+Intents: 0/36 Uri: 0/0 Strings: 31/52
+/home/dpetters/workspace/droidsafe/android-apps/tests/StringTests/src
+Intents: 0/36 Uri: 0/0 Strings: 31/52
+/home/dpetters/workspace/droidsafe/android-apps/tests/context/src
+Intents: 3/4 Uri: 0/0 Strings: 8/12
+/home/dpetters/workspace/droidsafe/android-apps/tests/context/src
+Intents: 3/4 Uri: 0/0 Strings: 8/12
+/home/dpetters/workspace/droidsafe/android-apps/tests/pta-api-return/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/dpetters/workspace/droidsafe/android-apps/tests/pta-api-return/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/dpetters/workspace/droidsafe/android-apps/tests/Sensors/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/dpetters/workspace/droidsafe/android-apps/tests/Sensors/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/dpetters/workspace/droidsafe/android-apps/tests/array/src
+Intents: 4/5 Uri: 0/0 Strings: 4/6
+/home/dpetters/workspace/droidsafe/android-apps/tests/array/src
+Intents: 4/5 Uri: 0/0 Strings: 4/6
+/home/dpetters/workspace/droidsafe/android-apps/tests/PickContacts/src
+Intents: 1/2 Uri: 0/0 Strings: 13/16
+/home/dpetters/workspace/droidsafe/android-apps/tests/PickContacts/src
+Intents: 1/2 Uri: 0/0 Strings: 13/16
+/home/dpetters/workspace/droidsafe/android-apps/bbn/DataReader/src
+Intents: 0/0 Uri: 0/0 Strings: 14/17
+/home/dpetters/workspace/droidsafe/android-apps/bbn/DataReader/src
+Intents: 0/0 Uri: 0/0 Strings: 14/17
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/YARR/src
+Intents: 0/5 Uri: 0/0 Strings: 28/179
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/YARR/src
+Intents: 0/5 Uri: 0/0 Strings: 28/179
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/smsbackup/src
+Intents: 1/2 Uri: 0/0 Strings: 15/21
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/smsbackup/src
+Intents: 1/2 Uri: 0/0 Strings: 15/21
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/BatteryIndicator/src
+Intents: 2/26 Uri: 0/0 Strings: 97/217
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/BatteryIndicator/src
+Intents: 2/26 Uri: 0/0 Strings: 97/217
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 5/17
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 5/17
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/MediaFun/build/src
+Intents: 0/2 Uri: 0/0 Strings: 9/121
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/MediaFun/build/src
+Intents: 0/2 Uri: 0/0 Strings: 9/121
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/SmsPopup_clean/library/src
+Intents: 0/2 Uri: 0/0 Strings: 1/110
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/SmsPopup_clean/library/src
+Intents: 0/2 Uri: 0/0 Strings: 1/110
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/shareloc/src
+Intents: 0/3 Uri: 0/0 Strings: 14/22
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/shareloc/src
+Intents: 0/3 Uri: 0/0 Strings: 14/22
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/SMSBlocker/SMSBlocker/src
+Intents: 3/7 Uri: 0/0 Strings: 96/115
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/SMSBlocker/SMSBlocker/src
+Intents: 3/7 Uri: 0/0 Strings: 96/115
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/MyDrawD/src
+Intents: 0/3 Uri: 0/0 Strings: 11/14
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/MyDrawD/src
+Intents: 0/3 Uri: 0/0 Strings: 11/14
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/UltraCoolMap/Build/src
+Intents: 0/3 Uri: 0/0 Strings: 4/113
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1b/apps/UltraCoolMap/Build/src
+Intents: 0/3 Uri: 0/0 Strings: 4/113
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/WordHelper/WordHelper/Build/src
+Intents: 0/5 Uri: 0/0 Strings: 36/313
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/WordHelper/WordHelper/Build/src
+Intents: 0/5 Uri: 0/0 Strings: 36/313
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SMSReminder/Build/src
+Intents: 4/9 Uri: 0/0 Strings: 46/59
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SMSReminder/Build/src
+Intents: 4/9 Uri: 0/0 Strings: 46/59
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/PasswordSaver/PasswordSaver/src
+Intents: 17/19 Uri: 0/0 Strings: 17/152
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/PasswordSaver/PasswordSaver/src
+Intents: 17/19 Uri: 0/0 Strings: 17/152
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/PersistentAssistant/Build/src
+Intents: 0/6 Uri: 0/0 Strings: 15/140
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/PersistentAssistant/Build/src
+Intents: 0/6 Uri: 0/0 Strings: 15/140
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/CountdownTimer/CountdownTimer/src
+Intents: 5/10 Uri: 0/0 Strings: 41/54
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/CountdownTimer/CountdownTimer/src
+Intents: 5/10 Uri: 0/0 Strings: 41/54
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/MyDrawA/MyDraw/src
+Intents: 0/5 Uri: 0/0 Strings: 6/12
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/MyDrawA/MyDraw/src
+Intents: 0/5 Uri: 0/0 Strings: 6/12
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/NewsCollator/Build/src
+Intents: 0/4 Uri: 0/0 Strings: 32/193
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/NewsCollator/Build/src
+Intents: 0/4 Uri: 0/0 Strings: 32/193
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/MyDrawC/MyDraw/src
+Intents: 0/3 Uri: 0/0 Strings: 6/8
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/MyDrawC/MyDraw/src
+Intents: 0/3 Uri: 0/0 Strings: 6/8
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/com.url.sourceviewer/com.url.sourceviewer/src
+Intents: 1/2 Uri: 0/0 Strings: 15/24
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/com.url.sourceviewer/com.url.sourceviewer/src
+Intents: 1/2 Uri: 0/0 Strings: 15/24
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/AndroidGame/AndEngine/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/AndroidGame/AndEngine/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/AndroidGame/AndroidGame/src
+Intents: 0/0 Uri: 0/0 Strings: 0/28
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/AndroidGame/AndroidGame/src
+Intents: 0/0 Uri: 0/0 Strings: 0/28
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SuperNote/Build/src
+Intents: 3/14 Uri: 0/0 Strings: 77/112
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/SuperNote/Build/src
+Intents: 3/14 Uri: 0/0 Strings: 77/112
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/com.p.morsecode/com.p.morsecode/src
+Intents: 0/2 Uri: 0/0 Strings: 12/18
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1a/apps/com.p.morsecode/com.p.morsecode/src
+Intents: 0/2 Uri: 0/0 Strings: 12/18
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/sanity_clean/sanity/src
+Intents: 1/40 Uri: 0/0 Strings: 254/462
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/sanity_clean/sanity/src
+Intents: 1/40 Uri: 0/0 Strings: 254/462
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/WIFINDER/Build/src
+Intents: 0/2 Uri: 0/0 Strings: 20/172
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/WIFINDER/Build/src
+Intents: 0/2 Uri: 0/0 Strings: 20/172
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/FullControl/Build/com.deepSoft.fullcontrol.catListActivity/src
+Intents: 0/10 Uri: 0/0 Strings: 9/196
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/FullControl/Build/com.deepSoft.fullcontrol.catListActivity/src
+Intents: 0/10 Uri: 0/0 Strings: 9/196
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/ColorMatcher/src
+Intents: 2/6 Uri: 0/0 Strings: 1/123
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/ColorMatcher/src
+Intents: 2/6 Uri: 0/0 Strings: 1/123
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/KitteyKittey/KitteyKittey/src
+Intents: 0/3 Uri: 0/0 Strings: 10/146
+/home/dpetters/workspace/droidsafe/android-apps/engagements/1c/apps/KitteyKittey/KitteyKittey/src
+Intents: 0/3 Uri: 0/0 Strings: 10/146
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/DeadMethod/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/DeadMethod/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/kestrelapp4/src
+Intents: 0/0 Uri: 0/0 Strings: 5/5
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/kestrelapp4/src
+Intents: 0/0 Uri: 0/0 Strings: 5/5
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/DeadBlock/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/DeadBlock/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/ExceptionHandler/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/ExceptionHandler/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/kestrelapp1/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/dpetters/workspace/droidsafe/android-apps/kestrel/kestrelapp1/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/tests/PickContacts/src
+Intents: 1/2 Uri: 0/0 Strings: 13/16
+/home/becker/src/droidsafe-git/android-apps/tests/StringTests/src
+Intents: 0/36 Uri: 0/0 Strings: 31/52
+/home/becker/src/droidsafe-git/android-apps/tests/array/src
+Intents: 4/5 Uri: 0/0 Strings: 4/6
+/home/becker/src/droidsafe-git/android-apps/tests/attr-modeling/IntentBasic1TestCase/src
+Intents: 1/2 Uri: 0/0 Strings: 12/15
+/home/becker/src/droidsafe-git/android-apps/tests/attr-modeling/IntentInvalidation1TestCase/src
+Intents: 0/2 Uri: 0/0 Strings: 12/17
+/home/becker/src/droidsafe-git/android-apps/tests/pta-api-return/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/becker/src/droidsafe-git/android-apps/tests/context/src
+Intents: 3/4 Uri: 0/0 Strings: 8/12
+/home/becker/src/droidsafe-git/android-apps/tests/Sensors/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/becker/src/droidsafe-git/android-apps/kestrel/kestrelapp4/src
+Intents: 0/0 Uri: 0/0 Strings: 5/5
+/home/becker/src/droidsafe-git/android-apps/kestrel/kestrelapp1/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/ExceptionHandler/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/DeadBlock/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/DeadMethod/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/src/async_task/src
+Intents: 0/0 Uri: 0/0 Strings: 6/8
+/home/becker/src/droidsafe-git/android-apps/src/cfg/src
+Intents: 0/0 Uri: 0/0 Strings: 4/6
+/home/becker/src/droidsafe-git/android-apps/src/GpsCompass/src
+Intents: 0/3 Uri: 0/0 Strings: 39/55
+/home/becker/src/droidsafe-git/android-apps/src/nfc-demo/src
+Intents: 0/1 Uri: 0/0 Strings: 6/22
+/home/becker/src/droidsafe-git/android-apps/src/recorder-malware/src
+Intents: 0/1 Uri: 0/0 Strings: 6/9
+/home/becker/src/droidsafe-git/android-apps/src/HelloAndroid/src
+Intents: 0/0 Uri: 0/0 Strings: 5/7
+/home/becker/src/droidsafe-git/android-apps/bbn/DataReader/src
+Intents: 0/0 Uri: 0/0 Strings: 14/17
+/home/becker/src/droidsafe-git/android-apps/invincea/Sip2Peer/src
+Intents: 4/7 Uri: 0/0 Strings: 159/272
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/sanity_clean/sanity/src
+Intents: 1/40 Uri: 0/0 Strings: 249/462
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/WIFINDER/Build/src
+Intents: 0/2 Uri: 0/0 Strings: 20/172
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/ColorMatcher/src
+Intents: 2/6 Uri: 0/0 Strings: 1/123
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/FullControl/Build/com.deepSoft.fullcontrol.catListActivity/src
+Intents: 0/10 Uri: 0/0 Strings: 9/196
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/KitteyKittey/KitteyKittey/src
+Intents: 0/3 Uri: 0/0 Strings: 10/146
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/NewsCollator/Build/src
+Intents: 0/4 Uri: 0/0 Strings: 32/193
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/WordHelper/WordHelper/Build/src
+Intents: 0/5 Uri: 0/0 Strings: 36/313
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/MyDrawA/MyDraw/src
+Intents: 0/5 Uri: 0/0 Strings: 6/12
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/Butane/butane/src
+Intents: 4/23 Uri: 0/0 Strings: 82/188
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/com.p.morsecode/com.p.morsecode/src
+Intents: 0/2 Uri: 0/0 Strings: 12/18
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/APG-E_clean/APG-E_clean/src
+Intents: 1/32 Uri: 0/0 Strings: 121/1118
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/CountdownTimer/CountdownTimer/src
+Intents: 5/10 Uri: 0/0 Strings: 41/54
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/com.url.sourceviewer/com.url.sourceviewer/src
+Intents: 1/2 Uri: 0/0 Strings: 15/24
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/SMSReminder/Build/src
+Intents: 4/9 Uri: 0/0 Strings: 47/59
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/MyDrawC/MyDraw/src
+Intents: 0/3 Uri: 0/0 Strings: 6/8
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/AndroidGame/AndEngine/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/AndroidGame/AndroidGame/src
+Intents: 0/0 Uri: 0/0 Strings: 0/28
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/PasswordSaver/PasswordSaver/src
+Intents: 17/19 Uri: 0/0 Strings: 17/152
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/SuperNote/Build/src
+Intents: 3/14 Uri: 0/0 Strings: 77/112
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/PersistentAssistant/Build/src
+Intents: 0/6 Uri: 0/0 Strings: 14/140
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 5/17
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/SMSBlocker/SMSBlocker/src
+Intents: 3/7 Uri: 0/0 Strings: 96/115
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/smsbackup/src
+Intents: 1/2 Uri: 0/0 Strings: 15/21
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/YARR/src
+Intents: 0/5 Uri: 0/0 Strings: 28/179
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/MyDrawD/src
+Intents: 0/3 Uri: 0/0 Strings: 11/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/UltraCoolMap/Build/src
+Intents: 0/3 Uri: 0/0 Strings: 4/113
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/shareloc/src
+Intents: 0/3 Uri: 0/0 Strings: 14/22
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/MediaFun/build/src
+Intents: 0/2 Uri: 0/0 Strings: 9/121
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/APG-M_clean/src
+Intents: 1/32 Uri: 0/0 Strings: 122/1117
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/SmsPopup_clean/library/src
+Intents: 0/2 Uri: 0/0 Strings: 1/110
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/BatteryIndicator/src
+Intents: 1/26 Uri: 0/0 Strings: 97/217
+/home/becker/src/droidsafe-git/android-apps/tests/PickContacts/src
+Intents: 2/2 Uri: 0/0 Strings: 13/16
+/home/becker/src/droidsafe-git/android-apps/tests/StringTests/src
+Intents: 5/36 Uri: 0/0 Strings: 33/52
+/home/becker/src/droidsafe-git/android-apps/tests/array/src
+Intents: 5/5 Uri: 0/0 Strings: 4/6
+/home/becker/src/droidsafe-git/android-apps/tests/attr-modeling/IntentBasic1TestCase/src
+Intents: 2/2 Uri: 0/0 Strings: 12/15
+/home/becker/src/droidsafe-git/android-apps/tests/attr-modeling/IntentInvalidation1TestCase/src
+Intents: 1/2 Uri: 0/0 Strings: 12/17
+/home/becker/src/droidsafe-git/android-apps/tests/pta-api-return/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/becker/src/droidsafe-git/android-apps/tests/context/src
+Intents: 4/4 Uri: 0/0 Strings: 8/12
+/home/becker/src/droidsafe-git/android-apps/tests/Sensors/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/becker/src/droidsafe-git/android-apps/kestrel/kestrelapp4/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/kestrelapp1/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/ExceptionHandler/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/DeadBlock/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/DeadMethod/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/src/async_task/src
+Intents: 0/0 Uri: 0/0 Strings: 6/8
+/home/becker/src/droidsafe-git/android-apps/src/cfg/src
+Intents: 0/0 Uri: 0/0 Strings: 4/6
+/home/becker/src/droidsafe-git/android-apps/src/GpsCompass/src
+Intents: 1/3 Uri: 0/0 Strings: 40/55
+/home/becker/src/droidsafe-git/android-apps/src/nfc-demo/src
+Intents: 0/0 Uri: 0/0 Strings: 5/19
+/home/becker/src/droidsafe-git/android-apps/src/recorder-malware/src
+Intents: 0/1 Uri: 0/0 Strings: 6/9
+/home/becker/src/droidsafe-git/android-apps/src/HelloAndroid/src
+Intents: 0/0 Uri: 0/0 Strings: 5/7
+/home/becker/src/droidsafe-git/android-apps/bbn/DataReader/src
+Intents: 0/0 Uri: 0/0 Strings: 12/14
+/home/becker/src/droidsafe-git/android-apps/invincea/Sip2Peer/src
+Intents: 3/6 Uri: 0/0 Strings: 158/271
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/sanity_clean/sanity/src
+Intents: 1/39 Uri: 0/0 Strings: 249/457
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/WIFINDER/Build/src
+Intents: 1/2 Uri: 0/0 Strings: 20/172
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/ColorMatcher/src
+Intents: 2/5 Uri: 0/0 Strings: 0/116
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/FullControl/Build/com.deepSoft.fullcontrol.catListActivity/src
+Intents: 1/10 Uri: 0/0 Strings: 9/196
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/KitteyKittey/KitteyKittey/src
+Intents: 1/3 Uri: 0/0 Strings: 10/146
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/NewsCollator/Build/src
+Intents: 1/4 Uri: 0/0 Strings: 32/193
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/WordHelper/WordHelper/Build/src
+Intents: 0/4 Uri: 0/0 Strings: 36/312
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/MyDrawA/MyDraw/src
+Intents: 0/5 Uri: 0/0 Strings: 8/12
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/com.p.morsecode/com.p.morsecode/src
+Intents: 0/1 Uri: 0/0 Strings: 12/18
+/home/becker/src/droidsafe-git/android-apps/tests/PickContacts/src
+Intents: 2/2 Uri: 0/0 Strings: 13/16
+/home/becker/src/droidsafe-git/android-apps/tests/StringTests/src
+Intents: 5/36 Uri: 0/0 Strings: 33/52
+/home/becker/src/droidsafe-git/android-apps/tests/array/src
+Intents: 5/5 Uri: 0/0 Strings: 4/6
+/home/becker/src/droidsafe-git/android-apps/tests/attr-modeling/IntentBasic1TestCase/src
+Intents: 2/2 Uri: 0/0 Strings: 12/15
+/home/becker/src/droidsafe-git/android-apps/tests/attr-modeling/IntentInvalidation1TestCase/src
+Intents: 1/2 Uri: 0/0 Strings: 12/17
+/home/becker/src/droidsafe-git/android-apps/tests/pta-api-return/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/becker/src/droidsafe-git/android-apps/tests/context/src
+Intents: 4/4 Uri: 0/0 Strings: 8/12
+/home/becker/src/droidsafe-git/android-apps/tests/Sensors/src
+Intents: 0/0 Uri: 0/0 Strings: 1/1
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/CountdownTimer/CountdownTimer/src
+Intents: 4/8 Uri: 0/0 Strings: 41/52
+/home/becker/src/droidsafe-git/android-apps/kestrel/kestrelapp4/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/com.url.sourceviewer/com.url.sourceviewer/src
+Intents: 1/1 Uri: 0/0 Strings: 16/23
+/home/becker/src/droidsafe-git/android-apps/kestrel/kestrelapp1/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/ExceptionHandler/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/kestrel/DeadBlock/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/SMSReminder/Build/src
+Intents: 3/7 Uri: 0/0 Strings: 47/59
+/home/becker/src/droidsafe-git/android-apps/kestrel/DeadMethod/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/MyDrawC/MyDraw/src
+Intents: 0/3 Uri: 0/0 Strings: 6/8
+/home/becker/src/droidsafe-git/android-apps/src/async_task/src
+Intents: 0/0 Uri: 0/0 Strings: 6/8
+/home/becker/src/droidsafe-git/android-apps/src/cfg/src
+Intents: 0/0 Uri: 0/0 Strings: 4/6
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/AndroidGame/AndEngine/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/src/GpsCompass/src
+Intents: 1/3 Uri: 0/0 Strings: 40/55
+/home/becker/src/droidsafe-git/android-apps/src/nfc-demo/src
+Intents: 0/0 Uri: 0/0 Strings: 5/19
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/AndroidGame/AndroidGame/src
+Intents: 0/0 Uri: 0/0 Strings: 0/28
+/home/becker/src/droidsafe-git/android-apps/src/recorder-malware/src
+Intents: 0/1 Uri: 0/0 Strings: 6/9
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/PasswordSaver/PasswordSaver/src
+Intents: 18/19 Uri: 0/0 Strings: 17/152
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/SuperNote/Build/src
+Intents: 4/14 Uri: 0/0 Strings: 75/110
+/home/becker/src/droidsafe-git/android-apps/src/HelloAndroid/src
+Intents: 0/0 Uri: 0/0 Strings: 5/7
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/PersistentAssistant/Build/src
+Intents: 0/5 Uri: 0/0 Strings: 14/140
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 2/14
+/home/becker/src/droidsafe-git/android-apps/bbn/DataReader/src
+Intents: 0/0 Uri: 0/0 Strings: 12/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/SMSBlocker/SMSBlocker/src
+Intents: 3/6 Uri: 0/0 Strings: 82/101
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/smsbackup/src
+Intents: 1/1 Uri: 0/0 Strings: 14/19
+/home/becker/src/droidsafe-git/android-apps/invincea/Sip2Peer/src
+Intents: 3/6 Uri: 0/0 Strings: 158/271
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/YARR/src
+Intents: 1/5 Uri: 0/0 Strings: 28/179
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/sanity_clean/sanity/src
+Intents: 1/39 Uri: 0/0 Strings: 249/457
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/MyDrawD/src
+Intents: 0/3 Uri: 0/0 Strings: 11/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/WIFINDER/Build/src
+Intents: 1/2 Uri: 0/0 Strings: 20/172
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/UltraCoolMap/Build/src
+Intents: 1/3 Uri: 0/0 Strings: 4/113
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/shareloc/src
+Intents: 1/3 Uri: 0/0 Strings: 14/22
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/MediaFun/build/src
+Intents: 1/2 Uri: 0/0 Strings: 9/121
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/ColorMatcher/src
+Intents: 2/5 Uri: 0/0 Strings: 0/116
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/FullControl/Build/com.deepSoft.fullcontrol.catListActivity/src
+Intents: 1/10 Uri: 0/0 Strings: 9/196
+/home/becker/src/droidsafe-git/android-apps/engagements/1c/apps/KitteyKittey/KitteyKittey/src
+Intents: 1/3 Uri: 0/0 Strings: 10/146
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/SmsPopup_clean/library/src
+Intents: 1/2 Uri: 0/0 Strings: 1/110
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/BatteryIndicator/src
+Intents: 3/26 Uri: 0/0 Strings: 97/217
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/NewsCollator/Build/src
+Intents: 1/4 Uri: 0/0 Strings: 32/193
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/WordHelper/WordHelper/Build/src
+Intents: 0/4 Uri: 0/0 Strings: 36/312
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/MyDrawA/MyDraw/src
+Intents: 0/5 Uri: 0/0 Strings: 8/12
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/com.p.morsecode/com.p.morsecode/src
+Intents: 0/1 Uri: 0/0 Strings: 12/18
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/CountdownTimer/CountdownTimer/src
+Intents: 4/8 Uri: 0/0 Strings: 41/52
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/com.url.sourceviewer/com.url.sourceviewer/src
+Intents: 1/1 Uri: 0/0 Strings: 16/23
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/SMSReminder/Build/src
+Intents: 3/7 Uri: 0/0 Strings: 47/59
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/MyDrawC/MyDraw/src
+Intents: 0/3 Uri: 0/0 Strings: 6/8
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/AndroidGame/AndEngine/src
+Intents: 0/0 Uri: 0/0 Strings: 0/0
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/AndroidGame/AndroidGame/src
+Intents: 0/0 Uri: 0/0 Strings: 0/28
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/PasswordSaver/PasswordSaver/src
+Intents: 18/19 Uri: 0/0 Strings: 17/152
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/SuperNote/Build/src
+Intents: 4/14 Uri: 0/0 Strings: 75/110
+/home/becker/src/droidsafe-git/android-apps/engagements/1a/apps/PersistentAssistant/Build/src
+Intents: 0/5 Uri: 0/0 Strings: 14/140
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 2/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/SMSBlocker/SMSBlocker/src
+Intents: 3/6 Uri: 0/0 Strings: 82/101
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/smsbackup/src
+Intents: 1/1 Uri: 0/0 Strings: 14/19
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/YARR/src
+Intents: 1/5 Uri: 0/0 Strings: 28/179
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/MyDrawD/src
+Intents: 0/3 Uri: 0/0 Strings: 11/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/UltraCoolMap/Build/src
+Intents: 1/3 Uri: 0/0 Strings: 4/113
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/shareloc/src
+Intents: 1/3 Uri: 0/0 Strings: 14/22
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/MediaFun/build/src
+Intents: 1/2 Uri: 0/0 Strings: 9/121
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/SmsPopup_clean/library/src
+Intents: 1/2 Uri: 0/0 Strings: 1/110
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/BatteryIndicator/src
+Intents: 3/26 Uri: 0/0 Strings: 97/217
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 3/26 Uri: 0/0 Strings: 98/217
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 5/32 Uri: 0/0 Strings: 95/377
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 3/26 Uri: 0/0 Strings: 98/217
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 3/26 Uri: 0/0 Strings: 98/217
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 4/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 4/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 4/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 4/14
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 0/2 Uri: 0/0 Strings: 7/18
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 0/2 Uri: 0/0 Strings: 7/18
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 4/26 Uri: 0/0 Strings: 150/216
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 5/31 Uri: 0/0 Strings: 146/327

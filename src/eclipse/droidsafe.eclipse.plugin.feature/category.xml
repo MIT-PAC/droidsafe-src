@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/droidsafe.eclipse.plugin.feature_2.0.0.qualifier.jar" id="droidsafe.eclipse.plugin.feature" version="2.0.0.qualifier">
+      <category name="droidsafe.eclipse.plugin.feature.category"/>
+   </feature>
+   <category-def name="droidsafe.eclipse.plugin.feature.category" label="Droidsafe"/>
+</site>

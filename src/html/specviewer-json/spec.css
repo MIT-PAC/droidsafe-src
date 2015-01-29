@@ -1,0 +1,24 @@
+ /*div .apicall { color: red;}*/
+/*li .apicall {color: red;}*/
+
+.apicall.androidcall { color: blue;}
+.apicall.important { color: red;}
+.apicall.selected { background-color:yellow;}
+
+div.apicall.calls {float:right;}
+
+
+#lhs { width: 40%; border: 1 px solid; float: left; height:100%;}
+/*#classlist { overflow:auto; height:100%;}
+*/
+#rhs { width: 60%; border: 1 px solid; float: right;}
+
+.hidden:  { display: none; }
+
+div.tree-body { margin-left: 20pt;}
+
+a.tab.active { background-color: #C8C8C8; } 
+
+.apimethod.selected { background-color:yellow;}
+
+/*div.tablist { position:absolute; left:0px; top:0px;}*/
