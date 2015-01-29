@@ -1,0 +1,16 @@
+# This file is used by the error handling analysis to define the connection calls 
+# it searches for.  The format is classname|methodname|exception_to_catch
+# There should be at least one method named methodname in the class classname
+# All classes must exist in the droidsafe model
+# During the analysis a method that overrides / implements one of these methods
+# is considered a connection method
+java.net.URL|openStream|java.io.IOException
+java.net.URL|openConnection|java.io.IOException
+java.net.URLConnection|connect|java.io.IOException
+org.apache.http.client.HttpClient|execute|java.io.IOException
+org.apache.http.impl.client.AbstractHttpClient|execute|java.io.IOException
+org.apache.http.impl.client.DefaultHttpClient|execute|java.io.IOException
+java.net.Socket|getOutputStream|java.io.IOException
+org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl|getOutputStream|java.io.IOException
+android.os.IBinder|transact|android.os.RemoteException
+

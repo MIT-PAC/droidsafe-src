@@ -1,0 +1,46 @@
+# This list is used by the connection error handling analysis to define
+# ui methods that denote an error is reported to the user.
+# format is class|method_name
+# the analysis will search the class for all methods of the method name
+# if no methods of the method name are defined in the class, then 
+# methods matching the name for ALL ancestor classes are added
+android.view.ViewGroup|addView
+android.view.ViewGroup|addFocusables
+android.view.ViewGroup|addTouchables
+android.view.ViewGroup|addChildrenForAccessibility
+android.widget.TextSwitcher|addView
+android.widget.ViewSwitcher|addView
+android.view.WindowManagerImpl|addView
+android.view.WindowManagerImpl$CompatModeWrapper|addView
+android.view.ViewManager|addView
+android.view.ViewManager|updateViewLayout
+android.app.Dialog|setContentView
+android.support.v7.app.ActionBarActivityDelegate|setContentView
+android.support.v7.app.ActionBarActivityDelegateBase|setContentView
+android.support.v7.app.ActionBarActivityDelegateICS|setContentView
+android.webkit.WebView|loadData
+android.webkit.WebView|loadDataWithBaseURL
+android.webkit.WebView|loadUrl
+android.view.View|onLayout
+android.view.View|layout
+android.view.View|onDraw
+android.view.View|onAttachedToWindow
+android.widget.ImageView|onLayout
+android.widget.ImageView|layout
+android.widget.ImageView|onDraw
+android.widget.ImageView|onAttachedToWindow
+android.inputmethodservice.KeyboardView|onLayout
+android.inputmethodservice.KeyboardView|layout
+android.inputmethodservice.KeyboardView|onDraw
+android.inputmethodservice.KeyboardView|onAttachedToWindow
+android.widget.AnalogClock|onLayout
+android.widget.AnalogClock|layout
+android.widget.AnalogClock|onDraw
+android.widget.AnalogClock|onAttachedToWindow
+android.widget.TextView|onLayout
+android.widget.TextView|layout
+android.widget.TextView|onDraw
+android.widget.TextView|onAttachedToWindow
+android.widget.TextView|append
+android.widget.TextView|setText
+android.widget.Toast|makeText
