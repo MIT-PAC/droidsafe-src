@@ -134,9 +134,9 @@ public class Main {
 
         // grab command line args and set some globals
         Config.v().init(args);
-        
+
         IDroidsafeProgressMonitor monitor = new DroidsafeDefaultProgressMonitor();
-        
+
         common_init(monitor);
 
         //run the main target
@@ -147,14 +147,16 @@ public class Main {
         } else {
             logger.error("Unknown DroidSafe run target: {}", Config.v().target);
         }
-        
+
+        writeCompletionFile();
+        System.out.println("Finished!");
     }
 
     /**
      * Perform initialization tasks common to all targets.
      */
     private static DroidsafeExecutionStatus common_init(IDroidsafeProgressMonitor monitor) {
-        
+
         //get current date time with Date()
         startTime = new Date();
 
@@ -188,7 +190,7 @@ public class Main {
         CallLocationModel.reset();
         ObjectSensitivityCloner.reset();
         RCFG.reset();
-        
+
         driverMsg("Create tags for the overriden system methods in user code.");
         monitor.subTask("Create tags for overriden system methods");
         TagImplementedSystemMethods.run();
@@ -196,19 +198,19 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         return DroidsafeExecutionStatus.OK_STATUS;
     }
-    
+
     public static DroidsafeExecutionStatus run_errorhandling(IDroidsafeProgressMonitor monitor) {
         ErrorHandlingAnalysis.v().run(monitor);
         return DroidsafeExecutionStatus.OK_STATUS;
     }
-    
+
     public static DroidsafeExecutionStatus run_specdump(IDroidsafeProgressMonitor monitor) throws FileNotFoundException {
         //used to create the eng 4a concrete methods list
         //dumpConcreteMethods();
-        
+
         if (Config.v().infoFlowTrackAll) {
             monitor.worked(1);
             AutomatedSourceTagging.run();
@@ -217,7 +219,7 @@ public class Main {
             }
         }
 
-        
+
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
@@ -225,7 +227,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
@@ -233,8 +235,8 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }         
-        
-        
+
+
         driverMsg("Implementing native methods.");
         monitor.subTask("Implementing native methods.");
         NativeMethodBuilder.v().run();
@@ -242,7 +244,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-                   
+
         /* used when we were cloning classes 
         driverMsg("Checking invoke special calls...");
         CheckInvokeSpecials.run();
@@ -303,7 +305,7 @@ public class Main {
             if (monitor.isCanceled())
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-         
+
         //run jsa after we inject strings from XML values and layout
         //does not need a pta run before
         driverMsg("Starting String Analysis...");
@@ -324,11 +326,11 @@ public class Main {
         driverMsg("Cloning static methods to introduce call site context...");
         monitor.subTask("Cloning static methods to introduce callsite context...");
         try {
-        	ObjectSensitivityCloner.cloneStaticMethods();
+            ObjectSensitivityCloner.cloneStaticMethods();
         }
         catch (Exception ex) {
-        	logger.warn("Excpetion while cloning static methods {} ", ex);
-        	logger.warn("Stack Trace {} ", ex.getStackTrace());
+            logger.warn("Excpetion while cloning static methods {} ", ex);
+            logger.warn("Stack Trace {} ", ex.getStackTrace());
             System.exit(-1);
         }
         monitor.worked(1);
@@ -338,14 +340,14 @@ public class Main {
 
         //run value analysis, if it runs, then the code may have veen transformed
         if (Config.v().runValueAnalysis) {
-        	driverMsg("Running Value Analysis");
-        	try {
-        		runVA(monitor);
-        	}
-        	catch (Exception ex) {
-        		logger.warn("VA throws exection {}, stack {} ", ex, ex.getStackTrace());
-        		System.exit(-1);
-        	}
+            driverMsg("Running Value Analysis");
+            try {
+                runVA(monitor);
+            }
+            catch (Exception ex) {
+                logger.warn("VA throws exection {}, stack {} ", ex, ex.getStackTrace());
+                System.exit(-1);
+            }
         }
 
         {
@@ -353,7 +355,7 @@ public class Main {
             //ServiceTransforms.v().run();
 
         }
-        
+
         //inject inter app flows if defined
         if (!Config.v().readInterAppFlowsFile.isEmpty()) {
             driverMsg("Injecting inter-app flows...");
@@ -372,8 +374,8 @@ public class Main {
             }
         }
 
-      
-        
+
+
         //account for any transformations
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -392,7 +394,7 @@ public class Main {
 
         if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;        
-        
+
         //new TestPTA();     
 
         driverMsg("Starting Generate RCFG...");
@@ -406,7 +408,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-      
+
         // print out what modeling is required for this application
         monitor.subTask("Required Modeling");
         RequiredModeling.run();
@@ -430,27 +432,30 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+
         IntentResolutionStats.v().writeStats();
 
         if (Config.v().produceReports)
             writeJSONReports();
 
 
-        if (Config.v().ptaInfoFlowRefinement) {
-            if (ptaInfoflowRefinement(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-        } else {
-            //run information flow
-            if (runInfoFlow(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
+
+        //run information flow
+        if (runInfoFlow(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
+        //finished all core analysis
+        //exit here if we are not producing results
+        if (Config.v().analysisOnlyRun) 
+            return DroidsafeExecutionStatus.OK_STATUS;
+            
+        
+        //Start with reports and eclipse output
         if (Config.v().ptaresult) {
             driverMsg("Finding method calls on all important alloc nodes...");
             monitor.subTask("Generating Spec");
@@ -462,120 +467,53 @@ public class Main {
             }
         }
 
-        if (Config.v().target.equals("specdump")) {
-            driverMsg("Converting RCFG to SSL and dumping...");
-            monitor.subTask("Writing Spec to File");
-            StopWatch timer = new StopWatch();
-            timer.start();
-            RCFGToSSL.run(false);
-            SecuritySpecification spec = RCFGToSSL.v().getSpec();
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-            timer.stop();
-            driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
-            //find inter app flows here
-            if (Config.v().produceInterAppFlowsFile)
-                GenerateInterAppSourceFlows.v().run(spec);
-            
-            if (spec != null) {
-               
-                driverMsg("Creating Eclipse Plugin Serialized Specification...");
-                timer.reset();
-                timer.start();
-                SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
-                SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-                if (Config.v().debug)
-                    SecuritySpecModel.writeSpecInfoToFiles(securitySpecModel, Config.v().APP_ROOT_DIR);
-
-                timer.stop();
-                driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
-                
-                if (Config.v().infoFlow)
-                    InformationFlowReport.create(spec);
-            }
-            monitor.worked(1);
-            if (monitor.isCanceled()) {
-                return DroidsafeExecutionStatus.CANCEL_STATUS;
-            }
-
-        } else if (Config.v().target.equals("confcheck")) {
-            driverMsg("Converting RCFG to SSL ...");
-            RCFGToSSL.run(true);
-            logger.error("Not implemented yet!");
-        }
-        
-       
-        
-
-        PTAPaper.writeReport();
-
+        driverMsg("Converting RCFG to SSL and dumping...");
+        monitor.subTask("Writing Spec to File");
+        StopWatch timer = new StopWatch();
+        timer.start();
+        RCFGToSSL.run(false);
+        SecuritySpecification spec = RCFGToSSL.v().getSpec();
         monitor.worked(1);
-        writeCompletionFile();
-
-        System.out.println("Finished!");
-        return DroidsafeExecutionStatus.OK_STATUS;
-    }
-
-    private static DroidsafeExecutionStatus ptaInfoflowRefinement(IDroidsafeProgressMonitor monitor) {
-        //quick pta run to prune
-        if (afterTransformPrecise(monitor, false, 1) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-        PTAPaper.appendPTATimeToRefinement();
-
-        //infoflow to prune
-        if (runInfoFlow(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-
-        //prune out strings that have no flows
-        Set<Object> stringNewExprsNoTaint = new HashSet<Object>();
-
-        int totalStrings = 0;
-        int totalInsensObjs = 0;
-        for (IAllocNode node : PTABridge.v().getAllAllocNodes()) {
-            if (node instanceof InsensitiveAllocNode) {
-                totalInsensObjs++;
-                if (SootUtils.isStringOrSimilarType(node.getType())) {
-                    totalStrings++;
-
-                    InsensitiveAllocNode insens = (InsensitiveAllocNode)node;
-
-                    if (InformationFlowAnalysis.v().getTaints(node).size() == 0) {
-                        boolean noTaintOnContextNodes = true;
-                        for (Map.Entry<Context, ObjectSensitiveAllocNode> entry : insens.getContextNodeMap().entrySet()) {
-                            if (InformationFlowAnalysis.v().getTaints(entry.getValue()).size() > 0) {
-                                noTaintOnContextNodes = false;
-                                break;
-                            }
-                        }    
-                        if (noTaintOnContextNodes)
-                            stringNewExprsNoTaint.add(node.getNewExpr());
-                    }   
-                }
-            }
         }
-        PTAPaper.refinementStats.append("Refinement Total Strings: " + totalStrings + "\n");
-        PTAPaper.refinementStats.append("Refinement No Taint Strings: " + stringNewExprsNoTaint.size() + "\n");
-        PTAPaper.refinementStats.append("Refinement Total Insensitive Objects: " + totalInsensObjs + "\n");
+        timer.stop();
+        driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
+        //find inter app flows here
+        if (Config.v().produceInterAppFlowsFile)
+            GenerateInterAppSourceFlows.v().run(spec);
 
-        ObjectSensitiveConfig.setNewExprsNoContext(stringNewExprsNoTaint);
+        if (spec != null) {
 
-        //rerun pta, without pruned strings
-        if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            driverMsg("Creating Eclipse Plugin Serialized Specification...");
+            timer.reset();
+            timer.start();
+            SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+            SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+            if (Config.v().debug)
+                SecuritySpecModel.writeSpecInfoToFiles(securitySpecModel, Config.v().APP_ROOT_DIR);
+
+            timer.stop();
+            driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
+
+            if (Config.v().infoFlow)
+                InformationFlowReport.create(spec);
+        }
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
 
-        //run information flow, after pruning
-        if (runInfoFlow(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        if (Config.v().produceReports)
+            PTAPaper.writeReport();
 
+        monitor.worked(1);       
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
-    private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor, boolean staging) {
+    private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
         if (Config.v().infoFlow) {
 
             StopWatch timer = new StopWatch();
@@ -608,7 +546,7 @@ public class Main {
             } catch (IOException exp) {
                 logger.error(exp.toString());
             }
-            
+
             if (Config.v().infoFlowNative) {
                 try {
                     CloggedNativeMethods.run();
@@ -618,13 +556,11 @@ public class Main {
             }
 
             timer.stop();
-            if (staging) {
-                PTAPaper.refinementStats.append("Refinement Stage Info Flow Time (sec): " + 
-                        timer.getTime() / 1000.0 + "\n");
-            } else {
-                PTAPaper.infoFlowTimeSec = timer.getTime() / 1000.0;
+
+            PTAPaper.infoFlowTimeSec = timer.getTime() / 1000.0;
+            if (Config.v().produceReports)
                 droidsafe.stats.AvgInfoFlowSetSize.run();
-            }
+
             driverMsg("Finished Information Flow Analysis: " + timer);         
         }
 
@@ -824,7 +760,7 @@ public class Main {
 
         return afterTransform(monitor, recordTime, opts);
     }
-        
+
 
     public static DroidsafeExecutionStatus afterTransformMedium(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Map<String,String> opts = new HashMap<String,String>();
@@ -834,7 +770,7 @@ public class Main {
             opts.put("merge-stringbuffer","true");   
             opts.put("string-constants","true");   
             opts.put("kobjsens", "1");
-           
+
         } 
 
         return afterTransform(monitor, recordTime, opts);
@@ -851,7 +787,7 @@ public class Main {
             opts.put("merge-stringbuffer","false");   
             opts.put("string-constants","true");   
             opts.put("kobjsens", Integer.toString(k));   
-      
+
         } 
 
         return afterTransform(monitor, recordTime, opts);   
@@ -935,8 +871,8 @@ public class Main {
             throw new IllegalStateException();
         }
     }
-    
-    
+
+
     //used for eng 4 to find concrete methods for each method in white team list
     //TODO: MOVE OUT OF HERE AS SOON AS ENGAGEMENT IS OVER
     public static void dumpConcreteMethods() {
@@ -945,36 +881,36 @@ public class Main {
             FileWriter fw = new FileWriter("eng4-concrete-calls.txt");
             BufferedReader br = new BufferedReader(new FileReader("/Users/mgordon/research/droidsafe/engagements/4a/calls_by_name.txt"));
             String line;
-                        
+
             while ((line = br.readLine()) != null) {
                 // process the line.
-                
+
                 //break up the line
                 String[] splitted = line.split(" ");
                 String clazzName = splitted[0];
                 String methodName = splitted[1];
-                
+
                 if ("<init>".equals(methodName))
                     continue;
-                
+
                 //now search for method in class and all ancestors
                 SootClass sc = Scene.v().getSootClass(clazzName);
-                
-                
+
+
                 Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
                 soot.Hierarchy hierarchy = Scene.v().getActiveHierarchy();
-                
+
                 if (sc.isInterface()) {
-                    
+
                     Collection<SootClass> implementors = hierarchy.getImplementersOf(sc);
                     for (SootClass implementor : implementors) {
                         //now get all superclasses 
                         possibleTargets.addAll(getAllTargetMethodsPrecise(implementor, methodName));
                     }
-                    
+
                 } else {       
                     possibleTargets.addAll(getAllTargetMethodsPrecise(sc, methodName));
-                                       
+
                     //search down for concrete calls in subclasses
                     for (SootClass subclass : hierarchy.getSubclassesOfIncluding(sc)) {
                         for (SootMethod sm : subclass.getMethods()) {
@@ -982,16 +918,16 @@ public class Main {
                                 possibleTargets.add(sm);
                             }
                         }
-                        
+
                     }
                 }
-                
+
                 //write only empty
                 //if (possibleTargets.isEmpty()) {
                 //    fw.write(line + "\n");
-               // }
-                
-               
+                // }
+
+
                 //write all
                 fw.write(line + "\n");
                 for (SootMethod method : possibleTargets) {
@@ -1001,23 +937,23 @@ public class Main {
                     }
                     fw.write("\t" + method + "\n");
                 }
-               
-             }
-            
-             br.close();
-             fw.close(); 
-            
+
+            }
+
+            br.close();
+            fw.close(); 
+
         } catch (Exception e) {
             logger.error("Problem with concrete search: ", e);
         }
         System.out.println("Synthetic: " + synthetic);  
     }
-   
 
-    
+
+
     private static Collection<SootMethod> getAllTargetMethodsPrecise(SootClass sc, String methodName) {
         Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
-                        
+
         SootClass current = sc;
         while (true) {
             for (SootMethod method : current.getMethods()) {
@@ -1027,23 +963,23 @@ public class Main {
                         possibleTargets.add(method);
                 }
             }
-            
+
             if (!current.hasSuperclass())
                 break;
-            
+
             current = current.getSuperclass();
         }
-        
+
         return possibleTargets; 
     }
-   
-    
+
+
     private static Collection<SootMethod> getAllTargetMethodsFast(SootClass sc, String methodName) {
-        
+
         Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
         //search up inheritance tree for first declaration of method
         Set<String> subSigsAdded = new HashSet<String>();
-        
+
         SootClass current = sc;
         while (true) {
             for (SootMethod method : current.getMethods()) {
@@ -1054,14 +990,14 @@ public class Main {
                     possibleTargets.add(method);
                 }
             }
-            
+
             if (!current.hasSuperclass())
                 break;
-            
+
             current = current.getSuperclass();
         }
-        
+
         return possibleTargets; 
     }
-  
+
 }

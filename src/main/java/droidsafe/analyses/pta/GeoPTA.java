@@ -450,9 +450,7 @@ public class GeoPTA extends PTABridge {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    private Set<? extends IAllocNode> getPTSetEventContext(Value val, Context c) {
-        if (!Config.v().eventContextPTA)
-            return getPTSetIns(val);
+    private Set<? extends IAllocNode> getPTSetEventContext(Value val, Context c) {      
         
         totalECQueries++;
         

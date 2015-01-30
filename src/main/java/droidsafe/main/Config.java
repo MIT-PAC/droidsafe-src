@@ -113,8 +113,6 @@ public class Config {
     public boolean infoFlowNative = false;
     /** If true, do not transfer taints that flow into array indices. */
     public boolean infoFlowNoArrayIndex = false;
-    /** if true, use event context, otherwise, use insensitive result */
-    public boolean eventContextPTA = false;
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
     public boolean addFallbackModeling = true;
 
@@ -193,7 +191,6 @@ public class Config {
     /** report on unmodeled taint */
     public boolean reportUnmodeledFlows = false;
     
-    public boolean ptaInfoFlowRefinement = false;
     /** should we run multiple passes of fallback modeling create unmodeled objects from API */
     public boolean multipassfb = false;
     /** if true, then produce a json file that describes the possible inter-applications sinks */
@@ -202,6 +199,9 @@ public class Config {
      * considered
      */
     public String readInterAppFlowsFile = "";
+    
+    /** If true, then only run the core analysis, and exit before reports are produced */
+    public boolean analysisOnlyRun = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -282,6 +282,9 @@ public class Config {
         Option jsa = new Option("nojsa", "Do not use JSA");
         options.addOption(jsa);
 
+        Option analysisOnly = new Option("analysisonlyrun", "Only run core analysis, and do not create reports or Eclipse output");
+        options.addOption(analysisOnly);
+
         Option jsatimeout =
                 OptionBuilder.withArgName("value").hasArg()
                 .withDescription("Timeout value for the string analysis in mins (default 120)").create("jsatimeout");
@@ -310,9 +313,6 @@ public class Config {
         Option impreciseStrs = new Option("imprecisestrings", "turn off precision for all strings, FAST and IMPRECISE");
         options.addOption(impreciseStrs);
         
-        Option refinement = new Option("refinement", "Experimental refinement of pta and information flow");
-        options.addOption(refinement);
-
         Option limitContextForStrings = new Option("limitcontextforstrings", "Limit context depth for Strings in PTA");
         options.addOption(limitContextForStrings);
         
@@ -388,9 +388,6 @@ public class Config {
         options.addOption(multipassfb);
 
         
-        Option eventContext = new Option("eventcontext", "Run analysis with Event Context.");
-        options.addOption(eventContext);
-
         Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
         options.addOption(callgraph);
         
@@ -539,6 +536,10 @@ public class Config {
             this.runStringAnalysis = false;
         }
         
+        if (cmd.hasOption("analysisonlyrun")) {
+            this.analysisOnlyRun = true;
+        }
+        
         if (cmd.hasOption("appname")) {
             this.appName = cmd.getOptionValue("appname");
         }
@@ -585,10 +586,6 @@ public class Config {
         
         if (cmd.hasOption("reportunmodeledflows")) {
             this.reportUnmodeledFlows = true;
-        }
-        
-        if (cmd.hasOption("refinement")) {
-            ptaInfoFlowRefinement = true;
         }
         
         if (cmd.hasOption("limitcontextforgui")) {
@@ -649,9 +646,6 @@ public class Config {
         }
 
         if (cmd.hasOption("ptadump")) this.dumpPta = true;
-
-        if (cmd.hasOption("eventcontext"))
-            this.eventContextPTA = true;
 
         if (cmd.hasOption("nofallback"))
             this.addFallbackModeling = false;

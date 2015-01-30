@@ -99,7 +99,7 @@ public class PTAPaper {
             //write information flow
             fw.write(infoFlowResults());
             
-            fw.write(finegrainedFlowResults());
+            //fw.write(finegrainedFlowResults());
 
             fw.close();
         } catch (IOException e) {
@@ -440,12 +440,7 @@ public class PTAPaper {
 
         if (!Config.v().addFallbackModeling) {
             buf.append("nofallback ");
-        }
-
-        if (Config.v().ptaInfoFlowRefinement) {
-            buf.append("refinement ");
-        }
-
+        }    
 
         return buf.toString();
     }
