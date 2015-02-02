@@ -109,7 +109,7 @@ public class StartServiceTransform implements VATransform {
                 allResolvedExplicitIntentsFoundTargets = false;
             
             for (SootField serviceField : targetHarnessFields) {
-                if (!(serviceField.getType() instanceof RefType))
+                if (serviceField == null || !(serviceField.getType() instanceof RefType))
                     continue;           
 
                 if (!Hierarchy.inheritsFromAndroidService(((RefType)serviceField.getType()).getSootClass()))

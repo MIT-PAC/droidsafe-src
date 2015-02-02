@@ -105,7 +105,7 @@ public class ServiceBindTransform implements VATransform {
             inAppTargets.addAll(targetHarnessFields);
             
             for (SootField serviceFld : targetHarnessFields) {
-                if (!(serviceFld.getType() instanceof RefType))
+                if (serviceFld == null || !(serviceFld.getType() instanceof RefType))
                     continue;           
 
                 SootClass serviceClz = ((RefType)serviceFld.getType()).getSootClass();
