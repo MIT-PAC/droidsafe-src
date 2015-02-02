@@ -249,10 +249,18 @@ public class IntentUtils {
 
         // for each component
         for (ComponentBaseElement manifestComp : Resources.v().getManifest().getComponentsByType(component)) {
-            SootField harnessField = getHarnessFldForClsString(manifestComp.getSootClass().getName());
+            SootClass manifestClass = manifestComp.getSootClass();
+            
+            if (manifestClass == null) {
+                logger.warn("Could not find class for for component: {}", manifestComp);
+                continue;
+            }
+            
+            SootField harnessField = getHarnessFldForClsString(manifestClass.getName());
 
             if (harnessField == null) {
-                logger.error("No harness field for manifest class: {}", manifestComp.getSootClass());
+                logger.warn("No harness field for manifest class: {}", manifestComp.getSootClass());
+                continue;
             }
 
             //if the intent values cannot be resolved, still should remove all components that don't define
