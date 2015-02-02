@@ -592,7 +592,9 @@ public class Resources {
                         else {
                             logger.info("ADDING resource_info.put({}, {}) ", 
                                 String.format("%08x", value), resource_value); 
-                            resource_info.put(value, resource_value);
+                            if (!resource_info.containsKey(value) &&
+                            	!resource_info.containsValue(resource_value))
+                            	resource_info.put(value, resource_value);
                         }
                     }
                     else {
