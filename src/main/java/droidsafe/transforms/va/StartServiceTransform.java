@@ -159,15 +159,20 @@ public class StartServiceTransform implements VATransform {
                 //add to icc report 
 
                 SootClass target = ((RefType)serviceField.getType()).getSootClass(); 
-                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
+                try {
+                    SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStartCommand);
+                    ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
+                        target, stmt, resolved);          
 
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), 
-                    target, stmt, resolved);          
+                    resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
+                    ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
+                        target, stmt, resolved);
 
-                resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(target, onStart);
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(),
-                    target, stmt, resolved);
-
+                } catch (Exception e) {
+                    //trouble finding target of onStartCommand
+                    //ignore since best effort
+                    logger.info("Trouble resolving target of onStartCommand: {}, {}", target, onStartCommand);
+                }               
             }
         }
         
