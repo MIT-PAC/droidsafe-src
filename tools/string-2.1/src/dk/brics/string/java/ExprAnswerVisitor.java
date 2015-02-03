@@ -27,6 +27,7 @@ import soot.jimple.LeExpr;
 import soot.jimple.LengthExpr;
 import soot.jimple.LongConstant;
 import soot.jimple.LtExpr;
+import soot.jimple.MethodHandle;
 import soot.jimple.MulExpr;
 import soot.jimple.NeExpr;
 import soot.jimple.NegExpr;
@@ -272,6 +273,12 @@ public abstract class ExprAnswerVisitor<Q, A> {
         public void caseDynamicInvokeExpr(DynamicInvokeExpr v) {
     		throw new UnsupportedOperationException();
         }
+
+        // LWG: soot develop
+		public void caseMethodHandle(MethodHandle handle) {
+    		throw new UnsupportedOperationException();
+			
+		}
 	}
 	
 	public A caseArrayRef(ArrayRef v, Q question)

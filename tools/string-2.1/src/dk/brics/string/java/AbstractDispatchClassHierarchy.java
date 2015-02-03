@@ -46,7 +46,7 @@ public class AbstractDispatchClassHierarchy implements AbstractDispatchStrategy 
             targets = Collections.singletonList(hierarchy.resolveConcreteDispatch(rc, m));
         } else {
             rc = ((RefType) v.getType()).getSootClass();
-            // LWG: TEMPORARY HACK - return empty list when failed to resolve abstract dispatch
+            // LWG: TEMPORARY WORKAROUND - return empty list when failed to resolve abstract dispatch
             try {
             	targets = hierarchy.resolveAbstractDispatch(rc, m);
             } catch (RuntimeException e) {
