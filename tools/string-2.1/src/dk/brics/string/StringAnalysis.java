@@ -110,7 +110,7 @@ public class StringAnalysis {
     
     private StaticStringTypes staticStringTypes;
 
-    // LWG: TEMPORARY HACK - use DEBUG to add additional control on debug logging
+    // LWG: TEMPORARY WORKAROUND - use DEBUG to add additional control on debug logging
 	public static boolean DEBUG = false;
 
     // LWG: New. Allow application classes to be filtered from soot.Scene
@@ -380,7 +380,7 @@ public class StringAnalysis {
                 n2.setTaint(true);
             }
         }
-        /* LWG: TEMPORARY HACK - to avoid 'OutOfMemoryError: Requested array size exceeds VM limit'
+        /* LWG: TEMPORARY WORKAROUND - to avoid 'OutOfMemoryError: Requested array size exceeds VM limit'
         if (debug()) {
             log.debug(g.toDot(nodes));
         }
@@ -463,7 +463,7 @@ public class StringAnalysis {
         mlfa2aut = new MLFA2Automaton(mlfa);
     }
 
-    // LWG: TEMPORARY HACK - use DEBUG to add additional control on debug logging
+    // LWG: TEMPORARY WORKAROUND - use DEBUG to add additional control on debug logging
     private boolean debug() {
 		return DEBUG && log.isDebugEnabled();
 	}
