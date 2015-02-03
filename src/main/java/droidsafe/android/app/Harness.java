@@ -373,6 +373,12 @@ public class Harness {
 
             String initSig = String.format("<%s: void <init>()>", compClass.getName());
         
+            SootClass componentParent = Hierarchy.getComponentParent(compClass);
+            if (componentParent == null) {
+            	logger.warn("Could not locate parent for {}, could be external component", compClass);
+            	return;
+            }
+
             if (!compType.equals(Hierarchy.getComponentParent(compClass).getName())) {
                 logger.error("Malformed manifest: component {} defined in manifest as {} have defined parent {}", 
                              compClass, compType, Hierarchy.getComponentParent(compClass).getName());

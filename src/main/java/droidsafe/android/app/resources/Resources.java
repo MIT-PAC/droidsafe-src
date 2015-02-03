@@ -675,6 +675,7 @@ public class Resources {
             logger.info ("Warning: on click handler {} in layout {} ignored, "
                     + "{} is not inflated anywhere", view.on_click,
                     layout.name, layout.name);
+            view.ignoreOnClick = true;
             // bad_idiom ("No Activity associated with layout '{}'", layout.name);
         } else if (view.on_click != null) {
             for (SootClass cn : layout.classes) {

@@ -242,7 +242,7 @@ public class Layout {
      	  addCallOnClickToInitLayout_ID(cview);
 	  } 
       
-      if (myView.on_click != null) {
+      if (myView.on_click != null && !myView.ignoreOnClick) {
           logger.info("Trying to add onClic {} ", myView.id);
           logger.debug("-------");
           logger.debug("myView: {}", myView);
@@ -259,6 +259,9 @@ public class Layout {
     String id;
     /** OnClick method (if any) **/
     String on_click;
+    
+    boolean ignoreOnClick = false;
+    
     /** Children of this view.  When a view has children, it is a ViewGroup/LinearLayout**/
     List<View> children = new ArrayList<View>();
     public List<String> includes = new ArrayList<String>();
