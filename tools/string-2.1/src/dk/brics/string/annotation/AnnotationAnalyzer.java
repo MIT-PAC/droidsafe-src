@@ -291,16 +291,16 @@ public class AnnotationAnalyzer extends AbstractStmtSwitch implements StaticStri
 		if (annotations != null) {
 			for (AnnotationTag at: annotations) {
 				String type = at.getType().trim();
-				if (type.equals("Ldk/brics/string/annotation/Type;") && at.getNumElems() == 1) {
+				if (type.equals("Ldk/brics/string/annotation/Type;") && at.getElems().size() == 1) {
 				    // XXX why are we trimming the regexp here?? Although rare, it is perfectly sane for a string-type
 				    // to end with blanks. E.g @Type("Hello ") would become @Type("Hello").
-					String pattern = ((AnnotationStringElem)at.getElemAt(0)).getValue().trim();
+					String pattern = ((AnnotationStringElem)at.getElems().iterator().next()).getValue().trim();
 					Automaton a = (new RegExp(pattern)).toAutomaton(bindings);
 					automatonDescriptionMap.put(a, pattern);
 					return a;
 				}
-				if (type.equals("Ldk/brics/string/annotation/LoadType;") && at.getNumElems() == 1) {
-					String path = ((AnnotationStringElem)at.getElemAt(0)).getValue().trim();
+				if (type.equals("Ldk/brics/string/annotation/LoadType;") && at.getElems().size() == 1) {
+					String path = ((AnnotationStringElem)at.getElems().iterator().next()).getValue().trim();
 					Automaton a = loadAutomaton(path);
 					if (a != null) {
 						automatonDescriptionMap.put(a, "automaton '" + path + "'");
