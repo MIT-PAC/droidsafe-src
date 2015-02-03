@@ -96,9 +96,9 @@ public class ResolveStringConstants extends BodyTransformer {
             Set<SootClass> parents = SootUtils.getParents(clazz);
             for (SootClass parent : parents) {
                 if(parent.getName().equals("android.content.res.Resources")) {
-                    logger.error("Found class that inherits from android.content.res.Resources: {}", 
+                    logger.warn("Found class that inherits from android.content.res.Resources: {}", 
                         clazz);
-                    droidsafe.main.Main.exit(1);
+                    //droidsafe.main.Main.exit(1);
                 }
             }
         }
