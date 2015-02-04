@@ -104,7 +104,7 @@ public class DroidsafeAnalysisRunner extends Main {
 
   public IStatus run(IProgressMonitor monitor) throws FileNotFoundException {
     DroidsafeEclipseProgressMonitor dsMonitor = new DroidsafeEclipseProgressMonitor(monitor);
-    DroidsafeExecutionStatus execStatus = Main.run(dsMonitor);
+    DroidsafeExecutionStatus execStatus = Main.run_specdump(dsMonitor);
     if (monitor.isCanceled() || execStatus == DroidsafeExecutionStatus.CANCEL_STATUS) {
       return Status.CANCEL_STATUS;
     }
