@@ -138,10 +138,14 @@ public class ServiceBindTransform implements VATransform {
                 //insert the statement
                 body.getUnits().insertAfter(call, localAssign);
 
-                //report in ICCMap 
-                SootMethod onBindMethod = Scene.v().getSootClass("android.app.Service").getMethodByName("onBind");
-                SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(serviceClz, onBindMethod);
-                ICCMap.v().addInfo(containingMthd.getDeclaringClass(), serviceClz, stmt, resolved);
+                //report in ICCMap
+                try {
+                    SootMethod onBindMethod = Scene.v().getSootClass("android.app.Service").getMethodByName("onBind");
+                    SootMethod resolved = Scene.v().getActiveHierarchy().resolveConcreteDispatch(serviceClz, onBindMethod);
+                    ICCMap.v().addInfo(containingMthd.getDeclaringClass(), serviceClz, stmt, resolved);
+                } catch (Exception e) {
+                    logger.debug("Error resolving onBind.", e);
+                }                   
             }
         }
         
