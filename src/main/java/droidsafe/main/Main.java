@@ -780,6 +780,8 @@ public class Main {
 
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k) {
         Map<String,String> opts = new HashMap<String,String>();
+        
+        k = Math.min(k, Config.v().kobjsens);
 
         if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
             //build precise options for spark
