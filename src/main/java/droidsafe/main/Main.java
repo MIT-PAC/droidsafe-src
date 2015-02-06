@@ -150,6 +150,7 @@ public class Main {
 
         writeCompletionFile();
         System.out.println("Finished!");
+	System.exit(0);
     }
 
     /**
