@@ -106,6 +106,15 @@ public class JSAStrings {
             return jsa;
         }
     }
+    
+    /**
+     * Set the hasRun field.
+     * 
+     * @param h
+     */
+    public void setHasRun(boolean h) {
+        this.hasRun = h;
+    }
 
     /** 
      * Return true if this re should be ignored because it is either empty or any string!

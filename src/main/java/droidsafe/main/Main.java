@@ -454,8 +454,8 @@ public class Main {
         //exit here if we are not producing results
         if (Config.v().analysisOnlyRun) 
             return DroidsafeExecutionStatus.OK_STATUS;
-            
-        
+
+
         //Start with reports and eclipse output
         if (Config.v().ptaresult) {
             driverMsg("Finding method calls on all important alloc nodes...");
@@ -612,32 +612,39 @@ public class Main {
      * Run the JSA analysis
      */
     private static DroidsafeExecutionStatus jsaAnalysis(IDroidsafeProgressMonitor monitor) {
-        //set up the executor for the timeouts
-        //set as single thread executor so no threads get away from us
-        JSAStrings.executor = Executors.newSingleThreadExecutor();
+        try {
+            //set up the executor for the timeouts
+            //set as single thread executor so no threads get away from us
+            JSAStrings.executor = Executors.newSingleThreadExecutor();
 
-        monitor.subTask("String Analysis: Setting Hotspots");
-        JSAUtils.setupSpecHotspots();
-        if (monitor.isCanceled()) {
+            monitor.subTask("String Analysis: Setting Hotspots");
+            JSAUtils.setupSpecHotspots();
+            if (monitor.isCanceled()) {
+                JSAStrings.executor.shutdownNow();
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+
+            monitor.subTask("String Analysis: Running Analysis");
+            JSAStrings.run();
+            if (monitor.isCanceled()) {
+                JSAStrings.executor.shutdownNow();
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+
+            monitor.subTask("String Analysis: Logging");
+            JSAStrings.v().log();
+            if (monitor.isCanceled()) {
+                JSAStrings.executor.shutdownNow();
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+
             JSAStrings.executor.shutdownNow();
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        } catch (Exception e) {
+            logger.warn("Error in JSA analysis.  Continuing...", e);
+            Config.v().runStringAnalysis = false;
+            JSAStrings.v().setHasRun(false);
         }
-
-        monitor.subTask("String Analysis: Running Analysis");
-        JSAStrings.run();
-        if (monitor.isCanceled()) {
-            JSAStrings.executor.shutdownNow();
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
-        monitor.subTask("String Analysis: Logging");
-        JSAStrings.v().log();
-        if (monitor.isCanceled()) {
-            JSAStrings.executor.shutdownNow();
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
-        JSAStrings.executor.shutdownNow();
+        
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
@@ -781,7 +788,7 @@ public class Main {
 
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k) {
         Map<String,String> opts = new HashMap<String,String>();
-        
+
         k = Math.min(k, Config.v().kobjsens);
 
         if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {

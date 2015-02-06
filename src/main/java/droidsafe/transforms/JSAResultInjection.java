@@ -5,6 +5,7 @@ import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
 import droidsafe.android.app.Project;
+import droidsafe.main.Config;
 import droidsafe.utils.SootUtils;
 
 import java.util.HashMap;
@@ -57,6 +58,9 @@ public class JSAResultInjection extends BodyTransformer {
      * Call this pass on all application classes in the project.
      */
     public static void run() {
+        if (!Config.v().runStringAnalysis)
+            return;
+        
         JSAResultInjection transformer = new JSAResultInjection();
         for (SootClass clz : Scene.v().getClasses()) {
             for (SootMethod meth : clz.getMethods()) {
