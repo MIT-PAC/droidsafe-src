@@ -228,8 +228,8 @@ public class SootUtils {
             }
 
             if (!curr.isInterface()) {
-                logger.error("getSuperInterfacesOf inspecting non interface: {}", curr);
-                droidsafe.main.Main.exit(1);
+                logger.debug("getSuperInterfacesOf inspecting non interface: {}", curr);
+                continue;
             }
 
             ret.add(curr);
