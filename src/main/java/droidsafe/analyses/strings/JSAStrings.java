@@ -249,9 +249,13 @@ public class JSAStrings {
     public static void run() {
         Callable<Object> callAnalyze = new Callable<Object>() {
             @Override
-            public String call() throws Exception {
-                v().hasRun = true;
-                v().analyze();
+            public String call() {
+                try {
+                    v().hasRun = true;
+                    v().analyze();                    
+                } catch (Exception e){
+                    logger.debug("Exception in run() of JSAStrings", e);
+                }
                 return null;
             }
         };
@@ -408,8 +412,14 @@ public class JSAStrings {
     public String generateRegex(final Value v, long timeout, TimeUnit timeUnit) {
         Callable<String> callable = new Callable<String>() {
             @Override
-            public String call() throws Exception {
-                return generateRegex(v);
+            public String call() {
+                String s = null;
+                try {
+                    s = generateRegex(v);
+                } catch (Exception e) {
+                    logger.debug("Problem with call() in generateRegex: ", e);                    
+                }
+                return s;
             }
         };
         try {
