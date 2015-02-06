@@ -148,7 +148,9 @@ public class StatementTranslatorImpl extends ExprAnswerVisitor<ValueBox, Variabl
 		
 		// useful error checking
 		if (to.getType().cannotBeAliasOf(from.getType()))
-			throw new RuntimeException("Cannot assign from " + from.getType() + " to " + to.getType());
+			// LWG: continue upon error
+			// throw new RuntimeException("Cannot assign from " + from.getType() + " to " + to.getType());
+			System.err.println("Cannot assign from " + from.getType() + " to " + to.getType());
 		
 		switch (from.getType()) {
 		case STRING:
