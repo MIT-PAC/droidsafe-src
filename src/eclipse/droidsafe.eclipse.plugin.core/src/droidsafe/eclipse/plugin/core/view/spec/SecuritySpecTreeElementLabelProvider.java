@@ -39,11 +39,11 @@ import droidsafe.transforms.objsensclone.ClassCloner;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class TreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
+public class SecuritySpecTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
 
   /** Logger for class */
   @SuppressWarnings("unused")
-  private static final Logger logger = LoggerFactory.getLogger(TreeElementLabelProvider.class);
+  private static final Logger logger = LoggerFactory.getLogger(SecuritySpecTreeElementLabelProvider.class);
 
   private boolean useShortSignatureForMethods = true;
 
@@ -156,6 +156,7 @@ public class TreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvi
         } else {
             return DroidsafeImages.SAFE_ANDROID_IMAGE;
         }
+      /*
       } else if (data instanceof CodeLocationModel) {
         CodeLocationModel line = (CodeLocationModel) data;
         if (line.isSafe()) {
@@ -165,8 +166,10 @@ public class TreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvi
         } else {
           return DroidsafeImages.UNRESOLVED_SOURCE_LOCATION_IMAGE;
         }
+    	return null;
       } else if (data instanceof HotspotModel) {
         return DroidsafeImages.UNSAFE_ANDROID_IMAGE;
+      */
       }
 
     }

@@ -14,7 +14,7 @@ import droidsafe.speclang.model.MethodModel;
  * @author Limei Gilham (gilham@kestrel.edu)
  * 
  */
-public class InfoFlowSummarylTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
+public class InfoFlowSummaryTreeElementLabelProvider extends DroidsafeInfoTreeElementLabelProvider {
     
     /**
      * Returns the label for the tree node to display in the tree outline view.

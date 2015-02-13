@@ -66,7 +66,7 @@ import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
-import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecTreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
@@ -965,7 +965,7 @@ public class DroidsafePluginUtilities {
      * 
      */
     public static Image getImage(String file) {
-        Bundle bundle = FrameworkUtil.getBundle(TreeElementLabelProvider.class);
+        Bundle bundle = FrameworkUtil.getBundle(SecuritySpecTreeElementLabelProvider.class);
         URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
         ImageDescriptor image = ImageDescriptor.createFromURL(url);
         return image.createImage();

@@ -69,7 +69,7 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
-        return new InfoFlowSummarylTreeElementLabelProvider();
+        return new InfoFlowSummaryTreeElementLabelProvider();
     }
 
     @Override

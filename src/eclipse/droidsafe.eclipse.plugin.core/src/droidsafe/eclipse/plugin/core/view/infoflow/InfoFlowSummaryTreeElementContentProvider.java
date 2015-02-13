@@ -22,7 +22,7 @@ public class InfoFlowSummaryTreeElementContentProvider extends SpecInfoTreeEleme
      * Populate the tree elements of the info flow outline view. Return the root elements.
      */
     protected Object[] initializeRoots() {
-      Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = fSpec.getInfoFlowSummaryMap();
+      Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = getSpec().getInfoFlowSummaryMap();
         if (infoFlowSummaryMap.isEmpty())
             return NO_CHILDREN;
         List<Object> roots = new ArrayList<Object>();

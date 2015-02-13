@@ -39,7 +39,7 @@ import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
-import droidsafe.eclipse.plugin.core.view.spec.TreeElementContentProvider.TopLevelParentEntity;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecTreeElementContentProvider.TopLevelParentEntity;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.IModelChangeSupport;
@@ -273,8 +273,8 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     }
 
     private void setContentProviderTopLevelParent(TopLevelParentEntity parentEntityType) {
-        if (fContentProvider instanceof TreeElementContentProvider) {
-            TreeElementContentProvider contProvider = (TreeElementContentProvider) fContentProvider;
+        if (fContentProvider instanceof SecuritySpecTreeElementContentProvider) {
+            SecuritySpecTreeElementContentProvider contProvider = (SecuritySpecTreeElementContentProvider) fContentProvider;
             if (contProvider.getContentProviderTopLevelParent() != parentEntityType) {
                 contProvider.setContentProviderTopLevelParent(parentEntityType);
                 if (fTreeViewer != null) {
@@ -336,7 +336,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      */
     public void setUseShortSignatureForMethods(boolean useShortSignature) {
         boolean oldValue =
-                ((TreeElementLabelProvider) fLabelProvider)
+                ((SecuritySpecTreeElementLabelProvider) fLabelProvider)
                 .setUseShortSignatureForMethods(useShortSignature);
         if (fTreeViewer != null && oldValue != useShortSignature) {
             ISelection savedSelections = getViewerSelection();
@@ -597,7 +597,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      * 
      */
     public TreeElement<?, ?> findTreeElementForModelObject(IModelChangeSupport modelObject) {
-        return ((TreeElementContentProvider) fContentProvider)
+        return ((SecuritySpecTreeElementContentProvider) fContentProvider)
                 .findTreeElementForModelObject(modelObject);
     }
 
@@ -625,12 +625,12 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
-        return new TreeElementLabelProvider();
+        return new SecuritySpecTreeElementLabelProvider();
     }
 
     @Override
     protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
-        return new TreeElementContentProvider();
+        return new SecuritySpecTreeElementContentProvider();
     }
 
     @Override

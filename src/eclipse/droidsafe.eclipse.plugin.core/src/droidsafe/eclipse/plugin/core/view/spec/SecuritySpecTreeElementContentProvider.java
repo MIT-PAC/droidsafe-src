@@ -22,9 +22,9 @@ import droidsafe.speclang.model.IModelChangeSupport;
 import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 
-public class TreeElementContentProvider extends SpecInfoTreeElementContentProvider implements ITreeContentProvider, PropertyChangeListener {
+public class SecuritySpecTreeElementContentProvider extends SpecInfoTreeElementContentProvider implements ITreeContentProvider, PropertyChangeListener {
 
-  private static final Logger logger = LoggerFactory.getLogger(TreeElementContentProvider.class);
+  private static final Logger logger = LoggerFactory.getLogger(SecuritySpecTreeElementContentProvider.class);
 
   /**
    * Auxiliary map from domain model objects to tree element objects. We use this map to keep track
@@ -66,6 +66,7 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
 
   public void setContentProviderTopLevelParent(TopLevelParentEntity topLevelParentEntity) {
     this.selectedTopLevelParentEntity = topLevelParentEntity;
+    resetRootElements();
   }
 
   public TopLevelParentEntity getContentProviderTopLevelParent() {
@@ -74,22 +75,6 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
 
   @Override
   public void dispose() {}
-
-  @Override
-  public Object[] getElements(Object parent) {
-      if (parent instanceof SecuritySpecModel) {
-          TreeElement<?, ?> invisibleRoot = initializeRoot();
-          // if (logger.isDebugEnabled()) {
-          // for (TreeElement<?, ?> child : invisibleRoot.getChildren()) {
-          // logger.debug(" Child of root = " + child.getName());
-          // }
-          // }
-          Object[] roots = getChildren(invisibleRoot);
-          setRootElements(roots);
-          return roots;
-      }
-      return NO_CHILDREN;
-  }
 
   @Override
   public Object getParent(Object child) {
@@ -185,7 +170,7 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
    */
   private void createModelWithApiAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
-        fSpec.getOutputEventBlocks();
+        getSpec().getOutputEventBlocks();
 //    Map<String, TreeElement<Object, MethodModel>> localNodeLabelToTreeElementMap =
 //        new HashMap<String, TreeElement<Object, MethodModel>>();
 
@@ -261,7 +246,7 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
   private void createModelWithCodeLocationAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     clearPropertyChangeListeners();
     Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
-        fSpec.getCodeLocationEventBlocks();
+        getSpec().getCodeLocationEventBlocks();
     if (codeLocationEventBlocks != null) {
       for (CodeLocationModel location : codeLocationEventBlocks.keySet()) {
         TreeElement<Object, MethodModel> locationElement =
@@ -302,7 +287,7 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
    * @param root The TreeElement corresponding to security spec model.
    */
   private void createModelWithEntryPointAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
-    Map<MethodModel, List<MethodModel>> inputEventBlocks = fSpec.getInputEventBlocks();
+    Map<MethodModel, List<MethodModel>> inputEventBlocks = getSpec().getInputEventBlocks();
     if (inputEventBlocks != null) {
 
       for (MethodModel inputMethod : inputEventBlocks.keySet()) {
@@ -356,6 +341,14 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
   }
 
 
+  @Override
+  protected Object[] initializeRoots() {
+      TreeElement<?, ?> invisibleRoot = initializeRoot();
+      Object[] roots = getChildren(invisibleRoot);
+      setRootElements(roots);
+      return roots;
+  }
+
   /**
    * Initializes the entire hierarchy of the model tree. It creates TreeElements for each element in
    * the Whitelist, and calls one of the model creation methods to add the model elements in the
@@ -366,12 +359,12 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
   public TreeElement<?, ?> initializeRoot() {
     clearPropertyChangeListeners();
     TreeElement<SecuritySpecModel, Object> root =
-        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", fSpec, Object.class);
+        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", getSpec(), Object.class);
     TreeElement<Object, MethodModel> whitelist =
-        new TreeElement<Object, MethodModel>("Whitelist", fSpec.getWhitelist(),
+        new TreeElement<Object, MethodModel>("Whitelist", getSpec().getWhitelist(),
             MethodModel.class);
     root.addChild(whitelist);
-    for (MethodModel m : fSpec.getWhitelist()) {
+    for (MethodModel m : getSpec().getWhitelist()) {
       TreeElement<MethodModel, Object> mTreeElement =
           new TreeElement<MethodModel, Object>(m.getShortSignature(), m, Object.class);
       whitelist.addChild(mTreeElement);
@@ -419,15 +412,4 @@ public class TreeElementContentProvider extends SpecInfoTreeElementContentProvid
     }
   }
 
-  @Override
-  protected Object[] initializeRoots() {
-      // TODO Auto-generated method stub
-      return null;
-  }
-
-  @Override
-  protected void reset() {
-      // TODO Auto-generated method stub
-
-  }
 }

@@ -518,14 +518,14 @@ public class Utils {
     public static Set<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
             int srcLine, String link) {
         Set<MethodModel> result = new TreeSet<MethodModel>();
-        if (sig != null && srcClass != null && srcLine >= 0) {
+        if (sig != null) {
             if (link != null) {
                 if (link.equals("as_entry_point")) {
                     for (MethodModel entryPoint: spec.getInputEventBlocks().keySet()) {
                         if (sig.equals(entryPoint.getSignature()))
                             result.add(entryPoint);
                     }
-                } else if (link.equals("as_call")) {
+                } else if (link.equals("as_call") && srcClass != null && srcLine >= 0) {
                     for (MethodModel call: spec.getOutputEventBlocks().keySet()) {
                     	String callSig = call.getSignature();
                         if (sig.equals(callSig)) {
