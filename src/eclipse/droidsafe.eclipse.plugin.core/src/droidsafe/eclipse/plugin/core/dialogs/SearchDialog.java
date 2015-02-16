@@ -149,10 +149,13 @@ public class SearchDialog extends Dialog {
         gridData.widthHint = 72;
         statusText.setLayoutData(gridData);
         
-        Button prevButton = new Button(parent, SWT.ARROW | SWT.UP);
+        Button prevButton = new Button(parent, SWT.CENTER | SWT.FLAT);
+        prevButton.setImage(DroidsafeImages.PREV_IMAGE);
         gridData = new GridData();
-        gridData.widthHint = 20;
-        gridData.heightHint = 20;
+        if (System.getProperty("os.name").equals("Mac OS X")) {
+            gridData.widthHint = 20;
+            gridData.heightHint = 20;
+        }
         prevButton.setLayoutData(gridData);
         prevButton.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -161,7 +164,8 @@ public class SearchDialog extends Dialog {
             }
         });
 
-        Button nextButton = new Button(parent, SWT.ARROW | SWT.DOWN);
+        Button nextButton = new Button(parent, SWT.CENTER | SWT.FLAT);
+        nextButton.setImage(DroidsafeImages.NEXT_IMAGE);
         nextButton.setLayoutData(gridData);
         nextButton.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -171,7 +175,7 @@ public class SearchDialog extends Dialog {
         });
 
         // Use Label widget since Buttons always have border
-        Button closeButton = new Button(parent, SWT.FLAT);
+        Button closeButton = new Button(parent, SWT.CENTER | SWT.FLAT);
         closeButton.setImage(DroidsafeImages.CLOSE_IMAGE);
         closeButton.setLayoutData(gridData);
         closeButton.addSelectionListener(new SelectionAdapter() {

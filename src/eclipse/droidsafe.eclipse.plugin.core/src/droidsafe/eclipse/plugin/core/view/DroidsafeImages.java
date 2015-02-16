@@ -73,6 +73,6 @@ public class DroidsafeImages {
     public static final Image PREV_IMAGE = DroidsafePluginUtilities.getImage("prev.png");
 
     /** The image for closing a view */
-    public static final Image CLOSE_IMAGE = DroidsafePluginUtilities.getImage("close.png");
+    public static final Image CLOSE_IMAGE = DroidsafePluginUtilities.getImage("close.gif");
 
 }
