@@ -1,5 +1,6 @@
 package droidsafe.analyses.infoflow;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Collections;
@@ -9,8 +10,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
-import com.google.common.collect.ImmutableSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import soot.ArrayType;
 import soot.Body;
@@ -38,12 +41,14 @@ import soot.jimple.Constant;
 import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.EqExpr;
 import soot.jimple.IdentityStmt;
+import soot.jimple.IfStmt;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InstanceOfExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
 import soot.jimple.LengthExpr;
+import soot.jimple.LookupSwitchStmt;
 import soot.jimple.NeExpr;
 import soot.jimple.NegExpr;
 import soot.jimple.NewArrayExpr;
@@ -54,6 +59,7 @@ import soot.jimple.ReturnVoidStmt;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
+import soot.jimple.TableSwitchStmt;
 import soot.jimple.UnopExpr;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
@@ -64,6 +70,11 @@ import soot.jimple.toolkits.callgraph.Filter;
 import soot.jimple.toolkits.callgraph.TransitiveTargets;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
+import soot.toolkits.graph.DominatorNode;
+
+import com.google.common.collect.ImmutableSet;
+
+import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
@@ -77,6 +88,8 @@ import droidsafe.utils.SootUtils;
  */
 public class InformationFlowAnalysis {
    
+	private static final Logger logger = LoggerFactory.getLogger(InformationFlowAnalysis.class);
+	
     private static InformationFlowAnalysis v;
     
     /**
@@ -278,9 +291,124 @@ public class InformationFlowAnalysis {
             public void defaultCase(Object stmt) {
                 // Do nothing.
             }
+            
+            @Override
+            public void caseIfStmt(IfStmt stmt) {
+            	execute(stmt, stmt.getCondition(), state);
+            }
+            
+            @Override
+            public void caseLookupSwitchStmt(LookupSwitchStmt stmt) {
+            	execute(stmt, stmt.getKey(), state);
+            }
+            
+            @Override
+            public void caseTableSwitchStmt(TableSwitchStmt stmt) {
+            	execute(stmt, stmt.getKey(), state);
+            }
         };
         unit.apply(stmtSwitch);
     }
+
+	private void execute(Stmt stmt, Value condVal, State state) {
+		Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+		Body body = block.getBody();
+		SootMethod method = body.getMethod();
+		
+		// Extract all of the immediates out of condVal expression.
+		Stack<Value> valStack = new Stack<Value>();
+		Set<Immediate> allImmediates = new HashSet<Immediate>();
+		valStack.push(condVal);
+		while (!valStack.isEmpty()) {
+			Value topVal = valStack.pop();
+			if (topVal instanceof Immediate) {
+				allImmediates.add((Immediate) topVal);
+			} else if (topVal instanceof BinopExpr) {
+				valStack.push(((BinopExpr) condVal).getOp1());
+				valStack.push(((BinopExpr) condVal).getOp2());
+			} else if (topVal instanceof UnopExpr) {
+				valStack.push(((UnopExpr) condVal).getOp());
+			} else {
+				logger.error("What are we? {}", topVal.getClass());
+				/*
+				 * TODO: Implement cases for other expression types, such as
+				 * method invocations, field accesses, array accesses, etc...
+				 * 
+				 * I should ask Michael about how to acquire taint for the more
+				 * complicated cases, since I am sure there are probably existing
+				 * mechanisms for accomplishing this.
+				 */
+			}
+		}
+		
+		// TODO: may want to consider caching allImmediates
+		
+		// Acquire the taints for all extracted immediates and over all method contexts.
+		Set<InfoValue> allValues = new HashSet<InfoValue>();
+		for (MethodOrMethodContext methodContext : PTABridge.v().getMethodContexts(method)) {
+            Context context = methodContext.context();
+            if (ignoreContext(context)) {
+                continue;
+            }
+            
+            for (Immediate immediate : allImmediates) {
+            	ImmutableSet<InfoValue> condValues = evaluate(context, (Immediate) immediate, state.locals);
+            	allValues.addAll(condValues);	
+            }
+		}
+		
+		// Construct post-dominator tree from the subgraph reachable
+		// from block.  The siblings of block in this tree will be the
+		// blocks we will need to copy taint to.
+		DirectedSubgraph subGraph = new DirectedSubgraph(block);
+		PostDominatorTree pdomTree = new PostDominatorTree(subGraph);
+		Set<DominatorNode> siblings = pdomTree.siblingsOf(pdomTree.getDode(block));
+		
+		//TODO: cache siblings for block so we don't have to recompute this
+
+		// Copy taint from the conditional branching block to each
+		// sibling in the post-dominator tree.
+		for (DominatorNode node : siblings) {
+			Block toBlock = (Block) node.getGode();
+			if (method.getDeclaringClass().getName().startsWith("de.ecspride.ImplicitFlow")) {
+				System.out.println("info values: " + allValues);
+			}
+			
+			Set<InfoValue> existingVals = state.iflows.get(toBlock);
+			if (existingVals == null)
+				state.iflows.put(toBlock, allValues);
+			else {
+				existingVals.addAll(allValues);
+			}
+		}
+		
+		// GENERATE ALL GRAPHVIZ FILES...
+		if (Config.v().debug) {
+			File destDir = new File("./graphs");
+			
+			try {
+				InfoBriefBlockGraph origGraph = new InfoBriefBlockGraph(body);
+				origGraph.toDotFile(method, destDir, "-orig", block);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				subGraph.toDotFile(body.getMethod(), destDir, "-sub", block);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				pdomTree.toDotFile(method, destDir, "-pdom", block, siblings);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 
     // stmt = assign_stmt
     private void execute(final AssignStmt stmt, final State state) {
@@ -1081,6 +1209,14 @@ public class InformationFlowAnalysis {
         }
     }
 
+    /**
+     * Transfers taint from the reciever to the return value, for all potential
+     * allocation nodes and method contexts.
+     * 
+     * @param stmt
+     * @param invokeExpr
+     * @param state
+     */
     private void executeGetTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
         Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
@@ -1106,6 +1242,14 @@ public class InformationFlowAnalysis {
         }
     }
 
+    /**
+     * Transfers taint from the first argument to the receiver, for all potential
+     * allocation nodes and method contexts.
+     * 
+     * @param stmt
+     * @param invokeExpr
+     * @param state
+     */
     private void executeAddTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
         Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
@@ -1129,6 +1273,14 @@ public class InformationFlowAnalysis {
         }
     }
 
+    /**
+     * Transfers taint from the first argument to the return value, for all potential
+     * allocation nodes and method contexts.
+     * 
+     * @param stmt
+     * @param invokeExpr
+     * @param state
+     */
     private void executeToTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
         Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
@@ -1152,6 +1304,14 @@ public class InformationFlowAnalysis {
         }
     }
 
+    /**
+     * Generates taint for the return value on methods that take a string
+     * constant (over all method contexts).
+     * 
+     * @param stmt
+     * @param invokeExpr
+     * @param state
+     */
     private void executeGenerateTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {
         Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
@@ -1168,7 +1328,8 @@ public class InformationFlowAnalysis {
                     if (ignoreContext(context)) {
                         continue;
                     }
-                    ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoKind.getInfoKind(argStringConstant.value, true));
+                    ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(
+                    		InfoKind.getInfoKind(argStringConstant.value, true));
                     state.locals.putW(context, lLocal, values);
                 }
             }

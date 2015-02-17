@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
@@ -21,6 +22,7 @@ import soot.jimple.Expr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
+import soot.toolkits.graph.Block;
 
 class ContextLocal {
     private static final HashMap<ImmutablePair<Context, Local>, ContextLocal> cache = new HashMap<ImmutablePair<Context, Local>, ContextLocal>();
@@ -523,12 +525,14 @@ class State {
     Instances instances;
     Arrays arrays;
     Statics statics;
+    HashMap<Block, Set<InfoValue>> iflows;
 
     State() {
         this.locals = new Locals();
         this.instances = new Instances();
         this.arrays = new Arrays();
         this.statics = new Statics();
+        this.iflows = new HashMap<Block, Set<InfoValue>>();
     }
 
     State(State that) {
@@ -536,6 +540,7 @@ class State {
         this.instances = new Instances(that.instances);
         this.arrays = new Arrays(that.arrays);
         this.statics = new Statics(that.statics);
+        this.iflows = new HashMap<Block, Set<InfoValue>>(that.iflows);
     }
 
     @Override
@@ -548,6 +553,8 @@ class State {
         }
         State that = (State)object;
 
-        return this.locals.equals(that.locals) && this.instances.equals(that.instances) && this.arrays.equals(that.arrays) && this.statics.equals(that.statics);
+        return this.locals.equals(that.locals) && this.instances.equals(that.instances) 
+        		&& this.arrays.equals(that.arrays) && this.statics.equals(that.statics) &&
+        		this.iflows.equals(that.iflows);
     }
 }
