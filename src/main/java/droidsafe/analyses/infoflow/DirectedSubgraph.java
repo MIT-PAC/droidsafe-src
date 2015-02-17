@@ -22,7 +22,9 @@ import soot.toolkits.graph.DirectedGraph;
 
 /**
  * Class for generating control flow of a subgraph reachable from
- * a given basic block.
+ * a given basic block.  This class will add single entry and exit
+ * points as well as other adjustments (for preserving post-dominance
+ * relationships for loops).
  * 
  * @author jeikenberry
  */
@@ -75,19 +77,21 @@ public class DirectedSubgraph implements DirectedGraph<Block> {
 		this.heads.add(psuedoHead);
 		this.tails.add(psuedoTail);
 		
-		// All blocks that complete a loop need to have a edge to
-		// the common exit (i.e. psuedoTail).
-		// TODO: could put this in to "fix" loops, but then it will essentially
-		// taint all other blocks
-
-//		List<Block> loopBacks = this.preds.get(start);
-//		List<Block> startSuccs = this.succs.get(start);
-//		if (loopBacks != null) {
-//			for (Block loopBlock : this.preds.get(start)) {
-//				List<Block> loopBlockSuccs = succs.get(loopBlock);
-//				loopBlockSuccs.addAll(startSuccs);
-//			}
-//		}
+		// For loops we need to add edges from all of the preds of
+		// start to go to the succs of start.  The reason is because
+		// backedges mess up the post-dominance relationship (i.e. the
+		// loop body will be children of start and not siblings).  By
+		// bipassing start, we move loop body up the post-dominance tree
+		// and we will now effectively be propagating taint from start to
+		// the loop body. 
+		List<Block> loopBacks = this.preds.get(start);
+		List<Block> startSuccs = this.succs.get(start);
+		if (loopBacks != null) {
+			for (Block loopBlock : this.preds.get(start)) {
+				List<Block> loopBlockSuccs = succs.get(loopBlock);
+				loopBlockSuccs.addAll(startSuccs);
+			}
+		}
 		
 		// Add an edge from pseudoHead to start.
 		List<Block> psuedoHeadSuccs = new ArrayList<Block>();
@@ -155,11 +159,19 @@ public class DirectedSubgraph implements DirectedGraph<Block> {
 		return succs.size();
 	}
 	
+	/**
+	 * Generate graphviz dot output on method and marking the start
+	 * block in red.
+	 * 
+	 * @param method SootMethod of interest
+	 * @param start Block to start from
+	 * @return String of the dot output
+	 */
     public String toString(SootMethod method, Block start) {
 		Map<Block, Integer> blockNumbers = new HashMap<Block, Integer>();
 		StringBuilder sb = new StringBuilder("digraph " + method.getName() + "CFG {\n");
 		
-		// generate the nodes
+		// Generate the nodes
 		int bIdx = 0;
 		int instOff = 0;
 		for (Block b : this) {
@@ -191,11 +203,13 @@ public class DirectedSubgraph implements DirectedGraph<Block> {
 			bIdx++;
 		}
 		
-		// generate the edges
+		// Generate the edges
 		for (Block b : this) {
-			int bFrom = blockNumbers.containsKey(b) ? blockNumbers.get(b) : blockNumbers.size();
+			int bFrom = blockNumbers.containsKey(b) ? 
+					blockNumbers.get(b) : blockNumbers.size();
 			for (Block succ : getSuccsOf(b)) {
-				int bTo = blockNumbers.containsKey(succ) ? blockNumbers.get(succ) : blockNumbers.size();
+				int bTo = blockNumbers.containsKey(succ) ? 
+						blockNumbers.get(succ) : blockNumbers.size();
 				sb.append("  bb");
 				sb.append(bFrom);
 				sb.append(" -> bb");
@@ -208,7 +222,18 @@ public class DirectedSubgraph implements DirectedGraph<Block> {
 		return sb.toString();
 	}
 	
-	public void toDotFile(SootMethod method, File destDir, String prefix, Block start) throws IOException {
+    /**
+     * Write out the .dot file of a particular method to destDir and 
+     * prefixed by prefix.
+     * 
+     * @param method SootMethod of interest
+     * @param destDir File of the directory to write to
+     * @param suffix String of the file suffix 
+	 * @param start Block to start from
+     * @throws IOException
+     */
+	public void toDotFile(SootMethod method, File destDir, String suffix, 
+			Block start) throws IOException {
 		if (!destDir.exists()) {
 			if (!destDir.mkdirs())
 				throw new IOException("could not create directory " + destDir);
@@ -219,7 +244,7 @@ public class DirectedSubgraph implements DirectedGraph<Block> {
 		String className = method.getDeclaringClass().getName();
 		try (PrintWriter fileOut = new PrintWriter(new File(destDir,
 				className + "." + method.getName() + "." + start.getIndexInMethod() 
-				+ prefix + ".dot"))) {
+				+ suffix + ".dot"))) {
 			fileOut.println(this.toString(method, start));
 		}
 	}

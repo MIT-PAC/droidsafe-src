@@ -329,7 +329,7 @@ public class InformationFlowAnalysis {
 			} else if (topVal instanceof UnopExpr) {
 				valStack.push(((UnopExpr) condVal).getOp());
 			} else {
-				logger.error("What are we? {}", topVal.getClass());
+				logger.error("What type of condition are we? {}", topVal.getClass());
 				/*
 				 * TODO: Implement cases for other expression types, such as
 				 * method invocations, field accesses, array accesses, etc...
@@ -359,21 +359,17 @@ public class InformationFlowAnalysis {
 		
 		// Construct post-dominator tree from the subgraph reachable
 		// from block.  The siblings of block in this tree will be the
-		// blocks we will need to copy taint to.
+		// blocks where we will propagate taint.
 		DirectedSubgraph subGraph = new DirectedSubgraph(block);
 		PostDominatorTree pdomTree = new PostDominatorTree(subGraph);
 		Set<DominatorNode> siblings = pdomTree.siblingsOf(pdomTree.getDode(block));
 		
 		//TODO: cache siblings for block so we don't have to recompute this
 
-		// Copy taint from the conditional branching block to each
-		// sibling in the post-dominator tree.
+		// Copy taint from the branching block to each sibling in the
+		// post-dominator tree.
 		for (DominatorNode node : siblings) {
 			Block toBlock = (Block) node.getGode();
-			if (method.getDeclaringClass().getName().startsWith("de.ecspride.ImplicitFlow")) {
-				System.out.println("info values: " + allValues);
-			}
-			
 			Set<InfoValue> existingVals = state.iflows.get(toBlock);
 			if (existingVals == null)
 				state.iflows.put(toBlock, allValues);

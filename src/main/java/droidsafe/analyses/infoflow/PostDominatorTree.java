@@ -22,7 +22,7 @@ import soot.toolkits.graph.MHGDominatorsFinder;
 
 /**
  * Class for constructing a post-dominator tree from a control-flow graph.
- * This class presumes that this graph has a single common exit.
+ * This class presumes that this graph has a single common entry/exit.
  * 
  * @author jeikenberry
  */
@@ -34,7 +34,21 @@ public class PostDominatorTree extends DominatorTree {
 		super(new MHGDominatorsFinder<Block>(new InverseGraph<Block>(graph)));
 	}
 
-	public void toDotFile(SootMethod method, File destDir, String prefix,
+	/**
+     * Write out the .dot file of a particular method to destDir and 
+     * prefixed by prefix.  The branchBlock will be colored red, and
+     * all taintedBlocks will be colored blue.
+     * 
+     * @param method SootMethod of interest
+     * @param destDir File of the directory to write to
+     * @param suffix String of the file suffix 
+	 * @param branchBlock Block of the branch to copy taint from
+	 * @param taintedBlocks Set&lt;DominatorNode&gt; of the 
+	 * 	siblings (and grand-siblings) of branchBlock in this 
+	 * 	post-dominator tree
+     * @throws IOException
+     */
+	public void toDotFile(SootMethod method, File destDir, String suffix,
 			Block branchBlock, Set<DominatorNode> taintedBlocks)
 			throws IOException {
 		if (!destDir.exists()) {
@@ -109,7 +123,7 @@ public class PostDominatorTree extends DominatorTree {
 		String className = method.getDeclaringClass().getName();
 		try (PrintWriter fileOut = new PrintWriter(new File(destDir,
 				className + "." + method.getName() + "." + branchBlock.getIndexInMethod() 
-				+ prefix + ".dot"))) {
+				+ suffix + ".dot"))) {
 			fileOut.println("digraph " + method.getName() + "CFG {\n");
 			fileOut.println(nodes);
 			fileOut.println();
