@@ -44,3 +44,8 @@ android.widget.TextView|onAttachedToWindow
 android.widget.TextView|append
 android.widget.TextView|setText
 android.widget.Toast|makeText
+#android.util.Log|i
+#android.util.Log|d
+#android.util.Log|e
+#android.util.Log|v
+#android.util.Log|w
