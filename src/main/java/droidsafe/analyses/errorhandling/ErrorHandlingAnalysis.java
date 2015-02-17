@@ -76,6 +76,8 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsErrorsIgnored = new LinkedHashSet<Stmt>();
     private Set<Stmt> connectionCallsErrorsNotIgnored = new LinkedHashSet<Stmt>();
     private Set<Stmt> connectionCallsErrorsUnknown = new LinkedHashSet<Stmt>();
+    private Set<Stmt> connectionCallsSuccessHasUI = new LinkedHashSet<Stmt>();
+    private Set<Stmt> connectionCallsSuccessNoUI = new LinkedHashSet<Stmt>();    
     private PrintStream out;
     private SootClass throwableClass;   
     private int DEPTH_LIMIT = 70;
@@ -296,6 +298,15 @@ public class ErrorHandlingAnalysis {
                                                 break;
                                         }
                                     }
+                                    
+                                    //search forward to model success path
+                                    boolean foundUIOnSuccess = successSearchFromMethod(body, stmt, 0 , new HashSet<SootMethod>());
+                                    if (foundUIOnSuccess) {
+                                        connectionCallsSuccessHasUI.add(stmt);
+                                        connectionCallsSuccessNoUI.remove(stmt);
+                                    } else if (!connectionCallsSuccessHasUI.contains(stmt)) {
+                                        connectionCallsSuccessNoUI.add(stmt);                                        
+                                    }                                    
                                 }
                             }
                         }                                        
@@ -306,7 +317,7 @@ public class ErrorHandlingAnalysis {
             }
         }
 
-        out.println("Connect calls unhandled (with appropriate exceptions not reported to user): " + 
+        out.println("Call with errors unhandled (with appropriate exceptions not reported to user): " + 
                 connectionCallsErrorsIgnored.size());
 
         for (Stmt stmt : connectionCallsErrorsIgnored) {
@@ -315,7 +326,7 @@ public class ErrorHandlingAnalysis {
             out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
-        out.println("\nConnect calls with handling unknown (either recursion depth reached or unknown thrown exception type): " +
+        out.println("\nCalls with error handling unknown (either recursion depth reached or unknown thrown exception type): " +
                 connectionCallsErrorsUnknown.size());
 
         for (Stmt stmt : connectionCallsErrorsUnknown) {
@@ -325,7 +336,7 @@ public class ErrorHandlingAnalysis {
         }
 
 
-        out.println("\nConnect calls handled (trigger possible ui call): " +
+        out.println("\nCalls with errors handled (trigger possible ui call): " +
                 connectionCallsErrorsNotIgnored.size());
 
         for (Stmt stmt : connectionCallsErrorsNotIgnored) {
@@ -334,12 +345,121 @@ public class ErrorHandlingAnalysis {
             out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
 
+        
+        out.println("\nCalls with UI effect (UI call) on success path: " +
+                connectionCallsSuccessHasUI.size());
+
+        for (Stmt stmt : connectionCallsSuccessHasUI) {
+            InvokeExpr invoke = stmt.getInvokeExpr();
+
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+        }
+        
+        out.println("\nCalls with NO UI effect (UI call) on success path: " +
+                connectionCallsSuccessNoUI.size());
+
+        for (Stmt stmt : connectionCallsSuccessNoUI) {
+            InvokeExpr invoke = stmt.getInvokeExpr();
+
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+        }
 
         if (Config.v().debug) {
             soot.options.Options.v().set_ignore_resolution_errors(false);
             writeAllAppClasses();
         }
         out.close();
+    }
+    
+    
+    /**
+     * 
+     *
+     * @param body
+     *
+     * @param connectionStmt If not null, then it is the start of a search, and a connection call statement
+     * defines the trap units we should ignore, otherwise it is null
+     *
+     * @return True if a UI method is found on the success path, false if no ui method found
+     */
+    private boolean successSearchFromMethod(Body body, Stmt connectionStmt, int depth, Set<SootMethod> visiting) {
+        if (API.v().isSystemMethod(body.getMethod())) {
+            logger.debug("Not traversing into system call.");
+            return false;
+        }
+
+        if (depth > DEPTH_LIMIT) {
+            logger.debug("Reached recursion depth.");
+            return true;
+        }
+      
+        if (visiting.contains(body.getMethod()))
+            return false;
+        
+        visiting.add(body.getMethod());
+        
+        //find all traps for connection statement, discount all statements in those traps
+        Set<Unit> unitsInTrap = new HashSet<Unit>();
+        Map<Unit, List<Trap>> unitToTraps = getUnitToTrapMap(body);
+
+        if (unitToTraps.get(connectionStmt) != null) {
+            for (Trap trap : unitToTraps.get(connectionStmt)) {   
+                Collection<Unit> trapUnits = getAllUnitsForCatch(body, trap.getHandlerUnit());
+                unitsInTrap.addAll(trapUnits);
+            }
+        }
+        
+        //for each call statement that is not in a handler, start search from there for ui calls
+        Iterator<Unit> unitIt = body.getUnits().snapshotIterator();                          
+        while (unitIt.hasNext()) {
+            Unit currentU = unitIt.next(); 
+            
+            //ignore units in handler of connection statement
+            if (unitsInTrap.contains(currentU))
+                continue;
+            
+            //check if current is a call to api call we are interested in
+            if (!(currentU instanceof Stmt)) 
+                continue;
+
+            Stmt stmt = (Stmt)currentU;
+            
+            if (stmt.containsInvokeExpr()) {
+                try {
+                    //get targets of invoke expr
+                    Set<StmtEdge<SootMethod>> targetEdges = CHACallGraph.v(false).getTargetEdgesForStmt(stmt);
+
+                    //check called method for thrown exceptions
+                    for (StmtEdge<SootMethod> stmtEdge : targetEdges) {
+                        SootMethod target = stmtEdge.getV2();
+
+                        
+                        if (uiMethods.containsPoly(target)) {
+                            logger.debug("In success search, found ui method call in handler {}: {}\n",  body.getMethod(), stmt);
+                            return true;
+                        } else if (target.isConcrete()) {
+                            Body targetBody = null;
+                            try {
+                                targetBody = target.retrieveActiveBody();
+                            } catch (Exception e) {
+                                continue;
+                            }
+
+                            boolean recurseVal = successSearchFromMethod(targetBody, null, depth + 1, visiting); 
+                            if (recurseVal) {
+                                return true;
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    //ignore retrieving active body exception
+                    logger.debug("Exception: ", e);
+                }
+            }
+        }
+        
+        //didn't find a ui method
+        return false;
     }
 
     private String formatMethod(SootMethodRef ref) {
