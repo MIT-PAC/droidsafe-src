@@ -57,7 +57,7 @@ abstract public class MethodInfoOutlineViewPart extends DroidsafeInfoOutlineView
     protected void updateView() {
         if (fParentComposite != null) {
             if (fInputElement == null) {
-                showPage(PAGE_EMPTY);
+                showEmptyPage();
             } else {
                 showPage(PAGE_VIEWER);
 

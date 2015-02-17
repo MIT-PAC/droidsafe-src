@@ -1,5 +1,6 @@
 package droidsafe.eclipse.plugin.core.view;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -15,6 +16,17 @@ abstract public class SpecInfoOutlineViewPart extends DroidsafeInfoOutlineViewPa
     /** The security spec on which the droidsafe analysis info is to be displayed. */
     protected SecuritySpecModel fInputElement;
 
+    @Override
+    protected String emptyPageText() {
+    	IProject project = getProject();
+    	if (project == null)
+    		return "No Android Project selected. " +
+    		"\nSelect an Android project in the Project Explorer.";
+    	String projectName = project.getName();
+    	return "No security spec found for the selected project " + projectName +
+    			"\nYou need to first generate the security spec first from a shell.";
+    }
+    
     /**
      * Set the input element for the viewer and update the contents of the view.
      */

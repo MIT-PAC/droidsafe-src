@@ -142,7 +142,7 @@ public class TaintSourcesViewPart extends DroidsafeInfoOutlineViewPart {
     public void updateView(boolean resetViewer) {
         if (fParentComposite != null) {
             if (fTaintMarker == null) {
-                showPage(PAGE_EMPTY);
+                showEmptyPage();
             } else {
                 if (resetViewer)
                     resetViewer();

@@ -71,7 +71,7 @@ public class CallHierarchyViewPart extends DroidsafeInfoOutlineViewPart {
     public void updateView(boolean resetViewer) {
         if (fParentComposite != null) {
             if (fCallHierarchy == null) {
-                showPage(PAGE_EMPTY);
+                showEmptyPage();
             } else {
                 if (resetViewer)
                     resetViewer();

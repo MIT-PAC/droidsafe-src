@@ -75,10 +75,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     	IProject project = getProject();
         fInputElement = DroidsafePluginUtilities.getSecuritySpec(project, true, reInitialize);
         if (fInputElement == null) {
-            fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
-                    + "\nSelect the project on the Project Explorer "
-                    + "\nand run the Droidsafe spec generation command from the project context menu.");
-            showPage(PAGE_EMPTY);
+            showEmptyPage();
         } else {
             updateView();
             InfoFlowSummaryViewPart.openView(fInputElement);
@@ -636,14 +633,6 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     @Override
     protected void projectSelected() {
         refreshSpecAndOutlineView();
-    }
-
-    @Override
-    protected String emptyPageText() {
-        return "No Android Project selected. "
-                + "\nSelect an Android project in the Project Explorer."
-                + "\nYou may also need to run the Droidsafe spec generation "
-                + "command from the project context menu.";
     }
 
 }

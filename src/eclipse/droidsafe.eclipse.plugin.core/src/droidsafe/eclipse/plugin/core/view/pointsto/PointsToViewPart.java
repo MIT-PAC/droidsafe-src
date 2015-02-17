@@ -78,7 +78,7 @@ public class PointsToViewPart extends MethodInfoOutlineViewPart {
 //                fInputElement = null;
 //                if (fTreeViewer != null)
 //                    fTreeViewer.setInput(null);
-//                showPage(PAGE_EMPTY);
+//                showEmptyPage();
 //            }
 //          } else if (part instanceof SecuritySpecOutlineViewPart && selectedObject instanceof TreeElement<?,?>) {
 //              TreeElement<?,?> treeElement = (TreeElement<?,?>) selectedObject;

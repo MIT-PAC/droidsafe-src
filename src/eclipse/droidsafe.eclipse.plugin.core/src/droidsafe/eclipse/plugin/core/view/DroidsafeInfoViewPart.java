@@ -84,17 +84,21 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
 
         // Page 2: Nothing selected
         fEmptyPageLabel = new Label(fPagebook, SWT.TOP + SWT.LEFT + SWT.WRAP);
-        fEmptyPageLabel.setText(emptyPageText());
 
         IProject project = getProject();
         if (project == null)
-            showPage(PAGE_EMPTY);
+        	showEmptyPage();
         else
             projectSelected();
         setSelectionListener();
     }
 
-    /**
+    protected void showEmptyPage() {
+        fEmptyPageLabel.setText(emptyPageText());
+        showPage(PAGE_EMPTY);
+	}
+
+	/**
      * Shows all the droidsafe views in the droidsafe perspective other than
      * the one with the given view id.
      */

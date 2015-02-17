@@ -35,12 +35,6 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
     /** The ID of the view as specified by the extension. */
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.InfoFlowSummaryView";
 
-    /** The text displayed on the empty page. */
-    protected static String EMPTY_PAGE_LABEL = "No Android Project selected. "
-          + "\nSelect an Android project in the Project Explorer."
-          + "\nYou may also need to run the Droidsafe spec generation "
-          + "command from the project context menu.";
-    
     @Override
     public void createPartControl(Composite parent) {
         super.createPartControl(parent);
@@ -72,11 +66,6 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
         return new InfoFlowSummaryTreeElementLabelProvider();
     }
 
-    @Override
-    protected String emptyPageText() {
-        return EMPTY_PAGE_LABEL;
-    }
-    
     @Override
     protected int autoExpandLevel() {
       return 1;

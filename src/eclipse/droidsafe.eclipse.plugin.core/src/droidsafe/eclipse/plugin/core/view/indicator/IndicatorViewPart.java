@@ -350,7 +350,7 @@ public class IndicatorViewPart extends DroidsafeInfoOutlineViewPart {
         if (fIndicatorFiles == null || fIndicatorFiles.length == 0) {
             fEmptyPageLabel.setText(noJsonFileMessage());
             setPartName("Indicator");
-            showPage(PAGE_EMPTY);
+            showEmptyPage();
         } else {
             File indicatorFile = fIndicatorFiles[0];
             openView(indicatorFile);

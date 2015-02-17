@@ -106,7 +106,7 @@ public class ValueViewPart extends DroidsafeInfoViewPart {
     protected void updateView() {
         if (fParentComposite != null) {
             if (fInputElement == null) {
-                showPage(PAGE_EMPTY);
+                showEmptyPage();
             } else {
                 showPage(PAGE_VIEWER);
 
