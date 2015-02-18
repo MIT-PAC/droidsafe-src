@@ -40,7 +40,7 @@ public class IPCEntryPointCallTree {
     // types of calls
     private static Map<String,Boolean> visibility_map = new LinkedHashMap<String,Boolean>();
     static {
-        visibility_map.put ("call_chain", true);
+        visibility_map.put ("call-chain", true);
         visibility_map.put ("syscall", true);
     }
     
