@@ -6,6 +6,8 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -99,7 +101,13 @@ public class NewFilterWizardPage extends FilterWizardPage {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 setFieldValue(i);
-                updatePageComplete();
+                updatePageComplete(i);
+            }
+        });
+    	valueTexts[i].addModifyListener(new ModifyListener() {
+            @Override
+            public void modifyText(ModifyEvent e){
+                updatePageComplete(i);
             }
         });
         addButtons[i].addSelectionListener(new SelectionAdapter() {

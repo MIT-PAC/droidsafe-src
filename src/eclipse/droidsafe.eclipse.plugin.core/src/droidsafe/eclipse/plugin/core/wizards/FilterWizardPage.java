@@ -250,6 +250,18 @@ abstract class FilterWizardPage extends WizardPage {
     }
 
     /**
+     * Update the clause completeness of the ith clause.
+     * Then checks to see whether all the predicate clauses are complete.
+     * Updates the page completeness accordingly.
+     */
+    protected void updatePageComplete(int i) {
+    	if (i < numberOfPredClauses) {
+    		clausesComplete[i] = fieldCombos[i].getSelectionIndex() >= 0 && !valueTexts[i].getText().isEmpty();
+    	}
+    	updatePageComplete();
+    }
+
+    /**
      * Adds a new predicate clause after the i'th row.
      */
     protected void addClause(int i) {

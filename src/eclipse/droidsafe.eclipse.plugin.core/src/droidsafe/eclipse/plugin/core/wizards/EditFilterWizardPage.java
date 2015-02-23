@@ -2,6 +2,8 @@ package droidsafe.eclipse.plugin.core.wizards;
 
 import java.util.List;
 
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
@@ -74,6 +76,18 @@ public class EditFilterWizardPage extends FilterWizardPage {
      * predicate clause.
      */
     protected void addListeners(final int i) {
+    	fieldCombos[i].addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                updatePageComplete(i);
+            }
+        });
+    	valueTexts[i].addModifyListener(new ModifyListener() {
+            @Override
+            public void modifyText(ModifyEvent e){
+                updatePageComplete(i);
+            }
+        });
     	addButtons[i].addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
