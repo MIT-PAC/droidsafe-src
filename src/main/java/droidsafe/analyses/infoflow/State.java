@@ -525,14 +525,14 @@ class State {
     Instances instances;
     Arrays arrays;
     Statics statics;
-    HashMap<Block, Set<InfoValue>> iflows;
+    Map<Block, Map<Context, Set<InfoValue>>> iflows;
 
     State() {
         this.locals = new Locals();
         this.instances = new Instances();
         this.arrays = new Arrays();
         this.statics = new Statics();
-        this.iflows = new HashMap<Block, Set<InfoValue>>();
+        this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>();
     }
 
     State(State that) {
@@ -540,7 +540,7 @@ class State {
         this.instances = new Instances(that.instances);
         this.arrays = new Arrays(that.arrays);
         this.statics = new Statics(that.statics);
-        this.iflows = new HashMap<Block, Set<InfoValue>>(that.iflows);
+        this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>(that.iflows);
     }
 
     @Override
