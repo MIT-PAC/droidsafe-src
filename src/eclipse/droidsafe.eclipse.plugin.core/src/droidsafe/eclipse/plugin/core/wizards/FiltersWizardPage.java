@@ -26,6 +26,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -98,23 +99,49 @@ public class FiltersWizardPage extends WizardPage {
         setControl(container);
         container.setLayout(new GridLayout(2, false));
         
-        tableViewer = new TableViewer(container, SWT.MULTI | SWT.H_SCROLL
+        Composite tableContainer = new Composite(container, SWT.NULL);
+        GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        gridData.horizontalIndent = 0;
+        gridData.verticalIndent = 0;
+        tableContainer.setLayoutData(gridData);
+        tableContainer.setLayout(new GridLayout(3, false));
+
+        // create labels for the table columns, instead of making the table header visible
+        // because on Mac when table header is visible, the first table row is hidden under
+        // the header and it can only become visible when dragged down with mouse or trackpad.
+        // On linux it works correctly.
+        createTableColumnLabels(tableContainer);    
+
+        tableViewer = new TableViewer(tableContainer, SWT.MULTI | SWT.H_SCROLL
             | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 
         table = tableViewer.getTable();
-        table.setHeaderVisible(true);
-        table.setLinesVisible(false);
-        
-        createColumns(container);
 
+        // disable header visibility due to the above mentioned problem on Mac
+        table.setHeaderVisible(false);
+        table.setLinesVisible(true);
+        
+        tableViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+            public void selectionChanged(final SelectionChangedEvent event) {
+                IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+                boolean selected = (selection != null && !selection.isEmpty());
+                editButton.setEnabled(selected);
+                deleteButton.setEnabled(selected);
+            }
+        });
+
+        createColumns();
+
+        gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        gridData.horizontalSpan = 3;
+        tableViewer.getControl().setLayoutData(gridData);
+        
         tableViewer.setContentProvider(ArrayContentProvider.getInstance());
         tableViewer.setInput(newFilters);
         
-        GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-        tableViewer.getControl().setLayoutData(gridData);
-        
         buttonsContainer = new Composite(container, SWT.NULL);
         gridData = new GridData(SWT.LEFT, SWT.FILL, false, false);
+        gridData.verticalIndent = 50;
         buttonsContainer.setLayoutData(gridData);
         RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
         rowLayout.pack = false;
@@ -156,14 +183,6 @@ public class FiltersWizardPage extends WizardPage {
             }
         });
 
-        tableViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-            public void selectionChanged(final SelectionChangedEvent event) {
-                IStructuredSelection selection = (IStructuredSelection)event.getSelection();
-                boolean selected = (selection != null && !selection.isEmpty());
-                editButton.setEnabled(selected);
-                deleteButton.setEnabled(selected);
-            }
-        });
     }
     
     /**
@@ -184,11 +203,9 @@ public class FiltersWizardPage extends WizardPage {
 
     /**
      * Creates table columns for the names, the specs, and enabled statuses of the filters.
-     * 
-     * @param parent - the parent composite
      */
-    private void createColumns(Composite parent) {
-        TableViewerColumn nameCol = createTableViewerColumn("Filter Name", 150, 0);
+    private void createColumns() {
+        TableViewerColumn nameCol = createTableViewerColumn("Filter Name", 150);
         nameCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
             public String getText(Object element) {
@@ -198,7 +215,7 @@ public class FiltersWizardPage extends WizardPage {
             }
         });
 
-        TableViewerColumn filterCol = createTableViewerColumn("Filter Spec", 500, 0);
+        TableViewerColumn filterCol = createTableViewerColumn("Filter Spec", 500);
         filterCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
             public String getText(Object element) {
@@ -207,7 +224,7 @@ public class FiltersWizardPage extends WizardPage {
             }
         });
 
-        TableViewerColumn enabledCol = createTableViewerColumn("Enabled", 50, 1);
+        TableViewerColumn enabledCol = createTableViewerColumn("Enabled", 50);
         enabledCol.setLabelProvider(new ColumnLabelProvider() {
             @Override
             public String getText(Object element) {
@@ -229,8 +246,7 @@ public class FiltersWizardPage extends WizardPage {
      * Creates one table viewer column with the given title, width, and column number.
      * Returns the resulting column.
      */
-    private TableViewerColumn createTableViewerColumn(String title, int width,
-                                                      final int colNumber) {
+    private TableViewerColumn createTableViewerColumn(String title, int width) {
         final TableViewerColumn viewerColumn = new TableViewerColumn(tableViewer,
             SWT.NONE);
         final TableColumn column = viewerColumn.getColumn();
@@ -239,6 +255,33 @@ public class FiltersWizardPage extends WizardPage {
         column.setResizable(true);
         column.setMoveable(true);
         return viewerColumn;
+    }
+
+    /**
+     * Creates labels for the table columns for the filters.
+     */
+    private void createTableColumnLabels(Composite parent) {
+    	createTableColumnLabel(parent, "Filter Name", 146);
+    	createTableColumnLabel(parent, "Filter Spec", 496);
+        createTableColumnLabel(parent, "Enabled", 46);
+    }
+
+    /**
+     * Creates a label for a table viewer column with the given parent, title, and width.
+     * Returns the resulting label.
+     */
+    private Label createTableColumnLabel(Composite parent, String title, int width) {
+        Label columnLabel = new Label(parent, SWT.NONE);
+//        FontData[] fD = columnLabel.getFont().getFontData();
+//        fD[0].setHeight(fD[0].getHeight() - 1);
+//        columnLabel.setFont(new Font(columnLabel.getDisplay(), fD[0]));
+        columnLabel.setText(title);
+        GridData gridData = new GridData(SWT.LEFT, SWT.BOTTOM, false, false);
+        gridData.horizontalIndent = 0;
+        gridData.verticalIndent = 0;
+        gridData.widthHint = width;
+        columnLabel.setLayoutData(gridData);
+        return columnLabel;
     }
 
     /**
