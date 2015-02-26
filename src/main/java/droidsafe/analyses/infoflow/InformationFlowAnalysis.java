@@ -371,10 +371,41 @@ public class InformationFlowAnalysis {
 		// Construct post-dominator tree from the subgraph reachable
 		// from block. The siblings of block in this tree will be the
 		// blocks where we will propagate taint.
-		DirectedSubgraph subGraph = new DirectedSubgraph(block);
-		PostDominatorTree pdomTree = new PostDominatorTree(subGraph);
-		Set<DominatorNode> siblings = pdomTree.siblingsOf(pdomTree
-				.getDode(block));
+		Set<DominatorNode> siblings = 
+				this.superControlFlowGraph.pdmap.get(block);
+		if (siblings == null) {
+			DirectedSubgraph subGraph = new DirectedSubgraph(block);
+			PostDominatorTree pdomTree = new PostDominatorTree(subGraph);
+			siblings = pdomTree.siblingsOf(pdomTree.getDode(block));
+			this.superControlFlowGraph.pdmap.put(block, siblings);
+			
+			// GENERATE ALL GRAPHVIZ FILES...
+			if (Config.v().debug) {
+				File destDir = new File("./graphs");
+
+				try {
+					InfoBriefBlockGraph origGraph = new InfoBriefBlockGraph(body);
+					origGraph.toDotFile(method, destDir, "-orig", block);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				try {
+					subGraph.toDotFile(body.getMethod(), destDir, "-sub", block);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				try {
+					pdomTree.toDotFile(method, destDir, "-pdom", block, siblings);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 
 		// Acquire the taints for all extracted immediates and over all method
 		// contexts.
@@ -391,8 +422,6 @@ public class InformationFlowAnalysis {
 						(Immediate) immediate, state.locals);
 				contextValues.addAll(condValues);
 			}
-
-			// TODO: cache siblings for block so we don't have to recompute this
 
 			// Copy taint from the branching block to each sibling in the
 			// post-dominator tree.
@@ -420,11 +449,17 @@ public class InformationFlowAnalysis {
 					if (stmt2.containsInvokeExpr()) {
 						for (Edge edge : PTABridge.v().outgoingEdges(methodContext, stmt2)) {
 							MethodOrMethodContext target = edge.getTgt();
+							// Skip over system edges for now...
+							if (API.v().isSystemMethod(target.method()))
+								continue;
 							contexts.add(target);
 							TransitiveTargets tt = new TransitiveTargets(Scene.v().getCallGraph());
 							Iterator<MethodOrMethodContext> iter = tt.iterator(target);
 							while (iter.hasNext()) {
 								MethodOrMethodContext mc = iter.next();
+								// Skip over system edges for now...
+								if (API.v().isSystemMethod(mc.method()))
+									continue;
 								contexts.add(mc);
 							}
 						}
@@ -459,33 +494,6 @@ public class InformationFlowAnalysis {
 						existingVals.addAll(contextValues);
 					}
 				}
-			}
-		}
-
-		// GENERATE ALL GRAPHVIZ FILES...
-		if (Config.v().debug) {
-			File destDir = new File("./graphs");
-
-			try {
-				InfoBriefBlockGraph origGraph = new InfoBriefBlockGraph(body);
-				origGraph.toDotFile(method, destDir, "-orig", block);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			try {
-				subGraph.toDotFile(body.getMethod(), destDir, "-sub", block);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			try {
-				pdomTree.toDotFile(method, destDir, "-pdom", block, siblings);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 	}

@@ -19,6 +19,7 @@ import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.TopologicalOrderer;
 import soot.toolkits.graph.Block;
 import soot.toolkits.graph.BlockGraph;
+import soot.toolkits.graph.DominatorNode;
 import soot.util.Chain;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.main.Config;
@@ -38,6 +39,8 @@ class SuperControlFlowGraph implements Iterable<Block> {
     public final Map<Unit, Block> unitToBlock = new HashMap<Unit, Block>();
 
     public final Map<Local, SootMethod> localToMethod = new HashMap<Local, SootMethod>();
+    
+    public final Map<Block, Set<DominatorNode>> pdmap = new HashMap<Block, Set<DominatorNode>>();
     
     @Override
     public Iterator<Block> iterator() {
