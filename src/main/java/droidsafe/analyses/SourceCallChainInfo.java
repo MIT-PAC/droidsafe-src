@@ -20,6 +20,7 @@ import soot.Unit;
 import soot.jimple.Stmt;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
@@ -150,7 +151,14 @@ public class SourceCallChainInfo implements Comparable<SourceCallChainInfo> {
         fp.printf ("%s  %s,\n", indent, json_field ("signature", sig));
         if (stmt != null) {
         	SootMethodRef invoke = stmt.getInvokeExpr().getMethodRef();
-        	String invokeSig = invoke.getSignature();
+        	String invokeSig;
+            try {
+            	SootMethod concrete = SootUtils.resolve(stmt.getInvokeExpr().getMethodRef());
+            	invokeSig = concrete.getSignature();
+            } catch (CannotFindMethodException e1) {
+                logger.debug("Cannot find concrete method for {} in SourceCallChainInfo.dump_json()", stmt);
+                invokeSig = invoke.getSignature();
+            }
         	if (!invokeSig.equals(sig)) {
         		fp.printf ("%s  %s,\n", indent, json_field ("source-signature", invokeSig));
         	}

@@ -121,7 +121,7 @@ public class SourceCallTree {
         PrintStream fp;
         try {
             fp = new PrintStream(parentDir + File.separator + FILE_NAME);
-            fp.print (json_call_graph_header ("Entry Points", Collections.EMPTY_MAP));
+            fp.print (json_call_graph_header ("Source Call Graphs from Entry Points", Collections.EMPTY_MAP));
             for (SourceCallChainInfo cci : entry_points) {
                 cci.dump_json (fp, "  ");
                 fp.print(",");
