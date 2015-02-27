@@ -39,12 +39,14 @@
 <p>The DroidSafe system includes:</p>
 
 <ol>
-<li><p>Comprehensive, accurate, and precise Android runtime semantics model.  The model is seeded with the Java code from the Android Open Source Project's (AOSP) implementation of Android 4.4.1.  The DroidSafe team then automatically and manually added semantics to this model to account for native code semantics and runtime code semantics not included in the AOSP Java code.  The model includes a manually-verified core that accounts for over 98% of API calls in Android applications.  The model provides a single language solution for Android static analysis.</p></li>
+<li><p>Comprehensive, accurate, and precise Android runtime semantics model.  The model was seeded with the Java code from the Android Open Source Project's (AOSP) implementation of Android 4.4.1.  The DroidSafe team then automatically and manually added semantics to this model to account for native code semantics and runtime code semantics not included in the AOSP Java code.  The model includes a manually-verified core that accounts for over 98% of API calls in Android applications.  The model provides a single language solution for Android static analysis.</p></li>
 <li><p>A comprehensive set of sensitive source method calls defined on the Android API version 4.4.1.</p></li>
 <li><p>A comprehensive set of sink method calls that can exfiltrate information beyond application boundaries defined on Android API version 4.4.1</p></li>
-<li><p>Scalable and precise global static analysis optimized for the information flow problem on Android.  This includes a deeply object sensitive global points to analysis with a custom solver, and a global call-site sensitive, object sensitive, field sensitive, and flow-insensitive taint analysis.</p></li>
+<li><p>Scalable and precise global static analysis optimized for the information flow problem on Android.  This includes a deeply object sensitive global points to analysis with a custom solver, and a global call-site sensitive, object-sensitive, field-sensitive, and flow-insensitive taint analysis.</p></li>
 <li><p>A plugin for the <a href="https://eclipse.org/">Eclipse IDE</a> designed to help a trusted human analyst rapidly triage an unknown Android application.  The plugin, called the DroidSafe Navigator, presents our information flow analysis and points to analysis results overlaid on the source code for an application.  The DroidSafe Navigator also includes features to guide an analyst to sensitive portions of an application based on API usage and implementation idioms.</p></li>
 </ol>
+
+<p>Our recent publication below demonstrates that the DroidSafe information flow analysis system achieves unprecedented precision and accuracy for Android information flow analysis (as measured on a standard previously published set of benchmark applications). Furthermore, DroidSafe detects all malicious information flow leaks inserted into 24 real-world Android applications by three independent, hostile Red-Team organizations. The previous state-of-the art analysis, in contrast, detects less than 10% of these malicious flows. </p>
 
 <h3>
 <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h3>
