@@ -156,7 +156,7 @@
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
             id="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
-            name="FIlter Droidsafe Taint Sources">
+            name="Filter Droidsafe Taint Sources">
       </command>
       <command
             defaultHandler="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
@@ -605,19 +605,23 @@
          </separator>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.FilterTaintSources"
-               label="Filter Droisafe Taint Sources"
+               label="[Droidsafe] Filter Taint Sources"
                style="push">
          </command>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.ShowTaintSources"
-               label="Show Droidsafe Taint Sources"
+               label="[Droidsafe] Show Taint Sources"
                style="push">
          </command>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
-               label="Show Droidsafe Call Graph"
+               label="{Droidsafe] Show Call Graph"
                style="push">
          </command>
+         <separator
+               name="droidsafe.eclipse.plugin.core.separator2"
+               visible="true">
+         </separator>
       </menuContribution>
       <menuContribution
             allPopups="false"
