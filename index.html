@@ -34,7 +34,17 @@
 <h2>
 <a id="a-platform-for-android-application-analysis" class="anchor" href="#a-platform-for-android-application-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Platform for Android Application Analysis</h2>
 
-<p>The DroidSafe project develops novel program analysis techniques to diagnose and remove malicious code from Android mobile applications. The core of our system is a sound static analysis that can prove important properties of sensitive program behaviors before the programs appear in an application marketplace. Our system greatly improves the guarantees, efficiency, and effectiveness of malware diagnosis.</p>
+<p>The DroidSafe project develops novel program analysis techniques to diagnose and remove malicious code from Android mobile applications. The core of our system is a static taint analysis and information flow analysis that operates on either Java bytecode for an application or an application's apk.  </p>
+
+<p>The DroidSafe system includes:</p>
+
+<ol>
+<li><p>Comprehensive, accurate, and precise Android runtime semantics model</p></li>
+<li><p>A comprehensive set of sensitive source method calls defined on the Android API version 4.4.1.</p></li>
+<li><p>A comprehensive set of sink method calls that can exfiltrate information beyond application boundaries defined on Android API version 4.4.1</p></li>
+<li><p>Scalable and precise global static analysis optimized for the information flow problem on Android.  This includes a deeply object sensitive global points to analysis with a custom solver, and a global call-site sensitive, object sensitive, field sensitive, and flow-insensitive taint analysis.</p></li>
+<li><p>A plugin for the <a href="https://eclipse.org/">Eclipse IDE</a> designed to help a trusted human analyst rapidly triage an unknown Android application.  The plugin, called the DroidSafe Navigator, presents our information flow analysis and points to analysis results overlaid on the source code for an application.  The DroidSafe Navigator also includes features to guide an analyst to sensitive portions of an application based on API usage and implementation idioms.</p></li>
+</ol>
 
 <h3>
 <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h3>
