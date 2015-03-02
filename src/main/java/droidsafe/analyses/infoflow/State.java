@@ -543,6 +543,14 @@ class State {
         this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>(that.iflows);
     }
 
+    public ImmutableSet<InfoValue> getImplicitFlows(Context context, Block block) {
+        Map<Context, Set<InfoValue>> contextToValues = this.iflows.get(block);
+        if (contextToValues == null) return ImmutableSet.<InfoValue>of();
+        Set<InfoValue> values = contextToValues.get(context);
+        if (values == null) return ImmutableSet.<InfoValue>of();
+        return ImmutableSet.<InfoValue>copyOf(values);
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {

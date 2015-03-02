@@ -19,14 +19,15 @@ import soot.ArrayType;
 import soot.Body;
 import soot.Context;
 import soot.G;
+import soot.Hierarchy;
 import soot.Immediate;
 import soot.Local;
-import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.PrimType;
 import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
@@ -75,7 +76,6 @@ import soot.toolkits.graph.DominatorNode;
 
 import com.google.common.collect.ImmutableSet;
 
-import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
@@ -292,7 +292,7 @@ public class InformationFlowAnalysis {
 
 			@Override
 			public void caseIdentityStmt(IdentityStmt stmt) {
-				// Do nothing.
+				execute(stmt, state);
 			}
 
 			@Override
@@ -619,6 +619,20 @@ public class InformationFlowAnalysis {
 			}
 		};
 		stmt.getRightOp().apply(rValueSwitch);
+
+		// Take implicit information flow into account.
+		if (!(lLocal.getType() instanceof RefLikeType)) {
+			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+			Body body = block.getBody();
+			SootMethod method = body.getMethod();
+			Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+			for (MethodOrMethodContext methodContext : methodContexts) {
+				Context context = methodContext.context();
+				if (ignoreContext(context)) continue;
+				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
+				state.locals.putW(context, lLocal, values);
+			}
+		}
 	}
 
 	public static boolean ignoreContext(Context context) {
@@ -753,11 +767,12 @@ public class InformationFlowAnalysis {
 			}
 
 			if (lLocal.getType() instanceof RefLikeType) {
-				Set<IAllocNode> lLocalAllocNodes = (Set<IAllocNode>) PTABridge
-						.v().getPTSet(lLocal, context);
-				for (IAllocNode allocNode : lLocalAllocNodes) {
-					state.instances.putW(allocNode, this.objectUtils.taint,
-							ImmutableSet.<InfoValue> copyOf(values));
+				if (!(values.isEmpty())) {
+					ImmutableSet<InfoValue> vs = ImmutableSet.<InfoValue>copyOf(values);
+					Set<IAllocNode> lLocalAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSet(lLocal, context);
+					for (IAllocNode allocNode : lLocalAllocNodes) {
+						state.instances.putW(allocNode, this.objectUtils.taint, vs);
+					}
 				}
 			} else {
 				state.locals.putW(context, lLocal, values);
@@ -820,11 +835,11 @@ public class InformationFlowAnalysis {
 				values.addAll(sizeValues);
 			}
 			if (!(values.isEmpty())) {
+				ImmutableSet<InfoValue> vs = ImmutableSet.<InfoValue>copyOf(values);
 				Set<IAllocNode> allocNodes = (Set<IAllocNode>) PTABridge.v()
 						.getPTSet(lLocal, context);
 				for (IAllocNode allocNode : allocNodes) {
-					state.instances.putW(allocNode, this.objectUtils.taint,
-							ImmutableSet.<InfoValue> copyOf(values));
+					state.instances.putW(allocNode, this.objectUtils.taint, vs);
 				}
 			}
 		}
@@ -1030,6 +1045,37 @@ public class InformationFlowAnalysis {
 			}
 		};
 		immediate.apply(immediateSwitch);
+
+		// Take implicit information flow into account.
+		if (!(instanceFieldRef.getType() instanceof RefLikeType)) {
+			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+			Body body = block.getBody();
+			SootMethod method = body.getMethod();
+			Local baseLocal = (Local)instanceFieldRef.getBase();
+			SootField field = instanceFieldRef.getField();
+			Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+			Hierarchy hierarchy = Scene.v().getActiveHierarchy();
+			SootClass javaLangThrowable = Scene.v().getSootClass("java.lang.Throwable");
+			for (MethodOrMethodContext methodContext : methodContexts) {
+				Context context = methodContext.context();
+				if (ignoreContext(context)) continue;
+				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
+				if (!(values.isEmpty())) {
+					Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
+					for (IAllocNode allocNode : allocNodes) {
+						if (Config.v().ignoreThrowableFlows) {
+							SootClass allocNodeClass = ((RefType)allocNode.getType()).getSootClass();
+							boolean isThrowable = hierarchy.isClassSubclassOfIncluding(allocNodeClass, javaLangThrowable);
+							if (!(isThrowable)) {
+								state.instances.putW(allocNode, field, values);
+							}
+						} else {
+							state.instances.putW(allocNode, field, values);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// assign_stmt = instance_field_ref "=" local
@@ -1092,6 +1138,21 @@ public class InformationFlowAnalysis {
 			}
 		};
 		rImmediate.apply(immediateSwitch);
+
+		// Take implicit information flow into account.
+		if (!(staticFieldRef.getType() instanceof RefLikeType)) {
+			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+			Body body = block.getBody();
+			SootMethod method = body.getMethod();
+			SootField field = staticFieldRef.getField();
+			Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+			for (MethodOrMethodContext methodContext : methodContexts) {
+				Context context = methodContext.context();
+				if (ignoreContext(context)) continue;
+				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
+				state.statics.putW(field, values);
+			}
+		}
 	}
 
 	// assign_stmt = static_field_ref "=" local
@@ -1133,6 +1194,26 @@ public class InformationFlowAnalysis {
 			}
 		};
 		immediate.apply(immediateSwitch);
+
+		// Take implicit information flow into account.
+		if (!(arrayRef.getType() instanceof RefLikeType)) {
+			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+			Body body = block.getBody();
+			SootMethod method = body.getMethod();
+			Local baseLocal = (Local)arrayRef.getBase();
+			Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+			for (MethodOrMethodContext methodContext : methodContexts) {
+				Context context = methodContext.context();
+				if (ignoreContext(context)) continue;
+				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
+				if (!(values.isEmpty())) {
+					Set<IAllocNode> allocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(baseLocal, context);
+					for (IAllocNode allocNode : allocNodes) {
+						state.arrays.putW(allocNode, values);
+					}
+				}
+			}
+		}
 	}
 
 	// assign_stmt = array_ref "=" local
@@ -1345,14 +1426,13 @@ public class InformationFlowAnalysis {
 								state.locals
 										.putW(callerContext, lLocal, values);
 							} else {
-								ImmutableSet<InfoValue> vs = ImmutableSet
-										.copyOf(values);
-								Set<IAllocNode> allocNodes = (Set<IAllocNode>) PTABridge
-										.v().getPTSet(lLocal, callerContext);
-								for (IAllocNode allocNode : allocNodes) {
-									state.instances.putW(allocNode,
-											this.objectUtils.taint, vs);
-									state.arrays.putW(allocNode, vs);
+								if (!(values.isEmpty())) {
+									ImmutableSet<InfoValue> vs = ImmutableSet.copyOf(values);
+									Set<IAllocNode> allocNodes = (Set<IAllocNode>) PTABridge.v().getPTSet(lLocal, callerContext);
+									for (IAllocNode allocNode : allocNodes) {
+										state.instances.putW(allocNode, this.objectUtils.taint, vs);
+										state.arrays.putW(allocNode, vs);
+									}
 								}
 							}
 						}
@@ -1411,13 +1491,12 @@ public class InformationFlowAnalysis {
 								state.locals
 										.putW(callerContext, lLocal, values);
 							} else {
-								ImmutableSet<InfoValue> vs = ImmutableSet
-										.copyOf(values);
-								Set<IAllocNode> lAllocNodes = (Set<IAllocNode>) PTABridge
-										.v().getPTSet(lLocal, callerContext);
-								for (IAllocNode allocNode : lAllocNodes) {
-									state.instances.putW(allocNode,
-											this.objectUtils.taint, vs);
+								if (!(values.isEmpty())) {
+									ImmutableSet<InfoValue> vs = ImmutableSet.copyOf(values);
+									Set<IAllocNode> lAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSet(lLocal, callerContext);
+									for (IAllocNode allocNode : lAllocNodes) {
+										state.instances.putW(allocNode, this.objectUtils.taint, vs);
+									}
 								}
 							}
 						}
@@ -1825,6 +1904,24 @@ public class InformationFlowAnalysis {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	// stmt = identity_stmt
+	private void execute(IdentityStmt stmt, State state) {
+		// Take implicit information flow into account.
+		Local local = (Local)stmt.getLeftOp();
+		if (!(local.getType() instanceof RefLikeType)) {
+			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+			Body body = block.getBody();
+			SootMethod method = body.getMethod();
+			Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+			for (MethodOrMethodContext methodContext : methodContexts) {
+				Context context = methodContext.context();
+				if (ignoreContext(context)) continue;
+				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
+				state.locals.putW(context, local, values);
 			}
 		}
 	}
