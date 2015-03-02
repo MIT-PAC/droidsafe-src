@@ -615,7 +615,7 @@
          </command>
          <command
                commandId="droidsafe.eclipse.plugin.core.commands.ShowCallHierarchy"
-               label="{Droidsafe] Show Call Graph"
+               label="[Droidsafe] Show Call Graph"
                style="push">
          </command>
          <separator

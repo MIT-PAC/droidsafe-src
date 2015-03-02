@@ -16,7 +16,6 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeRoot;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.TextSelection;
 import org.eclipse.jface.viewers.ISelection;
@@ -63,16 +62,17 @@ public class ShowCallHierarchy extends AbstractHandler {
         		if (projectCallHierarchy != null) {
         			ITypeRoot typeRoot = JavaUI.getEditorInputTypeRoot(editor.getEditorInput());
         			try {
-        				IJavaElement[] elements = typeRoot.codeSelect(textSelection.getOffset(), textSelection.getLength());
+        				int offset = textSelection.getOffset();
+        				IJavaElement[] elements = typeRoot.codeSelect(offset, textSelection.getLength());
         				if (elements != null && elements.length == 1 && elements[0] instanceof IMethod) {
-        					// current selection is a method call
+        					// current selection is a method declaration or a method call
+        					IJavaElement enclosingElement = typeRoot.getElementAt(offset);
         					IMethod method = (IMethod) elements[0];
         					int line = textSelection.getStartLine() + 1;
         					String className = getEnclosingClassName(method);
         					String pkgName = typeRoot.getParent().getElementName();
         					String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
-        					IJavaElement parent = method.getParent();
-        					boolean showCallees = method.isResolved() && !(parent instanceof SourceType);
+        					boolean showCallees = method.isResolved() && enclosingElement instanceof IMethod;
         					if (showCallees) {
         						Collection<JsonElement> targets = CalleeHierarchy.findCallTargets(projectCallHierarchy, method, className, srcClassName, line);
         						if (targets.isEmpty())
