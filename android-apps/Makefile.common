@@ -1,0 +1,269 @@
+# Common Makefile for Android Applications.  Provides standard
+# targets, for building, running, and instrumenting android applications.
+
+# Makefiles that include this one should define NAME (the name of the
+# application).  If the apk name is not bin/$(NAME).apk, it should
+# define APK as well.
+
+# Include the Makefile.user file from the same directory where this
+# file (Makefile.common) lives.  The variables DROIDSAFE_SRC_HOME, DROIDSAFE_APAC_HOME, 
+# ANDROID_SDK_HOME, and JAVA_HOME must be defined in Makefile.user or in the environment.
+COMMON_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+-include $(COMMON_DIR)/Makefile.user
+
+DROIDSAFE_APAC_HOME ?= $(realpath $(COMMON_DIR)/..)
+ANT_OPTS  := "-Xmx2g"
+SDK       := $(ANDROID_SDK_HOME)
+ANDROID_HOME := $(ANDROID_SDK_HOME)
+PATH      := $(SDK)/tools:$(SDK)/platform-tools:$(PATH)
+HERE      := $(realpath .)
+APK       ?= bin/$(NAME).apk
+TARGET    ?= android-19
+LIB       := $(DROIDSAFE_SRC_HOME)/lib
+CLASSPATH := .:$(DROIDSAFE_SRC_HOME)/classes/main:$(DROIDSAFE_SRC_HOME)/bin/*:$(LIB)/asmutil.jar:$(LIB)/slf4j-api-1.7.2.jar:$(LIB)/logback-classic-1.0.7.jar:$(LIB)/logback-core-1.0.7.jar:$(LIB)/soot-2.5.0.jar
+SPEC      ?= $(NAME)
+DBDIR	  := droidsafe-gen
+ASM4	  := $(ssj)/trunk/Instrumentation/lib/asm-debug-all-4.0.jar
+VERIFY	  := $(ssj)/trunk/Instrumentation/src/pac/agent/verifier/verifier.jar
+GOOGLE	  := $(DROIDSAFE_SRC_HOME)/lib/guava-r09.jar
+JAVA_SRC  := $(shell find src -name '*.java')
+XML_SRC   := $(shell find res -name '*.xml') $(wildcard *.xml)
+SRC       := $(JAVA_SRC) $(XML_SRC)
+DS_SRC    := $(shell find $(DROIDSAFE_SRC_HOME)/src -name '*.java')
+API_MODEL_SRC		 := $(shell find $(DROIDSAFE_SRC_HOME)/modeling/api -name '*.java')
+API_MANUAL_MODEL_SRC := $(shell find $(DROIDSAFE_SRC_HOME)/modeling/api-manual  -name '*.java')
+
+ifdef LIBRARY
+  COMMAND_OPTIONS := --library $(LIBRARY)
+else 
+  COMMAND_OPTIONS := 
+endif
+
+# Default arguments to pass to droidsafe.  
+DSARGS ?= 
+
+export PATH CLASSPATH DROIDSAFE_APAC_HOME ANT_OPTS DROIDSAFE_SRC_HOME
+
+help:
+	@echo "errorhandling-apk    - run errorhandling analysis from apk"
+	@echo "errorhandling        - run errorhandling analysis"
+	@echo "specdump-jsa         - create a specification from the source without jsa"
+	@echo "specdump-apk         - create a specification from the apk "
+	@echo "specdump-debug       - create specification and produce debug log"
+	@echo "specdump-debug-jsa   - create specification and produce debug log without jsa"
+	@echo "specdump-log         - create specification and debug log, but no jimple"
+	@echo "specdump-log-apk     - create a specification form the apk and produce debug log"
+	@echo "specdump-apk-analysis - create a specification form the apk, analysisonly"
+	@echo "check-app            - check app against its spec (<appname>.ssl)"
+	@echo "gen-diff-specs       - generate specs before and after droidsafe diff is applied"
+	@echo "update               - Update the android project"
+	@echo "build                - build the app"
+	@echo "run                  - build and install the app"
+	@echo "dump-vars            - dump out Makefile/Environment variables"
+	@echo "logcat               - echo emulator log messages (until stopped)"
+	@echo "avd                  - Start the android avd"
+	@echo "devices              - list available devices"
+	@echo "on-click             - lists all on-click tags and their targets"
+	@echo "dump-res             - dumps the resources"
+	@echo "manifest             - dumps the manifest"
+	@echo "test                 - tests check-app and specdump targets"
+	@echo "update-goals         - Update the goal files from current run"
+	@echo "svnignore	        - install the default ignores in this directory"
+	@echo "clean				- clean various built files"
+	@echo "usage                - print droidsafe usage information"
+	@echo "Arguments            - Specify arguments to specdump or specdump-log by"
+	@echo "                       setting the variable DSARGS.  This can be set in"
+	@echo "                       the environment, Makefile.user or on the command line"
+
+avd:
+	android avd &
+
+devices:
+	adb devices;
+
+targets:
+	android list targets;
+
+$(DROIDSAFE_SRC_HOME)/bin/droidsafe-core.jar : $(DS_SRC)
+	cd $(DROIDSAFE_SRC_HOME) && ant compile-ds
+
+$(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-api-model.jar : $(API_MODEL_SRC)
+	cd $(DROIDSAFE_SRC_HOME) && ant compile-model
+
+$(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-manual-api-model.jar: $(API_MANUAL_MODEL_SRC)
+	cd $(DROIDSAFE_SRC_HOME) && ant compile-manual-model
+
+spec.js:
+	cp -n $(COMMON_DIR)/spec_template.js spec.js
+
+droidsafe-prelim: $(DROIDSAFE_SRC_HOME)/bin/droidsafe-core.jar $(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-api-model.jar \
+				  $(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-manual-api-model.jar
+
+usage: build droidsafe-prelim 
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -help
+
+errorhandling: build jsrc droidsafe-prelim spec.js
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -t errorhandling
+
+errorhandling-apk: unpack-apk droidsafe-prelim 
+	@if [ -f $(APK) ] ; then \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apkfile $(APK) -t errorhandling; \
+	else \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apk -t errorhandling; \
+	fi;
+
+# run the droidsafe standard.  Arguments can be specified using $DSARGS
+specdump: build jsrc droidsafe-prelim spec.js
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -t specdump
+
+# run the droidsafe with logging. Arguments can be specified using $DSARGS
+# This could be accomplished by passing -debug to specdump, but is included
+# because it is commonly used.
+specdump-log: build jsrc droidsafe-prelim 
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -debug $(DSARGS) -approot $(HERE) -t specdump 
+
+# run the droidsafe standard on apk.  Arguments can be specified using $DSARGS
+specdump-apk: unpack-apk droidsafe-prelim
+	@if [ -f $(APK) ] ; then \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apkfile $(APK) -t specdump ; \
+	else \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apk -t specdump ; \
+	fi;
+
+specdump-apk-analysis: unpack-apk droidsafe-prelim
+	@if [ -f $(APK) ] ; then \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apkfile $(APK) -t specdump -noreports -noptaresult -analysisonlyrun ; \
+	else \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apk -t specdump -noreports -noptaresult -analysisonlyrun  ; \
+	fi;
+
+
+# run the droidsafe with logging on apk. Arguments can be specified using $DSARGS
+# This could be accomplished by passing -debug to specdump-apk, but is included
+# because it is commonly used.
+specdump-log-apk: unpack-apk droidsafe-prelim 
+	@if [ -f $(APK) ] ; then \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe -debug $(DSARGS) -approot $(HERE) -apkfile $(APK) -t specdump ; \
+	else \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe -debug $(DSARGS) -approot $(HERE) -apk -t specdump ; \
+	fi;
+
+unpack-apk:
+	@if [ -f $(APK) ] ; then \
+	     $(DROIDSAFE_SRC_HOME)/bin/unpack-apk -f $(APK) ; \
+	else \
+	     $(DROIDSAFE_SRC_HOME)/bin/unpack-apk ; \
+	fi;
+
+# For now, this assumes that the spec is <appname>.ssl in the root
+# directory of the app. 
+check-app: build 
+	rm -f $(DBDIR)/droidsafe.log
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -approot $(HERE) -debug -s $(HERE)/$(SPEC).ssl -t confcheck
+	@echo "Checking for Violation "
+	@ -! grep VIOLATION $(DBDIR)/droidsafe.log
+
+on-click:
+	cd $(DROIDSAFE_SRC_HOME); ant compile build-libs
+	java droidsafe.android.app.resources.ResolveOnClick $(HERE)
+
+manifest:
+	cd $(DROIDSAFE_SRC_HOME); ant compile build-libs
+	java droidsafe.android.app.resources.DumpManifest $(HERE)
+
+manifest-summary:
+	$(DROIDSAFE_SRC_HOME)/tools/DumpManifest $(HERE) $(DBDIR)/manifest-summary.txt
+
+
+
+dump-res:
+	cd $(DROIDSAFE_SRC_HOME); ant compile
+	java droidsafe.android.app.resources.DumpRes $(HERE)
+
+cfg:
+	cd $(DROIDSAFE_SRC_HOME); ant compile build-libs
+	java -cp .:$(ASM4):$(VERIFY):$(PLUME):$(GOOGLE):$(DROIDSAFE_SRC_HOME)/classes/main:$(DROIDSAFE_SRC_HOME)/lib/asmutil.jar:$(DBLAZE) \
+	  droidsafe.android.analyses.resources.CFGDump $(HERE)
+
+build.xml: 
+	$(PREBUILD_COMMAND)
+	android update project --subprojects --name $(NAME) --target $(TARGET) --path . $(COMMAND_OPTIONS) ;
+
+update: build.xml
+
+libs/droidcalls.jar : $(DROIDSAFE_SRC_HOME)/android-lib/droidcalls.jar
+	install -d libs
+	cp -f $(DROIDSAFE_SRC_HOME)/android-lib/droidcalls.jar libs
+
+$(APK) : $(SRC) build.xml
+	printenv ANDROID_SDK_HOME
+	ant debug
+
+build: $(APK) 
+
+run: update 
+	ant debug install
+
+jsrc : $(SRC) $(DROIDSAFE_SRC_HOME)/tools/java2html/j2h.jar $(DROIDSAFE_SRC_HOME)/tools/fix_java2html.php
+	/bin/rm -rf jsrc
+	java -cp $(DROIDSAFE_SRC_HOME)/tools/java2html/j2h.jar j2h -d jsrc -js src -m 5
+	$(DROIDSAFE_SRC_HOME)/tools/fix_java2html.php `find jsrc -name '*.java.html'`
+
+java2html: jsrc
+
+test: specdump
+	-diff -u specdump_goal.ssl $(dbdir)/*.ssl \
+	  > specdump.diff
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -approot $(HERE) \
+		-s $(HERE)/$(SPEC).ssl -t confcheck
+	-grep VIOLATION $(DBDIR)/droidsafe.log > speccheck.err
+	@echo "Empty diff/err files indicate success, non-empty failure"
+	@ls -l *.diff *.err | awk '{printf "%-20s %5d\n", $$9, $$5}'
+
+gen-diff-specs: build
+	# generate specdump before the diff is applied
+	cd $(DROIDSAFE_SRC_HOME) && ant compile
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -approot $(HERE) -t specdump
+	cp $(HERE)/droidsafe/template-spec.ssl $(HERE)/specdump_before_diff
+	# apply the diff and generate specdump afterwards
+	cd $(DROIDSAFE_SRC_HOME) && git apply $(DIFF_FILE) && ant compile
+	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -approot $(HERE) -t specdump
+	cp $(HERE)/droidsafe/template-spec.ssl $(HERE)/specdump_after_diff
+	# unapply the diff
+	cd $(DROIDSAFE_SRC_HOME) && git apply -R $(DIFF_FILE)
+
+
+update-goals:
+	cp $(DBDIR)/*.ssl specdump_goal.ssl
+
+# Build a jar file with the original java bytecode
+bcjar :
+	jar cvf $(NAME)-debug.jar -C android android \
+	  -C bin/classes com -C ../../../android-lib/src edu
+
+# Cat the debug logfile from the emulator
+logcat:
+	adb logcat > output.log &
+
+log-on:
+	cp custom_rules.xml.none custom_rules.xml
+
+log-off:
+	rm custom_rules.xml
+
+dump-vars:
+	@echo "PATH             = '$(PATH)'"
+	@echo "JAVA_HOME        = '$(JAVA_HOME)'"
+	@echo "HERE             = '$(HERE)'"
+	@echo "ANDROID_SDK_HOME = '$(ANDROID_SDK_HOME)'"
+	@echo "ANDROID          = '$(ANDROID)'"
+	@echo "classpath        = '$(CLASSPATH)'"
+
+svnignore:
+	svn propset svn:ignore -F $(DROIDSAFE_APAC_HOME)/android-apps/svn.ignore.txt .
+	svn propset svn:ignore -F $(DROIDSAFE_APAC_HOME)/android-apps/svn.ignore-libs.txt libs
+	svn commit -m "adding default ignores for this app"
+
+clean:
+	/bin/rm -rf droidsafe-gen jsrc sootOutput spec.js bin build.xml project.properties proguard-project.txt gen local.properties
+
