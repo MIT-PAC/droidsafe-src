@@ -93,16 +93,13 @@ $(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-api-model.jar : $(API_MODEL_SRC)
 $(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-manual-api-model.jar: $(API_MANUAL_MODEL_SRC)
 	cd $(DROIDSAFE_SRC_HOME) && ant compile-manual-model
 
-spec.js:
-	cp -n $(COMMON_DIR)/spec_template.js spec.js
-
 droidsafe-prelim: $(DROIDSAFE_SRC_HOME)/bin/droidsafe-core.jar $(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-api-model.jar \
 				  $(DROIDSAFE_SRC_HOME)/android-lib/droidsafe-manual-api-model.jar
 
 usage: build droidsafe-prelim 
 	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -help
 
-errorhandling: build jsrc droidsafe-prelim spec.js
+errorhandling: build droidsafe-prelim
 	$(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -t errorhandling
 
 errorhandling-apk: unpack-apk droidsafe-prelim 
@@ -113,13 +110,13 @@ errorhandling-apk: unpack-apk droidsafe-prelim
 	fi;
 
 # run the droidsafe standard.  Arguments can be specified using $DSARGS
-specdump: build jsrc droidsafe-prelim spec.js
+specdump: build droidsafe-prelim
 	$(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -t specdump
 
 # run the droidsafe with logging. Arguments can be specified using $DSARGS
 # This could be accomplished by passing -debug to specdump, but is included
 # because it is commonly used.
-specdump-log: build jsrc droidsafe-prelim 
+specdump-log: build droidsafe-prelim 
 	$(DROIDSAFE_SRC_HOME)/bin/droidsafe -debug $(DSARGS) -approot $(HERE) -t specdump 
 
 # run the droidsafe standard on apk.  Arguments can be specified using $DSARGS
@@ -204,13 +201,6 @@ build: $(APK)
 run: update 
 	ant debug install
 
-jsrc : $(SRC) $(DROIDSAFE_SRC_HOME)/tools/java2html/j2h.jar $(DROIDSAFE_SRC_HOME)/tools/fix_java2html.php
-	/bin/rm -rf jsrc
-	java -cp $(DROIDSAFE_SRC_HOME)/tools/java2html/j2h.jar j2h -d jsrc -js src -m 5
-	$(DROIDSAFE_SRC_HOME)/tools/fix_java2html.php `find jsrc -name '*.java.html'`
-
-java2html: jsrc
-
 test: specdump
 	-diff -u specdump_goal.ssl $(dbdir)/*.ssl \
 	  > specdump.diff
@@ -265,5 +255,5 @@ svnignore:
 	svn commit -m "adding default ignores for this app"
 
 clean:
-	/bin/rm -rf droidsafe-gen jsrc sootOutput spec.js bin build.xml project.properties proguard-project.txt gen local.properties
+	/bin/rm -rf droidsafe-gen sootOutput bin build.xml project.properties proguard-project.txt gen local.properties
 
