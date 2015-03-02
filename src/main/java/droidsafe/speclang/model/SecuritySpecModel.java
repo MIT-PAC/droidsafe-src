@@ -208,11 +208,11 @@ PropertyChangeListener {
         computeTaintInfo();
         computeUneachableSourceMethods();
         computeSourceMethodLocationMap();
-        //        if (Config.v().debug) {
-        writeTaintInfoToFile();
-        writeUnreachableSourceMethodsToFile();
-        writeSourceMethodLocationMapToFile();
-        //        }
+        if (Config.v().debug) {
+        	writeTaintInfoToFile();
+        	writeUnreachableSourceMethodsToFile();
+        	writeSourceMethodLocationMapToFile();
+        }
     }
     
     /**
