@@ -36,14 +36,20 @@ def run_droidsafe(args):
 
     java_command.append("-Djava.library.path=" + DROIDSAFE_SRC_HOME + "lib")
 
-    if (HOSTNAME in SERVERS):
-        print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
-        java_command.append("-Xms2g")
-        java_command.append("-Xmx" + SERVER_MEMORY+ "g")
-    else:
+    if ("DROIDSAFE_MEMORY" in os.environ):
+        DROIDSAFE_MEMORY = os.environ['DROIDSAFE_MEMORY']
+        print("Setting memory size to " + DROIDSAFE_MEMORY + "GB")
         java_command.append("-Xms1g")
-        java_command.append("-Xmx" + DESKTOP_MEMORY+ "g")
-
+        java_command.append("-Xmx" + DROIDSAFE_MEMORY + "g")
+    else:
+        if (HOSTNAME in SERVERS):
+            print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
+            java_command.append("-Xms2g")
+            java_command.append("-Xmx" + SERVER_MEMORY+ "g")
+        else:
+            java_command.append("-Xms1g")
+            java_command.append("-Xmx" + DESKTOP_MEMORY+ "g")
+    
 #   java_command.append("-Xrunhprof:heap=sites,depth=6")
     java_command.append("-Dfile.encoding=UTF-8")
 
