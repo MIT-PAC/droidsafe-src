@@ -1028,6 +1028,57 @@ public class InformationFlowAnalysis {
                 }
             }
         }
+
+        // lLocal = rLocal.M()
+        //
+        //   for each callerMethodContext = (callerMethod, callerContext),
+        //     for each calleeMethod (the target method of rLocal.M()) under callerMethodContext),
+        //       if callerMethod is not a system method and calleeMethod is a system method,
+        //         let values be {state[(allocNode, "taint")] | allocNode in points-to(rLocal, callerContext)}
+        //         if lLocal is of primitive type
+        //           state[(lLocal, callerContext)] += values
+        //         else
+        //           for each allocNode in points-to(lLocal, callerContext)
+        //             state[(allocNode, "taint")] += values
+        if (Config.v().infoFlowTransferTaintField) {
+            if (stmt instanceof AssignStmt && invokeExpr instanceof InstanceInvokeExpr) {
+                Local lLocal = (Local)((AssignStmt)stmt).getLeftOp();
+                Type lLocalType = lLocal.getType();
+                Local rLocal = (Local)((InstanceInvokeExpr)invokeExpr).getBase();
+                for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
+                    Context callerContext = callerMethodContext.context();
+                    if (ignoreContext(callerContext)) {
+                        continue;
+                    }
+                    List<Edge> callEdges = PTABridge.v().outgoingEdges(callerMethodContext, stmt);
+                    for (Edge callEdge : callEdges) {
+                        MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
+                        Context calleeContext = calleeMethodContext.context();
+                        if (ignoreContext(calleeContext)) {
+                            continue;
+                        }
+                        SootMethod calleeMethod = calleeMethodContext.method();
+                        if (!(API.v().isSystemMethod(callerMethod)) && API.v().isSystemMethod(calleeMethod)) {
+                            HashSet<InfoValue> values = new HashSet<InfoValue>();
+                            Set<IAllocNode> rAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(rLocal, callerContext);
+                            for (IAllocNode allocNode : rAllocNodes) {
+                                ImmutableSet <InfoValue> vs = state.instances.get(allocNode, this.objectUtils.taint);
+                                values.addAll(vs);
+                            }
+                            if (lLocalType instanceof PrimType) {
+                                state.locals.putW(callerContext, lLocal, values);
+                            } else {
+                                ImmutableSet<InfoValue> vs = ImmutableSet.copyOf(values);
+                                Set<IAllocNode> lAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(lLocal, callerContext);
+                                for (IAllocNode allocNode : lAllocNodes) {
+                                    state.instances.putW(allocNode, this.objectUtils.taint, vs);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void executeGetTaint(Stmt stmt, InvokeExpr invokeExpr, State state) {

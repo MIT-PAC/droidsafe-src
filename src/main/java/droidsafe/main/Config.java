@@ -113,6 +113,8 @@ public class Config {
     public boolean infoFlowNative = false;
     /** If true, do not transfer taints that flow into array indices. */
     public boolean infoFlowNoArrayIndex = false;
+    /** If true, always transfer y.taint into x.taint (or x) for x = y.m() */
+    public boolean infoFlowTransferTaintField = false;
     /** should we call unreachable callbacks, and insert dummy objects for unmodeled api calls? */
     public boolean addFallbackModeling = true;
 
@@ -427,6 +429,7 @@ public class Config {
         options.addOption(infoflowNative);
 
         options.addOption(new Option("noarrayindex", "Do not transfer taints that flow into array indices"));
+        options.addOption(new Option("transfertaintfield", "Always transfer y.taint into x.taint (or x) for x = y.m()"));
 
         Option approot =
                 OptionBuilder.withArgName("dir").hasArg()
@@ -623,6 +626,11 @@ public class Config {
         if (cmd.hasOption("noarrayindex")) {
             assert this.infoFlow;
             this.infoFlowNoArrayIndex = true;
+        }
+
+        if (cmd.hasOption("transfertaintfield")) {
+            assert this.infoFlow;
+            this.infoFlowTransferTaintField = true;
         }
 
         if (cmd.hasOption("pta")) {
