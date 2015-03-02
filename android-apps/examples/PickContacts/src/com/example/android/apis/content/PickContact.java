@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
+
 package com.example.android.apis.content;
 
 // Need the following import to get access to the app resources, since this
@@ -51,6 +55,7 @@ import org.apache.http.client.*;
 public class PickContact extends Activity {
     Toast mToast;
     ResultDisplayer mPendingResult;
+    String mDeviceID;
 
     class ResultDisplayer implements OnClickListener {
         String mMsg;
@@ -62,24 +67,39 @@ public class PickContact extends Activity {
         }
         
         public void onClick(View v) {
-            TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-            String deviceID = telephonyManager.getDeviceId();
+        	performButtonAction();
+        	
+        }
 
+		private void performButtonAction() {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             intent.setType(mMimeType);
-            intent.putExtra("Device ID", deviceID);
-
+            intent.putExtra("Device ID", getDeviceID());
             mPendingResult = this;
             startActivityForResult(intent, 1);
-        }
+		}
     }
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.pick_contact);
+        setupButtonListeners();
+    }
 
+    private String getDeviceID() {
+		if (mDeviceID == null) {
+			TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+			mDeviceID = telephonyManager.getDeviceId();
+			}
+		return mDeviceID;
+	}
+    
+    private void setDeviceID(String id) {
+    	mDeviceID = id;
+    }
+
+	private void setupButtonListeners() {
         // Watch for button clicks.
         ((Button)findViewById(R.id.pick_contact)).setOnClickListener(
                 new ResultDisplayer("Selected contact",
@@ -93,47 +113,53 @@ public class PickContact extends Activity {
         ((Button)findViewById(R.id.pick_address)).setOnClickListener(
          new ResultDisplayer("Selected address",
          ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_ITEM_TYPE));
+	}
 
-    }
-
-    @Override
+	@Override
     protected void onActivityResult(int requestCode, int resultCode, 
                                     Intent data) {
         if (data != null) {
-            String deviceID = data.getStringExtra("Device ID");
-
-            // send device id to URL
+        	sendData(data);
+        	showData(data);
+        }
+    }
+    
+    private void showData(Intent data) {
+        Uri uri = data.getData();
+        
+        if (uri != null) {
+            Cursor c = null;
             try {
-                HttpGet hget = new HttpGet ("http:www.google.com?query=" + deviceID);
-                HttpClient client = new DefaultHttpClient();
-                client.execute (hget);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            Uri uri = data.getData();
-            
-            if (uri != null) {
-                Cursor c = null;
-                try {
-                    c = getContentResolver().query(uri, 
-                           new String[] { BaseColumns._ID }, null, null, null);
-                    if (c != null && c.moveToFirst()) {
-                        int id = c.getInt(0);
-                        if (mToast != null) {
-                            mToast.cancel();
-                        }
-                        String txt = mPendingResult.mMsg + ":\n" + uri 
-                                                         + "\nid: " + id;
-                        mToast = Toast.makeText(this, txt, Toast.LENGTH_LONG);
-                        mToast.show();
+                c = getContentResolver().query(uri, 
+                       new String[] { BaseColumns._ID }, null, null, null);
+                if (c != null && c.moveToFirst()) {
+                    int id = c.getInt(0);
+                    if (mToast != null) {
+                        mToast.cancel();
                     }
-                } finally {
-                    if (c != null) {
-                        c.close();
-                    }
+                    String txt = mPendingResult.mMsg + ":\n" + uri 
+                                                     + "\nid: " + id;
+                    mToast = Toast.makeText(this, txt, Toast.LENGTH_LONG);
+                    mToast.show();
+                }
+            } finally {
+                if (c != null) {
+                    c.close();
                 }
             }
+        }
+	}
+
+	private void sendData(Intent data) {
+        String deviceID = data.getStringExtra("Device ID");
+
+        // send device id to URL
+        try {
+            HttpGet hget = new HttpGet ("http:www.google.com?query=" + deviceID);
+            HttpClient client = new DefaultHttpClient();
+            client.execute (hget);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
