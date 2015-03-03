@@ -47,7 +47,7 @@
       =====================================================================
       Documentation Targets:
       =====================================================================
-      javadoc       Generate javadoc for DroidBlaze's Java source code
+      javadoc       Generate javadoc for Droidsafe's Java source code
       htmldoc       Generate HTML user guide (needs hyperlatex)
       =====================================================================
       Testing Targets:
@@ -457,6 +457,24 @@
 
 
 
+    <!--
+  ==========================================================================
+        Generate Javadoc for DROIDSAFE source code
+  ==========================================================================
+    -->
+
+    <target name="javadoc">
+        <mkdir dir="javadoc"/>
+        <javadoc
+            classpathref="lib-jars"
+            sourcepath="src/main/java"
+			destdir="javadoc"
+            windowtitle="Droidsafe API"
+            use="true"
+            useexternalfile="true"
+        />
+    </target>
+
    <!--
  ==========================================================================
         Copy libraries for eclipse plugin
@@ -508,7 +526,7 @@
 
    <!--
  ==========================================================================
-        Build package and deployt the eclipse plugin
+        Build package and deploy the eclipse plugin
  ==========================================================================
     -->
   <target name="plugin-build" 
