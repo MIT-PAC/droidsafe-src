@@ -23,6 +23,14 @@
  * questions.
  */
 
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+/* 
+ * 2015-03-03 Limei Gilham <gilham@kestrel.edu>
+ *
+ *   - Extended from the original implemention of java.util.LinkedHashMap in OpenJDK 7
+ *     with a new field keyEquality which implements doridsafe.utils.Equality.
+ */
+
 package droidsafe.utils;
 
 import java.util.ConcurrentModificationException;
