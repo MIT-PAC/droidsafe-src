@@ -14,11 +14,11 @@ accuracy, and scalability for real-world Android applications.
 Setup
 =====
 
-* [Detailed instructions](https://github.mit.edu/PAC-DroidSafe/droidsafe-src/wiki/Requirements)
-* [Compiling the Analysis](https://github.mit.edu/PAC-DroidSafe/droidsafe-src/wiki/Installing-the-Droidsafe-Analyzer)
-* [Installing the Eclipse Plugin](https://github.mit.edu/PAC-DroidSafe/droidsafe-src/wiki/Installing-the-Droidsafe-Eclipse-Plugin)
-* [Running Analysis](https://github.mit.edu/PAC-DroidSafe/droidsafe-src/wiki/Running-the-Droidsafe-Analyzer)
-* [Running Eclipse Plugin](https://github.mit.edu/PAC-DroidSafe/droidsafe-src/wiki/Running-the-Droidsafe-Eclipse-Plugin)
+* [Detailed instructions](https://github.com/MIT-PAC/droidsafe-src/wiki/Requirements)
+* [Compiling the Analysis](https://github.com/MIT-PAC/droidsafe-src/wiki/Installing-the-Droidsafe-Analyzer)
+* [Installing the Eclipse Plugin](https://github.com/MIT-PAC/droidsafe-src/wiki/Installing-the-Droidsafe-Eclipse-Plugin)
+* [Running Analysis](https://github.com/MIT-PAC/droidsafe-src/wiki/Running-the-Droidsafe-Analyzer)
+* [Running Eclipse Plugin](https://github.com/MIT-PAC/droidsafe-src/wiki/Running-the-Droidsafe-Eclipse-Plugin)
 
 
 Directory Structure
