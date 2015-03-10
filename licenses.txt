@@ -558,8 +558,7 @@ Section 4. Java String Analyzer (JSA)
 
 The BRICS Java String Analyzer (JSA) is licensed under the GNU General Public
 License. We have modified JSA version 2.1 and included in this distribution a
-binary library with the modifications.  The source code can be downloaded from
-the jsa-src repository at GitHub.
+binary library with the modifications.  The source code is available upon request.
 
 
 ==================================
