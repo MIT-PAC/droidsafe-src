@@ -93,7 +93,7 @@ abstract class RFC1522Codec {
      *          encoding names</a>
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.321 -0400", hash_original_method = "00FAF8953862632630D9A6F8E97BB3CD", hash_generated_method = "DD900E84F69FF4D34DA6946AB361F5F5")
-    
+    @DSSink(DSSinkKind.ENCODER)
 protected String encodeText(final String text, final String charset)
      throws EncoderException, UnsupportedEncodingException  
     {
@@ -183,6 +183,7 @@ protected abstract String getEncoding();
      */    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.323 -0400", hash_original_method = "24ABC15B4A8032FE22C42A9FEAA52972", hash_generated_method = "8350B5D79E259D9D2697F32A59F64DC5")
     @DSSource(DSSourceKind.ENCODED)
+    @DSSink(DSSinkKind.ENCODER)
 protected abstract byte[] doEncoding(byte[] bytes) throws EncoderException;
 
     /**

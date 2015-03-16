@@ -385,7 +385,7 @@ public PrintStream format(Locale l, String format, Object... args) {
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.049 -0500", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "4289AA1E34294762A281E81EC632CE31")
-    
+    @DSSink(DSSinkKind.IO)
 public PrintStream printf(String format, Object... args) {
         return format(format, args);
     }
@@ -410,7 +410,7 @@ public PrintStream printf(String format, Object... args) {
      * @throws NullPointerException if {@code format == null}.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.052 -0500", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "7FF92F5F2A23577E4AA6EF79C86D6193")
-    
+    @DSSink(DSSinkKind.IO)
 public PrintStream printf(Locale l, String format, Object... args) {
         return format(l, format, args);
     }

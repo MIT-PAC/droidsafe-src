@@ -103,6 +103,7 @@ public HttpGet(final URI uri) {
         //setURI(URI.create(uri));
     }
     
+    @DSSink(DSSinkKind.NETWORK)
     public void setURI(final URI uri) {
         this.theURI = uri;
     }

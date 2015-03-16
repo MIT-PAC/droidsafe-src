@@ -140,8 +140,8 @@ private void implCreateIfNeeded() throws IOException {
      * not exist.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.195 -0500", hash_original_method = "FEC40F6E47E3058E55E0DA8C21B29091", hash_generated_method = "093B3CA6BEB21278CDCA9E7AF5C9F77B")
-    @DSSpec(DSCat.NETWORK)
-public void connect(LocalSocketAddress endpoint) throws IOException {
+    @DSSpec(DSCat.NETWORK)    
+    public void connect(LocalSocketAddress endpoint) throws IOException {
         synchronized (this) {
             if (isConnected) {
                 throw new IOException("already connected");

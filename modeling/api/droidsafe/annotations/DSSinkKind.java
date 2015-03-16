@@ -62,5 +62,6 @@ public enum DSSinkKind {
     GOOGLE_SERVICES,
     GOOGLE_DRIVE,
     GUI,
-    EXEC
+    EXEC,
+    ENCODER
 }

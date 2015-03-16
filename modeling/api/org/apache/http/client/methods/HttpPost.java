@@ -110,6 +110,7 @@ public HttpPost(final URI uri) {
     }
 
     @DSSafe()
+    @DSSink(DSSinkKind.NETWORK)
     public void setURI(final URI uri) {
         this.theURI = uri;
     }

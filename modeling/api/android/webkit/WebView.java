@@ -2558,7 +2558,7 @@ public void postUrl(String url, byte[] postData) {
     @DSComment("I/O load/store")
     @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.576 -0500", hash_original_method = "36CBAFDF58E1CD9C6313A9EA95B15170", hash_generated_method = "7129D2CE5481188BA506D152E5DF4298")
-    
+    @DSSink(DSSinkKind.NETWORK)
 public void loadData(String data, String mimeType, String encoding) {
         loadDataImpl(data, mimeType, encoding);
     }

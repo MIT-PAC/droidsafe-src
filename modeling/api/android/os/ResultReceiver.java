@@ -106,7 +106,7 @@ ResultReceiver(Parcel in) {
      * @param resultCode Arbitrary result code to deliver, as defined by you.
      * @param resultData Any additional data provided by you.
      */
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.OS_COMMAND})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.376 -0500", hash_original_method = "09F6E48395AF4822069195CE0B4A582F", hash_generated_method = "A333E88D55493381E6E2689B194132B6")
     
 public void send(int resultCode, Bundle resultData) {
