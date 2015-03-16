@@ -12091,5 +12091,21 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	*/
     }
 
+    /**
+     * Asynchronously evaluates JavaScript in the context of the currently displayed page.
+     * If non-null, |resultCallback| will be invoked with any result returned from that
+     * execution. This method must be called on the UI thread and the callback will
+     * be made on the UI thread.
+     *
+     * @param script the JavaScript to execute.
+     * @param resultCallback A callback to be invoked when the script execution
+     *                       completes with the result of the execution (if any).
+     *                       May be null if no notificaion of the result is required.
+     */
+    @DSSpec(DSCat.EXEC)
+    @DSSink(DSSinkKind.EXEC)
+    public void evaluateJavascript(String script, ValueCallback<String> resultCallback) {
+        
+    }
 }
 

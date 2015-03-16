@@ -58,6 +58,8 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
+import android.net.wifi.p2p.nsd.WifiP2pServiceRequest;
+import android.net.wifi.p2p.nsd.WifiP2pServiceInfo;
 
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
@@ -623,5 +625,82 @@ public Messenger getMessenger() {
             return null;
         }
     }
+
+    /**
+     * Register a local service for service discovery. If a local service is registered,
+     * the framework automatically responds to a service discovery request from a peer.
+     *
+     * <p> The function call immediately returns after sending a request to add a local
+     * service to the framework. The application is notified of a success or failure to
+     * add service through listener callbacks {@link ActionListener#onSuccess} or
+     * {@link ActionListener#onFailure}.
+     *
+     * <p>The service information is set through {@link WifiP2pServiceInfo}.<br>
+     * or its subclass calls  {@link WifiP2pUpnpServiceInfo#newInstance} or
+     *  {@link WifiP2pDnsSdServiceInfo#newInstance} for a Upnp or Bonjour service
+     * respectively
+     *
+     * <p>The service information can be cleared with calls to
+     *  {@link #removeLocalService} or {@link #clearLocalServices}.
+     *
+     * @param c is the channel created at {@link #initialize}
+     * @param servInfo is a local service information.
+     * @param listener for callbacks on success or failure. Can be null.
+     */
+    @DSSpec(DSCat.NETWORK)
+    public void addLocalService(Channel c, WifiP2pServiceInfo servInfo, ActionListener listener) {
+       
+    }
+
+    /**
+     * Add a service discovery request.
+     *
+     * <p> The function call immediately returns after sending a request to add service
+     * discovery request to the framework. The application is notified of a success or failure to
+     * add service through listener callbacks {@link ActionListener#onSuccess} or
+     * {@link ActionListener#onFailure}.
+     *
+     * <p>After service discovery request is added, you can initiate service discovery by
+     * {@link #discoverServices}.
+     *
+     * <p>The added service requests can be cleared with calls to
+     * {@link #removeServiceRequest(Channel, WifiP2pServiceRequest, ActionListener)} or
+     * {@link #clearServiceRequests(Channel, ActionListener)}.
+     *
+     * @param c is the channel created at {@link #initialize}
+     * @param req is the service discovery request.
+     * @param listener for callbacks on success or failure. Can be null.
+     */
+    @DSSpec(DSCat.NETWORK)
+    public void addServiceRequest(Channel c,
+            WifiP2pServiceRequest req, ActionListener listener) {
+        
+    }
+
+    
+    /**
+     * Initiate service discovery. A discovery process involves scanning for
+     * requested services for the purpose of establishing a connection to a peer
+     * that supports an available service.
+     *
+     * <p> The function call immediately returns after sending a request to start service
+     * discovery to the framework. The application is notified of a success or failure to initiate
+     * discovery through listener callbacks {@link ActionListener#onSuccess} or
+     * {@link ActionListener#onFailure}.
+     *
+     * <p> The services to be discovered are specified with calls to {@link #addServiceRequest}.
+     *
+     * <p>The application is notified of the response against the service discovery request
+     * through listener callbacks registered by {@link #setServiceResponseListener} or
+     * {@link #setDnsSdResponseListeners}, or {@link #setUpnpServiceResponseListener}.
+     *
+     * @param c is the channel created at {@link #initialize}
+     * @param listener for callbacks on success or failure. Can be null.
+     */
+    @DSSpec(DSCat.NETWORK)
+    public void discoverServices(Channel c, ActionListener listener) {
+       
+    }
+
 }
 

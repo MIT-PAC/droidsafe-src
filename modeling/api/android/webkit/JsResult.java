@@ -90,7 +90,7 @@ public final void cancel() {
      * Handle a confirmation response from the user.
      */
     @DSComment("no security concern")
-    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSpec(DSCat.DATA_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.722 -0500", hash_original_method = "600681B39DE4E67D9402AFEDAC93A2DE", hash_generated_method = "C95AD86C921BF59FC64E8F9566591A20")
     
 public final void confirm() {

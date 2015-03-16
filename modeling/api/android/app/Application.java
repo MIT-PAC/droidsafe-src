@@ -166,7 +166,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.761 -0500", hash_original_method = "E08A3F54F3A8B985B7290C2DDF6D4A2E", hash_generated_method = "6F4F097EBEF8246D1D26651C3F5AD02C")
-    
+    @DSSpec(DSCat.CALLBACK_REG)
 public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
         synchronized (mActivityLifecycleCallbacks) {
             mActivityLifecycleCallbacks.add(callback);

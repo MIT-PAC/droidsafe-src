@@ -874,7 +874,7 @@ void buildFieldDescriptors(Field[] declaredFields) {
      *         {@code null} if there is no corresponding class.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.288 -0500", hash_original_method = "3FC829F6BB79347D76007A55E3423470", hash_generated_method = "4254136FF2998A18A9977A88AE4EA5EE")
-    
+    @DSSpec(DSCat.REFLECTION)
 public Class<?> forClass() {
         return resolvedClass;
     }

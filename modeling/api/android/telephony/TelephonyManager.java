@@ -112,6 +112,7 @@ public static int getNetworkClass(int networkType) {
 
     /** {@hide} */
     @DSSource({DSSourceKind.NETWORK})
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.099 -0500", hash_original_method = "16F509F126A872299A1C262559222D5E", hash_generated_method = "A6761E784015C0E03C3DD0D41D1E2EED")
     
 public static String getNetworkTypeName(int type) {

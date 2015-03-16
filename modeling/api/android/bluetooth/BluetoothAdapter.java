@@ -799,7 +799,7 @@ public boolean isDiscovering() {
      */
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.779 -0500", hash_original_method = "A20534464E90E0C8E439D633BB81432E", hash_generated_method = "8DFF70138B4700F7BF958EFE26D4B00D")
-    
+    @DSSpec(DSCat.BLUETOOTH)
 public Set<BluetoothDevice> getBondedDevices() {
         if (getState() != STATE_ON) {
             return toDeviceSet(new String[0]);

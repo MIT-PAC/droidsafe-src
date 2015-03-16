@@ -65,7 +65,7 @@ JsPromptResult(CallbackProxy proxy) {
      * Handle a confirmation response from the user.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.312 -0500", hash_original_method = "50CD500D47F4FCEE0A0F59D7183F0AD5", hash_generated_method = "6BA4FAFF5E710B22D2B7E38FD8D68A75")
-    
+    @DSSpec(DSCat.DATA_GENERAL)
 public void confirm(String result) {
         mStringResult = result;
         confirm();
