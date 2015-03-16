@@ -16,6 +16,8 @@
 
 package android.net.nsd;
 
+import droidsafe.annotations.*;
+
 import android.os.Parcelable;
 import android.os.Parcel;
 
@@ -48,6 +50,7 @@ public final class NsdServiceInfo implements Parcelable {
     }
 
     /** Get the service name */
+    @DSSource(DSSourceKind.NETWORK)
     public String getServiceName() {
         return mServiceName;
     }
@@ -58,6 +61,7 @@ public final class NsdServiceInfo implements Parcelable {
     }
 
     /** Get the service type */
+    @DSSource(DSSourceKind.NETWORK)
     public String getServiceType() {
         return mServiceType;
     }
@@ -68,6 +72,7 @@ public final class NsdServiceInfo implements Parcelable {
     }
 
     /** @hide */
+    @DSSource(DSSourceKind.NETWORK)
     public DnsSdTxtRecord getTxtRecord() {
         return mTxtRecord;
     }
@@ -77,7 +82,9 @@ public final class NsdServiceInfo implements Parcelable {
         mTxtRecord = new DnsSdTxtRecord(t);
     }
 
-    /** Get the host address. The host address is valid for a resolved service. */
+    /** Get the host address. e
+        The host address is valid for a resolved service. */
+    @DSSource(DSSourceKind.NETWORK)
     public InetAddress getHost() {
         return mHost;
     }
@@ -88,6 +95,7 @@ public final class NsdServiceInfo implements Parcelable {
     }
 
     /** Get port number. The port number is valid for a resolved service. */
+    @DSSource(DSSourceKind.NETWORK)
     public int getPort() {
         return mPort;
     }

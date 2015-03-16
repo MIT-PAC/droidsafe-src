@@ -96,7 +96,7 @@ public BasicHeader(final String name, final String value) {
      *
      * @return String name The name
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.035 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
@@ -108,7 +108,7 @@ public String getName() {
      *
      * @return String value The current value.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.037 -0500", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "FC2353DBE9194DE53203DA3AB851288B")
     
 public String getValue() {

@@ -211,7 +211,7 @@ public String toCharsString() {
     /**
      * @return the contents of this signature as a byte array.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.SECURITY_INFO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.812 -0500", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "06EEAF99EBA8544F9705EB43B42F11CC")
     
 public byte[] toByteArray() {

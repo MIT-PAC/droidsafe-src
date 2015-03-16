@@ -77,25 +77,25 @@ public ConsoleMessage(String message, String sourceId, int lineNumber, MessageLe
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.644 -0500", hash_original_method = "25C4EE735F0CFD6521F32D3F800D92AC", hash_generated_method = "18210675C93B752F02E9F36B0D2705A0")
-    
+    @DSSource(DSSourceKind.WEB)
 public MessageLevel messageLevel() {
         return mLevel;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.647 -0500", hash_original_method = "52DD879A1942417F2863E1B67C410E21", hash_generated_method = "696134DC9B45CAD98841BD668933B616")
-    
+    @DSSource(DSSourceKind.WEB)
 public String message() {
         return mMessage;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.649 -0500", hash_original_method = "215864977BD1865913F9AFF2A58F69AA", hash_generated_method = "2B7A356270C97681BD159D243FB405BC")
-    
+    @DSSource(DSSourceKind.WEB)
 public String sourceId() {
         return mSourceId;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.651 -0500", hash_original_method = "C9721078850915D930C57EA652CD2BDC", hash_generated_method = "5F771892077D7F83A1324845BF2E2355")
-    
+    @DSSource(DSSourceKind.WEB)
 public int lineNumber() {
         return mLineNumber;
     }

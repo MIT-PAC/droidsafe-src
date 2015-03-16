@@ -75,5 +75,7 @@ public enum DSSourceKind {
     AD,
     GOOGLE_SERVICES, /*a bit too generic */
     GOOGLE_DRIVE,
-    JSON
+    JSON,
+    WEB,
+    ENCODED
 }

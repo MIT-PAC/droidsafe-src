@@ -1859,7 +1859,7 @@ public synchronized void setUserAgentString(String ua) {
     /**
      * Return the WebView's user-agent string.
      */
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSource({DSSourceKind.WEB})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.542 -0500", hash_original_method = "2522780DB5B181D072BE72836FEE2179", hash_generated_method = "027D4F5D53C7319A45641E54E2216A79")
     
 public synchronized String getUserAgentString() {

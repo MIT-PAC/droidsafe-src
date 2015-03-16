@@ -242,7 +242,7 @@ public byte[] encode(byte[] bytes) {
      * @throws DecoderException Thrown if URL decoding is unsuccessful
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.384 -0400", hash_original_method = "4B8C8480512DA051CE22C87157965AAC", hash_generated_method = "4593F14C511CEE77F80A935A25D5C37A")
-    
+    @DSSource(DSSourceKind.ENCODED)
 public byte[] decode(byte[] bytes) throws DecoderException {
         return decodeUrl(bytes);
     }

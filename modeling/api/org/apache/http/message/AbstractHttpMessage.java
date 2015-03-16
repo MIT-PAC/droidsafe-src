@@ -123,12 +123,9 @@ public Header getLastHeader(final String name) {
         return this.headergroup.getLastHeader(name);
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
-
+    @DSSource({DSSourceKind.NETWORK})
     @DSSafe(DSCat.DATA_STRUCTURE)
-
     @DSVerified
-
     // non-javadoc, see interface HttpMessage
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:36.190 -0400", hash_original_method = "89AD2C028927AB3E8715A79204D69C99", hash_generated_method = "63C533063E49D4C17E422E4EB5F66B97")
     

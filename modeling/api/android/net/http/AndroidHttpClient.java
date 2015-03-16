@@ -447,8 +447,7 @@ public void close() {
     }
 
     @DSSource({DSSourceKind.NETWORK})
-    @DSSpec(DSCat.INTERNET)
-    
+    @DSSpec(DSCat.INTERNET)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.279 -0500", hash_original_method = "5DB032B661B95AF8C86F6F8448CB3EFD", hash_generated_method = "6F0967296B644E5446E333F783A95E72")
     
 public HttpParams getParams() {

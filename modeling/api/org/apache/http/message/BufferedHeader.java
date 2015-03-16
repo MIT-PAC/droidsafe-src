@@ -112,16 +112,16 @@ public BufferedHeader(final CharArrayBuffer buffer)
         this.valuePos = colon + 1;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+
+    @DSSource({DSSourceKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.671 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
         return this.name;
     }
 
-    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.673 -0500", hash_original_method = "832891E6742DCF403246DBD5D871CA11", hash_generated_method = "3AE95B711B81DE1E8553892FEC0B797E")
-    
+    @DSSource({DSSourceKind.NETWORK})
 public String getValue() {
         return this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
     }

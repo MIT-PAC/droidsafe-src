@@ -182,7 +182,7 @@ protected abstract String getEncoding();
      *  during the encoding process.
      */    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.323 -0400", hash_original_method = "24ABC15B4A8032FE22C42A9FEAA52972", hash_generated_method = "8350B5D79E259D9D2697F32A59F64DC5")
-    
+    @DSSource(DSSourceKind.ENCODED)
 protected abstract byte[] doEncoding(byte[] bytes) throws EncoderException;
 
     /**
