@@ -491,7 +491,7 @@ public Window getWindow() {
 	}
     
     @DSComment("normal android callback")
-    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSafe(DSCat.IPC_CALLBACK)
     @DSVerified("Modeled Lifecycle Event")
     protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
