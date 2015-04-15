@@ -48,4 +48,26 @@ public abstract class SourceContent {
     protected void setSource(SourceLocationTag slt) {
         this.src_loc = slt;
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((src_loc == null) ? 0 : src_loc.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        SourceContent other = (SourceContent) obj;
+        if (src_loc == null) {
+            if (other.src_loc != null) return false;
+        } else if (!src_loc.equals(other.src_loc)) return false;
+        return true;
+    }
+    
+    
 }

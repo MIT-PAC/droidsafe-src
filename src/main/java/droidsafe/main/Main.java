@@ -53,6 +53,7 @@ import droidsafe.reports.ICCEntryPointCallTree;
 import droidsafe.reports.ICCMap;
 import droidsafe.reports.IPCEntryPointCallTree;
 import droidsafe.reports.InformationFlowReport;
+import droidsafe.reports.ObjectMethodOverrideContracts;
 import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.SourceCallTree;
 import droidsafe.reports.UnresolvedICC;
@@ -680,6 +681,7 @@ public class Main {
             UnresolvedICC.v().toJSON(Project.v().getOutputDir());
             SensitiveSources.v().toJSON(Project.v().getOutputDir());
             SourceCallTree.v().toJson(Project.v().getOutputDir());
+            ObjectMethodOverrideContracts.v().toJSON(Project.v().getOutputDir());
             driverMsg ("Indicator reports complete");
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);
