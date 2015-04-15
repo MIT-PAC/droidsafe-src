@@ -166,7 +166,9 @@ abstract public class DroidsafeInfoViewPart extends ViewPart {
      */
     @Override
     public void dispose() {
-        getSite().getPage().removeSelectionListener(fSelectionListener);
+    	if (fSelectionListener != null) {
+    		getSite().getPage().removeSelectionListener(fSelectionListener);
+    	}
         super.dispose();
     }
 

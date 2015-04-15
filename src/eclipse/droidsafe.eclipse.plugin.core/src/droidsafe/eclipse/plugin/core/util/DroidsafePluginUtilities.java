@@ -694,8 +694,10 @@ public class DroidsafePluginUtilities {
     public static SecuritySpecModel initializeSecuritySpec(IProject project) {
         String projectRootPath = project.getLocation().toOSString();
         SecuritySpecModel securitySpec = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
-        ProjectMarkerProcessor.get(project).init(securitySpec);
-        specMap.put(project, securitySpec);
+        if (securitySpec != null) {
+        	ProjectMarkerProcessor.get(project).init(securitySpec);
+        	specMap.put(project, securitySpec);
+        }
         return securitySpec;
     }
 
