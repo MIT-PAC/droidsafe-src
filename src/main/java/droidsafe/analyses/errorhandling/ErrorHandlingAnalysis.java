@@ -97,8 +97,10 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsErrorsIgnored = new LinkedHashSet<Stmt>();
     private Set<Stmt> connectionCallsErrorsNotIgnored = new LinkedHashSet<Stmt>();
     private Set<Stmt> connectionCallsErrorsUnknown = new LinkedHashSet<Stmt>();
-    private Set<Stmt> connectionCallsSuccessHasUI = new LinkedHashSet<Stmt>();
-    private Set<Stmt> connectionCallsSuccessNoUI = new LinkedHashSet<Stmt>();    
+    private Set<Stmt> connectionCallsSuccessForwardHasUI = new LinkedHashSet<Stmt>();
+    private Set<Stmt> connectionCallsSuccessForwardNoUI = new LinkedHashSet<Stmt>();
+    private Set<Stmt> connectionCallsSuccessBackwardHasUI = new LinkedHashSet<Stmt>();
+    private Set<Stmt> connectionCallsSuccessBackwardNoUI = new LinkedHashSet<Stmt>();  
     private PrintStream out;
     private SootClass throwableClass;   
     private int DEPTH_LIMIT = 70;
@@ -290,10 +292,12 @@ public class ErrorHandlingAnalysis {
                                     logger.debug("Found invoke in try block of connection method: {} {} {}", method, stmt, target);
                                  
                                     //for each trap, check if the exception is one we are interested in
+                                    Set<SootMethod> backwardVisitedMethods = new HashSet<SootMethod>();
+                                    
                                     for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {
                                         int retValue = 
                                                 findAndTestAllHandlers(body, ex, stmt, new HashSet<StmtAndException>(),
-                                                    new HashMap<StmtAndException, Integer>(), 
+                                                    new HashMap<StmtAndException, Integer>(), backwardVisitedMethods, 
                                                     0, new Stack<StmtEdge<SootMethod>>(), debug);
 
                                         switch (retValue) {
@@ -321,13 +325,34 @@ public class ErrorHandlingAnalysis {
                                     }
                                     
                                     //search forward to model success path
-                                    boolean foundUIOnSuccess = successSearchFromMethod(body, stmt, 0 , new HashSet<SootMethod>());
-                                    if (foundUIOnSuccess) {
-                                        connectionCallsSuccessHasUI.add(stmt);
-                                        connectionCallsSuccessNoUI.remove(stmt);
-                                    } else if (!connectionCallsSuccessHasUI.contains(stmt)) {
-                                        connectionCallsSuccessNoUI.add(stmt);                                        
-                                    }                                    
+                                    boolean foundUIOnSuccessForward = 
+                                            successSearchFromMethod(body, stmt, 0 , new HashSet<SootMethod>());
+                                    if (foundUIOnSuccessForward) {
+                                        connectionCallsSuccessForwardHasUI.add(stmt);
+                                        connectionCallsSuccessForwardNoUI.remove(stmt);
+                                    } else if (!connectionCallsSuccessForwardHasUI.contains(stmt)) {
+                                        connectionCallsSuccessForwardNoUI.add(stmt);                                        
+                                    }    
+                                    
+                                    //search backwards starting at each method that we visiting in the
+                                    //error handling search
+                                    boolean foundUIOnSuccessBackward = false;
+                                    for (SootMethod backward : backwardVisitedMethods) {
+                                        if (successSearchFromMethod(backward.getActiveBody(), null, 
+                                                    0, new HashSet<SootMethod>())) {
+                                            foundUIOnSuccessBackward = true;
+                                            break;
+                                        }
+                                    }         
+                                    
+                                    if (foundUIOnSuccessBackward) {
+                                        connectionCallsSuccessBackwardHasUI.add(stmt);
+                                        connectionCallsSuccessBackwardNoUI.remove(stmt);
+                                    } else if (!connectionCallsSuccessBackwardHasUI.contains(stmt)) {
+                                        connectionCallsSuccessBackwardNoUI.add(stmt);                                        
+                                    }   
+                                    
+                                                                   
                                 }
                             }
                         }                                        
@@ -367,19 +392,38 @@ public class ErrorHandlingAnalysis {
         }
 
         
-        out.println("\nCalls with UI effect (UI call) on success path: " +
-                connectionCallsSuccessHasUI.size());
+        out.println("\nCalls with UI effect (UI call) on success forward path: " +
+                connectionCallsSuccessForwardHasUI.size());
 
-        for (Stmt stmt : connectionCallsSuccessHasUI) {
+        for (Stmt stmt : connectionCallsSuccessForwardHasUI) {
             InvokeExpr invoke = stmt.getInvokeExpr();
 
             out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
         }
         
-        out.println("\nCalls with NO UI effect (UI call) on success path: " +
-                connectionCallsSuccessNoUI.size());
+        out.println("\nCalls with NO UI effect (UI call) on success forward path: " +
+                connectionCallsSuccessForwardNoUI.size());
 
-        for (Stmt stmt : connectionCallsSuccessNoUI) {
+        for (Stmt stmt : connectionCallsSuccessForwardNoUI) {
+            InvokeExpr invoke = stmt.getInvokeExpr();
+
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+        }
+        
+        //backward success
+        out.println("\nCalls with UI effect (UI call) on success backward path: " +
+                connectionCallsSuccessBackwardHasUI.size());
+
+        for (Stmt stmt : connectionCallsSuccessBackwardHasUI) {
+            InvokeExpr invoke = stmt.getInvokeExpr();
+
+            out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
+        }
+        
+        out.println("\nCalls with NO UI effect (UI call) on success backward path: " +
+                connectionCallsSuccessBackwardNoUI.size());
+
+        for (Stmt stmt : connectionCallsSuccessBackwardNoUI) {
             InvokeExpr invoke = stmt.getInvokeExpr();
 
             out.printf("%s from %s\n", formatMethod(invoke.getMethodRef()), formatMethod(JimpleRelationships.v().getEnclosingMethod(stmt)));
@@ -509,13 +553,16 @@ public class ErrorHandlingAnalysis {
      * return -1 if we found a ui handler
      */
     private int findAndTestAllHandlers(Body body, SootClass exception, Stmt stmt, Set<StmtAndException> visiting,
-                                       Map<StmtAndException, Integer> visited, int depth, 
+                                       Map<StmtAndException, Integer> visited, Set<SootMethod> visitedBackwardMethods, 
+                                       int depth, 
                                        Stack<StmtEdge<SootMethod>> stack,
                                        boolean debug) {        
 
         logger.debug("findAndTestAllHandlers: depth {} method {} stmt {} exception {}", depth, body.getMethod(), stmt, exception);          
 
         StmtAndException probe = new StmtAndException(stmt, exception);
+        
+        visitedBackwardMethods.add(body.getMethod());
 
         if (visited.containsKey(probe)) {
             logger.debug("Already visited: {} {}", stmt, exception);
@@ -597,7 +644,7 @@ public class ErrorHandlingAnalysis {
                         if (!newStack.isEmpty()) newStack.pop();
 
                         int recurseReturn = findAndTestAllHandlers(se.getV1().getActiveBody(), exception, se.getStmt(), 
-                            visiting, visited, depth + 1, newStack, debug);
+                            visiting, visited, visitedBackwardMethods, depth + 1, newStack, debug);
 
                         if (recurseReturn < 1) {
                             visited.put(probe, recurseReturn);
@@ -616,7 +663,8 @@ public class ErrorHandlingAnalysis {
             }
             
             //check to see if there are any possible thrown exceptions, track each throw the stack            
-            int retValue =  searchForward(body, trapUnits.iterator(), visiting, visited, new HashSet<Body>(), depth, stack, debug);
+            int retValue =  searchForward(body, trapUnits.iterator(), visiting, visited, visitedBackwardMethods, 
+                new HashSet<Body>(), depth, stack, debug);
             logger.debug("back from processThrownExceptions: {}", retValue);
             visited.put(probe, retValue);
             visiting.remove(probe);
@@ -636,6 +684,7 @@ public class ErrorHandlingAnalysis {
     private int searchForward(Body body, Iterator<Unit> trapUnits, 
                                         Set<StmtAndException> findTestVisiting,
                                         Map<StmtAndException, Integer> findTestvisited, 
+                                        Set<SootMethod> visitedBackwardMethods,
                                         Set<Body> processThrownVisiting, int depth, 
                                         Stack<StmtEdge<SootMethod>> stack, boolean debug) {
 
@@ -690,7 +739,7 @@ public class ErrorHandlingAnalysis {
                             newStack.push(stmtEdge);
 
                             int recurseVal = searchForward(targetBody, targetBody.getUnits().snapshotIterator(), 
-                                findTestVisiting, findTestvisited, processThrownVisiting, depth+1, newStack, debug);                         
+                                findTestVisiting, findTestvisited, visitedBackwardMethods, processThrownVisiting, depth+1, newStack, debug);                         
 
                             if (recurseVal < 1)
                                 return recurseVal;
@@ -702,7 +751,7 @@ public class ErrorHandlingAnalysis {
                                 logger.debug("Found call to native method {} that throws exception: {}", current.getInvokeExpr(), throwsEx);
                                 //stack does not change, staying in method
                                 int recurseVal = findAndTestAllHandlers(body, throwsEx, current, findTestVisiting,                                     
-                                    findTestvisited, depth + 1, stack, debug);
+                                    findTestvisited, visitedBackwardMethods, depth + 1, stack, debug);
 
                                 if (recurseVal < 1)
                                     return recurseVal;
@@ -758,7 +807,7 @@ public class ErrorHandlingAnalysis {
                     //stack does not change because we are not changing the called method, just start looking for 
                     //exceptions                
                     int recurseVal = findAndTestAllHandlers(body, reThrownType, throwStmt, findTestVisiting, 
-                        findTestvisited, depth + 1, stack, debug);
+                        findTestvisited, visitedBackwardMethods, depth + 1, stack, debug);
 
                     if (recurseVal < 1)
                         return recurseVal;
