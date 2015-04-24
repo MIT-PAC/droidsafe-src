@@ -1,4 +1,27 @@
 /*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
  * $HeadURL:https://svn.apache.org/repos/asf/jakarta/httpcomponents/trunk/coyote-httpconnector/src/java/org/apache/http/tcconnector/UnsupportedHttpVersionException.java $
  * $Revision:379772 $
  * $Date:2006-02-22 14:52:29 +0100 (Wed, 22 Feb 2006) $
@@ -28,6 +51,10 @@
  * <http://www.apache.org/>.
  *
  */
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
 
 package org.apache.http;
 

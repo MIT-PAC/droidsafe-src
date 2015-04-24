@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.view.infoflow;
 
 import org.eclipse.jface.util.Util;
@@ -35,12 +56,6 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
     /** The ID of the view as specified by the extension. */
     public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.InfoFlowSummaryView";
 
-    /** The text displayed on the empty page. */
-    protected static String EMPTY_PAGE_LABEL = "No Android Project selected. "
-          + "\nSelect an Android project in the Project Explorer."
-          + "\nYou may also need to run the Droidsafe spec generation "
-          + "command from the project context menu.";
-    
     @Override
     public void createPartControl(Composite parent) {
         super.createPartControl(parent);
@@ -69,14 +84,9 @@ public class InfoFlowSummaryViewPart extends SpecInfoOutlineViewPart {
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
-        return new InfoFlowSummarylTreeElementLabelProvider();
+        return new InfoFlowSummaryTreeElementLabelProvider();
     }
 
-    @Override
-    protected String emptyPageText() {
-        return EMPTY_PAGE_LABEL;
-    }
-    
     @Override
     protected int autoExpandLevel() {
       return 1;

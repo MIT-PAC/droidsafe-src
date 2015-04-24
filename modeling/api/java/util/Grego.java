@@ -1,3 +1,46 @@
+/**
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
+ *******************************************************************************
+ * Copyright (C) 2003-2008, International Business Machines Corporation and
+ * others. All Rights Reserved.
+ *******************************************************************************
+ * Partial port from ICU4C's Grego class in i18n/gregoimp.h.
+ *
+ * Methods ported, or moved here from OlsonTimeZone, initially
+ * for work on Jitterbug 5470:
+ *   tzdata2006n Brazil incorrect fall-back date 2009-mar-01
+ * Only the methods necessary for that work are provided - this is not a full
+ * port of ICU4C's Grego class (yet).
+ *
+ * These utilities are used by both OlsonTimeZone and SimpleTimeZone.
+ */
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
+
 package java.util;
 
 // Droidsafe Imports

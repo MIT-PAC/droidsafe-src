@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.analyses.cg.collapsedcg;
 
 import java.util.Collections;
@@ -28,7 +49,7 @@ import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 
 /**
- * This class represents the call grpah after a pta run is performed.  It is an overlay 
+ * This class represents the call graph after a pta run is performed.  It is an overlay 
  * for the soot call graph that does not include API methods, but shortcuts edges between app methods
  * through the api.  For example if USER_A -> API_M -> USER_B, where USER_A and USER_B, are user methods, 
  * and API_M is an api method, then the collapsed call graph will have an edge from USER_A to USER_B, but 
@@ -315,6 +336,8 @@ public class CollaspedCallGraph {
             return CollaspedCallGraph.this;
         }
         
-        
+        public String toString() {
+            return stmt + " -> " + target;
+        }
     }
 }

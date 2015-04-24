@@ -1,3 +1,46 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
+ * Copyright (C) 2010 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
+
 package android.webkit;
 
 // Droidsafe Imports
@@ -34,25 +77,25 @@ public ConsoleMessage(String message, String sourceId, int lineNumber, MessageLe
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.644 -0500", hash_original_method = "25C4EE735F0CFD6521F32D3F800D92AC", hash_generated_method = "18210675C93B752F02E9F36B0D2705A0")
-    
+    @DSSource(DSSourceKind.WEB)
 public MessageLevel messageLevel() {
         return mLevel;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.647 -0500", hash_original_method = "52DD879A1942417F2863E1B67C410E21", hash_generated_method = "696134DC9B45CAD98841BD668933B616")
-    
+    @DSSource(DSSourceKind.WEB)
 public String message() {
         return mMessage;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.649 -0500", hash_original_method = "215864977BD1865913F9AFF2A58F69AA", hash_generated_method = "2B7A356270C97681BD159D243FB405BC")
-    
+    @DSSource(DSSourceKind.WEB)
 public String sourceId() {
         return mSourceId;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.651 -0500", hash_original_method = "C9721078850915D930C57EA652CD2BDC", hash_generated_method = "5F771892077D7F83A1324845BF2E2355")
-    
+    @DSSource(DSSourceKind.WEB)
 public int lineNumber() {
         return mLineNumber;
     }

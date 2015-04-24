@@ -1,4 +1,27 @@
 /*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +36,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */ 
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
 
 package org.apache.commons.codec.net;
 
@@ -68,7 +95,7 @@ public class URLCodec implements BinaryEncoder, BinaryDecoder, StringEncoder, St
      * @return array of bytes containing URL safe characters
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.382 -0400", hash_original_method = "A43774E69E9908236515137E841EAEB1", hash_generated_method = "0C0A24C290F14EB46D0ACD23CBBBCC62")
-    
+        @DSSink(DSSinkKind.ENCODER)
 public static final byte[] encodeUrl(BitSet urlsafe, byte[] bytes) 
     {
         if (bytes == null) {
@@ -199,7 +226,7 @@ public URLCodec(String charset) {
      * @return array of bytes containing URL safe characters
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.384 -0400", hash_original_method = "ADB04057797F52456DB7F46168AA93CE", hash_generated_method = "1479D060227502DB5CECF2708C5ECBEF")
-    
+    @DSSink(DSSinkKind.ENCODER)
 public byte[] encode(byte[] bytes) {
         return encodeUrl(WWW_FORM_URL, bytes);
     }
@@ -215,7 +242,7 @@ public byte[] encode(byte[] bytes) {
      * @throws DecoderException Thrown if URL decoding is unsuccessful
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.384 -0400", hash_original_method = "4B8C8480512DA051CE22C87157965AAC", hash_generated_method = "4593F14C511CEE77F80A935A25D5C37A")
-    
+    @DSSource(DSSourceKind.ENCODED)
 public byte[] decode(byte[] bytes) throws DecoderException {
         return decodeUrl(bytes);
     }
@@ -232,7 +259,7 @@ public byte[] decode(byte[] bytes) throws DecoderException {
      *                                      supported 
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.385 -0400", hash_original_method = "385A210A4F53DD068AEE801B7B136BBE", hash_generated_method = "0815FCBC3E537BB3192BE42996501FD5")
-    
+    @DSSink(DSSinkKind.ENCODER)
 public String encode(String pString, String charset) 
         throws UnsupportedEncodingException  
     {
@@ -254,7 +281,7 @@ public String encode(String pString, String charset)
      * @see #getDefaultCharset()
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.386 -0400", hash_original_method = "87E4447E26C3107C6DF2678BD461EF96", hash_generated_method = "B0D9B1E23058F28E118D0AED26ABE5C9")
-    
+    @DSSink(DSSinkKind.ENCODER)
 public String encode(String pString) throws EncoderException {
         if (pString == null) {
             return null;
@@ -326,7 +353,7 @@ public String decode(String pString) throws DecoderException {
      *                          if encoding is unsuccessful
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.387 -0400", hash_original_method = "13A2E944F2DC31C8D9BCDECDB68E3CE6", hash_generated_method = "7ECF7AEC58498795FA60F0915D4478F3")
-    
+    @DSSink(DSSinkKind.ENCODER)
 public Object encode(Object pObject) throws EncoderException {
         if (pObject == null) {
             return null;

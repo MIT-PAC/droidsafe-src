@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-: ${DROIDSAFE_SRC_HOME:?"Need to define DROIDSAFE_SRC_HOME"}
-
-CLASSPATH="$DROIDSAFE_SRC_HOME/lib/indicatorview.jar:$DROIDSAFE_SRC_HOME/lib/soot-trunk.jar:$DROIDSAFE_SRC_HOME/lib/gson-2.2.4.jar"
-
-java -cp $CLASSPATH droidsafe.indicator.IndicatorView $1
-

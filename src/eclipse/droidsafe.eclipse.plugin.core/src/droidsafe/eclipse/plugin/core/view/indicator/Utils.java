@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.view.indicator;
 
 import java.util.ArrayList;
@@ -518,14 +539,14 @@ public class Utils {
     public static Set<MethodModel> getMethodModels(SecuritySpecModel spec, String sig, String srcClass,
             int srcLine, String link) {
         Set<MethodModel> result = new TreeSet<MethodModel>();
-        if (sig != null && srcClass != null && srcLine >= 0) {
+        if (sig != null) {
             if (link != null) {
                 if (link.equals("as_entry_point")) {
                     for (MethodModel entryPoint: spec.getInputEventBlocks().keySet()) {
                         if (sig.equals(entryPoint.getSignature()))
                             result.add(entryPoint);
                     }
-                } else if (link.equals("as_call")) {
+                } else if (link.equals("as_call") && srcClass != null && srcLine >= 0) {
                     for (MethodModel call: spec.getOutputEventBlocks().keySet()) {
                     	String callSig = call.getSignature();
                         if (sig.equals(callSig)) {

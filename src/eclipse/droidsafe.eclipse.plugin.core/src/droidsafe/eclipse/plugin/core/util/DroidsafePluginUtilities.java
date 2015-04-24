@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.util;
 
 import java.io.File;
@@ -66,7 +87,7 @@ import droidsafe.android.app.Project;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.marker.ProjectMarkerProcessor;
 import droidsafe.eclipse.plugin.core.view.indicator.Utils;
-import droidsafe.eclipse.plugin.core.view.spec.TreeElementLabelProvider;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecTreeElementLabelProvider;
 import droidsafe.main.Config;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.HotspotModel;
@@ -673,8 +694,10 @@ public class DroidsafePluginUtilities {
     public static SecuritySpecModel initializeSecuritySpec(IProject project) {
         String projectRootPath = project.getLocation().toOSString();
         SecuritySpecModel securitySpec = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
-        ProjectMarkerProcessor.get(project).init(securitySpec);
-        specMap.put(project, securitySpec);
+        if (securitySpec != null) {
+        	ProjectMarkerProcessor.get(project).init(securitySpec);
+        	specMap.put(project, securitySpec);
+        }
         return securitySpec;
     }
 
@@ -965,7 +988,7 @@ public class DroidsafePluginUtilities {
      * 
      */
     public static Image getImage(String file) {
-        Bundle bundle = FrameworkUtil.getBundle(TreeElementLabelProvider.class);
+        Bundle bundle = FrameworkUtil.getBundle(SecuritySpecTreeElementLabelProvider.class);
         URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
         ImageDescriptor image = ImageDescriptor.createFromURL(url);
         return image.createImage();

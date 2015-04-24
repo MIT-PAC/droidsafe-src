@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-: ${DROIDSAFE_SRC_HOME:?"Need to DROIDSAFE_SRC_HOME"}
-
-$DROIDSAFE_SRC_HOME/system-tests/regtest.py -threads 6 -timeout 3600 -dir $DROIDSAFE_SRC_HOME/android-apps/engagements -args 'spechotspots'

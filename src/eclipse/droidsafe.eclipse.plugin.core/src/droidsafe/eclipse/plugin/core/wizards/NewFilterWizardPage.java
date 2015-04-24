@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.wizards;
 
 import java.util.ArrayList;
@@ -6,6 +27,8 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -99,7 +122,13 @@ public class NewFilterWizardPage extends FilterWizardPage {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 setFieldValue(i);
-                updatePageComplete();
+                updatePageComplete(i);
+            }
+        });
+    	valueTexts[i].addModifyListener(new ModifyListener() {
+            @Override
+            public void modifyText(ModifyEvent e){
+                updatePageComplete(i);
             }
         });
         addButtons[i].addSelectionListener(new SelectionAdapter() {

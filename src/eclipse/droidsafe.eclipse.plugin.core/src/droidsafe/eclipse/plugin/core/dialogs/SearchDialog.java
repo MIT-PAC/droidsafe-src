@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.dialogs;
 
 import java.util.ArrayList;
@@ -149,10 +170,13 @@ public class SearchDialog extends Dialog {
         gridData.widthHint = 72;
         statusText.setLayoutData(gridData);
         
-        Button prevButton = new Button(parent, SWT.ARROW | SWT.UP);
+        Button prevButton = new Button(parent, SWT.CENTER | SWT.FLAT);
+        prevButton.setImage(DroidsafeImages.PREV_IMAGE);
         gridData = new GridData();
-        gridData.widthHint = 20;
-        gridData.heightHint = 20;
+        if (System.getProperty("os.name").equals("Mac OS X")) {
+            gridData.widthHint = 20;
+            gridData.heightHint = 20;
+        }
         prevButton.setLayoutData(gridData);
         prevButton.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -161,7 +185,8 @@ public class SearchDialog extends Dialog {
             }
         });
 
-        Button nextButton = new Button(parent, SWT.ARROW | SWT.DOWN);
+        Button nextButton = new Button(parent, SWT.CENTER | SWT.FLAT);
+        nextButton.setImage(DroidsafeImages.NEXT_IMAGE);
         nextButton.setLayoutData(gridData);
         nextButton.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -171,7 +196,7 @@ public class SearchDialog extends Dialog {
         });
 
         // Use Label widget since Buttons always have border
-        Button closeButton = new Button(parent, SWT.FLAT);
+        Button closeButton = new Button(parent, SWT.CENTER | SWT.FLAT);
         closeButton.setImage(DroidsafeImages.CLOSE_IMAGE);
         closeButton.setLayoutData(gridData);
         closeButton.addSelectionListener(new SelectionAdapter() {

@@ -1,4 +1,23 @@
 #!/usr/bin/env python
+#
+# Copyright (C) 2015,  Massachusetts Institute of Technology
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version.
+# 
+# This program is distributed in the hope that it will be useful, but 
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+# 
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc., 
+# 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+# 
+# Please email droidsafe@lists.csail.mit.edu if you need additional
+# information or have any questions.
 
 from __future__ import print_function
 import sys
@@ -36,14 +55,20 @@ def run_droidsafe(args):
 
     java_command.append("-Djava.library.path=" + DROIDSAFE_SRC_HOME + "lib")
 
-    if (HOSTNAME in SERVERS):
-        print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
-        java_command.append("-Xms2g")
-        java_command.append("-Xmx" + SERVER_MEMORY+ "g")
-    else:
+    if ("DROIDSAFE_MEMORY" in os.environ):
+        DROIDSAFE_MEMORY = os.environ['DROIDSAFE_MEMORY']
+        print("Setting memory size to " + DROIDSAFE_MEMORY + "GB")
         java_command.append("-Xms1g")
-        java_command.append("-Xmx" + DESKTOP_MEMORY+ "g")
-
+        java_command.append("-Xmx" + DROIDSAFE_MEMORY + "g")
+    else:
+        if (HOSTNAME in SERVERS):
+            print("Server run: setting memory size to " + SERVER_MEMORY + "GB")
+            java_command.append("-Xms2g")
+            java_command.append("-Xmx" + SERVER_MEMORY+ "g")
+        else:
+            java_command.append("-Xms1g")
+            java_command.append("-Xmx" + DESKTOP_MEMORY+ "g")
+    
 #   java_command.append("-Xrunhprof:heap=sites,depth=6")
     java_command.append("-Dfile.encoding=UTF-8")
 

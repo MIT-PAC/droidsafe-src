@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.main;
 
 import java.io.BufferedReader;
@@ -36,7 +57,7 @@ import droidsafe.utils.SootUtils;
  * To add cmd line variables, add a string field, then add to option to setOptions, then assign in
  * setVars.
  * 
- * The precision level by default is set to 2, and the options for this can be found in setPrecision()
+ * The precision level by default is set to 4, and the options for this can be found in setPrecision()
  * at the bottom of this file.
  * 
  * @author mgordon
@@ -415,7 +436,7 @@ public class Config {
         Option precisionLevel = 
                 OptionBuilder.withArgName("INT").
                     hasArg().
-                    withDescription("Run with precision level: 0 - 3, increasing precision.").
+                    withDescription("Run with precision level: 0 - 5, increasing precision.").
                     withLongOpt("precision").
                     create("p");
         
@@ -490,7 +511,7 @@ public class Config {
             int level = Integer.parseInt(cmd.getOptionValue("precision"));
             setPrecisionLevel(level);
         } else {
-            setPrecisionLevel(2);
+            setPrecisionLevel(4);
         }
         
         if (cmd.hasOption("target")) {
@@ -851,28 +872,57 @@ public class Config {
     private void setPrecisionLevel(int level) {
                 
         switch (level) {
-            case 0:
+            case 0:                   
                 kobjsens = 1;
-                fullContextForGUI = true;
-                fullContextForStrings = true;
+                multipassfb = false;
+                ignoreNoContextFlows = false;
+                fullContextForGUI = false;
+                fullContextForStrings = false;
+                runStringAnalysis = false;
+                runValueAnalysis = true;
+                cloneStaticCalls = false;
+                staticinitcontext = false;
+                extraArrayContext = true;
+                break;
+            case 1: 
+                kobjsens = 2;
+                multipassfb = false;
+                ignoreNoContextFlows = false;
+                fullContextForGUI = false;
+                fullContextForStrings = false;
                 runStringAnalysis = true;
                 runValueAnalysis = true;
                 cloneStaticCalls = false;
                 staticinitcontext = false;
+                extraArrayContext = true;
                 break;
-            case 1: 
-                kobjsens = 2;
+            case 2: 
+                kobjsens = 3;
+                multipassfb = false;
                 ignoreNoContextFlows = false;
-                fullContextForGUI = true;
-                fullContextForStrings = true;
-                runStringAnalysis = true;
+                fullContextForGUI = false;
+                fullContextForStrings = false;
+                runStringAnalysis = false;
                 runValueAnalysis = true;
                 cloneStaticCalls = true;
                 staticinitcontext = false;
-                extraArrayContext = true;
+                extraArrayContext = false;
                 break;
-            case 2: //default
+            case 3: 
                 kobjsens = 3;
+                multipassfb = false;
+                ignoreNoContextFlows = false;
+                fullContextForGUI = false;
+                fullContextForStrings = false;
+                runStringAnalysis = true;
+                runValueAnalysis = true;
+                cloneStaticCalls = false;
+                staticinitcontext = false;
+                extraArrayContext = true;
+                break;                   
+            case 4: //default
+                kobjsens = 3;
+                multipassfb = false;
                 ignoreNoContextFlows = false;
                 fullContextForGUI = true;
                 fullContextForStrings = true;
@@ -882,8 +932,9 @@ public class Config {
                 staticinitcontext = true;
                 extraArrayContext = true;
                 break;
-            case 3: 
+            case 5: 
                 kobjsens = 3;
+                multipassfb = true;
                 ignoreNoContextFlows = false;
                 fullContextForGUI = true;
                 fullContextForStrings = true;
