@@ -284,9 +284,7 @@ public class ErrorHandlingAnalysis {
                         if (stmt.containsInvokeExpr()) {
                             Set<SootMethod> targets = CHACallGraph.v(false).getTargetsForStmt(stmt); 
 
-                            for (SootMethod target : targets) {                            
-                                if (connectionCallsErrorsNotIgnored.contains(stmt) || connectionCallsErrorsUnknown.contains(stmt))
-                                    break;
+                            for (SootMethod target : targets) {                                                           
 
                                 if (connectionMethods.containsPoly(target)) {
                                     logger.debug("Found invoke in try block of connection method: {} {} {}", method, stmt, target);
@@ -295,6 +293,9 @@ public class ErrorHandlingAnalysis {
                                     Set<SootMethod> backwardVisitedMethods = new HashSet<SootMethod>();
                                     
                                     for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {
+                                        if (connectionCallsErrorsNotIgnored.contains(stmt) || connectionCallsErrorsUnknown.contains(stmt))
+                                            break;
+                                        
                                         int retValue = 
                                                 findAndTestAllHandlers(body, ex, stmt, new HashSet<StmtAndException>(),
                                                     new HashMap<StmtAndException, Integer>(), backwardVisitedMethods, 
