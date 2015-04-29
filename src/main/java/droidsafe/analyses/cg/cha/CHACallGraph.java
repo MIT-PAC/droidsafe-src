@@ -21,6 +21,8 @@
 
 package droidsafe.analyses.cg.cha;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -48,6 +50,7 @@ import soot.jimple.NewArrayExpr;
 import soot.jimple.Stmt;
 import droidsafe.analyses.cg.StmtEdge;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph.CallToTarget;
+import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
@@ -115,6 +118,18 @@ public class CHACallGraph {
 
     public static void reset() {
         v = null;
+    }
+
+    public void dumpEdges(String fname, boolean printReflectedEdges) {        
+        try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + fname)) {
+            for (StmtEdge<SootMethod> edge : callgraph.edgeSet()) {
+                if (printReflectedEdges || (!isReflectedEdge(edge))) {
+                    fw.write(edge + "\n");
+                }
+            }
+        } catch (Exception e) {
+
+        } 
     }
 
     private void createCG() {
@@ -193,7 +208,7 @@ public class CHACallGraph {
 
         InvokeExpr ie = stmt.getInvokeExpr();
 
-        
+
         SootMethod concrete;
         try {
             concrete = SootUtils.resolve(stmt.getInvokeExpr().getMethodRef());

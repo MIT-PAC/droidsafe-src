@@ -105,6 +105,7 @@ public class ErrorHandlingAnalysis {
     private SootClass throwableClass;   
     private int DEPTH_LIMIT = 70;
     private SootClass runnableClass;
+    private boolean DEBUG = false;
 
     private ErrorHandlingAnalysis() {
         throwableClass = Scene.v().getSootClass("java.lang.Throwable");
@@ -248,7 +249,7 @@ public class ErrorHandlingAnalysis {
         JimpleRelationships.reset();
         CHACallGraph.v(false);
 
-
+        //CHACallGraph.v(false).dumpEdges("cha-callgraph-no-reflection.txt", false);
 
         for (SootClass clz : Scene.v().getClasses()) {
 
@@ -260,9 +261,12 @@ public class ErrorHandlingAnalysis {
                     continue;
 
                 boolean debug = "onServiceConnected".equals(method.getName());
-
+                
+                //DEBUG = method.getSignature().equals("<com.google.android.gms.internal.ck$a$a: void onDestroy()>");
+                if (DEBUG) System.out.println("DEBUG");
 
                 logger.debug("ErrorHandlingAnalysis inspecting: {}", method);
+                
                 try {
                     Body body = method.retrieveActiveBody();                
 
@@ -288,13 +292,15 @@ public class ErrorHandlingAnalysis {
 
                                 if (connectionMethods.containsPoly(target)) {
                                     logger.debug("Found invoke in try block of connection method: {} {} {}", method, stmt, target);
-                                 
+                                                                                                         
                                     //for each trap, check if the exception is one we are interested in
                                     Set<SootMethod> backwardVisitedMethods = new HashSet<SootMethod>();
                                     
-                                    for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {
+                                    for (SootClass ex : connectionMethodToException.get(connectionMethods.getMethod(target))) {                                        
                                         if (connectionCallsErrorsNotIgnored.contains(stmt) || connectionCallsErrorsUnknown.contains(stmt))
                                             break;
+                                       
+                                        if (DEBUG) System.out.println("==== " + target + " " + ex);
                                         
                                         int retValue = 
                                                 findAndTestAllHandlers(body, ex, stmt, new HashSet<StmtAndException>(),
@@ -325,6 +331,8 @@ public class ErrorHandlingAnalysis {
                                         }
                                     }
                                     
+                                    if (DEBUG) System.out.println("Forward Search");
+                                    
                                     //search forward to model success path
                                     boolean foundUIOnSuccessForward = 
                                             successSearchFromMethod(body, stmt, 0 , new HashSet<SootMethod>());
@@ -337,8 +345,10 @@ public class ErrorHandlingAnalysis {
                                     
                                     //search backwards starting at each method that we visiting in the
                                     //error handling search
+                                    
                                     boolean foundUIOnSuccessBackward = false;
                                     for (SootMethod backward : backwardVisitedMethods) {
+                                        if (DEBUG) System.out.println("Backward Search from: " + backward);                                        
                                         if (successSearchFromMethod(backward.getActiveBody(), null, 
                                                     0, new HashSet<SootMethod>())) {
                                             foundUIOnSuccessBackward = true;
@@ -456,13 +466,18 @@ public class ErrorHandlingAnalysis {
 
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached recursion depth.");
-            return true;
+            if (DEBUG) System.out.println("Reached recursion depth");
+            //decided that if we reach recursion depth the probably the ui call is unrelated.
+            return false;
         }
-      
+        
+        
         if (visiting.contains(body.getMethod()))
             return false;
         
         visiting.add(body.getMethod());
+        
+        if (DEBUG) System.out.println("Looking at method: " + body.getMethod());
         
         //find all traps for connection statement, discount all statements in those traps
         Set<Unit> unitsInTrap = new HashSet<Unit>();
@@ -505,6 +520,7 @@ public class ErrorHandlingAnalysis {
                         
                         if (uiMethods.containsPoly(target)) {
                             logger.debug("In success search, found ui method call in {}: {}\n",  body.getMethod(), stmt);
+                            if (DEBUG) System.out.printf("Success search: %s\n", stmt);
                             return true;
                         } else if (target.isConcrete()) {
                             Body targetBody = null;
@@ -513,7 +529,7 @@ public class ErrorHandlingAnalysis {
                             } catch (Exception e) {
                                 continue;
                             }
-
+                            if (DEBUG) System.out.println("Recursing edge: " + stmtEdge);
                             boolean recurseVal = successSearchFromMethod(targetBody, null, depth + 1, visiting); 
                             if (recurseVal) {
                                 return true;
