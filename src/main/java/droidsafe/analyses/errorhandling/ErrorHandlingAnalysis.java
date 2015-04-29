@@ -499,9 +499,12 @@ public class ErrorHandlingAnalysis {
                     for (StmtEdge<SootMethod> stmtEdge : targetEdges) {
                         SootMethod target = stmtEdge.getV2();
 
+                        //ignore reflection edges?
+                        if (CHACallGraph.v(false).isReflectedEdge(stmtEdge))
+                            continue;
                         
                         if (uiMethods.containsPoly(target)) {
-                            logger.debug("In success search, found ui method call in handler {}: {}\n",  body.getMethod(), stmt);
+                            logger.debug("In success search, found ui method call in {}: {}\n",  body.getMethod(), stmt);
                             return true;
                         } else if (target.isConcrete()) {
                             Body targetBody = null;
