@@ -41,6 +41,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Set;
@@ -102,6 +103,7 @@ import soot.tagkit.SourceFileTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.toolkits.graph.ExceptionalUnitGraph;
+import soot.toolkits.graph.UnitGraph;
 import soot.toolkits.scalar.Pair;
 import soot.Type;
 import soot.Unit;
@@ -1934,6 +1936,44 @@ public class SootUtils {
         }
 
         return concretes;
+    }
+    
+    
+    /**
+     * Return all statements reachable from the given statement in method.
+     * Build a CFG and find all statements with path from from.
+     * Return empty list on error.  Do not include from in the returned list. 
+     */
+    public static List<Stmt> getReachableStmts(SootMethod method, Stmt from) {
+        List<Stmt> reachable = new LinkedList<Stmt>();
+        try {
+            UnitGraph unitGraph  = new ExceptionalUnitGraph(method.retrieveActiveBody());
+            
+            Stack<Unit> stack = new Stack<Unit>();
+            Set<Unit> visited = new HashSet<Unit>();
+            for (Unit succ : unitGraph.getSuccsOf(from))
+                stack.add(succ);
+            
+            while (!stack.isEmpty()) {
+                Unit current = stack.pop();
+                if (visited.contains(current))
+                    continue;
+                
+                visited.add(current);
+                //so far this cast has always worked!
+                reachable.add((Stmt)current);
+                
+                for (Unit succ : unitGraph.getSuccsOf(current)) {
+                    if (!visited.contains(succ)) stack.add(succ);                    
+                }
+            }
+            
+            
+        } catch (Exception e) {
+            logger.debug("Error calculating statements reachable from {} in {}", from, method, e);
+        }
+                
+        return reachable;
     }
 }
 

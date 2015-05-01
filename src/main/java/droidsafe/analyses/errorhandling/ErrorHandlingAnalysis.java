@@ -343,18 +343,13 @@ public class ErrorHandlingAnalysis {
                                         connectionCallsSuccessForwardNoUI.add(stmt);                                        
                                     }    
                                     
-                                    //search backwards starting at each method that we visiting in the
+                                    //search backwards starting at each method that we visited in the
                                     //error handling search
+                                    if (DEBUG) System.out.printf("====== Starting success search backwards from %s %s\n", stmt, method);
                                     
-                                    boolean foundUIOnSuccessBackward = false;
-                                    for (SootMethod backward : backwardVisitedMethods) {
-                                        if (DEBUG) System.out.println("Backward Search from: " + backward);                                        
-                                        if (successSearchFromMethod(backward.getActiveBody(), null, 
-                                                    0, new HashSet<SootMethod>())) {
-                                            foundUIOnSuccessBackward = true;
-                                            break;
-                                        }
-                                    }         
+                                    boolean foundUIOnSuccessBackward = 
+                                            successSearchBackward(method, stmt, backwardVisitedMethods, 
+                                                new HashSet<SootMethod>(), 0);
                                     
                                     if (foundUIOnSuccessBackward) {
                                         connectionCallsSuccessBackwardHasUI.add(stmt);
@@ -448,6 +443,77 @@ public class ErrorHandlingAnalysis {
     }
     
     
+    private boolean successSearchBackward(SootMethod method, Stmt callingStmt, Set<SootMethod> visitedOnErrorHandling, 
+                                          Set<SootMethod> visiting, int depth) {
+        if (API.v().isSystemMethod(method)) {
+            logger.debug("Not traversing into system call.");
+            return false;
+        }
+
+        if (depth > DEPTH_LIMIT) {
+            logger.debug("Reached recursion depth.");
+            if (DEBUG) System.out.println("Reached recursion depth");
+            //decided that if we reach recursion depth the probably the ui call is unrelated.
+            return false;
+        }
+        
+        if (visiting.contains(method))
+            return false;
+        
+        visiting.add(method);
+        
+        if (DEBUG) System.out.println("Visiting on success backwards: " + method);
+             
+        //find all statement reachable from callingStmt
+        for (Stmt reachable : SootUtils.getReachableStmts(method, callingStmt)) {
+            if (reachable.containsInvokeExpr()) {
+                if (DEBUG) System.out.println("\tFound reachable call stmt: " + reachable);
+                try {
+                    //get targets of invoke expr
+                    Set<StmtEdge<SootMethod>> targetEdges = CHACallGraph.v(false).getTargetEdgesForStmt(reachable);
+
+                    //check called method for thrown exceptions
+                    for (StmtEdge<SootMethod> stmtEdge : targetEdges) {
+                        SootMethod target = stmtEdge.getV2();
+
+                        //ignore reflection edges?
+                        if (CHACallGraph.v(false).isReflectedEdge(stmtEdge))
+                            continue;
+                        
+                        if (uiMethods.containsPoly(target)) {
+                            logger.debug("In success search backwards, found ui method call in {}: {}\n",  method, reachable);
+                            if (DEBUG) System.out.printf("Success search backwards: %s calls %s\n", method, reachable);
+                            return true;
+                        }
+                    }
+                } catch (Exception e) {
+                    logger.debug("Error in backward success search, ignoring", e);
+                }
+            }
+        }
+        
+        //recurse for all callers
+        for (StmtEdge<SootMethod> edge : CHACallGraph.v(false).getSourcesForMethod(method)) {
+            //ignore reflected edges
+            if (CHACallGraph.v(false).isReflectedEdge(edge))
+                continue;
+            
+            //don't visit anything that was not visited on the error handling path
+            //used to stop backward search when the paths "converge"
+            if (!visitedOnErrorHandling.contains(edge.getV1()))
+                continue;
+            
+            boolean retValue = successSearchBackward(edge.getV1(), edge.getStmt(), visitedOnErrorHandling,
+                visiting, depth + 1);
+            
+            if (retValue)
+                return true;
+        }
+        
+        return false;
+    }
+    
+    
     /**
      * 
      *
@@ -520,7 +586,7 @@ public class ErrorHandlingAnalysis {
                         
                         if (uiMethods.containsPoly(target)) {
                             logger.debug("In success search, found ui method call in {}: {}\n",  body.getMethod(), stmt);
-                            if (DEBUG) System.out.printf("Success search: %s\n", stmt);
+                            if (DEBUG) System.out.printf("Success search: %s calls %s\n", body.getMethod(), stmt);
                             return true;
                         } else if (target.isConcrete()) {
                             Body targetBody = null;
