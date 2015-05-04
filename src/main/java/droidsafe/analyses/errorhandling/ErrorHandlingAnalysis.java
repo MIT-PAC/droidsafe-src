@@ -76,6 +76,7 @@ import droidsafe.android.system.API;
 import droidsafe.main.Config;
 import droidsafe.main.Main;
 import droidsafe.transforms.NativeMethodBuilder;
+import droidsafe.transforms.objsensclone.CloneInheritedMethods;
 import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootMethodList;
@@ -103,7 +104,7 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsSuccessBackwardNoUI = new LinkedHashSet<Stmt>();  
     private PrintStream out;
     private SootClass throwableClass;   
-    private int DEPTH_LIMIT = 70;
+    private final int DEPTH_LIMIT = 70;
     private SootClass runnableClass;
     private boolean DEBUG = false;
 
@@ -231,6 +232,15 @@ public class ErrorHandlingAnalysis {
 
     }
     
+    private void cloneInheritedMethodsForUserClasses() {
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (!API.v().isSystemClass(clz)) {
+                CloneInheritedMethods cim = new CloneInheritedMethods(clz, true);
+                cim.transform();
+            }
+        }
+    }
+    
     public void run(IDroidsafeProgressMonitor monitor) {
         System.out.println("Error Handling Analysis...");
 
@@ -245,9 +255,14 @@ public class ErrorHandlingAnalysis {
         loadConnectionCalls();
         //load ui calls
         loadUICalls();
-
+        
+        cloneInheritedMethodsForUserClasses();
+        System.out.println("Done cloning inherited methods...");
+        
         JimpleRelationships.reset();
+        
         CHACallGraph.v(false);
+        System.out.println("Done calculating callgraph (CHA)...");
 
         //CHACallGraph.v(false).dumpEdges("cha-callgraph-no-reflection.txt", false);
 
