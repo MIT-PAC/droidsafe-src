@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -107,10 +108,21 @@ public class ErrorHandlingAnalysis {
     private final int DEPTH_LIMIT = 70;
     private SootClass runnableClass;
     private boolean DEBUG = false;
+    
+    private Set<SootClass> ADD_TYPE_SENSITIVITY_TO_CHILDREN;
+    
+    private void initAddTypeSensList() {
+        HashSet<SootClass> addTypeSens = new HashSet<SootClass>();
+        
+        addTypeSens.add(Scene.v().getSootClass("android.os.AsyncTask"));
+        
+        ADD_TYPE_SENSITIVITY_TO_CHILDREN = addTypeSens;
+    }    
 
     private ErrorHandlingAnalysis() {
         throwableClass = Scene.v().getSootClass("java.lang.Throwable");
         runnableClass = Scene.v().getSootClass("java.lang.Runnable");
+        initAddTypeSensList();
     }
 
     public static ErrorHandlingAnalysis v() {
@@ -234,8 +246,17 @@ public class ErrorHandlingAnalysis {
     
     private void cloneInheritedMethodsForUserClasses() {
         for (SootClass clz : Scene.v().getClasses()) {
-            if (!API.v().isSystemClass(clz)) {
+            boolean hasInterestingParent = false;
+            for (SootClass parent : SootUtils.getParents(clz)) {
+                if (ADD_TYPE_SENSITIVITY_TO_CHILDREN.contains(parent)) {
+                    hasInterestingParent = true;
+                    break;
+                }
+            }
+            
+            if (hasInterestingParent && !API.v().isSystemClass(clz)) {
                 CloneInheritedMethods cim = new CloneInheritedMethods(clz, true, false);
+                System.out.println("Adding type sensitivity to " + clz);
                 cim.transform();
             }
         }
