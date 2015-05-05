@@ -86,18 +86,24 @@ public class CloneInheritedMethods {
     private static int cloned_method_id = 0;
     /** if true clone all methods otherwise clone only reachable */
     private boolean cloneAllMethods = false;
+    /** if true, then copy the classifications (spec, ban, safe, system) from the original method to the clone */
+    private boolean copyClassifications = true;
 
     /**
      * Clone inherited method and fix up code.  
      * 
      * If allMethods == true, then clone all methods, otherwise, just clone reachable methods
+     * If copyClassifications == true, then copy the classifications (spec, ban, safe, system) 
+     * from the original method to the clone
+     * 
      */
-    public CloneInheritedMethods(SootClass clz, boolean allMethods) {
+    public CloneInheritedMethods(SootClass clz, boolean allMethods, boolean copyClassifications) {
         clazz = clz;
         methods = new SootMethodList();
 
-        cloneAllMethods = allMethods;
-        clonedToOriginal = HashBiMap.create();
+        this.cloneAllMethods = allMethods;
+        this.clonedToOriginal = HashBiMap.create();
+        this.copyClassifications = copyClassifications;
 
         //add methods already in the clz
         for (SootMethod method : clazz.getMethods())
@@ -121,18 +127,24 @@ public class CloneInheritedMethods {
         }
 
         for (SootClass ancestor : ancestors) {
-            if (ancestor.isPhantom())
+            if (ancestor.isPhantom() || !ancestor.isApplicationClass())
                 continue;
-
-            cloneReachableNonHiddenAncestorMethods(ancestor);
+            try {
+                cloneReachableNonHiddenAncestorMethods(ancestor);
+            } catch (Exception e) {
+                //ignore error
+            }
         }
 
         //modify ancestors fields
         for (SootClass ancestor : ancestors) {
-            if (ancestor.isPhantom())
+            if (ancestor.isPhantom() || !ancestor.isApplicationClass())
                 continue;
-
-            SootUtils.makeFieldsVisible(ancestor);
+            try {
+                SootUtils.makeFieldsVisible(ancestor);
+            } catch (Exception e) {
+                //ignore error
+            }
         }
 
         cloneHiddenAncestorMethodsAndFixInvokeSpecial();
@@ -222,13 +234,12 @@ public class CloneInheritedMethods {
                 catch (Exception ex) {
                     logger.info("Exception retrieving method body {}", ex);
                     continue;
-                }
-
-
+                }               
+                
                 StmtBody stmtBody = (StmtBody)body;
 
                 Chain units = stmtBody.getUnits();
-                Iterator stmtIt = units.iterator();
+                Iterator stmtIt = units.iterator();                            
 
                 while (stmtIt.hasNext()) {
                     Stmt stmt = (Stmt)stmtIt.next();
@@ -291,12 +302,23 @@ public class CloneInheritedMethods {
 
         clonedToOriginal.put(newMeth, ancestorM);
 
-        API.v().cloneMethodClassifications(ancestorM, newMeth);
+        if (copyClassifications)
+            API.v().cloneMethodClassifications(ancestorM, newMeth);
+              
 
         //clone body
         Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
         newMeth.setActiveBody(newBody);
-
+        
+        //change the type of the this local to the current (child) class
+        //don't think this is really necessary because something else seems to do this...
+        try {
+            if (!ancestorM.isStatic())
+                newBody.getThisLocal().setType(clazz.getType());
+        } catch (Exception e) {
+            //ignore
+        }
+       
         JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
 
         return newMeth;

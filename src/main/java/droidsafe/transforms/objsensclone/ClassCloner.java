@@ -174,7 +174,7 @@ public class ClassCloner {
         cloneAndInstallClass();
 
         //remove inheritance by cloning
-        cim = new CloneInheritedMethods(clone, cloneAllMethods);
+        cim = new CloneInheritedMethods(clone, cloneAllMethods, true);
         cim.transform();
 
       

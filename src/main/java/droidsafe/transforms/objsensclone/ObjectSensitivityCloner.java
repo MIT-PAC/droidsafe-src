@@ -316,7 +316,7 @@ public class ObjectSensitivityCloner {
                 if (!cloned) {
                     fw.write("\tNot cloned: but removed inheritance\n");
                     //if not cloning, then just clone inherited methods of class
-                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass, false);
+                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass, false, true);
                     cim.transform();
                     rememberCloneContext(cim.getCloneToOriginalMap());
                     //update allocation graph for new methods

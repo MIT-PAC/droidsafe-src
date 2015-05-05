@@ -235,7 +235,7 @@ public class ErrorHandlingAnalysis {
     private void cloneInheritedMethodsForUserClasses() {
         for (SootClass clz : Scene.v().getClasses()) {
             if (!API.v().isSystemClass(clz)) {
-                CloneInheritedMethods cim = new CloneInheritedMethods(clz, true);
+                CloneInheritedMethods cim = new CloneInheritedMethods(clz, true, false);
                 cim.transform();
             }
         }
