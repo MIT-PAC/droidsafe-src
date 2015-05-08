@@ -819,7 +819,7 @@ public class ErrorHandlingAnalysis {
 
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached recursion depth.");
-            return 0;
+            return 1;
         }
 
         //visiting this body in the current process thrown exception search
@@ -983,7 +983,8 @@ public class ErrorHandlingAnalysis {
                         possibleThrown.addAll(getPossibleThrownExceptions(containingBody, getTryBlockForFirstTrapUnit(containingBody, (IdentityStmt)def)));
                     } else {
                         logger.debug("Don't support def of thrown exception op: {}", def);
-                        return null;
+                        continue;
+                        //return null;
                     }
                 }   
 
