@@ -897,7 +897,12 @@ public class ErrorHandlingAnalysis {
                 if (lastDefOfThrownOp == null) {
                     //something we don't handle
                     logger.debug("Unknown last def of thrown exception: {}", lastDefOfThrownOp);
+                    /*
                     return 0;
+                    */
+                    //just use the type of the op
+                    reThrownTypes = new LinkedHashSet<SootClass>();
+                    reThrownTypes.add(((RefType)throwStmt.getOp().getType()).getSootClass());                    
                 } else if (lastDefOfThrownOp instanceof IdentityStmt &&
                         ((IdentityStmt)lastDefOfThrownOp).getRightOp() instanceof CaughtExceptionRef) {
                     //rethrowing caught exception, use exception type of the search that got us here.
@@ -956,7 +961,8 @@ public class ErrorHandlingAnalysis {
                 ThrowStmt throwStmt = (ThrowStmt)stmt;
                 if (!(throwStmt.getOp() instanceof Local)) {
                     logger.debug("Op of throw is not Local: {}", throwStmt.getOp());
-                    return null;
+                    continue;
+                    //return null;
                 }
 
                 List<Unit> defUnits = simpleLocalDefs.getDefsOfAt((Local)throwStmt.getOp(), throwStmt);
