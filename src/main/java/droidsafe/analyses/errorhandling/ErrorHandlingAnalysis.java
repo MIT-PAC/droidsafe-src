@@ -105,7 +105,7 @@ public class ErrorHandlingAnalysis {
     private Set<Stmt> connectionCallsSuccessBackwardNoUI = new LinkedHashSet<Stmt>();  
     private PrintStream out;
     private SootClass throwableClass;   
-    private final int DEPTH_LIMIT = 70;
+    private final int DEPTH_LIMIT = 120; 
     private SootClass runnableClass;
     private boolean DEBUG = false;
     
