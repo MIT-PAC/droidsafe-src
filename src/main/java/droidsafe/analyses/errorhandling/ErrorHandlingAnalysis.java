@@ -703,9 +703,9 @@ public class ErrorHandlingAnalysis {
         //limit recursion
         if (depth > DEPTH_LIMIT) {
             logger.debug("Reached depth limit in findAllHandlers");
-            visited.put(probe, 0);
+            visited.put(probe, 1);
             visiting.remove(probe);
-            return 0;
+            return 1;
         }
 
         Map<Unit, List<Trap>> unitToTraps = getUnitToTrapMap(body);
