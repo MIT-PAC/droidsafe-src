@@ -517,7 +517,7 @@ public class ErrorHandlingAnalysis {
                         if (CHACallGraph.v(false).isReflectedEdge(stmtEdge))
                             continue;
                         
-                        if (uiMethods.containsPoly(target)) {
+                        if (uiMethods.containsPoly(target) && !CHACallGraph.v(false).isReflectedEdge(stmtEdge)) {
                             if (DEBUG) logger.debug("In success search backwards, found ui method call in {}: {}\n",  method, reachable);                            
                             return true;
                         }
@@ -619,7 +619,7 @@ public class ErrorHandlingAnalysis {
                         if (CHACallGraph.v(false).isReflectedEdge(stmtEdge))
                             continue;
                         
-                        if (uiMethods.containsPoly(target)) {
+                        if (uiMethods.containsPoly(target) && !CHACallGraph.v(false).isReflectedEdge(stmtEdge)) {
                             if (DEBUG) logger.debug("In success search, found ui method call in {}: {}\n",  body.getMethod(), stmt);
                             return true;
                         } else if (target.isConcrete()) {
@@ -851,7 +851,7 @@ public class ErrorHandlingAnalysis {
                         SootMethod target = stmtEdge.getV2();
 
                         
-                        if (uiMethods.containsPoly(target)) {
+                        if (uiMethods.containsPoly(target) && !CHACallGraph.v(false).isReflectedEdge(stmtEdge)) {
                             if (DEBUG) logger.debug("Found ui method call in handler {}: {}\n",  body.getMethod(), current);
                             return -1;
                         } else if (target.isConcrete()) {
@@ -923,14 +923,13 @@ public class ErrorHandlingAnalysis {
                         reThrownTypes.add(((RefType)type).getSootClass());
                     }                                        
                 } else {
-                    if (DEBUG) logger.debug("Unknown last def of thrown exception: {}", lastDefOfThrownOp);
-                    reThrownTypes = new LinkedHashSet<SootClass>();
-                    reThrownTypes.add(((RefType)throwStmt.getOp().getType()).getSootClass());       
+                    if (DEBUG) logger.debug("Unknown last def of thrown exception: {}", lastDefOfThrownOp);                       
                 }
 
                 //don't know the type
                 if (reThrownTypes == null) {
                     logger.error("Don't know type of re-thrown exception");
+                    return 0;
                 }
 
                 for (SootClass reThrownType : reThrownTypes) {
