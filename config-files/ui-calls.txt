@@ -49,3 +49,4 @@ android.widget.Toast|makeText
 #android.util.Log|e
 #android.util.Log|v
 #android.util.Log|w
+android.graphics.BitmapFactory|decodeStream
