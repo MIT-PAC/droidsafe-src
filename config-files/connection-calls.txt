@@ -13,3 +13,5 @@ org.apache.http.impl.client.AbstractHttpClient|execute|java.io.IOException
 java.net.Socket|getOutputStream|java.io.IOException
 org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl|getOutputStream|java.io.IOException
 android.os.IBinder|transact|android.os.RemoteException
+android.graphics.BitmapFactory|decodeStream
+
