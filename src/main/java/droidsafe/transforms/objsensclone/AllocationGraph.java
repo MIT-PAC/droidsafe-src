@@ -46,6 +46,7 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
+import droidsafe.main.Config;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.RefType;
@@ -77,6 +78,12 @@ public class AllocationGraph {
     private Set<DefaultEdge> staticEdges;
     
     private Map<SootClass, Set<NewExpr>> classToNewExprs;
+    
+    static class AGEdge<V> extends DefaultEdge {
+        public AGEdge(V s, V d) {
+            super();
+        }
+    }
         
     /**
      * Create an allocation graph based on the current classes in the scene.
@@ -136,6 +143,38 @@ public class AllocationGraph {
         
         for (DefaultEdge e : toRemove) {
             graph.removeEdge(e);
+        }
+    }
+    
+    private int getChildComplexity(SootClass current, int distanceFromStart, int k) {
+        if (distanceFromStart >= (k - 1))
+            return 1;
+        
+        int sum = 0;
+        for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
+            SootClass target = graph.getEdgeTarget(edge);
+            sum += getChildComplexity(target, distanceFromStart + 1, k);
+        }
+        
+        return sum;
+    }
+    
+    public int getComplexity(SootClass clz) {
+        int k = Config.v().kobjsens;
+        
+        int childComplexity = getChildComplexity(clz, 0, k);
+        
+        return graph.inDegreeOf(clz) * childComplexity;
+    }
+    
+    public void dumpComplexity() {
+        try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "alloc-complexity.csv")){
+            for (SootClass clz : graph.vertexSet()) {
+                fw.write(clz + "," + getComplexity(clz) + "\n");                
+            }
+            
+        } catch (IOException e) {
+            
         }
     }
     

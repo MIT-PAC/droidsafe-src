@@ -104,6 +104,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.transforms.objsensclone.AllocationGraph;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
@@ -196,6 +197,9 @@ public class SparkPTA extends PTABridge {
                 System.out.println(method + " " + mcs.size());
         }
          */
+        
+        AllocationGraph ag = new AllocationGraph();
+        ag.dumpComplexity();
         
         //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
