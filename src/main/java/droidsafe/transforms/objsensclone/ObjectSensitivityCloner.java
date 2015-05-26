@@ -83,6 +83,8 @@ import soot.util.Chain;
 import soot.ValueBox;
 
 /**
+ * BROKEN CURRENT, DO NOT USE!
+ * 
  * Introduce selective object sensitivity by cloning certain api classes.  
  * When a new expression of one of the tracked classes is encountered in application code, 
  * a clone is created of the original class (clone contains methods from ancestors), and the
@@ -321,7 +323,7 @@ public class ObjectSensitivityCloner {
                     rememberCloneContext(cim.getCloneToOriginalMap());
                     //update allocation graph for new methods
                     for (SootMethod method : cim.getReachableClonedMethods()) {
-                        aGraph.updateAllocationGraph(method);
+                        //faGraph.updateAllocationGraph(method);
                         List<SootMethod> tempSet = new ArrayList<SootMethod>(1);
                         tempSet.add(method);
                         addToAllocList(tempSet);
@@ -526,8 +528,10 @@ public class ObjectSensitivityCloner {
                         rememberCloneContext(cCloner.getCloneToOriginalMap());
 
                         //update allocation graph for new methods
+                        /*
                         for (SootMethod newMethod : cCloner.getReachableClonedMethods())
                             aGraph.updateAllocationGraph(newMethod);
+                         */
 
                         SootMethodRef origMethodRef = special.getMethodRef();
 

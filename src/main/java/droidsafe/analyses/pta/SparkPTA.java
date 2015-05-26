@@ -131,7 +131,7 @@ public class SparkPTA extends PTABridge {
     private Set<AllocNode> allAllocNodes;
     /** how many times have we been run? */
     private static int runCount = 1;
-
+    private AllocationGraph ag;
 
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
@@ -172,6 +172,9 @@ public class SparkPTA extends PTABridge {
 
     @Override
     protected void runInternal() {
+        ag = new AllocationGraph();
+        ag.dumpComplexity();
+        
         //don't print crap to screen!
         G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
@@ -197,10 +200,7 @@ public class SparkPTA extends PTABridge {
                 System.out.println(method + " " + mcs.size());
         }
          */
-        
-        AllocationGraph ag = new AllocationGraph();
-        ag.dumpComplexity();
-        
+                     
         //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
         //dumpOutdegreesCSV();
@@ -824,6 +824,8 @@ public class SparkPTA extends PTABridge {
             addStringClasses(limitHeapContext);
         } 
 
+        limitComplexity(limitHeapContext);
+        
         logger.info("limit heap context list: {}", limitHeapContext.toString());
         opt.put("kobjsens-limit-heap-context", limitHeapContext.toString());
 
@@ -847,6 +849,21 @@ public class SparkPTA extends PTABridge {
 
 
         logger.info("[spark] Done!");
+    }
+    
+    private void limitComplexity(StringBuffer buf) {
+        if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
+            buf.append(',');
+        
+        for (Map.Entry<SootClass, Integer> e : ag.getComplexityMap().entrySet()) {
+            if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
+                continue;
+            
+            if (e.getValue().intValue() > 10000) {
+                buf.append(e.getKey() + ",");
+                System.out.println("limiting heap context for complex class: " + e.getKey());
+            }
+        }
     }
 
     private void addGUIClasses(StringBuffer buf) {
