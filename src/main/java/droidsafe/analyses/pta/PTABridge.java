@@ -253,6 +253,19 @@ public abstract class PTABridge {
         return callingMethods;
     }
     
+    public List<SootMethod> outgoingEdgesIns(SootMethod method) {
+        List<SootMethod> calledMethods = new LinkedList<SootMethod>();              
+        
+        //find incoming methods for all contexts, ignore context
+        for (MethodOrMethodContext momc : getMethodContexts(method)) {
+            Iterator<Edge> edges = callGraph.edgesOutOf(momc);
+            while (edges.hasNext()) 
+                calledMethods.add(edges.next().tgt());
+        }
+        
+        return calledMethods;
+    }
+    
     public Set<SootMethod> getTargetsInsNoContext(Stmt stmt) {
         return getTargetsInsNoContext(JimpleRelationships.v().getEnclosingMethod(stmt), stmt);
     }

@@ -100,6 +100,7 @@ import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
+import droidsafe.analyses.CallGraphDumper;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
@@ -218,8 +219,9 @@ public class SparkPTA extends PTABridge {
 
         if (Config.v().dumpCallGraph) {
             //dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
-            String fileName = String.format("callgraph%d.txt", runCount++);
-            dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
+            CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
+            //String fileName = String.format("callgraph%d.txt", runCount++);
+            //dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
         }
 
         //System.out.println(SparkEvaluator.v().toString());      
@@ -809,14 +811,16 @@ public class SparkPTA extends PTABridge {
         
         opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
         
+        opt.put("kobjsens-api-calldepth", Integer.toString(Config.v().apiCallDepth));
+        
+        opt.put("kobjsens-app-classes-list", getAppClassesString());
+        
         opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
 
         opt.put("kobjsens-no-context-list", 
             buildNoContextList());
 
-        opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));
-      
-        opt.put("kobjsens-important-allocators", "");
+        opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));       
         
         if (Config.v().extraArrayContext)
             opts.put("kobjsens-extra-array-context", "true"); 
@@ -832,6 +836,7 @@ public class SparkPTA extends PTABridge {
         } 
 
         limitComplexity(limitHeapContext);
+        
         
         logger.info("limit heap context list: {}", limitHeapContext.toString());
         opt.put("kobjsens-limit-heap-context", limitHeapContext.toString());
@@ -866,7 +871,7 @@ public class SparkPTA extends PTABridge {
             if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
                 continue;
             
-            if (e.getValue().intValue() > 10000) {
+            if (e.getValue().intValue() > 50000) {
                 buf.append(e.getKey() + ",");
                 System.out.println("limiting heap context for complex class: " + e.getKey());
             }
@@ -938,15 +943,14 @@ public class SparkPTA extends PTABridge {
         return false;
     }
 
-    private String buildImportantAllocs() {
+    private String getAppClassesString() {
         StringBuffer sb = new StringBuffer();
 
         for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz) || 
-                    /*isImportantJavaAlloc(clz) ||*/
+            if (!API.v().isSystemClass(clz) || 
                     clz.getName().startsWith(Project.DS_GENERATED_CLASSES_PREFIX) ||
-                    clz.getName().startsWith("droidsafe.runtime")) {
-                logger.info("Adding class to important alloc list of spark: {}", clz);
+                    clz.getName().startsWith("droidsafe")) {
+                logger.info("Adding class to app list of spark: {}", clz);
                 sb.append(clz + ",");
             }
         }

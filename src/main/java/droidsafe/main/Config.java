@@ -222,6 +222,9 @@ public class Config {
      * considered
      */
     public String readInterAppFlowsFile = "";
+    /** the depth in which to follow call graph edges from app code when building the call graph, -1 is
+     * follow all edges, 0 is don't traverse into api, 1 is traverse one edge only, ... */
+    public int apiCallDepth = -1;
     
     /** If true, then only run the core analysis, and exit before reports are produced */
     public boolean analysisOnlyRun = false;
@@ -327,6 +330,10 @@ public class Config {
                 .withDescription("Depth for Object Sensitivity for PTA").create("kobjsens");
         options.addOption(kObjSens);
 
+        Option APICallDepth = OptionBuilder.withArgName("n").hasArg()
+                .withDescription("API Call Depth").create("apicalldepth");
+        options.addOption(APICallDepth);
+        
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
         
@@ -578,6 +585,10 @@ public class Config {
 
         if (cmd.hasOption("kobjsens")) {
             this.kobjsens = Integer.parseInt(cmd.getOptionValue("kobjsens"));
+        }
+        
+        if (cmd.hasOption("apicalldepth")) {
+            this.apiCallDepth = Integer.parseInt(cmd.getOptionValue("apicalldepth"));
         }
       
         if (cmd.hasOption("strict")) {

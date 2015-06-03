@@ -28,6 +28,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 import soot.MethodOrMethodContext;
 import soot.Scene;
@@ -98,6 +99,56 @@ public class CallGraphDumper {
         
     }
     
+    private static Set<SootMethod> getLeaves() {
+        Set<SootMethod> methods = new HashSet<SootMethod>();
+            /*
+        for (SootMethod m : PTABridge.v().getReachableMethods()) {
+            if (m.getDeclaringClass().getName().startsWith("org.apache.harmony.xnet.provider.jsse.CipherSuite")) 
+                methods.add(m);                               
+        }
+            */
+        methods.add(Scene.v().getMethod("<org.apache.harmony.xnet.provider.jsse.CipherSuite: void <init>(java.lang.String,boolean,int,java.lang.String,java.lang.String,java.lang.String,byte[])>"));
+        return methods;
+    }
+    
+    static class MethodPair {
+        SootMethod src;
+        SootMethod tgt;               
+        
+        public MethodPair(SootMethod src, SootMethod tgt) {
+            super();
+            this.src = src;
+            this.tgt = tgt;
+        }
+
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + ((src == null) ? 0 : src.hashCode());
+            result = prime * result + ((tgt == null) ? 0 : tgt.hashCode());
+            return result;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null) return false;
+            if (getClass() != obj.getClass()) return false;
+            MethodPair other = (MethodPair) obj;
+            if (src == null) {
+                if (other.src != null) return false;
+            } else if (!src.equals(other.src)) return false;
+            if (tgt == null) {
+                if (other.tgt != null) return false;
+            } else if (!tgt.equals(other.tgt)) return false;
+            return true;
+        }
+     
+        
+    }
+    
+    
     public static void runGEXF(String fileStr) {
         System.out.println("Dumping call graph.");
         FileWriter fw;
@@ -116,32 +167,65 @@ public class CallGraphDumper {
             StringBuffer nodes = new StringBuffer();
             int edgeID = 0;
             
-            Set<MethodOrMethodContext> momcs;
-            //momcs = PTABridge.v().getReachableMethodContexts();
+            Stack<SootMethod> workList = new Stack<SootMethod>();
+            workList.addAll(getLeaves());
+            Set<SootMethod> visited = new HashSet<SootMethod>();
+            Set<MethodPair> createdEdges = new HashSet<MethodPair>();
             
-            SootMethod theOne = Scene.v().getMethod("<java.net.InterfaceAddress: java.lang.String toString()>");
-            momcs = reachableFromNoClinits(theOne.method());
-                        
-            for (MethodOrMethodContext src : momcs) {
+            while (!workList.isEmpty()) {
+                SootMethod current = workList.pop();
+                if (/*"<clinit>".equals(current.getName()) || */visited.contains(current))
+                    continue;
+                
+                visited.add(current);
+                /*
+                String methodL = current.toString();
+                methodL = methodL.replaceAll("<|>", "");
+                nodes.append("<node id=\"" + current.hashCode() + "\" label=\"" + methodL + "\"/>\n");
+                */
+                
+                for (SootMethod src : PTABridge.v().incomingEdgesIns(current)) {
+                    /*
+                    if ("<clinit>".equals(src.getName()))
+                        continue;
+                    */
+                    
+                    MethodPair mp = new MethodPair(src, current);
+                    if (!createdEdges.contains(mp)) {
+                        /*edges.append("<edge id=\"" + (edgeID++) + 
+                            "\" source=\"" + src.hashCode() + "\" target=\"" + current.hashCode() + "\"/>\n");
+                            */
+                        fw.write(src.getDeclaringClass() + " " + src.getName() + " => " + current.getDeclaringClass() + " " + current.getName() + "\n");
+                        createdEdges.add(mp);
+                    }
+                    
+                    if (!visited.contains(src))
+                        workList.add(src);
+                }
+            }
+            
+            
+             /*           
+            for (SootMethod src : reachableMethods) {
                 if ("<clinit>".equals(src.method().getName()))
                     continue;
                 
                 String methodL = src.toString();
                 methodL = methodL.replaceAll("<|>", "");
                 nodes.append("<node id=\"" + src.hashCode() + "\" label=\"" + methodL + "\"/>\n");
+
                 //edges
-                Iterator<Edge> edgesIt = PTABridge.v().getCallGraph().edgesOutOf(src);
-                while (edgesIt.hasNext()) {
-                    Edge edge = edgesIt.next();
-                    if ("<clinit>".equals(edge.tgt().getName())  || !momcs.contains(edge.getTgt()))
+                for (SootMethod tgt : PTABridge.v().outgoingEdgesIns(src)) {
+                    if ("<clinit>".equals(tgt.getName())  || !reachableMethods.contains(tgt))
                         continue;
                     
                     edges.append("<edge id=\"" + edgeID + 
-                        "\" source=\"" + edge.getSrc().hashCode() + "\" target=\"" + edge.getTgt().hashCode() + "\"/>\n");
+                        "\" source=\"" + src.hashCode() + "\" target=\"" + tgt.hashCode() + "\"/>\n");
                     
                     edgeID++;
                 }
             }
+            */
             
             fw.write("<nodes>\n");
             fw.write(nodes.toString());
