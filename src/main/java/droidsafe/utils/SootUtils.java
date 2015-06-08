@@ -1975,6 +1975,15 @@ public class SootUtils {
                 
         return reachable;
     }
+    
+    public static Iterable<Unit> getStmtIterator(SootMethod method) {
+        try {
+            Body body = method.retrieveActiveBody();
+            return body.getUnits();
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
+    }
 }
 
 

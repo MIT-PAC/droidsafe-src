@@ -229,6 +229,8 @@ public class Config {
     /** If true, then only run the core analysis, and exit before reports are produced */
     public boolean analysisOnlyRun = false;
     
+    public boolean createRCFG = true;
+    
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
      * the application to System.exit(int) when Main.exit() is called. We use this option when running
@@ -310,6 +312,9 @@ public class Config {
 
         Option analysisOnly = new Option("analysisonlyrun", "Only run core analysis, and do not create reports or Eclipse output");
         options.addOption(analysisOnly);
+        
+        Option noRCFG = new Option("norcfg", "Do not organize results by triggering event.  Does not produce eclipse files.");
+        options.addOption(noRCFG);
 
         Option jsatimeout =
                 OptionBuilder.withArgName("value").hasArg()
@@ -570,6 +575,11 @@ public class Config {
         if (cmd.hasOption("analysisonlyrun")) {
             this.analysisOnlyRun = true;
         }
+        
+        if (cmd.hasOption("norcfg")) {
+            this.createRCFG = false;
+        }
+        
         
         if (cmd.hasOption("appname")) {
             this.appName = cmd.getOptionValue("appname");

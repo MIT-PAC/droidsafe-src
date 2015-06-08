@@ -52,6 +52,7 @@ import droidsafe.android.system.Permissions;
 import droidsafe.reports.ICCEntryPointCallTree;
 import droidsafe.reports.ICCMap;
 import droidsafe.reports.IPCEntryPointCallTree;
+import droidsafe.reports.InfoFlowReportNoRCFG;
 import droidsafe.reports.InformationFlowReport;
 import droidsafe.reports.ObjectMethodOverrideContracts;
 import droidsafe.reports.SensitiveSources;
@@ -172,7 +173,7 @@ public class Main {
 
         writeCompletionFile();
         System.out.println("Finished!");
-	System.exit(0);
+        System.exit(0);
     }
 
     /**
@@ -402,7 +403,7 @@ public class Main {
         //account for any transformations
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-       
+
         //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
         //replace calls with new expressions, and let the modeling pass taint appropriately
         driverMsg("Converting AbstractStringBuilder.toString()");
@@ -414,24 +415,28 @@ public class Main {
 
         //new TestPTA();     
 
-        driverMsg("Starting Generate RCFG...");
-        StopWatch rcfgTimer = new StopWatch();
-        rcfgTimer.start();
-        monitor.subTask("Generating Spec");
-        RCFG.generate();
-        rcfgTimer.stop();
-        driverMsg("Finished Generating RCFG: " + rcfgTimer);
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        if (Config.v().createRCFG) {
+            driverMsg("Starting Generate RCFG...");
+            StopWatch rcfgTimer = new StopWatch();
+            rcfgTimer.start();
+            monitor.subTask("Generating Spec");
+            RCFG.generate();
+            rcfgTimer.stop();
+            driverMsg("Finished Generating RCFG: " + rcfgTimer);
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
         }
 
         // print out what modeling is required for this application
-        monitor.subTask("Required Modeling");
-        RequiredModeling.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        if (Config.v().produceReports) {
+            monitor.subTask("Required Modeling");
+            RequiredModeling.run();     
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
         }
 
         //if debugging then write some jimple classes
@@ -465,6 +470,11 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        //if (!Config.v().createRCFG) {
+            //produce info flow report without rcfg information
+            new InfoFlowReportNoRCFG().run();
+        //}
 
         //finished all core analysis
         //exit here if we are not producing results
@@ -482,50 +492,53 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-        }
+        }               
 
-
-        driverMsg("Converting RCFG to SSL and dumping...");
-        monitor.subTask("Writing Spec to File");
         StopWatch timer = new StopWatch();
-        timer.start();
-        RCFGToSSL.run(false);
-        SecuritySpecification spec = RCFGToSSL.v().getSpec();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-        timer.stop();
-        driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
-        //find inter app flows here
-        if (Config.v().produceInterAppFlowsFile)
-            GenerateInterAppSourceFlows.v().run(spec);
-
-        if (spec != null) {
-
-            driverMsg("Creating Eclipse Plugin Serialized Specification...");
-            timer.reset();
+        if (Config.v().createRCFG) {
+            driverMsg("Converting RCFG to SSL and dumping...");
+            monitor.subTask("Writing Spec to File");      
             timer.start();
-            SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
-            SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-            if (Config.v().debug)
-                SecuritySpecModel.writeSpecInfoToFiles(securitySpecModel, Config.v().APP_ROOT_DIR);
-
+            RCFGToSSL.run(false);
+            SecuritySpecification spec = RCFGToSSL.v().getSpec();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
             timer.stop();
-            driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
+            driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
-            if (Config.v().infoFlow)
-                InformationFlowReport.create(spec);
-        }
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
 
-        if (Config.v().produceReports)
-            PTAPaper.writeReport();
+            //find inter app flows here
+            if (Config.v().produceInterAppFlowsFile)
+                GenerateInterAppSourceFlows.v().run(spec);
 
+            if (spec != null) {
+
+                driverMsg("Creating Eclipse Plugin Serialized Specification...");
+                timer.reset();
+                timer.start();
+                SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+                SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+                if (Config.v().debug)
+                    SecuritySpecModel.writeSpecInfoToFiles(securitySpecModel, Config.v().APP_ROOT_DIR);
+
+                timer.stop();
+                driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
+
+                if (Config.v().infoFlow)
+                    InformationFlowReport.create(spec);
+            }
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+            
+            if (Config.v().produceReports)
+                PTAPaper.writeReport();
+        } 
+        
         monitor.worked(1);       
         return DroidsafeExecutionStatus.OK_STATUS;
     }
@@ -660,7 +673,7 @@ public class Main {
             Config.v().runStringAnalysis = false;
             JSAStrings.v().setHasRun(false);
         }
-        
+
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 

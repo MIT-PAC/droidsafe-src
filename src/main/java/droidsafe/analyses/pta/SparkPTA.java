@@ -198,18 +198,19 @@ public class SparkPTA extends PTABridge {
         for (SootMethod method : getReachableMethods()) {
             Set<MethodOrMethodContext> mcs = getMethodContexts(method);
             totalMCs += mcs.size();
-            if (mcs.size() > 30)
+        /*    if (mcs.size() > 30)
                 System.out.println(method + " " + mcs.size());
             if ("<java.lang.Math: int min(int,int)>".equals(method.getSignature())) {
                 for (MethodOrMethodContext mc : mcs) {
                     System.out.println("\t" + mc);
                 }
             }
+            */
         }
                 
         System.out.println("Total reachable method x contexts: " + totalMCs);
         
-        dumpReachablesAndAllocNodes();
+        //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
         //dumpOutdegreesCSV();
 

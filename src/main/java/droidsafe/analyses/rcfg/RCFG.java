@@ -77,6 +77,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
@@ -139,7 +140,8 @@ public class RCFG  {
         v().runAlt();
 
         //print unreachable methods to the debug log
-        v().printReachableMethods();
+        if (Config.v().produceReports)
+            v().printReachableMethods();
 
         //System.out.println(v().toString());
     }
