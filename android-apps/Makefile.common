@@ -129,11 +129,10 @@ specdump-apk: unpack-apk droidsafe-prelim
 
 specdump-apk-analysis: unpack-apk droidsafe-prelim
 	@if [ -f $(APK) ] ; then \
-	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apkfile $(APK) -t specdump -noreports -noptaresult -analysisonlyrun ; \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apkfile $(APK) -t specdump -nova -noreports -noptaresult -nojsa -apicalldepth 3 -norcfg; \
 	else \
-	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apk -t specdump -noreports -noptaresult -analysisonlyrun  ; \
+	     $(DROIDSAFE_SRC_HOME)/bin/droidsafe $(DSARGS) -approot $(HERE) -apk -t specdump -nova -noreports -noptaresult -nojsa -apicalldepth 3 -norcfg ; \
 	fi;
-
 
 # run the droidsafe with logging on apk. Arguments can be specified using $DSARGS
 # This could be accomplished by passing -debug to specdump-apk, but is included
