@@ -59,6 +59,8 @@ public class InfoFlowReportNoRCFG {
                         if (API.v().isSystemMethod(method))
                             continue;
                         
+                        boolean reachable = PTABridge.v().getReachableMethods().contains(method);
+                        
                         for (Unit u : method.retrieveActiveBody().getUnits()) {
                             Stmt stmt = (Stmt)u;                            
                             if (stmt.containsInvokeExpr()) {
@@ -69,8 +71,10 @@ public class InfoFlowReportNoRCFG {
                                         break;
                                     }
                                 }
-                                if (possibleSource)
-                                    fw.write(stmt + " in " + method + "\n") ;
+                                if (possibleSource) {
+                                    
+                                    fw.write(stmt + " in " + method + (reachable ? "" : "(not reachable)") + "\n") ;
+                                }
                             }
                         }
                     }           
