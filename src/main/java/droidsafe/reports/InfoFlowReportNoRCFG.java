@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import soot.Local;
 import soot.MethodOrMethodContext;
 import soot.PrimType;
+import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
 import soot.Value;
@@ -49,7 +51,41 @@ public class InfoFlowReportNoRCFG {
         // TODO Auto-generated constructor stub
     }
 
+    public void printSensitiveSources() {
+        try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "all-sources.txt")){
+            for (SootClass clz : Scene.v().getClasses()) {
+                try {
+                    for (SootMethod method : clz.getMethods()) {
+                        if (API.v().isSystemMethod(method))
+                            continue;
+                        
+                        for (Unit u : method.retrieveActiveBody().getUnits()) {
+                            Stmt stmt = (Stmt)u;                            
+                            if (stmt.containsInvokeExpr()) {
+                                boolean possibleSource = false;
+                                for (SootMethod target : SootUtils.getTargetsCHA(stmt.getInvokeExpr())) {
+                                    if (API.v().hasSourceInfoKind(target)) {
+                                        possibleSource = true;
+                                        break;
+                                    }
+                                }
+                                if (possibleSource)
+                                    fw.write(stmt + " in " + method + "\n") ;
+                            }
+                        }
+                    }           
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+        } catch (Exception e) {
+
+        }
+    }
+
     public void run() {
+        printSensitiveSources();
+        
         try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + FILE_NAME)) {
             //loop through all reachable methods
             Set<InfoValue> recFlows = new HashSet<InfoValue>();
@@ -70,7 +106,7 @@ public class InfoFlowReportNoRCFG {
 
                 if (!hasSink)
                     continue;
-                
+
                 for (Unit u : SootUtils.getStmtIterator(method)) {
                     Stmt stmt = (Stmt)u;
                     if (!stmt.containsInvokeExpr())
