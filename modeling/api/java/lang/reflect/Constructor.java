@@ -545,7 +545,8 @@ public Class<?>[] getParameterTypes() {
     
 public T newInstance(Object... args) throws InstantiationException, IllegalAccessException,
             IllegalArgumentException, InvocationTargetException {
-        return constructNative (args, declaringClass, parameterTypes, slot, flag);
+        //        return constructNative (args, declaringClass, parameterTypes, slot, flag);
+        return null;
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.723 -0400", hash_original_method = "847A043CD7E53CD248ABB6D5FEBEB21F", hash_generated_method = "AB7A646FD776CAA4E845EC2470DC079B")
