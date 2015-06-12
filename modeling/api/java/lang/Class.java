@@ -231,58 +231,70 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
+        return null;
+        /*
     	Class[] ret = new Class[0];
     	//ret.addTaint(clazz.getTaint());
     	//ret.addTaint(publicOnly);
     	return ret;
+        */
     }
     
     @DSComment("Private Method")
     @DSSafe(DSCat.SAFE_LIST)
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
-    	Constructor[] ret = new Constructor[0];
+    	/*Constructor[] ret = new Constructor[0];
     	//ret.addTaint(clazz.getTaint());
     	//ret.addTaint(publicOnly);
     	return ret;
+        */
+        return null;
     }
     
     @DSComment("Package priviledge")
     @DSSafe(DSCat.SAFE_LIST)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
-    	Field[] ret = new Field[1];
+    	/*Field[] ret = new Field[1];
         //    	ret.addTaint(clazz.getTaint());
     	//ret.addTaint(publicOnly);
         ret[0] = new Field();
     	return ret;
+        */
+        return null;
     }
     
     @DSComment("Package priviledge")
     @DSSafe(DSCat.SAFE_LIST)
     static Field getDeclaredField(Class<?> clazz, String name) {
-    	Field ret = new Field();
+    	/*Field ret = new Field();
     	//ret.addTaint(clazz.getTaint());
     	//ret.addTaint(name.getTaint());
     	return ret;
+        */
+        return null;
     }
     
     @DSComment("Package priviledge")
     @DSSafe(DSCat.SAFE_LIST)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
-    	Method[] ret = new Method[0];
+    	/*Method[] ret = new Method[0];
     	//ret[0].addTaint(clazz.getTaint());
     	//ret[0].addTaint(publicOnly);
-    	return ret;
+    	return ret;*/
+        return null;
     }
     
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
-    	Method ret = new Method();
+    	/*Method ret = new Method();
         //    	ret.addTaint(clazz.getTaint());
     	//ret.addTaint(name.getTaint());
     	//ret.addTaint(args[0].getTaint());
     	return ret;
+        */
+        return null;
     }
     
     @DSComment("Private Method")
@@ -336,9 +348,11 @@ private String getSignatureAttribute() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
-    	Object[] foo = new Object[0];
+    	/*Object[] foo = new Object[0];
     	//foo.addTaint(this.getTaint());
     	return foo;
+        */
+        return null;
     }
 
     /**
@@ -354,60 +368,63 @@ private String getSignatureAttribute() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.881 -0500", hash_original_method = "0A5E0D64FA55612B299C6956628C149D", hash_generated_method = "D7203C509B77A1072C11ED193F651546")
     
 public Class<?>[] getClasses() {
-        return getFullListOfClasses(true);
+        //return getFullListOfClasses(true);
+        return null;
     }
     
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.626 -0400", hash_original_method = "F78DA66084C503A2B491A95B3FBC8112", hash_generated_method = "B7A3F7B3DC488C09635B8FBBAAD7576C")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
-        //addTaint(annotationType.getTaint());
-        if(annotationType == null)        
-        {
-            NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_369997871 = new NullPointerException("annotationType == null");
-            //varD3565833EFC12BC5822ABFE94D257EDE_369997871.addTaint(getTaint());
-            throw varD3565833EFC12BC5822ABFE94D257EDE_369997871;
-        } //End block
-        A annotation = getDeclaredAnnotation(annotationType);
-        if(annotation != null)        
-        {
-            A varB5EBB19788F53663B19E3EA6F1AE265A_918165834 =             annotation;
-            //varB5EBB19788F53663B19E3EA6F1AE265A_918165834.addTaint(getTaint());
-            return varB5EBB19788F53663B19E3EA6F1AE265A_918165834;
-        } //End block
-        if(annotationType.isAnnotationPresent(Inherited.class))        
-        {
-for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
-            {
-                annotation = sup.getDeclaredAnnotation(annotationType);
-                if(annotation != null)                
-                {
-A varB5EBB19788F53663B19E3EA6F1AE265A_526672705 =                     annotation;
-//                    varB5EBB19788F53663B19E3EA6F1AE265A_526672705.addTaint(getTaint());
-                    return varB5EBB19788F53663B19E3EA6F1AE265A_526672705;
-                } //End block
-            } //End block
-        } //End block
-        A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
-        //var540C13E9E156B687226421B24F2DF178_936883154.addTaint(getTaint());
-        return var540C13E9E156B687226421B24F2DF178_936883154;
-        // ---------- Original Method ----------
-        //if (annotationType == null) {
-            //throw new NullPointerException("annotationType == null");
-        //}
-        //A annotation = getDeclaredAnnotation(annotationType);
-        //if (annotation != null) {
-            //return annotation;
-        //}
-        //if (annotationType.isAnnotationPresent(Inherited.class)) {
-            //for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
-                //annotation = sup.getDeclaredAnnotation(annotationType);
-                //if (annotation != null) {
-                    //return annotation;
-                //}
-            //}
-        //}
-        //return null;
+        return null;
+
+//         //addTaint(annotationType.getTaint());
+//         if(annotationType == null)        
+//         {
+//             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_369997871 = new NullPointerException("annotationType == null");
+//             //varD3565833EFC12BC5822ABFE94D257EDE_369997871.addTaint(getTaint());
+//             throw varD3565833EFC12BC5822ABFE94D257EDE_369997871;
+//         } //End block
+//         A annotation = getDeclaredAnnotation(annotationType);
+//         if(annotation != null)        
+//         {
+//             A varB5EBB19788F53663B19E3EA6F1AE265A_918165834 =             annotation;
+//             //varB5EBB19788F53663B19E3EA6F1AE265A_918165834.addTaint(getTaint());
+//             return varB5EBB19788F53663B19E3EA6F1AE265A_918165834;
+//         } //End block
+//         if(annotationType.isAnnotationPresent(Inherited.class))        
+//         {
+// for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
+//             {
+//                 annotation = sup.getDeclaredAnnotation(annotationType);
+//                 if(annotation != null)                
+//                 {
+// A varB5EBB19788F53663B19E3EA6F1AE265A_526672705 =                     annotation;
+// //                    varB5EBB19788F53663B19E3EA6F1AE265A_526672705.addTaint(getTaint());
+//                     return varB5EBB19788F53663B19E3EA6F1AE265A_526672705;
+//                 } //End block
+//             } //End block
+//         } //End block
+//         A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
+//         //var540C13E9E156B687226421B24F2DF178_936883154.addTaint(getTaint());
+//         return var540C13E9E156B687226421B24F2DF178_936883154;
+//         // ---------- Original Method ----------
+//         //if (annotationType == null) {
+//             //throw new NullPointerException("annotationType == null");
+//         //}
+//         //A annotation = getDeclaredAnnotation(annotationType);
+//         //if (annotation != null) {
+//             //return annotation;
+//         //}
+//         //if (annotationType.isAnnotationPresent(Inherited.class)) {
+//             //for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
+//                 //annotation = sup.getDeclaredAnnotation(annotationType);
+//                 //if (annotation != null) {
+//                     //return annotation;
+//                 //}
+//             //}
+//         //}
+//         //return null;
     }
 
     /**
@@ -432,25 +449,26 @@ public Annotation[] getAnnotations() {
          *
          * HashMap might be overkill here.
          */
-        HashMap<Class, Annotation> map = new HashMap<Class, Annotation>();
-        Annotation[] declaredAnnotations = getDeclaredAnnotations();
+        // HashMap<Class, Annotation> map = new HashMap<Class, Annotation>();
+        // Annotation[] declaredAnnotations = getDeclaredAnnotations();
 
-        for (int i = declaredAnnotations.length-1; i >= 0; --i) {
-            map.put(declaredAnnotations[i].annotationType(), declaredAnnotations[i]);
-        }
-        for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
-            declaredAnnotations = sup.getDeclaredAnnotations();
-            for (int i = declaredAnnotations.length-1; i >= 0; --i) {
-                Class<?> clazz = declaredAnnotations[i].annotationType();
-                if (!map.containsKey(clazz) && clazz.isAnnotationPresent(Inherited.class)) {
-                    map.put(clazz, declaredAnnotations[i]);
-                }
-            }
-        }
+        // for (int i = declaredAnnotations.length-1; i >= 0; --i) {
+        //     map.put(declaredAnnotations[i].annotationType(), declaredAnnotations[i]);
+        // }
+        // for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
+        //     declaredAnnotations = sup.getDeclaredAnnotations();
+        //     for (int i = declaredAnnotations.length-1; i >= 0; --i) {
+        //         Class<?> clazz = declaredAnnotations[i].annotationType();
+        //         if (!map.containsKey(clazz) && clazz.isAnnotationPresent(Inherited.class)) {
+        //             map.put(clazz, declaredAnnotations[i]);
+        //         }
+        //     }
+        // }
 
-        /* convert annotation values from HashMap to array */
-        Collection<Annotation> coll = map.values();
-        return coll.toArray(new Annotation[coll.size()]);
+        // /* convert annotation values from HashMap to array */
+        // Collection<Annotation> coll = map.values();
+        // return coll.toArray(new Annotation[coll.size()]);
+        return null;
     }
 
     /**
@@ -577,7 +595,8 @@ ClassLoader getClassLoaderImpl() {
     
 @SuppressWarnings("unchecked")
     public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
-        return (Constructor) getConstructorOrMethod("<init>", false, true, parameterTypes);
+        //return (Constructor) getConstructorOrMethod("<init>", false, true, parameterTypes);
+        return null;
     }
 
     /**
@@ -657,21 +676,24 @@ private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] par
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.914 -0500", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "C6285A2293FC0FC9E24ABE031CAEAF52")
     
 public Constructor<?>[] getConstructors() {
-        return getDeclaredConstructors(this, true);
+        //return getDeclaredConstructors(this, true);
+        return null;
     }
     
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "2A0D770C788AFD3292AC02E319E3DDE7", hash_generated_method = "DB9C61E181111C55768DF3409E22B2FA")
     public Annotation[] getDeclaredAnnotations() {
-    	Annotation[] ret = new Annotation[0];
-    	return ret;
+    	//Annotation[] ret = new Annotation[0];
+    	//return ret;
+        return null;
     }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "097083D90BBF2FCC58AC81DB8664E54F", hash_generated_method = "33C06C0DC63918D788913C928E9A0C55")
     private <A extends Annotation> A getDeclaredAnnotation(Class<A> annotationClass) {
-    	A ret = (A)new Object();
+    	//A ret = (A)new Object();
        	//addTaint(annotationClass.getTaint());
-    	return ret;
+    	//return ret;
+        return null;
     }
 
     /**
@@ -702,7 +724,8 @@ public Constructor<?>[] getConstructors() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.928 -0500", hash_original_method = "0C6BF22DB8EB38DEB860C0E90FF64AEC", hash_generated_method = "7AE1F5EBD013B58268EBCB9E63397A2E")
     
 public Class<?>[] getDeclaredClasses() {
-        return getDeclaredClasses(this, false);
+        //return getDeclaredClasses(this, false);
+        return null;
     }
 
     /*
@@ -755,7 +778,8 @@ private Class<?>[] getFullListOfClasses(boolean publicOnly) {
 @SuppressWarnings("unchecked")
     public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
             throws NoSuchMethodException {
-        return (Constructor) getConstructorOrMethod("<init>", false, false, parameterTypes);
+        //return (Constructor) getConstructorOrMethod("<init>", false, false, parameterTypes);
+        return null;
     }
 
     /**
@@ -774,7 +798,8 @@ private Class<?>[] getFullListOfClasses(boolean publicOnly) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.939 -0500", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "A5160AEFF05AA595A8F6FC2468B59CF6")
     
 public Constructor<?>[] getDeclaredConstructors() {
-        return getDeclaredConstructors(this, false);
+        //return getDeclaredConstructors(this, false);
+        return null;
     }
 
     /**
@@ -818,7 +843,8 @@ public Field getDeclaredField(String name) throws NoSuchFieldException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.948 -0500", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "28B58F0009A6BCAB227105536EC99296")
     
 public Field[] getDeclaredFields() {
-        return getDeclaredFields(this, false);
+        //return getDeclaredFields(this, false);
+        return null;
     }
 
     /**
@@ -849,7 +875,7 @@ public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
         if (member instanceof Constructor) {
             throw new NoSuchMethodException(name);
         }
-        return (Method) member;
+        return null;
     }
 
     /**
@@ -868,36 +894,41 @@ public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.961 -0500", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "C0886B96300C43CFB5185B9FE17032D3")
     
 public Method[] getDeclaredMethods() {
-        return getDeclaredMethods(this, false);
+        //return getDeclaredMethods(this, false);
+        return null;
     }
     
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.716 -0400", hash_original_method = "67DCCE022B38EF56E621E9F7C3410002", hash_generated_method = "A08735CEB9F08341039B8C54A1BD5E61")
     public Class<?> getDeclaringClass() {
-    	Class  ret = (Class)new Object();
-    	return ret;
+    	//Class  ret = (Class)new Object();
+    	//return ret;
+        return null;
     }
     
     @DSComment("Refelction/class loader")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "B183618DCECD1DBBC6B77A8041AAB5FF", hash_generated_method = "E19B04C40918C59F801E144F365A783E")
     public Class<?> getEnclosingClass() {
-    	Class  ret = (Class)new Object();
-    	return ret;
+    	//Class  ret = (Class)new Object();
+    	//return ret;
+        return null;
     }
     
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "66CD711920ADA841CC04EC44C476AA92", hash_generated_method = "E9EFFA224CF0890C33C432913B5CDC4A")
     public Constructor<?> getEnclosingConstructor() {
-    	Constructor  ret = new Constructor();
-    	return ret;
+    	//Constructor  ret = new Constructor();
+    	//return ret;
+        return null;
     }
     
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "D4C604D782CFEF7F67F7383F824B8549", hash_generated_method = "42F609F6A3577ECAA8EE5F0164C83C69")
     public Method getEnclosingMethod() {
-    	Method  ret = new Method();
-    	return ret;
+    	//Method  ret = new Method();
+    	//return ret;
+        return null;
     }
 
     /**
@@ -914,10 +945,11 @@ public Method[] getDeclaredMethods() {
     
 @SuppressWarnings("unchecked") // we only cast after confirming that this class is an enum
     public T[] getEnumConstants() {
-        if (!isEnum()) {
-            return null;
-        }
-        return (T[]) Enum.getSharedConstants((Class) this).clone();
+        // if (!isEnum()) {
+        //     return null;
+        // }
+        // return (T[]) Enum.getSharedConstants((Class) this).clone();
+        return null;
     }
 
     /**
@@ -946,7 +978,7 @@ public Field getField(String name) throws NoSuchFieldException {
         if (result == null) {
             throw new NoSuchFieldException(name);
         }
-        return result;
+        return null; //result;
     }
 
     @DSComment("Private Method")
@@ -954,23 +986,23 @@ public Field getField(String name) throws NoSuchFieldException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.992 -0500", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "F3676BC6F341EBA853F3C761606E9195")
     
 private Field getPublicFieldRecursive(String name) {
-        // search superclasses
-        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            Field result = Class.getDeclaredField(c, name);
-            if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                return result;
-            }
-        }
+        // // search superclasses
+        // for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+        //     Field result = Class.getDeclaredField(c, name);
+        //     if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
+        //         return result;
+        //     }
+        // }
 
-        // search implemented interfaces
-        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            for (Class<?> ifc : c.getInterfaces()) {
-                Field result = ifc.getPublicFieldRecursive(name);
-                if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                    return result;
-                }
-            }
-        }
+        // // search implemented interfaces
+        // for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+        //     for (Class<?> ifc : c.getInterfaces()) {
+        //         Field result = ifc.getPublicFieldRecursive(name);
+        //         if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
+        //             return result;
+        //         }
+        //     }
+        // }
 
         return null;
     }
@@ -994,16 +1026,18 @@ private Field getPublicFieldRecursive(String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.995 -0500", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B8AF57BF684DA5AEB97D474BC198A0CA")
     
 public Field[] getFields() {
-        List<Field> fields = new ArrayList<Field>();
-        getPublicFieldsRecursive(fields);
+        // List<Field> fields = new ArrayList<Field>();
+        // getPublicFieldsRecursive(fields);
 
-        /*
-         * The result may include duplicates when clazz implements an interface
-         * through multiple paths. Remove those duplicates.
-         */
-        CollectionUtils.removeDuplicates(fields, Field.ORDER_BY_NAME_AND_DECLARING_CLASS);
-        return fields.toArray(new Field[fields.size()]);
+        // /*
+        //  * The result may include duplicates when clazz implements an interface
+        //  * through multiple paths. Remove those duplicates.
+        //  */
+        // CollectionUtils.removeDuplicates(fields, Field.ORDER_BY_NAME_AND_DECLARING_CLASS);
+        // return fields.toArray(new Field[fields.size()]);
+        return null;
     }
+
 
     /**
      * Populates {@code result} with public fields defined by this class, its
@@ -1043,9 +1077,10 @@ private void getPublicFieldsRecursive(List<Field> result) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.001 -0500", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "A29F8C52D29EEC64FFAED8E112A51280")
     
 public Type[] getGenericInterfaces() {
-        GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
-        parser.parseForClass(this, getSignatureAttribute());
-        return Types.getClonedTypeArray(parser.interfaceTypes);
+        // GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
+        // parser.parseForClass(this, getSignatureAttribute());
+        // return Types.getClonedTypeArray(parser.interfaceTypes);
+        return null;
     }
 
     /**
@@ -1060,17 +1095,19 @@ public Type[] getGenericInterfaces() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.003 -0500", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "F60C4EB1F233218BED00254491D8F23F")
     
 public Type getGenericSuperclass() {
-        GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
-        parser.parseForClass(this, getSignatureAttribute());
-        return Types.getType(parser.superclassType);
+        // GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
+        // parser.parseForClass(this, getSignatureAttribute());
+        // return Types.getType(parser.superclassType);
+        return null;
     }
     
     @DSComment("Refelction/class loader")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.741 -0400", hash_original_method = "CF68E335012F7245AD886A1F59EC18C3", hash_generated_method = "2692A665379A2F86FF3326F5F5EB1B7B")
     public Class<?>[] getInterfaces() {
-    	Class[] ret = new Class[0];
-    	return ret;
+    	//Class[] ret = new Class[0];
+    	//return ret;
+        return null;
     }
 
     /**
@@ -1106,7 +1143,7 @@ public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMe
         //droidsafe specific constructor
         Method method = new Method(name, this.dsClassName);
 
-        return method;
+        return null;//method;
     }
 
     /**
@@ -1129,15 +1166,16 @@ public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMe
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.012 -0500", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "16F5EFC638AA638137B136FC5EE069E5")
     
 public Method[] getMethods() {
-        List<Method> methods = new ArrayList<Method>();
-        getPublicMethodsRecursive(methods);
+        // List<Method> methods = new ArrayList<Method>();
+        // getPublicMethodsRecursive(methods);
 
-        /*
-         * Remove methods defined by multiple types, preferring to keep methods
-         * declared by derived types.
-         */
-        CollectionUtils.removeDuplicates(methods, Method.ORDER_BY_SIGNATURE);
-        return methods.toArray(new Method[methods.size()]);
+        // /*
+        //  * Remove methods defined by multiple types, preferring to keep methods
+        //  * declared by derived types.
+        //  */
+        // CollectionUtils.removeDuplicates(methods, Method.ORDER_BY_SIGNATURE);
+        // return methods.toArray(new Method[methods.size()]);
+        return null;
     }
 
     /**
@@ -1364,8 +1402,9 @@ public Object[] getSigners() {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.762 -0400", hash_original_method = "D842DF476A1BD7D94C0F81A98F8160A2", hash_generated_method = "6D7E91A123530C9789871A175E332FE3")
     public Class<? super T> getSuperclass() {
-    	Class ret = (Class)new Object();
-    	return ret;
+    	// Class ret = (Class)new Object();
+    	// return ret;
+        return null;
     }
 
     /**
@@ -1663,12 +1702,12 @@ public T newInstance() throws InstantiationException, IllegalAccessException {
     
 public Package getPackage() {
         // TODO This might be a hack, but the VM doesn't have the necessary info.
-        ClassLoader loader = getClassLoader();
-        if (loader != null) {
-            String name = getName();
-            int dot = name.lastIndexOf('.');
-            return (dot != -1 ? loader.getPackage(name.substring(0, dot)) : null);
-        }
+        // ClassLoader loader = getClassLoader();
+        // if (loader != null) {
+        //     String name = getName();
+        //     int dot = name.lastIndexOf('.');
+        //     return (dot != -1 ? loader.getPackage(name.substring(0, dot)) : null);
+        // }
         return null;
     }
 
