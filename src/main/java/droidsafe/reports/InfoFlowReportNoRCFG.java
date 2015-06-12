@@ -100,6 +100,7 @@ public class InfoFlowReportNoRCFG {
 
     public void run() {
         printSensitiveSources();
+        printReachableMethods();
         
         try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + FILE_NAME)) {
             //loop through all reachable methods
