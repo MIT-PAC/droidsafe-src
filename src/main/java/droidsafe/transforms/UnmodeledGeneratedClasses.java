@@ -350,10 +350,13 @@ public class UnmodeledGeneratedClasses {
             if (ClassCloner.isClonedClass(concrete))
                 continue;
             
+            logger.debug("On concrete {} for fallback type {}", type, concrete);
+            
             //um, just in case a clone sneaks by ??
             SootClass realConcrete = ClassCloner.getClonedClassFromClone(concrete);
             
             if (!typeToAddedField.containsKey(realConcrete.getType())) {
+                logger.debug("Need to add concrete {}", realConcrete);
                 addRefTypeInternal(dummyObjectField, realConcrete, unmodeledFlowType, deepClone);
                 created++;
             }
@@ -419,6 +422,8 @@ public class UnmodeledGeneratedClasses {
         addStmt(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, clone.getMethod(noArgConsSubSig).makeRef())));
         addStmt(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(field.makeRef()), local));
 
+        logger.debug("Adding to fallback map: {} -> {}", clz.getType(), field);
+        
         typeToAddedField.put(clz.getType(), field);
     }
 
@@ -503,7 +508,7 @@ public class UnmodeledGeneratedClasses {
                 //class type
                 field = addRefTypeForConcretes((RefType)type, 
                     InfoKind.getInfoKind("UNMODELED", Config.v().reportUnmodeledFlows), false);
-                field = typeToAddedField.get(type);
+                logger.debug("Field = {}", field);
                 
             } else if (type instanceof ArrayType) {
                 //array type

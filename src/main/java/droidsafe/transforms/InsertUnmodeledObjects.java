@@ -49,6 +49,7 @@ import soot.jimple.Jimple;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.util.Chain;
 import droidsafe.analyses.pta.PTABridge;
@@ -241,6 +242,7 @@ public class InsertUnmodeledObjects {
                 if (!PTABridge.v().isReachableMethod(method))
                     continue;
 
+                boolean DEBUG = false;//"<com.devuni.ads.AdsManager: com.devuni.ads.BaseProvider getProvider(int)>".equals(method.getSignature());
 
                 Body body = method.getActiveBody();
                 StmtBody stmtBody = (StmtBody)body;
@@ -272,8 +274,16 @@ public class InsertUnmodeledObjects {
                             if (hasAPITarget) {
                                 //we have a method that could target the api, now see if the return value has 
                                 //anything in its pt set
-                                if (PTABridge.v().getPTSetIns(assign.getLeftOp()).isEmpty()) {
-                                    if (addUnmodeledObject(assign, method)) {
+                                Set<AllocNode> nodes = (Set<AllocNode>) PTABridge.v().getPTSetIns(assign.getLeftOp());
+                                if (DEBUG) {
+                                    System.out.println(stmt);
+                                    for (AllocNode node : nodes) {
+                                        System.out.println(node);
+                                    }
+                                }
+                                
+                                if (nodes.isEmpty()) {
+                                    if (addUnmodeledObject(assign, method, DEBUG)) {
                                         numChanges++;
                                     }
                                 }
@@ -317,7 +327,7 @@ public class InsertUnmodeledObjects {
      * Insert assignment to the dummy object from the dummy class's field that corresponds to 
      * the type of the return value of the rhs of the assignment.
      */
-    private boolean addUnmodeledObject(AssignStmt stmt, SootMethod method) {
+    private boolean addUnmodeledObject(AssignStmt stmt, SootMethod method, boolean DEBUG) {
         InvokeExpr invoke = stmt.getInvokeExpr();
         SootMethodRef target = invoke.getMethodRef();
         Body body = method.getActiveBody();
@@ -340,6 +350,10 @@ public class InsertUnmodeledObjects {
 
 
         Value newObj = UnmodeledGeneratedClasses.v().getSootFieldForType(type);
+        if (DEBUG) {
+            System.out.println(type);
+            System.out.println(newObj);
+        }
 
         if (newObj instanceof StaticFieldRef && stmt.getLeftOp() instanceof Local) {
             StaticFieldRef fr = (StaticFieldRef)newObj;
@@ -349,6 +363,7 @@ public class InsertUnmodeledObjects {
             Stmt insertMe = Jimple.v().newAssignStmt(stmt.getLeftOp(), fr);
             body.getUnits().insertAfter(insertMe, stmt);
             logger.info("Inserting object with {} after {} for {}", insertMe, stmt, method);
+            if (DEBUG) System.out.printf("Inserting object with %s after %s for %s", insertMe, stmt, method);
             madeChange = true;
         }
          
