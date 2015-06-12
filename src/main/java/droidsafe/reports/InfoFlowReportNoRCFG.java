@@ -50,6 +50,17 @@ public class InfoFlowReportNoRCFG {
     public InfoFlowReportNoRCFG() {
         // TODO Auto-generated constructor stub
     }
+    
+    public void printReachableMethods() {
+        try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "reachable-app-methods.txt")){
+          for (SootMethod reachable : PTABridge.v().getReachableMethods()) {
+              if (!API.v().isSystemMethod(reachable))
+                  fw.write(reachable + "\n");
+          }                   
+        }  catch (Exception e) {
+
+        }
+    }
 
     public void printSensitiveSources() {
         try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "all-sources.txt")){
