@@ -89,7 +89,7 @@ public class AllocationGraph {
     /** map of class to string constants in reachable methods */    
     private Map<SootClass, Set<String>> reachableStringConsts;
     private Map<SootClass, Integer> complexityMap;
-    
+
     /**
      * Create an allocation graph based on the current classes in the scene.
      */
@@ -102,22 +102,22 @@ public class AllocationGraph {
         complexityMap = new HashMap<SootClass, Integer>();
         buildAllocationGraph();
         createComplexityMap();
-        
-        
+
+
         /*exportToDot(Project.v().getOutputDir() + File.separator + 
             "allocation-graph.dot");*/
-        
+
         //System.out.println("Allocation graph size: " + graph.vertexSet().size());
-        
+
         /*
         for (SootClass clz : workList()) {
             System.out.println(clz);
         }
-        
+
         System.out.println("*************");
-        */
+         */
     }
-    
+
     public String getGraphStats() {
         long totalInDegree = 0;
         long numberGT1 = 0;
@@ -126,23 +126,23 @@ public class AllocationGraph {
                 numberGT1 ++;
             totalInDegree += graph.inDegreeOf(clz);
         }
-        
+
         return "Number of nodes with in-degree > 1: " + numberGT1 +
                 "\nAverage in-degree: " + (((double)totalInDegree) / ((double)graph.vertexSet().size()));
     }
-    
+
     public int getInDegree(SootClass clz) {
         if (graph.containsVertex(clz))
             return graph.inDegreeOf(clz);
         return 0;
     }
-    
+
     public int getOutDegree(SootClass clz) {
         if (graph.containsVertex(clz))
             return graph.outDegreeOf(clz);
         return 0;
     }
-    
+
     //remove all edges from / to class that are not static
     public void removeClass(SootClass clz) {
         List<DefaultEdge> toRemove = new LinkedList<DefaultEdge>();
@@ -150,134 +150,136 @@ public class AllocationGraph {
             if (!staticEdges.contains(e)) 
                 toRemove.add(e);
         }
-        
+
         for (DefaultEdge e : toRemove) {
             graph.removeEdge(e);
         }
     }
-    
+
     private int getArrayAndStringConstComplexity(SootClass clz) {
         return (reachableStringConsts.get(clz) == null ? 0 :
             reachableStringConsts.get(clz).size()) +
             (reachableNewArrayExprs.get(clz) == null ? 0 :
                 reachableNewArrayExprs.get(clz).value());
-        
+
     }
-    
+
     private int getChildComplexity(SootClass current, int distanceFromStart, int k) {
         if (distanceFromStart >= (k - 1))
             return 1;
-        
+
         int sum = getArrayAndStringConstComplexity(current);
-        
+
         for (DefaultEdge edge : graph.outgoingEdgesOf(current)) {
             SootClass target = graph.getEdgeTarget(edge);
             sum += getChildComplexity(target, distanceFromStart + 1, k);
         }
-        
+
         return sum;
     }
-    
+
     private int calcComplexity(SootClass clz) {
         int k = Config.v().kobjsens;
-        
+
         int childComplexity = getChildComplexity(clz, 0, k);
-        
+
         int myComplexity = getArrayAndStringConstComplexity(clz);
-        
+
         return graph.inDegreeOf(clz) * (childComplexity + myComplexity);
     }
-    
-    
+
+
     public int getComplexity(SootClass clz) {
         return complexityMap.get(clz);
     }
-    
+
     public Map<SootClass, Integer> getComplexityMap() {
         return complexityMap;
     }
-    
+
     private void createComplexityMap() {
         for (SootClass clz : graph.vertexSet()) {
             complexityMap.put(clz, calcComplexity(clz));                
         }
     }
-    
+
     public void dumpComplexity() {
         try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "alloc-complexity.csv")){
             for (SootClass clz : graph.vertexSet()) {
                 fw.write(clz + "," + complexityMap.get(clz) + "\n");                
             }
-            
+
         } catch (IOException e) {
-            
+
         }
     }
-    
+
     private void updateAllocationGraph(SootMethod method) {
-        if (method.isAbstract() || !method.isConcrete())
-            return;
+        try {
+            if (method.isAbstract() || !method.isConcrete())
+                return;
 
-        SootClass enclosingClass = method.getDeclaringClass();
+            SootClass enclosingClass = method.getDeclaringClass();
 
-        Body body = method.getActiveBody();
-        StmtBody stmtBody = (StmtBody)body;
-        Chain units = stmtBody.getUnits();
-        Iterator stmtIt = units.snapshotIterator();
+            Body body = method.getActiveBody();
+            StmtBody stmtBody = (StmtBody)body;
+            Chain units = stmtBody.getUnits();
+            Iterator stmtIt = units.snapshotIterator();
 
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
+            while (stmtIt.hasNext()) {
+                Stmt stmt = (Stmt)stmtIt.next();
 
-            if (stmt instanceof AssignStmt) {
-                AssignStmt assign = (AssignStmt) stmt;
-                if (assign.getRightOp() instanceof NewExpr) {
-                    NewExpr newExpr = (NewExpr)assign.getRightOp();
-                    SootClass newClass = newExpr.getBaseType().getSootClass();
-                    //is exception?
-                    if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {
-                        graph.addVertex(enclosingClass);
-                        graph.addVertex(newClass);
-                        DefaultEdge edge = graph.addEdge(enclosingClass, newClass);
-                        if (method.isStatic()) {
-                            staticEdges.add(edge);
+                if (stmt instanceof AssignStmt) {
+                    AssignStmt assign = (AssignStmt) stmt;
+                    if (assign.getRightOp() instanceof NewExpr) {
+                        NewExpr newExpr = (NewExpr)assign.getRightOp();
+                        SootClass newClass = newExpr.getBaseType().getSootClass();
+                        //is exception?
+                        if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {
+                            graph.addVertex(enclosingClass);
+                            graph.addVertex(newClass);
+                            DefaultEdge edge = graph.addEdge(enclosingClass, newClass);
+                            if (method.isStatic()) {
+                                staticEdges.add(edge);
+                            }
+                            if (!classToNewExprs.containsKey(newClass)) 
+                                classToNewExprs.put(newClass, new HashSet<NewExpr>());
+                            classToNewExprs.get(newClass).add(newExpr);
                         }
-                        if (!classToNewExprs.containsKey(newClass)) 
-                            classToNewExprs.put(newClass, new HashSet<NewExpr>());
-                        classToNewExprs.get(newClass).add(newExpr);
+                    } else if (assign.getRightOp() instanceof NewArrayExpr) {
+                        //count new array exprs
+                        MutableInt count = reachableNewArrayExprs.get(enclosingClass);
+                        if (count == null) {
+                            reachableNewArrayExprs.put(enclosingClass, new MutableInt());
+                        }
+                        else {
+                            count.increment();
+                        }                                     
                     }
-                } else if (assign.getRightOp() instanceof NewArrayExpr) {
-                    //count new array exprs
-                    MutableInt count = reachableNewArrayExprs.get(enclosingClass);
-                    if (count == null) {
-                        reachableNewArrayExprs.put(enclosingClass, new MutableInt());
+                }
+
+                //record string constants
+                for (ValueBox vb : stmt.getUseAndDefBoxes()) {
+                    Value v = vb.getValue();
+                    if (v instanceof StringConstant) {
+                        if (!reachableStringConsts.containsKey(enclosingClass)) {
+                            reachableStringConsts.put(enclosingClass, new HashSet<String>());
+                        }
+                        reachableStringConsts.get(enclosingClass).add(((StringConstant)v).value);
                     }
-                    else {
-                        count.increment();
-                    }                                     
                 }
             }
-            
-            //record string constants
-            for (ValueBox vb : stmt.getUseAndDefBoxes()) {
-                Value v = vb.getValue();
-                if (v instanceof StringConstant) {
-                    if (!reachableStringConsts.containsKey(enclosingClass)) {
-                        reachableStringConsts.put(enclosingClass, new HashSet<String>());
-                    }
-                    reachableStringConsts.get(enclosingClass).add(((StringConstant)v).value);
-                }
-            }
+        } catch (Exception e) {
+            logger.debug("Ignoring error while updating Allocation graph: ", e);
         }
-        
-        
     }
-    
+
     public Set<NewExpr> getNewExprsForClass(SootClass clz) {
         if (!classToNewExprs.containsKey(clz))
             return Collections.emptySet();
         return classToNewExprs.get(clz);
     }
-    
+
     private  void buildAllocationGraph() {
         //SootMethod[] methods = PTABridge.v().getReachableMethods().toArray(new SootMethod[0]);
 
@@ -295,36 +297,36 @@ public class AllocationGraph {
      */
     public List<SootClass> workList() {
         List<SootClass> trav = new LinkedList<SootClass>();
-        
+
         List<SootClass> unvisited = new LinkedList<SootClass>();
         unvisited.addAll(graph.vertexSet());
         Collections.sort(unvisited, new SootClassComparator());
-        
-        
-        
+
+
+
         for (SootClass clz : graph.vertexSet()) {
             /*
             if (graph.inDegreeOf(clz) == 0)
                 unvisited.remove(clz);
-            */
-            
+             */
+
             if (clz.isInterface())
                 unvisited.remove(clz);
         }
-       
-        
+
+
         while (!unvisited.isEmpty()) {
             //find vertex with min number of incoming unvisited
             int min = Integer.MAX_VALUE;
             SootClass minVertex = null;
-            
+
             for (SootClass clz : unvisited) {
                 int incomingUnvisited = 0;
                 for (DefaultEdge inEdge : graph.incomingEdgesOf(clz)) {
                     if (unvisited.contains(graph.getEdgeSource(inEdge)))
                         incomingUnvisited++;
                 }
-                
+
                 //here we have a count of unvisited incoming
                 //short circuit zero case
                 if (incomingUnvisited == 0) {
@@ -336,27 +338,27 @@ public class AllocationGraph {
                     minVertex = clz;
                 }
             }
-            
+
             //at this point we have a clz with min number of incoming uncloned
             unvisited.remove(minVertex);
             trav.add(minVertex);
         }
-        
+
         return trav;
     }
-    
+
     public List<SootClass> breadthFirst() {
         List<SootClass> trav = new LinkedList<SootClass>();
-        
+
         BreadthFirstIterator<SootClass, DefaultEdge> bf = 
                 new BreadthFirstIterator<SootClass, DefaultEdge>(graph);
 
         while (bf.hasNext()) {
             trav.add(bf.next());
         }
-        
+
         System.out.println("BFS traversal size: " + trav.size());
-        
+
         return trav;
     }
 
@@ -375,7 +377,7 @@ public class AllocationGraph {
                     }
                 },
                 null);
-                
+
         try {
             dotE.export(new FileWriter(filename), graph);
         } catch (IOException e) {
@@ -395,6 +397,6 @@ public class AllocationGraph {
         public int compare(SootClass o1, SootClass o2) {
             return o1.getName().compareTo(o2.getName());
         }
-        
+
     }
 }
