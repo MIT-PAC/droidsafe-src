@@ -582,21 +582,7 @@ public Class<?> loadClass(String className) throws ClassNotFoundException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.752 -0500", hash_original_method = "733CC3AC678FE7D7ABDA5F1E7A258EB2", hash_generated_method = "7E554DAE64821C187FBA4D370660E9DF")
     
 protected Class<?> loadClass(String className, boolean resolve) throws ClassNotFoundException {
-        Class<?> clazz = findLoadedClass(className);
-
-        if (clazz == null) {
-            try {
-                clazz = parent.loadClass(className, false);
-            } catch (ClassNotFoundException e) {
-                // Don't want to see this.
-            }
-
-            if (clazz == null) {
-                clazz = findClass(className);
-            }
-        }
-
-        return clazz;
+        return null;
     }
 
     /**

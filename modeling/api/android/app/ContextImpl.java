@@ -460,7 +460,7 @@ public ContextImpl(ContextImpl context) {
     
     @Override
     public ClassLoader getClassLoader() {
-        throw new UnsupportedOperationException();
+        return ClassLoader.getSystemClassLoader();
     }
     
     @DSSafe(DSCat.SAFE_OTHERS)
