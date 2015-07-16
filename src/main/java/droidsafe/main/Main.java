@@ -252,14 +252,15 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        driverMsg("Calling scalar optimizations.");
-        monitor.subTask("Scalar Optimization");
-        ScalarAppOptimizations.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }         
-
+        if (Config.v().scalarOpts) {
+            driverMsg("Calling scalar optimizations.");
+            monitor.subTask("Scalar Optimization");
+            ScalarAppOptimizations.run();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+        }
 
         driverMsg("Implementing native methods.");
         monitor.subTask("Implementing native methods.");

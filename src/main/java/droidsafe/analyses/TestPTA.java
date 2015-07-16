@@ -137,8 +137,8 @@ public class TestPTA  {
             if (API.v().isSystemMethod(method))
                 continue;
             
-            /*if (!"<org.nws.aweather.AWeatherService: void handleError(org.nws.aweather.Msg)>".equals(method.getSignature()))
-                continue;*/
+            if (!"<com.testads.MainActivity: void onCreate(android.os.Bundle)>".equals(method.getSignature()))
+                continue;
             
             System.out.println(momc);
             

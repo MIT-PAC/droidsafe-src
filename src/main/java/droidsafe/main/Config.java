@@ -230,6 +230,8 @@ public class Config {
     public boolean analysisOnlyRun = false;
     
     public boolean createRCFG = true;
+    /** if true, then run scalar opts like copy / constant prop and folding */
+    public boolean scalarOpts = true;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -315,6 +317,9 @@ public class Config {
         
         Option noRCFG = new Option("norcfg", "Do not organize results by triggering event.  Does not produce eclipse files.");
         options.addOption(noRCFG);
+        
+        Option noScalarOpts = new Option("noscalaropts", "Do not run scalar opts like copy / constant prop and folding");
+        options.addOption(noScalarOpts);
 
         Option jsatimeout =
                 OptionBuilder.withArgName("value").hasArg()
@@ -578,6 +583,10 @@ public class Config {
         
         if (cmd.hasOption("norcfg")) {
             this.createRCFG = false;
+        }
+        
+        if (cmd.hasOption("noscalaropts")) {
+            this.scalarOpts = false;
         }
         
         
