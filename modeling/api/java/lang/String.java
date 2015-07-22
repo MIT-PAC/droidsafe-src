@@ -966,11 +966,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.989 -0400", hash_original_method = "D443F19C798F5645F696FD1973BB47C6", hash_generated_method = "168F6E3DA50E280535B3342B42AF704F")
         public void getChars(int start, int end, char[] buffer, int index) {
-        addTaint(index);
-        addTaint(end);
-        addTaint(start);
+        //addTaint(index);
+        //addTaint(end);
+        //addTaint(start);
 	buffer[0] = getTaintChar();
         buffer.addTaint(getTaintInt());
+        buffer.addTaint(index);
+        buffer.addTaint(end);
+        buffer.addTaint(start);
     }
 
     /**
