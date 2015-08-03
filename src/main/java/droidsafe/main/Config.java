@@ -213,6 +213,8 @@ public class Config {
     public boolean reportOnlyArgFlows = false;
     /** report on unmodeled taint */
     public boolean reportUnmodeledFlows = false;
+    /** Limit context for complex classes */
+    public boolean limitcontextforcomplex = false;
     
     /** should we run multiple passes of fallback modeling create unmodeled objects from API */
     public boolean multipassfb = false;
@@ -355,6 +357,9 @@ public class Config {
         
         Option limitContextForStrings = new Option("limitcontextforstrings", "Limit context depth for Strings in PTA");
         options.addOption(limitContextForStrings);
+        
+        Option limitContextForComplex = new Option("limitcontextforcomplex", "Limit context depth for classes that might blow up PTA");
+        options.addOption(limitContextForComplex);
         
         Option preciseInfoFlow = new Option("preciseinfoflow", "For info flow reporting use memory access analysis for args to sinks.");
         options.addOption(preciseInfoFlow);
@@ -624,6 +629,10 @@ public class Config {
         
         if (cmd.hasOption("limitcontextforstrings")) {
             this.fullContextForStrings = false;
+        }
+        
+        if (cmd.hasOption("limitcontextforcomplex")) {
+            this.limitcontextforcomplex = false;
         }
         
         if (cmd.hasOption("preciseinfoflow")) {

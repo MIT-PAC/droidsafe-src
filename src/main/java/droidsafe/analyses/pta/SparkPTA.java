@@ -173,8 +173,12 @@ public class SparkPTA extends PTABridge {
 
     @Override
     protected void runInternal() {
-        ag = new AllocationGraph();
-        ag.dumpComplexity();
+        //only build allocation graph and calc complexity if we want to limit
+        //context for complex classes
+        if (Config.v().limitcontextforcomplex) {
+            ag = new AllocationGraph();
+            ag.dumpComplexity();
+        }
         
         //don't print crap to screen!
         G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
@@ -836,7 +840,9 @@ public class SparkPTA extends PTABridge {
             addStringClasses(limitHeapContext);
         } 
 
-        limitComplexity(limitHeapContext);
+        if (Config.v().limitcontextforcomplex) {
+            limitComplexity(limitHeapContext);
+        }
         
         
         logger.info("limit heap context list: {}", limitHeapContext.toString());
