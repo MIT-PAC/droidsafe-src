@@ -1,7 +1,7 @@
 
 -include Makefile.user
 
-export CLASSPATH := .:src:$(ANDROID_SDK_HOME)/platforms/android-15/android.jar
+export CLASSPATH := .:src:$(ANDROID_SDK_HOME)/platforms/android-19/android.jar
 
 build: 
 	cd src && javac -target 1.6 -source 1.6 edu/mit/csail/droidsafe/*.java
