@@ -355,8 +355,6 @@ public class Main {
         }
         catch (Exception ex) {
             logger.warn("Excpetion while cloning static methods {} ", ex);
-            logger.warn("Stack Trace {} ", ex.getStackTrace());
-            System.exit(-1);
         }
         monitor.worked(1);
         if (monitor.isCanceled()) {
@@ -371,7 +369,6 @@ public class Main {
             }
             catch (Exception ex) {
                 logger.warn("VA throws exection {}, stack {} ", ex, ex.getStackTrace());
-                System.exit(-1);
             }
         }
 
@@ -451,6 +448,7 @@ public class Main {
             monitor.subTask("Writing all app classes");
             writeAllAppClasses();
         }
+        
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
