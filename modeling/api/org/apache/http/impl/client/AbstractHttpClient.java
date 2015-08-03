@@ -611,6 +611,7 @@ public void removeRequestInterceptorByClass(Class<? extends HttpRequestIntercept
 public final HttpResponse execute(HttpUriRequest request)
         throws IOException, ClientProtocolException {
 
+	String s = request.getURI().toString();
         return execute(request, (HttpContext) null);
     }
 
