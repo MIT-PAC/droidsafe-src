@@ -534,8 +534,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
             
-            if (Config.v().produceReports)
-                PTAPaper.writeReport();
+            PTAPaper.writeReport();
         } 
         
         monitor.worked(1);       
