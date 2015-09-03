@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.transforms.objsensclone;
 
 import droidsafe.analyses.pta.PTABridge;
@@ -62,6 +83,8 @@ import soot.util.Chain;
 import soot.ValueBox;
 
 /**
+ * BROKEN CURRENT, DO NOT USE!
+ * 
  * Introduce selective object sensitivity by cloning certain api classes.  
  * When a new expression of one of the tracked classes is encountered in application code, 
  * a clone is created of the original class (clone contains methods from ancestors), and the
@@ -295,12 +318,12 @@ public class ObjectSensitivityCloner {
                 if (!cloned) {
                     fw.write("\tNot cloned: but removed inheritance\n");
                     //if not cloning, then just clone inherited methods of class
-                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass, false);
+                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass, false, true);
                     cim.transform();
                     rememberCloneContext(cim.getCloneToOriginalMap());
                     //update allocation graph for new methods
                     for (SootMethod method : cim.getReachableClonedMethods()) {
-                        aGraph.updateAllocationGraph(method);
+                        //faGraph.updateAllocationGraph(method);
                         List<SootMethod> tempSet = new ArrayList<SootMethod>(1);
                         tempSet.add(method);
                         addToAllocList(tempSet);
@@ -505,8 +528,10 @@ public class ObjectSensitivityCloner {
                         rememberCloneContext(cCloner.getCloneToOriginalMap());
 
                         //update allocation graph for new methods
+                        /*
                         for (SootMethod newMethod : cCloner.getReachableClonedMethods())
                             aGraph.updateAllocationGraph(newMethod);
+                         */
 
                         SootMethodRef origMethodRef = special.getMethodRef();
 

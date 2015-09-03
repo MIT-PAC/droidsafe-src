@@ -1,3 +1,46 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
+ * Copyright (C) 2006 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
+
 package android.database;
 
 // Droidsafe Imports
@@ -790,7 +833,7 @@ public float getFloat(int row, int column) {
      * @return True if successful.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.217 -0500", hash_original_method = "6CB3F309867B314299E03BAA3ADD01B0", hash_generated_method = "7F0E77137CFC3A3346F77E5FE852F5A6")
-    
+    @DSSink(DSSinkKind.DATABASE)
 public boolean putBlob(byte[] value, int row, int column) {
         acquireReference();
         try {
@@ -809,7 +852,7 @@ public boolean putBlob(byte[] value, int row, int column) {
      * @return True if successful.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.220 -0500", hash_original_method = "6CB1D543D51D5DCA24055F8F53C41BAF", hash_generated_method = "706330AC18A644D47A4038408E2797D5")
-    
+    @DSSink(DSSinkKind.DATABASE)
 public boolean putString(String value, int row, int column) {
         acquireReference();
         try {
@@ -828,7 +871,7 @@ public boolean putString(String value, int row, int column) {
      * @return True if successful.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.222 -0500", hash_original_method = "2778A952D34B60D93ADEBF86D42CFB13", hash_generated_method = "4D3FFF57EEE098A69A3D7ED6CE9A016A")
-    
+    @DSSink(DSSinkKind.DATABASE)
 public boolean putLong(long value, int row, int column) {
         acquireReference();
         try {
@@ -848,7 +891,7 @@ public boolean putLong(long value, int row, int column) {
      * @return True if successful.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.224 -0500", hash_original_method = "750162916D1917FF199EBD766435A4BC", hash_generated_method = "E1BA738DAB805BEEA27EB43C611A7D52")
-    
+    @DSSink(DSSinkKind.DATABASE)
 public boolean putDouble(double value, int row, int column) {
         acquireReference();
         try {
@@ -866,7 +909,7 @@ public boolean putDouble(double value, int row, int column) {
      * @return True if successful.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.227 -0500", hash_original_method = "729F260E3687A604BDCEB4B5144460BE", hash_generated_method = "9E3315483A95DC9C427CB6571FD2FB57")
-    
+    @DSSink(DSSinkKind.DATABASE)
 public boolean putNull(int row, int column) {
         acquireReference();
         try {

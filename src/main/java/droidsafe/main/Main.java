@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
@@ -31,7 +52,9 @@ import droidsafe.android.system.Permissions;
 import droidsafe.reports.ICCEntryPointCallTree;
 import droidsafe.reports.ICCMap;
 import droidsafe.reports.IPCEntryPointCallTree;
+import droidsafe.reports.InfoFlowReportNoRCFG;
 import droidsafe.reports.InformationFlowReport;
+import droidsafe.reports.ObjectMethodOverrideContracts;
 import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.SourceCallTree;
 import droidsafe.reports.UnresolvedICC;
@@ -150,7 +173,7 @@ public class Main {
 
         writeCompletionFile();
         System.out.println("Finished!");
-	System.exit(0);
+        System.exit(0);
     }
 
     /**
@@ -229,14 +252,15 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        driverMsg("Calling scalar optimizations.");
-        monitor.subTask("Scalar Optimization");
-        ScalarAppOptimizations.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }         
-
+        if (Config.v().scalarOpts) {
+            driverMsg("Calling scalar optimizations.");
+            monitor.subTask("Scalar Optimization");
+            ScalarAppOptimizations.run();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+        }
 
         driverMsg("Implementing native methods.");
         monitor.subTask("Implementing native methods.");
@@ -331,8 +355,6 @@ public class Main {
         }
         catch (Exception ex) {
             logger.warn("Excpetion while cloning static methods {} ", ex);
-            logger.warn("Stack Trace {} ", ex.getStackTrace());
-            System.exit(-1);
         }
         monitor.worked(1);
         if (monitor.isCanceled()) {
@@ -347,7 +369,6 @@ public class Main {
             }
             catch (Exception ex) {
                 logger.warn("VA throws exection {}, stack {} ", ex, ex.getStackTrace());
-                System.exit(-1);
             }
         }
 
@@ -381,12 +402,6 @@ public class Main {
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-        /*
-            if (Config.v().dumpCallGraph) {
-                CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
-            }
-         */
-
         //so that we don't lose a level of object sensitive in AbstractStringBuilder.toString()
         //replace calls with new expressions, and let the modeling pass taint appropriately
         driverMsg("Converting AbstractStringBuilder.toString()");
@@ -398,24 +413,28 @@ public class Main {
 
         //new TestPTA();     
 
-        driverMsg("Starting Generate RCFG...");
-        StopWatch rcfgTimer = new StopWatch();
-        rcfgTimer.start();
-        monitor.subTask("Generating Spec");
-        RCFG.generate();
-        rcfgTimer.stop();
-        driverMsg("Finished Generating RCFG: " + rcfgTimer);
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        if (Config.v().createRCFG) {
+            driverMsg("Starting Generate RCFG...");
+            StopWatch rcfgTimer = new StopWatch();
+            rcfgTimer.start();
+            monitor.subTask("Generating Spec");
+            RCFG.generate();
+            rcfgTimer.stop();
+            driverMsg("Finished Generating RCFG: " + rcfgTimer);
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
         }
 
         // print out what modeling is required for this application
-        monitor.subTask("Required Modeling");
-        RequiredModeling.run();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        if (Config.v().produceReports) {
+            monitor.subTask("Required Modeling");
+            RequiredModeling.run();     
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
         }
 
         //if debugging then write some jimple classes
@@ -429,6 +448,7 @@ public class Main {
             monitor.subTask("Writing all app classes");
             writeAllAppClasses();
         }
+        
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -449,6 +469,11 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        //if (!Config.v().createRCFG) {
+            //produce info flow report without rcfg information
+            new InfoFlowReportNoRCFG().run();
+        //}
 
         //finished all core analysis
         //exit here if we are not producing results
@@ -466,50 +491,52 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-        }
+        }               
 
-
-        driverMsg("Converting RCFG to SSL and dumping...");
-        monitor.subTask("Writing Spec to File");
         StopWatch timer = new StopWatch();
-        timer.start();
-        RCFGToSSL.run(false);
-        SecuritySpecification spec = RCFGToSSL.v().getSpec();
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-        timer.stop();
-        driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
-        //find inter app flows here
-        if (Config.v().produceInterAppFlowsFile)
-            GenerateInterAppSourceFlows.v().run(spec);
-
-        if (spec != null) {
-
-            driverMsg("Creating Eclipse Plugin Serialized Specification...");
-            timer.reset();
+        if (Config.v().createRCFG) {
+            driverMsg("Converting RCFG to SSL and dumping...");
+            monitor.subTask("Writing Spec to File");      
             timer.start();
-            SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
-            SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-            if (Config.v().debug)
-                SecuritySpecModel.writeSpecInfoToFiles(securitySpecModel, Config.v().APP_ROOT_DIR);
-
+            RCFGToSSL.run(false);
+            SecuritySpecification spec = RCFGToSSL.v().getSpec();
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
             timer.stop();
-            driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
+            driverMsg("Finished converting RCFG to SSL and dumping: " + timer);
 
-            if (Config.v().infoFlow)
-                InformationFlowReport.create(spec);
-        }
-        monitor.worked(1);
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
 
-        if (Config.v().produceReports)
+            //find inter app flows here
+            if (Config.v().produceInterAppFlowsFile)
+                GenerateInterAppSourceFlows.v().run(spec);
+
+            if (spec != null) {
+
+                driverMsg("Creating Eclipse Plugin Serialized Specification...");
+                timer.reset();
+                timer.start();
+                SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+                SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+                if (Config.v().debug)
+                    SecuritySpecModel.writeSpecInfoToFiles(securitySpecModel, Config.v().APP_ROOT_DIR);
+
+                timer.stop();
+                driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
+
+                if (Config.v().infoFlow)
+                    InformationFlowReport.create(spec);
+            }
+            monitor.worked(1);
+            if (monitor.isCanceled()) {
+                return DroidsafeExecutionStatus.CANCEL_STATUS;
+            }
+            
             PTAPaper.writeReport();
-
+        } 
+        
         monitor.worked(1);       
         return DroidsafeExecutionStatus.OK_STATUS;
     }
@@ -644,7 +671,7 @@ public class Main {
             Config.v().runStringAnalysis = false;
             JSAStrings.v().setHasRun(false);
         }
-        
+
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
@@ -659,6 +686,7 @@ public class Main {
             UnresolvedICC.v().toJSON(Project.v().getOutputDir());
             SensitiveSources.v().toJSON(Project.v().getOutputDir());
             SourceCallTree.v().toJson(Project.v().getOutputDir());
+            ObjectMethodOverrideContracts.v().toJSON(Project.v().getOutputDir());
             driverMsg ("Indicator reports complete");
         } catch (Exception e) {
             logger.error("Error writing json indicator, ignoring and moving on...", e);

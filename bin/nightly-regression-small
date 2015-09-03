@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-: ${DROIDSAFE_SRC_HOME:?"Need to define DROIDSAFE_SRC_HOME"}
-
-$DROIDSAFE_SRC_HOME/system-tests/regtest.py -threads 2 -timeout 7200 -file $DROIDSAFE_SRC_HOME/system-tests/test-suites/on-commit.py

@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.commands;
 
 import java.util.Collection;
@@ -16,7 +37,6 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.ITypeRoot;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.TextSelection;
 import org.eclipse.jface.viewers.ISelection;
@@ -63,16 +83,17 @@ public class ShowCallHierarchy extends AbstractHandler {
         		if (projectCallHierarchy != null) {
         			ITypeRoot typeRoot = JavaUI.getEditorInputTypeRoot(editor.getEditorInput());
         			try {
-        				IJavaElement[] elements = typeRoot.codeSelect(textSelection.getOffset(), textSelection.getLength());
+        				int offset = textSelection.getOffset();
+        				IJavaElement[] elements = typeRoot.codeSelect(offset, textSelection.getLength());
         				if (elements != null && elements.length == 1 && elements[0] instanceof IMethod) {
-        					// current selection is a method call
+        					// current selection is a method declaration or a method call
+        					IJavaElement enclosingElement = typeRoot.getElementAt(offset);
         					IMethod method = (IMethod) elements[0];
         					int line = textSelection.getStartLine() + 1;
         					String className = getEnclosingClassName(method);
         					String pkgName = typeRoot.getParent().getElementName();
         					String srcClassName = pkgName + "." + typeRoot.getElementName().replace(".java", "");
-        					IJavaElement parent = method.getParent();
-        					boolean showCallees = method.isResolved() && !(parent instanceof SourceType);
+        					boolean showCallees = method.isResolved() && enclosingElement instanceof IMethod;
         					if (showCallees) {
         						Collection<JsonElement> targets = CalleeHierarchy.findCallTargets(projectCallHierarchy, method, className, srcClassName, line);
         						if (targets.isEmpty())

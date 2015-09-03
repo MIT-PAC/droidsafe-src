@@ -1,4 +1,27 @@
 /*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
  * Copyright 2001-2004 The Apache Software Foundation.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +36,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */ 
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
 
 package org.apache.commons.codec.net;
 
@@ -66,7 +93,7 @@ abstract class RFC1522Codec {
      *          encoding names</a>
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.321 -0400", hash_original_method = "00FAF8953862632630D9A6F8E97BB3CD", hash_generated_method = "DD900E84F69FF4D34DA6946AB361F5F5")
-    
+    @DSSink(DSSinkKind.ENCODER)
 protected String encodeText(final String text, final String charset)
      throws EncoderException, UnsupportedEncodingException  
     {
@@ -155,7 +182,8 @@ protected abstract String getEncoding();
      *  during the encoding process.
      */    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-09-03 14:59:48.323 -0400", hash_original_method = "24ABC15B4A8032FE22C42A9FEAA52972", hash_generated_method = "8350B5D79E259D9D2697F32A59F64DC5")
-    
+    @DSSource(DSSourceKind.ENCODED)
+    @DSSink(DSSinkKind.ENCODER)
 protected abstract byte[] doEncoding(byte[] bytes) throws EncoderException;
 
     /**

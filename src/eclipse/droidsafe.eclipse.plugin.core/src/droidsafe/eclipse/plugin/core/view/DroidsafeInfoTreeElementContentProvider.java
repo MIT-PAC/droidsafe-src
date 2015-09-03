@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.view;
 
 import java.beans.PropertyChangeEvent;
@@ -27,9 +48,11 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
 
     /** The tree viewer for the outline view. */
     protected TreeViewer fViewer;
-    
-    /** The cached root elements in the outline view */
-    protected Object[] rootElements;
+
+    protected Object fInput;
+ 
+    /** A map from input objects to the corresponding arrays of root elements. */
+    protected Map<Object, Object[]> inputToRoots = new HashMap<Object, Object[]>();
 
     /** A map from data objects to the tree element wrapping the data objects. */
     private Map<Object, TreeElement<?, ?>> treeElementMap =
@@ -40,23 +63,38 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
      * the root elements if necessary. 
      */
     public Object[] getRootElements() {
-        if (rootElements == null) {
-            rootElements = initializeRoots();
-        }
-        return rootElements;
+    	if (fInput != null) {
+    		Object[] roots = inputToRoots.get(fInput);
+    		if (roots == null) {
+    			roots = initializeRoots();
+    			setRootElements(roots);
+    		}
+    		return roots;
+    	}
+    	return NO_CHILDREN;
     }
     
     /**
-     * Sets the root elements to 'rootElements'.
+     * Sets the root elements for the current input to 'rootElements'.
      */
     public void setRootElements(Object[] rootElements) {
-        this.rootElements = rootElements;
+    	if (fInput != null)
+    		inputToRoots.put(fInput, rootElements);
+    }
+
+    /**
+     * Resets the root elements for the current input to null.
+     */
+    public void resetRootElements() {
+    	if (fInput != null)
+    		inputToRoots.remove(fInput);
     }
 
     /**
      * Returns the sorted root elements.
      */
     public Object[] getSortedRootElements() {
+    	Object[] rootElements = getRootElements();
         if (rootElements != null)
             sort(rootElements);
         return rootElements;
@@ -80,7 +118,10 @@ abstract public class DroidsafeInfoTreeElementContentProvider implements ITreeCo
     /**
      * Resets the content of this content provider.
      */
-    abstract protected void reset();
+    protected void reset() {
+        inputToRoots.clear();
+    }
+
 
     @Override
     public Object getParent(Object child) {

@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.eclipse.plugin.core.view.spec;
 
 import java.util.ArrayList;
@@ -39,7 +60,7 @@ import droidsafe.eclipse.plugin.core.view.indicator.IndicatorViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowDetailsViewPart;
 import droidsafe.eclipse.plugin.core.view.infoflow.InfoFlowSummaryViewPart;
 import droidsafe.eclipse.plugin.core.view.pointsto.PointsToViewPart;
-import droidsafe.eclipse.plugin.core.view.spec.TreeElementContentProvider.TopLevelParentEntity;
+import droidsafe.eclipse.plugin.core.view.spec.SecuritySpecTreeElementContentProvider.TopLevelParentEntity;
 import droidsafe.eclipse.plugin.core.view.value.ValueViewPart;
 import droidsafe.speclang.model.CodeLocationModel;
 import droidsafe.speclang.model.IModelChangeSupport;
@@ -75,10 +96,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     	IProject project = getProject();
         fInputElement = DroidsafePluginUtilities.getSecuritySpec(project, true, reInitialize);
         if (fInputElement == null) {
-            fEmptyPageLabel.setText("Droidsafe spec for selected project has not been computed yet. "
-                    + "\nSelect the project on the Project Explorer "
-                    + "\nand run the Droidsafe spec generation command from the project context menu.");
-            showPage(PAGE_EMPTY);
+            showEmptyPage();
         } else {
             updateView();
             InfoFlowSummaryViewPart.openView(fInputElement);
@@ -273,8 +291,8 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
     }
 
     private void setContentProviderTopLevelParent(TopLevelParentEntity parentEntityType) {
-        if (fContentProvider instanceof TreeElementContentProvider) {
-            TreeElementContentProvider contProvider = (TreeElementContentProvider) fContentProvider;
+        if (fContentProvider instanceof SecuritySpecTreeElementContentProvider) {
+            SecuritySpecTreeElementContentProvider contProvider = (SecuritySpecTreeElementContentProvider) fContentProvider;
             if (contProvider.getContentProviderTopLevelParent() != parentEntityType) {
                 contProvider.setContentProviderTopLevelParent(parentEntityType);
                 if (fTreeViewer != null) {
@@ -336,7 +354,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      */
     public void setUseShortSignatureForMethods(boolean useShortSignature) {
         boolean oldValue =
-                ((TreeElementLabelProvider) fLabelProvider)
+                ((SecuritySpecTreeElementLabelProvider) fLabelProvider)
                 .setUseShortSignatureForMethods(useShortSignature);
         if (fTreeViewer != null && oldValue != useShortSignature) {
             ISelection savedSelections = getViewerSelection();
@@ -597,7 +615,7 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
      * 
      */
     public TreeElement<?, ?> findTreeElementForModelObject(IModelChangeSupport modelObject) {
-        return ((TreeElementContentProvider) fContentProvider)
+        return ((SecuritySpecTreeElementContentProvider) fContentProvider)
                 .findTreeElementForModelObject(modelObject);
     }
 
@@ -625,25 +643,17 @@ public class SecuritySpecOutlineViewPart extends SpecInfoOutlineViewPart {
 
     @Override
     protected DroidsafeInfoTreeElementLabelProvider makeLabelProvider() {
-        return new TreeElementLabelProvider();
+        return new SecuritySpecTreeElementLabelProvider();
     }
 
     @Override
     protected DroidsafeInfoTreeElementContentProvider makeContentProvider() {
-        return new TreeElementContentProvider();
+        return new SecuritySpecTreeElementContentProvider();
     }
 
     @Override
     protected void projectSelected() {
         refreshSpecAndOutlineView();
-    }
-
-    @Override
-    protected String emptyPageText() {
-        return "No Android Project selected. "
-                + "\nSelect an Android project in the Project Explorer."
-                + "\nYou may also need to run the Droidsafe spec generation "
-                + "command from the project context menu.";
     }
 
 }

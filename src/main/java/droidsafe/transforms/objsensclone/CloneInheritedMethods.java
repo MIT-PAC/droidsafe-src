@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.transforms.objsensclone;
 
 import java.util.HashMap;
@@ -65,19 +86,25 @@ public class CloneInheritedMethods {
     private static int cloned_method_id = 0;
     /** if true clone all methods otherwise clone only reachable */
     private boolean cloneAllMethods = false;
-    
+    /** if true, then copy the classifications (spec, ban, safe, system) from the original method to the clone */
+    private boolean copyClassifications = true;
+
     /**
      * Clone inherited method and fix up code.  
      * 
      * If allMethods == true, then clone all methods, otherwise, just clone reachable methods
+     * If copyClassifications == true, then copy the classifications (spec, ban, safe, system) 
+     * from the original method to the clone
+     * 
      */
-    public CloneInheritedMethods(SootClass clz, boolean allMethods) {
+    public CloneInheritedMethods(SootClass clz, boolean allMethods, boolean copyClassifications) {
         clazz = clz;
         methods = new SootMethodList();
-        
-        cloneAllMethods = allMethods;
-        clonedToOriginal = HashBiMap.create();
-        
+
+        this.cloneAllMethods = allMethods;
+        this.clonedToOriginal = HashBiMap.create();
+        this.copyClassifications = copyClassifications;
+
         //add methods already in the clz
         for (SootMethod method : clazz.getMethods())
             methods.addMethod(method);
@@ -98,20 +125,26 @@ public class CloneInheritedMethods {
             ancestors.add(curAncestor.getSuperclass());
             curAncestor = curAncestor.getSuperclass();
         }
-        
-        for (SootClass ancestor : ancestors) {
-            if (ancestor.isPhantom())
-                continue;
 
-            cloneReachableNonHiddenAncestorMethods(ancestor);
+        for (SootClass ancestor : ancestors) {
+            if (ancestor.isPhantom() || !ancestor.isApplicationClass())
+                continue;
+            try {
+                cloneReachableNonHiddenAncestorMethods(ancestor);
+            } catch (Exception e) {
+                //ignore error
+            }
         }
 
         //modify ancestors fields
         for (SootClass ancestor : ancestors) {
-            if (ancestor.isPhantom())
+            if (ancestor.isPhantom() || !ancestor.isApplicationClass())
                 continue;
-
-            SootUtils.makeFieldsVisible(ancestor);
+            try {
+                SootUtils.makeFieldsVisible(ancestor);
+            } catch (Exception e) {
+                //ignore error
+            }
         }
 
         cloneHiddenAncestorMethodsAndFixInvokeSpecial();
@@ -164,8 +197,11 @@ public class CloneInheritedMethods {
             //turn off final for ancestor methods
             if (ancestorM.isFinal())
                 ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
-
-            cloneMethod(ancestorM, ancestorM.getName());
+            try {               
+               cloneMethod(ancestorM, ancestorM.getName());
+            } catch (Exception e) {
+                //some error we are ignoring
+            }
         }
     }
 
@@ -178,9 +214,9 @@ public class CloneInheritedMethods {
      */
     private void cloneHiddenAncestorMethodsAndFixInvokeSpecial() {
         Set<SootClass> parents = SootUtils.getParents(clazz);
-        
+
         boolean debug = false;//(clazz.getName().contains("ResultDisplayer"));
-        
+
         boolean cloneAdded = false;
         do {
             cloneAdded = false;
@@ -190,21 +226,20 @@ public class CloneInheritedMethods {
                     continue;
 
                 if (debug) System.out.println(method);
-                
+
                 Body body = null;
                 try {
-                	body = method.retrieveActiveBody();
+                    body = method.retrieveActiveBody();
                 }
                 catch (Exception ex) {
-                	logger.info("Exception retrieving method body {}", ex);
-                	continue;
-                }
-
-
+                    logger.info("Exception retrieving method body {}", ex);
+                    continue;
+                }               
+                
                 StmtBody stmtBody = (StmtBody)body;
 
                 Chain units = stmtBody.getUnits();
-                Iterator stmtIt = units.iterator();
+                Iterator stmtIt = units.iterator();                            
 
                 while (stmtIt.hasNext()) {
                     Stmt stmt = (Stmt)stmtIt.next();
@@ -212,61 +247,39 @@ public class CloneInheritedMethods {
                     if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
                         SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
 
-                        SootMethod target = resolveSpecialInvokeTarget(si); //si.getMethod();
+                        try {
+                            SootMethod target = SootUtils.resolveSpecialDispatch(si); //si.getMethod();
 
-                        if (debug) System.out.printf("\t%s %s", si, target);
-                        
-                        if (clonedToOriginal.values().contains(target)) {
-                            //found target of invoke special, and it has been cloned, so change the invoke special
-                            SootMethod cloneOfTarget = clonedToOriginal.inverse().get(target);
-                            si.setMethodRef(cloneOfTarget.makeRef());
-                            if (debug) System.out.println("\tChange ref " + cloneOfTarget);
-                        } else if (parents.contains(target.getDeclaringClass())) {
-                            //target has not been cloned, but should be cloned, so clone it and change ref of invoke
-                            String name = target.getName() + CLONED_METHOD_SUFFIX + (cloned_method_id++);
-                            SootMethod clonedMethod = cloneMethod(target, name);
-                            si.setMethodRef(clonedMethod.makeRef());
-                            cloneAdded = true;
-                            if (debug) System.out.println("\tClone and Change ref " + clonedMethod);
-                        } 
+
+                            if (debug) System.out.printf("\t%s %s", si, target);
+
+                            if (clonedToOriginal.values().contains(target)) {
+                                //found target of invoke special, and it has been cloned, so change the invoke special
+                                SootMethod cloneOfTarget = clonedToOriginal.inverse().get(target);
+                                si.setMethodRef(cloneOfTarget.makeRef());
+                                if (debug) System.out.println("\tChange ref " + cloneOfTarget);
+                            } else if (parents.contains(target.getDeclaringClass())) {
+                                //target has not been cloned, but should be cloned, so clone it and change ref of invoke
+                                String name = target.getName() + CLONED_METHOD_SUFFIX + (cloned_method_id++);
+                                try {
+                                    SootMethod clonedMethod = cloneMethod(target, name);
+                                    si.setMethodRef(clonedMethod.makeRef());
+                                    cloneAdded = true;
+                                    if (debug) System.out.println("\tClone and Change ref " + clonedMethod);
+                                } catch (Exception e) {
+                                    //some error we are ignoring...
+                                }
+                            }
+
+                        } catch (CannotFindMethodException e) {
+                            logger.debug("Error resolve special dispatch: {}", stmt);
+                        }
                     }
                 }
             }
         } while (cloneAdded);
     }
 
-    /**
-     * Resolve the concrete target of a special invoke using our modified semantics for special invoke expression.
-     */
-    private SootMethod resolveSpecialInvokeTarget(SpecialInvokeExpr si) {
-        SootMethod target = null;
-      
-        try {
-            target = SootUtils.resolve(si.getMethodRef());
-        } catch (CannotFindMethodException e) {    
-            logger.error("Cannot find concrete method target for special invoke: {}", si);
-            return null;
-        }
-        
-        String targetSubSig = target.getSubSignature();
-
-        SootClass current = target.getDeclaringClass();
-
-        while (true) {
-            if (current.declaresMethod(targetSubSig)) {
-                return current.getMethod(targetSubSig);
-            } 
-
-            //not a match in current, try superclass on next loop
-            if (current.hasSuperclass())
-                current = current.getSuperclass();
-            else {
-                logger.error("Cannot find concrete method target for special invoke: {}", si);
-                droidsafe.main.Main.exit(1);
-                return null;
-            }
-        }
-    }
 
     /**
      * Clone given method into this class with given name.
@@ -289,14 +302,25 @@ public class CloneInheritedMethods {
 
         clonedToOriginal.put(newMeth, ancestorM);
 
-        API.v().cloneMethodClassifications(ancestorM, newMeth);
+        if (copyClassifications)
+            API.v().cloneMethodClassifications(ancestorM, newMeth);
+              
 
         //clone body
         Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
         newMeth.setActiveBody(newBody);
-
-        JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
         
+        //change the type of the this local to the current (child) class
+        //don't think this is really necessary because something else seems to do this...
+        try {
+            if (!ancestorM.isStatic())
+                newBody.getThisLocal().setType(clazz.getType());
+        } catch (Exception e) {
+            //ignore
+        }
+       
+        JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
+
         return newMeth;
     }
 
@@ -338,7 +362,7 @@ public class CloneInheritedMethods {
         //didn't find it
         return false;
     }
-    
+
     public static String removeMethodCloneSuffix(String str) {
         String regex = CLONED_METHOD_SUFFIX+"[0-9]+";
         Pattern pattern = Pattern.compile(regex);

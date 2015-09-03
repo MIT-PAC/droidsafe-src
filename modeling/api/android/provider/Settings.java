@@ -1,3 +1,46 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file incorporates work covered by the following copyright and
+ * permission notice:
+ *
+ * Copyright (C) 2006 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+
+
 package android.provider;
 
 // Droidsafe Imports
@@ -1225,13 +1268,9 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
         @DSSource({DSSourceKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.966 -0500", hash_original_method = "673ACF52738B2550EB82A63F524A794C", hash_generated_method = "DF23D5CD90F7627E0234D522B83FB549")
         
-public synchronized static String getString(ContentResolver resolver, String name) {
-            if (sNameValueCache == null) {
-                sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
-                                                     CALL_METHOD_GET_SECURE);
-            }
-            return sNameValueCache.getString(resolver, name);
-        }
+       public synchronized static String getString(ContentResolver resolver, String name) {
+	   return new String("Settings$Secure");
+       }
 
         /**
          * Store a name/value pair into the database.
@@ -1258,7 +1297,7 @@ public static boolean putString(ContentResolver resolver,
         @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.971 -0500", hash_original_method = "6094EDC02DB67FDF86E7659AB564A860", hash_generated_method = "D066004669828715526BC70324C79D5D")
         
-public static Uri getUriFor(String name) {
+	public static Uri getUriFor(String name) {
             return getUriFor(CONTENT_URI, name);
         }
 
@@ -1282,12 +1321,7 @@ public static Uri getUriFor(String name) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.974 -0500", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
         
 public static int getInt(ContentResolver cr, String name, int def) {
-            String v = getString(cr, name);
-            try {
-                return v != null ? Integer.parseInt(v) : def;
-            } catch (NumberFormatException e) {
-                return def;
-            }
+	    return 0;
         }
 
         /**
@@ -1313,12 +1347,9 @@ public static int getInt(ContentResolver cr, String name, int def) {
         
 public static int getInt(ContentResolver cr, String name)
                 throws SettingNotFoundException {
-            String v = getString(cr, name);
-            try {
-                return Integer.parseInt(v);
-            } catch (NumberFormatException e) {
-                throw new SettingNotFoundException(name);
-            }
+	    if (name.equals(""))
+		throw new SettingNotFoundException(name);
+	    return 0;
         }
 
         /**
@@ -1358,14 +1389,7 @@ public static boolean putInt(ContentResolver cr, String name, int value) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.982 -0500", hash_original_method = "2986E5629421403DA55C169D77194DCA", hash_generated_method = "334B1526468744A2753D53DD17327221")
         
 public static long getLong(ContentResolver cr, String name, long def) {
-            String valString = getString(cr, name);
-            long value;
-            try {
-                value = valString != null ? Long.parseLong(valString) : def;
-            } catch (NumberFormatException e) {
-                value = def;
-            }
-            return value;
+	    return 0L;
         }
 
         /**
@@ -1390,12 +1414,8 @@ public static long getLong(ContentResolver cr, String name, long def) {
         
 public static long getLong(ContentResolver cr, String name)
                 throws SettingNotFoundException {
-            String valString = getString(cr, name);
-            try {
-                return Long.parseLong(valString);
-            } catch (NumberFormatException e) {
-                throw new SettingNotFoundException(name);
-            }
+	    if ("".equals(name)) throw new SettingNotFoundException(name);
+	    return 0L;//Long.parseLong(valString);
         }
 
         /**

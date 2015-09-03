@@ -1,7 +1,59 @@
 /*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ * 
+ * 
+ * This file is based on work covered by the following copyright and permission
+ * notice:
+ *
  * Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
  */
+
+/***** THIS FILE HAS BEEN MODIFIED FROM THE ORIGINAL BY THE DROIDSAFE PROJECT. *****/
+/* 
+ * 2015-03-03 Limei Gilham <gilham@kestrel.edu>
+ *
+ *   - Extended from the original implemention of java.util.LinkedHashMap in OpenJDK 7
+ *     with a new field keyEquality which implements doridsafe.utils.Equality.
+ */
+
 package droidsafe.utils;
 
 import java.util.ConcurrentModificationException;
@@ -9,16 +61,20 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-/* LWG: 
- * Based on java.util.LinkedHashMap, but requires a parameter which implements 
- * droidsafe.utils.Equality. The equals() and hashCode() in this parameter are
- * used as equality and hash code on keys instead of the equals() and hashCode()
- * defined for K.
+
+/**
+ * This linked hash map implementation is based on java.util.ParameterizedLinkedHashMap, but 
+ * requires a parameter which implements droidsafe.utils.Equality. The equals() 
+ * and hashCode() in this parameter are used as equality and hash code on keys 
+ * instead of the equals() and hashCode() defined for K.
  */
-public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> implements Map<K,V>
+
+public class ParameterizedLinkedHashMap<K,V>
+    extends ParameterizedHashMap<K,V>
+    implements Map<K,V>
 {
 
-    //private static final long serialVersionUID = 3801124242820219131L;
+    private static final long serialVersionUID = 3801124242820219131L;
 
     /**
      * The head of the doubly linked list.
@@ -34,11 +90,12 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     private final boolean accessOrder;
 
     /**
-     * Constructs an empty insertion-ordered <tt>LinkedHashMap</tt> instance
-     * with the specified initial capacity and load factor.
+     * Constructs an empty insertion-ordered <tt>ParameterizedLinkedHashMap</tt> instance
+     * with the specified initial capacity, load factor, and key equality.
      *
      * @param  initialCapacity the initial capacity
      * @param  loadFactor      the load factor
+     * @param  keyEquality     the equality on keys
      * @throws IllegalArgumentException if the initial capacity is negative
      *         or the load factor is nonpositive
      */
@@ -48,10 +105,11 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     }
 
     /**
-     * Constructs an empty insertion-ordered <tt>LinkedHashMap</tt> instance
-     * with the specified initial capacity and a default load factor (0.75).
+     * Constructs an empty insertion-ordered <tt>ParameterizedLinkedHashMap</tt> instance
+     * with the specified initial capacity and key equality and a default load factor (0.75).
      *
      * @param  initialCapacity the initial capacity
+     * @param  keyEquality     the equality on keys
      * @throws IllegalArgumentException if the initial capacity is negative
      */
     public ParameterizedLinkedHashMap(int initialCapacity, Equality keyEquality) {
@@ -60,8 +118,10 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     }
 
     /**
-     * Constructs an empty insertion-ordered <tt>LinkedHashMap</tt> instance
-     * with the default initial capacity (16) and load factor (0.75).
+     * Constructs an empty insertion-ordered <tt>ParameterizedLinkedHashMap</tt> instance
+     * with the specified key equality and default initial capacity (16) and load factor (0.75).
+     *
+     * @param  keyEquality     the equality on keys
      */
     public ParameterizedLinkedHashMap(Equality keyEquality) {
         super(keyEquality);
@@ -69,12 +129,13 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     }
 
     /**
-     * Constructs an insertion-ordered <tt>LinkedHashMap</tt> instance with
-     * the same mappings as the specified map.  The <tt>LinkedHashMap</tt>
+     * Constructs an insertion-ordered <tt>ParameterizedLinkedHashMap</tt> instance with
+     * the same mappings as the specified map.  The <tt>ParameterizedLinkedHashMap</tt>
      * instance is created with a default load factor (0.75) and an initial
      * capacity sufficient to hold the mappings in the specified map.
      *
      * @param  m the map whose mappings are to be placed in this map
+     * @param  keyEquality     the equality on keys
      * @throws NullPointerException if the specified map is null
      */
     public ParameterizedLinkedHashMap(Map<? extends K, ? extends V> m, Equality keyEquality) {
@@ -83,19 +144,21 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     }
 
     /**
-     * Constructs an empty <tt>LinkedHashMap</tt> instance with the
-     * specified initial capacity, load factor and ordering mode.
+     * Constructs an empty <tt>ParameterizedLinkedHashMap</tt> instance with the
+     * specified initial capacity, load factor, ordering mode, and key equality.
      *
      * @param  initialCapacity the initial capacity
      * @param  loadFactor      the load factor
      * @param  accessOrder     the ordering mode - <tt>true</tt> for
      *         access-order, <tt>false</tt> for insertion-order
+     * @param  keyEquality     the equality on keys
      * @throws IllegalArgumentException if the initial capacity is negative
      *         or the load factor is nonpositive
      */
     public ParameterizedLinkedHashMap(int initialCapacity,
-                                      float loadFactor, 
-                                      boolean accessOrder, Equality keyEquality) {
+                         float loadFactor,
+                         boolean accessOrder,
+                         Equality keyEquality) {
         super(initialCapacity, loadFactor, keyEquality);
         this.accessOrder = accessOrder;
     }
@@ -105,7 +168,6 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
      * readObject) before any entries are inserted into the map.  Initializes
      * the chain.
      */
-    @Override
     void init() {
         header = new Entry<>(-1, null, null, null, keyEquality);
         header.before = header.after = header;
@@ -116,12 +178,9 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
      * by superclass resize.  It is overridden for performance, as it is
      * faster to iterate using our linked list.
      */
-    @Override
-    void transfer(ParameterizedHashMap.Entry[] newTable, boolean rehash) {
+    void transfer(ParameterizedHashMap.Entry[] newTable) {
         int newCapacity = newTable.length;
         for (Entry<K,V> e = header.after; e != header; e = e.after) {
-            if (rehash)
-                e.hash = (e.key == null) ? 0 : hash(e.key);
             int index = indexFor(e.hash, newCapacity);
             e.next = newTable[index];
             newTable[index] = e;
@@ -184,7 +243,7 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     }
 
     /**
-     * LinkedHashMap entry.
+     * ParameterizedLinkedHashMap entry.
      */
     private static class Entry<K,V> extends ParameterizedHashMap.Entry<K,V> {
         // These fields comprise the doubly linked list used for iteration.
@@ -293,12 +352,15 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
      * removes the eldest entry if appropriate.
      */
     void addEntry(int hash, K key, V value, int bucketIndex) {
-        super.addEntry(hash, key, value, bucketIndex);
+        createEntry(hash, key, value, bucketIndex);
 
-        // Remove eldest entry if instructed
+        // Remove eldest entry if instructed, else grow capacity if appropriate
         Entry<K,V> eldest = header.after;
         if (removeEldestEntry(eldest)) {
             removeEntryForKey(eldest.key);
+        } else {
+            if (size >= threshold)
+                resize(2 * table.length);
         }
     }
 
@@ -358,5 +420,4 @@ public class ParameterizedLinkedHashMap<K,V> extends ParameterizedHashMap<K,V> i
     protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
         return false;
     }
-
 }

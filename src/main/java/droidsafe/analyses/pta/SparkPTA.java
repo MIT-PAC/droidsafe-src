@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.analyses.pta;
 
 import java.io.File;
@@ -79,10 +100,12 @@ import soot.jimple.toolkits.callgraph.VirtualCalls;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
+import droidsafe.analyses.CallGraphDumper;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.transforms.objsensclone.AllocationGraph;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
@@ -109,7 +132,7 @@ public class SparkPTA extends PTABridge {
     private Set<AllocNode> allAllocNodes;
     /** how many times have we been run? */
     private static int runCount = 1;
-
+    private AllocationGraph ag;
 
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
@@ -150,6 +173,13 @@ public class SparkPTA extends PTABridge {
 
     @Override
     protected void runInternal() {
+        //only build allocation graph and calc complexity if we want to limit
+        //context for complex classes
+        if (Config.v().limitcontextforcomplex) {
+            ag = new AllocationGraph();
+            ag.dumpComplexity();
+        }
+        
         //don't print crap to screen!
         G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
@@ -168,13 +198,21 @@ public class SparkPTA extends PTABridge {
 
         createNewToAllocMap();
 
-        /*
+        long totalMCs = 0;
         for (SootMethod method : getReachableMethods()) {
             Set<MethodOrMethodContext> mcs = getMethodContexts(method);
-            if (mcs.size() > 30)
+            totalMCs += mcs.size();
+        /*    if (mcs.size() > 30)
                 System.out.println(method + " " + mcs.size());
+            if ("<java.lang.Math: int min(int,int)>".equals(method.getSignature())) {
+                for (MethodOrMethodContext mc : mcs) {
+                    System.out.println("\t" + mc);
+                }
+            }
+            */
         }
-         */
+                
+        System.out.println("Total reachable method x contexts: " + totalMCs);
         
         //dumpReachablesAndAllocNodes();
         //dumpCallGraphReachablesCSV();
@@ -186,8 +224,9 @@ public class SparkPTA extends PTABridge {
 
         if (Config.v().dumpCallGraph) {
             //dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
-            String fileName = String.format("callgraph%d.txt", runCount++);
-            dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
+            CallGraphDumper.runGEXF(Project.v().getOutputDir() + File.separator + "callgraph.gexf");
+            //String fileName = String.format("callgraph%d.txt", runCount++);
+            //dumpTextGraph(Project.v().getOutputDir() + File.separator + fileName);
         }
 
         //System.out.println(SparkEvaluator.v().toString());      
@@ -777,14 +816,16 @@ public class SparkPTA extends PTABridge {
         
         opt.put("kobjsens", Integer.toString(Config.v().kobjsens));
         
+        opt.put("kobjsens-api-calldepth", Integer.toString(Config.v().apiCallDepth));
+        
+        opt.put("kobjsens-app-classes-list", getAppClassesString());
+        
         opt.put("kobjsens-context-for-static-inits", Boolean.toString(Config.v().staticinitcontext));
 
         opt.put("kobjsens-no-context-list", 
             buildNoContextList());
 
-        opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));
-      
-        opt.put("kobjsens-important-allocators", "");
+        opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));       
         
         if (Config.v().extraArrayContext)
             opts.put("kobjsens-extra-array-context", "true"); 
@@ -799,6 +840,11 @@ public class SparkPTA extends PTABridge {
             addStringClasses(limitHeapContext);
         } 
 
+        if (Config.v().limitcontextforcomplex) {
+            limitComplexity(limitHeapContext);
+        }
+        
+        
         logger.info("limit heap context list: {}", limitHeapContext.toString());
         opt.put("kobjsens-limit-heap-context", limitHeapContext.toString());
 
@@ -822,6 +868,21 @@ public class SparkPTA extends PTABridge {
 
 
         logger.info("[spark] Done!");
+    }
+    
+    private void limitComplexity(StringBuffer buf) {
+        if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
+            buf.append(',');
+        
+        for (Map.Entry<SootClass, Integer> e : ag.getComplexityMap().entrySet()) {
+            if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
+                continue;
+            
+            if (e.getValue().intValue() > 50000) {
+                buf.append(e.getKey() + ",");
+                System.out.println("limiting heap context for complex class: " + e.getKey());
+            }
+        }
     }
 
     private void addGUIClasses(StringBuffer buf) {
@@ -889,15 +950,14 @@ public class SparkPTA extends PTABridge {
         return false;
     }
 
-    private String buildImportantAllocs() {
+    private String getAppClassesString() {
         StringBuffer sb = new StringBuffer();
 
         for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz) || 
-                    /*isImportantJavaAlloc(clz) ||*/
+            if (!API.v().isSystemClass(clz) || 
                     clz.getName().startsWith(Project.DS_GENERATED_CLASSES_PREFIX) ||
-                    clz.getName().startsWith("droidsafe.runtime")) {
-                logger.info("Adding class to important alloc list of spark: {}", clz);
+                    clz.getName().startsWith("droidsafe")) {
+                logger.info("Adding class to app list of spark: {}", clz);
                 sb.append(clz + ",");
             }
         }

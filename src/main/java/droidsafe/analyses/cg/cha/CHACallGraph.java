@@ -1,5 +1,28 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.analyses.cg.cha;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -27,6 +50,7 @@ import soot.jimple.NewArrayExpr;
 import soot.jimple.Stmt;
 import droidsafe.analyses.cg.StmtEdge;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph.CallToTarget;
+import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
@@ -94,6 +118,18 @@ public class CHACallGraph {
 
     public static void reset() {
         v = null;
+    }
+
+    public void dumpEdges(String fname, boolean printReflectedEdges) {        
+        try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + fname)) {
+            for (StmtEdge<SootMethod> edge : callgraph.edgeSet()) {
+                if (printReflectedEdges || (!isReflectedEdge(edge))) {
+                    fw.write(edge + "\n");
+                }
+            }
+        } catch (Exception e) {
+
+        } 
     }
 
     private void createCG() {
@@ -172,7 +208,7 @@ public class CHACallGraph {
 
         InvokeExpr ie = stmt.getInvokeExpr();
 
-        
+
         SootMethod concrete;
         try {
             concrete = SootUtils.resolve(stmt.getInvokeExpr().getMethodRef());

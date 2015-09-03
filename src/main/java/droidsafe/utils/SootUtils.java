@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2015,  Massachusetts Institute of Technology
+ * 
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation; either version 2 of the License, or (at your
+ * option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but 
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * 
+ * Please email droidsafe@lists.csail.mit.edu if you need additional
+ * information or have any questions.
+ */
+
 package droidsafe.utils;
 
 import java.io.File;
@@ -20,6 +41,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Set;
@@ -81,6 +103,7 @@ import soot.tagkit.SourceFileTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.toolkits.graph.ExceptionalUnitGraph;
+import soot.toolkits.graph.UnitGraph;
 import soot.toolkits.scalar.Pair;
 import soot.Type;
 import soot.Unit;
@@ -1913,6 +1936,53 @@ public class SootUtils {
         }
 
         return concretes;
+    }
+    
+    
+    /**
+     * Return all statements reachable from the given statement in method.
+     * Build a CFG and find all statements with path from from.
+     * Return empty list on error.  Do not include from in the returned list. 
+     */
+    public static List<Stmt> getReachableStmts(SootMethod method, Stmt from) {
+        List<Stmt> reachable = new LinkedList<Stmt>();
+        try {
+            UnitGraph unitGraph  = new ExceptionalUnitGraph(method.retrieveActiveBody());
+            
+            Stack<Unit> stack = new Stack<Unit>();
+            Set<Unit> visited = new HashSet<Unit>();
+            for (Unit succ : unitGraph.getSuccsOf(from))
+                stack.add(succ);
+            
+            while (!stack.isEmpty()) {
+                Unit current = stack.pop();
+                if (visited.contains(current))
+                    continue;
+                
+                visited.add(current);
+                //so far this cast has always worked!
+                reachable.add((Stmt)current);
+                
+                for (Unit succ : unitGraph.getSuccsOf(current)) {
+                    if (!visited.contains(succ)) stack.add(succ);                    
+                }
+            }
+            
+            
+        } catch (Exception e) {
+            logger.debug("Error calculating statements reachable from {} in {}", from, method, e);
+        }
+                
+        return reachable;
+    }
+    
+    public static Iterable<Unit> getStmtIterator(SootMethod method) {
+        try {
+            Body body = method.retrieveActiveBody();
+            return body.getUnits();
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
 }
 
