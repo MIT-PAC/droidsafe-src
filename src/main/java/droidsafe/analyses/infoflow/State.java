@@ -553,7 +553,8 @@ class State {
         this.instances = new Instances();
         this.arrays = new Arrays();
         this.statics = new Statics();
-        this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>();
+        if (Config.v().implicitFlow)
+        	this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>();
     }
 
     State(State that) {
@@ -561,7 +562,8 @@ class State {
         this.instances = new Instances(that.instances);
         this.arrays = new Arrays(that.arrays);
         this.statics = new Statics(that.statics);
-        this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>(that.iflows);
+        if (Config.v().implicitFlow)
+        	this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>(that.iflows);
     }
 
     public ImmutableSet<InfoValue> getImplicitFlows(Context context, Block block) {
@@ -584,6 +586,6 @@ class State {
 
         return this.locals.equals(that.locals) && this.instances.equals(that.instances) 
         		&& this.arrays.equals(that.arrays) && this.statics.equals(that.statics) &&
-        		this.iflows.equals(that.iflows);
+        		(!Config.v().implicitFlow || this.iflows.equals(that.iflows));
     }
 }

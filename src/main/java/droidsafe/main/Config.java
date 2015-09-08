@@ -124,6 +124,9 @@ public class Config {
     /** If true, analyze information flows. */
     public boolean infoFlow = true;
    
+    /** If true, analyze implicit information flows. */
+    public boolean implicitFlow = false;
+
     public boolean checkInfoFlow = false;
     
     /** InfoValues that we are concerned with  */
@@ -446,6 +449,10 @@ public class Config {
                 "Turn off information flow analysis");
         options.addOption(noInfoFlow);
 
+        Option implicitFlow = new Option("implicitflow", 
+                "Turn on implicit information flow analysis");
+        options.addOption(implicitFlow);
+
         Option infoFlowValue =
                 OptionBuilder
                 .withArgName("INFOVALUE")
@@ -666,6 +673,11 @@ public class Config {
         if (cmd.hasOption("noinfoflow")) {
             this.infoFlow = false;
             this.checkInfoFlow = false;
+        }
+
+        if (cmd.hasOption("implicitflow")) {
+            assert this.infoFlow;
+            this.implicitFlow = true;
         }
 
         if (cmd.hasOption("infoflow-value")) {

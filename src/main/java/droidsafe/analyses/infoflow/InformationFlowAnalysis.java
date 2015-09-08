@@ -339,17 +339,20 @@ public class InformationFlowAnalysis {
 
 			@Override
 			public void caseIfStmt(IfStmt stmt) {
-				execute(stmt, stmt.getCondition(), state);
+				if (Config.v().implicitFlow)
+					execute(stmt, stmt.getCondition(), state);
 			}
 
 			@Override
 			public void caseLookupSwitchStmt(LookupSwitchStmt stmt) {
-				execute(stmt, stmt.getKey(), state);
+				if (Config.v().implicitFlow)
+					execute(stmt, stmt.getKey(), state);
 			}
 
 			@Override
 			public void caseTableSwitchStmt(TableSwitchStmt stmt) {
-				execute(stmt, stmt.getKey(), state);
+				if (Config.v().implicitFlow)
+					execute(stmt, stmt.getKey(), state);
 			}
 		};
 		unit.apply(stmtSwitch);
@@ -642,7 +645,7 @@ public class InformationFlowAnalysis {
 		stmt.getRightOp().apply(rValueSwitch);
 
 		// Take implicit information flow into account.
-		if (!(lLocal.getType() instanceof RefLikeType)) {
+		if (Config.v().implicitFlow && !(lLocal.getType() instanceof RefLikeType)) {
 			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
 			Body body = block.getBody();
 			SootMethod method = body.getMethod();
@@ -1068,7 +1071,7 @@ public class InformationFlowAnalysis {
 		immediate.apply(immediateSwitch);
 
 		// Take implicit information flow into account.
-		if (!(instanceFieldRef.getType() instanceof RefLikeType)) {
+		if (Config.v().implicitFlow && !(instanceFieldRef.getType() instanceof RefLikeType)) {
 			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
 			Body body = block.getBody();
 			SootMethod method = body.getMethod();
@@ -1161,7 +1164,7 @@ public class InformationFlowAnalysis {
 		rImmediate.apply(immediateSwitch);
 
 		// Take implicit information flow into account.
-		if (!(staticFieldRef.getType() instanceof RefLikeType)) {
+		if (Config.v().implicitFlow && !(staticFieldRef.getType() instanceof RefLikeType)) {
 			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
 			Body body = block.getBody();
 			SootMethod method = body.getMethod();
@@ -1217,7 +1220,7 @@ public class InformationFlowAnalysis {
 		immediate.apply(immediateSwitch);
 
 		// Take implicit information flow into account.
-		if (!(arrayRef.getType() instanceof RefLikeType)) {
+		if (Config.v().implicitFlow && !(arrayRef.getType() instanceof RefLikeType)) {
 			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
 			Body body = block.getBody();
 			SootMethod method = body.getMethod();
@@ -1932,17 +1935,19 @@ public class InformationFlowAnalysis {
 	// stmt = identity_stmt
 	private void execute(IdentityStmt stmt, State state) {
 		// Take implicit information flow into account.
-		Local local = (Local)stmt.getLeftOp();
-		if (!(local.getType() instanceof RefLikeType)) {
-			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
-			Body body = block.getBody();
-			SootMethod method = body.getMethod();
-			Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
-			for (MethodOrMethodContext methodContext : methodContexts) {
-				Context context = methodContext.context();
-				if (ignoreContext(context)) continue;
-				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
-				state.locals.putW(context, local, values);
+		if (Config.v().implicitFlow) {
+			Local local = (Local)stmt.getLeftOp();
+			if (!(local.getType() instanceof RefLikeType)) {
+				Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+				Body body = block.getBody();
+				SootMethod method = body.getMethod();
+				Set<MethodOrMethodContext> methodContexts = PTABridge.v().getMethodContexts(method);
+				for (MethodOrMethodContext methodContext : methodContexts) {
+					Context context = methodContext.context();
+					if (ignoreContext(context)) continue;
+					ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
+					state.locals.putW(context, local, values);
+				}
 			}
 		}
 	}
