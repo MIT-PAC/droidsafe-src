@@ -55,6 +55,7 @@ import libcore.util.SneakyThrow;
 public class FilterOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.165 -0500", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "F5E376611CAAF4EE829F9CD268525BC2")
 
+    @DSVAModeled
     protected OutputStream out;
 
     /**

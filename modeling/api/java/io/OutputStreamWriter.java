@@ -59,6 +59,7 @@ import java.util.Arrays;
 public class OutputStreamWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.566 -0500", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
 
+    @DSVAModeled
     private  OutputStream out;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.568 -0500", hash_original_field = "35DE68BB49761C7459EF0234F6EAB1B7", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
 

@@ -59,6 +59,7 @@ import java.util.Arrays;
 public class InputStreamReader extends Reader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.957 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
 
+    @DSVAModeled
     private InputStream in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.959 -0500", hash_original_field = "C9198FC6CD0651265F41AA62AD6A1F5C", hash_generated_field = "C1BD264EA71B8905202FEFE2EB6106E5")
 

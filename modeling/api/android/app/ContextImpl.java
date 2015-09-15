@@ -213,16 +213,6 @@ ReceiverRestrictedContext(Context base) {
 
 public class ContextImpl extends Context {
 
-    private static FileOutputStream OUTPUT_STREAM;
-    private static FileInputStream INPUT_STREAM;
-
-    static {
-        try {
-            OUTPUT_STREAM = new FileOutputStream("DS_UNKNOWN");
-            INPUT_STREAM  = new FileInputStream("DS_UNKNOWN");
-        } catch (Exception e) {
-        }
-    }
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
@@ -524,15 +514,13 @@ private File getPreferencesDir() {
     @Override
     @DSSpec(DSCat.IO)
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
-        INPUT_STREAM.addTaint(OUTPUT_STREAM.getTaint());
-        return INPUT_STREAM;
+        return new FileInputStream(name);
     }
     
     @Override
     @DSSpec(DSCat.IO)
-    public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
-        OUTPUT_STREAM.addTaint(INPUT_STREAM.getTaint());
-       return OUTPUT_STREAM;
+    public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {      
+        return new FileOutputStream(name, mode);
     }
     
     @DSVerified

@@ -1652,9 +1652,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.016 -0500", hash_original_method = "4FB3AE192250E9EE292BE09F829C7FA4", hash_generated_method = "C2609287AD57B7D934CE6820CFD38AD3")
     
-        public String[] split(String regularExpression, int limit) {
+    public String[] split(String regularExpression, int limit) {
         String[] result = new String[1];
-        result.addTaint(this.getTaintInt());
+        result[0] = new String();        
+        result[0].addTaint(this.getTaintInt());
         return result;
 
     }

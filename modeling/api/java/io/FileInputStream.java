@@ -75,6 +75,9 @@ public class FileInputStream extends InputStream implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.108 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
 
     private final CloseGuard guard = CloseGuard.get();
+    
+    @DSVAModeled
+    private File DS_file;
 
     /**
      * Constructs a new {@code FileInputStream} that reads from {@code file}.
@@ -96,6 +99,7 @@ public FileInputStream(File file) throws FileNotFoundException {
         this.fd = IoBridge.open(file.getAbsolutePath(), O_RDONLY);
         this.shouldClose = true;
         guard.open("close");*/
+        DS_file = file;
         addTaint(file.getTaint());
     }
 
@@ -132,6 +136,7 @@ public FileInputStream(FileDescriptor fd) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.116 -0500", hash_original_method = "3B135756B4C06BFF0359EE9E41EEDC20", hash_generated_method = "A45CB9BBA620FFB20A4C2B7E074F5E66")
     
 public FileInputStream(String path) throws FileNotFoundException {
+        
         this(new File(path));
     }
 
