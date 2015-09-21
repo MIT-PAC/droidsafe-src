@@ -151,6 +151,9 @@ public RowBuilder newRow() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.748 -0500", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "87F3E7DEB331588F9FEE85FE0B266C4D")
     
 public void addRow(Object[] columnValues) {
+        this.addTaint(columnValues[0].toString().getTaint());
+        this.addTaint(columnValues[0].getTaint());
+        
         if (columnValues.length != columnCount) {
             throw new IllegalArgumentException();
         }
@@ -186,6 +189,8 @@ public void addRow(Iterable<?> columnValues) {
         int current = start;
         Object[] localData = data;
         for (Object columnValue : columnValues) {
+            this.addTaint(columnValue.getTaint());
+            this.addTaint(columnValue.toString().getTaint());
             if (current == end) {
                 // TODO: null out row?
                 throw new IllegalArgumentException(
@@ -220,6 +225,8 @@ private void addRow(ArrayList<?> columnValues, int start) {
         Object[] localData = data;
         for (int i = 0; i < size; i++) {
             localData[start + i] = columnValues.get(i);
+            this.addTaint(columnValues.get(i).toString().getTaint());
+            this.addTaint(columnValues.get(i).getTaint());
         }
     }
 
@@ -254,87 +261,107 @@ private void ensureCapacity(int size) {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.777 -0500", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "2DBB0A17A3D1D018DA998CC6AF1F85E3")    
     @Override
     public String getString(int column) {
-        Object value = get(column);
+        String ret = new String();
+        ret.addTaint(this.getTaint());
+        return ret;
+        /*Object value = get(column);
         if (value == null) return null;
-        return new String(value.toString());
+        return new String(value.toString());*/
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.779 -0500", hash_original_method = "60FD43E3A8DF3780BF7590D38393B65C", hash_generated_method = "21D6C413E6B369027128722715946B85")
     
 @Override
     public short getShort(int column) {
-        Object value = get(column);
+        return (short)this.getTaintInt();
+        /*  Object value = get(column);
         if (value == null) return 0;
         if (value instanceof Number) return ((Number) value).shortValue();
-        return Short.parseShort(value.toString());
+        return Short.parseShort(value.toString());*/
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.781 -0500", hash_original_method = "20798CD66C6EBCBDA86BE86A1F5C23AA", hash_generated_method = "DA727E8C1F17999E71962CC302754E6C")
     
 @Override
     public int getInt(int column) {
+        return this.getTaintInt();
+        /*
         Object value = get(column);
         if (value == null) return 0;
         if (value instanceof Number) return ((Number) value).intValue();
         return Integer.parseInt(value.toString());
+        */
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.784 -0500", hash_original_method = "95E2F837C77BDD8697A8850547DFE4D6", hash_generated_method = "CF9F9B512084A7D31A508D7C70439556")
     
 @Override
     public long getLong(int column) {
+        return (long)this.getTaintInt();
+        /*
         Object value = get(column);
         if (value == null) return 0;
         if (value instanceof Number) return ((Number) value).longValue();
         return Long.parseLong(value.toString());
+        */
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.786 -0500", hash_original_method = "5F37DCAACCAC42556DC41D90A8D016BB", hash_generated_method = "FA4FCD5C3B1FF317413F4A6444B074A7")
     
 @Override
     public float getFloat(int column) {
+        return (float)getTaintDouble();
+        /*
         Object value = get(column);
         if (value == null) return 0.0f;
         if (value instanceof Number) return ((Number) value).floatValue();
         return Float.parseFloat(value.toString());
+        */
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.789 -0500", hash_original_method = "C2298AFC87949D13E5DEC28EBEE5D1A6", hash_generated_method = "FFFC7AAB2B4B38FEADFBD27BD10D8573")
     
 @Override
     public double getDouble(int column) {
+        return getTaintDouble();
+        /*
         Object value = get(column);
         if (value == null) return 0.0d;
         if (value instanceof Number) return ((Number) value).doubleValue();
         return Double.parseDouble(value.toString());
+        */
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.791 -0500", hash_original_method = "9C5D46FB06759EAD0808F8E5E3B27C37", hash_generated_method = "88D622D24B64CFBE5969609A61CBC5C2")
     
 @Override
     public byte[] getBlob(int column) {
+        byte[] ret = new byte[1];
+        ret[0] = (byte)getTaintInt();
+        return ret;
+        /*
         Object value = get(column);
         return (byte[]) value;
+        */
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.794 -0500", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "562EF6FFF116C251F53E5B67BBE56B11")
-    
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.794 -0500", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "562EF6FFF116C251F53E5B67BBE56B11")    
 @Override
     public int getType(int column) {
         return DatabaseUtils.getTypeOfObject(get(column));
@@ -357,7 +384,7 @@ private void ensureCapacity(int size) {
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.765 -0500", hash_original_method = "5B64B028890135457EF6EA7D7258F6D8", hash_generated_method = "5B64B028890135457EF6EA7D7258F6D8")
         
-RowBuilder(int index, int endIndex) {
+            RowBuilder(int index, int endIndex) {
             this.index = index;
             this.endIndex = endIndex;
         }
@@ -372,6 +399,8 @@ RowBuilder(int index, int endIndex) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.768 -0500", hash_original_method = "2C7305D6C3442E9FCBF185523D5AEB72", hash_generated_method = "84DFB7AAE1500AF170EDF98A6AEE0A26")
         
 public RowBuilder add(Object columnValue) {
+            this.addTaint(columnValue.getTaint());
+            this.addTaint(columnValue.toString().getTaint());
             if (index == endIndex) {
                 throw new CursorIndexOutOfBoundsException(
                         "No more columns left.");

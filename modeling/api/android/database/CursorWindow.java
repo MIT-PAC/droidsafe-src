@@ -150,7 +150,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static void nativeCopyStringToBuffer(int windowPtr, int row, int column,
-            CharArrayBuffer buffer) {
+                                                 CharArrayBuffer buffer) {
 
         buffer.addTaint(windowPtr + row + column);
     }
@@ -196,8 +196,11 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.238 -0500", hash_original_method = "82A0D8881224A345C7D71889E82FF712", hash_generated_method = "A1F37DF171B5E56C3C2502ADC2995201")
     
-public static CursorWindow newFromParcel(Parcel p) {
-        return CREATOR.createFromParcel(p);
+    public static CursorWindow newFromParcel(Parcel p) {
+        //return CREATOR.createFromParcel(p);
+        CursorWindow ret = new CursorWindow(p);
+        ret.addTaint(p.getTaint());
+        return ret;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.040 -0500", hash_original_field = "A7166D91DB41667EF8254B5234098D82", hash_generated_field = "8D10DBBD9161B24BFA923BA8ACB7AE58")
 
@@ -211,20 +214,22 @@ public static CursorWindow newFromParcel(Parcel p) {
 
     public static final Parcelable.Creator<CursorWindow> CREATOR
             = new Parcelable.Creator<CursorWindow>() {
-        @DSSafe(DSCat.SAFE_OTHERS)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.231 -0500", hash_original_method = "102321E705544E214630A229EBF0AAEA", hash_generated_method = "4EF24EDFF7228ACE6A321698F5E75C1C")
-        
-public CursorWindow createFromParcel(Parcel source) {
-            return new CursorWindow(source);
-        }
+                    @DSSafe(DSCat.SAFE_OTHERS)
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.231 -0500", hash_original_method = "102321E705544E214630A229EBF0AAEA", hash_generated_method = "4EF24EDFF7228ACE6A321698F5E75C1C")
+                    
+                    public CursorWindow createFromParcel(Parcel source) {
+                        return new CursorWindow(source);
+                    }
+                    
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.233 -0500", hash_original_method = "22E812BCDE3BA2EC64FA32FE6BB196D2", hash_generated_method = "7007332CAB8AA9734B856C702FF5E16B")
+                    
+                    public CursorWindow[] newArray(int size) {
+                        return new CursorWindow[size];
+                    }
+                };
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.233 -0500", hash_original_method = "22E812BCDE3BA2EC64FA32FE6BB196D2", hash_generated_method = "7007332CAB8AA9734B856C702FF5E16B")
-        
-public CursorWindow[] newArray(int size) {
-            return new CursorWindow[size];
-        }
-    };
-@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.249 -0500", hash_original_field = "68CAF1AEF11BFE5DB8C3B09DCA26B261", hash_generated_field = "E194A8535700746837F74D9B692D7DA6")
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.249 -0500", hash_original_field = "68CAF1AEF11BFE5DB8C3B09DCA26B261", hash_generated_field = "E194A8535700746837F74D9B692D7DA6")
 
     private static final SparseIntArray sWindowToPidMap = new SparseIntArray();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.045 -0500", hash_original_field = "893E6C712A17C3652D97D287CE28196E", hash_generated_field = "38FB3A768EF6B5DA39D97BE6BF469283")
@@ -608,12 +613,16 @@ public int getType(int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.197 -0500", hash_original_method = "369AEBF74D7711C2C086D87D281ECBA3", hash_generated_method = "8D17084AD2B218959D95C83ACA25D445")
     
 public byte[] getBlob(int row, int column) {
-        acquireReference();
+        byte[] ret = new byte[1];
+        ret[0] = (byte)this.getTaintInt();
+        return ret;
+        /*  acquireReference();
         try {
             return nativeGetBlob(mWindowPtr, row - mStartPos, column);
         } finally {
             releaseReference();
         }
+        */
     }
 
     /**
@@ -646,12 +655,15 @@ public byte[] getBlob(int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.199 -0500", hash_original_method = "91E1480DC9AA77B4570FAB2ABB8DFF8A", hash_generated_method = "BD448898E1CEB8E1E549F06CCB9BA5AC")
     
 public String getString(int row, int column) {
-        acquireReference();
+        String ret = new String();
+        ret.addTaint(this.getTaint());
+        return ret;
+        /*acquireReference();
         try {
             return nativeGetString(mWindowPtr, row - mStartPos, column);
         } finally {
             releaseReference();
-        }
+            }*/
     }
 
     /**
@@ -687,7 +699,8 @@ public String getString(int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.202 -0500", hash_original_method = "58A64F01A8AD746344B9549C1A3482B7", hash_generated_method = "643FE172A5A1F488E2D1D0680BC94BEE")
     
 public void copyStringToBuffer(int row, int column, CharArrayBuffer buffer) {
-        if (buffer == null) {
+        buffer.data[0] = (char)getTaintInt();
+        /*if (buffer == null) {
             throw new IllegalArgumentException("CharArrayBuffer should not be null");
         }
         acquireReference();
@@ -696,6 +709,7 @@ public void copyStringToBuffer(int row, int column, CharArrayBuffer buffer) {
         } finally {
             releaseReference();
         }
+        */
     }
 
     /**
@@ -724,12 +738,15 @@ public void copyStringToBuffer(int row, int column, CharArrayBuffer buffer) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.204 -0500", hash_original_method = "AD6EFD172162F129E252A5B000066DBD", hash_generated_method = "12E72993EFAA287809AB53C55B85206A")
     
 public long getLong(int row, int column) {
+        return (long) getTaintInt();
+        /*
         acquireReference();
         try {
             return nativeGetLong(mWindowPtr, row - mStartPos, column);
         } finally {
             releaseReference();
         }
+        */
     }
 
     /**
@@ -759,12 +776,15 @@ public long getLong(int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.207 -0500", hash_original_method = "8A6F3264B03417AA20925F57716C63D9", hash_generated_method = "E3C98321222A0CC78973A9C9956891EF")
     
 public double getDouble(int row, int column) {
+        return getTaintDouble();
+        /*
         acquireReference();
         try {
             return nativeGetDouble(mWindowPtr, row - mStartPos, column);
         } finally {
             releaseReference();
         }
+        */
     }
 
     /**
@@ -835,12 +855,16 @@ public float getFloat(int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.217 -0500", hash_original_method = "6CB3F309867B314299E03BAA3ADD01B0", hash_generated_method = "7F0E77137CFC3A3346F77E5FE852F5A6")
     @DSSink(DSSinkKind.DATABASE)
 public boolean putBlob(byte[] value, int row, int column) {
+        this.addTaint(value[0]);
+        return true;
+        /*
         acquireReference();
         try {
             return nativePutBlob(mWindowPtr, value, row - mStartPos, column);
         } finally {
             releaseReference();
         }
+        */
     }
 
     /**
@@ -854,12 +878,16 @@ public boolean putBlob(byte[] value, int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.220 -0500", hash_original_method = "6CB1D543D51D5DCA24055F8F53C41BAF", hash_generated_method = "706330AC18A644D47A4038408E2797D5")
     @DSSink(DSSinkKind.DATABASE)
 public boolean putString(String value, int row, int column) {
+        this.addTaint(value.getTaint());
+        /*
         acquireReference();
         try {
             return nativePutString(mWindowPtr, value, row - mStartPos, column);
         } finally {
             releaseReference();
-        }
+            }
+        */
+        return true;
     }
 
     /**
@@ -873,12 +901,15 @@ public boolean putString(String value, int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.222 -0500", hash_original_method = "2778A952D34B60D93ADEBF86D42CFB13", hash_generated_method = "4D3FFF57EEE098A69A3D7ED6CE9A016A")
     @DSSink(DSSinkKind.DATABASE)
 public boolean putLong(long value, int row, int column) {
+        this.addTaint(value);
+        return true;
+        /*
         acquireReference();
         try {
             return nativePutLong(mWindowPtr, value, row - mStartPos, column);
         } finally {
             releaseReference();
-        }
+            }*/
     }
 
     /**
@@ -893,12 +924,16 @@ public boolean putLong(long value, int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.224 -0500", hash_original_method = "750162916D1917FF199EBD766435A4BC", hash_generated_method = "E1BA738DAB805BEEA27EB43C611A7D52")
     @DSSink(DSSinkKind.DATABASE)
 public boolean putDouble(double value, int row, int column) {
+        this.addTaint(value);
+        return true;
+        /*
         acquireReference();
         try {
             return nativePutDouble(mWindowPtr, value, row - mStartPos, column);
         } finally {
             releaseReference();
         }
+        */
     }
 
     /**
@@ -911,12 +946,14 @@ public boolean putDouble(double value, int row, int column) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.227 -0500", hash_original_method = "729F260E3687A604BDCEB4B5144460BE", hash_generated_method = "9E3315483A95DC9C427CB6571FD2FB57")
     @DSSink(DSSinkKind.DATABASE)
 public boolean putNull(int row, int column) {
+        /*
         acquireReference();
         try {
             return nativePutNull(mWindowPtr, row - mStartPos, column);
         } finally {
             releaseReference();
-        }
+            }*/
+        return true;
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.240 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
@@ -928,6 +965,7 @@ public int describeContents() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.244 -0500", hash_original_method = "A351847D47687056BE0F3C5BF172823F", hash_generated_method = "B52703EBD9CAB83469F643132503071B")
     
 public void writeToParcel(Parcel dest, int flags) {
+        dest.addTaint(this.getTaint());
         dest.writeInt(mStartPos);
         nativeWriteToParcel(mWindowPtr, dest);
 

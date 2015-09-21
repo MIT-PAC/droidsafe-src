@@ -77,7 +77,6 @@ public ContentObserver(Handler handler) {
      *
      * {@hide}
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.942 -0500", hash_original_method = "01F21475A40B0383A9D17C9A77564941", hash_generated_method = "DB4CC7E8014E0DE29303CEFFD312ACB6")
     
 public IContentObserver getContentObserver() {
@@ -95,7 +94,6 @@ public IContentObserver getContentObserver() {
      *
      * {@hide}
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.944 -0500", hash_original_method = "0CB42947C64AC2776A7D9A6FF8C462FE", hash_generated_method = "BAE187CEFEEBAE04D4B82A7608401DFA")
     
 public IContentObserver releaseContentObserver() {

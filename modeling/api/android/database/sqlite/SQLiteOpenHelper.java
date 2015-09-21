@@ -79,16 +79,11 @@ public abstract class SQLiteOpenHelper {
 
     private  DatabaseErrorHandler mErrorHandler;
     
-	@DSSource({DSSourceKind.DATABASE})
+    //@DSSource({DSSourceKind.DATABASE})
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.823 -0400", hash_original_method = "FA08D03545E9DF881DE2A492BC7B90D5", hash_generated_method = "5E6F83AB57D3846D72B269C6A4631576")
     public  SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version) {
-        this(context, name, factory, version, new DefaultDatabaseErrorHandler());
-        addTaint(version);
-        addTaint(factory.getTaint());
-        addTaint(name.getTaint());
-        addTaint(context.getTaint());
-        
+        this(context, name, factory, version, new DefaultDatabaseErrorHandler());        
         // ---------- Original Method ----------
     }
 
@@ -110,7 +105,7 @@ public abstract class SQLiteOpenHelper {
      */
     
     @DSSafe(DSCat.SAFE_OTHERS)
-	@DSSource({DSSourceKind.DATABASE})
+    //@DSSource({DSSourceKind.DATABASE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.782 -0500", hash_original_method = "31439111717724CD584CC4C37B277BA9", hash_generated_method = "1E87DEE6C831B0E790943148296DFDC0")
     
 public SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version,
@@ -177,72 +172,27 @@ public String getDatabaseName() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.787 -0500", hash_original_method = "907737C2FD1DDBAF11A72FCBC6C42218", hash_generated_method = "2232AC9EE8B6E44F14C198E6D8B3DC50")
     
 public synchronized SQLiteDatabase getWritableDatabase() {
-        if (mDatabase != null) {
-            if (!mDatabase.isOpen()) {
-                // darn! the user closed the database by calling mDatabase.close()
-                mDatabase = null;
-            } else if (!mDatabase.isReadOnly()) {
-                return mDatabase;  // The database is already open for business
-            }
-        }
 
         if (mIsInitializing) {
             throw new IllegalStateException("getWritableDatabase called recursively");
         }
 
-        // If we have a read-only database open, someone could be using it
-        // (though they shouldn't), which would cause a lock to be held on
-        // the file, and our attempts to open the database read-write would
-        // fail waiting for the file lock.  To prevent that, we acquire the
-        // lock on the read-only database, which shuts out other users.
-
-        boolean success = false;
         SQLiteDatabase db = null;
-        if (mDatabase != null) mDatabase.lock();
-        try {
-            mIsInitializing = true;
-            if (mName == null) {
-                db = SQLiteDatabase.create(null);
-            } else {
-                db = mContext.openOrCreateDatabase(mName, 0, mFactory, mErrorHandler);
-            }
-
-            int version = db.getVersion();
-            if (version != mNewVersion) {
-                db.beginTransaction();
-                try {
-                    if (version == 0) {
-                        onCreate(db);
-                    } else {
-                        if (version > mNewVersion) {
-                            onDowngrade(db, version, mNewVersion);
-                        } else {
-                            onUpgrade(db, version, mNewVersion);
-                        }
-                    }
-                    db.setVersion(mNewVersion);
-                    db.setTransactionSuccessful();
-                } finally {
-                    db.endTransaction();
-                }
-            }
-
-            onOpen(db);
-            success = true;
-            return db;
-        } finally {
-            mIsInitializing = false;
-            if (success) {
-                if (mDatabase != null) {
-                    try { mDatabase.close(); } catch (Exception e) { }
-                    mDatabase.unlock();
-                }
-                mDatabase = db;
-            } else {
-                if (mDatabase != null) mDatabase.unlock();
-                if (db != null) db.close();
-            }
-        }
+        db = new SQLiteDatabase();
+        //db = mContext.openOrCreateDatabase(mName, 0, mFactory, mErrorHandler);
+        int version = db.getVersion();
+        onCreate(db);
+        onDowngrade(db, version, mNewVersion);
+        
+        onUpgrade(db, version, mNewVersion);
+        
+        db.setVersion(mNewVersion);
+        db.setTransactionSuccessful();
+        onOpen(db);
+        mDatabase.close();
+        mDatabase.unlock();
+        mDatabase = db;
+        return db;
     }
 
     /**
@@ -268,46 +218,15 @@ public synchronized SQLiteDatabase getWritableDatabase() {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.791 -0500", hash_original_method = "2895B1DC2B2D9F1953E668AA67DA7E81", hash_generated_method = "CCD91013A9F1A17C4DECD1F769D86C56")
     
-public synchronized SQLiteDatabase getReadableDatabase() {
-        if (mDatabase != null) {
-            if (!mDatabase.isOpen()) {
-                // darn! the user closed the database by calling mDatabase.close()
-                mDatabase = null;
-            } else {
-                return mDatabase;  // The database is already open for business
-            }
-        }
-
-        if (mIsInitializing) {
-            throw new IllegalStateException("getReadableDatabase called recursively");
-        }
-
-        try {
-            return getWritableDatabase();
-        } catch (SQLiteException e) {
-            if (mName == null) throw e;  // Can't open a temp database read-only!
-            Log.e(TAG, "Couldn't open " + mName + " for writing (will try read-only):", e);
-        }
-
-        SQLiteDatabase db = null;
-        try {
-            mIsInitializing = true;
-            String path = mContext.getDatabasePath(mName).getPath();
-            db = SQLiteDatabase.openDatabase(path, mFactory, SQLiteDatabase.OPEN_READONLY,
-                    mErrorHandler);
-            if (db.getVersion() != mNewVersion) {
-                throw new SQLiteException("Can't upgrade read-only database from version " +
-                        db.getVersion() + " to " + mNewVersion + ": " + path);
-            }
-
-            onOpen(db);
-            Log.w(TAG, "Opened " + mName + " in read-only mode");
-            mDatabase = db;
-            return mDatabase;
-        } finally {
-            mIsInitializing = false;
-            if (db != null && db != mDatabase) db.close();
-        }
+    public synchronized SQLiteDatabase getReadableDatabase() {
+        getWritableDatabase();
+        
+        mIsInitializing = true;
+        String path = mContext.getDatabasePath(mName).getPath();
+        //db = SQLiteDatabase.openDatabase(path, mFactory, SQLiteDatabase.OPEN_READONLY,
+        //mErrorHandler);        
+        onOpen(mDatabase);
+        return mDatabase;
     }
 
     /**

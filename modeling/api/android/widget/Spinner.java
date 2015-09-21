@@ -557,7 +557,7 @@ public DropDownAdapter(SpinnerAdapter adapter) {
         }
 
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.DATABASE})
+        //@DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.086 -0500", hash_original_method = "7176E9532C0349D7016ABE3301806E2C", hash_generated_method = "ABAE663C8AC8F01A715ED84AE922B778")
         
 public int getCount() {
@@ -565,7 +565,7 @@ public int getCount() {
         }
 
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.DATABASE_INFORMATION})
+        //@DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.088 -0500", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "F7E6CB401961A1E291BC7ABB39C301C3")
         
 public Object getItem(int position) {
@@ -573,7 +573,7 @@ public Object getItem(int position) {
         }
 
         @DSSafe(DSCat.SAFE_LIST)
-        @DSSource({DSSourceKind.DATABASE})
+        //@DSSource({DSSourceKind.DATABASE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.090 -0500", hash_original_method = "516B3E26F5C00C4BD8BAF28DFF38500C", hash_generated_method = "B8F4839BD8D550183657C800480C87BD")
         
 public long getItemId(int position) {

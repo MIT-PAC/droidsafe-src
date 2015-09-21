@@ -45,8 +45,9 @@ package android.database.sqlite;
 
 // Droidsafe Imports
 import droidsafe.runtime.*;
-import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+import droidsafe.concrete.*;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -366,7 +367,7 @@ public void setStrict(boolean flag) {
      */
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.146 -0500", hash_original_method = "C851DFBDB6501381AF55260B14586647", hash_generated_method = "60B42FCF91B7DAFA84B5EEAB5AFFEF11")
     
 public Cursor query(SQLiteDatabase db, String[] projectionIn,
@@ -408,12 +409,27 @@ public Cursor query(SQLiteDatabase db, String[] projectionIn,
      * @see android.content.ContentResolver#query(android.net.Uri, String[],
      *      String, String[], String)
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.149 -0500", hash_original_method = "A22563797EE8B98D8D2C96F4FC0F2C77", hash_generated_method = "EB9D53584F352AD6AC60DCC4EDA82399")
     
 public Cursor query(SQLiteDatabase db, String[] projectionIn,
             String selection, String[] selectionArgs, String groupBy,
             String having, String sortOrder, String limit) {
+        
+        Cursor ret = new DSCursor(DSOnlyType.NOT_USED);
+        ret.addTaint(db.getTaint());
+        ret.addTaint(projectionIn.getTaint());
+        ret.addTaint(projectionIn[0].getTaint());
+        ret.addTaint(selection.getTaint());
+        ret.addTaint(selectionArgs.getTaint());
+        ret.addTaint(selectionArgs[0].getTaint());
+        ret.addTaint(groupBy.getTaint());
+        ret.addTaint(having.getTaint());
+        ret.addTaint(sortOrder.getTaint());
+        ret.addTaint(limit.getTaint());
+        return ret;
+        
+        /*
         if (mTables == null) {
             return null;
         }
@@ -440,7 +456,8 @@ public Cursor query(SQLiteDatabase db, String[] projectionIn,
         }
         return db.rawQueryWithFactory(
                 mFactory, sql, selectionArgs,
-                SQLiteDatabase.findEditTable(mTables)); // will throw if query is invalid
+                SQLiteDatabase.findEditTable(mTables)); // will throw if query is invalid       
+        */
     }
 
     /**

@@ -11546,7 +11546,7 @@ public CustomPopupWindow(Context context, int defStyle) {
                 //Synthesized constructor
             }
 
-            @DSSource({DSSourceKind.DATABASE})
+            //@DSSource({DSSourceKind.DATABASE})
             @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.911 -0500", hash_original_method = "02B536C5901CCC3DE9A3084712F44E45", hash_generated_method = "1655477EC64B6013C786FCC7D7D72FC9")
             
@@ -11555,7 +11555,7 @@ public CustomPopupWindow(Context context, int defStyle) {
                 return mNumberOfSuggestions;
             }
 
-            @DSSource({DSSourceKind.DATABASE_INFORMATION})
+            //@DSSource({DSSourceKind.DATABASE_INFORMATION})
             @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.914 -0500", hash_original_method = "AB9B090A0CFC1C7403BFB1F3A94BDE2B", hash_generated_method = "CC534956B1360142C79C8647A2F4F1B9")
             
@@ -11564,7 +11564,7 @@ public CustomPopupWindow(Context context, int defStyle) {
                 return mSuggestionInfos[position];
             }
 
-            @DSSource({DSSourceKind.DATABASE})
+            //@DSSource({DSSourceKind.DATABASE})
             @DSSafe(DSCat.SAFE_LIST)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.916 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
             
