@@ -911,7 +911,7 @@ public class Config {
     private void setPrecisionLevel(int level) {
                 
         switch (level) {
-            case 0:                   
+            case 0:  //k = 1, and other opts     
                 kobjsens = 1;
                 multipassfb = false;
                 ignoreNoContextFlows = false;
@@ -922,8 +922,9 @@ public class Config {
                 cloneStaticCalls = false;
                 staticinitcontext = false;
                 extraArrayContext = true;
+                limitcontextforcomplex = true;
                 break;
-            case 1: 
+            case 1:   //k = 2, and other opts
                 kobjsens = 2;
                 multipassfb = false;
                 ignoreNoContextFlows = false;
@@ -934,8 +935,9 @@ public class Config {
                 cloneStaticCalls = false;
                 staticinitcontext = false;
                 extraArrayContext = true;
+                limitcontextforcomplex = true;
                 break;
-            case 2: 
+            case 2:  // no string analysis
                 kobjsens = 3;
                 multipassfb = false;
                 ignoreNoContextFlows = false;
@@ -946,8 +948,9 @@ public class Config {
                 cloneStaticCalls = true;
                 staticinitcontext = false;
                 extraArrayContext = false;
+                limitcontextforcomplex = true;
                 break;
-            case 3: 
+            case 3:   //limit context for complex classes
                 kobjsens = 3;
                 multipassfb = false;
                 ignoreNoContextFlows = false;
@@ -955,9 +958,10 @@ public class Config {
                 fullContextForStrings = false;
                 runStringAnalysis = true;
                 runValueAnalysis = true;
-                cloneStaticCalls = false;
+                cloneStaticCalls = true;
                 staticinitcontext = false;
                 extraArrayContext = true;
+                limitcontextforcomplex = true;
                 break;                   
             case 4: //default
                 kobjsens = 3;
@@ -970,8 +974,9 @@ public class Config {
                 cloneStaticCalls = true;
                 staticinitcontext = true;
                 extraArrayContext = true;
+                limitcontextforcomplex = false;
                 break;
-            case 5: 
+            case 5:   //multi pass fb
                 kobjsens = 3;
                 multipassfb = true;
                 ignoreNoContextFlows = false;
@@ -982,6 +987,7 @@ public class Config {
                 cloneStaticCalls = true;
                 staticinitcontext = true;
                 extraArrayContext = true;
+                limitcontextforcomplex = false;
                 break;
             default:
                 logger.error("Invalid precision level, must be between 0 and 5 inclusive.");
