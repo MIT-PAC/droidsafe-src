@@ -930,7 +930,7 @@ public class Config {
                 ignoreNoContextFlows = false;
                 fullContextForGUI = false;
                 fullContextForStrings = false;
-                runStringAnalysis = true;
+                runStringAnalysis = false;
                 runValueAnalysis = true;
                 cloneStaticCalls = false;
                 staticinitcontext = false;

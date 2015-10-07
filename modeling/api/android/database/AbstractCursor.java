@@ -115,7 +115,7 @@ public AbstractCursor() {
 
     /* -------------------------------------------------------- */
     /* These need to be implemented by subclasses */
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.000 -0500", hash_original_method = "8A22A1FE2F5B57814AD6F31483E8A082", hash_generated_method = "B02FB47471AE0CDA3FE9DB102E4BBA14")
@@ -129,7 +129,7 @@ abstract public int getCount();
     
 abstract public String[] getColumnNames();
 
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.004 -0500", hash_original_method = "A29078DDCC5E1616CCCFDE82CC5349B3", hash_generated_method = "E42C6A3917990D2C712362CAF69EA81C")
@@ -140,13 +140,13 @@ abstract public String getString(int column);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.007 -0500", hash_original_method = "18208FA7449196F1DD13EFCB3FFFD4E7", hash_generated_method = "327A6D1A2BFF6DFB11FEAD7A3454CDFD")
     
 abstract public short getShort(int column);
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.009 -0500", hash_original_method = "5B223EF5B541E920EC399603E6C0FE88", hash_generated_method = "F63822C459676185F41DA5975BACD7C4")
     
 abstract public int getInt(int column);
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.012 -0500", hash_original_method = "E7F68CAAFCBA03B0F1E2D3E09FB8D97B", hash_generated_method = "8E40DB8C22F362FB17C9B9AA57CE7960")
@@ -157,7 +157,7 @@ abstract public long getLong(int column);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.014 -0500", hash_original_method = "D20130B0E556D2B2DC3ABE58ED1DA433", hash_generated_method = "7FCD30DE662ACC033E916AEC62EFFB75")
     
 abstract public float getFloat(int column);
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.016 -0500", hash_original_method = "8AA80552C54D8BF546620FFABDD72AE0", hash_generated_method = "FF16A4B586D1731469B6693041E89D37")
@@ -170,7 +170,7 @@ abstract public double getDouble(int column);
 abstract public boolean isNull(int column);
 
     @DSSafe(DSCat.DB_CURSOR)
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.021 -0500", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "79F7307668FDED21FDAAA83FC83D8C99")
     
 public int getType(int column) {
@@ -182,7 +182,7 @@ public int getType(int column) {
 
     // TODO implement getBlob in all cursor types
     @DSSafe(DSCat.DB_CURSOR)
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.024 -0500", hash_original_method = "5BC3F93BAD50F14F34AFA39612F89CC6", hash_generated_method = "84E6BBD2B54F22A58E16CCA0093F8782")
     
 public byte[] getBlob(int column) {

@@ -60,8 +60,12 @@ import android.os.Bundle;
 public class DSCursor implements Cursor {
 	/**/
 	
+    @DSVAModeled
+    private Uri mURI;
+    
 	@DSSafe(DSCat.SAFE_OTHERS)
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+            this.mURI = uri;
 		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
 		addTaint(selection.getTaint());
@@ -124,12 +128,12 @@ public class DSCursor implements Cursor {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
 
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
     public long getLong(int columnIndex) {
@@ -137,25 +141,25 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    //@DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public short getShort(int columnIndex) {
         return (short)getTaintInt();
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    //@DSSource(DSSourceKind.DATABASE_INFORMATION)
+    @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public float getFloat(int columnIndex) {
         return (float)getTaintDouble();
     }
 
     @DSSafe(DSCat.SAFE_LIST)
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public double getDouble(int columnIndex) {
         return (float)getTaintDouble();
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public byte[] getBlob(int columnIndex) {
         byte[] blob = new byte[1];
         blob[0] = (byte)getTaintInt();
@@ -164,14 +168,14 @@ public class DSCursor implements Cursor {
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String getString(int columnIndex) {
         String ret = new String();
         ret.addTaint(this.getTaint());
         return ret;
     }
     
-    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     public Bundle getExtras() {
         //let fallback modeling handle
