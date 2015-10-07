@@ -335,6 +335,9 @@ public class SootUtils {
             if (isIntegral(parent) && isIntegral(child))
                 return true;
             return parent.equals(child);
+        } else if (child instanceof ArrayType && 
+                parent instanceof RefType && ((RefType)parent).getSootClass().equals(Scene.v().getSootClass("java.lang.Object"))) {
+            return true;
         } else if (parent instanceof ArrayType && child instanceof ArrayType) {
             return isSubTypeOfIncluding(((ArrayType)child).getElementType(), ((ArrayType)parent).getElementType());
         } else if (parent instanceof RefType && child instanceof RefType) {
@@ -1082,12 +1085,25 @@ public class SootUtils {
             throw new CannotFindMethodException(clz, meth);
         }
     }
+        
+    /**
+     * @return the element type of an array, so what type would be returned for a
+     * full index (e.g., for int[][][], then int)
+     */
+    public static Type getBaseType(ArrayType arrayType) {
+        Type type = arrayType;
+        while (type instanceof ArrayType) {
+            type = ((ArrayType)type).getElementType();
+        }
+        
+        return type;
+    }
 
     /** 
-     * Returns the element type for an array, the 'base' of AnySubType.  If type is 
+     * Returns the element type for an array for a single index, the 'base' of AnySubType.  If type is 
      * neither just returns type
      */
-    public static Type getBaseType(RefLikeType type) {
+    public static Type getElementType(RefLikeType type) {
         if (type instanceof ArrayType) 
             return ((ArrayType)type).getArrayElementType();
         else if (type instanceof AnySubType) 

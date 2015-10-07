@@ -468,6 +468,7 @@ public static short getShort(Object array, int index)
     
 public static Object newInstance(Class<?> componentType, int... dimensions)
             throws NegativeArraySizeException, IllegalArgumentException {
+        /*
         if (dimensions.length <= 0 || dimensions.length > 255)
             throw new IllegalArgumentException("Bad number of dimensions");
 
@@ -478,6 +479,10 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
             throw new NullPointerException();
 
         return createMultiArray(componentType, dimensions);
+        */
+        
+        //used for droidsafe fallback modeling...
+        return null;
     }
     
     @DSComment("Private Method")
@@ -513,6 +518,9 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
     
 public static Object newInstance(Class<?> componentType, int size)
             throws NegativeArraySizeException {
+        //used by droidsafe va 
+        return null;
+        /*
         if (!componentType.isPrimitive()) {
             return createObjectArray(componentType, size);
         }
@@ -544,16 +552,14 @@ public static Object newInstance(Class<?> componentType, int size)
             throw new IllegalArgumentException();
         }
         throw new AssertionError();
+        */
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
-    	Object ret = new Object();
-    	ret.addTaint(componentType.getTaint());
-    	ret.addTaint(length);
-    	return ret;
+        return null;
     }
 
     /**
