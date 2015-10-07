@@ -68,6 +68,7 @@ import soot.Modifier;
 import soot.SootField;
 import soot.SootMethodRef;
 import soot.ValueBox;
+import soot.jimple.CastExpr;
 import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.Expr;
@@ -1086,6 +1087,32 @@ public class SootUtils {
         }
     }
         
+    public static Type findCast(SootMethod method, Stmt start, Value v) {
+        Body body = method.getActiveBody();
+        StmtBody stmtBody = (StmtBody)body;
+        Chain units = stmtBody.getUnits();
+        Iterator stmtIt = units.iterator(start);
+
+        while (stmtIt.hasNext()) {
+            Stmt stmt = (Stmt)stmtIt.next();
+
+            if (stmt.branches())
+                return null;
+
+            for (ValueBox vb : stmt.getUseBoxes()) {
+                if (vb.getValue() instanceof CastExpr) {
+                    CastExpr ce = (CastExpr)vb.getValue();
+                    if (ce.getOp().equals(v)) {
+                        logger.info("Found cast of {} in {} to {}", v, method, ce.getCastType());
+                        return ce.getCastType();
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+    
     /**
      * @return the element type of an array, so what type would be returned for a
      * full index (e.g., for int[][][], then int)

@@ -65,6 +65,7 @@ import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.stats.IntentResolutionStats;
 import droidsafe.stats.PTAPaper;
+import droidsafe.transforms.ArrayNewInstanceTransform;
 import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.InsertUnmodeledObjects;
@@ -251,7 +252,15 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+        
+        driverMsg("Converting java.lang.reflect.Array.newInstance()...");
+        monitor.subTask("Converting java.lang.reflect.Array.newInstance()...");
+        ArrayNewInstanceTransform.run();
+        monitor.worked(1);
+        if (monitor.isCanceled()) {
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        }
+        
         if (Config.v().scalarOpts) {
             driverMsg("Calling scalar optimizations.");
             monitor.subTask("Scalar Optimization");
