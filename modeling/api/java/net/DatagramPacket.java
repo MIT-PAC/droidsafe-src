@@ -284,9 +284,9 @@ public synchronized int getPort() {
      * @param addr
      *            the target host address.
      */
-        @DSComment("Data structure only")
+    @DSComment("Data structure only")
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.372 -0500", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "49236674C02A8A8DC3D9405507855A3C")
-    
+    @DSSink({DSSinkKind.NETWORK})
 public synchronized void setAddress(InetAddress addr) {
         address = addr;
     }
