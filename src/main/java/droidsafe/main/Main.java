@@ -535,8 +535,7 @@ public class Main {
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
 
-                if (Config.v().infoFlow)
-                    InformationFlowReport.create(spec);
+                
             }
             monitor.worked(1);
             if (monitor.isCanceled()) {
@@ -544,6 +543,10 @@ public class Main {
             }
             
             PTAPaper.writeReport();
+            
+            //check info flow last
+            if (Config.v().infoFlow)
+                InformationFlowReport.create(spec);
         } 
         
         monitor.worked(1);       
