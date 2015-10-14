@@ -525,16 +525,7 @@ public boolean exists() {
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "8F2B41FC4DF09EBF8497AC74B170E125", hash_generated_method = "C12A6EDB79539AA71068DD1E144D2E98")
     public String getAbsolutePath() {
-        if(isAbsolute())        
-        {
-            String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
-            //var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(getTaint());
-            return var535F4D9720F3B0C96D8143873CE0638C_1405753140;
-        } //End block
-        String userDir = "user.dir" + path;
-        String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 = userDir, path;
-        //var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(getTaint());
-        return var4F090B9F25B3E37BF995BFA6769B0207_1493143672;
+        return path;
         // ---------- Original Method ----------
         //if (isAbsolute()) {
             //return path;
