@@ -526,8 +526,11 @@ public class Main {
                 timer.stop();
                 driverMsg("Finished Eclipse Plugin Serialized Specification: " + timer);
 
-                if (Config.v().infoFlow)
+                if (Config.v().infoFlow) {
                     InformationFlowReport.create(spec);
+                    if (Config.v().implicitFlow)
+                    	InformationFlowReport.iflow_create(spec);
+                }
             }
             monitor.worked(1);
             if (monitor.isCanceled()) {

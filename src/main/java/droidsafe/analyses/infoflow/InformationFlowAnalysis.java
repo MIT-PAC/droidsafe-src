@@ -273,6 +273,19 @@ public class InformationFlowAnalysis {
 		return values;
 	}
 
+	/**
+	 * Return the taints computed for the given statement's block and
+	 * the given context via implicit flow tracking.
+	 */
+	public Set<InfoValue> getImplicitTaints(Unit stmt, Context context) {
+		if (Config.v().implicitFlow) {
+			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+			if (!ignoreContext(context))
+				return state.getImplicitFlows(context, block);
+		}
+		return Collections.EMPTY_SET;
+	}
+	
 	private State state = new State();
 
 	private void doAnalysis() {
@@ -446,6 +459,9 @@ public class InformationFlowAnalysis {
 						(Immediate) immediate, state.locals);
 				contextValues.addAll(condValues);
 			}
+			
+			if (contextValues.isEmpty())
+				return;
 
 			// Copy taint from the branching block to each sibling in the
 			// post-dominator tree.
@@ -456,14 +472,13 @@ public class InformationFlowAnalysis {
 				if (ctiv == null) {
 					ctiv = new HashMap<Context, Set<InfoValue>>();
 					state.iflows.put(toBlock, ctiv);
-				} else {
-					Set<InfoValue> existingVals = ctiv.get(context);
-					if (existingVals == null) {
-						existingVals = new HashSet<InfoValue>();
-						ctiv.put(context, existingVals);
-					}
-					existingVals.addAll(contextValues);
+				} 
+				Set<InfoValue> existingVals = ctiv.get(context);
+				if (existingVals == null) {
+					existingVals = new HashSet<InfoValue>();
+					ctiv.put(context, existingVals);
 				}
+				existingVals.addAll(contextValues);
 
 				// Find all method invocations in the current block and construct
 				// a set of method contexts that is reachable  from the current
@@ -509,14 +524,13 @@ public class InformationFlowAnalysis {
 					if (ctiv == null) {
 						ctiv = new HashMap<Context, Set<InfoValue>>();
 						state.iflows.put(block2, ctiv);
-					} else {
-						Set<InfoValue> existingVals = ctiv.get(mc);
-						if (existingVals == null) {
-							existingVals = new HashSet<InfoValue>();
-							ctiv.put(context2, existingVals);
-						}
-						existingVals.addAll(contextValues);
 					}
+					Set<InfoValue> existingVals = ctiv.get(mc);
+					if (existingVals == null) {
+						existingVals = new HashSet<InfoValue>();
+						ctiv.put(context2, existingVals);
+					}
+					existingVals.addAll(contextValues);
 				}
 			}
 		}
@@ -645,7 +659,7 @@ public class InformationFlowAnalysis {
 		stmt.getRightOp().apply(rValueSwitch);
 
 		// Take implicit information flow into account.
-		if (Config.v().implicitFlow && !(lLocal.getType() instanceof RefLikeType)) {
+		if (Config.v().implicitFlow) {
 			Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
 			Body body = block.getBody();
 			SootMethod method = body.getMethod();
@@ -654,7 +668,23 @@ public class InformationFlowAnalysis {
 				Context context = methodContext.context();
 				if (ignoreContext(context)) continue;
 				ImmutableSet<InfoValue> values = state.getImplicitFlows(context, block);
-				state.locals.putW(context, lLocal, values);
+				if (lLocal.getType() instanceof RefLikeType) {
+					// propagate taints collected from implicit flow tracking to the LHS of 
+					// the assignment statement when the LHS is a non-primitive local
+					if (!(values.isEmpty())) {
+						ImmutableSet<InfoValue> vs = ImmutableSet.<InfoValue>copyOf(values);
+						Set<IAllocNode> lLocalAllocNodes = (Set<IAllocNode>) PTABridge.v().getPTSet(lLocal, context);
+						for (IAllocNode allocNode : lLocalAllocNodes) {
+							state.instances.putW(allocNode, this.objectUtils.taint, vs);
+							// keep track of allocNodes tainted via implicit flow tracking
+							// taints on these allocNodes will be propagated to blocks of the methods
+							// invoked on them
+							state.addImplicitFlows(allocNode, vs);
+						}
+					}					
+				} else {
+					state.locals.putW(context, lLocal, values);
+				}
 			}
 		}
 	}
@@ -1464,6 +1494,70 @@ public class InformationFlowAnalysis {
 				}
 			}
 		}
+		
+		// If the receiver of the method call is tainted via implicit flow tracking, propagate
+		// the taints to the blocks of the called methods.
+		if (Config.v().implicitFlow) {
+			if (invokeExpr instanceof InstanceInvokeExpr) {
+			Local rLocal = (Local) ((InstanceInvokeExpr) invokeExpr).getBase();
+			for (MethodOrMethodContext callerMethodContext : callerMethodContexts) {
+				Context callerContext = callerMethodContext.context();
+				if (ignoreContext(callerContext)) {
+					continue;
+				}
+				Set<InfoValue> iflows = state.getImplicitFlows(callerContext, rLocal);
+				if (iflows.isEmpty())
+					continue;
+				Set<MethodOrMethodContext> calleeMethodContexts = new HashSet<MethodOrMethodContext>();
+				List<Edge> callEdges = PTABridge.v().outgoingEdges(
+						callerMethodContext, stmt);
+				for (Edge callEdge : callEdges) {
+					MethodOrMethodContext calleeMethodContext = callEdge.getTgt();
+					Context calleeContext = calleeMethodContext.context();
+					if (ignoreContext(calleeContext)) {
+						continue;
+					}
+					SootMethod calleeMethod = calleeMethodContext.method();
+					// Skip over system edges for now...
+					if (API.v().isSystemMethod(calleeMethod))
+						continue;
+					calleeMethodContexts.add(calleeMethodContext);
+					/* Currently not tainting the transitive targets
+					TransitiveTargets tt = new TransitiveTargets(Scene.v().getCallGraph());
+					Iterator<MethodOrMethodContext> iter = tt.iterator(calleeMethodContext);
+					while (iter.hasNext()) {
+						MethodOrMethodContext mc = iter.next();
+						// Skip over system edges for now...
+						if (API.v().isSystemMethod(mc.method()))
+							continue;
+						calleeMethodContexts.add(mc);
+					}
+					*/
+				}
+				// Iterate through all reachable method contexts from the current context
+				// and propagate the taint of the current method context over all blocks
+				// of each reachable method context.
+				for (MethodOrMethodContext calleeMethodContext : calleeMethodContexts) {
+					Context calleeContext = calleeMethodContext.context();
+					SootMethod calleeMethod = calleeMethodContext.method();
+					for (Block block: this.superControlFlowGraph.methodToBlocks.get(calleeMethod)) {
+						Map<Context, Set<InfoValue>> ctiv = state.iflows.get(block);
+						if (ctiv == null) {
+							ctiv = new HashMap<Context, Set<InfoValue>>();
+							state.iflows.put(block, ctiv);
+						}
+						Set<InfoValue> existingVals = ctiv.get(calleeMethodContext);
+						if (existingVals == null) {
+							existingVals = new HashSet<InfoValue>();
+							ctiv.put(calleeContext, existingVals);
+						}
+						existingVals.addAll(iflows);
+					}
+				}
+			}
+			
+			}
+		}
 
 		// lLocal = rLocal.M()
 		//
@@ -1816,6 +1910,14 @@ public class InformationFlowAnalysis {
 							if (API.v().hasSourceInfoKind(calleeMethod)) {
 								values.addAll(callValues);
 							}
+						}
+						// Take implicit information flow into account.
+						// Currently only propagate taints when the return type is primitive
+						if (Config.v().implicitFlow) {
+							Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
+							Body body = block.getBody();
+							ImmutableSet<InfoValue> ivalues = state.getImplicitFlows(calleeContext, block);
+							values.addAll(ivalues);
 						}
 						Local lLocal = (Local) ((AssignStmt) callStmt)
 								.getLeftOp();

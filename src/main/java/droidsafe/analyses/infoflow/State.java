@@ -33,6 +33,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import com.google.common.collect.ImmutableSet;
 
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.main.Config;
 import droidsafe.utils.JimpleRelationships;
 import soot.Context;
@@ -547,14 +548,20 @@ class State {
     Arrays arrays;
     Statics statics;
     Map<Block, Map<Context, Set<InfoValue>>> iflows;
+    // track taints on allocNodes collected from implicit flow tracking
+    // These taints will be propagated from method call receivers to the
+    // blocks of the called methods
+    Map<IAllocNode, Set<InfoValue>> instancesIflows;
 
     State() {
         this.locals = new Locals();
         this.instances = new Instances();
         this.arrays = new Arrays();
         this.statics = new Statics();
-        if (Config.v().implicitFlow)
+        if (Config.v().implicitFlow) {
         	this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>();
+        	this.instancesIflows = new HashMap<IAllocNode, Set<InfoValue>>();
+        }
     }
 
     State(State that) {
@@ -562,8 +569,10 @@ class State {
         this.instances = new Instances(that.instances);
         this.arrays = new Arrays(that.arrays);
         this.statics = new Statics(that.statics);
-        if (Config.v().implicitFlow)
+        if (Config.v().implicitFlow) {
         	this.iflows = new HashMap<Block, Map<Context, Set<InfoValue>>>(that.iflows);
+        	this.instancesIflows = new HashMap<IAllocNode, Set<InfoValue>>(that.instancesIflows);
+        }
     }
 
     public ImmutableSet<InfoValue> getImplicitFlows(Context context, Block block) {
@@ -572,6 +581,30 @@ class State {
         Set<InfoValue> values = contextToValues.get(context);
         if (values == null) return ImmutableSet.<InfoValue>of();
         return ImmutableSet.<InfoValue>copyOf(values);
+    }
+
+    /**
+     * Return taints on the given local in the given context collected by the implicit
+     * flow tracking via the field 'instancesIflows'.
+     */
+    public Set<InfoValue> getImplicitFlows(Context context, Local local) {
+    	Set<InfoValue> result = new HashSet<InfoValue>();
+    	Set<IAllocNode> allocNodes = (Set<IAllocNode>) PTABridge.v().getPTSet(local, context);
+    	for (IAllocNode allocNode: allocNodes) {
+    		Set<InfoValue> values = instancesIflows.get(allocNode);
+    		if (values != null && !values.isEmpty())
+    			result.addAll(values);
+    	}
+    	return result;
+    }
+
+    public void addImplicitFlows(IAllocNode allocNode, Set<InfoValue> values) {
+        Set<InfoValue> oldValues = this.instancesIflows.get(allocNode);
+        if (oldValues == null) {
+        	oldValues = new HashSet<InfoValue>();
+        	this.instancesIflows.put(allocNode, oldValues);
+        }
+        oldValues.addAll(values);
     }
 
     @Override

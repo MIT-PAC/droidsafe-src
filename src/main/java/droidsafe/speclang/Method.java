@@ -100,6 +100,9 @@ public class Method implements Comparable<Method> {
      *  if this is non-null, then this is the real target of this method in user code     */
     private SootMethod realTarget = null;
 
+    /** implicit info flows (if the method is a sink method) */
+	private Map<InfoKind, Set<Stmt>> iFlows;
+
     public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, ArgumentValue receiver) {
         this.sootMethod = method;
         this.args = args;
@@ -111,7 +114,12 @@ public class Method implements Comparable<Method> {
         argFlowsPrecise = new Map[ptaInfo.getNumArgs()];
         cacheArgSourceInfoFlows();
         cacheRecInfoFlows();
-    }
+        if (Config.v().implicitFlow) {
+        	boolean isSink = getSinkInfoKinds().size() > 0;
+        	if (isSink)
+        		cacheImplicitInfoFlows();
+        }
+     }
 
     public PTAMethodInformation getPTAInfo() {
         return ptaInfo;
@@ -748,6 +756,46 @@ public class Method implements Comparable<Method> {
             kinds.addAll(getArgInfoKinds(i));
 
         return kinds;
+    }
+
+    private void cacheImplicitInfoFlows() {
+    	//call the information flow results
+    	if (InformationFlowAnalysis.v() == null ) {
+    		iFlows = Collections.<InfoKind, Set<Stmt>>emptyMap();
+    		return;
+    	}
+
+    	Edge edge = ptaInfo.getEdge();
+
+    	Context context = edge.tgtCtxt();
+
+    	iFlows = new HashMap<InfoKind, Set<Stmt>>();
+
+    	Unit unit = edge.srcUnit();
+
+    	//for each information flow result
+    	for (InfoValue iv : 
+    		InformationFlowAnalysis.v().getImplicitTaints(unit, context)) {
+
+    		//get high level taint
+    		for (InfoKind infoK : InfoKind.getSourceInfoKinds(iv)) {
+    			//rememeber we have high-level taint
+    			if (!iFlows.containsKey(infoK)) 
+    				iFlows.put(infoK, new HashSet<Stmt>());
+    			//add stmt if we have one
+    			if (iv instanceof InfoUnit && ((InfoUnit)iv).getUnit() instanceof Stmt)
+    				iFlows.get(infoK).add((Stmt)((InfoUnit)iv).getUnit());
+    		}
+
+    	}
+    }
+
+    /**
+     * For sink method, return the implicit info flows that could reach the sink
+     * method call.
+     */
+    public Map<InfoKind, Set<Stmt>> getImplicitFlows() {
+        return iFlows;
     }
 
     @Override

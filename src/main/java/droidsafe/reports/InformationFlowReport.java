@@ -59,6 +59,7 @@ import droidsafe.utils.SourceLocationTag;
  */
 public class InformationFlowReport {
     private static final String FILE_NAME = "info-flow-results.txt";
+    private static final String IFLOW_FILE_NAME = "info-iflow-results.txt";
     private static final Logger logger = LoggerFactory.getLogger(InformationFlowReport.class);
     /**
      * Create an information flow report that lists sensitive sinks if a sensitive source
@@ -306,4 +307,110 @@ public class InformationFlowReport {
             System.exit(-1);
     }
 
+    /**
+     * Create an information flow report that lists sensitive sinks from sensitive
+     * sources via implicit flow.
+     *
+     */
+    public static void iflow_create(SecuritySpecification spec) {
+        String separator = "|";
+        String slash = "/";
+        
+        StringBuffer sb = new StringBuffer();
+        //loop through all output events
+        //for each output event that is a sensitive sink
+        //list the sensitive sources of implicit flow
+        Set<String> formattedFlowSet = new HashSet<String>();
+
+        for (Map.Entry<Method, List<Method>> eventBlock : spec.getEventBlocks().entrySet()) {
+            String entryPoint = String.format("Entry Point: %s (%s)\n\n", 
+                eventBlock.getKey().getSignature(), eventBlock.getKey().getDeclSourceLocation());
+
+            StringBuffer flows = new StringBuffer();
+            
+            boolean hasFlow = false;
+
+            for (Method outputEvent : eventBlock.getValue()) {
+            	boolean isSink = outputEvent.getSinkInfoKinds().size() > 0;
+            	// no report if there is no sink
+            	if (!isSink)
+            		continue;
+
+            	Map<InfoKind, Set<Stmt>> iflows = outputEvent.getImplicitFlows();
+
+            	StringBuilder tmpBuilder = new StringBuilder();
+
+            	// format is: **|<entry-method>|<sink>/<cat>/line|rx-src|<source_rx/cat_list>|arg-src|<src_arg list
+            	tmpBuilder.append(eventBlock.getKey().getSignature()).append(separator);
+
+            	tmpBuilder.append("{");
+            	tmpBuilder.append(outputEvent.getSignature()).append(slash);
+            	tmpBuilder.append(outputEvent.getSinkInfoKinds().iterator().next()).append(slash);
+
+            	boolean firstLine = true;
+            	for (SourceLocationTag tag : outputEvent.getLines()) {
+            		if (!firstLine)
+            			tmpBuilder.append(",");
+            		tmpBuilder.append(tag);
+            		firstLine = false;
+            	}
+            	tmpBuilder.append("}");
+            	tmpBuilder.append("<=");
+
+            	String flowPrefix = tmpBuilder.toString().replaceAll("_ds_method_clone_\\d+", "");
+
+            	if (iflows != null && !iflows.isEmpty()) {
+            		hasFlow = true;
+
+            		flows.append(String.format("Sink: %s\n", outputEvent.getSignature()));
+            		flows.append("Lines: \n");
+
+            		flows.append("Implicit Sources: \n");
+            		for (Map.Entry<InfoKind, Set<Stmt>> source : iflows.entrySet()) {
+            			for (Stmt stmt : source.getValue()) {
+            				flows.append(String.format("\t%s (%s)\n", stmt, source.getKey()));
+
+            				SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
+            				String lineNumber = "";
+            				if (locationTag != null)
+            					lineNumber = locationTag.toString();
+
+            				SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
+            				tmpBuilder =  new StringBuilder();
+            				tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
+            						method, slash, source.getKey(), slash, lineNumber, "IMPLICIT"));
+
+            				String flowLine = flowPrefix + tmpBuilder;
+            				formattedFlowSet.add(flowLine);
+            			}
+            		}
+
+            	}
+
+
+            }
+
+
+            if (hasFlow) {
+            	sb.append(entryPoint);
+            	sb.append(flows);
+            	sb.append("\n");
+            }
+        }
+
+        sb.append("\n");
+        for (String flow: formattedFlowSet) {
+            sb.append("FLOW:").append(flow).append("\n\n");
+        }
+        sb.append("\n");
+
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + IFLOW_FILE_NAME);
+            fw.write(sb.toString());
+            fw.close();
+        } catch(IOException e) {
+
+        }
+        
+    }
 }
