@@ -911,9 +911,10 @@ public class Config {
     private void setPrecisionLevel(int level) {
                 
         switch (level) {
-            case 0:  //k = 1, and other opts     
-                kobjsens = 1;
+            case 0:  //k = 3, and apiCallDepth = 6, limit context for complex;     
+                kobjsens = 3;
                 multipassfb = false;
+                apiCallDepth = 6;
                 ignoreNoContextFlows = false;
                 fullContextForGUI = false;
                 fullContextForStrings = false;
@@ -924,8 +925,9 @@ public class Config {
                 extraArrayContext = true;
                 limitcontextforcomplex = true;
                 break;
-            case 1:   //k = 2, and other opts
-                kobjsens = 2;
+            case 1:   //k = 3, api call depth = 12
+                kobjsens = 3;
+                apiCallDepth = 12;
                 multipassfb = false;
                 ignoreNoContextFlows = false;
                 fullContextForGUI = false;
@@ -935,7 +937,7 @@ public class Config {
                 cloneStaticCalls = false;
                 staticinitcontext = false;
                 extraArrayContext = true;
-                limitcontextforcomplex = true;
+                limitcontextforcomplex = false;
                 break;
             case 2:  // no string analysis
                 kobjsens = 3;
