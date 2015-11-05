@@ -169,6 +169,7 @@ public int size() {
 public synchronized byte[] toByteArray() {
         byte[] newArray = new byte[count];
         System.arraycopy(buf, 0, newArray, 0, count);
+	newArray.addTaint(this.getTaint());
         return newArray;
     }
 
