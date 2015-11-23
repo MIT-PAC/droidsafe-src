@@ -998,7 +998,7 @@ public class InformationFlowAnalysis {
             }
         }
 
-        if (stmt instanceof AssignStmt) {
+        if (stmt instanceof AssignStmt) {  // blanket flow policy for native methods in app
             Local lLocal = (Local)((AssignStmt)stmt).getLeftOp();
             Type lLocalType = lLocal.getType();
             if (lLocalType instanceof PrimType ||
@@ -1263,7 +1263,7 @@ public class InformationFlowAnalysis {
                                             }
                                         }
                                     }
-                                } else {
+                                } else {  //decision to taint all primitive arguments for methods defined as sources. 
                                     if (elementType instanceof PrimType) {
                                         Set<IAllocNode> arrayAllocNodes = (Set<IAllocNode>)PTABridge.v().getPTSet(argImmediate, callerContext);
                                         for (IAllocNode arrayAllocNode : arrayAllocNodes) {
