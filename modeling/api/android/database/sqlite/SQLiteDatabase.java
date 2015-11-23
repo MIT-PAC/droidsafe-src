@@ -86,6 +86,9 @@ import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class SQLiteDatabase extends SQLiteClosable {
     
+    /** For DroidSafe */
+    SQLiteDatabase[] allDatabases = new SQLiteDatabase[1];
+    
     static public int releaseMemory() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -568,11 +571,26 @@ static ArrayList<DbStats> getDbStats() {
 
     private final ArrayList<Integer> mCustomFunctions =
             new ArrayList<Integer>();
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)    
+    public SQLiteDatabase() {        
+        this(MEMORY_DB_PATH, null, CREATE_IF_NECESSARY, new DefaultDatabaseErrorHandler(), (short)0);         
+    }
+
+    @DSVerified
+    @DSBan(DSCat.DROIDSAFE_INTERNAL)    
+    public SQLiteDatabase(String path) {        
+        this(path, null, CREATE_IF_NECESSARY, new DefaultDatabaseErrorHandler(), (short)0);         
+    }
+
+
     @DSVerified
     @DSSpec(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.536 -0400", hash_original_method = "ED994C20AB51232E6F0B83AA0494CFAA", hash_generated_method = "379F4686F5BBA9E0C91C6A2E8EA0C809")
     private  SQLiteDatabase(String path, CursorFactory factory, int flags,
             DatabaseErrorHandler errorHandler, short connectionNum) {
+        allDatabases[0] = this;
         if(path == null)        
         {
             IllegalArgumentException varE4C91A561B864CD4490A03B12C2E1BD5_1723494487 = new IllegalArgumentException("path should not be null");
@@ -580,10 +598,6 @@ static ArrayList<DbStats> getDbStats() {
             throw varE4C91A561B864CD4490A03B12C2E1BD5_1723494487;
         } //End block
         
-        addTaint(path.getTaint());
-        addTaint(factory.getTaint());
-        addTaint(connectionNum);
-
         setMaxSqlCacheSize(DEFAULT_SQL_CACHE_SIZE);
         mFlags = flags;
         mPath = path;
@@ -707,7 +721,6 @@ void lock() {
     @DSBan(DSCat.PRIVATE_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.544 -0400", hash_original_method = "550218B4AE04D143508369398336F95D", hash_generated_method = "E2070B94C1CF03D4ABE3B501D68A397F")
     private void lock(String sql, boolean forced) {
-        addTaint(forced);
 
         if (sql != null)
             addTaint(sql.getTaint());
@@ -1047,6 +1060,7 @@ public void beginTransactionWithListenerNonExclusive(
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.103 -0500", hash_original_method = "94F2931FC5A304B6FE8748C95A17E4E3", hash_generated_method = "64FA759270A3DC58F469CF8706A639DD")
     
 public void endTransaction() {
+        /*
         verifyLockOwner();
         try {
             if (mInnerTransactionIsSuccessful) {
@@ -1109,6 +1123,7 @@ public void endTransaction() {
                         + ", holdCount is " + mLock.getHoldCount());
             }
         }
+        */
     }
 
     /**
@@ -1319,7 +1334,7 @@ private boolean yieldIfContendedHelper(boolean checkFullyYielded, long sleepAfte
     /**
      * @deprecated This method no longer serves any useful purpose and has been deprecated.
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.133 -0500", hash_original_method = "2BF74CD6834BBADBF27F65464DB83499", hash_generated_method = "EDAA1ED8B82EF6EA1775DE16E5368175")
     
 @Deprecated
@@ -1350,6 +1365,7 @@ private void setJournalMode(final String dbPath, final String mode) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.160 -0500", hash_original_method = "F057ECACA47F2E639159F91F6FF25AA8", hash_generated_method = "BC9E75A207746F095F3747302163154C")
     
 public void close() {
+        /*
         if (!isOpen()) {
             return;
         }
@@ -1379,6 +1395,7 @@ public void close() {
         } finally {
             unlock();
         }
+        */
     }
 
     @DSComment("Private Method")
@@ -1656,7 +1673,7 @@ public void setPageSize(long numBytes) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.211 -0500", hash_original_method = "C05C583B39FD005C236783082CBB4E55", hash_generated_method = "A1E3106D38FC0C0A02CB8FBC096B7941")
     
 public SQLiteStatement compileStatement(String sql) throws SQLException {
-        verifyDbIsOpen();
+        //verifyDbIsOpen();
         return new SQLiteStatement(this, sql, null);
     }
 
@@ -1693,7 +1710,7 @@ public SQLiteStatement compileStatement(String sql) throws SQLException {
      */
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.214 -0500", hash_original_method = "5E1B6C3D7A97420E0A4D0244321FA1D0", hash_generated_method = "929CBBED5277B13A2B69F28022B581F4")
     
 public Cursor query(boolean distinct, String table, String[] columns,
@@ -1741,9 +1758,16 @@ public Cursor queryWithFactory(CursorFactory cursorFactory,
             boolean distinct, String table, String[] columns,
             String selection, String[] selectionArgs, String groupBy,
             String having, String orderBy, String limit) {
-        verifyDbIsOpen();
-        String sql = SQLiteQueryBuilder.buildQueryString(
-                distinct, table, columns, selection, groupBy, having, orderBy, limit);
+        //verifyDbIsOpen();
+        String sql = new String();
+        sql.addTaint(distinct);
+        sql.addTaint(table.getTaint());
+        sql.addTaint(columns[0].getTaint());
+        sql.addTaint(selection.getTaint());
+        sql.addTaint(groupBy.getTaint());
+        sql.addTaint(having.getTaint());
+        sql.addTaint(orderBy.getTaint());
+        sql.addTaint(limit.getTaint());
 
         return rawQueryWithFactory(
                 cursorFactory, sql, selectionArgs, findEditTable(table));
@@ -1779,7 +1803,7 @@ public Cursor queryWithFactory(CursorFactory cursorFactory,
      */
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.219 -0500", hash_original_method = "823CC97B8BCC24B1EEF8A14CAC46F9D2", hash_generated_method = "33B19BE5321EBE883516789006AFBE2B")
     
 public Cursor query(String table, String[] columns, String selection,
@@ -1822,7 +1846,7 @@ public Cursor query(String table, String[] columns, String selection,
      */
     @DSComment("Database access")
     @DSSpec(DSCat.DATABASE)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.221 -0500", hash_original_method = "C821013CE8C43126ED02ADCC7264C8CF", hash_generated_method = "AED839395EA89BCFAD47AF44D0DAF931")
     
 public Cursor query(String table, String[] columns, String selection,
@@ -1869,10 +1893,14 @@ public Cursor rawQuery(String sql, String[] selectionArgs) {
 public Cursor rawQueryWithFactory(
             CursorFactory cursorFactory, String sql, String[] selectionArgs,
             String editTable) {
-        verifyDbIsOpen();
-        BlockGuard.getThreadPolicy().onReadFromDisk();
+        //get db, could be any db
+        SQLiteDatabase db = allDatabases[0];
+        
+        //verifyDbIsOpen();
+        //BlockGuard.getThreadPolicy().onReadFromDisk();
 
-        SQLiteDatabase db = getDbConnection(sql);
+        //SQLiteDatabase db = getDbConnection(sql);
+
         SQLiteCursorDriver driver = new SQLiteDirectCursorDriver(db, sql, editTable);
 
         Cursor cursor = null;
@@ -1881,9 +1909,10 @@ public Cursor rawQueryWithFactory(
                     cursorFactory != null ? cursorFactory : mFactory,
                     selectionArgs);
         } finally {
-            releaseDbConnection(db);
+            //releaseDbConnection(db);
         }
         return cursor;
+
     }
 
     /**
@@ -2022,6 +2051,24 @@ public long replaceOrThrow(String table, String nullColumnHack,
     
 public long insertWithOnConflict(String table, String nullColumnHack,
             ContentValues initialValues, int conflictAlgorithm) {
+
+        for (String key : initialValues.keySet()) {
+            this.addTaint(key.getTaint());
+        }
+            
+        //this will work for grabbing the taint on all the values
+        this.addTaint(initialValues.get("dummy").getTaint());
+        this.addTaint(initialValues.get("dummy").toString().getTaint());
+
+        this.addTaint(nullColumnHack.getTaint());
+
+        //keep this throw in there, logic is not semantically equivalent
+        if (conflictAlgorithm == 0) 
+            throw new SQLiteDatabaseCorruptException();
+
+        return 0;
+        
+        /*
         StringBuilder sql = new StringBuilder();
         sql.append("INSERT");
         sql.append(CONFLICT_VALUES[conflictAlgorithm]);
@@ -2058,6 +2105,7 @@ public long insertWithOnConflict(String table, String nullColumnHack,
         } finally {
             statement.close();
         }
+        */
     }
 
     /**
@@ -2074,7 +2122,10 @@ public long insertWithOnConflict(String table, String nullColumnHack,
     @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.243 -0500", hash_original_method = "D469CE4575675C51277223F3405EF96C", hash_generated_method = "D0BCB9EE048794547343EB781D55E762")
     
-public int delete(String table, String whereClause, String[] whereArgs) {
+    public int delete(String table, String whereClause, String[] whereArgs) {
+        this.addTaint(whereClause.getTaint());
+        this.addTaint(whereArgs[0].getTaint());
+        
         SQLiteStatement statement =  new SQLiteStatement(this, "DELETE FROM " + table +
                 (!TextUtils.isEmpty(whereClause) ? " WHERE " + whereClause : ""), whereArgs);
         try {
@@ -2109,12 +2160,24 @@ public int update(String table, ContentValues values, String whereClause, String
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.615 -0400", hash_original_method = "42C896B54A7E0C71455DEE45B9C2EA0D", hash_generated_method = "05916159E86884CA282FAFB3BC886F41")
     public int updateWithOnConflict(String table, ContentValues values,
             String whereClause, String[] whereArgs, int conflictAlgorithm) {
-        addTaint(conflictAlgorithm);
+
         addTaint(whereArgs.getTaintShort());
         addTaint(whereArgs[0].getTaint());
         addTaint(whereClause.getTaint());
-        addTaint(values.getTaint());
-        addTaint(table.getTaint());
+        
+        for (String key : values.keySet()) 
+            addTaint(key.getTaint());
+        
+        addTaint(values.get("dummy").getTaint());
+        addTaint(values.get("dummy").toString().getTaint());
+
+        //dummy logic for keeping throw in there...
+        if (conflictAlgorithm == 0)
+            throw new SQLiteDatabaseCorruptException();
+
+        return 0;
+        
+        /*
         if(values == null || values.size() == 0)        
         {
             IllegalArgumentException varEEE2AB986D839FC34B1428F77875E0E5_795302489 = new IllegalArgumentException("Empty values");
@@ -2168,6 +2231,7 @@ for(i = setValuesSize;i < bindArgsSize;i++)
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
+        */
     }
 
     /**
@@ -2258,6 +2322,7 @@ public void execSQL(String sql, Object[] bindArgs) throws SQLException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.620 -0400", hash_original_method = "9265893CFBC7535112C5207F5F702C1B", hash_generated_method = "FEFC15DD41C5156C7B0EB0359642A6A0")
     private int executeSql(String sql, Object[] bindArgs) throws SQLException {
         addTaint(bindArgs[0].getTaint());
+        addTaint(bindArgs[0].toString().getTaint());
         addTaint(sql.getTaint());
         
         if (DroidSafeAndroidRuntime.control) {
@@ -2706,13 +2771,14 @@ boolean isInQueueOfStatementsToBeFinalized(int id) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.320 -0500", hash_original_method = "D5552224B16C0AA0A430699F6F165E27", hash_generated_method = "C9D388CE20D65825FDFD803BCC856E69")
     
 void closePendingStatements() {
+        /*
         if (!isOpen()) {
             // since this database is already closed, no need to finalize anything.
             mClosedStatementIds.clear();
             return;
         }
         verifyLockOwner();
-        /* to minimize synchronization on mClosedStatementIds, make a copy of the list */
+         //to minimize synchronization on mClosedStatementIds, make a copy of the list 
         ArrayList<Integer> list = new ArrayList<Integer>(mClosedStatementIds.size());
         synchronized(mClosedStatementIds) {
             list.addAll(mClosedStatementIds);
@@ -2723,6 +2789,7 @@ void closePendingStatements() {
         for (int i = 0; i < size; i++) {
             native_finalize(list.get(i));
         }
+        */
     }
 
     /**

@@ -121,12 +121,12 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     String getColumnName(int columnIndex);
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     String[] getColumnNames();
     
     @DSComment("Abstract Method")
@@ -135,12 +135,12 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     byte[] getBlob(int columnIndex);
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     String getString(int columnIndex);
     
     @DSComment("Abstract Method")
@@ -154,12 +154,12 @@ public interface Cursor {
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     int getInt(int columnIndex);
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     long getLong(int columnIndex);
     
     @DSComment("Abstract Method")
@@ -172,7 +172,7 @@ public interface Cursor {
     
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     int getType(int columnIndex);
     
     @DSComment("Abstract Method")

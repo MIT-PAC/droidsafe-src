@@ -52,6 +52,7 @@ import droidsafe.annotations.*;
 public class FilterInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.036 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "6D3D0ED73C3C0D0A9AF6A684E0D210F5")
 
+    @DSVAModeled
     protected volatile InputStream in;
 
     /**

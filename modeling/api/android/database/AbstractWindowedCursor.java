@@ -64,10 +64,14 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.411 -0500", hash_original_method = "87598253341A04422FF4D21C2BB371F4", hash_generated_method = "21FE6FECFF3DC1D03A016E10D2E7469B")
     
-@Override
+    @Override
     public byte[] getBlob(int columnIndex) {
-        checkPosition();
-        return mWindow.getBlob(mPos, columnIndex);
+        byte[] blob =mWindow.getBlob(mPos, columnIndex);
+        if (blob == null) {
+            blob = new byte[1];
+            blob[0] = (byte)getTaintInt();
+        }
+        return blob;
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -76,16 +80,22 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Override
     public String getString(int columnIndex) {
-        checkPosition();
-        return mWindow.getString(mPos, columnIndex);
+        String ret = mWindow.getString(mPos, columnIndex);
+        if (ret == null) {
+            ret = new String();
+            ret.addTaint(this.getTaint());
+        }
+        return ret;
+        //checkPosition();        
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.416 -0500", hash_original_method = "7A0E01C330FD8C9E9BBB19344D3EAAEA", hash_generated_method = "E5FEC28FF3BEDEE05108BAC9759B7CE6")
     
 @Override
     public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
-        checkPosition();
+        //checkPosition();
         mWindow.copyStringToBuffer(mPos, columnIndex, buffer);
+        buffer.data[0] = (char)getTaintInt();
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
@@ -93,8 +103,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Override
     public short getShort(int columnIndex) {
-        checkPosition();
-        return mWindow.getShort(mPos, columnIndex);
+        return (short)(getTaintInt() + mWindow.getShort(mPos, columnIndex));
+        //checkPosition();
+        //return 
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -103,8 +114,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Override
     public int getInt(int columnIndex) {
-        checkPosition();
-        return mWindow.getInt(mPos, columnIndex);
+        return getTaintInt() + mWindow.getInt(mPos, columnIndex);
+        //checkPosition();
+        //return 
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -113,8 +125,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Override
     public long getLong(int columnIndex) {
-        checkPosition();
-        return mWindow.getLong(mPos, columnIndex);
+        return (long)getTaintInt() + mWindow.getLong(mPos, columnIndex);
+        //checkPosition();
+        //return mWindow.getLong(mPos, columnIndex);
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
@@ -122,8 +135,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     
 @Override
     public float getFloat(int columnIndex) {
-        checkPosition();
-        return mWindow.getFloat(mPos, columnIndex);
+        return (float)getTaintDouble() + mWindow.getFloat(mPos, columnIndex);
+        //checkPosition();
+        //return 
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -133,7 +147,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
 @Override
     public double getDouble(int columnIndex) {
         checkPosition();
-        return mWindow.getDouble(mPos, columnIndex);
+        return mWindow.getDouble(mPos, columnIndex) + getTaintDouble();
     }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.431 -0500", hash_original_method = "6A9D95B36787857467112609FB3E833C", hash_generated_method = "0574AE2F88F1D2EA13B6EFC29DB13855")
@@ -141,7 +155,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
 @Override
     public boolean isNull(int columnIndex) {
         checkPosition();
-        return 1 == (mWindow.getType(mPos, columnIndex) + Cursor.FIELD_TYPE_NULL);
+        
+        boolean comp = 1 == (mWindow.getType(mPos, columnIndex) + Cursor.FIELD_TYPE_NULL);
+        return comp || getTaintBoolean();
     }
 
     /**
@@ -185,7 +201,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.443 -0500", hash_original_method = "CEEA013C273D2B30A1533873F1614E01", hash_generated_method = "92C7A4CC93BCFF4C40C086DA167A8234")
     
 @Override
@@ -206,7 +222,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         }
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.448 -0500", hash_original_method = "1266B4A96CD75271FEBF68638404515E", hash_generated_method = "DA83358F960B5A246BB2A379BDDBCF42")
     
 @Override

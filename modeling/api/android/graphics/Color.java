@@ -125,8 +125,8 @@ public static int rgb(int red, int green, int blue) {
 	@DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
     public static int argb(int alpha, int red, int green, int blue) {
-		return 0;  //Value doesn't really matter
-        //return (alpha << 24) | (red << 16) | (green << 8) | blue;
+	    return alpha + red + green + blue;
+	    //return (alpha << 24) | (red << 16) | (green << 8) | blue;
     }
 
     /**

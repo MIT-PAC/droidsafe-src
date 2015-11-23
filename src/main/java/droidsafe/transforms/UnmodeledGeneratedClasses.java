@@ -202,9 +202,12 @@ public class UnmodeledGeneratedClasses {
     }
 
     private SootField addArrayType(ArrayType type) {
-        Type baseType = type.getArrayElementType();
+        Type baseType = SootUtils.getBaseType(type);
         JimpleBody body = dummyInitBody;
-
+        
+        logger.debug("type: {}", type);
+        logger.debug("Basetype: {}", baseType);
+        
         Value baseValue = getSootFieldForType(baseType);
         
         if (baseValue == null || baseValue.equals(NullConstant.v()))
@@ -238,8 +241,8 @@ public class UnmodeledGeneratedClasses {
 
         //get down to an element through the dimensions
         Local elementPtr = arrayLocal;
-        while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-            Local currentLocal = Jimple.v().newLocal("_$MULTIARRAY" + localID++, ((ArrayType)elementPtr).getElementType());
+        while (((ArrayType)(elementPtr.getType())).getElementType() instanceof ArrayType) {
+            Local currentLocal = Jimple.v().newLocal("_$MULTIARRAY" + localID++, ((ArrayType)elementPtr.getType()).getElementType());
             addStmt(Jimple.v().newAssignStmt(
                 currentLocal, 
                 Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));

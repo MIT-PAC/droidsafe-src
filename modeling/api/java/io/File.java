@@ -292,6 +292,9 @@ public static File createTempFile(String prefix, String suffix, File directory)
     @DSVAModeled
     private String path;
 
+    @DSVAModeled
+    private String name;
+
     /**
      * Constructs a new file using the specified directory and name.
      *
@@ -306,8 +309,9 @@ public static File createTempFile(String prefix, String suffix, File directory)
     @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.432 -0500", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "C4F8D83E64C44160E188661FCFE7409A")
     
-public File(File dir, String name) {
-        this(dir == null ? null : dir.getPath(), name);
+    public File(File dir, String name) {
+        this.path = dir.path;
+        this.name = name;
     }
 
     /**
@@ -321,7 +325,7 @@ public File(File dir, String name) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.435 -0500", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "6E9FD4316F59D7CE7196381057C46B1A")
     
 public File(String path) {
-        this.path = fixSlashes(path);
+        this.path = path;
     }
 
     /**
@@ -340,16 +344,8 @@ public File(String path) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.439 -0500", hash_original_method = "133C96EC98AEE8D59630F091A182C267", hash_generated_method = "6F57CB283102230538221213F534B8CF")
     
 public File(String dirPath, String name) {
-        if (name == null) {
-            throw new NullPointerException();
-        }
-        if (dirPath == null || dirPath.isEmpty()) {
-            this.path = fixSlashes(name);
-        } else if (name.isEmpty()) {
-            this.path = fixSlashes(dirPath);
-        } else {
-            this.path = fixSlashes(join(dirPath, name));
-        }
+        this.path = dirPath;
+        this.name = name;
     }
 
     /**
@@ -529,16 +525,7 @@ public boolean exists() {
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "8F2B41FC4DF09EBF8497AC74B170E125", hash_generated_method = "C12A6EDB79539AA71068DD1E144D2E98")
     public String getAbsolutePath() {
-        if(isAbsolute())        
-        {
-            String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
-            //var535F4D9720F3B0C96D8143873CE0638C_1405753140.addTaint(getTaint());
-            return var535F4D9720F3B0C96D8143873CE0638C_1405753140;
-        } //End block
-        String userDir = "user.dir" + path;
-        String var4F090B9F25B3E37BF995BFA6769B0207_1493143672 = userDir, path;
-        //var4F090B9F25B3E37BF995BFA6769B0207_1493143672.addTaint(getTaint());
-        return var4F090B9F25B3E37BF995BFA6769B0207_1493143672;
+        return path;
         // ---------- Original Method ----------
         //if (isAbsolute()) {
             //return path;

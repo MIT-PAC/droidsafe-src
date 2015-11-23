@@ -105,6 +105,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     public SQLiteCursor(SQLiteDatabase db, SQLiteCursorDriver driver,
             String editTable, SQLiteQuery query) {
         this(driver, editTable, query);
+        this.addTaint(db.getTaint());
     }
 
     /**
@@ -121,6 +122,12 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.028 -0500", hash_original_method = "73EECE67D75C79AF0ED0AD77F55FFB21", hash_generated_method = "72423489C230028CC06368861C7991E3")
     
 public SQLiteCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery query) {
+        
+        this.addTaint(editTable.getTaint());
+        this.addTaint(query.getTaint());
+        this.addTaint(driver.getTaint());
+        this.addTaint(query.mDatabase.getTaint());
+
         if (query == null) {
             throw new IllegalArgumentException("query object cannot be null");
         }

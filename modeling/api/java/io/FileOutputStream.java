@@ -77,6 +77,12 @@ public class FileOutputStream extends OutputStream implements Closeable {
 
     private final CloseGuard guard = CloseGuard.get();
 
+    @DSVAModeled
+    private File DS_FILE;
+
+    @DSVAModeled 
+    private int MODE;
+
     /**
      * Constructs a new {@code FileOutputStream} that writes to {@code file}. The file will be
      * truncated if it exists, and created if it doesn't exist.
@@ -91,6 +97,15 @@ public FileOutputStream(File file) throws FileNotFoundException {
         this(file, false);
     }
     
+    /**
+     * Added by DroidSafe 
+     */
+    public FileOutputStream(String name, int mode) throws FileNotFoundException {
+        this(name, false);
+        this.MODE = mode;
+    }
+        
+
     @DSBan(DSCat.DROIDSAFE_INTERNAL)
     public FileOutputStream(DSOnlyType dsonly) {
         
@@ -115,6 +130,7 @@ public FileOutputStream(File file, boolean append) throws FileNotFoundException 
         this.fd = IoBridge.open(file.getAbsolutePath(), mode);
         this.shouldClose = true;
         this.guard.open("close");
+        this.DS_FILE = file;
     }
 
     /**

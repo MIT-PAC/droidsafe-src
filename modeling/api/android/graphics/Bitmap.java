@@ -532,15 +532,21 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    private static void nativeSetPixel(int nativeBitmap, int x, int y,
+	private static void nativeSetPixel(Bitmap bitmap, int nativeBitmap, int x, int y,
                                               int color) {
+	bitmap.addTaint(x);
+	bitmap.addTaint(y);
+	bitmap.addTaint(color);
     }
     
     @DSComment("Private Method")
     @DSBan(DSCat.PRIVATE_METHOD)
-    private static void nativeSetPixels(int nativeBitmap, int[] colors,
+	private static void nativeSetPixels(Bitmap bitmap, int nativeBitmap, int[] colors,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
+	bitmap.addTaint(x);
+	bitmap.addTaint(y);
+	bitmap.addTaint(colors[0]);
     }
     
     @DSComment("Private Method")
@@ -1286,7 +1292,7 @@ public void setPixel(int x, int y, int color) {
             throw new IllegalStateException();
         }
         checkPixelAccess(x, y);
-        nativeSetPixel(mNativeBitmap, x, y, color);
+        nativeSetPixel(this, mNativeBitmap, x, y, color);
     }
 
     /**
@@ -1325,7 +1331,7 @@ public void setPixels(int[] pixels, int offset, int stride,
             return; // nothing to do
         }
         checkPixelsAccess(x, y, width, height, offset, stride, pixels);
-        nativeSetPixels(mNativeBitmap, pixels, offset, stride,
+        nativeSetPixels(this, mNativeBitmap, pixels, offset, stride,
                         x, y, width, height);
     }
 

@@ -383,7 +383,13 @@ public class ObjectSensitivityCloner {
                         if (!API.v().isSystemMethod(method) ||
                                 target.getDeclaringClass().getName().startsWith("java.util") ||
                                 target.getDeclaringClass().getName().startsWith("java.lang") ||
-                                target.getDeclaringClass().getName().startsWith("java.net")) {
+                                target.getDeclaringClass().getName().startsWith("java.net") ||
+                                target.getDeclaringClass().getName().startsWith("java.io") ||
+                                target.getDeclaringClass().getName().startsWith("android.os") ||
+                                target.getDeclaringClass().getName().startsWith("android.net") ||
+                                target.getDeclaringClass().getName().startsWith("android.util") |
+                                target.getDeclaringClass().getName().startsWith("android.database")
+                                ) {
                             if (!map.containsKey(target)) {
                                 map.put(target, new LinkedList<StaticInvokeExpr>());
                             }  

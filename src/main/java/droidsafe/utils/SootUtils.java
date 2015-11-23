@@ -68,6 +68,7 @@ import soot.Modifier;
 import soot.SootField;
 import soot.SootMethodRef;
 import soot.ValueBox;
+import soot.jimple.CastExpr;
 import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.Expr;
@@ -335,6 +336,9 @@ public class SootUtils {
             if (isIntegral(parent) && isIntegral(child))
                 return true;
             return parent.equals(child);
+        } else if (child instanceof ArrayType && 
+                parent instanceof RefType && ((RefType)parent).getSootClass().equals(Scene.v().getSootClass("java.lang.Object"))) {
+            return true;
         } else if (parent instanceof ArrayType && child instanceof ArrayType) {
             return isSubTypeOfIncluding(((ArrayType)child).getElementType(), ((ArrayType)parent).getElementType());
         } else if (parent instanceof RefType && child instanceof RefType) {
@@ -1082,12 +1086,51 @@ public class SootUtils {
             throw new CannotFindMethodException(clz, meth);
         }
     }
+        
+    public static Type findCast(SootMethod method, Stmt start, Value v) {
+        Body body = method.getActiveBody();
+        StmtBody stmtBody = (StmtBody)body;
+        Chain units = stmtBody.getUnits();
+        Iterator stmtIt = units.iterator(start);
+
+        while (stmtIt.hasNext()) {
+            Stmt stmt = (Stmt)stmtIt.next();
+
+            if (stmt.branches())
+                return null;
+
+            for (ValueBox vb : stmt.getUseBoxes()) {
+                if (vb.getValue() instanceof CastExpr) {
+                    CastExpr ce = (CastExpr)vb.getValue();
+                    if (ce.getOp().equals(v)) {
+                        logger.info("Found cast of {} in {} to {}", v, method, ce.getCastType());
+                        return ce.getCastType();
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    /**
+     * @return the element type of an array, so what type would be returned for a
+     * full index (e.g., for int[][][], then int)
+     */
+    public static Type getBaseType(ArrayType arrayType) {
+        Type type = arrayType;
+        while (type instanceof ArrayType) {
+            type = ((ArrayType)type).getElementType();
+        }
+        
+        return type;
+    }
 
     /** 
-     * Returns the element type for an array, the 'base' of AnySubType.  If type is 
+     * Returns the element type for an array for a single index, the 'base' of AnySubType.  If type is 
      * neither just returns type
      */
-    public static Type getBaseType(RefLikeType type) {
+    public static Type getElementType(RefLikeType type) {
         if (type instanceof ArrayType) 
             return ((ArrayType)type).getArrayElementType();
         else if (type instanceof AnySubType) 

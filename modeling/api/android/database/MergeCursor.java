@@ -83,6 +83,7 @@ public class MergeCursor extends AbstractCursor {
     
 public MergeCursor(Cursor[] cursors)
     {
+        this.addTaint(cursors[0].getTaint());
         mCursors = cursors;
         mCursor = cursors[0];
         
@@ -93,7 +94,7 @@ public MergeCursor(Cursor[] cursors)
         }
     }
     
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.DB_CURSOR)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.439 -0500", hash_original_method = "C94247264BA1143A8EFEBC4EA367BD4C", hash_generated_method = "E2DA0373B706ED60B98BB7FB33055AE0")
@@ -227,7 +228,7 @@ public MergeCursor(Cursor[] cursors)
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.467 -0500", hash_original_method = "EAE2D1400909F2A5DEAF3F19FC10B4CB", hash_generated_method = "5D70EF17D89E7233687402F804F6C7F8")
     
 @Override

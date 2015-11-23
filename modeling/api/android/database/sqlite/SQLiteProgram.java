@@ -102,6 +102,10 @@ SQLiteProgram(SQLiteDatabase db, String sql) {
     
 SQLiteProgram(SQLiteDatabase db, String sql, Object[] bindArgs,
             boolean compileFlag) {
+        this.addTaint(db.getTaint());
+        this.addTaint(sql.getTaint());
+        this.addTaint(bindArgs[0].getTaint());
+
         mSql = sql.trim();
         int n = DatabaseUtils.getSqlStatementType(mSql);
         switch (n) {

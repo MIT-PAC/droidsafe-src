@@ -90,6 +90,8 @@ public class SQLiteStatement extends SQLiteProgram {
     
 SQLiteStatement(SQLiteDatabase db, String sql, Object[] bindArgs) {
         super(db, sql, bindArgs, false /* don't compile sql statement */);
+        this.addTaint(sql.getTaint());
+        this.addTaint(bindArgs[0].toString().getTaint());
     }
 
     /**
@@ -118,6 +120,11 @@ public void execute() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.369 -0500", hash_original_method = "66D9912335771E2036ED62B64CF3BC86", hash_generated_method = "268D0D68A247442B9D4A5C3F6F9FBAF9")
     
 public int executeUpdateDelete() {
+        mDatabase.addTaint(this.getTaint());
+        int ret = this.getTaintInt();
+        ret += mDatabase.getTaintInt();
+        return ret;
+        /*        
         try {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
@@ -134,6 +141,7 @@ public int executeUpdateDelete() {
         } finally {
             releaseAndUnlock();
         }
+        */
     }
 
     /**
@@ -150,6 +158,11 @@ public int executeUpdateDelete() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.373 -0500", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "2A4D5BD1B81B68465454108E8B5D9953")
     
 public long executeInsert() {
+        mDatabase.addTaint(this.getTaint());
+        int ret = this.getTaintInt();
+        ret += mDatabase.getTaintInt();
+        return ret;
+        /*
         try {
             saveSqlAsLastSqlStatement();
             acquireAndLock(WRITE);
@@ -157,6 +170,7 @@ public long executeInsert() {
         } finally {
             releaseAndUnlock();
         }
+        */
     }
 
     @DSComment("Private Method")
@@ -164,12 +178,15 @@ public long executeInsert() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.376 -0500", hash_original_method = "7424F80A42A729003FCB274AD124711E", hash_generated_method = "3A989A9BAE3E3173B88012F0004E7441")
     
 private void saveSqlAsLastSqlStatement() {
+        mDatabase.addTaint(this.getTaint());
+        /*
         if (((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
                 DatabaseUtils.STATEMENT_UPDATE) ||
                 (mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) ==
                 DatabaseUtils.STATEMENT_BEGIN) {
             mDatabase.setLastSqlStatement(mSql);
         }
+        */
     }
     /**
      * Execute a statement that returns a 1 by 1 table with a numeric value.
@@ -182,6 +199,17 @@ private void saveSqlAsLastSqlStatement() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.378 -0500", hash_original_method = "12DB780B550F95E5C10FD5998E83FEFD", hash_generated_method = "704999B0017ADF597420BBE86A43C1B6")
     
 public long simpleQueryForLong() {
+        //some control flow for exception
+        if (mState == 0)
+            throw new SQLiteDoneException(
+                                          "expected 1 row from this query but query returned no data. check the query: " +
+                                          mSql);
+        mDatabase.addTaint(this.getTaint());
+        long ret = (long)this.getTaintInt();
+        ret += (long) mDatabase.getTaintInt();
+        return ret;
+        
+        /*
         try {
             long timeStart = acquireAndLock(READ);
             long retValue = native_1x1_long();
@@ -194,6 +222,7 @@ public long simpleQueryForLong() {
         } finally {
             releaseAndUnlock();
         }
+        */
     }
 
     /**
@@ -207,6 +236,17 @@ public long simpleQueryForLong() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.381 -0500", hash_original_method = "6D794A242164C6F60D732256A15CB380", hash_generated_method = "F0BBF8BAAA27EEAEBE61BE18BA557A10")
     
 public String simpleQueryForString() {
+          //some control flow for exception
+        if (mState == 0)
+            throw new SQLiteDoneException(
+                                          "expected 1 row from this query but query returned no data. check the query: " +
+                                          mSql);
+        mDatabase.addTaint(this.getTaint());
+        String ret = new String();
+        ret.addTaint(this.getTaint());
+        ret.addTaint(mDatabase.getTaint());
+        return ret;
+        /*
         try {
             long timeStart = acquireAndLock(READ);
             String retValue = native_1x1_string();
@@ -219,6 +259,7 @@ public String simpleQueryForString() {
         } finally {
             releaseAndUnlock();
         }
+        */
     }
 
     /**
@@ -232,6 +273,18 @@ public String simpleQueryForString() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.385 -0500", hash_original_method = "6321C559FCE18D31DAAE4496BAD49A23", hash_generated_method = "26025A6DDCA536D8F17C08E177E19F12")
     
 public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
+           //some control flow for exception
+        if (mState == 0)
+            throw new SQLiteDoneException(
+                                          "expected 1 row from this query but query returned no data. check the query: " +
+                                          mSql);
+        mDatabase.addTaint(this.getTaint());
+        ParcelFileDescriptor ret = new ParcelFileDescriptor();
+        ret.addTaint(this.getTaint());
+        ret.addTaint(mDatabase.getTaint());
+        return ret;
+
+        /*
         try {
             long timeStart = acquireAndLock(READ);
             ParcelFileDescriptor retValue = native_1x1_blob_ashmem();
@@ -247,6 +300,7 @@ public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
         } finally {
             releaseAndUnlock();
         }
+        */
     }
 
     /**
@@ -270,6 +324,8 @@ public ParcelFileDescriptor simpleQueryForBlobFileDescriptor() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.389 -0500", hash_original_method = "7802DA1EF14C1A6C860FAB64147EEA65", hash_generated_method = "31DF08AA7DB680B5B797A6320AA8C336")
     
 private long acquireAndLock(boolean rwFlag) {
+        return 0;
+        /*
         mState = 0;
         // use pooled database connection handles for SELECT SQL statements
         mDatabase.verifyDbIsOpen();
@@ -291,6 +347,7 @@ private long acquireAndLock(boolean rwFlag) {
          * beginTransaction() methods in SQLiteDatabase call lockForced() before
          * calling execSQL("BEGIN transaction").
          */
+        /*
         if ((mStatementType & SQLiteProgram.STATEMENT_TYPE_MASK) == DatabaseUtils.STATEMENT_BEGIN) {
             if (!mDatabase.isDbLockedByCurrentThread()) {
                 // transaction is  NOT started by calling beginTransaction() methods in
@@ -316,6 +373,7 @@ private long acquireAndLock(boolean rwFlag) {
         mDatabase.closePendingStatements();
         compileAndbindAllArgs();
         return startTime;
+        */
     }
 
     /**

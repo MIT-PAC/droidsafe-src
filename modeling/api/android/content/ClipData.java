@@ -396,67 +396,10 @@ public Uri getUri() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.657 -0500", hash_original_method = "2A1795F61A3E14A1308A3A7CD55951FC", hash_generated_method = "DEFCF0170A8A578D98974249E132B756")
         
 public CharSequence coerceToText(Context context) {
-            // If this Item has an explicit textual value, simply return that.
-            if (mText != null) {
-                return mText;
-            }
-
-            // If this Item has a URI value, try using that.
-            if (mUri != null) {
-
-                // First see if the URI can be opened as a plain text stream
-                // (of any sub-type).  If so, this is the best textual
-                // representation for it.
-                FileInputStream stream = null;
-                try {
-                    // Ask for a stream of the desired type.
-                    AssetFileDescriptor descr = context.getContentResolver()
-                            .openTypedAssetFileDescriptor(mUri, "text/*", null);
-                    stream = descr.createInputStream();
-                    InputStreamReader reader = new InputStreamReader(stream, "UTF-8");
-
-                    // Got it...  copy the stream into a local string and return it.
-                    StringBuilder builder = new StringBuilder(128);
-                    char[] buffer = new char[8192];
-                    int len;
-                    while ((len=reader.read(buffer)) > 0) {
-                        builder.append(buffer, 0, len);
-                    }
-                    return builder.toString();
-
-                } catch (FileNotFoundException e) {
-                    // Unable to open content URI as text...  not really an
-                    // error, just something to ignore.
-
-                } catch (IOException e) {
-                    // Something bad has happened.
-                    Log.w("ClippedData", "Failure loading text", e);
-                    return e.toString();
-
-                } finally {
-                    if (stream != null) {
-                        try {
-                            stream.close();
-                        } catch (IOException e) {
-                        }
-                    }
-                }
-
-                // If we couldn't open the URI as a stream, then the URI itself
-                // probably serves fairly well as a textual representation.
-                return mUri.toString();
-            }
-
-            // Finally, if all we have is an Intent, then we can just turn that
-            // into text.  Not the most user-friendly thing, but it's something.
-            if (mIntent != null) {
-                return mIntent.toUri(Intent.URI_INTENT_SCHEME);
-            }
-
-            // Shouldn't get here, but just in case...
-            return "";
-        }
-        
+	    String str = new String();
+	    str.addTaint(this.getTaint());
+	    return str;
+        }        
     }
 
     /**

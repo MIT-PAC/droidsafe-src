@@ -60,8 +60,12 @@ import android.os.Bundle;
 public class DSCursor implements Cursor {
 	/**/
 	
+    @DSVAModeled
+    private Uri mURI;
+    
 	@DSSafe(DSCat.SAFE_OTHERS)
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+            this.mURI = uri;
 		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
 		addTaint(selection.getTaint());
@@ -105,17 +109,16 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String[] getColumnNames() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("From safe class list")
-    @DSSafe(DSCat.DB_CURSOR)
-    
+    @DSSafe(DSCat.DB_CURSOR)    
     public int getCount() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return getTaintInt();
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -140,38 +143,43 @@ public class DSCursor implements Cursor {
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public short getShort(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return (short)getTaintInt();
     }
 
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource(DSSourceKind.DATABASE_INFORMATION)
     public float getFloat(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return (float)getTaintDouble();
     }
 
     @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public double getDouble(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return (float)getTaintDouble();
     }
 
     @DSSafe(DSCat.DB_CURSOR)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public byte[] getBlob(int columnIndex) {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        byte[] blob = new byte[1];
+        blob[0] = (byte)getTaintInt();
+        return blob;
     }
 
     @DSComment("From safe class list")
     @DSSafe(DSCat.DB_CURSOR)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public String getString(int columnIndex) {
-        return new String();
+        String ret = new String();
+        ret.addTaint(this.getTaint());
+        return ret;
     }
     
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSSafe(DSCat.SAFE_LIST)
     public Bundle getExtras() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        //let fallback modeling handle
+        return null;
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -194,7 +202,7 @@ public class DSCursor implements Cursor {
     }
     
     @DSSafe(DSCat.SAFE_LIST)
-    @DSSource(DSSourceKind.DATABASE_INFORMATION)
+    //@DSSource(DSSourceKind.DATABASE_INFORMATION)
     public boolean isFirst() {
         return false;
     }
@@ -239,7 +247,7 @@ public class DSCursor implements Cursor {
 
     public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
         //TODO: need to add taint to the buffer, but cannot
-        buffer.data[0] = (char)columnIndex;
+        buffer.data[0] = (char)getTaintInt();
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -302,7 +310,7 @@ public class DSCursor implements Cursor {
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     public int getType(int columnIndex) {
         return 0;
     }

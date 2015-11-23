@@ -297,32 +297,6 @@ public class InsertUnmodeledObjects {
         return numChanges;
     }
 
-    private Type findCast(SootMethod method, Stmt start, Value v) {
-        Body body = method.getActiveBody();
-        StmtBody stmtBody = (StmtBody)body;
-        Chain units = stmtBody.getUnits();
-        Iterator stmtIt = units.iterator(start);
-
-        while (stmtIt.hasNext()) {
-            Stmt stmt = (Stmt)stmtIt.next();
-
-            if (stmt.branches())
-                return null;
-
-            for (ValueBox vb : stmt.getUseBoxes()) {
-                if (vb.getValue() instanceof CastExpr) {
-                    CastExpr ce = (CastExpr)vb.getValue();
-                    if (ce.getOp().equals(v)) {
-                        logger.info("Found cast of {} in {} to {}", v, method, ce.getCastType());
-                        return ce.getCastType();
-                    }
-                }
-            }
-        }
-
-        return null;
-    }
-
     /**
      * Insert assignment to the dummy object from the dummy class's field that corresponds to 
      * the type of the return value of the rhs of the assignment.
@@ -334,7 +308,7 @@ public class InsertUnmodeledObjects {
         boolean madeChange = false;
 
         //try to find a cast to narrow type
-        Type castType = findCast(method, stmt, stmt.getLeftOp());
+        Type castType = SootUtils.findCast(method, stmt, stmt.getLeftOp());
         Type returnType = target.returnType();
         Type type;
 

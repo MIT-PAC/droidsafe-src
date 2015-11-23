@@ -151,6 +151,9 @@ public RowBuilder newRow() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.748 -0500", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "87F3E7DEB331588F9FEE85FE0B266C4D")
     
 public void addRow(Object[] columnValues) {
+        this.addTaint(columnValues[0].toString().getTaint());
+        this.addTaint(columnValues[0].getTaint());
+        
         if (columnValues.length != columnCount) {
             throw new IllegalArgumentException();
         }
@@ -186,6 +189,8 @@ public void addRow(Iterable<?> columnValues) {
         int current = start;
         Object[] localData = data;
         for (Object columnValue : columnValues) {
+            this.addTaint(columnValue.getTaint());
+            this.addTaint(columnValue.toString().getTaint());
             if (current == end) {
                 // TODO: null out row?
                 throw new IllegalArgumentException(
@@ -220,6 +225,8 @@ private void addRow(ArrayList<?> columnValues, int start) {
         Object[] localData = data;
         for (int i = 0; i < size; i++) {
             localData[start + i] = columnValues.get(i);
+            this.addTaint(columnValues.get(i).toString().getTaint());
+            this.addTaint(columnValues.get(i).getTaint());
         }
     }
 
@@ -258,9 +265,12 @@ private void ensureCapacity(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.777 -0500", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "2DBB0A17A3D1D018DA998CC6AF1F85E3")    
     @Override
     public String getString(int column) {
-        Object value = get(column);
+        String ret = new String();
+        ret.addTaint(this.getTaint());
+        return ret;
+        /*Object value = get(column);
         if (value == null) return null;
-        return new String(value.toString());
+        return new String(value.toString());*/
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
@@ -268,10 +278,11 @@ private void ensureCapacity(int size) {
     
 @Override
     public short getShort(int column) {
-        Object value = get(column);
+        return (short)this.getTaintInt();
+        /*  Object value = get(column);
         if (value == null) return 0;
         if (value instanceof Number) return ((Number) value).shortValue();
-        return Short.parseShort(value.toString());
+        return Short.parseShort(value.toString());*/
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -280,10 +291,13 @@ private void ensureCapacity(int size) {
     
 @Override
     public int getInt(int column) {
+        return this.getTaintInt();
+        /*
         Object value = get(column);
         if (value == null) return 0;
         if (value instanceof Number) return ((Number) value).intValue();
         return Integer.parseInt(value.toString());
+        */
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -292,10 +306,13 @@ private void ensureCapacity(int size) {
     
 @Override
     public long getLong(int column) {
+        return (long)this.getTaintInt();
+        /*
         Object value = get(column);
         if (value == null) return 0;
         if (value instanceof Number) return ((Number) value).longValue();
         return Long.parseLong(value.toString());
+        */
     }
 
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
@@ -303,10 +320,13 @@ private void ensureCapacity(int size) {
     
 @Override
     public float getFloat(int column) {
+        return (float)getTaintDouble();
+        /*
         Object value = get(column);
         if (value == null) return 0.0f;
         if (value instanceof Number) return ((Number) value).floatValue();
         return Float.parseFloat(value.toString());
+        */
     }
 
     @DSSafe(DSCat.SAFE_LIST)
@@ -315,10 +335,13 @@ private void ensureCapacity(int size) {
     
 @Override
     public double getDouble(int column) {
+        return getTaintDouble();
+        /*
         Object value = get(column);
         if (value == null) return 0.0d;
         if (value instanceof Number) return ((Number) value).doubleValue();
         return Double.parseDouble(value.toString());
+        */
     }
 
     @DSSafe(DSCat.DB_CURSOR)
@@ -327,14 +350,18 @@ private void ensureCapacity(int size) {
     
 @Override
     public byte[] getBlob(int column) {
+        byte[] ret = new byte[1];
+        ret[0] = (byte)getTaintInt();
+        return ret;
+        /*
         Object value = get(column);
         return (byte[]) value;
+        */
     }
 
     @DSSafe(DSCat.DB_CURSOR)
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.794 -0500", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "562EF6FFF116C251F53E5B67BBE56B11")
-    
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.794 -0500", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "562EF6FFF116C251F53E5B67BBE56B11")    
 @Override
     public int getType(int column) {
         return DatabaseUtils.getTypeOfObject(get(column));
@@ -357,7 +384,7 @@ private void ensureCapacity(int size) {
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.765 -0500", hash_original_method = "5B64B028890135457EF6EA7D7258F6D8", hash_generated_method = "5B64B028890135457EF6EA7D7258F6D8")
         
-RowBuilder(int index, int endIndex) {
+            RowBuilder(int index, int endIndex) {
             this.index = index;
             this.endIndex = endIndex;
         }
@@ -372,6 +399,8 @@ RowBuilder(int index, int endIndex) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.768 -0500", hash_original_method = "2C7305D6C3442E9FCBF185523D5AEB72", hash_generated_method = "84DFB7AAE1500AF170EDF98A6AEE0A26")
         
 public RowBuilder add(Object columnValue) {
+            this.addTaint(columnValue.getTaint());
+            this.addTaint(columnValue.toString().getTaint());
             if (index == endIndex) {
                 throw new CursorIndexOutOfBoundsException(
                         "No more columns left.");

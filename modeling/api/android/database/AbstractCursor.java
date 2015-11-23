@@ -122,7 +122,7 @@ public AbstractCursor() {
     
 abstract public int getCount();
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSComment("Abstract Method")
     @DSSafe(DSCat.DB_CURSOR)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.002 -0500", hash_original_method = "20F4A69B8C9E8052B7DDCEB1E6CCF87C", hash_generated_method = "2E8BB6B5D2513186C19958DA40A4ED39")
@@ -197,7 +197,7 @@ public byte[] getBlob(int column) {
      *
      * @return The pre-filled window that backs this cursor, or null if none.
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.026 -0500", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "8CFD6C9A1970077B3C8167CFDBB21E00")
     
 public CursorWindow getWindow() {
@@ -551,14 +551,14 @@ public void setNotificationUri(ContentResolver cr, Uri notifyUri) {
         }
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.106 -0500", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "0D843E4E09494A285DEF52C0B9966F34")
     
 public Uri getNotificationUri() {
         return mNotifyUri;
     }
 
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.108 -0500", hash_original_method = "95EB5F956072F4428350A5713DB4F16C", hash_generated_method = "93337760FDB4B0073A27BD8E5852735D")
     
 public boolean getWantsAllOnMoveCalls() {
@@ -605,7 +605,7 @@ public Bundle respond(Bundle extras) {
     /**
      * @deprecated Always returns null since Cursors do not support updating rows
      */
-    @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    //@DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.120 -0500", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "554F2E91B694D8CFA51B4512A1BB1F14")
     
 @Deprecated
