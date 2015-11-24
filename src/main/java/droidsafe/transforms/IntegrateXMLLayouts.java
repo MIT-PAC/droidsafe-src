@@ -224,8 +224,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
                 if (API.v().isSystemMethod(meth))
                     continue;
 
-                if (!PTABridge.v().isReachableMethod(meth)) 
-                    continue;
+                /*if (!PTABridge.v().isReachableMethod(meth)) 
+                    continue;*/
 
                 if (debugOn) {
                     logger.info("Checking method {} ", meth);
@@ -771,6 +771,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
         Iterator<Unit> stmtIt = units.snapshotIterator();
 
         String className = b.getMethod().getDeclaringClass().getName();
+        
+        logger.info("Method: {}", b.getMethod());
 
         if (!Project.v().isSrcClass(className)) {
             logger.info("XML Transform: Skipping built-in classes ");

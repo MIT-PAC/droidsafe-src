@@ -95,13 +95,17 @@ public class MethodInvokeTransform implements VATransform {
             SootField dsDecClzNameField = methodClass.getFieldByName("dsDeclaringClassName"); 
             SootField nameField = methodClass.getFieldByName("name");
 
+            logger.info("Found invoke: {} in {}", stmt, containingMthd);
+            
             for (IAllocNode node : methodNodes) {
                 temp.clear();
                 boolean classResolved = ValueAnalysis.v().getStringFieldValues(node, dsDecClzNameField, temp);
+                logger.info("dsDecClzNameField: {}", temp);
                 classNames.addAll(temp);
 
                 temp.clear();
                 boolean mNameResolved = ValueAnalysis.v().getStringFieldValues(node, nameField, temp);
+                logger.info("mName: {}", temp);
                 mNames.addAll(temp);
 
                 //do the best we can here, don't worry if unresolved                
@@ -116,6 +120,7 @@ public class MethodInvokeTransform implements VATransform {
                     //try to get the method from the class / name combination 
                     try {
                         SootMethod target = Scene.v().getSootClass(className).getMethodByName(mName);
+                        logger.info("target: {}", target);
 
                         //find number of args from new array created for var args
                         Unit current = body.getUnits().getPredOf(stmt);
