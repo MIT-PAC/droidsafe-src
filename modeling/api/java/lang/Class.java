@@ -1143,7 +1143,7 @@ public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMe
         //droidsafe specific constructor
         Method method = new Method(name, this.dsClassName);
 
-        return null;//method;
+        return method;
     }
 
     /**
