@@ -69,7 +69,7 @@ public class InformationFlowReport {
     public static void create(SecuritySpecification spec) {
         String separator = "|";
         String slash = "/";
-        
+
         StringBuffer sb = new StringBuffer();
         //loop through all output events
         //for each output event that is a sensitive sink
@@ -81,7 +81,7 @@ public class InformationFlowReport {
                 eventBlock.getKey().getSignature(), eventBlock.getKey().getDeclSourceLocation());
 
             StringBuffer flows = new StringBuffer();  //original report
-            
+
             boolean hasFlow = false;
 
             for (Method outputEvent : eventBlock.getValue()) {
@@ -90,21 +90,21 @@ public class InformationFlowReport {
 
                 isSink = outputEvent.getSinkInfoKinds().size() > 0;
                 hasSources = outputEvent.getSourcesInfoKinds().size() > 0;
-                
+
                 // no report if there is no sink
                 if (!isSink)
                     continue;
 
                 StringBuilder tmpBuilder = new StringBuilder();
-                
+
                 // format is: **|<entry-method>|<sink>/<cat>/line|rx-src|<source_rx/cat_list>|arg-src|<src_arg list
                 tmpBuilder.append(eventBlock.getKey().getSignature()).append(separator);
 
                 tmpBuilder.append("{");
                 tmpBuilder.append(outputEvent.getSignature()).append(slash);
                 tmpBuilder.append(outputEvent.getSinkInfoKinds().iterator().next())
-                           .append(slash);
-                
+                .append(slash);
+
                 boolean firstLine = true;
                 for (SourceLocationTag tag : outputEvent.getLines()) {
                     if (!firstLine)
@@ -114,9 +114,9 @@ public class InformationFlowReport {
                 }
                 tmpBuilder.append("}");
                 tmpBuilder.append("<=");
-                
+
                 String flowPrefix = tmpBuilder.toString().replaceAll("_ds_method_clone_\\d+", "");
-                
+
                 if (hasSources) {
                     hasFlow = true;
 
@@ -127,17 +127,17 @@ public class InformationFlowReport {
                     StringBuilder tmpBuilder = new StringBuilder();
                     for (SourceLocationTag tag : outputEvent.getLines()) {
                         flows.append("\t" + tag + "\n");
-                        
+
                         if (tmpBuilder.length() > 0)
                             tmpBuilder.append(",");
-                        
+
                         tmpBuilder.append(tag);
                     }
 
                     flowBuilder.append(tmpBuilder).append(separator);
-                    */
+                     */
 
-                    
+
                     flows.append("Receiver Sources: \n");
                     for (Map.Entry<InfoKind, Set<Stmt>> source : outputEvent.getReceiverSourceInfoUnits().entrySet()) {
                         for (Stmt stmt : source.getValue()) {
@@ -146,8 +146,8 @@ public class InformationFlowReport {
                             /*
                             if (tmpBuilder.length() > 0)
                                 tmpBuilder.append(",");
-                            */
-                            
+                             */
+
                             //tmpBuilder.append(String.format("{%s%s%s}", stmt, slash, source.getKey()));
                             /*
                             for (SourceLocationTag tag : outputEvent.getLines()) {
@@ -156,7 +156,7 @@ public class InformationFlowReport {
                                 flowBuilder.append(tag);
                                 firstLine = false;
                             }
-                            */
+                             */
                             SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
                             String lineNumber = "";
                             if (locationTag != null)
@@ -165,8 +165,8 @@ public class InformationFlowReport {
                             SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
                             tmpBuilder =  new StringBuilder();
                             tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
-                                    method, slash, source.getKey(), slash, lineNumber, "RECEIVER"));
-                            
+                                method, slash, source.getKey(), slash, lineNumber, "RECEIVER"));
+
                             String flowLine = flowPrefix + tmpBuilder;
                             formattedFlowSet.add(flowLine);
                         }
@@ -178,32 +178,37 @@ public class InformationFlowReport {
 
                         flows.append(String.format("Arg %d Sources: \n", i));
                         for (Map.Entry<InfoKind, Set<Stmt>> source : outputEvent.getArgSourceInfoUnits(i).entrySet()) {
-                            for (Stmt stmt : source.getValue()) {
-                                flows.append(String.format("\t%s (%s)\n", stmt, source.getKey()));
+                            //some infokinds don't have statements!
+                            if (source.getValue().isEmpty()) {
+                                formattedFlowSet.add(flowPrefix + "{" + source.getKey()+ "/ARG" + "}");
+                            } else {
+                                for (Stmt stmt : source.getValue()) {
+                                    flows.append(String.format("\t%s (%s)\n", stmt, source.getKey()));
 
-                                SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
-                                String lineNumber = "";
-                                if (locationTag != null)
+                                    SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
+                                    String lineNumber = "";
+                                    if (locationTag != null)
                                         lineNumber = locationTag.toString();
 
-                                SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
+                                    SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
 
-                                tmpBuilder =  new StringBuilder();
-                                tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
-                                    method, slash, source.getKey(), slash, lineNumber, "ARG"));
+                                    tmpBuilder =  new StringBuilder();
+                                    tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
+                                        method, slash, source.getKey(), slash, lineNumber, "ARG"));
 
-                                String flowLine = flowPrefix + tmpBuilder;
-                                flowLine = flowLine.replaceAll("_ds_method_clone_\\d+", "");
-                                formattedFlowSet.add(flowLine);
+                                    String flowLine = flowPrefix + tmpBuilder;
+                                    flowLine = flowLine.replaceAll("_ds_method_clone_\\d+", "");
+                                    formattedFlowSet.add(flowLine);
+                                }
                             }
                         }
                     }
                 }
 
-            
+
             }
 
-        
+
             if (hasFlow) {
                 sb.append(entryPoint);
                 sb.append(flows);
@@ -240,30 +245,30 @@ public class InformationFlowReport {
             checkerResult.append("\n\n========================================\n");
             checkerResult.append("Checking infoflow result against expected flows \n");
             for (String flow: expectedFlows) {
-            	String origFlow = flow;
+                String origFlow = flow;
                 flow = flow.replace("FLOW:", ""); 
                 flow = flow.replaceAll("#.*", "");
                 flow = flow.replaceAll(".*\\|", "");
                 flow = flow.replaceAll("\\s+", "");
-            	flow = flow.replaceAll("/(ARG|RECEIVER)", "");
+                flow = flow.replaceAll("/(ARG|RECEIVER)", "");
                 if (flow.length() > 0)
-                	expectedMap.put(flow, origFlow);
+                    expectedMap.put(flow, origFlow);
             }
             expectedFlowSet = expectedMap.keySet();
-            
+
             logger.debug("exptedSet {} ", expectedFlowSet);
 
             for (String flow: formattedFlowSet){
-            	String orig = flow;
+                String orig = flow;
                 flow = flow.replaceAll("#.*", "");
                 flow = flow.replaceAll(".*\\|", "");
                 flow = flow.replaceAll("\\s+", "");
-            	flow = flow.replaceAll("/(ARG|RECEIVER)", "");
+                flow = flow.replaceAll("/(ARG|RECEIVER)", "");
                 origResultMap.put(flow, orig);
             }
 
             resultFlowSet = origResultMap.keySet();
-            
+
             int missing = 0;
             int found = 0;
             for (String flow: expectedFlowSet) {
@@ -271,7 +276,7 @@ public class InformationFlowReport {
                     found++;
                 else {
 
-                	String prettyFlow = expectedMap.get(flow);
+                    String prettyFlow = expectedMap.get(flow);
                     checkerResult.append("MISSING: ").append(prettyFlow).append("\n");
                     missing++;
                     infoflowOK = false;
@@ -281,7 +286,7 @@ public class InformationFlowReport {
             int extra = 0;
             for (String flow: resultFlowSet) {
                 if (!expectedFlowSet.contains(flow)) {
-                	String prettyFlow = origResultMap.get(flow);
+                    String prettyFlow = origResultMap.get(flow);
                     extra++;
                     checkerResult.append("EXTRA: ").append(prettyFlow).append("\n");
                 }
@@ -290,9 +295,9 @@ public class InformationFlowReport {
             String status = "PASSED";
             if (missing > 0)
                 status = "FAILED";
-            
+
             sb.append(String.format("STATUS: %s, MATCHED: %d, MISSING: %d, EXTRA: %d \n", 
-                    status, found, missing, extra));
+                status, found, missing, extra));
         }
 
         try {
@@ -302,7 +307,7 @@ public class InformationFlowReport {
         } catch(IOException e) {
 
         }
-        
+
         if (!infoflowOK)
             System.exit(-1);
     }
@@ -315,7 +320,7 @@ public class InformationFlowReport {
     public static void iflow_create(SecuritySpecification spec) {
         String separator = "|";
         String slash = "/";
-        
+
         StringBuffer sb = new StringBuffer();
         //loop through all output events
         //for each output event that is a sensitive sink
@@ -327,74 +332,74 @@ public class InformationFlowReport {
                 eventBlock.getKey().getSignature(), eventBlock.getKey().getDeclSourceLocation());
 
             StringBuffer flows = new StringBuffer();
-            
+
             boolean hasFlow = false;
 
             for (Method outputEvent : eventBlock.getValue()) {
-            	boolean isSink = outputEvent.getSinkInfoKinds().size() > 0;
-            	// no report if there is no sink
-            	if (!isSink)
-            		continue;
+                boolean isSink = outputEvent.getSinkInfoKinds().size() > 0;
+                // no report if there is no sink
+                if (!isSink)
+                    continue;
 
-            	Map<InfoKind, Set<Stmt>> iflows = outputEvent.getImplicitFlows();
+                Map<InfoKind, Set<Stmt>> iflows = outputEvent.getImplicitFlows();
 
-            	StringBuilder tmpBuilder = new StringBuilder();
+                StringBuilder tmpBuilder = new StringBuilder();
 
-            	// format is: **|<entry-method>|<sink>/<cat>/line|rx-src|<source_rx/cat_list>|arg-src|<src_arg list
-            	tmpBuilder.append(eventBlock.getKey().getSignature()).append(separator);
+                // format is: **|<entry-method>|<sink>/<cat>/line|rx-src|<source_rx/cat_list>|arg-src|<src_arg list
+                tmpBuilder.append(eventBlock.getKey().getSignature()).append(separator);
 
-            	tmpBuilder.append("{");
-            	tmpBuilder.append(outputEvent.getSignature()).append(slash);
-            	tmpBuilder.append(outputEvent.getSinkInfoKinds().iterator().next()).append(slash);
+                tmpBuilder.append("{");
+                tmpBuilder.append(outputEvent.getSignature()).append(slash);
+                tmpBuilder.append(outputEvent.getSinkInfoKinds().iterator().next()).append(slash);
 
-            	boolean firstLine = true;
-            	for (SourceLocationTag tag : outputEvent.getLines()) {
-            		if (!firstLine)
-            			tmpBuilder.append(",");
-            		tmpBuilder.append(tag);
-            		firstLine = false;
-            	}
-            	tmpBuilder.append("}");
-            	tmpBuilder.append("<=");
+                boolean firstLine = true;
+                for (SourceLocationTag tag : outputEvent.getLines()) {
+                    if (!firstLine)
+                        tmpBuilder.append(",");
+                    tmpBuilder.append(tag);
+                    firstLine = false;
+                }
+                tmpBuilder.append("}");
+                tmpBuilder.append("<=");
 
-            	String flowPrefix = tmpBuilder.toString().replaceAll("_ds_method_clone_\\d+", "");
+                String flowPrefix = tmpBuilder.toString().replaceAll("_ds_method_clone_\\d+", "");
 
-            	if (iflows != null && !iflows.isEmpty()) {
-            		hasFlow = true;
+                if (iflows != null && !iflows.isEmpty()) {
+                    hasFlow = true;
 
-            		flows.append(String.format("Sink: %s\n", outputEvent.getSignature()));
-            		flows.append("Lines: \n");
+                    flows.append(String.format("Sink: %s\n", outputEvent.getSignature()));
+                    flows.append("Lines: \n");
 
-            		flows.append("Implicit Sources: \n");
-            		for (Map.Entry<InfoKind, Set<Stmt>> source : iflows.entrySet()) {
-            			for (Stmt stmt : source.getValue()) {
-            				flows.append(String.format("\t%s (%s)\n", stmt, source.getKey()));
+                    flows.append("Implicit Sources: \n");
+                    for (Map.Entry<InfoKind, Set<Stmt>> source : iflows.entrySet()) {
+                        for (Stmt stmt : source.getValue()) {
+                            flows.append(String.format("\t%s (%s)\n", stmt, source.getKey()));
 
-            				SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
-            				String lineNumber = "";
-            				if (locationTag != null)
-            					lineNumber = locationTag.toString();
+                            SourceLocationTag locationTag = SootUtils.getSourceLocation(stmt);
+                            String lineNumber = "";
+                            if (locationTag != null)
+                                lineNumber = locationTag.toString();
 
-            				SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
-            				tmpBuilder =  new StringBuilder();
-            				tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
-            						method, slash, source.getKey(), slash, lineNumber, "IMPLICIT"));
+                            SootMethodRef method = stmt.getInvokeExpr().getMethodRef();
+                            tmpBuilder =  new StringBuilder();
+                            tmpBuilder.append(String.format("{%s%s%s%s%s/%s}", 
+                                method, slash, source.getKey(), slash, lineNumber, "IMPLICIT"));
 
-            				String flowLine = flowPrefix + tmpBuilder;
-            				formattedFlowSet.add(flowLine);
-            			}
-            		}
+                            String flowLine = flowPrefix + tmpBuilder;
+                            formattedFlowSet.add(flowLine);
+                        }
+                    }
 
-            	}
+                }
 
 
             }
 
 
             if (hasFlow) {
-            	sb.append(entryPoint);
-            	sb.append(flows);
-            	sb.append("\n");
+                sb.append(entryPoint);
+                sb.append(flows);
+                sb.append("\n");
             }
         }
 
@@ -411,6 +416,6 @@ public class InformationFlowReport {
         } catch(IOException e) {
 
         }
-        
+
     }
 }
