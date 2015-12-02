@@ -48,12 +48,17 @@ import soot.Context;
 import soot.MethodOrMethodContext;
 import soot.SootMethod;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mgordon
  * @author dpetters
  */
 public class VATransformsSuite  {
+    /** logger field */
+    private final Logger logger = LoggerFactory.getLogger(VATransformsSuite.class);
+
     private List<VATransform> transforms = Arrays.asList(
         new StartActivityTransform(),
         new ServiceBindTransform(),
@@ -96,7 +101,11 @@ public class VATransformsSuite  {
                 for (VATransform transform : transforms) { 
                     for (SootMethod callee : PTABridge.v().getTargetsInsNoContext(containingMthd, stmt)) {
                         if (isInvokeCandidateForTransform(transform, callee)) {
-                            transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
+			    try {
+				transform.tranformsInvoke(containingMthd, callee, invokeExpr, stmt, stmtBody);
+			    } catch (Exception e) {
+				logger.debug("Error in transforms suite, ignoring...", e);
+			    }
                         }
                     } 
                 }     
