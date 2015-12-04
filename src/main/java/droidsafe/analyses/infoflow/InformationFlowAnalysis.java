@@ -371,6 +371,14 @@ public class InformationFlowAnalysis {
         unit.apply(stmtSwitch);
     }
 
+    /**
+     * Called on control transfer statements such that implicit flows can be 
+     * incorporated.
+     * 
+     * @param stmt
+     * @param condVal
+     * @param state
+     */
     private void execute(Stmt stmt, Value condVal, State state) {
         Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
@@ -509,28 +517,28 @@ public class InformationFlowAnalysis {
             // Iterate through all reachable method contexts from the current context
             // and propagate the taint of the current method context over all blocks
             // of each reachable method context.
-            for (MethodOrMethodContext mc : contexts) {
-                Context context2 = methodContext.context();
-                if (ignoreContext(context2)) {
+            for (MethodOrMethodContext reachableMethod : contexts) {
+                Context calleeContext = reachableMethod.context();
+                if (ignoreContext(calleeContext)) {
                     continue;
                 }
-
-                Body body2 = mc.method().retrieveActiveBody();
+                
+                Body body2 = reachableMethod.method().retrieveActiveBody();
                 Iterator<Unit> iter = body2.getUnits().snapshotIterator();
                 while (iter.hasNext()) {
                     Stmt stmt2 = (Stmt) iter.next();
-                    Block block2 = this.superControlFlowGraph.unitToBlock.get(stmt2);
-                    Map<Context, Set<InfoValue>> ctiv = state.iflows.get(block2);
+                    Block calleeBlock = this.superControlFlowGraph.unitToBlock.get(stmt2);
+                    Map<Context, Set<InfoValue>> ctiv = state.iflows.get(calleeBlock);
                     if (ctiv == null) {
                         ctiv = new HashMap<Context, Set<InfoValue>>();
-                        state.iflows.put(block2, ctiv);
+                        state.iflows.put(calleeBlock, ctiv);
                     }
-                    Set<InfoValue> existingVals = ctiv.get(mc);
-                    if (existingVals == null) {
-                        existingVals = new HashSet<InfoValue>();
-                        ctiv.put(context2, existingVals);
+                    Set<InfoValue> existingValsCalleeBlockContext = ctiv.get(calleeContext);
+                    if (existingValsCalleeBlockContext == null) {
+                        existingValsCalleeBlockContext = new HashSet<InfoValue>();
+                        ctiv.put(calleeContext, existingValsCalleeBlockContext);
                     }
-                    existingVals.addAll(contextValues);
+                    existingValsCalleeBlockContext.addAll(contextValues);               
                 }
             }
         }
@@ -1103,7 +1111,7 @@ public class InformationFlowAnalysis {
             }
         };
         immediate.apply(immediateSwitch);
-
+        
         // Take implicit information flow into account.
         if (Config.v().implicitFlow && !(instanceFieldRef.getType() instanceof RefLikeType)) {
             Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
