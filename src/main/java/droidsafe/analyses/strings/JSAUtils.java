@@ -174,11 +174,8 @@ public class JSAUtils {
         
         Set<SootMethod> systemMethods;
         //run JSA on all system method calls in app
-        if (Config.v().runJSAOnAllSystemMethodCalls)
-            systemMethods = getSystemMethodsWithStringArgs();
-        else //or run JSA only on method calls to method registered in a VA Transform
-            systemMethods = getVATransformsMethodsWithStringArgs();
-        
+        systemMethods = getSystemMethodsWithStringArgs();
+                
         CallGraph cg = Scene.v().getCallGraph();
         Map<SootMethod, List<InvokeExpr>> methodToInvokeExprsMap = new HashMap<SootMethod, List<InvokeExpr>>();
         // LWG: Allow application classes to be filtered from soot.Scene
@@ -242,23 +239,6 @@ public class JSAUtils {
         }
     }
 
-    private static Set<SootMethod> getVATransformsMethodsWithStringArgs() {
-        Set<SootMethod> result = new HashSet<SootMethod>();
-        for (VATransform vat : VATransformsSuite.v().getTransforms()) {
-            for (String mSig : vat.sigsOfInvokesToTransform()) {
-                try {
-                    SootClass clz = Scene.v().getSootClass(SootUtils.grabClass(mSig));
-                    SootMethod resolvedMethod = SootUtils.resolveMethod(clz, mSig);
-                    result.add(resolvedMethod);
-                } catch (Exception e) {
-                    logger.warn("Error retrieving VATransforms method: {}", mSig, e);
-                }
-            }            
-        }
-        
-        return result;
-    }
-    
     private static Set<SootMethod> getSystemMethodsWithStringArgs() {
         Set<SootMethod> result = new HashSet<SootMethod>();
         for (SootMethod m : API.v().getAllSystemMethods()) {

@@ -237,10 +237,6 @@ public class Config {
     public boolean createRCFG = true;
     /** if true, then run scalar opts like copy / constant prop and folding */
     public boolean scalarOpts = true;
-    /** if true, run JSA on string args of all system method calls in app code, 
-     * if false, then run JSA only on calls that VA Transforms register
-     */
-    public boolean runJSAOnAllSystemMethodCalls = false;
     
     /**
      * Flag to control what to do when Main.exit(int) is called. The default value is true, forcing
@@ -439,10 +435,6 @@ public class Config {
         Option multipassfb = new Option("multipassfb", "Enable multiple passes of fallback modeling");
         options.addOption(multipassfb);
 
-        Option runJSAOnAllAPICalls = new Option("extrajsa", "Run JSA on all API calls (Default analyzes Value Analysis API calls)");
-        options.addOption(runJSAOnAllAPICalls);
-
-        
         Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
         options.addOption(callgraph);
         
@@ -738,10 +730,7 @@ public class Config {
             this.addFallbackModeling = false;
         
         if (cmd.hasOption("multipassfb"))
-            this.multipassfb = true;
-        
-        if (cmd.hasOption("extrajsa"))
-            this.runJSAOnAllSystemMethodCalls = true;
+            this.multipassfb = true;            
 
         if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
 
