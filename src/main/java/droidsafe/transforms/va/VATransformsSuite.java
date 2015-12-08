@@ -66,12 +66,23 @@ public class VATransformsSuite  {
 
     // enforce singleton pattern
     private VATransformsSuite() {}
+    
+    private static VATransformsSuite v;
+    
+    public static VATransformsSuite v() {
+        if (v == null)
+            v = new VATransformsSuite();
+        return v;
+    }
 
-    public static void run() {       
-        VATransformsSuite v = new VATransformsSuite();
+    public static void run() {             
         v.visitMethodContexts();
     }
 
+    public List<VATransform> getTransforms() {
+        return transforms;
+    }
+    
 
     public void visitMethodContexts() {
         for (SootMethod containingMthd : PTABridge.v().getReachableMethods()) {

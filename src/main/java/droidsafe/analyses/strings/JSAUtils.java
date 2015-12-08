@@ -36,6 +36,7 @@ import soot.Body;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.SootMethodRef;
 import soot.Unit;
 import soot.ValueBox;
 import soot.jimple.InvokeExpr;
@@ -44,6 +45,9 @@ import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import dk.brics.string.StringAnalysis;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
+import droidsafe.transforms.va.VATransform;
+import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -167,7 +171,14 @@ public class JSAUtils {
      * Set JSA hotspots to be all system methods that have a string as a parameter.
      */
     public static void setupSpecHotspots() {
-        Set<SootMethod> systemMethods = getSystemMethodsWithStringArgs();
+        
+        Set<SootMethod> systemMethods;
+        //run JSA on all system method calls in app
+        if (Config.v().runJSAOnAllSystemMethodCalls)
+            systemMethods = getSystemMethodsWithStringArgs();
+        else //or run JSA only on method calls to method registered in a VA Transform
+            systemMethods = getVATransformsMethodsWithStringArgs();
+        
         CallGraph cg = Scene.v().getCallGraph();
         Map<SootMethod, List<InvokeExpr>> methodToInvokeExprsMap = new HashMap<SootMethod, List<InvokeExpr>>();
         // LWG: Allow application classes to be filtered from soot.Scene
@@ -231,6 +242,23 @@ public class JSAUtils {
         }
     }
 
+    private static Set<SootMethod> getVATransformsMethodsWithStringArgs() {
+        Set<SootMethod> result = new HashSet<SootMethod>();
+        for (VATransform vat : VATransformsSuite.v().getTransforms()) {
+            for (String mSig : vat.sigsOfInvokesToTransform()) {
+                try {
+                    SootClass clz = Scene.v().getSootClass(SootUtils.grabClass(mSig));
+                    SootMethod resolvedMethod = SootUtils.resolveMethod(clz, mSig);
+                    result.add(resolvedMethod);
+                } catch (Exception e) {
+                    logger.warn("Error retrieving VATransforms method: {}", mSig, e);
+                }
+            }            
+        }
+        
+        return result;
+    }
+    
     private static Set<SootMethod> getSystemMethodsWithStringArgs() {
         Set<SootMethod> result = new HashSet<SootMethod>();
         for (SootMethod m : API.v().getAllSystemMethods()) {

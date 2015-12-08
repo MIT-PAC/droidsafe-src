@@ -297,6 +297,7 @@ public class JSAStrings {
      */
     private void analyze() {
         logger.info("Action hotspots: " + hotspots.size());
+        System.out.println("JSA Hotspots: " + hotspots.size());
         StopWatch timer = new StopWatch();
         timer.start();
 
