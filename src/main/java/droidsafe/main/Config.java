@@ -740,7 +740,7 @@ public class Config {
         if (cmd.hasOption("multipassfb"))
             this.multipassfb = true;
         
-        if (cmd.hasOption("runJSAOnAllAPICalls"))
+        if (cmd.hasOption("extrajsa"))
             this.runJSAOnAllSystemMethodCalls = true;
 
         if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
