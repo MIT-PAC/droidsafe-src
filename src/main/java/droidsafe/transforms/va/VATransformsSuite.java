@@ -76,7 +76,7 @@ public class VATransformsSuite  {
     }
 
     public static void run() {             
-        v.visitMethodContexts();
+        v().visitMethodContexts();
     }
 
     public List<VATransform> getTransforms() {
