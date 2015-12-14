@@ -469,7 +469,7 @@ public class InformationFlowAnalysis {
             }
 
             if (contextValues.isEmpty())
-                return;
+                continue;
 
             // Copy taint from the branching block to each sibling in the
             // post-dominator tree.
