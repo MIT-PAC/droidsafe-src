@@ -383,6 +383,10 @@ public class InformationFlowAnalysis {
         Block block = this.superControlFlowGraph.unitToBlock.get(stmt);
         Body body = block.getBody();
         SootMethod method = body.getMethod();
+        
+        //only track implicit flows in app methods
+        if (API.v().isSystemMethod(method))
+            return;
 
         // Extract all of the immediates out of condVal expression.
         Stack<Value> valStack = new Stack<Value>();
@@ -400,14 +404,7 @@ public class InformationFlowAnalysis {
             } else {
                 logger.error("What type of condition are we? {}",
                     topVal.getClass());
-                /*
-                 * TODO: Implement cases for other expression types, such as
-                 * method invocations, field accesses, array accesses, etc...
-                 * 
-                 * I should ask Michael about how to acquire taint for the more
-                 * complicated cases, since I am sure there are probably
-                 * existing mechanisms for accomplishing this.
-                 */
+                //shouldn't be anything else.
             }
         }
 
