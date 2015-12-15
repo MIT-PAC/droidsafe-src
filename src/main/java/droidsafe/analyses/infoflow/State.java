@@ -619,6 +619,8 @@ class State {
 
         return this.locals.equals(that.locals) && this.instances.equals(that.instances) 
         		&& this.arrays.equals(that.arrays) && this.statics.equals(that.statics) &&
-        		(!Config.v().implicitFlow || this.iflows.equals(that.iflows));
+        		(!Config.v().implicitFlow || 
+        		 (this.iflows.equals(that.iflows) && 
+        		  this.instancesIflows.equals(that.instancesIflows)));
     }
 }
