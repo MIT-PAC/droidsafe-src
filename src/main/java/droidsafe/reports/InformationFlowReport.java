@@ -60,21 +60,45 @@ import droidsafe.utils.SourceLocationTag;
 public class InformationFlowReport {
     private static final String FILE_NAME = "info-flow-results.txt";
     private static final String IFLOW_FILE_NAME = "info-iflow-results.txt";
+    private static final String CHECK_INFO_FLOW_FILE_NAME = "check-info-flow.txt";
     private static final Logger logger = LoggerFactory.getLogger(InformationFlowReport.class);
+    private static InformationFlowReport v;
+    private Set<String> formattedFlowSet = new HashSet<String>();    
+    
+    public static InformationFlowReport v() {
+        if (v == null)
+            v = new InformationFlowReport();
+        
+        return v;
+    }
+    
+    private InformationFlowReport() {
+        
+    }
+    
+    public void run(SecuritySpecification spec) {
+        create(spec);
+
+        if (Config.v().implicitFlow)
+            iflow_create(spec);
+        
+        if (Config.v().checkInfoFlow)
+            checkInfoFlow();
+    }
+    
     /**
      * Create an information flow report that lists sensitive sinks if a sensitive source
      * flows into a receiver or argument.
      *
      */
-    public static void create(SecuritySpecification spec) {
+    private  void create(SecuritySpecification spec) {
         String separator = "|";
         String slash = "/";
 
         StringBuffer sb = new StringBuffer();
         //loop through all output events
         //for each output event that is a sensitive sink
-        //list the sensitive sources on its receiver and each arg
-        Set<String> formattedFlowSet = new HashSet<String>();
+        //list the sensitive sources on its receiver and each arg    
 
         for (Map.Entry<Method, List<Method>> eventBlock : spec.getEventBlocks().entrySet()) {
             String entryPoint = String.format("Entry Point: %s (%s)\n\n", 
@@ -221,8 +245,20 @@ public class InformationFlowReport {
             sb.append("FLOW:").append(flow).append("\n\n");
         }
         sb.append("\n");
+        
+        try {
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + FILE_NAME);
+            fw.write(sb.toString());
+            fw.close();
+        } catch(IOException e) {
 
+        }
+    }
+    
+    private void checkInfoFlow() {
+        StringBuffer sb = new StringBuffer();
         boolean infoflowOK = true;
+        
         File expectedInfoFile  = new File(Config.v().EXPECT_INFO_FLOW_FILE);
         if (Config.v().checkInfoFlow && expectedInfoFile.exists()) {
             List<String> expectedFlows = null;
@@ -301,7 +337,7 @@ public class InformationFlowReport {
         }
 
         try {
-            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + FILE_NAME);
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + CHECK_INFO_FLOW_FILE_NAME);
             fw.write(sb.toString());
             fw.close();
         } catch(IOException e) {
@@ -317,15 +353,14 @@ public class InformationFlowReport {
      * sources via implicit flow.
      *
      */
-    public static void iflow_create(SecuritySpecification spec) {
+    private void iflow_create(SecuritySpecification spec) {
         String separator = "|";
         String slash = "/";
 
         StringBuffer sb = new StringBuffer();
         //loop through all output events
         //for each output event that is a sensitive sink
-        //list the sensitive sources of implicit flow
-        Set<String> formattedFlowSet = new HashSet<String>();
+        //list the sensitive sources of implicit flow    
 
         for (Map.Entry<Method, List<Method>> eventBlock : spec.getEventBlocks().entrySet()) {
             String entryPoint = String.format("Entry Point: %s (%s)\n\n", 

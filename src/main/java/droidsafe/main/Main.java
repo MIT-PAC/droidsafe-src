@@ -544,9 +544,7 @@ public class Main {
             
             //check info flow last
             if (Config.v().infoFlow) {
-                InformationFlowReport.create(spec);
-                if (Config.v().implicitFlow)
-                    InformationFlowReport.iflow_create(spec);
+                InformationFlowReport.v().run(spec);
             }
         } 
         
