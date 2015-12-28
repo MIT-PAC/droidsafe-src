@@ -167,6 +167,10 @@ public class ContentProviderTransform implements VATransform {
         //for each field of harness that is a content provider
         for (SootField cpField : targetCPFields) {
             SootClass cpClass = ((RefType)cpField.getType()).getSootClass();
+	    //the content provide may not declare all methods 
+	    if (!cpClass.declaresMethod(callee.getSubSignature()))
+		continue;
+
             SootMethod target = cpClass.getMethod(callee.getSubSignature());
 
             //create local and add to body
@@ -212,7 +216,7 @@ public class ContentProviderTransform implements VATransform {
         }
         
         
-    }
+	}
 
     @Override
     public Set<String> sigsOfInvokesToTransform() {
