@@ -48,6 +48,7 @@ import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
@@ -230,6 +231,8 @@ public class RequiredModeling {
                                     SootField f = ((StaticFieldRef)v).getField();
                                     if (f.isPhantom() && API.v().isSystemClass(f.getDeclaringClass())) {
                                         logger.warn("Reference of phantom api class field {} in {}", f, method);
+                                        String warning = String.format("Reference of phantom api class field %s in %s", f, method);
+                                        AnalysisReport.v().addEntry(warning, stmt, AnalysisReport.Level.HIGH);
                                     }
                                 }
                             }

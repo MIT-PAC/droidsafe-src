@@ -22,7 +22,6 @@
 package droidsafe.main;
 
 import au.com.bytecode.opencsv.CSVWriter;
-import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.errorhandling.ErrorHandlingAnalysis;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -59,6 +58,7 @@ import droidsafe.reports.SensitiveSources;
 import droidsafe.reports.SourceCallTree;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.reports.AllEntryPointCallTree;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
@@ -465,7 +465,7 @@ public class Main {
 
         IntentResolutionStats.v().writeStats();
 
-        if (Config.v().produceReports)
+        if (Config.v().produceReports && !Config.v().analysisOnlyRun)
             writeJSONReports();
 
 
@@ -541,6 +541,10 @@ public class Main {
             }
             
             PTAPaper.writeReport();
+           
+            if (Config.v().produceReports)
+            	AnalysisReport.v().writeReport();
+            
             
             //check info flow last
             if (Config.v().infoFlow) {

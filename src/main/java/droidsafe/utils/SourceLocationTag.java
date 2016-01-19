@@ -97,6 +97,9 @@ public class SourceLocationTag implements Comparable<SourceLocationTag>, Seriali
 
 	@Override
 	public int compareTo(SourceLocationTag other) {
+		if (other == null)
+			return 1;
+		
 		int clzCompare = clz.toString().compareTo(other.getClz().toString()); 
 		
 		if (clzCompare != 0)
