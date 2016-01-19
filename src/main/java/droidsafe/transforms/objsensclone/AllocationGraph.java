@@ -117,6 +117,19 @@ public class AllocationGraph {
         System.out.println("*************");
          */
     }
+    
+    /**
+     * @return The total complexity of all classes.
+     */
+    public long getTotalComplexity() {
+    	long total = 0;
+    	
+    	for (Map.Entry<SootClass, Integer> entry : complexityMap.entrySet()) {
+    		total += entry.getValue();
+    	}
+    	
+    	return total;
+    }
 
     public String getGraphStats() {
         long totalInDegree = 0;

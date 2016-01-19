@@ -171,12 +171,16 @@ public class SparkPTA extends PTABridge {
     protected void releaseInternal() {
     }
 
+    public AllocationGraph getAllocationGraph() {
+    	return ag;
+    }
+    
     @Override
     protected void runInternal() {
         //only build allocation graph and calc complexity if we want to limit
         //context for complex classes
-        if (Config.v().limitcontextforcomplex) {
-            ag = new AllocationGraph();
+    	  ag = new AllocationGraph();
+        if (Config.v().limitcontextforcomplex) {          
             ag.dumpComplexity();
         }
         

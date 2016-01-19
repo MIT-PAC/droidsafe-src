@@ -66,6 +66,7 @@ import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph.CallToTarget;
 import droidsafe.analyses.infoflow.InfoValue;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.pta.PTABridge;
+import droidsafe.analyses.pta.SparkPTA;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
@@ -111,6 +112,8 @@ public class PTAPaper {
 
             fw.write(refinementStats.toString());
 
+            fw.write("Total complexity: " + ((SparkPTA)SparkPTA.v()).getAllocationGraph().getTotalComplexity() + "\n");
+            
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());
 
