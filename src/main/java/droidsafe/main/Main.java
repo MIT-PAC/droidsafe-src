@@ -73,6 +73,7 @@ import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.transforms.NativeMethodBuilder;
 import droidsafe.transforms.ObjectGetClassToClassConstant;
+import droidsafe.transforms.objsensclone.AllocationGraph;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.transforms.RemoveStupidOverrides;
@@ -862,8 +863,9 @@ public class Main {
 
         logger.info("Caching Jimple Hierarchy Relationships...");
         monitor.subTask("Caching Jimple Hierarchy Relationships...");
-        JimpleRelationships.reset();
+        JimpleRelationships.reset();        
         JimpleRelationships.v();
+        AllocationGraph.update();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;

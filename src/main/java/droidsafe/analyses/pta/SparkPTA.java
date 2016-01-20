@@ -132,7 +132,6 @@ public class SparkPTA extends PTABridge {
     private Set<AllocNode> allAllocNodes;
     /** how many times have we been run? */
     private static int runCount = 1;
-    private AllocationGraph ag;
 
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
@@ -171,19 +170,9 @@ public class SparkPTA extends PTABridge {
     protected void releaseInternal() {
     }
 
-    public AllocationGraph getAllocationGraph() {
-    	return ag;
-    }
-    
+
     @Override
-    protected void runInternal() {
-        //only build allocation graph and calc complexity if we want to limit
-        //context for complex classes
-    	  ag = new AllocationGraph();
-        if (Config.v().limitcontextforcomplex) {          
-            ag.dumpComplexity();
-        }
-        
+    protected void runInternal() {   
         //don't print crap to screen!
         G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
@@ -875,10 +864,15 @@ public class SparkPTA extends PTABridge {
     }
     
     private void limitComplexity(StringBuffer buf) {
+    	//only run if the allocation graph has been computed, which must come after at least one run of 
+    	//the pta
+    	if (AllocationGraph.v() == null)
+    		return;
+    	
         if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
             buf.append(',');
         
-        for (Map.Entry<SootClass, Integer> e : ag.getComplexityMap().entrySet()) {
+        for (Map.Entry<SootClass, Long> e : AllocationGraph.v().getComplexityMap().entrySet()) {
             if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
                 continue;
             

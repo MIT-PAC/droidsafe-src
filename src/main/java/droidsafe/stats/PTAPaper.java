@@ -72,6 +72,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
+import droidsafe.transforms.objsensclone.AllocationGraph;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
@@ -112,7 +113,7 @@ public class PTAPaper {
 
             fw.write(refinementStats.toString());
 
-            fw.write("Total complexity (including API): " + ((SparkPTA)SparkPTA.v()).getAllocationGraph().getTotalComplexity() + "\n");
+            fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");
             fw.write(appComplexity() + "\n");
             
             //write final run of pta
@@ -135,7 +136,7 @@ public class PTAPaper {
     private static String appComplexity() {
     	long totalAppComplexity = 0;
     	
-    	for (Map.Entry<SootClass,Integer> entry : ((SparkPTA)SparkPTA.v()).getAllocationGraph().getComplexityMap().entrySet()) {
+    	for (Map.Entry<SootClass,Long> entry : AllocationGraph.v().getComplexityMap().entrySet()) {
     		if (!API.v().isSystemClass(entry.getKey())) {
     			totalAppComplexity += entry.getValue();
     		}

@@ -126,7 +126,7 @@ public abstract class PTABridge {
     
     /** Internal run method for implementing analysis */
     protected abstract void runInternal();
-
+    
     /** 
      * Return true if we should ignore this class for stats gathering.
      */
