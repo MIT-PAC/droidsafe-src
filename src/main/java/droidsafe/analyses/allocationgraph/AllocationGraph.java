@@ -204,7 +204,7 @@ public class AllocationGraph {
 		int refLocals = 0;
 		try {
 		for (SootMethod method : clz.getMethods()) {
-			if (PTABridge.v().isReachableMethod(method)) {
+			if (!method.isStatic() && PTABridge.v().isReachableMethod(method)) {
 				for (Local local : method.retrieveActiveBody().getLocals()) {
 					if (local.getType() instanceof RefLikeType)
 						refLocals++;
