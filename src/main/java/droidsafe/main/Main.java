@@ -866,6 +866,7 @@ public class Main {
         JimpleRelationships.reset();        
         JimpleRelationships.v();
         AllocationGraph.update();
+        System.out.println("Total complexity: " + AllocationGraph.v().getTotalComplexity());
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
