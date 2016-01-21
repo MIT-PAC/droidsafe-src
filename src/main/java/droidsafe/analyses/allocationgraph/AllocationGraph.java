@@ -192,7 +192,9 @@ public class AllocationGraph {
 		
 		//maybe multiply by fields * reachable methods??
 		
-		return numContexts * (reachableNewArrayExprs.get(clz).value() + 1);
+		return numContexts * 
+				((reachableNewArrayExprs.get(clz) == null ? 0 :
+					reachableNewArrayExprs.get(clz).value()) + 1);
 	}
 
 
