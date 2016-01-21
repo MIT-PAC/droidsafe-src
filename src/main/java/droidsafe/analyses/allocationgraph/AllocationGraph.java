@@ -54,9 +54,12 @@ import droidsafe.main.Config;
 import droidsafe.utils.MutableInt;
 import droidsafe.utils.SootUtils;
 import soot.Body;
+import soot.Local;
+import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
+import soot.SootField;
 import soot.SootMethod;
 import soot.Value;
 import soot.ValueBox;
@@ -90,7 +93,7 @@ public class AllocationGraph {
 	/** map of class to string constants in reachable methods */    
 	private Map<SootClass, Set<String>> reachableStringConsts;
 	private Map<SootClass, Long> complexityMap;
-	
+			
 	/* Graph Structures */
 	Set<SootClass> vertices;
 	Map<AllocGraphEdge, AllocGraphEdge> edges;	
@@ -190,11 +193,32 @@ public class AllocationGraph {
 	private long calcComplexity(SootClass clz) {
 		long numContexts = calcNumberOfContexts(clz, 0, Config.v().kobjsens);
 		
-		//maybe multiply by fields * reachable methods??
+		int instanceRefFields = 0;
+		//maybe multiply by reference instance fields + local fields
+		for (SootField field : clz.getFields()) {
+			if (!field.isStatic() && field.getType() instanceof RefLikeType) {
+				instanceRefFields++;
+			}
+		}
 		
-		return numContexts * 
-				((reachableNewArrayExprs.get(clz) == null ? 0 :
-					reachableNewArrayExprs.get(clz).value()) + 1);
+		int refLocals = 0;
+		try {
+		for (SootMethod method : clz.getMethods()) {
+			if (PTABridge.v().isReachableMethod(method)) {
+				for (Local local : method.retrieveActiveBody().getLocals()) {
+					if (local.getType() instanceof RefLikeType)
+						refLocals++;
+				}
+			}
+		} 
+		} catch (Exception e) {
+			//ignore issue with body
+		}
+		
+		long singleContextComplexity = (reachableNewArrayExprs.get(clz) == null ? 0 :
+			reachableNewArrayExprs.get(clz).value()) + refLocals + instanceRefFields;  
+		
+		return numContexts * (singleContextComplexity == 0 ? 1 : singleContextComplexity);
 	}
 
 
