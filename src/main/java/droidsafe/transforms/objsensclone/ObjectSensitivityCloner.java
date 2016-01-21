@@ -21,6 +21,7 @@
 
 package droidsafe.transforms.objsensclone;
 
+import droidsafe.analyses.allocationgraph.AllocationGraph;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;

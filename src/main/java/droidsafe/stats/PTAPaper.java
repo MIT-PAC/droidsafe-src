@@ -61,6 +61,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ObjectSensitiveConfig;
 import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.RCFGToSSL;
+import droidsafe.analyses.allocationgraph.AllocationGraph;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph;
 import droidsafe.analyses.cg.collapsedcg.CollaspedCallGraph.CallToTarget;
 import droidsafe.analyses.infoflow.InfoValue;
@@ -72,7 +73,6 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
-import droidsafe.transforms.objsensclone.AllocationGraph;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
@@ -115,6 +115,7 @@ public class PTAPaper {
 
             fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");
             fw.write(appComplexity() + "\n");
+            AllocationGraph.v().dumpComplexity();
             
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());
