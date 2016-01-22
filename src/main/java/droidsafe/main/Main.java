@@ -556,7 +556,7 @@ public class Main {
     }
     
     private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
-    	 afterTransformFast(monitor, false);
+    	 afterTransformMedium(monitor, false);
              	
     	 PTAPaper.adaptiveEstimate = AllocationGraph.v().estimtateMethodContexts();
     }

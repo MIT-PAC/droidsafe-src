@@ -34,6 +34,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,6 +60,8 @@ import soot.jimple.StmtBody;
 import soot.jimple.spark.SparkEvaluator;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ObjectSensitiveConfig;
+import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.allocationgraph.AllocationGraph;
@@ -74,6 +77,7 @@ import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.utils.JimpleRelationships;
+import droidsafe.utils.MutableInt;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
@@ -83,11 +87,65 @@ public class PTAPaper {
     public static double infoFlowTimeSec;
     public static long adaptiveEstimate = 0;
 
-
+    public static void writeCSEdgesSummary() {
+    	Map<SootMethod, MutableInt> countCSSource = new HashMap<SootMethod,MutableInt>();
+    	Map<SootMethod, MutableInt> countCSTarget = new HashMap<SootMethod,MutableInt>();
+    	
+    	for (MethodOrMethodContext reachable : PTABridge.v().getReachableMethodContexts()) {
+    		if (!countCSSource.containsKey(reachable.method()))
+    			countCSSource.put(reachable.method(), new MutableInt(0));
+    		
+    		if (!countCSTarget.containsKey(reachable.method()))
+    			countCSTarget.put(reachable.method(), new MutableInt(0));
+    		    		    	
+    		Iterator<Edge> into = PTABridge.v().getCallGraph().edgesInto(reachable);
+    		int count = 0;
+    		while (into.hasNext()) {
+    			Edge e = into.next();
+    			count++;
+    		}
+    		countCSTarget.get(reachable.method()).add(count);
+    		
+	    	
+    		Iterator<Edge> outOf = PTABridge.v().getCallGraph().edgesOutOf(reachable);
+    		count = 0;
+    		while (outOf.hasNext()) {
+    			Edge e = outOf.next();
+    			count++;
+    		}
+    		countCSSource.get(reachable.method()).add(count);	    	
+    	}
+    	
+    	try {
+    		FileWriter sources = new FileWriter(Project.v().getOutputDir() + File.separator + "cs-cg-edges-source.csv");
+    		SortedSet<Map.Entry<SootMethod,MutableInt>> sourcedSorted = SootUtils.entriesSortedByValues(countCSSource);
+    		
+    		for (Map.Entry<SootMethod, MutableInt> entry : sourcedSorted) {
+    			sources.write(entry.getKey() + "," + entry.getValue().value() + "\n");
+    		}    		
+    		sources.close();
+    		
+    		
+    		FileWriter targets = new FileWriter(Project.v().getOutputDir() + File.separator + "cs-cg-edges-target.csv");
+    		SortedSet<Map.Entry<SootMethod,MutableInt>> targetsSorted = SootUtils.entriesSortedByValues(countCSSource);
+    		
+    		for (Map.Entry<SootMethod, MutableInt> entry : targetsSorted) {
+    			targets.write(entry.getKey() + "," + entry.getValue().value() + "\n");
+    		}    		
+    		targets.close();
+    		    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    }
+    
     public static void writeReport() {
         //make sure collapsed call graph has been run       
         CollaspedCallGraph.v();
 
+        writeCSEdgesSummary();
+        
         FileWriter fw;
         try {
             String name = "";
