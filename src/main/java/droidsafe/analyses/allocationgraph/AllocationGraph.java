@@ -61,6 +61,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Unit;
 import soot.Value;
 import soot.ValueBox;
 import soot.jimple.AssignStmt;
@@ -69,6 +70,7 @@ import soot.jimple.NewExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.Options;
 import soot.util.Chain;
 
@@ -93,13 +95,13 @@ public class AllocationGraph {
 	/** map of class to string constants in reachable methods */    
 	private Map<SootClass, Set<String>> reachableStringConsts;
 	private Map<SootClass, Long> complexityMap;
-			
+
 	/* Graph Structures */
 	Set<SootClass> vertices;
 	Map<AllocGraphEdge, AllocGraphEdge> edges;	
 	Map<SootClass, Set<AllocGraphEdge>> incomingEdges;
 	Map<SootClass, Set<AllocGraphEdge>> outgoingEdges;
-	
+
 	private static AllocationGraph v;
 
 	public static AllocationGraph v() {		
@@ -118,7 +120,7 @@ public class AllocationGraph {
 		edges = new HashMap<AllocGraphEdge,AllocGraphEdge>();
 		incomingEdges = new HashMap<SootClass,Set<AllocGraphEdge>>();
 		outgoingEdges = new HashMap<SootClass,Set<AllocGraphEdge>>();
-		
+
 		classToNewExprs = new HashMap<SootClass, Set<NewExpr>>();
 		reachableNewArrayExprs = new HashMap<SootClass, MutableInt>();
 		reachableStringConsts = new HashMap<SootClass, Set<String>>();
@@ -141,7 +143,7 @@ public class AllocationGraph {
         System.out.println("*************");
 		 */
 	}
-	
+
 	/**
 	 * @return The total complexity of all classes.
 	 */
@@ -174,7 +176,7 @@ public class AllocationGraph {
 		long sum = 0;
 
 		for (AllocGraphEdge edge : incomingEdges.get(current)) {
-			
+
 			sum += edge.getStaticWeight();
 
 			//non-static edge
@@ -192,7 +194,7 @@ public class AllocationGraph {
 
 	private long calcComplexity(SootClass clz) {
 		long numContexts = calcNumberOfContexts(clz, 0, Config.v().kobjsens);
-		
+		/*
 		int instanceRefFields = 0;
 		//maybe multiply by reference instance fields + local fields
 		for (SootField field : clz.getFields()) {
@@ -200,25 +202,27 @@ public class AllocationGraph {
 				instanceRefFields++;
 			}
 		}
-		
+
 		int refLocals = 0;
 		try {
-		for (SootMethod method : clz.getMethods()) {
-			if (!method.isStatic() && PTABridge.v().isReachableMethod(method)) {
-				for (Local local : method.retrieveActiveBody().getLocals()) {
-					if (local.getType() instanceof RefLikeType)
-						refLocals++;
+			for (SootMethod method : clz.getMethods()) {
+				if (!method.isStatic() && PTABridge.v().isReachableMethod(method)) {
+					for (Local local : method.retrieveActiveBody().getLocals()) {
+						if (local.getType() instanceof RefLikeType)
+							refLocals++;
+					}
 				}
-			}
-		} 
+			} 
 		} catch (Exception e) {
 			//ignore issue with body
 		}
-		
-		long singleContextComplexity = (reachableNewArrayExprs.get(clz) == null ? 0 :
-			reachableNewArrayExprs.get(clz).value()) + refLocals + instanceRefFields;  
-		
-		return numContexts * (singleContextComplexity == 0 ? 1 : singleContextComplexity);
+
+		 */
+
+		//long singleContextComplexity = (reachableNewArrayExprs.get(clz) == null ? 0 :
+		//	reachableNewArrayExprs.get(clz).value());  
+
+		return numContexts;// * (singleContextComplexity == 0 ? 1 : singleContextComplexity);
 	}
 
 
@@ -236,6 +240,35 @@ public class AllocationGraph {
 		}
 	}
 
+	public long estimtateMethodContexts() {
+		long sum = 0;
+
+		for (SootClass clz : vertices) {
+			Long targetComp = complexityMap.containsKey(clz) ? complexityMap.get(clz) : (long) 1;
+			
+			for (SootMethod method : clz.getMethods()) {
+				if (!PTABridge.v().isReachableMethod(method))
+					continue;
+
+				
+
+				Set<SootMethod> callingMethods = new HashSet<SootMethod>();
+				for (Edge edge : PTABridge.v().incomingEdges(method)) {
+					callingMethods.add(edge.src());
+				}
+					
+				for (SootMethod callingMethod : callingMethods) {
+					SootClass sourceClass = callingMethod.getDeclaringClass();
+					Long sourceComp = complexityMap.containsKey(sourceClass) ? complexityMap.get(sourceClass) : (long) 1;
+
+					sum += (sourceComp * targetComp);
+				}
+			}
+
+		}
+		return sum;
+	}
+
 	public void dumpComplexity() {
 		try (FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "alloc-complexity.csv")){
 			for (SootClass clz : vertices) {
@@ -246,36 +279,36 @@ public class AllocationGraph {
 
 		}
 	}
-	
+
 	private void recordAllocation(SootClass enclosing, SootClass allocated, boolean isStatic) {
 		if (vertices.add(enclosing)) {
 			//vertex did not exist
 			incomingEdges.put(enclosing, new HashSet<AllocGraphEdge>());
 			outgoingEdges.put(enclosing, new HashSet<AllocGraphEdge>());
 		}
-		
+
 		if (vertices.add(allocated)) {
 			//vertex did not exist
 			incomingEdges.put(allocated, new HashSet<AllocGraphEdge>());
 			outgoingEdges.put(allocated, new HashSet<AllocGraphEdge>());
 		}
-		
+
 		AllocGraphEdge probe = new AllocGraphEdge(enclosing, allocated);
 		if (!edges.containsKey(probe)) {
 			edges.put(probe, probe);						
 			incomingEdges.get(allocated).add(probe);
 			outgoingEdges.get(enclosing).add(probe);
 		}
-		
+
 		AllocGraphEdge edge = edges.get(probe);
-		
+
 		if (isStatic)
 			edge.incrementStaticWeight();
 		else 
 			edge.incrementVirtualWeight();			
-		
+
 	}
-	
+
 	private void updateAllocationGraph(SootMethod method) {
 		if (method.isAbstract() || !method.isConcrete())
 			return;
@@ -297,14 +330,12 @@ public class AllocationGraph {
 				if (assign.getRightOp() instanceof NewExpr) {
 					NewExpr newExpr = (NewExpr)assign.getRightOp();
 					SootClass newClass = newExpr.getBaseType().getSootClass();
-					//is exception?
-					if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {                  
-						recordAllocation(enclosingClass, newClass, method.isStatic());
-						
-						if (!classToNewExprs.containsKey(newClass)) 
-							classToNewExprs.put(newClass, new HashSet<NewExpr>());
-						classToNewExprs.get(newClass).add(newExpr);
-					}
+					recordAllocation(enclosingClass, newClass, method.isStatic());
+
+					if (!classToNewExprs.containsKey(newClass)) 
+						classToNewExprs.put(newClass, new HashSet<NewExpr>());
+					classToNewExprs.get(newClass).add(newExpr);
+
 				} else if (assign.getRightOp() instanceof NewArrayExpr) {
 					//count new array exprs
 					MutableInt count = reachableNewArrayExprs.get(enclosingClass);
@@ -343,7 +374,7 @@ public class AllocationGraph {
 			updateAllocationGraph(method);  
 		}
 	}
-	
+
 
 	/**
 	 * Compare soot classes based on their name.

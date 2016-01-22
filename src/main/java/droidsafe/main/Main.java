@@ -318,6 +318,8 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
+        
+        adaptiveConfiguration(monitor);
 
         driverMsg("Resolving String Constants");
         monitor.subTask("Resolving String Constants");
@@ -551,6 +553,12 @@ public class Main {
         
         monitor.worked(1);       
         return DroidsafeExecutionStatus.OK_STATUS;
+    }
+    
+    private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
+    	 afterTransformFast(monitor, false);
+             	
+    	 PTAPaper.adaptiveEstimate = AllocationGraph.v().estimtateMethodContexts();
     }
 
     private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {

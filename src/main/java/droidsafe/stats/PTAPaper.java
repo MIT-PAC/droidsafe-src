@@ -81,6 +81,7 @@ public class PTAPaper {
 
     public static StringBuffer refinementStats = new StringBuffer(); 
     public static double infoFlowTimeSec;
+    public static long adaptiveEstimate = 0;
 
 
     public static void writeReport() {
@@ -112,10 +113,11 @@ public class PTAPaper {
             fw.write("Cmdline supplied extra info: " + Config.v().additionalInfo + "\n");
 
             fw.write(refinementStats.toString());
-
+            fw.write("Adaptive Estimate: " + adaptiveEstimate + "\n");
             fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");
             fw.write(appComplexity() + "\n");
             AllocationGraph.v().dumpComplexity();
+            
             
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());
