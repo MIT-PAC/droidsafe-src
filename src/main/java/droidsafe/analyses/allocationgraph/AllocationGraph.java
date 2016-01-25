@@ -55,6 +55,7 @@ import droidsafe.utils.MutableInt;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.Local;
+import soot.MethodOrMethodContext;
 import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
@@ -226,7 +227,7 @@ public class AllocationGraph {
 	}
 
 
-	public Long getComplexity(SootClass clz) {
+	public long getComplexity(SootClass clz) {
 		return complexityMap.get(clz);
 	}
 
@@ -244,23 +245,26 @@ public class AllocationGraph {
 		long sum = 0;
 
 		for (SootClass clz : vertices) {
-			Long targetComp = complexityMap.containsKey(clz) ? complexityMap.get(clz) : (long) 1;
-			
+			long targetComp = complexityMap.containsKey(clz) ? complexityMap.get(clz) : (long) 1;
+			//System.out.println("Target: " + targetComp);
+
 			for (SootMethod method : clz.getMethods()) {
 				if (!PTABridge.v().isReachableMethod(method))
 					continue;
 
-				
+
 
 				Set<SootMethod> callingMethods = new HashSet<SootMethod>();
-				for (Edge edge : PTABridge.v().incomingEdges(method)) {
-					callingMethods.add(edge.src());
+				for (MethodOrMethodContext momc : PTABridge.v().getMethodContexts(method)) {
+					for (Edge edge : PTABridge.v().incomingEdges(momc)) {
+						callingMethods.add(edge.src());
+					}
 				}
-					
+
 				for (SootMethod callingMethod : callingMethods) {
 					SootClass sourceClass = callingMethod.getDeclaringClass();
-					Long sourceComp = complexityMap.containsKey(sourceClass) ? complexityMap.get(sourceClass) : (long) 1;
-
+					long sourceComp = complexityMap.containsKey(sourceClass) ? complexityMap.get(sourceClass) : (long) 1;
+					//System.out.println("Source: " + sourceComp);
 					sum += (sourceComp * targetComp);
 				}
 			}

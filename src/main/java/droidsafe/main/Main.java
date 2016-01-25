@@ -558,7 +558,10 @@ public class Main {
     private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
     	 afterTransformMedium(monitor, false);
              	
-    	 PTAPaper.adaptiveEstimate = AllocationGraph.v().estimtateMethodContexts();
+    	 long ae = AllocationGraph.v().estimtateMethodContexts();
+    	 System.out.println("Adaptive Estimate: " + ae);
+    	 PTAPaper.adaptiveEstimate = ae;
+    	 
     }
 
     private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
