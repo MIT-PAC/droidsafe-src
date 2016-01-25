@@ -308,6 +308,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
+        //1
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -331,7 +332,7 @@ public class Main {
 
         if (Config.v().addFallbackModeling) {
             //fallback modeling...
-
+        	//3
             if (afterTransformPrecise(monitor, false, 2) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -401,6 +402,7 @@ public class Main {
         if (Config.v().addFallbackModeling) {
             driverMsg("Inserting Unmodeled Objects...");
             monitor.subTask("Inserting Unmodeled Objects...");
+            //calls pta precise
             InsertUnmodeledObjects.v().run(monitor);
             monitor.worked(1);
             if (monitor.isCanceled()) {
@@ -411,6 +413,7 @@ public class Main {
 
 
         //account for any transformations
+        //5
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -558,9 +561,10 @@ public class Main {
     private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
     	 afterTransformMedium(monitor, false);
              	
-    	 long ae = AllocationGraph.v().estimtateMethodContexts();
-    	 System.out.println("Adaptive Estimate: " + ae);
-    	 PTAPaper.adaptiveEstimate = ae;
+    	 //long ae = AllocationGraph.v().estimtateMethodContexts();
+    	 System.out.println("Adaptive Estimate: " + PTABridge.v().getCallGraph().size());
+    	 PTAPaper.adaptiveEstimate = PTABridge.v().getCallGraph().size();
+    	 
     	 
     }
 
@@ -733,6 +737,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
+    	//3
         if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -760,6 +765,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //need this pta run to account for jsa injection and class / forname
+        //4
         if (afterTransformPrecise(monitor, true, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         monitor.worked(1);
