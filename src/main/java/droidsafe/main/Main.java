@@ -559,6 +559,7 @@ public class Main {
     }
     
     private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
+    	/*
     	  Map<String,String> opts = new HashMap<String,String>();
 
           if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
@@ -569,8 +570,9 @@ public class Main {
               opts.put("kobjsens-extra-array-context", "false");
               opts.put("kobjsens-types-for-context", "true"); 
           } 
-
-         afterTransform(monitor, false, opts);
+    	 */
+         afterTransformPrecise(monitor, false, 2);
+          
              	
     	 //long ae = AllocationGraph.v().estimtateMethodContexts();
     	 System.out.println("Adaptive Estimate: " + PTABridge.v().getCallGraph().size());
