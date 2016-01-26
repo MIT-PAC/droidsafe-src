@@ -6046,11 +6046,8 @@ public void invalidate() {
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Handler getHandler(){
 		// Original method
-        if (mAttachInfo != null) {
-            return mAttachInfo.mHandler;
-        }
-        return null;
-	}
+        return new Handler();
+    }
     
     static class TransformationInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:37.445 -0500", hash_original_field = "2E905ABA253A50CD5326C99795B09381", hash_generated_field = "D632FEE6EB1660D61E8B851D372C57FD")

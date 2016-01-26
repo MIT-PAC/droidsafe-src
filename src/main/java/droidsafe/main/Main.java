@@ -559,19 +559,19 @@ public class Main {
     }
     
     private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
-    	/*
+    	
     	  Map<String,String> opts = new HashMap<String,String>();
 
           if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
               //build fast options for spark
-              opts.put("merge-stringbuffer","true");   
+              opts.put("merge-stringbuffer","false");   
               //opts.put("string-constants","false");   
               opts.put("kobjsens", "2");
-              opts.put("kobjsens-extra-array-context", "false");
+              opts.put("kobjsens-extra-array-context", "true");
               opts.put("kobjsens-types-for-context", "true"); 
           } 
-    	 */
-         afterTransformPrecise(monitor, false, 2);
+    	 
+         afterTransform(monitor, false, opts);
           
              	
     	 //long ae = AllocationGraph.v().estimtateMethodContexts();
