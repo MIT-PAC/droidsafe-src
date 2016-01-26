@@ -87,7 +87,7 @@ public class PTAPaper {
     public static double infoFlowTimeSec;
     public static long adaptiveEstimate = 0;
 
-    public static void writeCSEdgesSummary() {
+    public static void writeCSEdgesSummary(String prefix) {
     	Map<SootMethod, MutableInt> countCSSource = new HashMap<SootMethod,MutableInt>();
     	Map<SootMethod, MutableInt> countCSTarget = new HashMap<SootMethod,MutableInt>();
     	
@@ -117,7 +117,7 @@ public class PTAPaper {
     	}
     	
     	try {
-    		FileWriter sources = new FileWriter(Project.v().getOutputDir() + File.separator + "cs-cg-edges-source.csv");
+    		FileWriter sources = new FileWriter(Project.v().getOutputDir() + File.separator + prefix + "cs-cg-edges-source.csv");
     		SortedSet<Map.Entry<SootMethod,MutableInt>> sourcedSorted = SootUtils.entriesSortedByValues(countCSSource);
     		
     		for (Map.Entry<SootMethod, MutableInt> entry : sourcedSorted) {
@@ -126,7 +126,7 @@ public class PTAPaper {
     		sources.close();
     		
     		
-    		FileWriter targets = new FileWriter(Project.v().getOutputDir() + File.separator + "cs-cg-edges-target.csv");
+    		FileWriter targets = new FileWriter(Project.v().getOutputDir() + File.separator + prefix +"cs-cg-edges-target.csv");
     		SortedSet<Map.Entry<SootMethod,MutableInt>> targetsSorted = SootUtils.entriesSortedByValues(countCSSource);
     		
     		for (Map.Entry<SootMethod, MutableInt> entry : targetsSorted) {
@@ -144,7 +144,7 @@ public class PTAPaper {
         //make sure collapsed call graph has been run       
         CollaspedCallGraph.v();
 
-        writeCSEdgesSummary();
+        writeCSEdgesSummary("final_");
         
         FileWriter fw;
         try {

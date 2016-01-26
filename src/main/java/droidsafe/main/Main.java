@@ -559,13 +559,22 @@ public class Main {
     }
     
     private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
-    	 afterTransformMedium(monitor, false);
+    	  Map<String,String> opts = new HashMap<String,String>();
+
+          if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
+              //build fast options for spark
+              opts.put("merge-stringbuffer","true");   
+              //opts.put("string-constants","false");   
+              opts.put("kobjsens", "2");
+              opts.put("kobjsens-extra-array-context", "false");
+              opts.put("kobjsens-types-for-context", "true"); 
+          } 
+
+         afterTransform(monitor, false, opts);
              	
     	 //long ae = AllocationGraph.v().estimtateMethodContexts();
     	 System.out.println("Adaptive Estimate: " + PTABridge.v().getCallGraph().size());
     	 PTAPaper.adaptiveEstimate = PTABridge.v().getCallGraph().size();
-    	 
-    	 
     }
 
     private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
