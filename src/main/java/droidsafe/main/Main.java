@@ -308,7 +308,6 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        //1
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -319,9 +318,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
-        adaptiveConfiguration(monitor);
-
+       
         driverMsg("Resolving String Constants");
         monitor.subTask("Resolving String Constants");
         ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
@@ -332,7 +329,6 @@ public class Main {
 
         if (Config.v().addFallbackModeling) {
             //fallback modeling...
-        	//3
             if (afterTransformPrecise(monitor, false, 2) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -413,7 +409,6 @@ public class Main {
 
 
         //account for any transformations
-        //5
         if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -556,28 +551,7 @@ public class Main {
         
         monitor.worked(1);       
         return DroidsafeExecutionStatus.OK_STATUS;
-    }
-    
-    private static void adaptiveConfiguration(IDroidsafeProgressMonitor monitor) {
-    	
-    	  Map<String,String> opts = new HashMap<String,String>();
-
-          if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
-              //build fast options for spark
-              opts.put("merge-stringbuffer","false");   
-              //opts.put("string-constants","false");   
-              opts.put("kobjsens", "2");
-              opts.put("kobjsens-extra-array-context", "true");
-              opts.put("kobjsens-types-for-context", "true"); 
-          } 
-    	 
-         afterTransform(monitor, false, opts);
-          
-             	
-    	 //long ae = AllocationGraph.v().estimtateMethodContexts();
-    	 System.out.println("Adaptive Estimate: " + PTABridge.v().getCallGraph().size());
-    	 PTAPaper.adaptiveEstimate = PTABridge.v().getCallGraph().size();
-    }
+    }    
 
     private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
         if (Config.v().infoFlow) {
@@ -748,8 +722,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
-    	//3
-        if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+    	if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Injecting String Analysis Results.");
@@ -776,7 +749,6 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //need this pta run to account for jsa injection and class / forname
-        //4
         if (afterTransformPrecise(monitor, true, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         monitor.worked(1);
@@ -894,7 +866,6 @@ public class Main {
         JimpleRelationships.reset();        
         JimpleRelationships.v();
         AllocationGraph.update();
-        System.out.println("Total complexity: " + AllocationGraph.v().getTotalComplexity());
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -951,84 +922,6 @@ public class Main {
             throw new IllegalStateException();
         }
     }
-
-
-    //used for eng 4 to find concrete methods for each method in white team list
-    //TODO: MOVE OUT OF HERE AS SOON AS ENGAGEMENT IS OVER
-    public static void dumpConcreteMethods() {
-        int synthetic = 0;
-        try {
-            FileWriter fw = new FileWriter("eng4-concrete-calls.txt");
-            BufferedReader br = new BufferedReader(new FileReader("/Users/mgordon/research/droidsafe/engagements/4a/calls_by_name.txt"));
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                // process the line.
-
-                //break up the line
-                String[] splitted = line.split(" ");
-                String clazzName = splitted[0];
-                String methodName = splitted[1];
-
-                if ("<init>".equals(methodName))
-                    continue;
-
-                //now search for method in class and all ancestors
-                SootClass sc = Scene.v().getSootClass(clazzName);
-
-
-                Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
-                soot.Hierarchy hierarchy = Scene.v().getActiveHierarchy();
-
-                if (sc.isInterface()) {
-
-                    Collection<SootClass> implementors = hierarchy.getImplementersOf(sc);
-                    for (SootClass implementor : implementors) {
-                        //now get all superclasses 
-                        possibleTargets.addAll(getAllTargetMethodsPrecise(implementor, methodName));
-                    }
-
-                } else {       
-                    possibleTargets.addAll(getAllTargetMethodsPrecise(sc, methodName));
-
-                    //search down for concrete calls in subclasses
-                    for (SootClass subclass : hierarchy.getSubclassesOfIncluding(sc)) {
-                        for (SootMethod sm : subclass.getMethods()) {
-                            if (sm.getName().equals(methodName)) {
-                                possibleTargets.add(sm);
-                            }
-                        }
-
-                    }
-                }
-
-                //write only empty
-                //if (possibleTargets.isEmpty()) {
-                //    fw.write(line + "\n");
-                // }
-
-
-                //write all
-                fw.write(line + "\n");
-                for (SootMethod method : possibleTargets) {
-                    if (SootUtils.isSynthetic(method)) {
-                        synthetic++;
-                        continue;
-                    }
-                    fw.write("\t" + method + "\n");
-                }
-
-            }
-
-            br.close();
-            fw.close(); 
-
-        } catch (Exception e) {
-            logger.error("Problem with concrete search: ", e);
-        }
-        System.out.println("Synthetic: " + synthetic);  
-    }
-
 
 
     private static Collection<SootMethod> getAllTargetMethodsPrecise(SootClass sc, String methodName) {

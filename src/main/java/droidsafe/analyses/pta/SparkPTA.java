@@ -132,6 +132,11 @@ public class SparkPTA extends PTABridge {
     private Set<AllocNode> allAllocNodes;
     /** how many times have we been run? */
     private static int runCount = 1;
+    
+    /** if option limitcontextforcomplex then limit the context for this percent of the 
+     * classes.  Higher number will limit more context, be more scaleable but less precise.
+     */
+    private static final double PERCENTAGE_TO_LIMIT_COMPLEXITY = 0.5;
 
     /** comma separated list of classes in which no matter what the length of k
      * for object sensitivity, we want to limit the depth of the object sensitivity 
@@ -768,8 +773,8 @@ public class SparkPTA extends PTABridge {
      * Run context insensitive spark analysis.
      */
     void setSparkPointsToAnalysis() {
-        logger.info("[spark] Starting analysis ...");
-
+        logger.info("Starting points-to analysis ...");
+        
         HashMap<String, String> opt = new HashMap<String, String>();
         opt.put("enabled","true");
         opt.put("verbose","false");
@@ -865,22 +870,26 @@ public class SparkPTA extends PTABridge {
     
     private void limitComplexity(StringBuffer buf) {
     	//only run if the allocation graph has been computed, which must come after at least one run of 
-    	//the pta
+    	//the pta    
     	if (AllocationGraph.v() == null)
     		return;
     	
-        if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
+    	if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
             buf.append(',');
         
-        for (Map.Entry<SootClass, Long> e : AllocationGraph.v().getComplexityMap().entrySet()) {
+        double totalClasses = AllocationGraph.v().getComplexityMap().keySet().size();
+        double limitedClasses = 0;
+        for (Map.Entry<SootClass, Long> e : SootUtils.sortByValue(AllocationGraph.v().getComplexityMap()).entrySet()) {
+        	limitedClasses ++;
             if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
                 continue;
             
-            if (e.getValue().intValue() > 50000) {
-                buf.append(e.getKey() + ",");
-                System.out.println("limiting heap context for complex class: " + e.getKey());
-            }
-        }
+            buf.append(e.getKey() + ",");
+            logger.info("limiting heap context for complex class: {}", e.getKey());
+            
+            if (limitedClasses / totalClasses > PERCENTAGE_TO_LIMIT_COMPLEXITY)
+            	break;
+        }      
     }
 
     private void addGUIClasses(StringBuffer buf) {

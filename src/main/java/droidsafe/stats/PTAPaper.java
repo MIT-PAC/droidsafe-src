@@ -81,11 +81,16 @@ import droidsafe.utils.MutableInt;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
+/**
+ * Various statistics to print at end of analysis.
+ * 
+ * @author mgordon
+ *
+ */
 public class PTAPaper {
 
     public static StringBuffer refinementStats = new StringBuffer(); 
     public static double infoFlowTimeSec;
-    public static long adaptiveEstimate = 0;
 
     public static void writeCSEdgesSummary(String prefix) {
     	Map<SootMethod, MutableInt> countCSSource = new HashMap<SootMethod,MutableInt>();
@@ -144,7 +149,7 @@ public class PTAPaper {
         //make sure collapsed call graph has been run       
         CollaspedCallGraph.v();
 
-        writeCSEdgesSummary("final_");
+        //writeCSEdgesSummary("final_");
         
         FileWriter fw;
         try {
@@ -171,11 +176,8 @@ public class PTAPaper {
             fw.write("Cmdline supplied extra info: " + Config.v().additionalInfo + "\n");
 
             fw.write(refinementStats.toString());
-            fw.write("Adaptive Estimate: " + adaptiveEstimate + "\n");
-            fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");
-            fw.write(appComplexity() + "\n");
-            AllocationGraph.v().dumpComplexity();
-            
+    
+            fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");            
             
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());
@@ -192,19 +194,7 @@ public class PTAPaper {
         } catch (IOException e) {
 
         }
-    }
-    
-    private static String appComplexity() {
-    	long totalAppComplexity = 0;
-    	
-    	for (Map.Entry<SootClass,Long> entry : AllocationGraph.v().getComplexityMap().entrySet()) {
-    		if (!API.v().isSystemClass(entry.getKey())) {
-    			totalAppComplexity += entry.getValue();
-    		}
-    	}
-    	
-    	return "Total App Complexity: " + totalAppComplexity;
-    }
+    }    
 
     public static void appendPTATimeToRefinement() {
         String ptastats = SparkEvaluator.v().toString();

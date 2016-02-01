@@ -638,7 +638,7 @@ public class Config {
         }
         
         if (cmd.hasOption("limitcontextforcomplex")) {
-            this.limitcontextforcomplex = false;
+            this.limitcontextforcomplex = true;
         }
         
         if (cmd.hasOption("preciseinfoflow")) {
