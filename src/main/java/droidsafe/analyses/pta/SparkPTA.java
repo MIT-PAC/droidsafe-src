@@ -25,6 +25,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -35,6 +36,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.apache.commons.io.output.NullOutputStream;
@@ -879,13 +881,17 @@ public class SparkPTA extends PTABridge {
         
         double totalClasses = AllocationGraph.v().getComplexityMap().keySet().size();
         double limitedClasses = 0;
-        for (Map.Entry<SootClass, Long> e : SootUtils.sortByValue(AllocationGraph.v().getComplexityMap()).entrySet()) {
+        List<Entry<SootClass,Long>> keyList = 
+        		new ArrayList<Entry<SootClass,Long>>(SootUtils.sortByValue(AllocationGraph.v().getComplexityMap()).entrySet());
+        
+        for( int i = keyList.size() -1; i >= 0 ; i --) {
+        	Entry<SootClass,Long> e = keyList.get(i);
         	limitedClasses ++;
             if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
                 continue;
             
             buf.append(e.getKey() + ",");
-            logger.info("limiting heap context for complex class: {}", e.getKey());
+            logger.info("limiting heap context for complex class: {}, complexity {}", e.getKey(), e.getValue());
             
             if (limitedClasses / totalClasses > PERCENTAGE_TO_LIMIT_COMPLEXITY)
             	break;
