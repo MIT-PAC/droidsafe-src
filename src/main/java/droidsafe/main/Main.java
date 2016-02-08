@@ -31,6 +31,7 @@ import droidsafe.analyses.interapp.GenerateInterAppSourceFlows;
 import droidsafe.analyses.interapp.InjectInterAppFlows;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.analyses.pta.IntrospectiveAnalysis;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.CallGraphDumper;
@@ -811,6 +812,11 @@ public class Main {
 
 
     public static DroidsafeExecutionStatus afterTransformMedium(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+    	if (Config.v().limitcontextforcomplex) {
+    		IntrospectiveAnalysis.reset();
+    		IntrospectiveAnalysis.v().generateMetrics(monitor);
+    	}
+    	
         Map<String,String> opts = new HashMap<String,String>();
 
         if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
@@ -818,7 +824,7 @@ public class Main {
             opts.put("merge-stringbuffer","true");   
             opts.put("string-constants","true");   
             opts.put("kobjsens", "1");
-
+            
         } 
 
         return afterTransform(monitor, recordTime, opts);
@@ -827,6 +833,12 @@ public class Main {
 
 
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k) {
+    	
+    	if (Config.v().limitcontextforcomplex) {
+    		IntrospectiveAnalysis.reset();
+    		IntrospectiveAnalysis.v().generateMetrics(monitor);
+    	}
+    	
         Map<String,String> opts = new HashMap<String,String>();
 
         k = Math.min(k, Config.v().kobjsens);
@@ -865,7 +877,7 @@ public class Main {
         monitor.subTask("Caching Jimple Hierarchy Relationships...");
         JimpleRelationships.reset();        
         JimpleRelationships.v();
-        AllocationGraph.update();
+        //AllocationGraph.update();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;

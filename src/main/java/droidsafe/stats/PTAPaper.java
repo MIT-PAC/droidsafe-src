@@ -177,7 +177,7 @@ public class PTAPaper {
 
             fw.write(refinementStats.toString());
     
-            fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");            
+            //fw.write("Total complexity (including API): " + AllocationGraph.v().getTotalComplexity() + "\n");            
             
             //write final run of pta
             fw.write(SparkEvaluator.v().toString());

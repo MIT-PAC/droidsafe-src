@@ -28,6 +28,10 @@ public class MutableInt implements Comparable<MutableInt> {
     public void add(int i) {
     	value += i;
     }
+    
+    public String toString() {
+    	return value + "";
+    }
 
 	@Override
 	public int compareTo(MutableInt o) {

@@ -114,6 +114,7 @@ import droidsafe.android.system.API;
 import droidsafe.main.Config;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.MutableInt;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 
@@ -832,20 +833,22 @@ public class SparkPTA extends PTABridge {
 		opt.put("kobjsens-types-for-context", Boolean.toString(Config.v().typesForContext));       
 
 		if (Config.v().extraArrayContext)
-			opts.put("kobjsens-extra-array-context", "true"); 
+			opt.put("kobjsens-extra-array-context", "true"); 
 
 		StringBuffer limitHeapContext = new StringBuffer();
 
-		if (!Config.v().fullContextForGUI) { 
-			addGUIClasses(limitHeapContext);
-		}
+		if (!"0".equals(optionsInCode.get("kobjsens"))) {
+			if (!Config.v().fullContextForGUI) { 
+				addGUIClasses(limitHeapContext);
+			}
 
-		if (!Config.v().fullContextForStrings) {
-			addStringClasses(limitHeapContext);
-		} 
+			if (!Config.v().fullContextForStrings) {
+				addStringClasses(limitHeapContext);
+			} 
 
-		if (Config.v().limitcontextforcomplex) {
-			limitComplexity(limitHeapContext);
+			if (Config.v().limitcontextforcomplex) {
+				limitComplexity(limitHeapContext);
+			}
 		}
 
 
@@ -853,7 +856,7 @@ public class SparkPTA extends PTABridge {
 		opt.put("kobjsens-limit-heap-context", limitHeapContext.toString());
 
 		//now overwrite options with options that are passed in
-		for (Map.Entry<String, String> entry : opts.entrySet()) {
+		for (Map.Entry<String, String> entry : optionsInCode.entrySet()) {
 			opt.put(entry.getKey(), entry.getValue());
 		}
 
@@ -875,31 +878,15 @@ public class SparkPTA extends PTABridge {
 	}
 
 	private void limitComplexity(StringBuffer buf) {
-		//only run if the allocation graph has been computed, which must come after at least one run of 
-		//the pta    
-		if (AllocationGraph.v() == null)
-			return;
-
 		if (buf.length() > 0 && ',' != buf.charAt(buf.length() - 1))
-			buf.append(',');
+			buf.append(',');               
 
-		double totalClasses = AllocationGraph.v().getComplexityMap().keySet().size();
-		double limitedClasses = 0;
-		List<Entry<SootClass,Long>> keyList = 
-				new ArrayList<Entry<SootClass,Long>>(SootUtils.sortByValue(AllocationGraph.v().getComplexityMap()).entrySet());
-
-		for( int i = keyList.size() -1; i >= 0 ; i --) {
-			Entry<SootClass,Long> e = keyList.get(i);
-			limitedClasses ++;
-			if (SootUtils.isStringOrSimilarType(e.getKey().getType()))
-				continue;
-
-			buf.append(e.getKey() + ",");
-			logger.info("limiting heap context for complex class: {}, complexity {}", e.getKey(), e.getValue());
-
-			if (limitedClasses / totalClasses > PERCENTAGE_TO_LIMIT_COMPLEXITY)
-				break;
-		}      
+		for (Map.Entry<Object, MutableInt> entry : IntrospectiveAnalysis.v().getPointedByLocals().entrySet()) {
+			if (entry.getValue().value() > 100) {
+				logger.info("Adding allocation to limit heap context list by metric: {} {}", entry.getKey(), entry.getValue());
+				buf.append(entry.getKey().hashCode() + ",");
+			}
+		}
 	}
 
 	private void addGUIClasses(StringBuffer buf) {
@@ -919,9 +906,9 @@ public class SparkPTA extends PTABridge {
 				} catch (Exception e) {
 					body = null;
 				}
-				
+
 				if (body == null) continue;
-				
+
 				for (Unit unit  :body.getUnits()) {
 					Stmt stmt = (Stmt)unit;
 					if (stmt instanceof AssignStmt &&
@@ -957,9 +944,9 @@ public class SparkPTA extends PTABridge {
 				} catch (Exception e) {
 					body = null;
 				}
-				
+
 				if (body == null) continue;
-				
+
 				for (Unit unit  :body.getUnits()) {
 					Stmt stmt = (Stmt)unit;
 					if (stmt instanceof AssignStmt &&

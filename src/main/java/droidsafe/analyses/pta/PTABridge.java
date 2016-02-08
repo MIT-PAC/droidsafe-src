@@ -75,7 +75,7 @@ public abstract class PTABridge {
 
     private static PointsToAnalysisPackage myPackage;
     /** options passed by caller to the underlying pta */
-    protected Map<String,String> opts;
+    protected Map<String,String> optionsInCode;
     
     public static boolean DUMP_CALL_GRAPH_NEXT_RUN = false;
     
@@ -93,7 +93,7 @@ public abstract class PTABridge {
     }
     
     protected PTABridge(Map<String,String> opts) {
-        this.opts = opts;
+        this.optionsInCode = opts;
     }
     
     /**
