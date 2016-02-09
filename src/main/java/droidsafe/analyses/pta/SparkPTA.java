@@ -182,6 +182,10 @@ public class SparkPTA extends PTABridge {
 	protected void releaseInternal() {
 	}
 
+	
+	public PAG getPtsProvider() {
+		return ptsProvider;
+	}
 
 	@Override
 	protected void runInternal() {   
@@ -882,6 +886,21 @@ public class SparkPTA extends PTABridge {
 			buf.append(',');               
 
 		for (Map.Entry<Object, MutableInt> entry : IntrospectiveAnalysis.v().getPointedByLocals().entrySet()) {
+			//don't limit strings or common android api classes
+			if (entry.getKey() instanceof NewExpr) {
+				SootClass allocedClass = ((NewExpr)entry.getKey()).getBaseType().getSootClass();
+				
+				if (allocedClass.getName().startsWith("java.util") ||
+						allocedClass.getName().startsWith("java.lang") ||
+						allocedClass.getName().startsWith("java.net") ||
+						allocedClass.getName().startsWith("java.io") ||
+						allocedClass.getName().startsWith("android.os") ||
+						allocedClass.getName().startsWith("android.net") ||
+						allocedClass.getName().startsWith("android.util") ||
+						allocedClass.getName().startsWith("android.content") ||
+						allocedClass.getName().startsWith("android.database"))
+					continue;
+			}
 			if (entry.getValue().value() > 100) {
 				logger.info("Adding allocation to limit heap context list by metric: {} {}", entry.getKey(), entry.getValue());
 				buf.append(entry.getKey().hashCode() + ",");

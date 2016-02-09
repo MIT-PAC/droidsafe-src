@@ -389,7 +389,7 @@ public class ObjectSensitivityCloner {
                                 target.getDeclaringClass().getName().startsWith("java.io") ||
                                 target.getDeclaringClass().getName().startsWith("android.os") ||
                                 target.getDeclaringClass().getName().startsWith("android.net") ||
-                                target.getDeclaringClass().getName().startsWith("android.util") |
+                                target.getDeclaringClass().getName().startsWith("android.util") ||
                                 target.getDeclaringClass().getName().startsWith("android.database")
                                 ) {
                             if (!map.containsKey(target)) {
