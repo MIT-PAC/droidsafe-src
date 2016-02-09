@@ -358,6 +358,10 @@ public class Main {
         timer1.stop();
         driverMsg("Finished String Analysis: " + timer1);
 
+        //account for any transformations
+        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
         driverMsg("Cloning static methods to introduce call site context...");
         monitor.subTask("Cloning static methods to introduce callsite context...");
         try {
@@ -723,7 +727,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
-    	if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+    	if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Injecting String Analysis Results.");
