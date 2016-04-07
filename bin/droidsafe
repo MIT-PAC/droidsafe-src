@@ -55,6 +55,11 @@ def run_droidsafe(args):
 
     java_command.append("-Djava.library.path=" + DROIDSAFE_SRC_HOME + "lib")
 
+    if ("DROIDSAFE_DEBUG" in os.environ and os.environ['DROIDSAFE_DEBUG'] is "1"):
+        print("Debugging...")
+        java_command.append("-agentlib:jdwp=transport=dt_socket,address=127.0.0.1:8888,server=y,suspend=y")
+        
+    
     if ("DROIDSAFE_MEMORY" in os.environ):
         DROIDSAFE_MEMORY = os.environ['DROIDSAFE_MEMORY']
         print("Setting memory size to " + DROIDSAFE_MEMORY + "GB")
