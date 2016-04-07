@@ -31,8 +31,10 @@ import org.slf4j.LoggerFactory;
 
 import soot.Scene;
 import soot.SootClass;
+import soot.SootMethod;
 import soot.options.Options;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
 
 /**
  * This class performs soot configuration and class loading in anticipation of the 
@@ -52,25 +54,32 @@ public class SootConfig {
 	
 	/**
 	 * Load set of classes as application classes to be analyzed.
+
+	 * This happens after the API has been initialized.  So if there is a clash with a
+	 * class name in the API, remove it from the API list of classes and method.
+	 * 
 	 * If shouldReplace is true, then replace a class if it is already defined.
 	 * If shouldReplace is false, then don't replace the class if it is already defined
 	 * 
 	 * Return list of classes that were not loaded
 	 */
-	public static Set<String> loadAppClasses(Set<String> classes, boolean shouldReplace) {
+	public static Set<String> loadAppClasses(Set<String> classes) {
 	    Set<String> notLoaded = new HashSet<String>();
 		//load the application classes and set them as app classes
-		for (String clz : classes) {
-		    //if we don't want to replace and this class is already defined, then skip
-		    if (!shouldReplace && Scene.v().containsClass(clz) && Scene.v().getSootClass(clz).isApplicationClass()) {
-		        logger.debug("Not loading {}, already loaded\n", clz);
-		        notLoaded.add(clz);
-		        continue;
-		    }
-		    
+		for (String clz : classes) {			    
 			//Scene.v().loadClassAndSupport(clz).setApplicationClass();
-			Scene.v().loadClass(clz, SootClass.BODIES).setApplicationClass();
+			SootClass sc = Scene.v().loadClass(clz, SootClass.BODIES);
+			sc.setApplicationClass();
 			logger.debug("Loading class as application class: {}", clz);
+			
+			if (API.v().isSystemClass(sc)) {
+				API.v().removeSystemClassDesignation(sc);
+				//remove all methods as system methods
+				for (SootMethod m : sc.getMethods()) {
+					API.v().removeSystemMethodDesignation(m);
+				}
+			}
+		
 		}
 		return notLoaded;
 	}
@@ -106,13 +115,19 @@ public class SootConfig {
 	private static void setSootClassPath() {
 		StringBuffer cp = new StringBuffer();
 		
-		//add the api modeling directory first so we can load modeling classes
-		cp.append(Config.v().getAndroidLibJarPath());
+		//add the application classes  directory 
+		cp.append(Project.v().getAppClassesDir().toString());
 		
-		//add the classes directory
-		cp.append( File.pathSeparator+ Project.v().getAppClassesDir().toString());
+		//if we are analyzing source, add the lib directory next
+		if (Project.v().getAppLibDir().exists()) {
+			for (File f : FileUtils.listFiles(Project.v().getAppLibDir(), new String[]{"jar"}, true)) {
+				cp.append(File.pathSeparator + f.toString());
+			}
+		}		
+		//add the  droidsafe model jar next so we can load modeling classes
+		cp.append(File.pathSeparator + Config.v().getAndroidLibJarPath());			
 		
-		//add the android.jar
+		//add the android.jar to account for any classes missing in droidsafe model
 		File aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + Config.ANDROID_JAR);
 	
 		if (!aj.exists()) {
@@ -121,15 +136,7 @@ public class SootConfig {
 		}
 		
 		cp.append(File.pathSeparator + aj.toString());
-
-		//add jars in the libs directory
 		
-		if (Project.v().getAppLibDir().exists()) {
-			for (File f : FileUtils.listFiles(Project.v().getAppLibDir(), new String[]{"jar"}, true)) {
-				cp.append(File.pathSeparator + f.toString());
-			}
-		}
-
 		logger.info("Setting Soot ClassPath: {}", cp.toString());
         System.setProperty("soot.class.path", cp.toString());
 	}

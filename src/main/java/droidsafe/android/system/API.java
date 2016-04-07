@@ -248,9 +248,6 @@ public class API {
     }
 
     public void init() {
-        //uncomment this to create system method files
-        //createAllSystemMethodsFile();
-
         try {
             srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
 
@@ -277,6 +274,13 @@ public class API {
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
+            
+            logger.info("Scene size {}", Scene.v().getClasses().size());
+            for (SootClass sc : Scene.v().getClasses()) {
+            	logger.info("Loaded before API: {}", sc);
+            			
+            }
+            
             Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new LinkedHashSet<String>()); 
             allSystemClasses.addAll(modeledClasses);
             all_sys_methods.addAllMethods(apiModeling);
@@ -285,7 +289,6 @@ public class API {
             for (SootClass modeled : modeledClasses) 
                 modeledClassNames.add(modeled.getName());
 
-            Config.v();
             //load the configured android jar file
             JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR));
             allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, modeledClassNames));
@@ -382,29 +385,6 @@ public class API {
         api_modeled_methods.addMethod(sm);
     }
 
-    /**
-     * Create the system method txt file with the signature and modifiers for all 
-     * system methods.  Should not be called on a normal run.
-     */
-    private void createAllSystemMethodsFile() {
-        try {
-            JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR));
-            Set<SootClass> systemClasses = SootUtils.loadClassesFromJar(androidJar, false, new HashSet<String>());
-
-            FileWriter fw = new FileWriter(new File(Config.v().getApacHome(), Config.SYSTEM_METHODS_FILE));
-
-            for (SootClass clz : systemClasses) {
-                for (SootMethod meth : clz.getMethods()) {
-                    fw.write(String.format("%s#%s\n", meth.getModifiers(), meth.getSignature()));
-                }
-            }
-
-            fw.close();
-        } catch (Exception e) {
-            logger.error("Error creating android api methods file {}", e);
-        }
-        droidsafe.main.Main.exit(1);
-    }
 
     /** 
      * Read in all method from all_system_methods, then create a SootMethod for missing api
@@ -683,88 +663,7 @@ public class API {
                 safe_methods.addMethod(clinit);
             }
         }
-    }
-
-    private void loadDroidSafeCalls() {
-        try {
-            //load the classes from the droidcalls library
-            File dsLib = new File(Config.v().getApacHome(), 
-                    "android-lib/droidcalls.jar");
-            JarFile dsJar = new JarFile(dsLib);
-            SootUtils.loadClassesFromJar(dsJar, true, new LinkedHashSet<String>());
-            all_sys_methods.addAllMethods(dsJar);			
-        } catch (Exception e) {
-            logger.error("Error loading droidsafe call jar (maybe it does not exist).");
-            droidsafe.main.Main.exit(1);
-        }
-    }
-
-    //old load classification code from config_files/system_calls.txt
-    //now we classify based on the annotation DSModeled
-    private void loadClassification()	{
-        // Read in the system call descriptors.  The file format has lines
-        // of the form <type>[|flags] <descr>.  More detail is in the
-        // comments at the top of the file.  Descriptors are matched on
-        // the string representation.  The canonical form is <class>:
-        // <return_type> <method>(args) Arbitrary white space is supported
-        // in the file, the code below reduces all white space to a single
-        // space and removes spaces between arguments
-        File sys_calls_file = null;
-        String errors = "";
-        int line_num = 0;
-        try {
-            sys_calls_file= new File(Config.v().getApacHome(), 
-                    "config-files/system_calls.txt");
-            LineNumberReader br 
-            = new LineNumberReader (new FileReader (sys_calls_file));
-            String line = null;
-            while ((line = br.readLine()) != null) {
-                line_num = br.getLineNumber();
-                line = line.trim();
-                line = line.replaceFirst (" *[#].*$", "");
-                if (line.isEmpty())
-                    continue;
-                String[] sa = line.split ("[\\s]+", 2);
-                String[] labels = sa[0].split ("[|]");
-                String call_typ = labels[0];
-                for (int ii = 1; ii  < labels.length; ii++)
-                    if (!labels[ii].equals ("model"))
-                        errors += "unexpected flag " + labels[ii] + "\n";
-
-                String method_descr = sa[1];
-                method_descr = method_descr.replaceAll (", *", ",");
-                method_descr = method_descr.replaceAll ("[\\s]+", " ");
-                method_descr = "<" + method_descr + ">";
-                // System.out.printf ("Adding sys %s: '%s'\n", call_typ, method_descr);
-                if (!all_sys_methods.contains (method_descr))
-                    errors += String.format ("invalid method signature '%s'\n",
-                        method_descr);
-                if (safe_methods.contains (method_descr) 
-                        || spec_methods.contains (method_descr)
-                        || banned_methods.contains (method_descr))
-                    errors += String.format ("dup method signature '%s'\n", 
-                        method_descr);
-                if (call_typ.equals ("safe")) {
-                    safe_methods.addMethod (method_descr);
-                } else if (call_typ.equals ("spec"))
-                    spec_methods.addMethod (method_descr);
-                else if (call_typ.equals ("ban")) {
-                    banned_methods.addMethod(method_descr);
-                } else {
-                    errors += String.format ("unexpected call type '%s'\n", 
-                        call_typ); 
-                }
-            }
-        } catch (Exception e) {
-            throw new RuntimeException ("error reading " + sys_calls_file 
-                + "at line " + line_num, e);
-        }
-        if (errors != "")
-            throw new RuntimeException 
-            (String.format ("Errors in %s: \n%s", sys_calls_file, errors));
-        if ("Y".equals(System.getProperty("droidsafe.print_unclassified")))
-            dumpUnclassifiedMethodsToFile();
-    }
+    }   
 
     /** 
      * Returns whether or not a method should be included in the spec.
@@ -923,6 +822,27 @@ public class API {
      */
     public boolean isSystemClass(SootClass clz) {
         return allSystemClasses.contains(clz);
+    }
+    
+    /**
+     * Remove this class from the set of system classes.
+     */
+    public void removeSystemClassDesignation(SootClass clz) {
+    	allSystemClasses.remove(clz);
+    }
+    
+    /**
+     * Remove this method from the set of system methods.
+     */
+    public void removeSystemMethodDesignation(SootMethod sm) {
+    	all_sys_methods.removeMethod(sm);
+    	spec_methods.removeMethod(sm);
+    	safe_methods.removeMethod(sm);
+    	banned_methods.removeMethod(sm);
+    	api_modeled_methods.removeMethod(sm);
+    	srcsMapping.remove(sm);
+    	sinksMapping.remove(sm);
+    	
     }
 
     public boolean isSystemClassReference(Type t) {

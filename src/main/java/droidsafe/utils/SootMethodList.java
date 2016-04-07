@@ -68,6 +68,13 @@ public class SootMethodList implements Iterable<SootMethod>{
 	}
 	
 	/**
+	 * Remove method from list.
+	 */
+	public void removeMethod(SootMethod method) {
+		methods.remove(method);
+	}
+	
+	/**
 	 * Strict contains
 	 */
 	public boolean contains(String signature) {

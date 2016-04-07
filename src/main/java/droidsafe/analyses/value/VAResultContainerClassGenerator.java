@@ -226,7 +226,9 @@ public class VAResultContainerClassGenerator {
         File apiModelJarFile = new File(apiModelJarFilePath);
         try {
             JarFile apiModelJar = new JarFile(apiModelJarFile);
-            Set<SootClass> apiModelSootClasses = SootUtils.loadClassesFromJar(apiModelJar, true, new HashSet<String>()); 
+            //get all the classes in the DroidSafe Model
+            Set<SootClass> apiModelSootClasses = SootUtils.getSootClassesfromJar(apiModelJar);
+            
             for (SootClass apiModelSootClass : apiModelSootClasses) {
                 if(hasDSVAModeledAnnotation(apiModelSootClass)){
                     classesAndFieldsToModel.put(apiModelSootClass, new HashSet<SootField>());

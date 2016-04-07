@@ -21,11 +21,14 @@
 
 package droidsafe.utils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.jar.JarEntry;
@@ -667,6 +670,35 @@ public class SootUtils {
         return methods;
     }
 
+    
+    /**
+     * For each class in the jar file, find the corresponding Soot class loaded in the Scene, 
+     * and add to return set.  If a class in the jar is not in the Scene, no error is raised.
+     * 
+     * @param jarFile The jar file 
+     * @return The set of SootClasses corresponding to the classes in the jar file.  
+     */
+    public static Set<SootClass> getSootClassesfromJar(JarFile jarFile) {
+    	LinkedHashSet<SootClass> classSet = new LinkedHashSet<SootClass>();
+    	Enumeration<JarEntry> allEntries = jarFile.entries();
+        while (allEntries.hasMoreElements()) {
+            JarEntry entry = allEntries.nextElement();
+            String   name  = entry.getName();
+            if (!name.endsWith(".class")) {
+                continue;
+            }
+
+            String clsName = name.substring(0, name.length() - 6).replace('/', '.');
+            
+            try {
+            	classSet.add(Scene.v().getSootClass(clsName));
+            } catch (Exception e) {
+            	//class not in scene
+            }
+        }
+        
+        return classSet;
+    }
 
 
     /**
@@ -676,8 +708,15 @@ public class SootUtils {
      * overwrite is false, then don't load from this jar any previously loaded classes.
      * 
      * Return a set of all classes loaded from the jar.
+     * 
+     * @param jarFile 
+     * @param appClass If true, load classes as Soot "application" class, otherwise, load as "Library" class
+     * @param replace If true, replace the class in the scene if it exists, otherwise, do not load classes already in scene.
+     * @param doNotLoad Do not load fully-qualified class names in this list.
+     * @return
      */
-    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass, Set<String> doNotLoad) {
+    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass, Set<String> doNotLoad) {   
+    	
         LinkedHashSet<SootClass> classSet = new LinkedHashSet<SootClass>();
         Enumeration<JarEntry> allEntries = jarFile.entries();
         while (allEntries.hasMoreElements()) {
@@ -691,8 +730,8 @@ public class SootUtils {
 
             if (doNotLoad.contains(clsName)) {
                 continue;
-            }
-
+            }                          
+            
             if (appClass) {
                 //SootClass clz = Scene.v().loadClassAndSupport(clsName);
                 SootClass clz = Scene.v().loadClass(clsName, SootClass.BODIES);
