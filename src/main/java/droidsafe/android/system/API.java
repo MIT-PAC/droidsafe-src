@@ -833,6 +833,8 @@ public class API {
     
     /**
      * Remove this method from the set of system methods.
+     * 
+     * But keep it in the sources and sinks list.  It does not hurt to track another source and sink.
      */
     public void removeSystemMethodDesignation(SootMethod sm) {
     	all_sys_methods.removeMethod(sm);
@@ -840,8 +842,10 @@ public class API {
     	safe_methods.removeMethod(sm);
     	banned_methods.removeMethod(sm);
     	api_modeled_methods.removeMethod(sm);
-    	srcsMapping.remove(sm);
-    	sinksMapping.remove(sm);
+    	//keep method in source and sink list just incase the app include google closed
+    	//source libraries in which we have defined sources and sinks.
+    	//srcsMapping.remove(sm);
+    	//sinksMapping.remove(sm);
     	
     }
 
