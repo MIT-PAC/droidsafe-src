@@ -679,7 +679,7 @@ final public Resources getResources() {
      */
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.038 -0500", hash_original_method = "3F649A13E84C6501035126B3FEE231F4", hash_generated_method = "E2B566B00FA2AC61E50317149C5BCECD")
-    
+    @DSVAMethod
 public final CharSequence getText(int resId) {
         return getResources().getText(resId);
     }
@@ -694,7 +694,7 @@ public final CharSequence getText(int resId) {
     @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.040 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
-    
+    @DSVAMethod
 public final String getString(int resId) {
         return getResources().getString(resId);
     }
@@ -710,7 +710,7 @@ public final String getString(int resId) {
 
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.042 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
-    
+    @DSVAMethod
 public final String getString(int resId, Object... formatArgs) {
         return getResources().getString(resId, formatArgs);
     }
@@ -960,7 +960,8 @@ public LoaderManager getLoaderManager() {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.079 -0500", hash_original_method = "B68B30EDC5AB3BE8EF657FB7051C7F7E", hash_generated_method = "2653C537061CAA70FE618F1495F7C4F1")
     @DSVerified
-public void startActivity(Intent intent) {
+    @DSVAMethod
+    public void startActivity(Intent intent) {
         if (mActivity == null) {
             throw new IllegalStateException("Fragment " + this + " not attached to Activity");
         }
@@ -976,8 +977,8 @@ public void startActivity(Intent intent) {
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.083 -0500", hash_original_method = "849399EB62F8B6EE6A6E550D7989B87C", hash_generated_method = "8768E2B6EA85361E6FA51CBF490464A9")
     @DSVerified
-    
-public void startActivityForResult(Intent intent, int requestCode) {
+    @DSVAMethod        
+    public void startActivityForResult(Intent intent, int requestCode) {
         if (mActivity == null) {
             throw new IllegalStateException("Fragment " + this + " not attached to Activity");
         }

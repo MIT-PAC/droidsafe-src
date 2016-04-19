@@ -80,7 +80,6 @@ import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
-import droidsafe.transforms.ServiceTransforms;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;

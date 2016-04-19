@@ -545,17 +545,17 @@ public Context getBaseContext() {
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.190 -0500", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "992EA6715D65F485692876B471F1C6B9")
-    
-@Override
+    @Override
+    @DSVAMethod
     public void startActivity(Intent intent) {
         mBase.startActivity(intent);
     }
 
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.193 -0500", hash_original_method = "013A3CF6138EA6FE6C22614936FE13C8", hash_generated_method = "52762932C0CF308D26FC5B36BA40DE9B")
-    
-@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.193 -0500", hash_original_method = "013A3CF6138EA6FE6C22614936FE13C8", hash_generated_method = "52762932C0CF308D26FC5B36BA40DE9B")    
+    @Override
+    @DSVAMethod    
     public void startActivities(Intent[] intents) {
         mBase.startActivities(intents);
     }
@@ -576,6 +576,7 @@ public Context getBaseContext() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendBroadcast(Intent intent) {
         mBase.sendBroadcast(intent);
     }
@@ -586,6 +587,7 @@ public Context getBaseContext() {
     @Override
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
+    @DSVAMethod
     public void sendBroadcast(Intent intent, String receiverPermission) {
         mBase.sendBroadcast(intent, receiverPermission);
     }
@@ -595,6 +597,7 @@ public Context getBaseContext() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
         mBase.sendOrderedBroadcast(intent, receiverPermission);
@@ -606,6 +609,7 @@ public Context getBaseContext() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendOrderedBroadcast(
         Intent intent, String receiverPermission, BroadcastReceiver resultReceiver,
         Handler scheduler, int initialCode, String initialData,
@@ -621,6 +625,7 @@ public Context getBaseContext() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendStickyBroadcast(Intent intent) {
         mBase.sendStickyBroadcast(intent);
     }
@@ -631,6 +636,7 @@ public Context getBaseContext() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendStickyOrderedBroadcast(
         Intent intent, BroadcastReceiver resultReceiver,
         Handler scheduler, int initialCode, String initialData,
@@ -653,6 +659,7 @@ public Context getBaseContext() {
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         return receiver.__ds__registerIntentFilter(this, filter)[0];
     	//return null; // no 'sticky' intents need to be modeled for coverage
@@ -666,7 +673,8 @@ public Context getBaseContext() {
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.IPC)
-@Override
+    @Override
+    @DSVAMethod
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
         String broadcastPermission, Handler scheduler) {
@@ -692,11 +700,10 @@ public Context getBaseContext() {
     @DSSink({DSSinkKind.IPC})
     @DSVerified
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.SERVICE)
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.222 -0500", hash_original_method = "460FA5078659EEF29B84A9C36C1BA43F", hash_generated_method = "5AF5415B02FACA6C8C573880AF05D53F")
-    
-@Override
+    @DSSpec(DSCat.SERVICE)    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.222 -0500", hash_original_method = "460FA5078659EEF29B84A9C36C1BA43F", hash_generated_method = "5AF5415B02FACA6C8C573880AF05D53F")    
+    @Override
+    @DSVAMethod
     public ComponentName startService(Intent service) {
         //DSTODO:  We need to translate the service request to the correct service
         //then call onStart on that
@@ -719,7 +726,8 @@ public Context getBaseContext() {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.227 -0500", hash_original_method = "67132A5BC1B8EF0B15B0E872390898A0", hash_generated_method = "5A2B04010F66FEE0B0F4E923A6C9E2B2")
     
-@Override
+    @Override
+    @DSVAMethod
     public boolean bindService(Intent service, ServiceConnection conn,
             int flags) {
         service.getAction();

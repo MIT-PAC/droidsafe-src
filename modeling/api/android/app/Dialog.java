@@ -628,7 +628,7 @@ public View getCurrentFocus() {
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.108 -0500", hash_original_method = "FBC1E026CFF410D335B7C0F9A45B0829", hash_generated_method = "DF935DC9559B6B34CF7AC16F65849BAE")
     @DSVerified
-    
+    @DSVAMethod
 public View findViewById(int id) {
         return mWindow.findViewById(id);
     }
@@ -643,7 +643,7 @@ public View findViewById(int id) {
     @DSSafe(DSCat.GUI)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.110 -0500", hash_original_method = "A6A8A3E553FD4B026D939E9AE3AC9985", hash_generated_method = "34F06CEA5B574E84E31D5E5187CA0961")
-    
+    @DSVAMethod
 public void setContentView(int layoutResID) {
         mWindow.setContentView(layoutResID);
     }

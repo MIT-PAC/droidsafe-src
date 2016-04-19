@@ -328,6 +328,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     @DSSpec(DSCat.IPC)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
+    @DSVAMethod
     public Intent getIntent() {
         return mIntent;
     }
@@ -362,6 +363,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     @DSSpec(DSCat.IPC)
     @DSSink(DSSinkKind.IPC)
+    @DSVAMethod
     public void setIntent(Intent newIntent) {
         mIntent = newIntent;
     }
@@ -1183,7 +1185,7 @@ public void onAttachFragment(Fragment fragment) {
     @DSComment("Normal GUI")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.731 -0500", hash_original_method = "6A267AF8CD8DFD046F9AA4A840E0F1F1", hash_generated_method = "755E2CA99C821360ADFBADF6E41C3E62")
-    
+    @DSVAMethod
 public View findViewById(int id) {
         //return null so that fallback modeling can insert what it needs to
         //this call will be replaced by the xml modeling when it can
@@ -1241,7 +1243,7 @@ public ActionBar getActionBar() {
     @DSSafe(DSCat.GUI)
     //@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.747 -0500", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "8A18F956B194A0C371BE43C50E45248B")
-    
+    @DSVAMethod
 public void setContentView(int layoutResID) {
         getWindow().setContentView(layoutResID);
         initActionBar();
@@ -2520,6 +2522,7 @@ public LayoutInflater getLayoutInflater() {
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSSink({DSSinkKind.IPC})
+    @DSVAMethod
     public void startActivityForResult(Intent intent, int requestCode){
         intent.getAction();
         intent.getBooleanArrayExtra("");
@@ -2628,6 +2631,7 @@ public LayoutInflater getLayoutInflater() {
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSSink({DSSinkKind.IPC})
+    @DSVAMethod
     @Override public void startActivity(Intent intent){
     	
     	String result = intent.getAction() + intent.getDataString();
@@ -2723,6 +2727,7 @@ public LayoutInflater getLayoutInflater() {
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     @Override
+    @DSVAMethod        
     public void startActivities(Intent[] intents) {
         mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
@@ -2749,6 +2754,7 @@ public LayoutInflater getLayoutInflater() {
     
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
+    @DSVAMethod    
     public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2883,6 +2889,7 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
     @DSComment("Normal GUI")
     @DSSpec(DSCat.IPC)
     @DSSink(DSSinkKind.IPC)
+    @DSVAMethod
     public final void setResult(int resultCode){
         mResultCode = resultCode;
         //addTaint(resultCode);
@@ -2901,6 +2908,7 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
     @DSComment("Potential intent to trigger other processing")
     @DSSpec(DSCat.IPC)
     @DSSink(DSSinkKind.IPC)
+    @DSVAMethod
     public final void setResult(int resultCode, Intent data){
         //addTaint(resultCode);
         mResultData = data;
@@ -3170,6 +3178,7 @@ public void finishActivityFromChild(Activity child, int requestCode) {
     @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.263 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "62DF0F5F92A373B4F8B7952D89BB1F57")
     @DSVerified("Activity Callback")
+    @DSVAMethod
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
     

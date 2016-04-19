@@ -9225,7 +9225,7 @@ protected void dispatchSetActivated(boolean activated) {
     
     @DSComment("From safe class list")
     @DSSafe(DSCat.SAFE_LIST)
-    
+    @DSVAMethod
     public final View findViewById(int id){
         /*
         if (id < 0) {
