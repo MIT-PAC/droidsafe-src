@@ -60,6 +60,14 @@ public class SootMethodList implements Iterable<SootMethod>{
 		methods.add(method);
 	}
 	
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		for (SootMethod m : methods) {
+			buffer.append(m + "\n");			
+		}
+		return buffer.toString();
+	}
+	
 	/**
 	 * Strict contains
 	 */
