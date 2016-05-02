@@ -357,8 +357,8 @@ class StartActivityTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.app.Activity: void startActivity(android.content.Intent,android.os.Bundle)>");
             sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>");
             sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityForResult(android.content.Intent,int,android.os.Bundle)>");
-            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int)>");
-            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: boolean startActivityIfNeeded(android.content.Intent,int)>");
+            sigsOfInvokesToTransform.add("<android.app.Activity: boolean startActivityIfNeeded(android.content.Intent,int,android.os.Bundle)>");
 
             sigsOfInvokesToTransform.add("<android.content.Context: void startActivity(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.app.ContexImpl: void startActivity(android.content.Intent)>");
@@ -373,6 +373,9 @@ class StartActivityTransform implements VATransform {
             sigsOfInvokesToTransform.add( "<android.content.Context: void startActivities(android.content.Intent[])>");
             sigsOfInvokesToTransform.add( "<android.app.ContextImpl: void startActivities(android.content.Intent[])>");
             sigsOfInvokesToTransform.add( "<android.content.ContextWrapper: void startActivities(android.content.Intent[])>");
+            
+            //added since API 16
+            sigsOfInvokesToTransform.add("<android.app.Activity: void startActivities(android.content.Intent[],android.os.Bundle)>");          
 
 
         }
