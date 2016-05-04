@@ -296,8 +296,8 @@ public synchronized void reset() throws IOException {
     
 public long skip(long byteCount) throws IOException {
         //return Streams.skipByReading(this, byteCount);
-        addTaint(byteCount);
-        return getTaintLong();
+        //addTaint(byteCount);
+        return 0L;
     }
     
 }

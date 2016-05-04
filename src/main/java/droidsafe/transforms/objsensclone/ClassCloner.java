@@ -80,141 +80,187 @@ import soot.util.Chain;
  *
  */
 public class ClassCloner {
-    /** static logger class */
-    private static final Logger logger = LoggerFactory.getLogger(ClassCloner.class);
-    /** original soot class which we are cloning */
-    private SootClass original;
-    /** the clone we have created */
-    private SootClass clone;
-    /** unique ID used for introduced fields */
-    private static int uniqueID = 0;
-    /** appended to name cloned classes */
-    public static final String CLONE_POSTFIX = "_ds_clone_";
-    /** transform to clone inherited methods and remove dynamic dispatch */
-    private CloneInheritedMethods cim;
-    /** if true, clone all methods, otherwise clone only reachable methods */
-    private boolean cloneAllMethods;
-    
-    /**
-     * Private constructor for a specific class cloner.
-     */
-    private ClassCloner(SootClass org, boolean allMethods) {
-        this.original = org;
-        cloneAllMethods = allMethods;
-    }
+	/** static logger class */
+	private static final Logger logger = LoggerFactory.getLogger(ClassCloner.class);
+	/** original soot class which we are cloning */
+	private SootClass original;
+	/** the clone we have created */
+	private SootClass clone;
+	/** unique ID used for introduced fields */
+	private static int uniqueID = 0;
+	/** appended to name cloned classes */
+	public static final String CLONE_POSTFIX = "_ds_clone_";
+	/** transform to clone inherited methods and remove dynamic dispatch */
+	private CloneInheritedMethods cim;
+	/** if true, clone all methods, otherwise clone only reachable methods */
+	private boolean cloneAllMethods;
 
-    /**
-     * Return the cloned class.
-     */
-    public SootClass getClonedClass() {
-        return clone;
-    }
+	/**
+	 * Private constructor for a specific class cloner.
+	 */
+	private ClassCloner(SootClass org, boolean allMethods) {
+		this.original = org;
+		cloneAllMethods = allMethods;
+	}
+
+	/**
+	 * Return the cloned class.
+	 */
+	public SootClass getClonedClass() {
+		return clone;
+	}
 
 
-    /**
-     * Return set of cloned methods that are reachable based on whether the original method 
-     * that was clone was reachable based on the current pta result.
-     * @return
-     */
-    public Set<SootMethod> getReachableClonedMethods() {
-        return cim.getReachableClonedMethods();
-    }
+	/**
+	 * Return set of cloned methods that are reachable based on whether the original method 
+	 * that was clone was reachable based on the current pta result.
+	 * @return
+	 */
+	public Set<SootMethod> getReachableClonedMethods() {
+		return cim.getReachableClonedMethods();
+	}
 
-    public Map<SootMethod,SootMethod> getCloneToOriginalMap() {
-        return cim.getCloneToOriginalMap();
-    }
+	public Map<SootMethod,SootMethod> getCloneToOriginalMap() {
+		return cim.getCloneToOriginalMap();
+	}
 
-    /** 
-     * Static call to clone a particular class, and return the clone. 
-     * 
-     * If isAPIClass is true, then treat the cloned class as an api class and add it to the list of api classes, and
-     * set its methods as safe,spec,ban based on ancestors.
-     * 
-     * if allMethods is true, then clone all methods from ancestor classes, otherwise if false, clone only reachables
-     */
-    public static ClassCloner cloneClassAndInheritedMethods(SootClass original, boolean allMethods) {
-        ClassCloner c = new ClassCloner(original, allMethods);
-        c.cloneClassCloneMethodsAndInstallClass();
-        return c;
-    }
+	/** 
+	 * Static call to clone a particular class, and return the clone. 
+	 * 
+	 * If isAPIClass is true, then treat the cloned class as an api class and add it to the list of api classes, and
+	 * set its methods as safe,spec,ban based on ancestors.
+	 * 
+	 * if allMethods is true, then clone all methods from ancestor classes, otherwise if false, clone only reachables
+	 */
+	public static ClassCloner cloneClassAndInheritedMethods(SootClass original, boolean allMethods) {
+		ClassCloner c = new ClassCloner(original, allMethods);
+		c.cloneClassCloneInheritedMethodsAndInstallClass();
+		return c;
+	}
 
-    public static ClassCloner cloneClass(SootClass original) {
-        ClassCloner c = new ClassCloner(original, false);
-        c.cloneAndInstallClass();
-        return c;
-    }
+	public static ClassCloner cloneClassAndCloneMethodsAndFields(SootClass original) {
+		ClassCloner c = new ClassCloner(original, false);
+		c.cloneClassCloneMethodsFieldsAndInstallClass();
+		return c;
+	}
 
-    private void cloneAndInstallClass() {
-        clone = new SootClass(original.getName() + CLONE_POSTFIX + uniqueID, 
-            original.getModifiers());
-        uniqueID++;
+	public static ClassCloner cloneClass(SootClass original) {
+		ClassCloner c = new ClassCloner(original, false);
+		c.cloneAndInstallClass();
+		return c;
+	}
 
-        //System.out.printf("Cloning class %s with %s.\n", original, clone);
+	private void cloneAndInstallClass() {
+		clone = new SootClass(original.getName() + CLONE_POSTFIX + uniqueID, 
+				original.getModifiers());
+		uniqueID++;
 
-        //set parent
-        if (original.isFinal()) {
-            //change final modifier
-            logger.info("Changing final modifier on {}", original);
-            original.setModifiers(original.getModifiers() ^ Modifier.FINAL);
-        }
-        clone.setSuperclass(original);
-        
-        //install the class
-        Scene.v().addClass(clone);
-        Scene.v().loadClass(clone.getName(), SootClass.BODIES);
-        clone.setApplicationClass();  
+		//System.out.printf("Cloning class %s with %s.\n", original, clone);
 
-        API.v().cloneClassClassifications(original, clone);
-    }
-    
-    /**
-     * Perform the work of actually clone class, changing fields and cloning methods.
-     */
-    private void cloneClassCloneMethodsAndInstallClass() {
-        cloneAndInstallClass();
+		//set parent
+		if (original.isFinal()) {
+			//change final modifier
+			logger.info("Changing final modifier on {}", original);
+			original.setModifiers(original.getModifiers() ^ Modifier.FINAL);
+		}
+		clone.setSuperclass(original);
 
-        //remove inheritance by cloning
-        cim = new CloneInheritedMethods(clone, cloneAllMethods, true);
-        cim.transform();
+		//install the class
+		Scene.v().addClass(clone);
+		Scene.v().loadClass(clone.getName(), SootClass.BODIES);
+		clone.setApplicationClass();  
 
-      
-        //for all new expressions in the cloned methods of the clone,
-        //replace self creations with creations of clone
-        RefType originalType = RefType.v(original);
-        RefType cloneType = RefType.v(clone);
-        for (SootMethod method : clone.getMethods()) {        
-            StmtBody stmtBody = null;
-            try {
-            	stmtBody = (StmtBody)method.retrieveActiveBody();
-            }
-            catch (Exception ex) {
-            	logger.info("Exception retrieving method body {}", ex);
-            	continue;
-            }
+		API.v().cloneClassClassifications(original, clone);
+	}
 
-            for (ValueBox vb : stmtBody.getUseAndDefBoxes()) {
-                if (vb.getValue() instanceof NewExpr &&
-                        ((NewExpr)vb.getValue()).getBaseType().equals(originalType)) {
-                    NewExpr newE = (NewExpr)vb.getValue();
-                    newE.setBaseType(cloneType);
-                }
-            }
-        }
+	private void cloneClassCloneMethodsFieldsAndInstallClass() {
+		cloneAndInstallClass();
 
-    }
+		//clone methods
+		for (SootMethod ancestorM : original.getMethods()) {
+			if (ancestorM.isFinal())
+				ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
 
-    public static boolean isClonedClass(SootClass clz) {
-        return clz.getName().contains(CLONE_POSTFIX);
-    }
+			SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
+					ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
 
-    public static String removeClassCloneSuffix(String str) {
-        String regex = CLONE_POSTFIX+"[0-9]+";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(str);
-        return matcher.replaceAll("");
-    }
+			
+			//register method
+			clone.addMethod(newMeth);    
 
-    public static SootClass getClonedClassFromClone(SootClass clone) {
-        return Scene.v().getSootClass(ClassCloner.removeClassCloneSuffix(clone.getName()));
-    }
+			API.v().cloneMethodClassifications(ancestorM, newMeth);
+
+			//clone body
+			Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
+			newMeth.setActiveBody(newBody);
+
+			//change the type of the this local to the current (child) class
+			//don't think this is really necessary because something else seems to do this...
+			try {
+				if (!ancestorM.isStatic())
+					newBody.getThisLocal().setType(clone.getType());
+			} catch (Exception e) {
+				logger.debug("Error during cloning", e);
+			}
+
+			JSAStrings.v().updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
+		}
+
+		//clone fields
+		for (SootField field : original.getFields()) {
+			SootField newField = new SootField(field.getName(), field.getType(), field.getModifiers());
+			clone.addField(newField);			
+		}		
+	}
+
+	/**
+	 * Perform the work of actually clone class, changing fields and cloning methods.
+	 */
+	private void cloneClassCloneInheritedMethodsAndInstallClass() {
+		cloneAndInstallClass();
+
+		//remove inheritance by cloning
+		cim = new CloneInheritedMethods(clone, cloneAllMethods, true);
+		cim.transform();
+
+
+		//for all new expressions in the cloned methods of the clone,
+		//replace self creations with creations of clone
+		RefType originalType = RefType.v(original);
+		RefType cloneType = RefType.v(clone);
+		for (SootMethod method : clone.getMethods()) {        
+			StmtBody stmtBody = null;
+			try {
+				stmtBody = (StmtBody)method.retrieveActiveBody();
+			}
+			catch (Exception ex) {
+				logger.info("Exception retrieving method body {}", ex);
+				continue;
+			}
+
+			for (ValueBox vb : stmtBody.getUseAndDefBoxes()) {
+				if (vb.getValue() instanceof NewExpr &&
+						((NewExpr)vb.getValue()).getBaseType().equals(originalType)) {
+					NewExpr newE = (NewExpr)vb.getValue();
+					newE.setBaseType(cloneType);
+				}
+			}
+		}
+
+	}
+
+	public static boolean isClonedClass(SootClass clz) {
+		return clz.getName().contains(CLONE_POSTFIX);
+	}
+
+	public static String removeClassCloneSuffix(String str) {
+		String regex = CLONE_POSTFIX+"[0-9]+";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(str);
+		return matcher.replaceAll("");
+	}
+
+	public static SootClass getClonedClassFromClone(SootClass clone) {
+		return Scene.v().getSootClass(ClassCloner.removeClassCloneSuffix(clone.getName()));
+	}
 }

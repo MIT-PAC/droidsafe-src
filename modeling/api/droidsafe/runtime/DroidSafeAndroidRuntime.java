@@ -60,6 +60,9 @@ public class DroidSafeAndroidRuntime {
 
     /** make public so that other context's can grab this! */
     public static Application mApplication;
+
+    /** Hold all taint to written files in the application */
+    public static int FILE_SYSTEM_TAINT;
     
     /**
      * create any associated state and call init methods on an activity

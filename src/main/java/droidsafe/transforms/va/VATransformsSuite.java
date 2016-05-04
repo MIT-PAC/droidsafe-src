@@ -66,7 +66,8 @@ public class VATransformsSuite  {
         new BroadcastReceiverTransform(),
         new ContentProviderTransform(),
         new NewInstanceTransform(),
-        new MethodInvokeTransform()
+        new MethodInvokeTransform(),
+        new FileTransforms()
             );
 
     // enforce singleton pattern

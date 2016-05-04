@@ -272,8 +272,9 @@ public final FileDescriptor getFD() throws IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.278 -0500", hash_original_method = "36E798E1E7EB95F42CDB9DAEDA0C8547", hash_generated_method = "B2300D19D772DA5EE64EF342E1F6E879")
     
 @Override
-    public void write(int oneByte) throws IOException {
+    public void write(int oneByte) throws IOException {    	
         addTaint(oneByte);
+        DroidSafeAndroidRuntime.FILE_SYSTEM_TAINT = oneByte;
     }
     
 }

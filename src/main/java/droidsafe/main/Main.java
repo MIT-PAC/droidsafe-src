@@ -70,6 +70,7 @@ import droidsafe.stats.PTAPaper;
 import droidsafe.transforms.ArrayNewInstanceTransform;
 import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.ClassGetNameToClassString;
+import droidsafe.transforms.FilePrecisionTransforms;
 import droidsafe.transforms.InsertUnmodeledObjects;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
@@ -385,11 +386,9 @@ public class Main {
             }
         }
 
-        {
-            //patch in messages
-            //ServiceTransforms.v().run();
-
-        }
+        //run file precison transforms if enabled
+        driverMsg("Running File Precision Transforms...");
+        FilePrecisionTransforms.v().run();
 
         //inject inter app flows if defined
         if (!Config.v().readInterAppFlowsFile.isEmpty()) {

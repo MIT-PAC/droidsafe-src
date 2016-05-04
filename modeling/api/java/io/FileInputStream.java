@@ -240,7 +240,8 @@ public final FileDescriptor getFD() throws IOException {
     
 @Override public int read() throws IOException {
         //return Streams.readSingleByte(this);
-        return droidsafeRead();
+    	return DroidSafeAndroidRuntime.FILE_SYSTEM_TAINT; 
+        //return droidsafeRead();
     }
 
     @DSSource({DSSourceKind.IO})
@@ -273,9 +274,8 @@ public final FileDescriptor getFD() throws IOException {
                 return super.skip(byteCount);
             }
             throw errnoException.rethrowAsIOException();
-        }*/
-        addTaint(byteCount);
-        return getTaintLong();
+        }*/        
+        return 0l;
     }
     
 }
