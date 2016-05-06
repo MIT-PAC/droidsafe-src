@@ -31,12 +31,15 @@ import soot.SootField;
 import soot.SootFieldRef;
 import soot.SootMethod;
 import soot.Unit;
+import soot.Value;
 import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
 import soot.jimple.Jimple;
 import soot.jimple.NewExpr;
 import soot.jimple.ReturnStmt;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -58,11 +61,13 @@ import soot.jimple.StringConstant;
  */
 public class FilePrecisionTransforms {
 	private final Logger logger = LoggerFactory.getLogger(FilePrecisionTransforms.class);
-	private Set<String> sigsOfInvokesToTransform;
+	/** Map if file name to class that represents taint for input and output */
 	private Map<String,SootClass[]> fileNameToInputOutputClass;
+	/** List of classes that, if they appear, we cannot apply the transformation */
 	private Set<SootClass> failIfTheseAreCreated;
-	private List<FileStreamTransformDirective> transforms;
-
+	/** List of the methods in the API we are transforming, and how to transform them if found */
+	private List<FileStreamTransformDirective> transformDirectives;
+	/** Static singleton */
 	private static FilePrecisionTransforms v;
 
 	public static FilePrecisionTransforms v() {
@@ -72,6 +77,9 @@ public class FilePrecisionTransforms {
 		return v;
 	}
 
+	/**
+	 * Try to run the precision (and accuracy) increases file-focused IR transformations.
+	 */
 	public void run() {
 		if (bannedClassesCreated())
 			return;
@@ -216,26 +224,64 @@ public class FilePrecisionTransforms {
 									logger.info("FilePrecisionTransforms failed: cloner returned null!", 
 											stmt, arg, SootUtils.getSourceLocation(stmt));
 									return false;
-								}
-
-								List<Unit> newStmts = new LinkedList<Unit>();
+								}						
 
 								JimpleTransform jTransform = new JimpleTransform();
-								jTransform.m = m;
-								jTransform.originalStmt = stmt;
+								jTransform.m = m;								
 								if (stmt instanceof AssignStmt) {
-									jTransform.deleteOriginalStmt = true;
-									//create new object
-									newStmts.add(Jimple.v().newAssignStmt(
-											((AssignStmt)stmt).getLeftOp(), 
-											Jimple.v().newNewExpr(clone.getType())));
-									//call constructor
-									newStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr((Local)((AssignStmt)stmt).getLeftOp(), 
-											clone.getMethod("void <init>(java.lang.String)").makeRef(), 
-											StringConstant.v(concat))));	
-									jTransform.newStmts = newStmts;
+									AssignStmt assign = (AssignStmt)stmt;
+									if (assign.getRightOp() instanceof InvokeExpr) {
+										jTransform.insertAfter = stmt;
+										jTransform.deleteTheseStmts.add(stmt);
+										
+										//create new object
+										jTransform.newStmts.add(Jimple.v().newAssignStmt(
+												((AssignStmt)stmt).getLeftOp(), 
+												Jimple.v().newNewExpr(clone.getType())));
+										//call constructor
+										jTransform.newStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr((Local)((AssignStmt)stmt).getLeftOp(), 
+												clone.getMethod("void <init>(java.lang.String)").makeRef(), 
+												StringConstant.v(concat))));	
+									} else if (assign.getRightOp() instanceof NewExpr) {
+										//has to be of type FileInputStream or FileOutputStream based on the 
+										//methods are transforming
+										jTransform.insertAfter = stmt;
+										
+										//delete old new expr assign
+										jTransform.deleteTheseStmts.add(stmt);
+										//delete old constructor call, we assign the constructor call comes right after the new expression
+										//but we should check for it
+										Stmt constructorCall = (Stmt)stmtBody.getUnits().getSuccOf(stmt);
+										if ((!constructorCall.containsInvokeExpr()) || (!(constructorCall.getInvokeExpr() instanceof SpecialInvokeExpr)) ||
+												(!(constructorCall.getInvokeExpr().getMethodRef().getSubSignature().getString().startsWith("void <init>")))) {
+											logger.info("FilePrecisionTransforms failed: unsupported next statement of new expression for File*Stream: {} {}", 
+													stmt, SootUtils.getSourceLocation(stmt));
+											return false;
+										}
+										jTransform.deleteTheseStmts.add(constructorCall);
+											
+										//create new object
+										jTransform.newStmts.add(Jimple.v().newAssignStmt(
+												assign.getLeftOp(), 
+												Jimple.v().newNewExpr(clone.getType())));
+										
+										//call constructor, build arguments
+										List<Value> newArgs = new LinkedList<Value>();
+										newArgs.addAll(constructorCall.getInvokeExpr().getArgs());
+										InvokeExpr newConstructorInvoke = Jimple.v().newSpecialInvokeExpr((Local)assign.getLeftOp(), 
+												clone.getMethod(constructorCall.getInvokeExpr().getMethodRef().getSubSignature()).makeRef(), 
+												newArgs);
+										
+										jTransform.newStmts.add(Jimple.v().newInvokeStmt(newConstructorInvoke));	
+									} else {
+										logger.info("FilePrecisionTransforms failed: unsupported RHS of assignment: {} {}", 
+												stmt, SootUtils.getSourceLocation(stmt));
+										return false;
+									}
 								} else {
-									//??
+									logger.info("FilePrecisionTransforms failed: stmt not an assignment: {} {}", 
+											stmt, SootUtils.getSourceLocation(stmt));
+									return false;
 								}
 								//add changes to list and keep going...
 								changes.add(jTransform);
@@ -304,7 +350,7 @@ public class FilePrecisionTransforms {
 					}
 					taintAssign.setRightOp(taintRef);
 				}
-				
+
 				fileNameToInputOutputClass.put(fileName, clones);
 			} catch (Exception e) {
 				logger.info("FilePrecisionTransforms failed: could not create clones of Streams ", e);
@@ -328,24 +374,24 @@ public class FilePrecisionTransforms {
 	 */
 	class JimpleTransform {
 		SootMethod m;
-		Stmt originalStmt;
-		boolean deleteOriginalStmt;
-		List<Unit> newStmts;
+		Stmt insertAfter;
+		List<Unit> deleteTheseStmts = new LinkedList<Unit>();
+		List<Unit> newStmts = new LinkedList<Unit>();;
 
 		/**
 		 * Apply this transform and change the IR.
 		 */
 		public void applyTransform() {
-			m.retrieveActiveBody().getUnits().insertAfter(newStmts, originalStmt);
+			m.retrieveActiveBody().getUnits().insertAfter(newStmts, insertAfter);
 
-			if (deleteOriginalStmt) {			 			
-				m.retrieveActiveBody().getUnits().remove(originalStmt);
+			for (Unit delete : deleteTheseStmts) {		 			
+				m.retrieveActiveBody().getUnits().remove(delete);
 			}
 		}
 
 		@Override
 		public String toString() {
-			return "JimpleTransform " + m + " " + originalStmt + " -> " + Arrays.toString(newStmts.toArray());
+			return "JimpleTransform " + m + " " + insertAfter + " -> " + Arrays.toString(newStmts.toArray());
 		}
 
 	}
@@ -369,7 +415,7 @@ public class FilePrecisionTransforms {
 	private FileStreamTransformDirective findTransformTarget(Set<SootMethod> methods) {
 		for (SootMethod method : methods) {
 			String signature = method.getSignature();
-			for (FileStreamTransformDirective directive : transforms) {
+			for (FileStreamTransformDirective directive : transformDirectives) {
 				if (directive.sig.equals(signature))
 					return directive;
 			}
@@ -378,33 +424,38 @@ public class FilePrecisionTransforms {
 	}
 
 	public void createTransforms() {
-		transforms = new LinkedList<FileStreamTransformDirective>();	
+		transformDirectives = new LinkedList<FileStreamTransformDirective>();	
 
-		transforms.add(new FileStreamTransformDirective
+		transformDirectives.add(new FileStreamTransformDirective
 				("<android.content.Context: java.io.FileInputStream openFileInput(java.lang.String)>", "<files-dir>", new int[]{0}, STREAM_TYPE.INPUT));
-		transforms.add(new FileStreamTransformDirective
+		transformDirectives.add(new FileStreamTransformDirective
 				("<android.content.ContextWrapper: java.io.FileInputStream openFileInput(java.lang.String)>", "<files-dir>", new int[]{0}, STREAM_TYPE.INPUT));
-		transforms.add(new FileStreamTransformDirective
+		transformDirectives.add(new FileStreamTransformDirective
 				("<android.app.ContextImpl: java.io.FileInputStream openFileInput(java.lang.String)>", "<files-dir>", new int[]{0}, STREAM_TYPE.INPUT));
 
-		transforms.add(new FileStreamTransformDirective
+		transformDirectives.add(new FileStreamTransformDirective
 				("<android.content.Context: java.io.FileOutputStream openFileOutput(java.lang.String,int)>","<files-dir>", new int[]{0}, STREAM_TYPE.OUTPUT));
-		transforms.add(new FileStreamTransformDirective
+		transformDirectives.add(new FileStreamTransformDirective
 				("<android.content.ContextWrapper: java.io.FileOutputStream openFileOutput(java.lang.String,int)>","<files-dir>", new int[]{0}, STREAM_TYPE.OUTPUT));
-		transforms.add(new FileStreamTransformDirective
+		transformDirectives.add(new FileStreamTransformDirective
 				("<android.app.ContextImpl: java.io.FileOutputStream openFileOutput(java.lang.String,int)>","<files-dir>", new int[]{0}, STREAM_TYPE.OUTPUT));
 
 		//constructors for file input stream / file output stream			
+		transformDirectives.add(new FileStreamTransformDirective
+				("<java.io.FileInputStream: void <init>(java.io.File)>", "", new int[]{0}, STREAM_TYPE.INPUT));
+		transformDirectives.add(new FileStreamTransformDirective
+				("<java.io.FileInputStream: void <init>(java.lang.String)>", "", new int[]{0}, STREAM_TYPE.INPUT));
 
-		/* public java.io.FileInputStream(java.io.File) throws java.io.FileNotFoundException;
-		 * public java.io.FileInputStream(java.lang.String) throws java.io.FileNotFoundException;
-		 * 
-		 * public java.io.FileOutputStream(java.io.File) throws java.io.FileNotFoundException;
-		 * public java.io.FileOutputStream(java.io.File, boolean) throws java.io.FileNotFoundException;
-		 * public java.io.FileOutputStream(java.lang.String) throws java.io.FileNotFoundException;
-		 * public java.io.FileOutputStream(java.lang.String, boolean) throws java.io.FileNotFoundException;
-		 * 
-		 *  Need to change modeling for this?
+		transformDirectives.add(new FileStreamTransformDirective
+				("<java.io.FileOutputStream: void <init>(java.lang.String)>", "", new int[]{0}, STREAM_TYPE.OUTPUT));
+		transformDirectives.add(new FileStreamTransformDirective
+				("<java.io.FileOutputStream: void <init>(java.io.File)>", "", new int[]{0}, STREAM_TYPE.OUTPUT));
+		transformDirectives.add(new FileStreamTransformDirective
+				("<java.io.FileOutputStream: void <init>(java.io.File,boolean)>", "", new int[]{0}, STREAM_TYPE.OUTPUT));
+		transformDirectives.add(new FileStreamTransformDirective
+				("<java.io.FileOutputStream: void <init>(java.lang.String,boolean)>", "", new int[]{0}, STREAM_TYPE.OUTPUT));
+
+		/*  Need to change modeling for this?
 		 * java.io.RandomAccessFile(java.io.File, java.lang.String)
 		 * java.io.RandomAccessFile(java.lang.String, java.lang.String)
 		 * 

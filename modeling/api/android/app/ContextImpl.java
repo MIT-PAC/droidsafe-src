@@ -534,7 +534,9 @@ private File getPreferencesDir() {
     @Override
     @DSSafe(DSCat.SAFE_OTHERS)
     public File getFilesDir() {
-        return new File("<files-dir>");
+        return new File("<files-dir>") {
+            public String toString() { return "<files-dir>";}
+        };
     }
     
     @Override

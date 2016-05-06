@@ -10,12 +10,18 @@ import droidsafe.annotations.DSSource;
 import droidsafe.annotations.DSSourceKind;
 import droidsafe.annotations.DSSpec;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
+import java.io.File;
 
 public class DroidSafeFileInputStream extends FileInputStream {	
     
     public DroidSafeFileInputStream(String path) throws FileNotFoundException {
         super(path);		
     }
+
+    public DroidSafeFileInputStream(File path) throws FileNotFoundException {
+        super(path);		
+    }
+    
     
     @DSSource({DSSourceKind.IO})
     public int read() throws IOException {

@@ -223,7 +223,7 @@ public class SparkPTA extends PTABridge {
 
 		System.out.println("Total reachable method x contexts: " + totalMCs);
 
-		dumpReachablesAndAllocNodes();
+		//dumpReachablesAndAllocNodes();
 		//dumpCallGraphReachablesCSV();
 		//dumpOutdegreesCSV();
 
