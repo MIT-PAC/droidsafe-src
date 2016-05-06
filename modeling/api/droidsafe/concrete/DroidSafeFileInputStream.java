@@ -12,16 +12,15 @@ import droidsafe.annotations.DSSpec;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class DroidSafeFileInputStream extends FileInputStream {	
-
-	public DroidSafeFileInputStream(String path) throws FileNotFoundException {
-		super(path);		
-	}
-
-	 @DSSource({DSSourceKind.IO})
-	 public int read() throws IOException {
-    	//this will be filled in by the FilePrecisionTransform
-		//just return 0
-		return 0;
+    
+    public DroidSafeFileInputStream(String path) throws FileNotFoundException {
+        super(path);		
+    }
+    
+    @DSSource({DSSourceKind.IO})
+    public int read() throws IOException {
+        //DO NOT CHANGE: FilePrecisionTransforms depends on this exact body
+        return DroidSafeAndroidRuntime.FILE_SYSTEM_TAINT;
     }
 
 }

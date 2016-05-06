@@ -21,10 +21,14 @@ import droidsafe.speclang.JSAValue;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.SootUtils;
 import soot.Body;
+import soot.IntType;
 import soot.Local;
+import soot.Modifier;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
+import soot.SootField;
+import soot.SootFieldRef;
 import soot.SootMethod;
 import soot.Unit;
 import soot.jimple.AssignStmt;
@@ -33,6 +37,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.NewExpr;
 import soot.jimple.ReturnStmt;
+import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
@@ -71,13 +76,15 @@ public class FilePrecisionTransforms {
 		if (bannedClassesCreated())
 			return;
 
-		//transform
 		List<JimpleTransform> changes = new LinkedList<JimpleTransform>();
-		boolean success = transform(changes);
+		//generate the list of transforms, this is checking the code also
+		//for violations of preconditions, if one is found, then return false
+		//and don't apply any transformations
+		boolean success = generateTransforms(changes);
 		if (success) {
 			//apply changes
 			for (JimpleTransform jt : changes) {
-				System.out.println(jt);
+				jt.applyTransform();
 			}
 		} else {
 			logger.info("FilePrecisionTransforms failed!");
@@ -138,8 +145,10 @@ public class FilePrecisionTransforms {
 		return false;
 	}
 
-	private boolean transform(List<JimpleTransform> changes) {
-		for (SootClass clz : Scene.v().getClasses()) {
+	private boolean generateTransforms(List<JimpleTransform> changes) {
+		List<SootClass> classes = new LinkedList<SootClass>();
+		classes.addAll(Scene.v().getClasses());
+		for (SootClass clz : classes) {
 			for (SootMethod m : clz.getMethods()) {
 				// filter out abstract, not concrete, phantom and stub methods
 				if (API.v().isSystemMethod(m)
@@ -203,11 +212,14 @@ public class FilePrecisionTransforms {
 								//get clone or make it based on concat of strings
 								//generate JimpleTransform
 								SootClass clone = getClone(concat, directive.steam_type);								
-								if (clone == null)
+								if (clone == null) {
+									logger.info("FilePrecisionTransforms failed: cloner returned null!", 
+											stmt, arg, SootUtils.getSourceLocation(stmt));
 									return false;
+								}
 
-								List<Stmt> newStmts = new LinkedList<Stmt>();
-								
+								List<Unit> newStmts = new LinkedList<Unit>();
+
 								JimpleTransform jTransform = new JimpleTransform();
 								jTransform.m = m;
 								jTransform.originalStmt = stmt;
@@ -219,8 +231,9 @@ public class FilePrecisionTransforms {
 											Jimple.v().newNewExpr(clone.getType())));
 									//call constructor
 									newStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr((Local)((AssignStmt)stmt).getLeftOp(), 
-											clone.getMethod("<init>(java.lang.String)").makeRef(), 
-											StringConstant.v(concat))));								
+											clone.getMethod("void <init>(java.lang.String)").makeRef(), 
+											StringConstant.v(concat))));	
+									jTransform.newStmts = newStmts;
 								} else {
 									//??
 								}
@@ -248,20 +261,51 @@ public class FilePrecisionTransforms {
 
 				ClassCloner outputCloner = ClassCloner.cloneClassAndCloneMethodsAndFields(Scene.v().getSootClass("droidsafe.concrete.DroidSafeFileOutputStream"));
 				clones[STREAM_TYPE.OUTPUT.ordinal()] = outputCloner.getClonedClass();
+				//create field in the output for the TAINT
+				SootField taintField = new SootField("TAINT", IntType.v(), Modifier.PUBLIC | Modifier.STATIC);
+				outputCloner.getClonedClass().addField(taintField);
+				//change the write(int) method to set the close class field instead of the DroidSafeAndroidRuntime all file system taint field
+				{
+					SootMethod writeMethod = outputCloner.getClonedClass().getMethod("void write(int)");
+					Body writeBody = writeMethod.retrieveActiveBody();
+					Iterator<Unit> writeMethodStmts = writeBody.getUnits().snapshotIterator();
+					AssignStmt assignStmt = null;
+					//ug, search for first (and only) assignment!
+					while (writeMethodStmts.hasNext()) {
+						Stmt current = (Stmt)writeMethodStmts.next();
+						if (current instanceof AssignStmt) {
+							assignStmt = (AssignStmt)current;
+							break;
+						}
+					}
+					assignStmt.setLeftOp(Jimple.v().newStaticFieldRef(taintField.makeRef()));
+				}
 
 				//must change the DroidSafeFileInputStream
 				ClassCloner inputCloner = ClassCloner.cloneClassAndCloneMethodsAndFields(Scene.v().getSootClass("droidsafe.concrete.DroidSafeFileInputStream"));
-				clones[STREAM_TYPE.OUTPUT.ordinal()] = inputCloner.getClonedClass();
-				SootMethod readMethod = inputCloner.getClonedClass().getMethod("int read()");
-				Iterator<Unit> stmts = readMethod.retrieveActiveBody().getUnits().snapshotIterator();
-				Stmt readReturn = null;
-				while (stmts.hasNext()) {
-					readReturn = (Stmt)stmts.next();
-					if (readReturn instanceof ReturnStmt)
-						break;
+				clones[STREAM_TYPE.INPUT.ordinal()] = inputCloner.getClonedClass();
+
+				//link reader to writer's taint field in the clone pair
+				//by changing the read() method in the FileInputStream to read the TAINT field of the FileOutputStream
+				{
+					SootMethod readMethod = inputCloner.getClonedClass().getMethod("int read()");
+					Body readBody = readMethod.retrieveActiveBody();
+					Iterator<Unit> stmts = readBody.getUnits().snapshotIterator();
+
+					StaticFieldRef taintRef = Jimple.v().newStaticFieldRef(outputCloner.getClonedClass().getFieldByName("TAINT").makeRef());
+
+					AssignStmt taintAssign = null;
+					while (stmts.hasNext()) {
+						Stmt current = (Stmt)stmts.next();
+						if (current instanceof AssignStmt) {
+							taintAssign = (AssignStmt)current;
+							break;
+						}
+					}
+					taintAssign.setRightOp(taintRef);
 				}
-				//link reader to writer's taint field
-				((ReturnStmt)readReturn).setOp(Jimple.v().newStaticFieldRef(outputCloner.getClonedClass().getFieldByName("TAINT").makeRef()));
+				
+				fileNameToInputOutputClass.put(fileName, clones);
 			} catch (Exception e) {
 				logger.info("FilePrecisionTransforms failed: could not create clones of Streams ", e);
 				return null;
@@ -275,12 +319,30 @@ public class FilePrecisionTransforms {
 		INPUT, OUTPUT
 	}
 
+	/**
+	 * Defines a transformation on the Jimple IR.  A list of statements to insert in a method
+	 * at a point.  Optionally delete original statement.
+	 * 
+	 * @author mgordon
+	 *
+	 */
 	class JimpleTransform {
 		SootMethod m;
 		Stmt originalStmt;
 		boolean deleteOriginalStmt;
-		List<Stmt> newStmts;
-		
+		List<Unit> newStmts;
+
+		/**
+		 * Apply this transform and change the IR.
+		 */
+		public void applyTransform() {
+			m.retrieveActiveBody().getUnits().insertAfter(newStmts, originalStmt);
+
+			if (deleteOriginalStmt) {			 			
+				m.retrieveActiveBody().getUnits().remove(originalStmt);
+			}
+		}
+
 		@Override
 		public String toString() {
 			return "JimpleTransform " + m + " " + originalStmt + " -> " + Arrays.toString(newStmts.toArray());
@@ -301,7 +363,7 @@ public class FilePrecisionTransforms {
 			this.argsToConcat = argsToConcat;
 			this.steam_type = steam_type;
 		}	
-			
+
 	}
 
 	private FileStreamTransformDirective findTransformTarget(Set<SootMethod> methods) {
@@ -335,12 +397,10 @@ public class FilePrecisionTransforms {
 		//constructors for file input stream / file output stream			
 
 		/* public java.io.FileInputStream(java.io.File) throws java.io.FileNotFoundException;
-		 * public java.io.FileInputStream(java.io.FileDescriptor);
 		 * public java.io.FileInputStream(java.lang.String) throws java.io.FileNotFoundException;
 		 * 
 		 * public java.io.FileOutputStream(java.io.File) throws java.io.FileNotFoundException;
 		 * public java.io.FileOutputStream(java.io.File, boolean) throws java.io.FileNotFoundException;
-		 * public java.io.FileOutputStream(java.io.FileDescriptor);
 		 * public java.io.FileOutputStream(java.lang.String) throws java.io.FileNotFoundException;
 		 * public java.io.FileOutputStream(java.lang.String, boolean) throws java.io.FileNotFoundException;
 		 * 

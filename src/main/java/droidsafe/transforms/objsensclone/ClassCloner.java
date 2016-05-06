@@ -138,6 +138,11 @@ public class ClassCloner {
 		return c;
 	}
 
+	/**
+	 * Be very careful when using this method to clone a class.  It clones the class, and creates clones
+	 * of all methods and fields in the class (but not inherited from superclasses).  The new clone becomes
+	 * a subclass of the original.
+	 */
 	public static ClassCloner cloneClassAndCloneMethodsAndFields(SootClass original) {
 		ClassCloner c = new ClassCloner(original, false);
 		c.cloneClassCloneMethodsFieldsAndInstallClass();
@@ -197,8 +202,9 @@ public class ClassCloner {
 			//change the type of the this local to the current (child) class
 			//don't think this is really necessary because something else seems to do this...
 			try {
-				if (!ancestorM.isStatic())
+				if (!ancestorM.isStatic()) {
 					newBody.getThisLocal().setType(clone.getType());
+				}
 			} catch (Exception e) {
 				logger.debug("Error during cloning", e);
 			}
