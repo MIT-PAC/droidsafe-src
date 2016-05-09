@@ -253,6 +253,9 @@ public static File createTempFile(String prefix, String suffix, File directory)
     @DSVAModeled
     private String name;
 
+    @DSVAModeled
+    private File parentFile;
+
     /**
      * Constructs a new file using the specified directory and name.
      *
@@ -268,8 +271,9 @@ public static File createTempFile(String prefix, String suffix, File directory)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.432 -0500", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "C4F8D83E64C44160E188661FCFE7409A")
     
     public File(File dir, String name) {
-        this.path = dir.path;
-        this.name = dir.name + name;
+        this.path = "";
+        this.name = name;
+        this.parentFile = dir;
     }
 
     /**
@@ -284,6 +288,7 @@ public static File createTempFile(String prefix, String suffix, File directory)
     
 public File(String path) {
         this.path = path;
+        this.name= "";
     }
 
     /**

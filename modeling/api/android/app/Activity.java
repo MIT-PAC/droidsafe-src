@@ -53,6 +53,7 @@ import droidsafe.runtime.DroidSafeAndroidRuntime;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.io.File;
 import java.util.HashMap;
 
 import android.content.IntentFilter;
@@ -4284,7 +4285,6 @@ final void performUserLeaving() {
         droidsafeOnCreateThumbnail();
         onCreateDescription();
         
-    }
-    
+    }    
 }
 

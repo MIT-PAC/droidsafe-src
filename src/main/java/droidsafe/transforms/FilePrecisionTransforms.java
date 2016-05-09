@@ -1,5 +1,6 @@
 package droidsafe.transforms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,7 +15,13 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.value.IntentModel;
+import droidsafe.analyses.value.RefVAModel;
+import droidsafe.analyses.value.UnknownVAModel;
+import droidsafe.analyses.value.UnresolvedIntent;
+import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.speclang.JSAValue;
@@ -44,6 +51,8 @@ import soot.jimple.StaticFieldRef;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
+import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 /**	
  * Check modeling for all methods that return java.io.File?
@@ -110,6 +119,8 @@ public class FilePrecisionTransforms {
 		failIfTheseAreCreated.add(Scene.v().getSootClass("android.util.AtomicFile"));
 		failIfTheseAreCreated.add(Scene.v().getSootClass("java.lang.ProcessBuilder"));
 		failIfTheseAreCreated.add(Scene.v().getSootClass("java.io.FileDescriptor"));
+		failIfTheseAreCreated.add(Scene.v().getSootClass("android.content.res.AssetFileDescriptor"));
+		failIfTheseAreCreated.add(Scene.v().getSootClass("java.io.RandomAccessFile"));
 	}
 
 	private boolean bannedClassesCreated() {
@@ -199,7 +210,7 @@ public class FilePrecisionTransforms {
 										//constant value!
 										concat += ("/" + resolved);
 
-									} else {
+									} else { 
 										//not a jsa tracked value?
 										logger.info("FilePrecisionTransforms failed: argument to call not tracked by JSA: {} {} {}", 
 												stmt, arg, SootUtils.getSourceLocation(stmt));
@@ -207,9 +218,27 @@ public class FilePrecisionTransforms {
 									}
 
 								} else if (ie.getArg(arg).getType().equals(RefType.v("java.io.File"))) {
-									logger.info("FilePrecisionTransforms failed: argument is java.io.File not supported: {} {} {}", 
-											stmt, arg, SootUtils.getSourceLocation(stmt));
-									return false;
+									List<String> allResolvedValues = new LinkedList<String>();
+									for (IAllocNode node : PTABridge.v().getPTSetIns(ie.getArg(arg))) {
+										List<String> nodeResolvedValues = getFileVAModelString((AllocNode)node);
+										if (nodeResolvedValues == null) {
+											logger.info("FilePrecisionTransforms failed: VA could not resolve field for java.io.File: {} {} {}", 
+													stmt, arg, SootUtils.getSourceLocation(stmt));
+											return false;
+										} else {
+											allResolvedValues.addAll(nodeResolvedValues);
+										}
+									}
+
+									if (allResolvedValues.size() != 1) {
+										logger.info("FilePrecisionTransforms failed: VA resolved too many values for filename: {} {} {}", 
+												stmt, Arrays.toString(allResolvedValues.toArray()), SootUtils.getSourceLocation(stmt));
+										return false;
+									} else {
+										concat = allResolvedValues.get(0);
+									}
+
+
 								} else {
 									logger.info("FilePrecisionTransforms failed: argument type not supported: {} {} {}", 
 											stmt, arg, SootUtils.getSourceLocation(stmt));
@@ -219,6 +248,7 @@ public class FilePrecisionTransforms {
 								//if we get here, all constants are ready to xform
 								//get clone or make it based on concat of strings
 								//generate JimpleTransform
+								logger.info("Creating / getting file stream clone for {} {}", concat, directive.steam_type.name());
 								SootClass clone = getClone(concat, directive.steam_type);								
 								if (clone == null) {
 									logger.info("FilePrecisionTransforms failed: cloner returned null!", 
@@ -233,7 +263,7 @@ public class FilePrecisionTransforms {
 									if (assign.getRightOp() instanceof InvokeExpr) {
 										jTransform.insertAfter = stmt;
 										jTransform.deleteTheseStmts.add(stmt);
-										
+
 										//create new object
 										jTransform.newStmts.add(Jimple.v().newAssignStmt(
 												((AssignStmt)stmt).getLeftOp(), 
@@ -241,45 +271,46 @@ public class FilePrecisionTransforms {
 										//call constructor
 										jTransform.newStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr((Local)((AssignStmt)stmt).getLeftOp(), 
 												clone.getMethod("void <init>(java.lang.String)").makeRef(), 
-												StringConstant.v(concat))));	
-									} else if (assign.getRightOp() instanceof NewExpr) {
-										//has to be of type FileInputStream or FileOutputStream based on the 
-										//methods are transforming
-										jTransform.insertAfter = stmt;
-										
-										//delete old new expr assign
-										jTransform.deleteTheseStmts.add(stmt);
-										//delete old constructor call, we assign the constructor call comes right after the new expression
-										//but we should check for it
-										Stmt constructorCall = (Stmt)stmtBody.getUnits().getSuccOf(stmt);
-										if ((!constructorCall.containsInvokeExpr()) || (!(constructorCall.getInvokeExpr() instanceof SpecialInvokeExpr)) ||
-												(!(constructorCall.getInvokeExpr().getMethodRef().getSubSignature().getString().startsWith("void <init>")))) {
-											logger.info("FilePrecisionTransforms failed: unsupported next statement of new expression for File*Stream: {} {}", 
-													stmt, SootUtils.getSourceLocation(stmt));
-											return false;
-										}
-										jTransform.deleteTheseStmts.add(constructorCall);
-											
-										//create new object
-										jTransform.newStmts.add(Jimple.v().newAssignStmt(
-												assign.getLeftOp(), 
-												Jimple.v().newNewExpr(clone.getType())));
-										
-										//call constructor, build arguments
-										List<Value> newArgs = new LinkedList<Value>();
-										newArgs.addAll(constructorCall.getInvokeExpr().getArgs());
-										InvokeExpr newConstructorInvoke = Jimple.v().newSpecialInvokeExpr((Local)assign.getLeftOp(), 
-												clone.getMethod(constructorCall.getInvokeExpr().getMethodRef().getSubSignature()).makeRef(), 
-												newArgs);
-										
-										jTransform.newStmts.add(Jimple.v().newInvokeStmt(newConstructorInvoke));	
+												StringConstant.v(concat))));
 									} else {
 										logger.info("FilePrecisionTransforms failed: unsupported RHS of assignment: {} {}", 
 												stmt, SootUtils.getSourceLocation(stmt));
 										return false;
 									}
+								} else if (stmt instanceof InvokeStmt && (stmt.getInvokeExpr() instanceof SpecialInvokeExpr)) {
+									SpecialInvokeExpr constructorCall = (SpecialInvokeExpr)stmt.getInvokeExpr();
+									//constructor call
+									//has to be of type FileInputStream or FileOutputStream based on the 
+									//methods are transforming
+									jTransform.insertAfter = stmt;
+
+									//delete old new expr assign
+									jTransform.deleteTheseStmts.add(stmt);
+									//delete old constructor call, we assign the constructor call comes right after the new expression
+									//but we should check for it
+									Stmt newAssignStmt = (Stmt)stmtBody.getUnits().getPredOf(stmt);
+									if (!(newAssignStmt instanceof AssignStmt) || !(((AssignStmt)newAssignStmt).getRightOp() instanceof NewExpr)) {
+										logger.info("FilePrecisionTransforms failed: unsupported pred statement of constructor call for File*Stream: {} {}", 
+												stmt, SootUtils.getSourceLocation(stmt));
+										return false;
+									}
+									jTransform.deleteTheseStmts.add(newAssignStmt);
+
+									//create new object
+									jTransform.newStmts.add(Jimple.v().newAssignStmt(
+											((AssignStmt)newAssignStmt).getLeftOp(), 
+											Jimple.v().newNewExpr(clone.getType())));
+
+									//call constructor, build arguments
+									List<Value> newArgs = new LinkedList<Value>();
+									newArgs.addAll(constructorCall.getArgs());
+									InvokeExpr newConstructorInvoke = Jimple.v().newSpecialInvokeExpr((Local)((AssignStmt)newAssignStmt).getLeftOp(), 
+											clone.getMethod(constructorCall.getMethodRef().getSubSignature()).makeRef(), 
+											newArgs);
+
+									jTransform.newStmts.add(Jimple.v().newInvokeStmt(newConstructorInvoke));	
 								} else {
-									logger.info("FilePrecisionTransforms failed: stmt not an assignment: {} {}", 
+									logger.info("FilePrecisionTransforms failed: stmt type not supported: {} {}", 
 											stmt, SootUtils.getSourceLocation(stmt));
 									return false;
 								}
@@ -292,6 +323,120 @@ public class FilePrecisionTransforms {
 			}
 		}
 		return true;
+	}
+
+	/**
+	 * 
+	 * @param node
+	 * @return null if not resolved, otherwise all possible strings resolved
+	 */
+	private List<String> getFileVAModelString(AllocNode node) {
+		if (!(node.getType() instanceof RefType)) {
+			logger.debug("Called getIntentModel on non ref type: {}", node.getType());
+			return null;
+		}                
+
+		SootClass clz = ClassCloner.getClonedClassFromClone(((RefType)node.getType()).getSootClass());
+
+		if  (!Scene.v().getActiveHierarchy().isClassSuperclassOfIncluding(Scene.v().getSootClass("java.io.File"), 
+				clz)) {            
+			logger.debug("Called getFileVAModel on non java.io.File type: {}", node);
+			return null;
+		}
+
+		VAModel vaModel = ValueAnalysis.v().getResult(node);
+
+
+		if(vaModel != null && vaModel instanceof RefVAModel) {
+			RefVAModel fileRefVAModel = (RefVAModel)vaModel;
+			List<String> resolvedPaths = new LinkedList<String>();	  
+			List<String> resolvedNames = new LinkedList<String>();	      
+			SootClass clonedFileSootClass = ((RefType)(fileRefVAModel.getAllocNode().getType())).getSootClass();
+			SootClass fileSootClass = ClassCloner.getClonedClassFromClone(clonedFileSootClass);
+
+			// get the strings for the parent file field (parent file is often used as a path / dir in constructor)
+			List<String> parentFilesStrings = new LinkedList<String>();
+			SootField parentFileField = Scene.v().makeFieldRef(fileSootClass, "parentFile", 
+					Scene.v().getSootClass("java.io.File").getType(), false).resolve();			
+			for (IAllocNode parentNode : PTABridge.v().getPTSet(node, parentFileField)) {
+				List<String> parentFileStrings = getFileVAModelString((AllocNode)parentNode);
+				if (parentFileStrings == null) {
+					logger.debug("invalided or incorrect va model for parent file field.");
+					return null;
+				}
+				
+				for (String parentFileString : parentFileStrings) {
+					if (!parentFilesStrings.contains(parentFileString))
+						parentFilesStrings.add(parentFileString);
+				}
+			}
+			
+			SootField pathField = Scene.v().makeFieldRef(fileSootClass, "path", 
+					Scene.v().getSootClass("java.lang.String").getType(), false).resolve();
+
+			Set<VAModel> pathStringFldVAModels = fileRefVAModel.getFieldVAModels(pathField);
+			for(VAModel pathStringFldVAModel : pathStringFldVAModels) {
+				if(pathStringFldVAModel.invalidated() || (!(pathStringFldVAModel instanceof StringVAModel))){
+					logger.debug("invalided or incorrect va model for path field: {}", pathStringFldVAModel);
+					return null;
+				}
+
+				//if we get here, it is a resolved string va model value
+				for (String str : ((StringVAModel)pathStringFldVAModel).getValues()) {
+					resolvedPaths.add(str);
+				}
+			}
+
+
+
+			SootField nameField = Scene.v().makeFieldRef(fileSootClass, "name", 
+					Scene.v().getSootClass("java.lang.String").getType(), false).resolve();	              	           
+
+			Set<VAModel> nameStringFldVAModels = fileRefVAModel.getFieldVAModels(nameField);
+			for(VAModel nameStringFldVAModel : nameStringFldVAModels) {
+				if(nameStringFldVAModel.invalidated() || (!(nameStringFldVAModel instanceof StringVAModel))){
+					logger.debug("invalided or incorrect va model for name field: {}", nameStringFldVAModel);
+					return null;
+				}
+
+				//if we get here, it is a resolved string va model value
+				for (String str : ((StringVAModel)nameStringFldVAModel).getValues()) {
+					resolvedNames.add(str);
+				}
+			}	              	             	         
+
+			List<String> resolved = new ArrayList<String>();
+			if (resolvedNames.isEmpty()) resolvedNames.add("");
+			if (resolvedPaths.isEmpty()) resolvedPaths.add("");					
+			for (String path : resolvedPaths) {
+				for (String name : resolvedNames) {
+					resolved.add(path + "/" + name);
+				}
+			}
+			
+			//pre-pend parent paths
+			if (parentFilesStrings.size() == 1) {
+				for (int i = 0; i < resolved.size(); i++) {
+					resolved.set(i, parentFilesStrings.get(0) + "/" + resolved.get(i));
+				}								
+			} else if (parentFilesStrings.size() > 1) {
+				logger.debug("Parent file field has multiple possible file names, not currently supported: size = {}", parentFilesStrings.size());
+				return null;
+			}
+			
+			//canonicalize the string by removing repeating path separators
+			List<String> canonicalizedResolved = new ArrayList<String>();
+			for (String uncanon : resolved) {
+				canonicalizedResolved.add(uncanon.replaceAll("/+", "/"));
+			}
+
+			return canonicalizedResolved;
+			
+		} else {
+			logger.debug("No VA model or incorrect type for VA Model {}", vaModel);
+		}
+
+		return null;
 	}
 
 	/**
@@ -455,13 +600,11 @@ public class FilePrecisionTransforms {
 		transformDirectives.add(new FileStreamTransformDirective
 				("<java.io.FileOutputStream: void <init>(java.lang.String,boolean)>", "", new int[]{0}, STREAM_TYPE.OUTPUT));
 
-		/*  Need to change modeling for this?
+		/*  Need to model RandomAccessFile if we are to support them, for now, don't transform if the app 
+		 * uses them.
+		 * 
 		 * java.io.RandomAccessFile(java.io.File, java.lang.String)
 		 * java.io.RandomAccessFile(java.lang.String, java.lang.String)
-		 * 
-		 * public java.io.FileInputStream createInputStream() throws java.io.IOException;
-		 * public java.io.FileOutputStream createOutputStream() throws java.io.IOException;
-		 * 
 		 * 
 		 */
 	}
