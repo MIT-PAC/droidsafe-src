@@ -387,8 +387,14 @@ public class Main {
         }
 
         //run file precison transforms if enabled
-        driverMsg("Running File Precision Transforms...");
-        FilePrecisionTransforms.v().run();
+        if (Config.v().runFilePrecisionTransforms) {
+        	driverMsg("Running File Precision Transforms...");
+        	if (FilePrecisionTransforms.v().run()) {
+        		driverMsg("Successfully ran and applied file precision transformations.");
+        	} else {
+        		driverMsg("File precision transformations could not be applied.");
+        	}
+        }
 
         //inject inter app flows if defined
         if (!Config.v().readInterAppFlowsFile.isEmpty()) {

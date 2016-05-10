@@ -55,15 +55,22 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 /**	
- * Check modeling for all methods that return java.io.File?
+ * This transformation pass tries to connect flows from file input and file output streams based on 
+ * resolved file names from the value and string analyses.  For example, if a FOS could write to "file1.txt", 
+ * the flows into that file should be connected to a FIS that could read from "file1.txt", but should not be 
+ * connected to a FIS that definitely could not read from "file1.txt".  There are a few assumptions in the 
+ * underlying system model here, like no symbolic links, and that the modeling correctly models standard locations
+ * returned from the API like Context.getFilesDir().
  * 
- * 0. We have special DroidSafe versions of the FileInputStream and FileOutputStream that read / write
- * taint specially.  RandomAccessFile?
- * 
- * 1. Check that all file opens have string constants as resolved by string analysis
- *    (if not, then warn in the non-info-report, no random access files?)
- * 2. Create clones of file input stream and file output stream for each string constant
- * 3. Replace returned FIS/FOS with appropriate clone
+ * This pass will first check if the application uses any idioms or classes that could break the "soundness" 
+ * (accuracy) of the model.  Then it searches for calls that create or return FIS or FOS, and transforms them
+ * to be connected read/writes based on file names resolved.  If at any point, there is a file name that cannot 
+ * be resolved to a constant, the pass will fail, and no transformations will be performed.  During the
+ * transformation, we make clones of the FIS / FOS classes, one for each file (path) read / written in the 
+ * application.
+ *
+ * This pass is considered experimental and could benefit from more precise context in the String analysis, 
+ * especially important for calls to File.toString() for files returned from API. 
  * 
  * @author mgordon
  *
@@ -88,10 +95,15 @@ public class FilePrecisionTransforms {
 
 	/**
 	 * Try to run the precision (and accuracy) increases file-focused IR transformations.
+	 * 
+	 * Return true if all checks pass.  But true does not denote that a transformation was
+	 * performed.
+	 * 
+	 * Return false if error or transformation could not be applied.
 	 */
-	public void run() {
+	public boolean run() {
 		if (bannedClassesCreated())
-			return;
+			return false;
 
 		List<JimpleTransform> changes = new LinkedList<JimpleTransform>();
 		//generate the list of transforms, this is checking the code also
@@ -100,11 +112,18 @@ public class FilePrecisionTransforms {
 		boolean success = generateTransforms(changes);
 		if (success) {
 			//apply changes
-			for (JimpleTransform jt : changes) {
-				jt.applyTransform();
+			try {
+				for (JimpleTransform jt : changes) {
+					jt.applyTransform();
+				}
+			} catch (Exception e) {
+				logger.error("Error applying File Precision Transform.",e );
+				return false;
 			}
+			return true;
 		} else {
 			logger.info("FilePrecisionTransforms failed!");
+			return false;
 		}
 	}
 
@@ -114,6 +133,10 @@ public class FilePrecisionTransforms {
 		fileNameToInputOutputClass = new HashMap<String,SootClass[]>();
 	}
 
+	/**
+	 * Create list of Android API classes that cannot appear in the application because
+	 * their semantics is not considered in this transformation.
+	 */
 	private void createFailIfTheseAreCreated() {		
 		failIfTheseAreCreated = new HashSet<SootClass>();
 		failIfTheseAreCreated.add(Scene.v().getSootClass("android.util.AtomicFile"));
@@ -123,6 +146,12 @@ public class FilePrecisionTransforms {
 		failIfTheseAreCreated.add(Scene.v().getSootClass("java.io.RandomAccessFile"));
 	}
 
+	/**
+	 * Check if any banned classes are created or returned from API calls.
+	 * 
+	 * @return true is any banned classes are used in the app.  false if not, and continue 
+	 * on with pass.
+	 */
 	private boolean bannedClassesCreated() {
 		for (SootMethod m : PTABridge.v().getReachableMethods()) {
 			// filter out abstract, not concrete, phantom and stub methods
@@ -164,6 +193,15 @@ public class FilePrecisionTransforms {
 		return false;
 	}
 
+	/**
+	 * Given that no banned classes appear in the application, find calls to the API methods to be transformed,
+	 * and create a list of JimpleTransforms that denote the transforms to apply.  If at any point in the search
+	 * we find something we don't understand, return false, denoting that we cannot apply any transforms.
+	 * 
+	 * @param changes List of changes to apply assuming a return of true.
+	 * @return true if we can go ahead and apply changes, false if we found something we don't understand, 
+	 * and should not apply changes.
+	 */
 	private boolean generateTransforms(List<JimpleTransform> changes) {
 		List<SootClass> classes = new LinkedList<SootClass>();
 		classes.addAll(Scene.v().getClasses());
@@ -326,9 +364,14 @@ public class FilePrecisionTransforms {
 	}
 
 	/**
+	 * Given an allocnode for a java.io.File object, return the list of filename constants 
+	 * that the file could represent.  Return null if we cannot resolve the file name.  
+	 * This method uses the Value Analysis to query the values of the path and name field, 
+	 * and recursively calls itself to file the filenames for parent files used to create a
+	 * file.
 	 * 
-	 * @param node
-	 * @return null if not resolved, otherwise all possible strings resolved
+	 * @param node allocnode for java.io.File.
+	 * @return null if not resolved, otherwise all possible strings resolved for filename.
 	 */
 	private List<String> getFileVAModelString(AllocNode node) {
 		if (!(node.getType() instanceof RefType)) {
@@ -364,13 +407,13 @@ public class FilePrecisionTransforms {
 					logger.debug("invalided or incorrect va model for parent file field.");
 					return null;
 				}
-				
+
 				for (String parentFileString : parentFileStrings) {
 					if (!parentFilesStrings.contains(parentFileString))
 						parentFilesStrings.add(parentFileString);
 				}
 			}
-			
+
 			SootField pathField = Scene.v().makeFieldRef(fileSootClass, "path", 
 					Scene.v().getSootClass("java.lang.String").getType(), false).resolve();
 
@@ -413,7 +456,7 @@ public class FilePrecisionTransforms {
 					resolved.add(path + "/" + name);
 				}
 			}
-			
+
 			//pre-pend parent paths
 			if (parentFilesStrings.size() == 1) {
 				for (int i = 0; i < resolved.size(); i++) {
@@ -423,7 +466,7 @@ public class FilePrecisionTransforms {
 				logger.debug("Parent file field has multiple possible file names, not currently supported: size = {}", parentFilesStrings.size());
 				return null;
 			}
-			
+
 			//canonicalize the string by removing repeating path separators
 			List<String> canonicalizedResolved = new ArrayList<String>();
 			for (String uncanon : resolved) {
@@ -431,7 +474,7 @@ public class FilePrecisionTransforms {
 			}
 
 			return canonicalizedResolved;
-			
+
 		} else {
 			logger.debug("No VA model or incorrect type for VA Model {}", vaModel);
 		}
@@ -512,7 +555,7 @@ public class FilePrecisionTransforms {
 
 	/**
 	 * Defines a transformation on the Jimple IR.  A list of statements to insert in a method
-	 * at a point.  Optionally delete original statement.
+	 * at a point.  Optionally delete original statements as given by a list of statements.
 	 * 
 	 * @author mgordon
 	 *
@@ -541,10 +584,20 @@ public class FilePrecisionTransforms {
 
 	}
 
+	/**
+	 * This class defines a method call to transform and some directive for how to transform the call
+	 * if it appears in the app code.
+	 * @author mgordon
+	 *
+	 */
 	class FileStreamTransformDirective {
+		/** Signature of the method to transform */
 		String sig;
+		/** prefix to attach to FIS / FOS created by the method in the transform */
 		String prefix;
+		/** list of arguments that should be concatenated to create file name */
 		int[] argsToConcat;
+		/** type of the stream created by method, either FIS or FOS */
 		STREAM_TYPE steam_type;
 
 		public FileStreamTransformDirective(String sig, String prefix, int[] argsToConcat, STREAM_TYPE steam_type) {
@@ -557,6 +610,14 @@ public class FilePrecisionTransforms {
 
 	}
 
+	/**
+	 * Does the given set of methods include any pre-defined methods that we should transform.
+	 * 
+	 * @param methods List of target methods for a call.
+	 * 
+	 * @return The first method we transform directive in the target list that is a method that 
+	 * should be transformed.  If nothing found, then return null.
+	 */
 	private FileStreamTransformDirective findTransformTarget(Set<SootMethod> methods) {
 		for (SootMethod method : methods) {
 			String signature = method.getSignature();
@@ -568,6 +629,10 @@ public class FilePrecisionTransforms {
 		return null;
 	}
 
+	/**
+	 * Create the list of transform directives for this transformation.  This defines the methods that should be transformed, 
+	 * and a bit of information about how to transform them, e.g., how to create the filename and what type is returned by the method.
+	 */
 	public void createTransforms() {
 		transformDirectives = new LinkedList<FileStreamTransformDirective>();	
 
