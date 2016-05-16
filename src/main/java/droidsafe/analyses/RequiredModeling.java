@@ -107,6 +107,7 @@ public class RequiredModeling {
 
                 if (method.isPhantom()) {
                     System.out.println("Reachable phantom method: " + method);
+                    AnalysisReport.v().addEntry("Reachable method in ADI model does not have a model implementation", method, AnalysisReport.Level.HIGH);
                 }
 
                 logger.debug("Method {}: hasbody-{}, abstract-{}, concrete-{}",
@@ -119,6 +120,7 @@ public class RequiredModeling {
                     toModel.add(method.getSignature());
                 } catch (Exception e) {
                     logger.info("Cannot find method in model: {}", method);
+                    AnalysisReport.v().addEntry("Cannot find reachable method in ADI model", method, AnalysisReport.Level.HIGH);
                 }
             }
         }
@@ -302,6 +304,7 @@ public class RequiredModeling {
 
                     if (!found && !API.v().isSystemClass(method.getDeclaringClass())) {
                         fw.write(method + " overrides " + API.v().getClosestOverridenAPIMethod(method) + "\n");
+                        AnalysisReport.v().addEntry("Application method that overrides API method is dead code.", method, AnalysisReport.Level.LOW);
 
                         //now search invokes in the library and see if it is called
                         List<SootMethod> couldCall = new LinkedList<SootMethod>();
@@ -424,11 +427,14 @@ public class RequiredModeling {
 
                 resolved = PTABridge.v().getTargetsInsNoContext(stmt);
 
-                if (resolved == null || resolved.isEmpty()) 
+                if (resolved == null || resolved.isEmpty()) { 
                     fw.write(String.format
                         ("No valid allocations for receiver of %s of type %s in %s (%s).\n\n",
                             iie.getMethodRef(), iie.getBase().getType(), m, 
                             SootUtils.getSourceLocation(stmt, m.getDeclaringClass())));
+                    AnalysisReport.v().addEntry("No valid allocations for receiver of method call.", stmt, AnalysisReport.Level.LOW);
+                    
+                }
             }
         }
     }

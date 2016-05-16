@@ -11,6 +11,7 @@ import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 import soot.SootClass;
+import soot.SootMethod;
 import soot.jimple.Stmt;
 
 /**
@@ -133,12 +134,20 @@ public class AnalysisReport {
 		addEntry(text, location, level);
 	}
 	
+	public void addEntry(String text, Level level) {
+		addEntry(text, "No Source Location", level);
+	}
+	
 	public void addEntry(String text, SourceLocationTag location, Level level) {
 		addEntry(text, location.toString(), level);
 	}
 	
 	public void addEntry(String text, SootClass clz, Level level) {
 		addEntry(text, clz.getName(), level);
+	}
+	
+	public void addEntry(String text, SootMethod method, Level level) {
+		addEntry(text, method.getName(), level);
 	}
 	
 	public void addEntry(String text, String location, Level level) {

@@ -286,6 +286,7 @@ public class JSAStrings {
         } catch (TimeoutException e) {
             v().status = Status.TIMEDOUT_ANALYSIS;
             logger.warn("Timed out when running JSA");
+            v().hasRun = false;
         } catch (Exception e) {
             logger.error("Exception when running JSA: {}", e.getCause());
             droidsafe.main.Main.exit(1);

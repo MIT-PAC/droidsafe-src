@@ -24,6 +24,7 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.speclang.JSAValue;
 import droidsafe.transforms.objsensclone.ClassCloner;
 import droidsafe.utils.SootUtils;
@@ -171,6 +172,7 @@ public class FilePrecisionTransforms {
 				if (stmt instanceof AssignStmt) {
 					if (((AssignStmt)stmt).getRightOp() instanceof NewExpr &&
 							failIfTheseAreCreated.contains(((NewExpr)((AssignStmt)stmt).getRightOp()).getBaseType().getSootClass())) {
+						AnalysisReport.v().addEntry("FilePrecisionTransform: found banned creation", stmt, AnalysisReport.Level.GUARDED);
 						logger.info("FilePrecisionTransform: found banned creation: {}", stmt);
 						return true;
 					}
@@ -183,6 +185,7 @@ public class FilePrecisionTransforms {
 						if (target.getReturnType() instanceof RefType &&
 								failIfTheseAreCreated.contains(((RefType)target.getReturnType()).getSootClass())) {
 							logger.info("FilePrecisionTransform: found banned creation: {}", stmt);
+							AnalysisReport.v().addEntry("FilePrecisionTransform: found banned creation", stmt, AnalysisReport.Level.GUARDED);
 							return true;           
 						}
 					}
@@ -228,6 +231,7 @@ public class FilePrecisionTransforms {
 						if (directive != null && targets.size() != 1) {
 							logger.info("FilePrecisionTransforms failed: Found transform target but stmt has multiple potential callees: {} {}", 
 									stmt, SootUtils.getSourceLocation(stmt));
+							AnalysisReport.v().addEntry("FilePrecisionTransforms failed: Found transform target but stmt has multiple potential callees", stmt, AnalysisReport.Level.GUARDED);
 							return false;
 						}
 						if (directive != null) {
@@ -243,6 +247,7 @@ public class FilePrecisionTransforms {
 										if (JSAStrings.v().ignoreRE(resolved) || !JSAStrings.v().isConstant(ie.getArg(arg))) {
 											logger.info("FilePrecisionTransforms failed: argument to call not contant JSA: {} {} {} {}", 
 													stmt, arg, resolved, SootUtils.getSourceLocation(stmt));
+											AnalysisReport.v().addEntry("FilePrecisionTransforms failed: argument to call not contant JSA", stmt, AnalysisReport.Level.GUARDED);
 											return false;
 										}
 										//constant value!
@@ -252,6 +257,7 @@ public class FilePrecisionTransforms {
 										//not a jsa tracked value?
 										logger.info("FilePrecisionTransforms failed: argument to call not tracked by JSA: {} {} {}", 
 												stmt, arg, SootUtils.getSourceLocation(stmt));
+										AnalysisReport.v().addEntry("FilePrecisionTransforms failed: argument to call not tracked by JSA", stmt, AnalysisReport.Level.GUARDED);
 										return false;
 									}
 
@@ -262,6 +268,7 @@ public class FilePrecisionTransforms {
 										if (nodeResolvedValues == null) {
 											logger.info("FilePrecisionTransforms failed: VA could not resolve field for java.io.File: {} {} {}", 
 													stmt, arg, SootUtils.getSourceLocation(stmt));
+											AnalysisReport.v().addEntry("FilePrecisionTransforms failed: VA could not resolve field for java.io.File", stmt, AnalysisReport.Level.GUARDED);
 											return false;
 										} else {
 											allResolvedValues.addAll(nodeResolvedValues);
@@ -271,6 +278,7 @@ public class FilePrecisionTransforms {
 									if (allResolvedValues.size() != 1) {
 										logger.info("FilePrecisionTransforms failed: VA resolved too many values for filename: {} {} {}", 
 												stmt, Arrays.toString(allResolvedValues.toArray()), SootUtils.getSourceLocation(stmt));
+										AnalysisReport.v().addEntry("FilePrecisionTransforms failed: VA resolved too many values for filename", stmt, AnalysisReport.Level.GUARDED);
 										return false;
 									} else {
 										concat = allResolvedValues.get(0);
@@ -280,6 +288,7 @@ public class FilePrecisionTransforms {
 								} else {
 									logger.info("FilePrecisionTransforms failed: argument type not supported: {} {} {}", 
 											stmt, arg, SootUtils.getSourceLocation(stmt));
+									AnalysisReport.v().addEntry("FilePrecisionTransforms failed: argument type not supported", stmt, AnalysisReport.Level.GUARDED);
 									return false;
 								}
 
@@ -313,7 +322,8 @@ public class FilePrecisionTransforms {
 									} else {
 										logger.info("FilePrecisionTransforms failed: unsupported RHS of assignment: {} {}", 
 												stmt, SootUtils.getSourceLocation(stmt));
-										return false;
+										AnalysisReport.v().addEntry("FilePrecisionTransforms failed: unsupported RHS of assignment", stmt, AnalysisReport.Level.GUARDED);
+										return false;										
 									}
 								} else if (stmt instanceof InvokeStmt && (stmt.getInvokeExpr() instanceof SpecialInvokeExpr)) {
 									SpecialInvokeExpr constructorCall = (SpecialInvokeExpr)stmt.getInvokeExpr();
@@ -330,6 +340,7 @@ public class FilePrecisionTransforms {
 									if (!(newAssignStmt instanceof AssignStmt) || !(((AssignStmt)newAssignStmt).getRightOp() instanceof NewExpr)) {
 										logger.info("FilePrecisionTransforms failed: unsupported pred statement of constructor call for File*Stream: {} {}", 
 												stmt, SootUtils.getSourceLocation(stmt));
+										AnalysisReport.v().addEntry("FilePrecisionTransforms failed: unsupported pred statement of constructor call for File*Stream", stmt, AnalysisReport.Level.GUARDED);
 										return false;
 									}
 									jTransform.deleteTheseStmts.add(newAssignStmt);
@@ -350,6 +361,7 @@ public class FilePrecisionTransforms {
 								} else {
 									logger.info("FilePrecisionTransforms failed: stmt type not supported: {} {}", 
 											stmt, SootUtils.getSourceLocation(stmt));
+									AnalysisReport.v().addEntry("FilePrecisionTransforms failed: stmt type not supported", stmt, AnalysisReport.Level.GUARDED);
 									return false;
 								}
 								//add changes to list and keep going...
@@ -420,7 +432,7 @@ public class FilePrecisionTransforms {
 			Set<VAModel> pathStringFldVAModels = fileRefVAModel.getFieldVAModels(pathField);
 			for(VAModel pathStringFldVAModel : pathStringFldVAModels) {
 				if(pathStringFldVAModel.invalidated() || (!(pathStringFldVAModel instanceof StringVAModel))){
-					logger.debug("invalided or incorrect va model for path field: {}", pathStringFldVAModel);
+					logger.debug("invalidated or incorrect va model for path field: {}", pathStringFldVAModel);
 					return null;
 				}
 

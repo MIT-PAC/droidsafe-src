@@ -697,6 +697,10 @@ public class Main {
             JSAStrings.v().setHasRun(false);
         }
 
+        if (!JSAStrings.v().hasRun()) {
+        	AnalysisReport.v().addEntry("String analysis did not complete.", AnalysisReport.Level.HIGH);
+        }
+        
         return DroidsafeExecutionStatus.OK_STATUS;
     }
 
