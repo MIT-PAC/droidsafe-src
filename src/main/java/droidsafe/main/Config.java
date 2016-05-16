@@ -251,6 +251,9 @@ public class Config {
 
     public String libraryPackagePrefixesFile;
     public Set<String> libraryPackagePrefixes = new HashSet<String>();
+    
+    /** Should we run the file precision transformations */
+    public boolean runFilePrecisionTransforms = false;
 
     public static Config v() {
         return config;
@@ -351,6 +354,9 @@ public class Config {
         
         Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
         options.addOption(strict);
+        
+        Option fileTransforms = new Option("filetransforms", "Attempt to run the file precision / accuracy transformations.");
+        options.addOption(fileTransforms);
         
         Option noCloneStatics = new Option("noclonestatics", "Do not clone static methods to add call site sensitivity");
         options.addOption(noCloneStatics);
@@ -624,6 +630,10 @@ public class Config {
         if (cmd.hasOption("strict")) {
             this.strict = true;
         }
+        
+        if (cmd.hasOption("filetransforms")) {
+        	this.runFilePrecisionTransforms = true;
+        }
 
         if (cmd.hasOption("noclonestatics")) {
             this.cloneStaticCalls = false;
@@ -638,7 +648,7 @@ public class Config {
         }
         
         if (cmd.hasOption("limitcontextforcomplex")) {
-            this.limitcontextforcomplex = false;
+            this.limitcontextforcomplex = true;
         }
         
         if (cmd.hasOption("preciseinfoflow")) {

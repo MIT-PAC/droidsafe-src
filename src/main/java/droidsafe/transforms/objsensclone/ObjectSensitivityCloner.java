@@ -21,6 +21,7 @@
 
 package droidsafe.transforms.objsensclone;
 
+import droidsafe.analyses.allocationgraph.AllocationGraph;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.value.VAResultContainerClassGenerator;
@@ -241,7 +242,7 @@ public class ObjectSensitivityCloner {
     /**
      * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
      * new expression.
-     */
+  	//NO LONGER WORKS, ALLOCATION GRAPH CHANGED
     public void run() {
         hasRun = true;
         numClonedClasses = 0;
@@ -347,6 +348,7 @@ public class ObjectSensitivityCloner {
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
+*/
 
     /** 
      * Clone reachable static method based on the number of static invokes we find in reachable methods.
@@ -387,7 +389,7 @@ public class ObjectSensitivityCloner {
                                 target.getDeclaringClass().getName().startsWith("java.io") ||
                                 target.getDeclaringClass().getName().startsWith("android.os") ||
                                 target.getDeclaringClass().getName().startsWith("android.net") ||
-                                target.getDeclaringClass().getName().startsWith("android.util") |
+                                target.getDeclaringClass().getName().startsWith("android.util") ||
                                 target.getDeclaringClass().getName().startsWith("android.database")
                                 ) {
                             if (!map.containsKey(target)) {

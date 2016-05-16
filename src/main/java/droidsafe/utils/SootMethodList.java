@@ -60,11 +60,26 @@ public class SootMethodList implements Iterable<SootMethod>{
 		methods.add(method);
 	}
 	
+	public String toString() {
+		StringBuffer buffer = new StringBuffer();
+		for (SootMethod m : methods) {
+			buffer.append(m + "\n");			
+		}
+		return buffer.toString();
+	}
+	
 	/**
 	 * Strict contains
 	 */
 	public boolean contains(SootMethod method) {
 		return methods.contains(method);
+	}
+	
+	/**
+	 * Remove method from list.
+	 */
+	public void removeMethod(SootMethod method) {
+		methods.remove(method);
 	}
 	
 	/**

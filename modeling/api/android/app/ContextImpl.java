@@ -144,6 +144,7 @@ ReceiverRestrictedContext(Context base) {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.003 -0500", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "90430B4E7D776228913823B75B9973EF")
     @Override
+    @DSVAMethod
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
         return registerReceiver(receiver, filter, null, null);
     }
@@ -152,7 +153,8 @@ ReceiverRestrictedContext(Context base) {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.005 -0500", hash_original_method = "7DBE869AA37665F34E0D6939DBC75DAB", hash_generated_method = "BE9909161683E82474FD582E36B38112")
     
-@Override
+    @Override
+    @DSVAMethod
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
         return receiver.__ds__registerIntentFilter(this, filter)[0];
@@ -212,7 +214,6 @@ ReceiverRestrictedContext(Context base) {
 }
 
 public class ContextImpl extends Context {
-
 
     @DSComment("Package priviledge")
     @DSBan(DSCat.DEFAULT_MODIFIER)
@@ -519,7 +520,7 @@ private File getPreferencesDir() {
     
     @Override
     @DSSpec(DSCat.IO)
-    public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {      
+    public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         return new FileOutputStream(name, mode);
     }
     
@@ -708,6 +709,7 @@ private File getPreferencesDir() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
+    @DSVAMethod        
     public void startActivity(Intent intent) {
         //add default category as per intent resolution documentation 
         intent.addCategory(Intent.CATEGORY_DEFAULT);
@@ -756,6 +758,7 @@ private File getPreferencesDir() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @Override
+    @DSVAMethod    
     public void startActivities(Intent[] intents) {
         for (Intent intent : intents) {
             startActivity(intent);
@@ -812,6 +815,7 @@ private File getPreferencesDir() {
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @Override
+    @DSVAMethod
     public void sendBroadcast(Intent intent) {
             intent.getAction();
         intent.getBooleanArrayExtra("");
@@ -857,6 +861,7 @@ private File getPreferencesDir() {
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @Override
+    @DSVAMethod
     public void sendBroadcast(Intent intent, String receiverPermission) {
             intent.getAction();
         intent.getBooleanArrayExtra("");
@@ -902,6 +907,7 @@ private File getPreferencesDir() {
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @Override
+    @DSVAMethod
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
             intent.getAction();
@@ -948,6 +954,7 @@ private File getPreferencesDir() {
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @Override
+    @DSVAMethod
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
@@ -995,6 +1002,7 @@ private File getPreferencesDir() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendStickyBroadcast(Intent intent) {
      intent.getAction();
         intent.getBooleanArrayExtra("");
@@ -1040,6 +1048,7 @@ private File getPreferencesDir() {
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.IPC)
     @Override
+    @DSVAMethod
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
@@ -1129,6 +1138,7 @@ private File getPreferencesDir() {
     
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
+    @DSVAMethod
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	// Generate Intents based on filter
         return receiver.__ds__registerIntentFilter(this, filter)[0];
@@ -1136,6 +1146,7 @@ private File getPreferencesDir() {
     
     @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
+    @DSVAMethod
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
     	// Generate Intents based on filter
@@ -1183,6 +1194,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     @DSSink({DSSinkKind.IPC})
     @DSSpec(DSCat.SERVICE)
     @Override
+    @DSVAMethod   
     public ComponentName startService(Intent service) {
           service.getAction();
         service.getBooleanArrayExtra("");
@@ -1275,9 +1287,9 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
     ComponentName serviceCompName = null;
 
     @DSVerified("Calling connection callback")
-    @DSSpec(DSCat.SERVICE)
-    
+    @DSSpec(DSCat.SERVICE)    
     @Override
+    @DSVAMethod
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         //throw new UnsupportedOperationException();
         

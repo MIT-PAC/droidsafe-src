@@ -913,6 +913,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
     */
     @DSComment("IO movement methodName")
     @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSVAMethod
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
        Cursor dsCursor = new DSCursor(uri, projection, selection, selectionArgs, sortOrder);
@@ -1290,6 +1291,7 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
     @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
+    @DSVAMethod
 public final Uri insert(Uri url, ContentValues values)
     {
         IContentProvider provider = acquireProvider(url);
@@ -1395,7 +1397,7 @@ public final int bulkInsert(Uri url, ContentValues[] values)
     @DSComment("Content model/data manipulation")
     @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.195 -0500", hash_original_method = "5F64E7642550035A4284C543DD08EBF1", hash_generated_method = "F77B1FA45188219F6988A6B6B681E82D")
-    
+    @DSVAMethod
 public final int delete(Uri url, String where, String[] selectionArgs)
     {
         IContentProvider provider = acquireProvider(url);
@@ -1434,6 +1436,7 @@ public final int delete(Uri url, String where, String[] selectionArgs)
     @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.CONTENT})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.197 -0500", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "BFDFE97E646A1E83E92C8A9712FB4DAA")
+    @DSVAMethod
 public final int update(Uri uri, ContentValues values, String where,
             String[] selectionArgs) {
         IContentProvider provider = acquireProvider(uri);

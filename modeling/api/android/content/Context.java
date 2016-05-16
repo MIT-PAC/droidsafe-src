@@ -419,7 +419,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
     
     @DSSource({DSSourceKind.RESOURCES})
     @DSSafe(DSCat.SAFE_OTHERS)
-    
+    @DSVAMethod
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -444,7 +444,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
-    
+    @DSVAMethod
 public final String getString(int resId) {
         return getResources().getString(resId);
     }
@@ -462,7 +462,7 @@ public final String getString(int resId) {
     @DSSafe(DSCat.SAFE_OTHERS)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
-    
+    @DSVAMethod
 public final String getString(int resId, Object... formatArgs) {
         return getResources().getString(resId, formatArgs);
     }
@@ -1171,8 +1171,8 @@ public abstract String[] databaseList();
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.963 -0500", hash_original_method = "06B12B71B896DBD5D7C902DA38D16681", hash_generated_method = "BC85A3AAC104AF5786AD1DC454AD7A2D")
-    
-public abstract void startActivity(Intent intent);
+    @DSVAMethod        
+    public abstract void startActivity(Intent intent);
 
     /**
      * Launch multiple new activities.  This is generally the same as calling
@@ -1198,8 +1198,8 @@ public abstract void startActivity(Intent intent);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ANDROID_ACTIVITY_STARTING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.965 -0500", hash_original_method = "805B1869BDFCE06BF619D5A658DF064F", hash_generated_method = "A0E9D7EE9D2E9CF7F658AE830D92157B")
-    
-public abstract void startActivities(Intent[] intents);
+    @DSVAMethod
+    public abstract void startActivities(Intent[] intents);
 
     /**
      * Like {@link #startActivity(Intent)}, but taking a IntentSender
@@ -1250,7 +1250,7 @@ public abstract void startIntentSender(IntentSender intent,
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.969 -0500", hash_original_method = "758F82A7831A3E63BFA33BC1D51204CD", hash_generated_method = "562685EAD67DEDBF8ECDCC3E48DED167")
-    
+    @DSVAMethod
 public abstract void sendBroadcast(Intent intent);
 
     /**
@@ -1281,7 +1281,7 @@ public abstract void sendBroadcast(Intent intent);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.971 -0500", hash_original_method = "BD64097323B630BD418E3BBAB8229A5A", hash_generated_method = "99A1B49845C72E86D3E83EC3A7954E4F")
-    
+    @DSVAMethod
 public abstract void sendBroadcast(Intent intent,
             String receiverPermission);
 
@@ -1309,7 +1309,7 @@ public abstract void sendBroadcast(Intent intent,
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.973 -0500", hash_original_method = "4819235453B1EB0A02E9B2B19D176EA5", hash_generated_method = "C8A50F78D35C84BBE5A0A5E97023628C")
-    
+    @DSVAMethod
 public abstract void sendOrderedBroadcast(Intent intent,
             String receiverPermission);
 
@@ -1359,7 +1359,7 @@ public abstract void sendOrderedBroadcast(Intent intent,
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.976 -0500", hash_original_method = "F7F06BF835757EA8F337533771196C96", hash_generated_method = "66B9FEF66D5275FE598D2CA96213915A")
-    
+    @DSVAMethod
 public abstract void sendOrderedBroadcast(Intent intent,
             String receiverPermission, BroadcastReceiver resultReceiver,
             Handler scheduler, int initialCode, String initialData,
@@ -1388,7 +1388,7 @@ public abstract void sendOrderedBroadcast(Intent intent,
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.978 -0500", hash_original_method = "EBC415C0B4A9F508CD7CFAFD71BBCC4E", hash_generated_method = "72631BAFAFE1DEE59543EA72FA63139E")
-    
+    @DSVAMethod
 public abstract void sendStickyBroadcast(Intent intent);
 
     /**
@@ -1435,7 +1435,7 @@ public abstract void sendStickyBroadcast(Intent intent);
     @DSSpec(DSCat.IPC)
     @DSSink({DSSinkKind.IPC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.980 -0500", hash_original_method = "93DED7B582D7EACDC4FD6F46909C6664", hash_generated_method = "ACA4150575708078A8D06985E00FFB4B")
-    
+    @DSVAMethod
 public abstract void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver,
             Handler scheduler, int initialCode, String initialData,
@@ -1510,7 +1510,7 @@ public abstract void removeStickyBroadcast(Intent intent);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.985 -0500", hash_original_method = "A6B23878A18269BFB006C7A17DB19C65", hash_generated_method = "51315EAC9DE25C2EDA33324D2830C956")
-    
+    @DSVAMethod
 public abstract Intent registerReceiver(BroadcastReceiver receiver,
                                             IntentFilter filter);
 
@@ -1548,7 +1548,7 @@ public abstract Intent registerReceiver(BroadcastReceiver receiver,
     @DSComment("Abstract Method")
     @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.987 -0500", hash_original_method = "43BFB7B71F28DFD8E995A19B52DAC398", hash_generated_method = "EA7684A5E9DC86281F4D7A6AE2E42DED")
-    
+    @DSVAMethod
 public abstract Intent registerReceiver(BroadcastReceiver receiver,
                                             IntentFilter filter,
                                             String broadcastPermission,
@@ -1619,8 +1619,8 @@ public abstract void unregisterReceiver(BroadcastReceiver receiver);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.992 -0500", hash_original_method = "299DC35BFC98468366A24298AABF9029", hash_generated_method = "9E29465F9BF8E95E0E1D32A7BC59A66B")
-    
-public abstract ComponentName startService(Intent service);
+    @DSVAMethod
+    public abstract ComponentName startService(Intent service);
 
     /**
      * Request that a given application service be stopped.  If the service is
@@ -1704,7 +1704,7 @@ public abstract boolean stopService(Intent service);
     @DSComment("Abstract Method")
     @DSSpec(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.997 -0500", hash_original_method = "BF9EC72D463D2576E4637238C7B5F8A3", hash_generated_method = "4F1CE20356B579F43B07AF5AA56DEB85")
-    
+    @DSVAMethod
 public abstract boolean bindService(Intent service, ServiceConnection conn,
             int flags);
 

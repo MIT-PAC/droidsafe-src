@@ -769,7 +769,7 @@ public final boolean isActive()
      * @return The view if found or null otherwise.
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.765 -0500", hash_original_method = "06392AB1384FAD789566489ED7477D15", hash_generated_method = "E31D4B048E37B9B79BBF0440D009283C")
-    
+    @DSVAMethod
 public View findViewById(int id) {
         return getDecorView().findViewById(id);
     }
@@ -786,7 +786,7 @@ public View findViewById(int id) {
     @DSComment("Abstract Method")
     @DSSpec(DSCat.ABSTRACT_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.768 -0500", hash_original_method = "9773B78A0DDFABD7EC1D4950258114B8", hash_generated_method = "EB433CC04E8E9E0A64557B9580BE400E")
-    
+    @DSVAMethod
 public abstract void setContentView(int layoutResID);
 
     /**

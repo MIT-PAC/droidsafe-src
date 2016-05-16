@@ -366,8 +366,10 @@ public static String toHexString(long v) {
     @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.244 -0500", hash_original_method = "7F9E047B51DBA75DC18A757B80E882F7", hash_generated_method = "DB1114BC7A734B93414409E7AC5A0CD5")
     
-public static String toOctalString(long v) {
-        return IntegralToString.longToOctalString(v);
+    public static String toOctalString(long v) {
+        String str = new String();
+        str.addTaint((int)v);
+        return str;
     }
 
     /**
@@ -384,7 +386,9 @@ public static String toOctalString(long v) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.249 -0500", hash_original_method = "5451D461541A6217AC0EFFC2EF4C9329", hash_generated_method = "4017904D62B0FEC0C72BF95924032E36")
     
 public static String toString(long n) {
-        return IntegralToString.longToString(n);
+        String str = new String();
+        str.addTaint((int)n);
+        return str;
     }
 
     /**
@@ -411,7 +415,10 @@ public static String toString(long n) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.251 -0500", hash_original_method = "E70E35D7AD8B9CABB3BD011FA70B18B3", hash_generated_method = "EB5747C682923FE90CBB8319D454C726")
     
 public static String toString(long v, int radix) {
-        return IntegralToString.longToString(v, radix);
+        String str = new String();
+        str.addTaint((int)v);
+        str.addTaint(radix);
+        return str;
     }
 
     /**

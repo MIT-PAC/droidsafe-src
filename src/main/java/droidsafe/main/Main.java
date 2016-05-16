@@ -30,6 +30,7 @@ import droidsafe.analyses.interapp.GenerateInterAppSourceFlows;
 import droidsafe.analyses.interapp.InjectInterAppFlows;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.analyses.pta.IntrospectiveAnalysis;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.CallGraphDumper;
@@ -37,6 +38,7 @@ import droidsafe.analyses.CatchBlocks;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.TestPTA;
+import droidsafe.analyses.allocationgraph.AllocationGraph;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
@@ -68,6 +70,7 @@ import droidsafe.stats.PTAPaper;
 import droidsafe.transforms.ArrayNewInstanceTransform;
 import droidsafe.transforms.CallBackModeling;
 import droidsafe.transforms.ClassGetNameToClassString;
+import droidsafe.transforms.FilePrecisionTransforms;
 import droidsafe.transforms.InsertUnmodeledObjects;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
@@ -78,7 +81,6 @@ import droidsafe.transforms.va.VATransformsSuite;
 import droidsafe.transforms.RemoveStupidOverrides;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
-import droidsafe.transforms.ServiceTransforms;
 import droidsafe.transforms.TransformStringBuilderInvokes;
 import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
@@ -317,7 +319,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+       
         driverMsg("Resolving String Constants");
         monitor.subTask("Resolving String Constants");
         ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
@@ -328,7 +330,6 @@ public class Main {
 
         if (Config.v().addFallbackModeling) {
             //fallback modeling...
-
             if (afterTransformPrecise(monitor, false, 2) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -357,6 +358,10 @@ public class Main {
         timer1.stop();
         driverMsg("Finished String Analysis: " + timer1);
 
+        //account for any transformations
+        if (afterTransformFast(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+        
         driverMsg("Cloning static methods to introduce call site context...");
         monitor.subTask("Cloning static methods to introduce callsite context...");
         try {
@@ -381,10 +386,14 @@ public class Main {
             }
         }
 
-        {
-            //patch in messages
-            //ServiceTransforms.v().run();
-
+        //run file precison transforms if enabled
+        if (Config.v().runFilePrecisionTransforms) {
+        	driverMsg("Running File Precision Transforms...");
+        	if (FilePrecisionTransforms.v().run()) {
+        		driverMsg("Successfully ran and applied file precision transformations.");
+        	} else {
+        		driverMsg("File precision transformations could not be applied.");
+        	}
         }
 
         //inject inter app flows if defined
@@ -398,6 +407,7 @@ public class Main {
         if (Config.v().addFallbackModeling) {
             driverMsg("Inserting Unmodeled Objects...");
             monitor.subTask("Inserting Unmodeled Objects...");
+            //calls pta precise
             InsertUnmodeledObjects.v().run(monitor);
             monitor.worked(1);
             if (monitor.isCanceled()) {
@@ -554,7 +564,7 @@ public class Main {
         
         monitor.worked(1);       
         return DroidsafeExecutionStatus.OK_STATUS;
-    }
+    }    
 
     private static DroidsafeExecutionStatus runInfoFlow(IDroidsafeProgressMonitor monitor) {
         if (Config.v().infoFlow) {
@@ -725,7 +735,7 @@ public class Main {
     }
 
     private static DroidsafeExecutionStatus runVA(IDroidsafeProgressMonitor monitor) {
-        if (afterTransformMedium(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
+    	if (afterTransformPrecise(monitor, false, Config.v().kobjsens) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Injecting String Analysis Results.");
@@ -814,6 +824,11 @@ public class Main {
 
 
     public static DroidsafeExecutionStatus afterTransformMedium(IDroidsafeProgressMonitor monitor, boolean recordTime) {
+    	if (Config.v().limitcontextforcomplex) {
+    		IntrospectiveAnalysis.reset();
+    		IntrospectiveAnalysis.v().generateMetrics(monitor);
+    	}
+    	
         Map<String,String> opts = new HashMap<String,String>();
 
         if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.SPARK) {
@@ -821,7 +836,7 @@ public class Main {
             opts.put("merge-stringbuffer","true");   
             opts.put("string-constants","true");   
             opts.put("kobjsens", "1");
-
+            
         } 
 
         return afterTransform(monitor, recordTime, opts);
@@ -830,6 +845,12 @@ public class Main {
 
 
     public static DroidsafeExecutionStatus afterTransformPrecise(IDroidsafeProgressMonitor monitor, boolean recordTime, int k) {
+    	
+    	if (Config.v().limitcontextforcomplex) {
+    		IntrospectiveAnalysis.reset();
+    		IntrospectiveAnalysis.v().generateMetrics(monitor);
+    	}
+    	
         Map<String,String> opts = new HashMap<String,String>();
 
         k = Math.min(k, Config.v().kobjsens);
@@ -866,8 +887,9 @@ public class Main {
 
         logger.info("Caching Jimple Hierarchy Relationships...");
         monitor.subTask("Caching Jimple Hierarchy Relationships...");
-        JimpleRelationships.reset();
+        JimpleRelationships.reset();        
         JimpleRelationships.v();
+        //AllocationGraph.update();
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
@@ -924,84 +946,6 @@ public class Main {
             throw new IllegalStateException();
         }
     }
-
-
-    //used for eng 4 to find concrete methods for each method in white team list
-    //TODO: MOVE OUT OF HERE AS SOON AS ENGAGEMENT IS OVER
-    public static void dumpConcreteMethods() {
-        int synthetic = 0;
-        try {
-            FileWriter fw = new FileWriter("eng4-concrete-calls.txt");
-            BufferedReader br = new BufferedReader(new FileReader("/Users/mgordon/research/droidsafe/engagements/4a/calls_by_name.txt"));
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                // process the line.
-
-                //break up the line
-                String[] splitted = line.split(" ");
-                String clazzName = splitted[0];
-                String methodName = splitted[1];
-
-                if ("<init>".equals(methodName))
-                    continue;
-
-                //now search for method in class and all ancestors
-                SootClass sc = Scene.v().getSootClass(clazzName);
-
-
-                Set<SootMethod> possibleTargets = new HashSet<SootMethod>();
-                soot.Hierarchy hierarchy = Scene.v().getActiveHierarchy();
-
-                if (sc.isInterface()) {
-
-                    Collection<SootClass> implementors = hierarchy.getImplementersOf(sc);
-                    for (SootClass implementor : implementors) {
-                        //now get all superclasses 
-                        possibleTargets.addAll(getAllTargetMethodsPrecise(implementor, methodName));
-                    }
-
-                } else {       
-                    possibleTargets.addAll(getAllTargetMethodsPrecise(sc, methodName));
-
-                    //search down for concrete calls in subclasses
-                    for (SootClass subclass : hierarchy.getSubclassesOfIncluding(sc)) {
-                        for (SootMethod sm : subclass.getMethods()) {
-                            if (sm.getName().equals(methodName)) {
-                                possibleTargets.add(sm);
-                            }
-                        }
-
-                    }
-                }
-
-                //write only empty
-                //if (possibleTargets.isEmpty()) {
-                //    fw.write(line + "\n");
-                // }
-
-
-                //write all
-                fw.write(line + "\n");
-                for (SootMethod method : possibleTargets) {
-                    if (SootUtils.isSynthetic(method)) {
-                        synthetic++;
-                        continue;
-                    }
-                    fw.write("\t" + method + "\n");
-                }
-
-            }
-
-            br.close();
-            fw.close(); 
-
-        } catch (Exception e) {
-            logger.error("Problem with concrete search: ", e);
-        }
-        System.out.println("Synthetic: " + synthetic);  
-    }
-
 
 
     private static Collection<SootMethod> getAllTargetMethodsPrecise(SootClass sc, String methodName) {

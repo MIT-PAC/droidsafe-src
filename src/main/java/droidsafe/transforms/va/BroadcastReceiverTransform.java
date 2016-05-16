@@ -276,13 +276,26 @@ public class BroadcastReceiverTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.content.Context: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
             sigsOfInvokesToTransform.add("<android.content.Context: void sendStickyBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.content.Context: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.content.Context: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle)>");
+            sigsOfInvokesToTransform.add("<android.content.Context: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String)>");
+            sigsOfInvokesToTransform.add("<android.content.Context: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.content.Context: void sendStickyBroadcastAsUser(android.content.Intent,android.os.UserHandle)>");
+            sigsOfInvokesToTransform.add("<android.content.Context: void sendStickyOrderedBroadcast(android.content.Intent,android.os.UserHandle,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
 
+            
+            
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendBroadcast(android.content.Intent,java.lang.String)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendOrderedBroadcast(android.content.Intent,java.lang.String)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendStickyBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle)>");
+            sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String)>");
+            sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendStickyBroadcastAsUser(android.content.Intent,android.os.UserHandle)>");
+            sigsOfInvokesToTransform.add("<android.content.ContextWrapper: void sendStickyOrderedBroadcast(android.content.Intent,android.os.UserHandle,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
+
 
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendBroadcast(android.content.Intent,java.lang.String)>");
@@ -290,7 +303,11 @@ public class BroadcastReceiverTransform implements VATransform {
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendOrderedBroadcast(android.content.Intent,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendStickyBroadcast(android.content.Intent)>");
             sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendStickyOrderedBroadcast(android.content.Intent,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
-
+            sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle)>");
+            sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String)>");
+            sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
+            sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendStickyBroadcastAsUser(android.content.Intent,android.os.UserHandle)>");
+            sigsOfInvokesToTransform.add("<android.app.ContextImpl: void sendStickyOrderedBroadcast(android.content.Intent,android.os.UserHandle,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>");
         }
         return sigsOfInvokesToTransform;
 

@@ -160,7 +160,7 @@ final void appendNull() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.731 -0500", hash_original_method = "8C85C9AFF9EA1123A22A14B3A5C3C022", hash_generated_method = "A6667FA89203D112B27C7D329C3CCDF5")
     
 final void append0(char[] chars) {
-        this.addTaint(chars.getTaint());
+        this.addTaint(chars[0]);
     }
 
     @DSComment("Package priviledge")

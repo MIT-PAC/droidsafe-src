@@ -689,7 +689,7 @@ final public Resources getResources() {
      * @param resId Resource id for the CharSequence text
      */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.313 -0500", hash_original_method = "3F649A13E84C6501035126B3FEE231F4", hash_generated_method = "E2B566B00FA2AC61E50317149C5BCECD")
-    
+    @DSVAMethod
 public final CharSequence getText(int resId) {
         return getResources().getText(resId);
     }
@@ -704,7 +704,7 @@ public final CharSequence getText(int resId) {
      */
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:30.318 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
-    
+    @DSVAMethod
 public final String getString(int resId, Object... formatArgs) {
         return getResources().getString(resId, formatArgs);
     }

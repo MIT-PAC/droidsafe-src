@@ -156,7 +156,7 @@ public abstract boolean executePendingTransactions();
     @DSComment("Abstract Method")
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.289 -0500", hash_original_method = "F331A49B0DAC9D1709118DA3B3769DC9", hash_generated_method = "4C6F6CF41EE287D45A81567EBA8CB5D6")
-    
+    @DSVAMethod
 public abstract Fragment findFragmentById(int id);
 
     /**
@@ -1453,7 +1453,7 @@ public void attachFragment(Fragment fragment, int transition, int transitionStyl
 
     @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.517 -0500", hash_original_method = "846CFE4E6D453F7EB47298FC794E62E7", hash_generated_method = "21D2CD95F031D04F17D8A8EDF7F0C2EE")
-    
+    @DSVAMethod
 public Fragment findFragmentById(int id) {
         if (mActive != null) {
             // First look through added fragments.

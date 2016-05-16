@@ -196,13 +196,9 @@ public class Project {
      */
     public void loadClasses() {
         //load into soot the src classes and lib jars classes
-        SootConfig.loadAppClasses(getSrcClasses(), true);
-        //we have modeled some common library classes, so if they are modeled and loaded
-        //already, don't load them, and remove them from the list of lib classes
-        Set<String> modeledLibraryClzs = SootConfig.loadAppClasses(getLibClasses(), false);
-        for (String modeled : modeledLibraryClzs) {
-            libClasses.remove(modeled);
-        }
+        SootConfig.loadAppClasses(getSrcClasses());
+        Set<String> modeledLibraryClzs = SootConfig.loadAppClasses(getLibClasses());
+        
     }
 
     /**
@@ -212,7 +208,7 @@ public class Project {
         srcClasses = new LinkedHashSet<String>();
         String procDir = appClassesDir.getAbsolutePath();
         for (String clzName: SourceLocator.v().getClassesUnder(procDir)) {
-            logger.info("Application class: {}", clzName);
+            logger.info("Found application class (not loaded until later): {}", clzName);
             srcClasses.add(clzName);
         }
     }

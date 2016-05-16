@@ -1229,7 +1229,7 @@ public int getModifiers() {
     @DSSafe(DSCat.SAFE_LIST)
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
-    
+    @DSVAMethod
 public String getName() {
         String result = name;
         return (result == null) ? (name = getNameNative()) : result;
@@ -1661,7 +1661,7 @@ public boolean isSynthetic() {
     @DSComment("Java language reflection")
     @DSSpec(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.091 -0500", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "FDDB42B0D188A0B956339356BF11732B")
-    
+    @DSVAMethod
 public T newInstance() throws InstantiationException, IllegalAccessException {
         return newInstanceImpl();
     }

@@ -145,7 +145,8 @@ public void onCreate() {
     @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.400 -0500", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "CF926B6A86164E3DF6A5EB52ADD8A622")
-@Deprecated
+    @Deprecated
+    @DSVAMethod    
     public void onStart(Intent intent, int startId) {
     }
     
@@ -193,8 +194,8 @@ public void onCreate() {
     @DSComment("Potential intent to trigger other processing")
     @DSSafe(DSCat.IPC_CALLBACK)    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.421 -0500", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "8F82C5618944297E2295D41E531A28CB")
-    
-public int onStartCommand(Intent intent, int flags, int startId) {
+    @DSVAMethod
+    public int onStartCommand(Intent intent, int flags, int startId) {
         onStart(intent, startId);
         return mStartCompatibility ? START_STICKY_COMPATIBILITY : START_STICKY;
     }
@@ -251,7 +252,7 @@ public void onTrimMemory(int level) {
     @DSVerified
     @DSSafe(DSCat.IPC_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.432 -0500", hash_original_method = "E7069E97241B54247C185B02B263733A", hash_generated_method = "00BCEE37A5873355128A7403645D0D57")
-    
+    @DSVAMethod
 public abstract IBinder onBind(Intent intent);
 
     /**
@@ -507,6 +508,7 @@ final String getClassName() {
     }
 
     @DSSafe(DSCat.IPC)
+    @DSVAMethod
     public void droidSafeOnBind(Intent intent, ServiceConnection connection) {
         IBinder binder = this.onBind(intent);
         this.onUnbind(intent);

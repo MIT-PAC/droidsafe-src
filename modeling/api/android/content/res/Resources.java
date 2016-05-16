@@ -305,7 +305,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
     @DSComment("Accessing App Resource")
     @DSSafe(DSCat.SAFE_LIST)
-    
+    @DSVAMethod
     public final String getString(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -314,7 +314,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
     @DSComment("Resource is a data structure, getting system resource is spec")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    
+        @DSVAMethod
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -345,7 +345,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
     @DSComment("Accessing App Resource")
     @DSSafe(DSCat.DATA_STRUCTURE)
-    
+    @DSVAMethod
     public String getString(int id, Object... formatArgs){
 		String str = new String();
 		str.addTaint(id);
@@ -408,7 +408,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	
     @DSComment("Accessing App Resource")
     @DSSafe(DSCat.SAFE_LIST)
-    
+    @DSVAMethod
     public String[] getStringArray(int id){
 		// Original method
 		/*
