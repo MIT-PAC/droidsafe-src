@@ -42,6 +42,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.reports.ICCMap;
 import droidsafe.stats.IntentResolutionStats;
 import droidsafe.utils.SootUtils;
@@ -166,16 +167,20 @@ public class ServiceBindTransform implements VATransform {
                     ICCMap.v().addInfo(containingMthd.getDeclaringClass(), serviceClz, stmt, resolved);
                 } catch (Exception e) {
                     logger.debug("Error resolving onBind.", e);
+                    AnalysisReport.v().addEntry("Service bind() with unresolved Intent", stmt, AnalysisReport.Level.HIGH);
                 }                   
             }
         }
         
         if (allIntentsNodeResolved) {
             IntentResolutionStats.v().callsWithResolvedIntents++;
-            if (noInAppTarget)
+            if (noInAppTarget) {
                 IntentResolutionStats.v().callsTargetNotInApp++;
+                AnalysisReport.v().addEntry("Service bind() with no in-app component target", stmt, AnalysisReport.Level.HIGH);
+            }
             IntentResolutionStats.v().inAppComponentsTotalTargets += inAppTargets.size();
         } else {
+        	AnalysisReport.v().addEntry("Service bind() with unresolved Intent", stmt, AnalysisReport.Level.HIGH);
             IntentResolutionStats.v().callsWithUnresolvedIntent++;
         }
     }

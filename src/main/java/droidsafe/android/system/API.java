@@ -186,7 +186,14 @@ public class API {
 			FileWriter output = new FileWriter(Project.v().getOutputDir() + File.separator + "sensitive-methods.txt");
 
 			output.write("Spec Methods:\n");
-			output.write(spec_methods.toString());
+			for (SootMethod specM : spec_methods) {
+				output.write("SPEC: " + specM + ": " + classificationCat.get(specM) + "\n");
+			}			
+			
+			output.write("\nBan Method: \n");
+			for (SootMethod banM : banned_methods) {
+				output.write("BAN: " + banM + ": " + classificationCat.get(banM) + "\n");
+			}		
 			
 			output.write("\nSource Methods Mappings:\n");
 			for (SootMethod source : srcsMapping.keySet()) {
@@ -581,7 +588,7 @@ public class API {
 			} 
 
 			if (c == Classification.NONE) {
-				banned_methods.addMethod(method);
+				//banned_methods.addMethod(method);
 				logger.info("Found method with no classification: {}", method);
 			}
 

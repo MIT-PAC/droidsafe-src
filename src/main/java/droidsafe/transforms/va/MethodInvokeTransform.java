@@ -33,6 +33,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.Local;
@@ -108,7 +109,10 @@ public class MethodInvokeTransform implements VATransform {
                 logger.info("mName: {}", temp);
                 mNames.addAll(temp);
 
-                //do the best we can here, don't worry if unresolved                
+                //do the best we can here, don't worry if unresolved   
+                if (!classResolved || !mNameResolved) {
+                	AnalysisReport.v().addEntry("Unresolved Reflection Usage", stmt, AnalysisReport.Level.HIGH);
+                }
             }
 
             //System.out.println(stmt + " " + SootUtils.getSourceLine(stmt));

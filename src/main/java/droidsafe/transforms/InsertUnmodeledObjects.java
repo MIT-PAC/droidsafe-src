@@ -62,6 +62,7 @@ import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.SootUtils;
 import droidsafe.main.Main;
+import droidsafe.reports.AnalysisReport;
 
 /**
  * 
@@ -306,7 +307,10 @@ public class InsertUnmodeledObjects {
         SootMethodRef target = invoke.getMethodRef();
         Body body = method.getActiveBody();
         boolean madeChange = false;
-
+        
+        AnalysisReport.v().addEntry("API call analysis concludes that api call returns null value, could be that the DroidSafe model is inaccurate, check implementation.", 
+        		stmt, AnalysisReport.Level.ELEVATED);
+        	
         //try to find a cast to narrow type
         Type castType = SootUtils.findCast(method, stmt, stmt.getLeftOp());
         Type returnType = target.returnType();

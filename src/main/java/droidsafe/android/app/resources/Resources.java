@@ -34,6 +34,8 @@ import droidsafe.android.app.resources.AndroidManifest.Service;
 import droidsafe.android.app.resources.Layout.View;
 import droidsafe.android.app.resources.XmlFile;
 import droidsafe.android.system.Components;
+import droidsafe.reports.AnalysisReport;
+import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.io.*;
@@ -177,6 +179,7 @@ public class Resources {
             for (Activity a : v.manifest.activities) {
                 if (a.setSootClass(a.name) == false) {
                     logger.warn("Cannot resolve activity {} ", a);
+                    AnalysisReport.v().addEntry("Cannot resolve class for Activity in manifest.", AnalysisReport.Level.HIGH);
                     continue;
                 }
                 v.process_activity (a);
@@ -227,6 +230,7 @@ public class Resources {
 
             v.resolved = true;
         } catch (Exception e) {
+        	AnalysisReport.v().addEntry("Unknown error in manifest.", AnalysisReport.Level.HIGH);
             logger.error("Error resolving resources and manifest: {}", e);
         }
     }
@@ -435,6 +439,7 @@ public class Resources {
             Integer layoutNumericId = resource_info.inverse().get(layout.view.id);
             if (layoutNumericId == null) {
                 logger.warn("Layout has no viewID, skipped: {}", layout.view);
+                AnalysisReport.v().addEntry("Layout in XML with no ID in resources: " + layout.view, AnalysisReport.Level.HIGH);
                 continue;
             }
 
@@ -478,6 +483,8 @@ public class Resources {
                         rString = new RString(element, xmlFile, stringValue);
                     } catch (InvalidPropertiesFormatException e) {
                         logger.error("String {} is not formatted correctly in {} : {}", element, xmlFile, e);
+                        AnalysisReport.v().addEntry("String in resources not formatted correctly: " + element + " " + xmlFile, 
+                        		AnalysisReport.Level.HIGH);
                         continue;
                     }
                     // the name automatically gets assigned during xml parsing
@@ -543,6 +550,8 @@ public class Resources {
                     rStringArray = new RStringArray(element, xmlFile, stringArrayValues);
                 } catch (InvalidPropertiesFormatException e) {
                     logger.error("string-array {} is not formatted correctly in {} : {}", element, xmlFile, e);
+                    AnalysisReport.v().addEntry("String array in resources file not formatted correctly: " +
+                    		element + " " + xmlFile, AnalysisReport.Level.HIGH);
                     continue;
                 }
                 // the name automatically gets assigned during xml parsing
@@ -607,6 +616,8 @@ public class Resources {
                             logger.info("resource_info.put({}, {}) has zero valued constant", 
                                 String.format("%08x", value), resource_value);
                         } else if (resource_info.get(value) != null) {
+                        	AnalysisReport.v().addEntry("Resource defined more than once: " + value + " " + resource_value, 
+                        			AnalysisReport.Level.HIGH);
                             logger.warn("resource_info.put({}, {}) ALREADY existed ", 
                                 String.format("%08x", value), resource_value); 
                         }
@@ -733,6 +744,7 @@ public class Resources {
             //we filter out childview with no attributes
             if (child.getAttributes().size() == 0) {
                 logger.warn("View {} has no attribute ", child.name);
+                AnalysisReport.v().addEntry("View layout with no children: " + child.name, AnalysisReport.Level.HIGH);
                 continue;
             }
 
@@ -828,6 +840,9 @@ public class Resources {
 
                 if (!(expr.getArgs().get(0) instanceof IntConstant)) {
                     logger.error("Found call to setContentView(int) with non-constant argument: {}", expr.getArgs().get(0));
+                    AnalysisReport.v().addEntry("Found call to setContentView(int) with non-constant argument.", 
+                    		JimpleRelationships.v().getEnclosingStmt(expr),
+                    		AnalysisReport.Level.HIGH);
                     //droidsafe.main.Main.exit(1);
                     logger.error("static class {} ", expr.getMethodRef().declaringClass());
                     return;
@@ -842,13 +857,21 @@ public class Resources {
                     resource_info.get(resource_id));
 
                 String resource_name = resource_info.get(resource_id);
-                if (resource_name == null) 
+                if (resource_name == null)  {
+                	AnalysisReport.v().addEntry("Resource id not found in setContentView().", 
+                    		JimpleRelationships.v().getEnclosingStmt(expr),
+                    		AnalysisReport.Level.HIGH);
+                	
                     bad_idiom (cn, m, "Resource id %08X not found", resource_id);
+                }
 
                 String layout_name = resource_name.replace ("layout.", "");
                 Layout layout = find_layout_by_name (layout_name);
                 if (layout == null) {
                     //bad_idiom (cn, m, "No layout named %s", layout_name);
+                	AnalysisReport.v().addEntry("Could not find layout associated with resource ID for setContentView().", 
+                    		JimpleRelationships.v().getEnclosingStmt(expr),
+                    		AnalysisReport.Level.HIGH);
                     logger.warn("Couldn't find layout {} ", layout_name);
                     return;
                 }

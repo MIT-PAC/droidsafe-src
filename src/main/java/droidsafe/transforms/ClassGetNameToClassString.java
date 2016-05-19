@@ -23,6 +23,8 @@ package droidsafe.transforms;
 
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.utils.JimpleRelationships;
 
 import java.util.Collection;
@@ -99,12 +101,12 @@ public class ClassGetNameToClassString extends BodyTransformer {
                 continue;
             }
             //see if we should perform any outright replacements, and if so, don't do a jsa injection
-            if (replaceClassGetNameWithClassString(stmtBody, units, stmt))
+            if (replaceClassGetNameWithClassString(b.getMethod(), stmtBody, units, stmt))
                 continue;
         }
     }
 
-    private boolean replaceClassGetNameWithClassString(StmtBody stmtBody, Chain units, Stmt stmt) {
+    private boolean replaceClassGetNameWithClassString(SootMethod caller, StmtBody stmtBody, Chain units, Stmt stmt) {
         if (!(stmt instanceof AssignStmt) || !(((AssignStmt)stmt).getRightOp() instanceof InvokeExpr))
             return false;
 
@@ -128,6 +130,9 @@ public class ClassGetNameToClassString extends BodyTransformer {
                             !((node instanceof ObjectSensitiveAllocNode) && 
                                     ((ObjectSensitiveAllocNode)node).getContextElement(0) instanceof IClassConstantNode)) {
                         logger.info("Not class constant: {}", node);
+                        if (!API.v().isSystemMethod(caller)) {
+                        	AnalysisReport.v().addEntry("Class.getName() could not be resolved.", stmt, AnalysisReport.Level.HIGH);
+                        }
                         return false;
                     }
                 }

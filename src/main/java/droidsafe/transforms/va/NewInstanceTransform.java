@@ -31,6 +31,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.transforms.UnmodeledGeneratedClasses;
 import soot.Body;
 import soot.Local;
@@ -94,7 +95,9 @@ public class NewInstanceTransform implements VATransform {
 
             for (IAllocNode node : classNodes) {
                 temp.clear();
-                ValueAnalysis.v().getStringFieldValues(node, clzNameField, temp);
+                if (!ValueAnalysis.v().getStringFieldValues(node, clzNameField, temp)) {
+                	AnalysisReport.v().addEntry("Unresolved class used for newInstance() reflection call", stmt, AnalysisReport.Level.HIGH);
+                }
                 classNames.addAll(temp);
             }
 
@@ -124,6 +127,7 @@ public class NewInstanceTransform implements VATransform {
 
             if (replaced) {
                 body.getUnits().remove(stmt);
+                AnalysisReport.v().addEntry("Unresolved class used for newInstance() reflection call", stmt, AnalysisReport.Level.HIGH);
             }
             
         } catch (Exception e) {

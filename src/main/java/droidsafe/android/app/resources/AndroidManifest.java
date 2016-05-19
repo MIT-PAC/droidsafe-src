@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -163,6 +164,7 @@ public class AndroidManifest {
             else if (name.equalsIgnoreCase ("uses-feature"))
                 features.add (new UsesFeature(parent, n));
             else { 
+            	AnalysisReport.v().addEntry("Unsupported node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 parent.xml_error ("Unexpected node %s in manifest ignored", 
                     n.getNodeName());
             }
@@ -369,6 +371,7 @@ public class AndroidManifest {
                 else {
                     xml_error ("Unexpected node %s in activity %s ignored", 
                         n.getNodeName(), name);
+                    AnalysisReport.v().addEntry("Unsupported node in activity node: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 }
             }
         }
@@ -414,6 +417,7 @@ public class AndroidManifest {
                 else {
                     xml_error ("Unexpected node %s in service %s ignored", 
                         n.getNodeName(), name);
+                    AnalysisReport.v().addEntry("Unsupported node in Service node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 }
             }
 
@@ -461,6 +465,7 @@ public class AndroidManifest {
                 else {
                     xml_error ("Unexpected node '%s' in receiver named '%s' ignored", 
                         name, this.name);
+                    AnalysisReport.v().addEntry("Unsupported node in Receiver node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 }
             }
 
@@ -528,6 +533,7 @@ public class AndroidManifest {
             for (Node child : gather_children()) {
                 String name = child.getNodeName();
                 // Needs to handle grant-uri-permission, path-permission
+                AnalysisReport.v().addEntry("Unsupported node in Service node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 xml_error ("Unexpected node %s in service %s ignored", 
                     n.getNodeName(), name);
             }
@@ -574,6 +580,7 @@ public class AndroidManifest {
 
             for (Node child : gather_children()) {
                 String name = child.getNodeName();
+                AnalysisReport.v().addEntry("Unsupported node in meta-data node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 xml_error ("Unexpected node '%s' in meta-data named '%s' ignored", 
                     name, this.name);
             }
@@ -597,6 +604,7 @@ public class AndroidManifest {
 
             for (Node child : gather_children()) {
                 String name = child.getNodeName();
+                AnalysisReport.v().addEntry("Unsupported node in uses-sdk node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 xml_error ("Unexpected node '%s' in uses-sdk ignored", name);
             }
         }
@@ -625,6 +633,7 @@ public class AndroidManifest {
 
             for (Node child : gather_children()) {
                 String name = child.getNodeName();
+                AnalysisReport.v().addEntry("Unsupported node in uses-sdk node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 xml_error ("Unexpected node '%s' in uses-sdk ignored", name);
             }
         }
@@ -652,6 +661,7 @@ public class AndroidManifest {
 
             for (Node child : gather_children()) {
                 String name = child.getNodeName();
+                AnalysisReport.v().addEntry("Unsupported node in uses-permission node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 xml_error ("Unexpected node '%s' in uses-permission named '%s' ignored", 
                     name, this.name);
             }
@@ -683,6 +693,7 @@ public class AndroidManifest {
 
             for (Node child : gather_children()) {
                 String name = child.getNodeName();
+                AnalysisReport.v().addEntry("Unsupported node in permission node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                 xml_error ("Unexpected node '%s' in permission named '%s' ignored", 
                     name, this.name);
             }
@@ -796,6 +807,7 @@ public class AndroidManifest {
 
                 }
                 else { // unexpected node
+                	AnalysisReport.v().addEntry("Unsupported node in intent-filter node in manifest: " + n.getNodeName(), AnalysisReport.Level.ELEVATED);
                     xml_error ("Unexpected node %s in intent-filter ignored", 
                         name);
                 }

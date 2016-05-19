@@ -37,6 +37,7 @@ import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.reports.ICCMap;
 import droidsafe.stats.IntentResolutionStats;
 import droidsafe.transforms.objsensclone.ClassCloner;
@@ -90,12 +91,9 @@ class StartActivityTransform implements VATransform {
 
     public StartActivityTransform() {
         //get all activities
-
     }
 
-
     @Override
-
     public void tranformsInvoke(SootMethod containingMthd, SootMethod callee, InvokeExpr invoke, Stmt stmt, Body body) { 
 
         if(!Project.v().isSrcClass(containingMthd.getDeclaringClass())){
@@ -131,8 +129,8 @@ class StartActivityTransform implements VATransform {
         boolean noInAppTarget = false;
         Set<SootField> inAppTargets = new HashSet<SootField>();
 
-        boolean allResolvedExplicitIntentsFoundTargets = true;
-
+        boolean allResolvedExplicitIntentsFoundTargets = true;      
+        
         for (IAllocNode intentNode : intentNodes) {  
             logger.info("AllocNode: {}", intentNode);
             IntentResolutionStats.v().intentObjects++;
@@ -144,6 +142,7 @@ class StartActivityTransform implements VATransform {
             if (IntentUtils.v().getIntentModel(intentNode) instanceof UnresolvedIntent) {
                 allIntentsNodeResolved = false;
                 logger.info("Unresolved Intent");
+                AnalysisReport.v().addEntry("Start Activity with unresolved Intent", stmt, AnalysisReport.Level.HIGH);
             } else {
                 //resolved
 
@@ -157,6 +156,7 @@ class StartActivityTransform implements VATransform {
 
                 if (targetHarnessFields.isEmpty()) {
                     noInAppTarget = true;
+                    AnalysisReport.v().addEntry("Start Activity with Intent target not in application", stmt, AnalysisReport.Level.HIGH);
                 }            
             }
 
@@ -212,6 +212,7 @@ class StartActivityTransform implements VATransform {
                     }
                 } catch (Exception e) {
                     logger.warn("Issue resolve method for target in startActivityTransform:", e);
+                    AnalysisReport.v().addEntry("Start Activity with unresolved Intent", stmt, AnalysisReport.Level.HIGH);
                 }
             }
         }

@@ -31,8 +31,11 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.reports.AnalysisReport;
 import droidsafe.utils.GsonExclude;
+import droidsafe.utils.JimpleRelationships;
 import soot.RefType;
+import soot.jimple.Expr;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 public class ImplicitIntentModel extends IntentModel {
@@ -68,6 +71,12 @@ public class ImplicitIntentModel extends IntentModel {
             }
         } else {
             rii.invalidateField(ImplicitIntentFields.ACTION);
+            try {
+            	AnalysisReport.v().addEntry("Implicit Intent with unresolved Action field; forces low-precision.", 
+            			JimpleRelationships.v().getEnclosingStmt((Expr)node.getNewExpr()),AnalysisReport.Level.ELEVATED);
+            } catch (Exception e) {
+            	//ignore
+            }
         }
 
         //categories
@@ -79,6 +88,12 @@ public class ImplicitIntentModel extends IntentModel {
             }
         } else {
             rii.invalidateField(ImplicitIntentFields.CATEGORY);
+            try {
+            	AnalysisReport.v().addEntry("Implicit Intent with unresolved Category field; forces low-precision.", 
+            			JimpleRelationships.v().getEnclosingStmt((Expr)node.getNewExpr()),AnalysisReport.Level.ELEVATED);
+            } catch (Exception e) {
+            	//ignore
+            }
         }
 
         //type
@@ -90,6 +105,12 @@ public class ImplicitIntentModel extends IntentModel {
             }
         } else {
             rii.invalidateField(ImplicitIntentFields.TYPE);
+            try {
+            	AnalysisReport.v().addEntry("Implicit Intent with unresolved Type field; forces low-precision.", 
+            			JimpleRelationships.v().getEnclosingStmt((Expr)node.getNewExpr()),AnalysisReport.Level.ELEVATED);
+            } catch (Exception e) {
+            	//ignore
+            }
         }
 
         //data
@@ -102,6 +123,12 @@ public class ImplicitIntentModel extends IntentModel {
                 } catch (URISyntaxException e) {
                     //some issue 
                     rii.invalidateField(ImplicitIntentFields.DATA);
+                    try {
+                    	AnalysisReport.v().addEntry("Implicit Intent with unresolved Data field; forces low-precision.", 
+                    			JimpleRelationships.v().getEnclosingStmt((Expr)node.getNewExpr()),AnalysisReport.Level.ELEVATED);
+                    } catch (Exception x) {
+                    	//ignore
+                    }
                     break;
                 }
             }

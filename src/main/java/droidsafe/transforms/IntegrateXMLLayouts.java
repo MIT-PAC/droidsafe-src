@@ -64,6 +64,7 @@ import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.android.app.resources.ResourcesSoot;
 import droidsafe.android.system.API;
+import droidsafe.reports.AnalysisReport;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
@@ -269,6 +270,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.info("Couldn't replace findViewById(): {} ", stmt);
+                AnalysisReport.v().addEntry("Could not replace setContentView because it was called with a non-constant arg", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -281,6 +283,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             if (method == null) {
                 logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+                AnalysisReport.v().addEntry("Could not replace setContentView because could not find resource", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -294,6 +297,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.warn("Replacing with {} => NOT OK", invokeStmt);
+                AnalysisReport.v().addEntry("Could not replace setContentView because of unknown error", stmt, AnalysisReport.Level.ELEVATED);
             }
         } 
     }
@@ -325,6 +329,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             if (callerObjectBox == null || idValueBox == null) {
                 logger.warn("Couldnot get boxes for replacement "); 
+                AnalysisReport.v().addEntry("Could not replace resource getString() because called with non-constant argument.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -336,6 +341,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+                AnalysisReport.v().addEntry("Could not replace resource getString() because could not find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -345,6 +351,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             if (getStringMethod == null) {
                 logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
                 logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
+                AnalysisReport.v().addEntry("Could not replace resource getString() because could not find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -370,9 +377,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.warn("replacing with {} => NOT OK", lookupStmt);
+                AnalysisReport.v().addEntry("Could not replace resource getString() because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
             }
         } else {
             logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+            AnalysisReport.v().addEntry("Could not replace resource getString() because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
         }
     }
 
@@ -528,11 +537,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             if (assignToBox == null) {
                 logger.warn("Cannot replace {} ", stmt);
+                AnalysisReport.v().addEntry("Could not replace resource getString() because non-constant argument.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
             if (callerObjectBox == null || idValueBox == null) {
                 logger.warn("Couldnot get boxes for replacement "); 
+                AnalysisReport.v().addEntry("Could not replace resource getString() because non-constant argument.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -544,6 +555,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+                AnalysisReport.v().addEntry("Could not replace resource getString() because cannot find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -552,6 +564,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             if (getStringMethod == null) {
                 logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
                 logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
+                AnalysisReport.v().addEntry("Could not replace resource getString() because cannot find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -560,8 +573,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             Object[] paramList = extractVariableArguments(stmtBody, stmt);
 
-            if (paramList == null)
+            if (paramList == null) {
+            	AnalysisReport.v().addEntry("Could not replace resource getString() because cannot find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
+            }
 
             String localStringName = String.format("_$%s%03d", "localString", localStringIndex++);
 
@@ -584,7 +599,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
                 try {
                     resolvedString = String.format(stringValue, paramList);
                 }
-                catch(Exception ex) {
+                catch(Exception ex) {                	
+                	AnalysisReport.v().addEntry("Could not replace resource getString() because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
                     return;
                 }
 
@@ -607,9 +623,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.warn("replacing with {} => NOT OK", lookupStmt);
+                AnalysisReport.v().addEntry("Could not replace resource getString() because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
             }
         } else {
             logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+            AnalysisReport.v().addEntry("Could not replace resource getString() because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
         }
     }
 
@@ -636,7 +654,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
 
             if (callerObjectBox == null || idValueBox == null) {
-                logger.warn("Couldnot get boxes for replacement "); 
+                logger.warn("Could not get boxes for replacement "); 
+                AnalysisReport.v().addEntry("Could not replace findViewById because it was called with a non-constant arg", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -647,6 +666,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
             catch (Exception ex) {
                 logger.info("Couldn't replace {} ", stmt);
+                AnalysisReport.v().addEntry("Could not replace findViewById because could not find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -660,6 +680,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             if (getViewMethod == null) {
                 logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+                AnalysisReport.v().addEntry("Could not replace findViewById because could not find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -679,9 +700,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             catch (Exception ex) {
                 logger.warn("replacing {} ", stmt);
                 logger.warn("with {} => NOT OK", lookupStmt);
+                AnalysisReport.v().addEntry("Could not replace findViewById because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
             }
         } else {
             logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+            AnalysisReport.v().addEntry("Could not replace findViewById because of unknown error.", stmt, AnalysisReport.Level.ELEVATED);
         }
     }
 
@@ -709,6 +732,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             if (callerObjectBox == null || idValueBox == null) {
                 logger.warn("Couldnot get boxes for replacement "); 
+                AnalysisReport.v().addEntry("Could not replace findViewById because called with non-constant argument.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -718,12 +742,14 @@ public class IntegrateXMLLayouts extends BodyTransformer {
                 intId = new Integer(idValueBox.getValue().toString());
             }
             catch (Exception ex) {
-                logger.info("Couldn't replace {} ", stmt);
+                logger.info("Couldn't replace {} ", stmt);                                
+                AnalysisReport.v().addEntry("Could not replace findViewById because could not find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
             if (ResourcesSoot.isAndroidId(intId)) {
                 logger.info("android builtin IDs, ignored ");
+                AnalysisReport.v().addEntry("Could not replace findViewById because could not find resource.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -731,6 +757,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
             if (getViewMethod == null) {
                 logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+                AnalysisReport.v().addEntry("Could not replace findViewById because called with non-constant argument.", stmt, AnalysisReport.Level.ELEVATED);
                 return;
             }
 
@@ -745,14 +772,16 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             try {
                 units.swapWith(stmt, lookupStmt);
                 logger.info("replacing {} ", stmt);
-                logger.info("with {}, OK ", lookupStmt);
+                logger.info("with {}, OK ", lookupStmt);                
             }
             catch (Exception ex) {
                 logger.warn("replacing {} ", stmt);
                 logger.warn("with {} => NOT OK", lookupStmt);
+                AnalysisReport.v().addEntry("Could not replace findViewById because unknown error.", stmt, AnalysisReport.Level.ELEVATED);
             }
         } else {
             logger.warn("InvokeExpr in {} is not an InstanceInvokeExpr", stmt);
+            AnalysisReport.v().addEntry("Could not replace findViewById because unknown error.", stmt, AnalysisReport.Level.ELEVATED);
         }
     }
 

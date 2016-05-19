@@ -42,6 +42,7 @@ import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.reports.ICCMap;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.stats.IntentResolutionStats;
@@ -57,6 +58,7 @@ import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Value;
+import soot.jimple.Expr;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
@@ -140,7 +142,9 @@ public class BroadcastReceiverTransform implements VATransform {
                             //intent unresolved
                             for (SootClass clz : brs) {
                                 receiversWithUnresolvedFilters.add(clz);
-                                logger.info("BroadcastReceiver with unresolved IntentFiler: {}", clz);
+                                logger.info("BroadcastReceiver with unresolved IntentFiler: {}", clz);                               
+                                AnalysisReport.v().addEntry("BroadcastReceiver with unresolved IntentFiler.", 
+                                			stmt, AnalysisReport.Level.ELEVATED);
                             }                       
                         }
 
@@ -202,6 +206,8 @@ public class BroadcastReceiverTransform implements VATransform {
 
                 if (!foundAllTargets) {
                     IntentResolutionStats.v().callsTargetNotInApp++;
+                    AnalysisReport.v().addEntry("Intent target could be outside of app on ICC call for Broadcast Receiver.", 
+                			stmt, AnalysisReport.Level.ELEVATED);
                 }
                 
                 IntentResolutionStats.v().inAppComponentsTotalTargets += classTargets.size();
@@ -210,12 +216,16 @@ public class BroadcastReceiverTransform implements VATransform {
         } else {
             //not resolved add all broadcast receivers
             IntentResolutionStats.v().callsWithUnresolvedIntent++;
+
+            AnalysisReport.v().addEntry("Unresolved Intent on ICC call for Broadcast Receiver.", 
+        			stmt, AnalysisReport.Level.ELEVATED);
             
             for (SootClass clz : Harness.v().getCreatedClasses()) {
                 if (Hierarchy.inheritsFromAndroidComponent(AndroidComponents.BROADCAST_RECEIVER, clz)) {
                     classTargets.add(clz);
                 }
             }
+            
         }
 
         for (SootClass target : classTargets) {

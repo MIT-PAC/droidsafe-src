@@ -39,6 +39,7 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.jimple.Expr;
 import soot.jimple.Stmt;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.pta.IAllocNode;
@@ -52,8 +53,10 @@ import droidsafe.android.app.resources.AndroidManifest.ComponentBaseElement;
 import droidsafe.android.app.resources.AndroidManifest.IntentFilter;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.transforms.objsensclone.ClassCloner;
+import droidsafe.utils.JimpleRelationships;
 
 public class IntentUtils {
 
@@ -116,6 +119,12 @@ public class IntentUtils {
                         break;   
                     case UNKNOWN:
                         allocToIntentModel.put(node, UnresolvedIntent.v());
+                        try {
+                        	AnalysisReport.v().addEntry("Unresolved Intent; forces low-precision.", 
+                        			JimpleRelationships.v().getEnclosingStmt((Expr)node.getNewExpr()),AnalysisReport.Level.ELEVATED);
+                        } catch (Exception e) {
+                        	//ignore
+                        }
                         break;
                 }               
             } else {
@@ -237,7 +246,7 @@ public class IntentUtils {
             }        
         }
 
-        logger.debug("could not find harness field for {}", clsString);
+        logger.debug("could not find harness field for {}", clsString);        
 
         return null;
     }

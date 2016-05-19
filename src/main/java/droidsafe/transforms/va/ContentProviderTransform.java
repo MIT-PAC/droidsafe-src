@@ -38,6 +38,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.reports.UnresolvedICC;
 import droidsafe.stats.IntentResolutionStats;
 import soot.Body;
@@ -118,12 +119,16 @@ public class ContentProviderTransform implements VATransform {
                 }
                 return true;
             } else {
+            	AnalysisReport.v().addEntry("Unresolved Uri used on ICC call for ContentProvider.", 
+            			stmt, AnalysisReport.Level.ELEVATED);
                 targetCPFields.addAll(allHarnessCPFlds);
                 return false;
             }    
         } catch (Exception e) {
             //just in case anything goes wrong with va resolution
             targetCPFields.addAll(allHarnessCPFlds);
+            AnalysisReport.v().addEntry("Unresolved Uri used on ICC call for ContentProvider.", 
+        			stmt, AnalysisReport.Level.ELEVATED);
             return false;
         }
     }
@@ -158,6 +163,8 @@ public class ContentProviderTransform implements VATransform {
             if (!resolved) {
                 UnresolvedICC.v().addInfo(stmt, callee, "Unresolved URI for Content Provider");
                 //can break here because we added all possible content provider destinations
+                AnalysisReport.v().addEntry("Unresolved Uri used on ICC call for ContentProvider.", 
+            			stmt, AnalysisReport.Level.ELEVATED);
                 IntentResolutionStats.v().contentProviderOpsUnresolvedUri++;
                 break;
             }
@@ -166,42 +173,42 @@ public class ContentProviderTransform implements VATransform {
 
         //for each field of harness that is a content provider
         for (SootField cpField : targetCPFields) {
-            SootClass cpClass = ((RefType)cpField.getType()).getSootClass();
-	    //the content provide may not declare all methods 
-	    if (!cpClass.declaresMethod(callee.getSubSignature()))
-		continue;
+        	SootClass cpClass = ((RefType)cpField.getType()).getSootClass();
+        	//the content provide may not declare all methods 
+        	if (!cpClass.declaresMethod(callee.getSubSignature()))
+        		continue;
 
-            SootMethod target = cpClass.getMethod(callee.getSubSignature());
+        	SootMethod target = cpClass.getMethod(callee.getSubSignature());
 
-            //create local and add to body
-            Local local = Jimple.v().newLocal("_$contentprovider_local_" + localID++, cpField.getType());
-            body.getLocals().add(local);
+        	//create local and add to body
+        	Local local = Jimple.v().newLocal("_$contentprovider_local_" + localID++, cpField.getType());
+        	body.getLocals().add(local);
 
-            //set field of cp to local [local = harness.contentproviderfield]
-            //set local to field
-            Stmt localAssign = Jimple.v().newAssignStmt
-                    (local, Jimple.v().newStaticFieldRef(cpField.makeRef()));
-            //insert before original statement
-            body.getUnits().insertBefore(localAssign, stmt);
+        	//set field of cp to local [local = harness.contentproviderfield]
+        	//set local to field
+        	Stmt localAssign = Jimple.v().newAssignStmt
+        			(local, Jimple.v().newStaticFieldRef(cpField.makeRef()));
+        	//insert before original statement
+        	body.getUnits().insertBefore(localAssign, stmt);
 
-            InvokeExpr newInvoke = Jimple.v().newVirtualInvokeExpr(local, target.makeRef(), invokeExpr.getArgs());
+        	InvokeExpr newInvoke = Jimple.v().newVirtualInvokeExpr(local, target.makeRef(), invokeExpr.getArgs());
 
-            //create statement to invoke
-            Stmt toInsert = null; 
-            if (lvalue == null) {
-                //original call not in an assign;
-                toInsert = Jimple.v().newInvokeStmt(newInvoke);
-            } else {    
-                //original call in an assign
-                toInsert = Jimple.v().newAssignStmt(lvalue, newInvoke);
-            }
-            //insert after original statement just to have all locals assigned in a block
-            body.getUnits().insertAfter(toInsert, stmt);
-            logger.info("Adding {} call to ContentProvider {} in method {}", 
-                callee.getSubSignature(), cpClass, containingMthd);
+        	//create statement to invoke
+        	Stmt toInsert = null; 
+        	if (lvalue == null) {
+        		//original call not in an assign;
+        		toInsert = Jimple.v().newInvokeStmt(newInvoke);
+        	} else {    
+        		//original call in an assign
+        		toInsert = Jimple.v().newAssignStmt(lvalue, newInvoke);
+        	}
+        	//insert after original statement just to have all locals assigned in a block
+        	body.getUnits().insertAfter(toInsert, stmt);
+        	logger.info("Adding {} call to ContentProvider {} in method {}", 
+        			callee.getSubSignature(), cpClass, containingMthd);
 
-            //ignore generated calls in rcfg
-            RCFG.v().ignoreInvokeForOutputEvents(toInsert);
+        	//ignore generated calls in rcfg
+        	RCFG.v().ignoreInvokeForOutputEvents(toInsert);
         }
         
         //if resolved and in app target, then don't report

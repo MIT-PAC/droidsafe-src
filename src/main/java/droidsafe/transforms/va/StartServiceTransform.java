@@ -39,6 +39,7 @@ import droidsafe.analyses.value.UnresolvedIntent;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.AndroidComponents;
+import droidsafe.reports.AnalysisReport;
 import droidsafe.reports.ICCMap;
 import droidsafe.stats.IntentResolutionStats;
 import droidsafe.utils.JimpleRelationships;
@@ -108,6 +109,7 @@ public class StartServiceTransform implements VATransform {
                               
             if (IntentUtils.v().getIntentModel(intentNode) instanceof UnresolvedIntent) {
                 allIntentsNodeResolved = false;
+                AnalysisReport.v().addEntry("Start Service with unresolved Intent", stmt, AnalysisReport.Level.HIGH);
             } else {
                 //resolved
                 if (IntentUtils.v().getIntentModel(intentNode) instanceof ImplicitIntentModel) {
@@ -118,6 +120,7 @@ public class StartServiceTransform implements VATransform {
                 
                 if (targetHarnessFields.isEmpty()) {
                     noInAppTarget = true;
+                    AnalysisReport.v().addEntry("Start Service has Intent target not in application.", stmt, AnalysisReport.Level.HIGH);
                 }
             }
             
