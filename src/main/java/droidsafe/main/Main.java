@@ -238,7 +238,7 @@ public class Main {
         //used to create the eng 4a concrete methods list
         //dumpConcreteMethods();
     	
-    	API.v().dumpSpecSourcesAndSinks();
+    	//API.v().dumpSpecSourcesAndSinks();
 
         if (Config.v().infoFlowTrackAll) {
             monitor.worked(1);

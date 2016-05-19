@@ -212,10 +212,10 @@ public class API {
 				}
 				output.write("\n");
 			}
-			
+			output.close();			
 		} catch (Exception e) {
-
-		}
+			logger.error("Strange", e);
+		}		
 	}
 
 	/**
