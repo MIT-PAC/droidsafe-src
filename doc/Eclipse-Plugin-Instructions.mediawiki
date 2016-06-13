@@ -10,9 +10,9 @@ This process uses ant to build and install the plugin. It requires editing a '''
 * If Eclipse is currently running, exit Eclipse.
 * I assume your are using Eclipse 4.2 (Juno) or 4.3 (Kepler). The plugin should also work on previous versions but I have not tested it in any other versions. 
 * Build and install the droidsafe plugin using command:
-  cd $APAC_HOME; ant clean compile plugin-deploy
+  cd $DROIDSAFE_SRC_HOME; ant clean compile plugin-deploy
 * The first time you run this command you will get an error message telling you need to configure an ant property related to paths to eclipse installation.
-* Edit file '''APAC_HOME/src/eclipse/build.properties''' and set correct values for '''target.eclipse.platform''' property at the top of the file. The value of this property should be the root of your eclipse installation -- the parent folder of the eclipse '''plugins''' folder.
+* Edit file '''DROIDSAFE_SRC_HOME/src/eclipse/build.properties''' and set correct values for '''target.eclipse.platform''' property at the top of the file. The value of this property should be the root of your eclipse installation -- the parent folder of the eclipse '''plugins''' folder.
   target.eclipse.platform=/home/my-eclipse-location/eclipse43/eclipse
 * Run '''ant plugin-deploy''' again. 
 * If ant succeeds, you should have a new eclipse plugin installed in the '''plugins''' directory of your eclipse installation.
