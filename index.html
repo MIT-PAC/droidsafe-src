@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,12 +32,24 @@
 
         <section id="main_content">
           <h1>
-<a id="droidsafe" class="anchor" href="#droidsafe" aria-hidden="true"><span class="octicon octicon-link"></span></a>DroidSafe</h1>
+<a id="droidsafe" class="anchor" href="#droidsafe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DroidSafe</h1>
 
 <h2>
-<a id="a-platform-for-android-application-analysis" class="anchor" href="#a-platform-for-android-application-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Platform for Android Application Analysis</h2>
+<a id="a-platform-for-android-application-analysis" class="anchor" href="#a-platform-for-android-application-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Platform for Android Application Analysis</h2>
 
 <p><img src="http://people.csail.mit.edu/mgordon/logo.png" alt="DroidSafe Logo"></p>
+
+<h2>
+<a id="update-june-13-2016-final-version-of-droidsafe-released" class="anchor" href="#update-june-13-2016-final-version-of-droidsafe-released" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update (June 13, 2016): Final Version of DroidSafe released</h2>
+
+<p>Today, we updated our public repo such that it represents the final version of our project source code.  We have also released our modifications to Soot for our object-sensitive points to analysis as a <a href="https://github.com/MIT-PAC/obj-sens-soot">separate repo</a>.  </p>
+
+<p>This final version of the code does not exactly reproduce the results in our NDSS 2015 paper.  If you need the version of our code that was used for the NDSS 2015 paper, please email the group.  </p>
+
+<p>Note that the DroidSafe project is no longer active, and this code is no longer actively maintained.  However, please email the group if you have any questions as we encourage users.</p>
+
+<h2>
+<a id="droidsafe-overview" class="anchor" href="#droidsafe-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DroidSafe Overview</h2>
 
 <p>The DroidSafe project develops novel program analysis techniques to diagnose and remove malicious code from Android mobile applications. The DroidSafe project is developed by <a href="http://groups.csail.mit.edu/pac/crs/">MIT's Center for Resilient Software</a>, the <a href="http://www.kestrel.edu/">Kestrel Institute</a>, and <a href="http://www.globalinfotek.com/">Global InfoTek, Inc</a>. The core of our system is a static information-flow analysis that operates on either Java bytecode for an application or an application's APK.  The DroidSafe team co-designed a semantic model of Android runtime behaviors and a static information-flow analysis to achieve acceptable precision, accuracy, and scalability for real-world Android applications.  </p>
 
@@ -54,7 +66,7 @@
 <p>Our recent publication below demonstrates that the DroidSafe information-flow analysis system achieves unprecedented precision and accuracy for Android information-flow analysis (as measured on a standard previously published set of benchmark applications). Furthermore, DroidSafe detects all malicious information flow leaks inserted into 24 real-world Android applications by three independent, hostile Red-Team organizations. The previous state-of-the art analysis, in contrast, detects less than 10% of these malicious flows. </p>
 
 <h3>
-<a id="publications" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h3>
+<a id="publications" class="anchor" href="#publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publications</h3>
 
 <ul>
 <li>
@@ -63,12 +75,12 @@
 </ul>
 
 <h3>
-<a id="running-droidsafe" class="anchor" href="#running-droidsafe" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running DroidSafe</h3>
+<a id="running-droidsafe" class="anchor" href="#running-droidsafe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running DroidSafe</h3>
 
 <p>We include a detailed introduction to running our analysis and inspecting an application in our Eclipse plugin <a href="https://github.com/MIT-PAC/droidsafe-src/wiki/Getting-Started">here</a>.  We recommend running DroidSafe on a machine with at least 64 GB of memory.</p>
 
 <h3>
-<a id="droidsafe-analysis-source" class="anchor" href="#droidsafe-analysis-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>DroidSafe Analysis Source</h3>
+<a id="droidsafe-analysis-source" class="anchor" href="#droidsafe-analysis-source" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DroidSafe Analysis Source</h3>
 
 <p>DroidSafe is built on top of the <a href="http://sable.github.io/soot/">Soot Java program analysis framework</a>.  We have made extensive modifications to Soot, and include those modifications as a jar in our github repository.  We will soon make available the source code for our Soot modifications.  The modifications include a new object-sensitive points-to analysis built on top of Soot's SPARK framework.</p>
 
@@ -77,29 +89,29 @@
 <p>If you would like to inspect or extend the DroidSafe analysis, the root of the source code is <a href="https://github.com/MIT-PAC/droidsafe-src/tree/master/src">here</a>.  We in the process of improving the code documentation.</p>
 
 <h3>
-<a id="droidsafe-android-semantic-model-android-device-implementation" class="anchor" href="#droidsafe-android-semantic-model-android-device-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>DroidSafe Android Semantic Model (Android Device Implementation)</h3>
+<a id="droidsafe-android-semantic-model-android-device-implementation" class="anchor" href="#droidsafe-android-semantic-model-android-device-implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DroidSafe Android Semantic Model (Android Device Implementation)</h3>
 
 <p>Our source repository includes the Java source code for our semantic model of the Android API and runtime.  The model is appropriate for flow-insensitive analyses of Android applications focused on data-flow and allocation effects in the API / Runtime.  All semantics are represented in Java.  However, there are precision / accuracy increasing that run as part of our analysis. The Java implementation includes annotations on methods and fields that denote sensitive sources and sinks.  The source code is rooted <a href="https://github.com/MIT-PAC/droidsafe-src/tree/master/modeling/api">here</a> and follows the package structure of the Android API.</p>
 
 <h3>
-<a id="application-benchmarks" class="anchor" href="#application-benchmarks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application Benchmarks</h3>
+<a id="application-benchmarks" class="anchor" href="#application-benchmarks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Application Benchmarks</h3>
 
 <p>The DroidSafe team contributed 40 micro-applications to the <a href="https://github.com/secure-software-engineering/DroidBench">DroidBench</a> Android Information Flow benchmark suite.  The malicious Android applications from APAC cannot be release at this time due to our contract with DARPA.</p>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
 <p><a href="https://github.com/mgordon" class="user-mention">@mgordon</a> is the DroidSafe project leader at MIT.</p>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p><a href="mailto:droidsafe@lists.csail.mit.edu">droidsafe@lists.csail.mit.edu</a></p>
         </section>
 
         <footer>
           Droidsafe-src is maintained by <a href="https://github.com/MIT-PAC">MIT-PAC</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
                   <script type="text/javascript">
