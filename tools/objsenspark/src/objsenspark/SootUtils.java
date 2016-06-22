@@ -8,8 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
+import soot.RefType;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Type;
 import soot.Unit;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
@@ -45,6 +47,23 @@ public class SootUtils {
         return -1;
     }
 
+    /**
+     * Return true if this reference is to a String, CharSequence, StringBuffer, or StringBuilder.
+     */
+    public static boolean isStringOrSimilarType(Type type) {
+        if (type instanceof RefType) {
+            RefType refType = (RefType)type;
+
+            return refType.equals(RefType.v("java.lang.String")) || 
+                    refType.equals(RefType.v("java.lang.CharSequence")) ||
+                    refType.equals(RefType.v("java.lang.StringBuffer")) ||
+                    refType.equals(RefType.v("java.lang.StringBuilder"));
+
+        }
+
+        return false;
+    }
+    
     /**
      * Return the source line number of a Jimple statement.
      */

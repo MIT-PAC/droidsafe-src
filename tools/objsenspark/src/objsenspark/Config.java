@@ -49,9 +49,9 @@ public class Config {
     /** if true, use types (instead of alloc sites) for object sensitive context elements > 1 */
     public boolean typesForContext = false;
     /** in spark limit heap context for strings if we are object sensitive */
-    public boolean limitHeapContextForStrings = false;
-    /** in spark limit heap context for some GUI elements */
-    public boolean limitHeapContextForGUI = false;
+    public boolean limitHeapContextForStrings = false;   ;
+    /** should we add extra context for arrays in the pta? */
+    public boolean extraArrayContext = true;
 
     /** in spark propagate all string constants */
     public boolean stringConstants = false;
@@ -168,6 +168,8 @@ public class Config {
 
         if (cmd.hasOption("jre")) {
             this.JRE = getPathFromCWD(cmd.getOptionValue("jre"));
+        } else {
+        	 this.JRE = System.getProperty("java.home");
         }
 
         if (cmd.hasOption("apppath")) {

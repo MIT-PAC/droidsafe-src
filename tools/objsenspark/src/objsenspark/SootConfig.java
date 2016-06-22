@@ -2,7 +2,9 @@ package objsenspark;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -20,8 +22,11 @@ import soot.options.Options;
  */
 public class SootConfig {
     private static final Logger logger = LoggerFactory.getLogger(SootConfig.class);
+    
+    
 
     public static void init() {
+    	
         setOptions();
         setSootClassPath();
     }
@@ -33,6 +38,8 @@ public class SootConfig {
         List<String> dirs = new ArrayList<String>();
         // add the classes directory or the application jar
         dirs.add(Config.v().APP_PATH);
+        dirs.addAll(jreClassPathEntries());
+        System.out.println("soot process dirs: " + Arrays.toString(dirs.toArray()));
         soot.options.Options.v().set_process_dir(dirs);
         if (Config.v().MAIN_CLASS != null) {
             soot.options.Options.v().set_main_class(Config.v().MAIN_CLASS);
@@ -62,9 +69,8 @@ public class SootConfig {
 
 //        String defaultClassPath = Scene.v().defaultClassPath();
 //        cp.append(defaultClassPath);
-        
-        String jre = (Config.v().JRE == null) ? System.getProperty("java.home") : Config.v().JRE;
-        cp.append(jreClassPath(jre));
+               
+        cp.append(jreClassPath());
         
         //add the classes directory or the application jar file
         cp.append( File.pathSeparator+ Config.v().APP_PATH);
@@ -86,25 +92,32 @@ public class SootConfig {
         Scene.v().setSootClassPath(classpath);
     }
 
-    private static String jreClassPath(String jre) {
+    private static String jreClassPath() {
+    	List<String> entries = jreClassPathEntries();
+    	StringBuffer buf = new StringBuffer();
+    	
+    	for (String entry : entries) {
+    		buf.append(entry + File.pathSeparator);
+    	}
+    	
+    	return buf.toString();
+    }
+    
+    private static List<String> jreClassPathEntries() {
+    	List<String> entries = new LinkedList<String>();
+    	String jreClassesDir = Config.v().JRE + File.separator + ".." + File.separator + "Classes" + File.separator;	
+    	String jreLibDir = Config.v().JRE  + File.separator + "lib" + File.separator;
+    	
         StringBuffer sb = new StringBuffer();
         if(System.getProperty("os.name").equals("Mac OS X")) {
             //in older Mac OS X versions, rt.jar was split into classes.jar and ui.jar
-            String jreClassesDir = jre + File.separator + ".." + File.separator + "Classes" + File.separator;
-            sb.append(jreClassesDir);
-            sb.append("classes.jar");
-    
-            sb.append(File.pathSeparator);
-            sb.append(jreClassesDir);
-            sb.append("ui.jar");
-            sb.append(File.pathSeparator);
+        	entries.add(jreClassesDir + "classes.jar");    
+        	entries.add(jreClassesDir + "ui.jar");
         }
-        String jreLibDir = jre + File.separator + "lib" + File.separator;
-        sb.append(jreLibDir);
-        sb.append("rt.jar");
-        sb.append(File.pathSeparator);
-        sb.append(jreLibDir);
-        sb.append("jce.jar");
-        return sb.toString();
+        
+        entries.add(jreLibDir + "rt.jar");       
+        entries.add(jreLibDir + "jce.jar");
+        
+        return entries;
     }
 }

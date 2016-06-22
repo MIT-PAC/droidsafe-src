@@ -7,7 +7,7 @@ Environment setup
 -----------------
 
 This tool uses some library jars in the droidsafe lib directory. Before building/running the tool, You need to set the
-environment variable ANDROID_SRC_HOME to the droidsafe root directory.
+environment variable DROIDSAFE_SRC_HOME to the droidsafe root directory.
 
 Building the tool
 -----------------
