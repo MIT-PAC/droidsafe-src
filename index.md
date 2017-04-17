@@ -14,7 +14,41 @@ Note that the DroidSafe project is no longer active, and this code is no longer 
 
 ## DroidSafe Overview
 
-The DroidSafe project develops novel program analysis techniques to diagnose and remove malicious code from Android mobile applications. The DroidSafe project is developed by [MIT's Center for Resilient Software](http://groups.csail.mit.edu/pac/crs/), the [Kestrel Institute](http://www.kestrel.edu/), and [Global InfoTek, Inc](http://www.globalinfotek.com/). The core of our system is a static information-flow analysis that operates on either Java bytecode for an application or an application's APK.  The DroidSafe team co-designed a semantic model of Android runtime behaviors and a static information-flow analysis to achieve acceptable precision, accuracy, and scalability for real-world Android applications.  
+The DroidSafe project developed novel program analysis techniques to diagnose and remove malicious code from Android mobile applications. The DroidSafe project was developed by [MIT's Center for Resilient Software](http://groups.csail.mit.edu/pac/crs/), the [Kestrel Institute](http://www.kestrel.edu/), and [Global InfoTek, Inc](http://www.globalinfotek.com/). The core of our system is a static information-flow analysis that operates on either Java bytecode for an application or an application's APK.  The DroidSafe team co-designed a semantic model of Android runtime behaviors and a static information-flow analysis to achieve acceptable precision, accuracy, and scalability for real-world Android applications.  
+
+## Goals and Disclaimer
+
+The goal of the DroidSafe project was to achieve a practical balance
+of scalability, precision, accuracy, and comprehensiveness, given the
+applications that DARPA wishes to analyze.  Android is a huge
+framework, and many Android applications are huge, stressing modern
+static analysis techniques.  The DARPA program under which DroidSafe
+was developed placed sensible restrictions on programs to be analyzed:
+
+1. Up to 50K LOC (including libraries),
+2. Android 4.4.1 only,
+3. No apps that require Google Play, must run on stock AOSP,
+4. Limited use of reflection,
+5. No dynamic code loading,
+6. Use a limited set of Android API classes, and
+7. No native code.
+
+This set of applications is important to DARPA because they can place
+restrictions on their third-party application developers, and for
+these apps, DARPA wanted an advanced automated analysis system.
+
+The DroidSafe analysis is a product of these app restrictions.
+DroidSafe was designed to scale for small / medium-sized (complete)
+programs and really push accuracy and precision.
+
+Please do not expect to run DroidSafe on large apps from the Google
+Play store, and expect DroidSafe to complete and/or give you accurate
+results.  It was not designed for this, and really, no static,
+whole-program information flow analysis can achieve all the goals of
+scalability, precision, accuracy, and comprehensiveness at this
+time. 
+
+## Components
 
 The DroidSafe system includes:
 
