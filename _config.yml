@@ -1,0 +1,8 @@
+title: Droidsafe-src
+description: DroidSafe Android Static Analysis Source Repository
+google_analytics: UA-60585828-1
+show_downloads: true
+theme: jekyll-theme-tactile
+
+gems:
+  - jekyll-mentions
